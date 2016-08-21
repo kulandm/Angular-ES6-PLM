@@ -1,0 +1,21 @@
+<div layout="column" layout-fill flex id="main">
+	<header class="useless-header">&nbsp;</header>
+	<md-content layout-fill>
+		<div layout="column" layout-align="center center">
+			<div id="login-block" ng-hide="isLogged" ng-init="init()">
+				<div class="login-box">
+					<div class="navbar-brand" id="fusion-lifecycle-logo">
+						<img src="images/Fusion_Lifecycle_2017_stacked.svg" title="{{ $root.bundle.text.appName }}"/>
+						<div class="welcome-title">
+							<h1>{{ $root.bundle.text.welcome }}</h1>
+						</div>
+						<md-button id="loginButton"
+								   class="md-primary md-default-theme"
+								   ng-click="login()">{{$root.bundle.button.signIn}}</md-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</md-content>
+	<footer id="landing-page-footer">{{ $root.bundle.text.copyright }}</footer>
+</div>

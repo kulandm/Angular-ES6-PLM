@@ -1,0 +1,201 @@
+<h1><code ng:non-bindable="">Workspace</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-workspace-page"><p>This class wraps a workspace payload into an object</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addvalidationrules">addValidationRules(fieldObj)</h3>
+<div class="addvalidationrules"><div class="models-workspace-addvalidationrules-page"><p>Add the validations rules to each field containing validators</p>
+</div><h5 id="methods_addvalidationrules_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fieldObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-addvalidationrules-page"><p>The object which validationRules objects are added to</p>
+</div></td></tr></tbody></table><h5 id="methods_addvalidationrules_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-addvalidationrules-page"><p>promise that resolves when fetching is done or a fake promise in-case field has not validators</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_fetch">fetch(link, workspacesObj)</h3>
+<div class="fetch"><div class="models-workspace-fetch-page"><p>Make a call to fetch raw data</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-fetch-page"><p>The URL to use for fetching the data</p>
+</div></td></tr><tr><td>workspacesObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-fetch-page"><p>The data model of workspaces</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-fetch-page"><p>An object representation of the formatted data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getaffecteditemrelatedworkspaceslink">getAffectedItemRelatedWorkspacesLink()</h3>
+<div class="getaffecteditemrelatedworkspaceslink"><div class="models-workspace-getaffecteditemrelatedworkspaceslink-page"><p>Returns the REST api link for the affected items related workspaces</p>
+</div><h5 id="methods_getaffecteditemrelatedworkspaceslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getaffecteditemrelatedworkspaceslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomrelatedworkspaceslink">getBomRelatedWorkspacesLink()</h3>
+<div class="getbomrelatedworkspaceslink"><div class="models-workspace-getbomrelatedworkspaceslink-page"><p>Returns the REST api link for the bom items related workspaces</p>
+</div><h5 id="methods_getbomrelatedworkspaceslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getbomrelatedworkspaceslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getdisplayname">getDisplayName()</h3>
+<div class="getdisplayname"><div class="models-workspace-getdisplayname-page"><p>Returns the display name of this workspace</p>
+</div><h5 id="methods_getdisplayname_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getdisplayname-page"><p>The display name of the workspace</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfulllist">getFullList()</h3>
+<div class="getfulllist"><div class="models-workspace-getfulllist-page"><p>Returns the full list of data</p>
+</div><h5 id="methods_getfulllist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-workspace-getfulllist-page"><p>The full list of data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-workspace-getid-page"><p>Returns the id of this workspace</p>
+</div><h5 id="methods_getid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getid-page"><p>The id of the workspace</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemlink">getItemLink(dmsId)</h3>
+<div class="getitemlink"><div class="models-workspace-getitemlink-page"><p>Returns the REST api link for the item given the id</p>
+</div><h5 id="methods_getitemlink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>dmsId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspace-getitemlink-page"><p>The ID of the item to be retrieved</p>
+</div></td></tr></tbody></table><h5 id="methods_getitemlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getitemlink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemslink">getItemsLink(viewsObj, viewId)</h3>
+<div class="getitemslink"><div class="models-workspace-getitemslink-page"><p>Returns the REST api link for the workspace items given the id</p>
+</div><h5 id="methods_getitemslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>viewsObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-getitemslink-page"><p>The object model for views where the link is defined</p>
+</div></td></tr><tr><td>viewId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspace-getitemslink-page"><p>The view ID whose items to be retrieved</p>
+</div></td></tr></tbody></table><h5 id="methods_getitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlifecycleworkflowstatelink">getLifecycleWorkflowStateLink(stateId)</h3>
+<div class="getlifecycleworkflowstatelink"><div class="models-workspace-getlifecycleworkflowstatelink-page"><p>Returns the REST api link for the lifecycle workflow state</p>
+</div><h5 id="methods_getlifecycleworkflowstatelink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>stateId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlifecycleworkflowstatelink-page"><p>the id of the state</p>
+</div></td></tr></tbody></table><h5 id="methods_getlifecycleworkflowstatelink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlifecycleworkflowstatelink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlifecycleworkflowstatetransitionslink">getLifecycleWorkflowStateTransitionsLink(stateId)</h3>
+<div class="getlifecycleworkflowstatetransitionslink"><div class="models-workspace-getlifecycleworkflowstatetransitionslink-page"><p>Returns the REST api link for the lifecycle workflow state&#39;s transitions</p>
+</div><h5 id="methods_getlifecycleworkflowstatetransitionslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>stateId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlifecycleworkflowstatetransitionslink-page"><p>the id of the state</p>
+</div></td></tr></tbody></table><h5 id="methods_getlifecycleworkflowstatetransitionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlifecycleworkflowstatetransitionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlifecycleworkflowstateslink">getLifecycleWorkflowStatesLink()</h3>
+<div class="getlifecycleworkflowstateslink"><div class="models-workspace-getlifecycleworkflowstateslink-page"><p>Returns the REST api link for the lifecycle workflow states</p>
+</div><h5 id="methods_getlifecycleworkflowstateslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlifecycleworkflowstateslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlinkedtoworkspaceslink">getLinkedToWorkspacesLink()</h3>
+<div class="getlinkedtoworkspaceslink"><div class="models-workspace-getlinkedtoworkspaceslink-page"><p>Returns the REST api link for the linked-to workspaces
+for an affected item</p>
+</div><h5 id="methods_getlinkedtoworkspaceslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getlinkedtoworkspaceslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getpicklistvalues">getPicklistValues()</h3>
+<div class="getpicklistvalues"><div class="models-workspace-getpicklistvalues-page"><p>Lazy-loads the first chunk of values of picklists on page load</p>
+</div><h5 id="methods_getpicklistvalues_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-workspace-getpicklistvalues-page"><p>The promise will resolved when the data for the picklist has been loaded</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getpicklistvaluesrecursively">getPicklistValuesRecursively()</h3>
+<div class="getpicklistvaluesrecursively"><div class="models-workspace-getpicklistvaluesrecursively-page"><p>Make all necessary calls to retrieve the entire values list</p>
+</div><h5 id="methods_getpicklistvaluesrecursively_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-workspace-getpicklistvaluesrecursively-page"><p>The promise will resolved when all calls finish or any of them returns without proper data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getpicklistvalueswithfiltering">getPicklistValuesWithFiltering()</h3>
+<div class="getpicklistvalueswithfiltering"><div class="models-workspace-getpicklistvalueswithfiltering-page"><p>Make a call to the backend containing a query, limited by a certain amount</p>
+</div><h5 id="methods_getpicklistvalueswithfiltering_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-workspace-getpicklistvalueswithfiltering-page"><p>The promise will resolved when all calls finish or any of them returns without proper data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelationshiprelatedworkspaceslink">getRelationshipRelatedWorkspacesLink(namedRelationshipId)</h3>
+<div class="getrelationshiprelatedworkspaceslink"><div class="models-workspace-getrelationshiprelatedworkspaceslink-page"><p>Returns the REST api link for the relationships items related workspaces</p>
+</div><h5 id="methods_getrelationshiprelatedworkspaceslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>namedRelationshipId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getrelationshiprelatedworkspaceslink-page"><p>The id of the named relationship</p>
+</div></td></tr></tbody></table><h5 id="methods_getrelationshiprelatedworkspaceslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getrelationshiprelatedworkspaceslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelationshiprelatedworkspaceslink">getRelationshipRelatedWorkspacesLink()</h3>
+<div class="getrelationshiprelatedworkspaceslink"><div class="models-workspace-getrelationshiprelatedworkspaceslink-page"><p>Returns the REST api link for the relationships items related workspaces</p>
+</div><h5 id="methods_getrelationshiprelatedworkspaceslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getrelationshiprelatedworkspaceslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsection">getSection()</h3>
+<div class="getsection"><div class="models-workspace-getsection-page"><p>Returns this section</p>
+</div><h5 id="methods_getsection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-getsection-page"><p>The section object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsections">getSections(isEdit)</h3>
+<div class="getsections"><div class="models-workspace-getsections-page"><p>Returns the sections of this workspace meta</p>
+</div><h5 id="methods_getsections_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>isEdit</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-workspace-getsections-page"><p>Flag indicating whether we&#39;re currently in edit mode</p>
+</div></td></tr></tbody></table><h5 id="methods_getsections_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-getsections-page"><p>A promise that resolves after fetchings are done</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsectionsmetadata">getSectionsMetadata()</h3>
+<div class="getsectionsmetadata"><div class="models-workspace-getsectionsmetadata-page"><p>Returns this sections of this workspace</p>
+</div><h5 id="methods_getsectionsmetadata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-getsectionsmetadata-page"><p>The sections object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettabslink">getTabsLink()</h3>
+<div class="gettabslink"><div class="models-workspace-gettabslink-page"><p>Returns the REST api link for the workspace tabs</p>
+</div><h5 id="methods_gettabslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-gettabslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettypeid">getTypeId()</h3>
+<div class="gettypeid"><div class="models-workspace-gettypeid-page"><p>Returns the type id of this workspace</p>
+</div><h5 id="methods_gettypeid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-gettypeid-page"><p>The type id of the workspace</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getuserpermissionslink">getUserPermissionsLink(userId)</h3>
+<div class="getuserpermissionslink"><div class="models-workspace-getuserpermissionslink-page"><p>Returns the REST api link for the user permissions given the id</p>
+</div><h5 id="methods_getuserpermissionslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>userId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspace-getuserpermissionslink-page"><p>The ID of the user whose permissions to be retrieved</p>
+</div></td></tr></tbody></table><h5 id="methods_getuserpermissionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getuserpermissionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdetailsfieldsdata">getViewDetailsFieldsData(filter)</h3>
+<div class="getviewdetailsfieldsdata"><div class="models-workspace-getviewdetailsfieldsdata-page"><p>This method can be used to fetch the field details in item
+details view. This method traverses all the sections of the workspace and
+then each field of the section to fetch the necessary metadata, and
+validation information.</p>
+</div><h5 id="methods_getviewdetailsfieldsdata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>filter</td><td><a href="" class="label type-hint type-hint-function">Function</a></td><td><div class="models-workspace-getviewdetailsfieldsdata-page"><p>An optional filter function that can be used to
+filter the list of fields. This can be useful in case of quick create.</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdetailsfieldsdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-workspace-getviewdetailsfieldsdata-page"><p>A promise, and when resolved, an array containing the
+sections and, inside each one of them, the field types and their values</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewslink">getViewsLink()</h3>
+<div class="getviewslink"><div class="models-workspace-getviewslink-page"><p>Returns the REST api link for the workspace views</p>
+</div><h5 id="methods_getviewslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getviewslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewslink">getViewsLink()</h3>
+<div class="getviewslink"><div class="models-workspace-getviewslink-page"><p>Returns the REST api link for the workspace views</p>
+</div><h5 id="methods_getviewslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getviewslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkflowstateslink">getWorkflowStatesLink()</h3>
+<div class="getworkflowstateslink"><div class="models-workspace-getworkflowstateslink-page"><p>Returns the REST api link for the workflow states</p>
+</div><h5 id="methods_getworkflowstateslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getworkflowstateslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkflowtransitionslink">getWorkflowTransitionsLink()</h3>
+<div class="getworkflowtransitionslink"><div class="models-workspace-getworkflowtransitionslink-page"><p>Returns the REST api link for the workflow transitions</p>
+</div><h5 id="methods_getworkflowtransitionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getworkflowtransitionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspace">getWorkspace()</h3>
+<div class="getworkspace"><div class="models-workspace-getworkspace-page"><p>Returns this workspace</p>
+</div><h5 id="methods_getworkspace_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-getworkspace-page"><p>The workspace object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspaceurn">getWorkspaceUrn()</h3>
+<div class="getworkspaceurn"><div class="models-workspace-getworkspaceurn-page"><p>Returns the urn of the current workspace</p>
+</div><h5 id="methods_getworkspaceurn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspace-getworkspaceurn-page"><p>The string representation of the urn</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setpicklisthook">setPicklistHook()</h3>
+<div class="setpicklisthook"><div class="models-workspace-setpicklisthook-page"><p>Sets the correct hooks for loading options of picklists, augmenting the original field object</p>
+</div><h5 id="methods_setpicklisthook_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-workspace-setpicklisthook-page"><p>The promise will resolved when the data for the picklist has been loaded</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setsection">setSection(section)</h3>
+<div class="setsection"><div class="models-workspace-setsection-page"><p>Sets this section</p>
+</div><h5 id="methods_setsection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-setsection-page"><p>The section to set to</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_setworkspace">setWorkspace(workspace)</h3>
+<div class="setworkspace"><div class="models-workspace-setworkspace-page"><p>Sets this workspace</p>
+</div><h5 id="methods_setworkspace_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspace</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspace-setworkspace-page"><p>The workspace to set to</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

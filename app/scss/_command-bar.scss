@@ -1,0 +1,104 @@
+// Command bar
+//
+// Styles for the command bar that's inside each view (tab) of an workspace item
+//
+// Markup:
+//
+// 	<md-toolbar id="command-bar" role="command-bar">
+// 		(content)
+// 	</md-toolbar>
+//
+// Styleguide xx
+#command-bar {
+	display: flex;
+	flex-direction: row;
+
+	min-height: $commandBarHeight;
+	max-height: $commandBarHeight;
+	padding: $commandBarPadding;
+
+	border-bottom: $commandBarBorder;
+	background-color: $commandBarBackgroundColor;
+	box-shadow: none;
+
+	flex-wrap: nowrap;
+}
+
+// Buttons to the left, to control data displaying
+#control-data {
+	padding: 0;
+
+	flex: 0 1 auto;
+
+	.md-button {
+		vertical-align: bottom;
+		padding: 0 40px 0 40px;
+	}
+}
+
+// The container for the transcluded buttons
+#transcluded-buttons {
+	padding: 0;
+
+	flex: 1 1 auto;
+
+	.md-button {
+		vertical-align: bottom;
+		padding: 0 40px 0 40px;
+	}
+
+	// Only add the md-primary class on the first button in the DOM
+	span > div:first-child {
+
+		.md-button {
+			@extend %primaryButton;
+		}
+	}
+
+	#actions-button {
+		// Override command-bar default button styling
+		padding: 0;
+	}
+}
+
+// Buttons to the right, to control viewing of data
+#control-view {
+	flex: 0 1 auto;
+
+	.contextual-create-btn {
+		padding: {
+			right: 5px;
+			left: 5px;
+		}
+	}
+}
+
+.actions-btn {
+	display: inline-block;
+
+	.md-button {
+		padding: {
+			right: 5px;
+			left: 10px;
+		}
+	}
+
+	.md-lg {
+		display: inline-block;
+
+		vertical-align: super;
+	}
+
+	.btn-splitter {
+		display: inline-block;
+
+		width: 1px;
+		height: 33px;
+		margin: {
+			right: -1px;
+			left: 4px;
+		}
+
+		background-color: $darkGrayColor;
+	}
+}

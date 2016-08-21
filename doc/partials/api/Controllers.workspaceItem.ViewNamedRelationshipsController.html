@@ -1,0 +1,139 @@
+<h1><code ng:non-bindable="">ViewNamedRelationshipsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-page"><p>View Controller for Dynamic Linked View</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_associateaddeditems">associateAddedItems(items)</h3>
+<div class="associateaddeditems"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-associateaddeditems-page"><p>Associate the items selected from a flyout or modal (e.g.
+Add Linkable Items flyout, Add Related BOM Items modal, etc)</p>
+</div><h5 id="methods_associateaddeditems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>items</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-associateaddeditems-page"><p>The list of items selected.</p>
+</div></td></tr></tbody></table><h5 id="methods_associateaddeditems_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-associateaddeditems-page"><p>A promise over a list of promises resolving to
+booleans representing whether or not the association succeeded</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-constructor-page"><p>The class constructor.app.
+Creates handles to all the required services and top level view models</p>
+</div></div>
+</li>
+<li><h3 id="methods_getpermittedrelatedworkspaces">getPermittedRelatedWorkspaces()</h3>
+<div class="getpermittedrelatedworkspaces"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-getpermittedrelatedworkspaces-page"><p>Get the related workspaces
+TODO check permissions
+TODO move this stuff out to a service or the RelatedWorkspaces model</p>
+</div></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsenamedrelationshipsitems">parseNamedRelationshipsItems(namedRelationshipsItems)</h3>
+<div class="parsenamedrelationshipsitems"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-parsenamedrelationshipsitems-page"><p>Parse fetched data into table rows.</p>
+</div><h5 id="methods_parsenamedrelationshipsitems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>namedRelationshipsItems</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-parsenamedrelationshipsitems-page"><p>NamedRelationshipsItems Obj
+contains an array of NamedRelationshipsItem fetched from server.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_removeselecteditems">removeSelectedItems()</h3>
+<div class="removeselecteditems"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-removeselecteditems-page"><p>Initiates the process to remove selected items.</p>
+</div></div>
+</li>
+<li><h3 id="methods_selectrow">selectRow(row)</h3>
+<div class="selectrow"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-selectrow-page"><p>Push the selected items into the selectedItems array.</p>
+</div><h5 id="methods_selectrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-selectrow-page"><p>A uiGrid &quot;row&quot; object.</p>
+</div></td></tr></tbody></table><h5 id="methods_selectrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-selectrow-page"><p>The number of selected items.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd(event)</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-triggeradd-page"><p>Trigger the flyout for adding items</p>
+</div><h5 id="methods_triggeradd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-triggeradd-page"><p>The event object</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggerdelete">triggerDelete()</h3>
+<div class="triggerdelete"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-triggerdelete-page"><p>Triggered by clicking delete button - deletes the selected items after confirmation</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_addflyout">addFlyout</h3>
+<div class="addflyout"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-addflyout-page"><p>The add flyout instance</p>
+</div></div>
+</li>
+<li><h3 id="properties_addlinkableitemslistenerid">addLinkableItemsListenerId</h3>
+<div class="addlinkableitemslistenerid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-addlinkableitemslistenerid-page"><p>Listener for items that are selected in the add items
+flyout</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridapiinterface">gridApiInterface</h3>
+<div class="gridapiinterface"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-gridapiinterface-page"><p>The api interface of grid ui to control column
+visibility based on permissions.</p>
+</div></div>
+</li>
+<li><h3 id="properties_item">item</h3>
+<div class="item"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-item-page"><p>The current item object</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-itemid-page"><p>The encoded link for the current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-itemlistenerid-page"><p>Listener for item object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsavelistenerid">linkableItemSaveListenerId</h3>
+<div class="linkableitemsavelistenerid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-linkableitemsavelistenerid-page"><p>Listens for items that have been successfully added so
+they can be displayed in the table</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsoptions">linkableItemsOptions</h3>
+<div class="linkableitemsoptions"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-linkableitemsoptions-page"><p>A map of values that need to be sent to the
+AddLinkableItemsController (hence attached to the $scope instead of
+<code>this</code>)</p>
+</div></div>
+</li>
+<li><h3 id="properties_namedrelationshipid">namedRelationshipId</h3>
+<div class="namedrelationshipid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-namedrelationshipid-page"><p>The id for this named relationship</p>
+</div></div>
+</li>
+<li><h3 id="properties_namedrelationshipsobjlistenerid">namedRelationshipsObjListenerId</h3>
+<div class="namedrelationshipsobjlistenerid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-namedrelationshipsobjlistenerid-page"><p>Listener for named relationships object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_registeraddlinkableitemslisteners">registerAddLinkableItemsListeners</h3>
+<div class="registeraddlinkableitemslisteners"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-registeraddlinkableitemslisteners-page"><p>Registers the listeners related to adding linkable items
+from the Add flyout</p>
+</div></div>
+</li>
+<li><h3 id="properties_selecteditems">selectedItems</h3>
+<div class="selecteditems"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-selecteditems-page"><p>The array storing the self link of selected items.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-tablecolumns-page"><p>Stores table column header of named relationships.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-tabledata-page"><p>Stores table data of named relationships.</p>
+</div></div>
+</li>
+<li><h3 id="properties_toggleallselection">toggleAllSelection</h3>
+<div class="toggleallselection"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-toggleallselection-page"><p>toggle all selection state of the grid.</p>
+<p>TODO: move this to a common location for reuse</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewstate">viewState</h3>
+<div class="viewstate"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-viewstate-page"><p>The name of the view state for this tab.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewnamedrelationshipscontroller-workspaceid-page"><p>The current workspace ID.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

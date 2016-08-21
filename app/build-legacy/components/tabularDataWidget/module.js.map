@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../components/tabularDataWidget/module.js"],"names":[],"mappings":";;AAAA,OAAO,CAAC,MAAM,CAAC,0BAA0B,EAAE,CAC1C,mCAAmC,CACnC,CAAC,CAAC","file":"module.js","sourcesContent":["angular.module('plm360.tabularDataWidget', [\n\t'com/autodesk/UnderscoreService.js'\n]);\n"]}

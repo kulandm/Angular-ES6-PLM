@@ -1,0 +1,55 @@
+.users-selector-wrapper {
+  height: 100%; }
+  .users-selector-wrapper .search-box-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    .users-selector-wrapper .search-box-wrapper input[type="search"] {
+      height: 20px;
+      width: calc(100% - 80px);
+      margin: 10px 0 0 20px;
+      padding: 5px 30px 5px 10px;
+      border-radius: 4px;
+      box-shadow: none;
+      outline: 0;
+      border: 1px solid #CCCCCC; }
+    .users-selector-wrapper .search-box-wrapper .close-button-wrapper {
+      position: relative;
+      float: right;
+      top: 15px;
+      right: 25px; }
+      .users-selector-wrapper .search-box-wrapper .close-button-wrapper .zmdi-close-circle {
+        font-size: 1.5em;
+        color: #CCCCCC; }
+  .users-selector-wrapper .selection-area {
+    margin-top: 12px;
+    border-top: 1px solid #CCCCCC;
+    height: calc(100% - 52px);
+    /*10 + 5 + 5 + 20(input box) + 12*/
+    overflow: auto; }
+    .users-selector-wrapper .selection-area .user-selector-avatar {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      margin-right: 20px; }
+    .users-selector-wrapper .selection-area .secondary-text {
+      color: #CCCCCC; }
+    .users-selector-wrapper .selection-area .checkbox-wrapper {
+      margin: 0;
+      padding: 15px 20px;
+      border-bottom: 1px solid #CCCCCC; }
+      .users-selector-wrapper .selection-area .checkbox-wrapper md-checkbox {
+        margin: 0; }
+        .users-selector-wrapper .selection-area .checkbox-wrapper md-checkbox .md-icon {
+          border-width: 1px; }
+        .users-selector-wrapper .selection-area .checkbox-wrapper md-checkbox.md-checked .md-icon {
+          background-color: #05A7DF; }
+    .users-selector-wrapper .selection-area md-radio-button {
+      margin: 0;
+      padding: 15px 20px;
+      border-bottom: 1px solid #CCCCCC; }
+      .users-selector-wrapper .selection-area md-radio-button .md-on {
+        background-color: #05A7DF; }
+      .users-selector-wrapper .selection-area md-radio-button.md-checked .md-off,
+      .users-selector-wrapper .selection-area md-radio-button.md-default-theme.md-checked .md-off {
+        border-color: #05A7DF; }

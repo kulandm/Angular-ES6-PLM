@@ -1,0 +1,13 @@
+<div class="wip-breadcrumb">
+	<div>
+		<a href="javascript:;" ng-click="updateBreadcrumb()">{{$root.bundle.breadcrumb.home}}</a>
+		<span ng-repeat="breadcrumb in breadcrumbs">
+			<span class="md-keyboard-arrow-right"></span>
+			<span ng-switch on="breadcrumbs.length === breadcrumbs.indexOf(breadcrumb)+1">
+				<span ng-switch-when="true" class="folder-selected">{{breadcrumb.title}}</span>
+				<a ng-switch-default href="javascript:;" ng-click="updateBreadcrumb({folderObj: breadcrumb})">{{breadcrumb.title}}</a>
+			</span>
+		</span>
+	</div>
+	<md-divider></md-divider>
+</div>

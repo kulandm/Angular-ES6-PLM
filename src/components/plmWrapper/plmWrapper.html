@@ -1,0 +1,35 @@
+<!-- authentication check directive -->
+<auth-check></auth-check>
+
+<!-- notifications widget -->
+<plm-notifications></plm-notifications>
+
+<!-- general loading widget, for fetching/saving -->
+<loading-bar-widget></loading-bar-widget>
+
+<!-- main menu, left panel -->
+<plm-navigation layout="column" id="sidenav"></plm-navigation>
+
+<div layout="column" layout-fill flex id="main">
+	<fusion-header></fusion-header>
+
+	<!-- app header, top, present in all pages (md-toolbar) -->
+	<plm-header></plm-header>
+
+	<!-- <span ui-view=""></span> -->
+	<!-- <md-toolbar>
+		<md-tabs>
+			<md-tab label="Tab #1"></md-tab>
+			<md-tab label="Tab #2"></md-tab>
+			<md-tab label="Tab #3"></md-tab>
+		</md-tabs>
+	</md-toolbar> -->
+
+	<!-- main content, right side, holds bootstrap container-fluid for internal views -->
+	<span ui-view tabIndex="-1" onload="plmWrapperCtrl.contentLoad()" id="content" ng-controller="PLMWrapperController as plmWrapperCtrl"></span>
+
+	<!-- Footer with copyright information -->
+	<plm-footer></plm-footer>
+</div>
+
+<item-viewer layout="column" id="itemnav"></item-viewer>

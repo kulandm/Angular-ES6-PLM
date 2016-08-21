@@ -1,0 +1,105 @@
+<h1><code ng:non-bindable="">ViewAttachmentsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewattachmentscontroller-page"><p>This controller responsible for affected items.
+This controller will handle all affected items sub states (view, add, edit etc).</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewattachmentscontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setselectedrowinfo">setSelectedRowInfo(fileInfo, isRowSelected)</h3>
+<div class="setselectedrowinfo"><div class="controllers-workspaceitem-viewattachmentscontroller-setselectedrowinfo-page"><p>Sets the data according to the selected row</p>
+</div><h5 id="methods_setselectedrowinfo_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fileInfo</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-setselectedrowinfo-page"><p>File information (id, name, title and version)</p>
+</div></td></tr><tr><td>isRowSelected</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-setselectedrowinfo-page"><p>True, if row is selected</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_shownotification">showNotification(responseList)</h3>
+<div class="shownotification"><div class="controllers-workspaceitem-viewattachmentscontroller-shownotification-page"><p>send event that results in notificaitons.</p>
+</div><h5 id="methods_shownotification_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>responseList</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-shownotification-page"><p>The array of success/failed upload responses.
+Each array item is an object containing the type of the notification and
+the message to display. There are four types of notification currently
+supported: 1 for Success, 2 for Error, 3 for Warning and 4 for Info.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_showuserinfo">showUserInfo(event, userId)</h3>
+<div class="showuserinfo"><div class="controllers-workspaceitem-viewattachmentscontroller-showuserinfo-page"><p>Displays user summary</p>
+</div><h5 id="methods_showuserinfo_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-showuserinfo-page"><p>Event object</p>
+</div></td></tr><tr><td>userId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewattachmentscontroller-showuserinfo-page"><p>User id for which the summary is needed.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewattachmentscontroller-addpermission-page"><p>The add attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-workspaceitem-viewattachmentscontroller-currentuserlistenerid-page"><p>Listener for current user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-workspaceitem-viewattachmentscontroller-currentuserlistenerid-page"><p>Listener for current user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewattachmentscontroller-dateformat-page"><p>Stores the user-defined date format.</p>
+<p><code>date</code>: Date format, defaults to &#39;yyyy&#39;.<br>
+<code>dateAndHour</code>: Date-plus-hour format, defaults to &#39;yyyy hh:mm a&#39;.</p>
+</div></div>
+</li>
+<li><h3 id="properties_deletepermission">deletePermission</h3>
+<div class="deletepermission"><div class="controllers-workspaceitem-viewattachmentscontroller-deletepermission-page"><p>The delete attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewattachmentscontroller-editpermission-page"><p>The edit attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasaddpermission">hasAddPermission</h3>
+<div class="hasaddpermission"><div class="controllers-workspaceitem-viewattachmentscontroller-hasaddpermission-page"><p>True, if the user has add attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_haseditpermission">hasEditPermission</h3>
+<div class="haseditpermission"><div class="controllers-workspaceitem-viewattachmentscontroller-haseditpermission-page"><p>True, if the user has edit attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewattachmentscontroller-itemid-page"><p>The item id of the current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlink">itemLink</h3>
+<div class="itemlink"><div class="controllers-workspaceitem-viewattachmentscontroller-itemlink-page"><p>The resource id of the current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewattachmentscontroller-itemlistenerid-page"><p>Listener for item object. Determines the workspace id.
+Also updates the user permissions.</p>
+</div></div>
+</li>
+<li><h3 id="properties_userid">userId</h3>
+<div class="userid"><div class="controllers-workspaceitem-viewattachmentscontroller-userid-page"><p>The current user id.</p>
+</div></div>
+</li>
+<li><h3 id="properties_username">userName</h3>
+<div class="username"><div class="controllers-workspaceitem-viewattachmentscontroller-username-page"><p>The current user display name.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewattachmentscontroller-viewpermission-page"><p>The view attachments permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewattachmentscontroller-workspaceid-page"><p>The workspace id of the current item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

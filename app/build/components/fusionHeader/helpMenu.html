@@ -1,0 +1,50 @@
+<div id="fusion-header-help-menu-content">
+	<ul id="fusion-header-help-options">
+		<li id="fusion-header-help-options-link-list">
+			<a ng-href="{{helpMenuCtrl.getHelpLink()}}" target="_blank" class="fusion-header-help-option">
+				<div class="help-details-row">
+					<div class="help-option-icon">
+						<ng-include src="'fusion-header-help-icon-template'"></ng-include>
+					</div>
+					<div class="help-details-row-inner">
+						<div class="help-link-primary">{{bundle.mainMenu.helpMenu.helpButton.title}}</div>
+						<div class="help-link-secondary">{{bundle.mainMenu.helpMenu.helpButton.subtitle}}</div>
+					</div>
+				</div>
+			</a>
+			<a ng-href="{{bundle.mainMenu.helpMenu.fusionLifecycleCommunity.link}}" target="_blank" class="fusion-header-help-option">
+				<div class="help-details-row">
+					<div class="help-option-icon">
+						<ng-include src="'fusion-header-community-icon-template'"></ng-include>
+					</div>
+					<div class="help-details-row-inner">
+						<div class="help-link-primary">{{bundle.mainMenu.helpMenu.fusionLifecycleCommunity.title}}</div>
+						<div class="help-link-secondary">{{bundle.mainMenu.helpMenu.fusionLifecycleCommunity.subtitle}}</div>
+					</div>
+				</div>
+			</a>
+			<a ng-href="mailto:{{helpMenuCtrl.getAdminEmail()}}" class="fusion-header-help-option">
+				<div class="help-details-row">
+					<div class="help-option-icon">
+						<ng-include src="'fusion-header-admin-email-icon-template'"></ng-include>
+					</div>
+					<div class="help-details-row-inner">
+						<div class="help-link-primary">{{bundle.mainMenu.helpMenu.contactAdmin.title}}</div>
+						<div class="help-link-secondary">{{bundle.mainMenu.helpMenu.contactAdmin.subtitle}}</div>
+					</div>
+				</div>
+			</a>
+			<a ng-click="helpMenuCtrl.openVignettesModal()" class="fusion-header-help-option">
+				<div class="help-details-row">
+					<div class="help-option-icon fusion-header-vignettes-icon">
+						<ng-include src="'fusion-header-vignettes-icon-template'"></ng-include>
+					</div>
+					<div class="help-details-row-inner">
+						<div class="help-link-primary">{{bundle.mainMenu.helpMenu.vignettes.title}}</div>
+						<div class="help-link-secondary">{{bundle.mainMenu.helpMenu.vignettes.subtitle}}</div>
+					</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>

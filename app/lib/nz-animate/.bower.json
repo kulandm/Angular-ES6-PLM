@@ -1,0 +1,33 @@
+{
+  "name": "nz-animate",
+  "version": "0.9.1",
+  "homepage": "https://github.com/nozzle/nzAnimate",
+  "authors": [
+    "Tanner Linsley <tannerlinsley@gmail.com>"
+  ],
+  "description": "A sickly simple class-based library for Angular animations.",
+  "keywords": [
+    "angularjs",
+    "angular",
+    "animate.css",
+    "animation",
+    "animations"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.9.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.1",
+    "commit": "e3a528389a1d7741f864238279e337279c989323"
+  },
+  "_source": "https://github.com/nozzle/nzAnimate.git",
+  "_target": "0.9.1",
+  "_originalSource": "nz-animate"
+}

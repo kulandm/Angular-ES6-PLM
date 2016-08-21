@@ -1,0 +1,40 @@
+{
+  "name": "plm-ng-filters",
+  "description": "PLM UI Angular Filters",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-underscore": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-underscore.git#1.0.0"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "de4da927d0ac616a1bb0c9f76a24a8c18fbcba5e"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-ng-filters.git",
+  "_target": "v1.0.0",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-ng-filters.git"
+}

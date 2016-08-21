@@ -1,0 +1,46 @@
+<md-dialog
+		aria-label="{{$root.bundle.details.editAdditionalOwners}}"
+		class="edit-additional-dialog">
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{$root.bundle.details.editAdditionalOwners}}</h2>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<md-dialog-content>
+		<div class="md-dialog-content" layout="row" ng-if="editAdditionalOwnersCtrl.users && editAdditionalOwnersCtrl.groups">
+			<users-checkbox-selector
+				items-list="editAdditionalOwnersCtrl.users"
+				selected-items="editAdditionalOwnersCtrl.selectedUsers"
+				class="divider"
+				flex
+			></users-checkbox-selector>
+			<users-checkbox-selector
+				items-list="editAdditionalOwnersCtrl.groups"
+				selected-items="editAdditionalOwnersCtrl.selectedGroups"
+				flex
+			></users-checkbox-selector>
+		</div>
+		<md-divider></md-divider>
+	</md-dialog-content>
+
+	<!-- Dialog Footer with the Action Buttons -->
+	<md-dialog-actions>
+		<md-button
+			aria-label="{{$root.bundle.button.cancel}}"
+			ng-click="editAdditionalOwnersCtrl.closeDialog()">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+
+		<md-button
+			class="md-primary"
+			aria-label="{{$root.bundle.button.save}}"
+			ng-disabled="!editAdditionalOwnersCtrl.modified"
+			ng-click="editAdditionalOwnersCtrl.triggerSave()">
+			<span class="label">{{$root.bundle.button.save}}</span>
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

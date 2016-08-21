@@ -1,0 +1,18 @@
+gradle.projectsLoaded { g ->
+	g.rootProject.buildscript {
+		repositories {
+			maven{url "http://veyron.autodesk.com/artifactory/ext-release-local" };
+			maven {url "http://veyron.autodesk.com/artifactory/ext-snapshot-local"};
+		}
+
+        configurations.all {
+            resolutionStrategy.cacheChangingModulesFor 0, "seconds"
+        }
+
+		dependencies {
+			classpath ('com.autodesk.plm.gradle.plugins:plm-java:0.0.2-SNAPSHOT'){
+                changing = true
+            }
+		}
+	}
+}

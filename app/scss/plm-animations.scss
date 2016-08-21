@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* Existing nzAnimate library
+-------------------------------------------------- */
+@import 'constants';
+@import '../lib/nz-animate/dist/nzAnimate.css';
+
+// Expands a panel, downwards
+//
+// The transition effect used when expanding a panel
+//
+// Markup:
+// <pre>@include exit-collapseUp</pre>
+//
+// The default transition for when collapsing a panel
+//
+// Styleguide 36.2
+.enter-expandDown {
+	// NOTE: 1000px ought to be enough for everybody, just like 640Kb
+	max-height: 1000px;
+
+	&.ng-enter,
+	&.ng-hide-remove {
+		overflow: hidden; // Clips the content as the animation plays out
+
+		-webkit-transition: max-height 0.5s $plmAnimationDefault;
+		-moz-transition: max-height 0.5s $plmAnimationDefault;
+		-ms-transition: max-height 0.5s $plmAnimationDefault;
+		-o-transition: max-height 0.5s $plmAnimationDefault;
+		transition: max-height 0.5s $plmAnimationDefault;
+	}
+}
+
+
+// Collapses a panel, upwards
+//
+// The transition effect used when collapsing a panel
+//
+// Markup:
+// <pre>@include exit-collapseUp</pre>
+//
+// The default transition for when collapsing a panel
+//
+// Styleguide 36.3
+.exit-collapseUp {
+
+	&.ng-leave,
+	&.ng-hide-add {
+		overflow: hidden; // Clips the content as the animation plays out
+
+		-webkit-transition: max-height 0.5s $plmAnimationDefault;
+		-moz-transition: max-height 0.5s $plmAnimationDefault;
+		-ms-transition: max-height 0.5s $plmAnimationDefault;
+		-o-transition: max-height 0.5s $plmAnimationDefault;
+		transition: max-height 0.5s $plmAnimationDefault;
+	}
+	// Overrides the ng-hide class for handling the collapsing
+	&.ng-hide {
+		overflow: hidden;
+
+		max-height: 0;
+	}
+}
+
+// Collapses a panel, upwards, with dynamic height
+//
+// The transition effect used when collapsing/expanding a panel, with dynamic height
+// I.e. the height is set by JS code
+//
+// Markup:
+// <pre>@include static-dynamic-expandCollapse</pre>
+//
+// The default transition for when collapsing/expanding a panel
+//
+// Styleguide 36.4
+.static-dynamic-expandCollapse {
+	-webkit-transition: height 0.5s $plmAnimationDefault;
+	-moz-transition: height 0.5s $plmAnimationDefault;
+	-ms-transition: height 0.5s $plmAnimationDefault;
+	-o-transition: height 0.5s $plmAnimationDefault;
+	transition: height 0.5s $plmAnimationDefault;
+}
+
+// Rotate caret vertically
+//
+// The transition effect used when rotating a caret vertically
+//
+// Markup:
+// <pre>@include static-rotateCaretVertical</pre>
+//
+// The default transition for when rotating a caret
+//
+// Styleguide 36.5
+.static-rotateCaretVertical {
+	-webkit-transition: -webkit-transform 0.3s $plmAnimationDefault;
+	transition: transform 0.3s $plmAnimationDefault;
+
+	&.rotate {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+}
+
+// Rotate caret vertically when inside a md-button
+//
+// The transition effect used when rotating a caret vertically
+//
+// Markup:
+// <pre>@include rotateCaretVertical</pre>
+//
+// The default transition for when rotating a caret
+//
+// Styleguide 36.6
+.rotateCaretVertical {
+
+	.static-rotateCaretVertical {
+		-webkit-transition: -webkit-transform 0.3s $plmAnimationDefault;
+		transition: transform 0.3s $plmAnimationDefault;
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+}
+
+
+// Slide a panel in/out (collapse/expand animation) not using ngHide
+//
+// The transition effect when expansing/collapsing a panel
+// NOTE: Make sure to use maxWidth/width in the base element
+//
+// Markup:
+// <pre>@include static-slidePanelHorizontal</pre>
+//
+// Slides a panel in/out not using ngHide
+//
+// Styleguide 36.7
+.static-slidePanelHorizontal {
+	-webkit-transition: width 0.3s $plmAnimationDefault;
+	-moz-transition: width 0.3s $plmAnimationDefault;
+	-ms-transition: width 0.3s $plmAnimationDefault;
+	-o-transition: width 0.3s $plmAnimationDefault;
+	transition: width 0.3s $plmAnimationDefault;
+}
+
+// Rotate caret vertically by 90ª
+//
+// The transition effect used when rotating a caret vertically by 90deg.
+//
+// Markup:
+// <pre>@include static-rotateCaretVertical-ninety</pre>
+//
+// The default transition for when rotating a caret
+//
+// Styleguide 36.8
+.static-rotateCaretVertical-ninety {
+	-webkit-transition: -webkit-transform 0.3s $plmAnimationDefault;
+	transition: transform 0.3s $plmAnimationDefault;
+
+	&.rotate {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+}

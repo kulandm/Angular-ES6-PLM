@@ -1,0 +1,4 @@
+properties=Properties
+outline=Outline
+tasks=Tasks
+help=Help

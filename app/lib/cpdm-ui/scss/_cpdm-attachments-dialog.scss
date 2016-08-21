@@ -1,0 +1,155 @@
+.attachments-dialog {
+	width: 40%;
+
+	.attachments-dialog-header {
+		font-size: x-large;
+
+		margin-bottom: 0;
+	}
+
+	.item-selected {
+		font-weight: 600;
+
+		padding: {
+			top: 5px;
+			left: 10px;
+		}
+	}
+
+	md-toolbar.error {
+		min-height: 50px;
+
+		.md-toolbar-tools.md-warn.md-hue-2 {
+			height: 50px;
+			min-height: 50px;
+
+			color: $white;
+			background-color: rgba(235, 77, 77, .9);
+		}
+	}
+
+	.md-dialog-content {
+		padding: 0;
+	}
+
+	.section-header {
+		font-size: 18px;
+		font-weight: 600;
+
+		padding: 20px 15px;
+
+		cursor: pointer;
+
+		background-color: $sectionHeaderBackground;
+
+		.file-name {
+			word-break: break-word;
+		}
+
+		.file-info {
+			color: $mediumGray;
+		}
+
+		.file-uploading {
+			width: 18px;
+			height: 18px;
+
+			-webkit-transform: translate(-18px, -14px);
+			   -moz-transform: translate(-18px, -14px);
+			    -ms-transform: translate(-18px, -14px);
+			     -o-transform: translate(-18px, -14px);
+			        transform: translate(-18px, -14px);
+
+			md-progress-circular.md-default-theme
+			.md-inner
+			.md-gap {
+				border-top-color: $circularLoader;
+				border-bottom-color: $circularLoader;
+			}
+
+			md-progress-circular.md-default-theme
+			.md-inner
+			.md-left
+			.md-half-circle {
+				border-top-color: $circularLoader;
+				border-left-color: $circularLoader;
+			}
+
+			md-progress-circular.md-default-theme
+			.md-inner
+			.md-right
+			.md-half-circle {
+				border-top-color: $circularLoader;
+				border-right-color: $circularLoader;
+			}
+		}
+
+		.section-caret {
+			margin-left: 10px;
+
+			&.rotate-up {
+				-webkit-transition-duration: .5s;
+				   -moz-transition-duration: .5s;
+					 -o-transition-duration: .5s;
+						transition-duration: .5s;
+			}
+
+			&.rotate-down {
+				-webkit-transition: .5s;
+				   -moz-transition: .5s;
+					 -o-transition: .5s;
+						transition: .5s;
+				-webkit-transform: rotate(-180deg);
+				   -moz-transform: rotate(-180deg);
+					 -o-transform: rotate(-180deg);
+						transform: rotate(-180deg);
+			}
+		}
+	}
+
+	.collapsible-section {
+		padding: 20px 15px;
+
+		.field-name {
+			font-weight: 600;
+		}
+
+		.field-input {
+			width: 100%;
+		}
+
+		.field {
+			padding: {
+				top: 10px;
+				bottom: 15px;
+			}
+
+			.attachments-disabled-radio,
+			.attachments-disabled-radio .md-container {
+				cursor: default;
+			}
+
+			.attachments-dialog-radio-field {
+				padding: 3px;
+			}
+
+			md-radio-group {
+				&.md-default-theme:focus {
+					border: 0;
+				}
+
+				.md-off {
+					border-color: $gray;
+				}
+
+				.md-on {
+					background-color: $darkGray;
+				}
+			}
+		}
+	}
+}
+
+.md-label:before {
+	display: none;
+}

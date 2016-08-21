@@ -1,0 +1,73 @@
+<h1><code ng:non-bindable="">BomChangeList</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomchangelist-page"><p>A list of changes to the bom</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_acceptchange">acceptChange(newChange)</h3>
+<div class="acceptchange"><div class="models-bomchangelist-acceptchange-page"><p>adds the change to its respective list, which is guarenteed to exist</p>
+</div><h5 id="methods_acceptchange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>newChange</td><td><a href="" class="label type-hint type-hint-abstractchange">AbstractChange</a></td><td><div class="models-bomchangelist-acceptchange-page"><p>the change to add</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_accepteditchange">acceptEditChange(newChange)</h3>
+<div class="accepteditchange"><div class="models-bomchangelist-accepteditchange-page"><p>remove any previous edits that target the same field
+then, if the new change actually changes the value of the field, keep it</p>
+</div><h5 id="methods_accepteditchange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>newChange</td><td><a href="" class="label type-hint type-hint-abstractchange">AbstractChange</a></td><td><div class="models-bomchangelist-accepteditchange-page"><p>the change to add</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_acceptremovechange">acceptRemoveChange(newChange)</h3>
+<div class="acceptremovechange"><div class="models-bomchangelist-acceptremovechange-page"><p>Adds a remove change to the list, overwritng any pervious remove changes</p>
+</div><h5 id="methods_acceptremovechange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>newChange</td><td><a href="" class="label type-hint type-hint-abstractchange">AbstractChange</a></td><td><div class="models-bomchangelist-acceptremovechange-page"><p>the change to add</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_acceptancefunction">acceptanceFunction()</h3>
+<div class="acceptancefunction"><div class="models-bomchangelist-acceptancefunction-page"><p>returns true if the change should be accepted</p>
+</div></div>
+</li>
+<li><h3 id="methods_compilationfunction">compilationFunction()</h3>
+<div class="compilationfunction"><div class="models-bomchangelist-compilationfunction-page"><p>Compiles the map of changes</p>
+</div><h5 id="methods_compilationfunction_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomchangecompiled">BomChangeCompiled</a></td><td><div class="models-bomchangelist-compilationfunction-page"><p>the compiled changed</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bomchangelist-constructor-page"><p>Prepare the list</p>
+</div></div>
+</li>
+<li><h3 id="methods_getchangetype">getChangeType()</h3>
+<div class="getchangetype"><div class="models-bomchangelist-getchangetype-page"><p>Returns the changeListType of this changeList represents (see BomChangeListTypes)</p>
+</div><h5 id="methods_getchangetype_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomchangelisttypes">BomChangeListTypes</a></td><td><div class="models-bomchangelist-getchangetype-page"><p>the state of the change list</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_geteditstate">getEditState()</h3>
+<div class="geteditstate"><div class="models-bomchangelist-geteditstate-page"><p>Returns the state of this changeList as an object with two properties:
+changeType: the type of change this changeList represents  (see BomChangeListTypes)
+isInvalid: boolean indicating whether the change has been marked invalid</p>
+</div><h5 id="methods_geteditstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomchangelist-geteditstate-page"><p>the state of the change list</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasinvalidchange">hasInvalidChange(changeList)</h3>
+<div class="hasinvalidchange"><div class="models-bomchangelist-hasinvalidchange-page"><p>Determines if any of the provided changes are invalid</p>
+</div><h5 id="methods_hasinvalidchange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>changeList</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomchangelist-hasinvalidchange-page"><p>an array of changes</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bomchangelisttypes">BomChangeListTypes</h3>
+<div class="bomchangelisttypes"><div class="models-bomchangelist-bomchangelisttypes-page"><p>Enum of possible changelist types</p>
+</div></div>
+</li>
+<li><h3 id="properties_bomchangetypes">BomChangeTypes</h3>
+<div class="bomchangetypes"><div class="models-bomchangelist-bomchangetypes-page"><p>Enum of possible change types</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgeid">edgeId</h3>
+<div class="edgeid"><div class="models-bomchangelist-edgeid-page"><p>The edge to which this changelist corresponds</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

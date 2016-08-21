@@ -1,0 +1,106 @@
+// Report Chart Modal
+//
+// Add and override some of the modal styles for report-chart.
+//
+// Styleguide 26
+.report-chart-modal {
+	position: absolute;
+
+	&.modal.fade.in {
+		top: 10%;
+	}
+
+	.modal-dialog {
+		@include set-width-height(80%, 100%);
+	}
+
+	.modal-content {
+		overflow-x: auto;
+
+		height: 80%;
+
+		background-color: $chartModalContentBackgroundColor;
+	}
+
+	// Report Chart Modal Header
+	//
+	// The header of report-chart modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="report-chart-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Chart Title</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .modal-header -
+	//
+	// Styleguide 26.1
+	.modal-header {
+		position: absolute;
+		z-index: 1;
+
+
+		width: 100%;
+		padding: 10px;
+
+		color: $chartModalHeaderTitleColor;
+		border: 0;
+		background-color: $chartModalHeaderBackgroundColor;
+	}
+
+	.modal-header-title {
+		width: auto;
+
+		color: $chartModalHeaderTitleColor;
+	}
+
+	.full-height-chart {
+		height: 100%;
+	}
+
+	// Report Chart Modal Body
+	//
+	// The body section of report-chart modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="report-chart-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Chart Title</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 			<div class="modal-body">
+	// 				Report chart goes here.
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .modal-body -
+	//
+	// Styleguide 26.2
+	.modal-body {
+		height: 100%;
+		padding: 80px 20px 20px;
+
+		background-color: $chartModalContentBackgroundColor;
+	}
+
+	// Use !important to override the default inline styling for labels in highcharts for white-space
+	.highcharts-axis-labels.highcharts-xaxis-labels > span {
+		white-space: nowrap !important;
+	}
+}

@@ -1,0 +1,620 @@
+// Create Item
+//
+// Styles for the create item dialog.
+//
+// Styleguide 31.1
+.image-field {
+	display: none;
+}
+
+.create-item-dialog {
+	overflow: auto;
+
+	width: 35%;
+
+	md-toolbar.error {
+		line-height: 1.4em;
+
+		padding: 12px;
+
+		text-align: center;
+	}
+
+	// Create Item: Header
+	//
+	// Styles for the header text.
+	//
+	// Markup:
+	// <md-dialog class="create-item-dialog">
+	// 	<md-content>
+	// 		<div>
+	// 			<md-subheader class="md-sticky-no-effect"></md-subheader>
+	// 		</div>
+	// 	</md-content>
+	// </md-dialog>
+	//
+	// .create-item-dialog .md-subheader - Set font size to `x-large`
+	//
+	// Styleguide 31.2.1
+	.create-item-header {
+		font-size: x-large;
+
+		margin-bottom: 0;
+
+		color: $blackColor;
+	}
+
+	// Create Item: Header Select
+	//
+	// Styles for the dropdown in the header.
+	//
+	// Markup:
+	// <md-dialog class="create-item-dialog">
+	// 	<md-content>
+	// 		<md-subheader class="md-sticky-no-effect">
+	// 			<md-select class="select-header">
+	// 				<md-option class="select-option"></md-option>
+	// 			</md-select>
+	// 		</md-subheader>
+	// 	</md-content>
+	// </md-dialog>
+	//
+	// .create-item-dialog .select-header - Removes margin of `md-select`
+	//
+	// Styleguide 31.2.2.1
+	.select-header {
+		margin: 0;
+
+		.md-select-value {
+			min-width: unset;
+
+			// Don't show the selected value (we want to emulate a menu)
+			// TODO try using md-menu for this (the logic in the create item
+			// controller will need to be modified)
+			span:first-child {
+				display: none;
+			}
+		}
+	}
+
+	// Create Item: Close Icon
+	//
+	// Styles for the close icon.
+	//
+	// Markup:
+	// <md-dialog class="create-item-dialog">
+	// 	<md-content>
+	// 		<md-subheader class="md-sticky-no-effect">
+	// 			<a class="create-item-close pull-right">
+	// 				<span class="md md-close"></span>
+	// 			</a>
+	// 		</md-subheader>
+	// 	</md-content>
+	// </md-dialog>
+	//
+	// .create-item-close - Removes underline upon hover/focus
+	// .md-close - Set font size to `17px`
+	//
+	// Styleguide 31.2.3.1
+	.create-item-close {
+		@extend %removeLinkStyle;
+
+		padding-right: 16px;
+
+		color: $primaryBorderColor;
+
+		.md-close {
+			font-size: 17px;
+		}
+	}
+
+	.save-options {
+		height: 34px;
+		color: $buttonPrimaryDisabledTextColor;
+		background: $fadedBlueColor;
+		border-radius: 4px;
+		margin-left: -45px;
+		cursor: pointer;
+
+		md-select {
+			margin: 0;
+		}
+
+		.md-select-value {
+			background-image: none;
+		}
+
+		.md-select-icon {
+			color: $whiteColor;
+		}
+	}
+
+	.save-options-enabled {
+		background: $lightBlueColor;
+	}
+
+	.image-field {
+		display: block;
+		-webkit-align-items: initial;
+		align-items: initial;
+		-webkit-justify-content: initial;
+		justify-content: initial;
+
+		.not-supported {
+			color: $errorColor;
+			font-size: 13px;
+			margin-left: 3px;
+		}
+	}
+
+}
+
+// Create Item: Content
+//
+// Styles for the form content in the dialog.
+//
+// Markup:
+// <div class="create-item">Content</div>
+//
+// .create-item
+//
+// Styleguide 31.2.5
+.create-item {
+
+	// Create Item: Select Workspace
+	//
+	// Styles for the select workspace dropdown in the form.
+	//
+	// Markup:
+	// <section class="select-workspace">
+	// 	<md-header>Workspace</md-header>
+	// 	<md-select>
+	// 		<md-option></md-option>
+	// 	</md-select>
+	// </section>
+	//
+	// .select-workspace md-select - Sets width to `100%`
+	// .md-select-label - Justify content
+	//
+	// Styleguide 31.2.6.1
+	.select-workspace {
+		margin: {
+			top: 15px;
+			bottom: 20px;
+		}
+		padding: {
+			right: 10px;
+			left: 10px;
+		}
+
+		color: $createItemSecondaryColor;
+		box-shadow: 0 0 5px $primaryBorderColor;
+
+		.md-subheader {
+			font-size: larger;
+
+			padding: {
+				top: 0;
+				right: 0;
+				bottom: 10px;
+				left: 0;
+			}
+		}
+
+		.md-add {
+			color: $itemStatusGoodColor;
+		}
+
+		.select {
+			width: 100%;
+			padding-left: 10px;
+
+			md-select {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		.md-select-label {
+			font-family: 'Open Sans';
+			line-height: 1.4em;
+
+			border-bottom: 0;
+
+			justify-content: space-between;
+
+			.md-select-icon {
+				margin-top: -4px;
+			}
+		}
+	}
+
+	// Create Item: Did You Know
+	//
+	// Styles for the "Did You Know?" content.
+	//
+	// Markup:
+	// <section class="workspace-meta">
+	// 	<div class="workspace-did-you-know">
+	// 		<span class="md md-info"></span>
+	// 		<span class="text">Did you know?</span>
+	// 	</div>
+	// </section>
+	//
+	// .workspace-meta - Adds padding
+	// .workspace-did-you-know - Adds background
+	//
+	// Styleguide 31.2.7.1
+	.workspace-meta {
+		padding: {
+			top: 20px;
+			right: 0;
+			bottom: 10px;
+			left: 0;
+		}
+
+		.workspace-did-you-know {
+			padding: 10px;
+
+			color: $createItemSecondaryColor;
+			box-shadow: 0 0 5px $primaryBorderColor;
+
+			.md-info {
+				font-size: 25px;
+			}
+
+			.text {
+				display: inline-block;
+
+				width: 95%;
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+// Create Item: Tooltip
+//
+// Styles for tooltips in the form.
+//
+// Markup:
+// <div class="flyout item-tooltip-flyout item-tooltip-quick-create">
+// 	<div flyout-transclude class="flyout-content"></div>
+// </div>
+//
+// .item-tooltip-quick-create - Sets higher `z-index`
+//
+// Styleguide 31.2.8.1
+.item-tooltip-quick-create {
+	z-index: 80; // To display above modal
+}
+
+// Create Item and Managed Item: Form
+//
+// The common styles for the fields and form of create and managed item views of create dialog.
+//
+// Markup:
+// <section class="create-item-form">
+// 	<form role="form" name="createForm"></form>
+// </section>
+//
+// <section class="managed-item-form">
+// 	<form role="form" name="managedForm"></form>
+// </section>
+//
+// .create-item-form - Sets the height and field styles
+// .managed-item-form - Sets the height and field styles
+//
+// Styleguide 31.2.9.1
+.create-item-form,
+.managed-item-form {
+
+	md-toolbar.form-required-errors.md-warn.md-hue-2.error {
+		min-height: inherit;
+		padding: 5px;
+
+		div {
+			text-align: left;
+		}
+
+		.generic-info-message {
+			font-weight: 600;
+
+			margin-bottom: 5px;
+
+			text-align: center;
+		}
+
+		div {
+			margin-top: 5px;
+		}
+	}
+
+	.no-fields {
+		font-size: 24px;
+		line-height: 1.4em;
+
+		margin-top: 10px;
+		padding: 10px;
+
+		background-color: $secondaryBackgroundColor;
+
+		span {
+			font-size: 14px;
+
+			vertical-align: top;
+		}
+	}
+
+	.section-caret {
+
+		a {
+			color: $blackColor;
+
+			&:hover {
+				text-decoration: none;
+
+				color: $linkColor;
+			}
+		}
+
+		&.rotate-up {
+			-webkit-transition-duration: 0.5s;
+			-moz-transition-duration: 0.5s;
+			-o-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+
+		&.rotate-down {
+			-webkit-transition: 0.5s;
+			-moz-transition: 0.5s;
+			-o-transition: 0.5s;
+			transition: 0.5s;
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+		}
+	}
+
+	.section-item {
+		padding: {
+			top: 10px;
+		}
+	}
+
+	// Note: _add-item.scss piggybacks on the styles below when the create item
+	// component is being displayed in the "full" create page
+	.section-content {
+		&.ng-hide {
+			max-height: 0;
+		}
+
+		.create-item-field,
+		.managed-item-field,
+		.create-item-field input,
+		.managed-item-field input,
+		.create-item-field textarea,
+		.managed-item-field textarea,
+		.managed-item-field select,
+		.managed-item-field p {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		// Do not override semantic's UI widget styling
+		.create-item-field input.search {
+			width: default;
+			margin-top: inherit;
+		}
+
+		.create-item-field,
+		.managed-item-field {
+
+			.datepicker {
+				position: static;
+
+				width: 277px; // This width value makes the datepicker cover the width same as the effectivity field on top of it
+			}
+
+			input[type='text'] {
+				margin: 0;
+			}
+
+			input[type='radio'],
+			input[type='checkbox'] {
+				width: auto;
+			}
+
+			.field-radio-item {
+				display: inline-block;
+				margin: 0 0 10px 21px;
+				&:first-of-type {
+					margin: 0;
+				}
+			}
+
+			// Only apply to field labels (e.g. don't want to
+			// apply on radioField which has a 'label')
+			> label {
+				font-weight: 600;
+			}
+
+			// TODO Remove when all picklists are supported
+			.partially-supported {
+				.md.md-info {
+					display: inline-block;
+
+					color: red;
+				}
+			}
+
+			.input-group,
+			datepicker {
+				position: relative;
+
+				.btn-group,
+				.choose-date {
+					display: none;
+				}
+
+				ul {
+					position: absolute;
+
+					li {
+						list-style: none;
+
+						background: $lightGrayColor;
+					}
+				}
+
+				.pull-right {
+					width: 18px;
+					height: 12px;
+
+					background: url('../images/Right_Arrow.png') no-repeat;
+				}
+
+				.pull-left {
+					width: 18px;
+					height: 12px;
+					margin-left: 8px;
+
+					background: url('../images/Left_Arrow.png') no-repeat;
+				}
+			}
+		}
+
+		.create-item-field.invalid,
+		.managed-item-field.invalid {
+			.label-required,
+			label {
+				color: $errorColor;
+			}
+
+			input,
+			textarea,
+			.ui.fluid.dropdown {
+				border-width: 1px;
+				border-style: solid;
+				border-color: $errorColor;
+			}
+
+			.error-message {
+				overflow: hidden;
+
+				width: 100%;
+				height: 20px;
+				padding-top: 4px;
+
+				color: $errorColor;
+
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+
+// Create Item: Select Option
+//
+// Styles for the options in the dropdown.
+//
+// Markup:
+// <md-option class="select-workspace-option"></md-option>
+//
+// .select-workspace-option .md-text - Set to PLM font style
+//
+// Styleguide 31.2.10.1
+.select-option {
+
+	.md-text {
+		font-family: 'Open Sans';
+		line-height: 1.4em;
+	}
+}
+
+// Create Item: Footer Save Button
+//
+// Styles for the save button in the footer of the dialog.
+//
+// Markup:
+// <md-button class="create-item-save md-default-theme"></md-button>
+//
+// .create-item-save - Sets padding and border radius
+//
+// Styleguide 31.2.11.1
+.create-item-save.md-button {
+	padding: {
+		right: 15px;
+		left: 15px;
+	}
+}
+
+// Create Item: Footer Save Caret
+//
+// Styles for the save caret in the footer of the dialog.
+//
+// Markup:
+// <md-button class="create-item-save-caret md-default-theme"></md-button>
+//
+// .create-item-save-caret - Sets margin, padding and line-height
+//
+// Styleguide 31.2.12.1
+.create-item-save-caret.md-button {
+	margin-left: -8px;
+	padding: {
+		right: 0;
+		left: 0;
+	}
+
+	md-select {
+		margin: 0;
+	}
+
+	.md-select-value {
+		height: 34px; // same as md-button, to vertically center it within
+		min-width: unset;
+
+		.md-select-icon {
+			margin-right: 8px;
+			width: unset;
+
+			// stylelint-disable selector-pseudo-element-colon-notation
+			&::after {
+				color: $whiteColor;
+				font-size: 0.8em;
+				top: -2px; // override default to center it
+			}
+		}
+	}
+}
+
+// Managed Item: Form
+//
+// Styles that are specific for managed item view.
+//
+// Markup:
+// <section class="managed-item-form">
+// 	<form role="form" name="managedForm"></form>
+// </section>
+//
+// .managed-item-form - Sets the height and field styles
+//
+// Styleguide 31.2.13.1
+.managed-item-form {
+
+	.section-header {
+		padding-top: 10px;
+	}
+
+	.section-content {
+		max-height: 500px;
+	}
+}

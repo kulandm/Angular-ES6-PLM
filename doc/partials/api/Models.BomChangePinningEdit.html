@@ -1,0 +1,50 @@
+<h1><code ng:non-bindable="">BomChangePinningEdit</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomchangepinningedit-page"><p>A change that edit the pinning of an item
+Either
+    this.revisionField and this.currentRevision
+or
+    this.targetItem
+must be defined for the change to be used</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bomchangepinningedit-constructor-page"><p>Initializes the edit</p>
+</div></div>
+</li>
+<li><h3 id="methods_isrevertingchange">isRevertingChange()</h3>
+<div class="isrevertingchange"><div class="models-bomchangepinningedit-isrevertingchange-page"><p>Determines if the change is a reverting change
+If the pinning has changed, it is not reverting
+if the revision field is provided,
+    and the current revision has changed from the original revision
+    it is not reverting
+otherwise, it is reverting</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_currentrevision">currentRevision</h3>
+<div class="currentrevision"><div class="models-bomchangepinningedit-currentrevision-page"><p>The currently selected revision
+Has the property &#39;title&#39;, which uniquely identifies the revision
+  and &#39;version&#39;, which contains all the revision&#39;s information</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisionfield">revisionField</h3>
+<div class="revisionfield"><div class="models-bomchangepinningedit-revisionfield-page"><p>The field corresponding to the revision</p>
+</div></div>
+</li>
+<li><h3 id="properties_targetitem">targetItem</h3>
+<div class="targetitem"><div class="models-bomchangepinningedit-targetitem-page"><p>The item which should be pinned
+This is ignored if revisionField and currentRevision have been provided
+    since those allow us to determine the isRevertingChange state of the selected revision,
+instead of just relying on checking if the pinning changed or not</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

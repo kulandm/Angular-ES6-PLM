@@ -1,0 +1,746 @@
+// stylelint-disable selector-pseudo-element-colon-notation
+// 
+// Tabular Data Widget
+//
+// Styles for the tabular data widget directive.
+//
+.affected-item-table-container {
+
+	table.table-condensed.tabular-data-widget {
+		table-layout: auto;
+	}
+}
+
+
+// Tabular Data Widget
+//
+// Add styles to the tabular data widget.
+//
+// Markup:
+// <div><table class="table table-striped table-condensed tabular-data-widget">
+// 	<thead>
+// 		<tr>
+// 			<th>First Column Header</th>
+// 			<th>Second Column Header</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<td>First row first column</td>
+// 			<td>First row second column</td>
+// 		</tr>
+// 		<tr>
+// 			<td>Second row first column</td>
+// 			<td>Second row second column</td>
+// 		</tr>
+// 		<tr>
+// 			<td>Third row first column</td>
+// 			<td>Third row second column</td>
+// 		</tr>
+// 	</tbody>
+// </table></div>
+//
+// .tabular-data-widget -
+//
+// Styleguide 29.1
+.tabular-data-widget {
+	width: 100%;
+	margin-bottom: 0;
+
+	table-layout: fixed;
+
+	th {
+		@extend %tdwRemoveLeftBorder;
+
+		font: {
+			size: 14px;
+			weight: 600;
+		}
+
+		padding: $tdwCellPadding; // Overrides Bootstrap's default
+
+		text-align: left;
+		white-space: nowrap;
+
+		border: {
+			top: 0;
+			right: 1px solid $tdwHeaderCellBorderColor;
+			bottom: 0;
+			left: 0;
+		}
+
+		a {
+			color: $tdwHeaderLinkColor;
+		}
+
+		span[table-header-cell-sort] {
+			display: block;
+
+			cursor: pointer;
+
+			span {
+				display: block;
+
+				// For icons in header cell
+				span {
+					display: inline-block;
+				}
+
+				&.sort-asc::before {
+					@extend %a360FontDefinition;
+
+					line-height: 19px;
+
+					float: right;
+
+					content: '\e110';
+
+					color: $tdwHeaderLinkColor;
+				}
+
+				&.sort-desc::before {
+					@extend %a360FontDefinition;
+
+					line-height: 19px;
+
+					float: right;
+
+					content: '\e116';
+
+					color: $tdwHeaderLinkColor;
+				}
+			}
+		}
+	}
+	th:last-child {
+		border-right: none;
+	}
+
+	tbody {
+
+		tr {
+
+			&.dirty {
+
+				td {
+					border-top: 1px solid $cellEditHighlightColor;
+					border-bottom: 1px solid $cellEditHighlightColor;
+				}
+				td:first-child {
+					border-left: 1px solid $cellEditHighlightColor;
+				}
+				td:last-child {
+					border-right: 1px solid $cellEditHighlightColor;
+				}
+			}
+
+			&:nth-child(odd) {
+
+				td {
+					background-color: $tdwCellEvenBackgroundColor;
+				}
+			}
+
+			&:hover {
+				background-color: $tdwRowHoverColor;
+
+				td {
+					background-color: transparent;
+				}
+			}
+
+			td {
+				@extend %tdwRemoveLeftBorder;
+				// color: $tdwCellTextColor;
+
+				font-size: 14px;
+
+				padding: $tdwCellPadding; // Overrides Bootstrap's default
+
+				border: {
+					top: 0;
+					right: 1px solid $tdwCellBorderColor;
+					//bottom: 1px solid $tdwCellBorderColor;
+					left: 0;
+				}
+
+				&.error {
+					border: 1px solid $errorColor;
+				}
+
+				&:last-child {
+					border: none;
+				}
+
+				a,
+				> span,
+				button {
+					display: inline-block;
+					overflow: hidden;
+
+					width: 100%;
+
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					word-wrap: break-word;
+				}
+
+				// Empty state (no results)
+				&.empty-state {
+					font-size: 14px;
+
+					text-align: center;
+
+					background-color: $tdwEmptyStateBackgroundColor; // Overrides the nth-child
+				}
+
+				.field-container {
+					position: relative;
+
+					.field-indicator {
+						@include set-width-height(0, 0);
+
+						position: absolute;
+						top: -8px;
+						right: -8px;
+
+						border: 8px solid transparent;
+
+						&.dirty {
+							border-color: $dirtyColor $dirtyColor transparent transparent;
+						}
+
+						&.error {
+							border-color: $errorColor $errorColor transparent transparent;
+						}
+					}
+
+					.field-action-btn,
+					.field-action-btn-edit {
+						position: absolute;
+						top: 5px;
+						right: 5px;
+
+						display: none;
+
+						opacity: 0.3;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+					.field-action-btn-edit {
+						top: -5px;
+						right: -5px;
+
+						&.linked-btn-edit,
+						&.linked-btn-revert {
+							top: 4px;
+							right: -7px;
+
+							width: 22px;
+							height: 22px;
+						}
+
+						&.linked-btn-revert {
+							right: 18px;
+						}
+					}
+
+					.fieldWrapper {
+						margin: -10px;
+
+						div {
+							padding: 10px;
+						}
+						&.dirty {
+							box-shadow: $tdwBoxShadow;
+						}
+						&.error {
+							box-shadow: 0 0 1px 1px $errorColor;
+						}
+
+						.field-editable {
+							display: inline;
+
+							border-bottom: 1px dashed $linkColor;
+						}
+
+						.datepicker-wrapper {
+
+							p.datepicker {
+								width: 100%;
+								padding-right: 32px;
+							}
+						}
+
+						input,
+						select,
+						textarea {
+							width: 100%;
+
+							border: 0;
+							&:focus {
+								box-shadow: 0 0 0 0 transparent;
+							}
+						}
+					}
+				}
+
+				&:hover {
+
+					.field-container {
+
+						.field-action-btn,
+						.field-action-btn-edit {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Tabular Data Widget Button
+	//
+	// General button styles in tabular data widget.
+	//
+	// Markup:
+	// <div><table class="table table-striped table-condensed tabular-data-widget">
+	// 	<thead>
+	// 		<tr>
+	// 			<th>Type</th>
+	// 			<th>Button</th>
+	// 		</tr>
+	// 	</thead>
+	// 	<tbody>
+	// 		<tr>
+	// 			<td>Pin me!</td>
+	// 			<td>
+	// 				<div><button class="btn btn-tdw">
+	// 					<span class="icon-a360-pin"></span>
+	// 				</button></div>
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<td>Tweet me!</td>
+	// 			<td>
+	// 				<div><button class="btn btn-tdw">
+	// 					<span class="icon-a360-twitter"></span>
+	// 				</button></div>
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<td>Edit me!</td>
+	// 			<td>
+	// 				<div><button class="btn btn-tdw">
+	// 					<span class="icon-a360-edit"></span>
+	// 				</button></div>
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<td>Share me!</td>
+	// 			<td>
+	// 				<div><button class="btn btn-tdw">
+	// 					<span class="icon-a360-share"></span>
+	// 				</button></div>
+	// 			</td>
+	// 		</tr>
+	// 	</tbody>
+	// </table></div>
+	//
+	// .btn-tdw - Has a width of `24px`
+	//
+	// Styleguide 29.2
+	.btn-tdw {
+		@extend %removeOutline;
+
+		font-size: 18px;
+
+		width: 24px;
+		padding: 0;
+
+		border: {
+			color: $tdwBtnBorderColor;
+
+			radius: 4px;
+		}
+		background-color: $tdwBtnBackgroundColor;
+
+		&:hover {
+			border-color: $tdwBtnHoverBorderColor;
+			background-color: $tdwBtnHoverBackgroundColor;
+		}
+	}
+}
+
+
+// Tabular Data Widget
+//
+// Styles for the tabular data widget directive.
+//
+// Styleguide 29
+
+// Tabular Data Widget
+//
+// Add styles to the tabular data widget.
+//
+// Markup:
+// <div><table class="table table-striped table-condensed tabular-data-widget">
+// 	<thead>
+// 		<tr>
+// 			<th>First Column Header</th>
+// 			<th>Second Column Header</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<td>First row first column</td>
+// 			<td>First row second column</td>
+// 		</tr>
+// 		<tr>
+// 			<td>Second row first column</td>
+// 			<td>Second row second column</td>
+// 		</tr>
+// 		<tr>
+// 			<td>Third row first column</td>
+// 			<td>Third row second column</td>
+// 		</tr>
+// 	</tbody>
+// </table></div>
+//
+// .tabular-data-widget -
+//
+// Styleguide 29.1
+// .tabular-data-widget {
+// 	width: 100%; // TWEAK FOR BOOTSTRAP
+// 	margin-bottom: 0;
+
+// 	table-layout: fixed;
+
+// 	th {
+// 		@extend %tdwRemoveLeftBorder;
+
+// 		font: {
+// 			size: 14px;
+// 			weight: 600;
+// 		}
+
+// 		padding: $tdwHeaderCellPadding; // Overrides Bootstrap's default
+
+// 		white-space: nowrap;
+
+// 		border: {
+// 			bottom: solid 1px $tdwHeaderCellBorderColor;
+// 			left: 0;
+// 			top: 0;
+// 			right: 0;
+// 		}
+
+// 		a {
+// 			color: $tdwHeaderLinkColor;
+// 		}
+
+// 		span[table-header-cell-sort] {
+// 			display: block;
+
+// 			cursor: pointer;
+
+// 			span {
+// 				display: block;
+
+// 				// For icons in header cell
+// 				span {
+// 					display: inline-block;
+// 				}
+
+// 				&.sort-asc:after {
+// 					@extend %a360FontDefinition;
+
+// 					line-height: 19px;
+
+// 					float: right;
+
+// 					content: '\e110';
+
+// 					color: $tdwHeaderLinkColor;
+// 				}
+
+// 				&.sort-desc:after {
+// 					@extend %a360FontDefinition;
+
+// 					line-height: 19px;
+
+// 					float: right;
+
+// 					content: '\e116';
+
+// 					color: $tdwHeaderLinkColor;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	tbody {
+
+// 		tr {
+
+// 			&.dirty {
+
+// 				td {
+// 					border-top: 1px solid $cellEditHighlightColor;
+// 					border-bottom: 1px solid $cellEditHighlightColor;
+// 				}
+
+// 				td:first-child {
+// 					border-left: 1px solid $cellEditHighlightColor;
+// 				}
+
+// 				td:last-child {
+// 					border-right: 1px solid $cellEditHighlightColor;
+// 				}
+// 			}
+
+// 			&:nth-child(odd) {
+
+// 				td {
+// 					background-color: $tdwCellOddBackgroundColor;
+// 				}
+// 			}
+
+// 			&:nth-child(even) {
+
+// 				td {
+// 					background-color: $tdwCellEvenBackgroundColor;
+// 				}
+// 			}
+
+// 			&:hover {
+// 				background-color: $tdwRowHoverColor;
+
+// 				td {
+// 					background-color: transparent;
+// 				}
+// 			}
+
+// 			td {
+// 				@extend %tdwRemoveLeftBorder;
+// 				// color: $tdwCellTextColor;
+
+// 				font-size: 14px;
+
+// 				padding: $tdwCellPadding;
+
+// 				border: {
+// 					top: 0;
+// 					bottom: 1px solid $tdwCellBorderColor;
+// 					left: 0;
+// 					right: 0;
+// 				}
+
+// 				&.error {
+// 					border: 1px solid $errorColor;
+// 				}
+
+// 				a, > span,
+// 				button {
+// 					display: inline-block;
+// 					overflow: hidden;
+
+// 					width: 100%;
+
+// 					padding: 9px 0;
+
+// 					white-space: nowrap;
+// 					text-overflow: ellipsis;
+// 					word-wrap: break-word;
+// 				}
+
+// 				// Empty state (no results)
+// 				&.empty-state {
+// 					font-size: 14px;
+
+// 					text-align: center;
+
+// 					background-color: $tdwEmptyStateBackgroundColor; // Overrides the nth-child
+// 				}
+
+// 				.field-container {
+// 					position: relative;
+
+// 					.field-indicator {
+// 						@include set-width-height(0, 0);
+
+// 						position: absolute;
+// 						top: -8px;
+// 						right: -8px;
+
+// 						border: 8px solid transparent;
+
+// 						&.dirty {
+// 							border-color: $dirtyColor $dirtyColor transparent transparent;
+// 						}
+
+// 						&.error {
+// 							border-color: $errorColor $errorColor transparent transparent;
+// 						}
+// 					}
+
+// 					.field-action-btn,
+// 					.field-action-btn-edit {
+// 						position: absolute;
+// 						top: 5px;
+// 						right: 5px;
+
+// 						display: none;
+
+// 						opacity: .3;
+
+// 						&:hover {
+// 							opacity: 1.0;
+// 						}
+// 					}
+// 					.field-action-btn-edit {
+// 						top: -5px;
+// 						right: -5px;
+
+// 						&.linked-btn-edit,
+// 						&.linked-btn-revert {
+// 							top: 4px;
+// 							right: -7px;
+
+// 							width: 22px;
+// 							height: 22px;
+// 						}
+
+// 						&.linked-btn-revert {
+// 							right: 18px;
+// 						}
+// 					}
+
+// 					.fieldWrapper {
+// 						margin: -10px;
+
+// 						div {
+// 							padding: 10px;
+// 						}
+// 						&.dirty {
+// 							box-shadow: $tdwBoxShadow;
+// 						}
+// 						&.error {
+// 							box-shadow: 0 0 1px 1px $errorColor;
+// 						}
+
+// 						.field-editable {
+// 							display: inline;
+
+// 							border-bottom: 1px dashed $linkColor;
+// 						}
+
+// 						.datepicker-wrapper {
+
+// 							p.datepicker {
+// 								width: 100%;
+// 								padding-right: 32px;
+// 							}
+// 						}
+
+// 						input,
+// 						select,
+// 						textarea {
+// 							width: 100%;
+
+// 							border: 0;
+// 							&:focus {
+// 								box-shadow: 0 0 0 0 transparent;
+// 							}
+// 						}
+// 					}
+// 				}
+
+// 				&:hover {
+
+// 					.field-container {
+
+// 						.field-action-btn,
+// 						.field-action-btn-edit {
+// 							display: block;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	// Tabular Data Widget Button
+// 	//
+// 	// General button styles in tabular data widget.
+// 	//
+// 	// Markup:
+// 	// <div><table class="table table-striped table-condensed tabular-data-widget">
+// 	// 	<thead>
+// 	// 		<tr>
+// 	// 			<th>Type</th>
+// 	// 			<th>Button</th>
+// 	// 		</tr>
+// 	// 	</thead>
+// 	// 	<tbody>
+// 	// 		<tr>
+// 	// 			<td>Pin me!</td>
+// 	// 			<td>
+// 	// 				<div><button class="btn btn-tdw">
+// 	// 					<span class="icon-a360-pin"></span>
+// 	// 				</button></div>
+// 	// 			</td>
+// 	// 		</tr>
+// 	// 		<tr>
+// 	// 			<td>Tweet me!</td>
+// 	// 			<td>
+// 	// 				<div><button class="btn btn-tdw">
+// 	// 					<span class="icon-a360-twitter"></span>
+// 	// 				</button></div>
+// 	// 			</td>
+// 	// 		</tr>
+// 	// 		<tr>
+// 	// 			<td>Edit me!</td>
+// 	// 			<td>
+// 	// 				<div><button class="btn btn-tdw">
+// 	// 					<span class="icon-a360-edit"></span>
+// 	// 				</button></div>
+// 	// 			</td>
+// 	// 		</tr>
+// 	// 		<tr>
+// 	// 			<td>Share me!</td>
+// 	// 			<td>
+// 	// 				<div><button class="btn btn-tdw">
+// 	// 					<span class="icon-a360-share"></span>
+// 	// 				</button></div>
+// 	// 			</td>
+// 	// 		</tr>
+// 	// 	</tbody>
+// 	// </table></div>
+// 	//
+// 	// .btn-tdw - Has a width of `24px`
+// 	//
+// 	// Styleguide 29.2
+// 	.btn-tdw {
+// 		@extend %removeOutline;
+
+// 		font-size: 18px;
+
+// 		width: 24px;
+// 		padding: 0;
+
+// 		border: {
+// 			color: $tdwBtnBorderColor;
+
+// 			radius: 4px;
+// 		}
+// 		background-color: $tdwBtnBackgroundColor;
+
+// 		&:hover {
+// 			border-color: $tdwBtnHoverBorderColor;
+// 			background-color: $tdwBtnHoverBackgroundColor;
+// 		}
+// 	}
+// }

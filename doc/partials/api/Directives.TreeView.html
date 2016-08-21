@@ -1,0 +1,43 @@
+<h1><code ng:non-bindable="">TreeView</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-treeview-page"><p>The basic implementation of tree view. It supports lazy loading of child nodes.</p>
+<h6 id="description_--rootnodes-an-array-of-root-nodes-node-object-will-have-the-following-properties">- rootNodes: An array of root nodes (one or more). Node object will have the following properties</h6>
+<p>[
+     {
+         isExpandable : true, if node has children. Note: This property will control whether a node will have an expander control with it.
+         children : the list of child nodes of the node.
+         collapsed : true, if node is currently in collapsed state.
+         valueRenderer : the template responsible for rendering node value.
+     },
+     ... // other nodes
+];</p>
+<h6 id="description_--title-string,-the-header-title-of-the-tree-view-this-is-optional">- title: String, the header title of the tree view. This is optional.</h6>
+<h6 id="description_--displayfield-string,-the-field-that-will-be-displayed-in-the-tree-view">- displayField: String, the field that will be displayed in the tree view.</h6>
+<h6 id="description_--togglenode-the-function-thats-going-to-be-called-on-parent-scope-when-node-collapsed-state-changes">- toggleNode: The function that&#39;s going to be called on parent scope when node collapsed state changes.</h6>
+<h6 id="description_--treesummary-an-optional-summary-that-can-be-displayed-at-the-end-of-the-tree-view">- treeSummary: An optional summary that can be displayed at the end of the tree view.</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;tree-view&gt;
+&lt;/tree-view&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_toggle">toggle(node)</h3>
+<div class="toggle"><div class="directives-treeview-toggle-page"><p>calls <a href="api/scope#togglenode">scope#toggleNode</a> method.</p>
+</div><h5 id="methods_toggle_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>node</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="directives-treeview-toggle-page"><p>Node to be toggled.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-treeview-page"><p><doc:example></p>
+<p><doc:source>
+    <tree-view root-nodes='Array' title='String' displayField='String' toggle-node='Function' />
+</doc:source>
+</doc.example></p>
+</div></div>
+</div>

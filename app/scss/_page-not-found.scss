@@ -1,0 +1,32 @@
+// Page Not Found
+//
+// Styles for the not-found page.
+//
+// Styleguide 22
+
+// Page Not Found
+//
+// Styles for the page not found content.
+//
+// Markup:
+// <span class="notfound-container" layout="column" layout-fill>
+//		<md-content layout-fill id="not-found" >
+//			...
+//		</md-content>
+//	</span>
+//
+// .not-found-container - Wrapper for md-content
+//
+// Styleguide 22.1
+.not-found-container {
+	
+	#not-found {
+		@extend %raisedContainer;
+		
+		width: 90%;
+		margin: 30px auto;
+		padding: 30px;
+
+		color: $pageNotFoundContentColor;
+	}
+}

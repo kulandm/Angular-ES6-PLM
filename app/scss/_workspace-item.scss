@@ -1,0 +1,336 @@
+// Item Wrapper
+//
+// Styles for overall wrapper for a workspace item
+//
+// Markup:
+// <span layout="column" layout-fill flex role="item-wrapper" id="item-wrapper">
+//
+// 	<md-toolbar id="item-tabs">
+// 		<md-tabs>
+// 			<md-tab></md-tab>
+// 		</md-tabs>
+// 	</md-toolbar>
+//
+// 	<md-content role="item-content" id="item-content">
+//
+// 		<div role="item-main" id="item-main"></div>
+// 		<div role="item-summary" id="item-summary"></div>
+//
+// 	</md-content>
+//
+// </span>
+//
+// Styleguide 42
+#item-wrapper {
+	min-height: 100%;
+
+	align-items: stretch;
+
+	// The item toolbar (md-toolbar)
+	#item-tabs-wrapper,
+	#itemviewer-item-tabs-wrapper {
+		z-index: 9;
+
+		height: $itemToolbarHeight;
+		min-height: $itemToolbarHeight;
+		max-height: $itemToolbarHeight;
+		padding: 0;
+
+		border: {
+			top: $itemToolbarBorder;
+			right: none 0 transparent;
+			bottom: $itemToolbarBorder;
+			left: none 0 transparent;
+		}
+		background-color: $itemToolbarBackgroundColor;
+		box-shadow: none;
+
+		// The item tabs (md-tabs)
+		#item-tabs {
+			height: $itemToolbarHeight;
+			min-height: $itemToolbarHeight;
+			max-height: $itemToolbarHeight;
+
+			// border: {
+			// 	top: $itemToolbarBorder;
+			// 	right: none 0 transparent;
+			// 	bottom: $itemToolbarBorder;
+			// 	left: none 0 transparent;
+			// }
+
+			// Overwrites the styles for the tab bar
+			.md-header {
+				background-color: $itemToolbarBackgroundColor;
+
+				// Small tweak to the layout
+				.md-header-items-container {
+					right: 32px;
+					// left: 25px;
+					// margin-left: -7px;
+					left: 32px;
+
+					// .md-header-items {
+					// 	margin: 0 0 0 25px;
+					// }
+				}
+
+				// Disable pagination (WIP)
+				// &.md-paginating {
+				// 	.md-header-items-container {
+				// 		left: 20px;
+				// 		right: 20px;
+				// 	}
+				// }
+
+				// .md-header-items-container {
+				// 	.md-header-items {
+				// 		width: 100% !important; // Needs to override to avoid flakyness when resizing the browser
+				// 	}
+				// }
+
+				// .md-paginator {
+				// 	display: none;
+				// }
+				//./Disable pagination (WIP)
+
+				// Overwrites prev pagination button
+				.md-prev {
+					@extend %materialDesignFontDefinition;
+
+					font-size: 1.4em;
+
+					color: #000000;
+					background-image: transparent;
+
+					&:before {
+						content: '\f1b5';
+					}
+
+					// Hides md-icon, since we're using icon font
+					md-icon {
+						display: none;
+					}
+				}
+
+				// Overwrites next pagination button
+				.md-next {
+					@extend %materialDesignFontDefinition;
+
+					font-size: 1.4em;
+
+					color: #000000;
+					background-image: transparent;
+
+					&:before {
+						content: '\f1b6';
+					}
+
+					// Hides md-icon, since we're using icon font
+					md-icon {
+						display: none;
+					}
+				}
+
+				// Overwrites the color of the bar that shows which item has been selected in the tab
+				md-tabs-ink-bar {
+					top: 35px;
+
+					height: 5px;
+
+					color: $itemToolbarSelectedTabColor;
+					background-color: $itemToolbarSelectedTabColor;
+				}
+			}
+
+			.item-tabs-tab {
+				font-weight: normal;
+
+				padding: 0;
+
+				color: $itemToolbarTextColor;
+				// margin-left: 0 !important; // Disable pagination (WIP)
+				// flex: 0 1 auto; // Disable pagination (WIP)
+				// text-overflow: ellipsis; // Disable pagination (WIP)
+				// white-space: nowrap; // Disable pagination (WIP)
+				// min-width: 70px; // Disable pagination (WIP)
+
+				// Overwrites for the tab href, to allow for right-clicking
+				md-tab-label {
+
+					a {
+						position: relative;
+
+						display: inline-block;
+
+						width: 100%;
+						padding: 20px 32px;
+
+						text-decoration: none;
+
+						color: $itemToolbarTextColor;
+					}
+				}
+
+				&.active {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	// The item content holder (md-content)
+	#item-content-wrapper,
+	#item-viewer-wrapper {
+		display: flex;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		flex: 1 1 100%;
+		flex-wrap: nowrap;
+		align-items: stretch;
+
+		// The internal wrapper, containing the three vertical panels (md-content)
+		#item-internal-wrapper {
+			-ms-flex: 1 1 auto; // IE11 being silly - https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview
+			flex: 1 1 auto;
+
+			// The main content of the tab/view (middle)
+			#item-main {
+				overflow: visible;
+
+				width: 100%;
+				max-width: 100%;
+
+				background-color: $itemContentMainBackgroundColor;
+
+				align-items: stretch;
+				flex: 1 1 0;
+
+				&.has-table-data {
+					overflow-y: hidden; // otherwise the scrollbar is screwed up
+				}
+			}
+		}
+	}
+}
+
+.flyout-window {
+
+	label {
+		display: block;
+
+		width: 100%;
+		margin: 10px 0;
+
+		text-indent: 4px;
+	}
+
+	.act-as-container {
+
+		select {
+			width: 100%;
+			margin: 0 0 10px;
+			padding: 7px;
+
+			border: 1px solid $lightGrayColor;
+			border-radius: 4px;
+		}
+	}
+
+	.workflow-flyout {
+		max-width: 450px;
+
+		border: 1px solid $workflowTransitionFlyoutBorderColor;
+		border-radius: 4px;
+		background-color: $workflowTransitionFlyoutBackgroundColor;
+		box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2);
+
+		textarea {
+			font-family: $defaultFont;
+
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			width: 100%;
+			height: 85px;
+
+			border: 1px solid $workflowTransitionFlyoutBorderColor;
+			border-radius: 4px;
+		}
+
+		.notification-toast {
+			position: relative;
+		}
+
+		.flyout-content .workflow-content {
+			overflow: visible;
+
+			max-height: 350px;
+
+			md-toolbar.error {
+				padding: 5px 0;
+
+				background-color: $notificationToastError;
+
+				.md-toolbar-tools.md-warn.md-hue-2 {
+					font: inherit;
+
+					color: #FFFFFF;
+					background-color: transparent;
+				}
+			}
+
+			form {
+				padding: 10px;
+
+				.error {
+					line-height: 1.4em;
+
+					min-height: 0;
+					margin-bottom: 5px;
+					padding: 12px;
+
+					text-align: center;
+				}
+
+				.server-error {
+					padding-top: 3px;
+
+					text-align: left;
+				}
+
+				md-input-container {
+
+					&.field {
+						padding-bottom: 10px;
+
+						textarea {
+							font-family: $defaultFont;
+						}
+
+						.md-char-counter {
+							display: none;
+						}
+					}
+
+					&.md-default-theme:not(.md-input-invalid).md-input-focused {
+
+						.md-input {
+							border-color: $buttonPrimaryBackgroundColor;
+						}
+
+						label {
+							color: $buttonPrimaryBackgroundColor;
+						}
+					}
+				}
+
+				.footer {
+					margin-top: 10px;
+
+					text-align: right;
+				}
+			}
+		}
+	}
+}

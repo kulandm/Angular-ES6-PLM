@@ -1,0 +1,219 @@
+// Project Management
+//
+// Styles for the project management tab.
+//
+// Styleguide 45
+
+// The cell in the footer which serves as its title. Currently has 'Project
+// Summary' as its value
+.project-item-expander {
+	display: inline-block;
+
+	min-width: 15px; // actual width comes from inline style
+
+	text-align: right;
+	vertical-align: text-bottom;
+
+	a:link {
+		font-size: 18px;
+
+		color: $uiGridTextColor;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+.project-summary-title {
+	text-transform: uppercase;
+}
+
+.project-item-status {
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	bottom: 10px;
+	left: 15px; // column header separator takes up space
+
+	padding: 0 5px;
+
+	color: $whiteColor;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.project-item-status-good {
+	background-color: $itemStatusGoodColor;
+}
+
+.project-item-status-warning {
+	background-color: $itemStatusWarningColor;
+
+	&.project-item-type-wfm {
+		background-color: $itemStatusWfmWarningColor;
+	}
+}
+
+.project-item-type-wfm-default {
+
+	.gantt-task-background {
+		border: 6px solid transparent;
+		position: relative;
+		border-top: 0;
+		border-bottom: 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			right: -6px;
+			width: 0;
+			height: 0;
+			border: 7px solid transparent;
+			border-bottom-color: $itemStatusWfmDefaultColor;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			right: -6px;
+			top: 14px;
+			width: 0;
+			height: 0;
+			border: 7px solid transparent;
+			border-top-color: $itemStatusWfmDefaultColor;
+		}
+	}
+}
+
+.project-item-status-critical {
+	background-color: $itemStatusCriticalColor;
+}
+
+.project-item-status-tinted-good .gantt-task-background {
+	background-color: lighten($itemStatusGoodColor, 30%);
+	height: 29px;
+}
+
+.project-item-status-tinted-warning {
+
+	&.project-item-type-wfm .gantt-task-background {
+		background-color: lighten($itemStatusWfmWarningColor, 30%);
+		height: 29px;
+	}
+
+	.gantt-task-background {
+		background-color: lighten($itemStatusWarningColor, 30%);
+		height: 29px;
+	}
+}
+
+.project-item-status-tinted-critical .gantt-task-background {
+	background-color: lighten($itemStatusCriticalColor, 30%);
+	height: 29px;
+}
+
+.project-item-type-wfm-tinted .gantt-task-background {
+	background-color: lighten($itemStatusWfmDefaultColor, 40%);
+	height: 29px;
+}
+
+.gantt-scale {
+	padding: 2px 10px;
+	margin: 0 30px 0;
+	float: right;
+	vertical-align: top;
+}
+
+.project-management {
+	.gantt-task-progress {
+		height: 29px;
+	}
+
+	.gantt-side {
+		min-width: 25%;
+		max-width: 90%;
+	}
+
+	.gantt-scrollable-header {
+		width: auto !important; // Need to overrite to make gantt chart to occupy entire screen if it has fewer columns
+
+		.gantt-header-columns {
+			min-width: 100%;
+		}
+	}
+
+	.ui-grid-cell-contents {
+		position: relative;
+	}
+
+	.ui-grid {
+		min-width: 1000px;
+		width: auto !important;
+
+		.ui-grid-render-container-body .ui-grid-viewport {
+			overflow: hidden !important;
+		}
+	}
+
+	.gantt-row-height {
+		height: 40px;
+		border-bottom: solid 1px #C2CCD2;
+		background-color: $whiteColor;
+	}
+
+	.gantt-side-content {
+		overflow-x: scroll;
+		pointer-events: all;
+		line-height: 0;
+
+		div.side-element {
+			width: 100%;
+			line-height: normal;
+		}
+	}
+
+	.gantt-current-date-line {
+		z-index: 2;
+		border: 1px dashed $blueColor;
+	}
+
+	.ui-grid-render-container .ui-grid-header .ui-grid-header-cell-row .ui-grid-header-cell .ui-grid-cell-contents {
+		padding-top: 8px;
+	}
+
+	.gantt-task {
+		z-index: 1; // so that it overlays the predecessor line
+	}
+
+	.gantt-scrollable {
+		overflow-x: scroll;
+		padding-bottom: 44px;
+		background-color: $secondaryBackgroundColor;
+		width: auto !important; // Need to overrite to make gantt chart to occupy entire screen if it has fewer columns
+
+		.gantt-body {
+			min-width: 100%;
+		}
+	}
+
+	.gantt-row-even > .gantt-row-background {
+		background-color: $whiteColor;
+	}
+
+	.tabledata-norows { // TODO: this css will be removed when `no-data` text is part of table-data
+		.ui-grid {
+			height: 0 !important; // Need to overrite to remove grid height when browser resize.
+		}
+		.ui-grid-header-cell {
+			vertical-align: middle;
+		}
+	}
+}
+
+.project-management {
+	& > div {
+		width: 100%;
+	}
+}

@@ -1,0 +1,16 @@
+<div class="tree-view">
+    <script type="text/ng-template" id="tree-item-renderer">
+        <span ng-if="node.isExpandable === true" class="icon" ng-click="toggle(node)" ng-class="node.collapsed === true ? 'icon-RightArrow' : 'icon-BottomArrow'"></span>
+        <span ng-if="!node.valueRenderer" ng-bind-html="node[displayField]" title="{{node[displayField]}}"></span>
+        <span ng-if="node.valueRenderer" ng-repeat="obj in [node[displayField]]" ng-include="node.valueRenderer"></span>
+        <ul ng-if="node.collapsed === false" class="list-unstyled tree-view-nested-list">
+            <li ng-repeat="node in node.children" ng-include="'tree-item-renderer'"></li>
+        </ul>
+    </script>
+
+    <div class="tree-view-title">{{treeTitle}}</div>
+    <ul class="tree-view-list list-unstyled">
+        <li ng-repeat="node in rootNodes" ng-include="'tree-item-renderer'"></li>
+    </ul>
+    <div class="tree-view-summary" ng-if="treeSummary">{{treeSummary}}</div>
+</div>

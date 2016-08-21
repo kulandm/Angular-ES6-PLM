@@ -1,0 +1,61 @@
+@media print {
+
+	#wrap > div > #view {
+		position: static;
+
+		&.regular-page {
+			top: 0;
+		}
+
+		&.full-page {
+			top: 0;
+		}
+	}
+
+	// To remove dropdown border
+	select.form-control {
+		border: none;
+		outline: none;
+		// Set appearance to none takes care of
+		// removing dropdown arrow on Chrome and FF
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+
+		// To remove dropdown arrow on IE
+		&::-ms-expand {
+			display: none;
+		}
+	}
+
+	.collapse-section {
+		page-break-inside: avoid;
+	}
+
+	#footer {
+		position: static;
+
+		height: 40px;
+
+		border-top: 0;
+
+		// Hide the urls when print footer
+		a[href]:after {
+			content: none;
+		}
+	}
+
+	// Hide the double url for printing workspace item details
+	#workspace-item-details a[href]:after {
+		content: none;
+	}
+
+	// Ensure collapsed section is expanded when printing
+	.collapse {
+		display: block;
+
+		height: auto !important;
+	}
+}

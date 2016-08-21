@@ -1,0 +1,34 @@
+<h1><code ng:non-bindable="">BomBulkAttachmentListeners</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bombulkattachmentlisteners-page"><p>A class that registers the listeners for interacting with the
+BomBulkAttachment endpoint</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bombulkattachmentlisteners-constructor-page"><p>Registers the listeners</p>
+</div></div>
+</li>
+<li><h3 id="methods_registergetlistener">registerGetListener()</h3>
+<div class="registergetlistener"><div class="models-bombulkattachmentlisteners-registergetlistener-page"><p>Registers the get listener
+recieves &#39;BomBulkAttachment:(id):get&#39; (where (id) is anything),
+    with a link to get, and any needed parameters</p>
+</div><h5 id="methods_registergetlistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bombulkattachmentlisteners-registergetlistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_respondtogetlistener">respondToGetListener(`event`, `link`, `params`)</h3>
+<div class="respondtogetlistener"><div class="models-bombulkattachmentlisteners-respondtogetlistener-page"><p>response function for the get listener
+Requests that BomBulkAttachment fetch the provided link with the provided parameters
+Then sends &#39;bomBulkAttachment:(id):done&#39; (where (id) matches the id portion of event (i.e. &#39;bomBulkAttachment:(id):get&#39;))
+    with an instance of BomBulkAttachment</p>
+</div><h5 id="methods_respondtogetlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`event`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bombulkattachmentlisteners-respondtogetlistener-page"><p>the actual event that occured</p>
+</div></td></tr><tr><td>`link`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bombulkattachmentlisteners-respondtogetlistener-page"><p>a link to get the BomBulkAttachment</p>
+</div></td></tr><tr><td>`params`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bombulkattachmentlisteners-respondtogetlistener-page"><p>extra parameters for the get</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "name": "plm-edit-tracker",
+  "description": "PLM Edit Tracker",
+  "main": [
+    "dist/plm-edit-tracker.js"
+  ],
+  "authors": [
+    "Mitch Mikusek <mitch.mikusek@autodesk.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {},
+  "version": "1.0.2",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.2",
+    "commit": "4d1c1eb5a72a76615226504bf01dee4b42ca5eca"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-edit-tracker.git",
+  "_target": "v1.0.2",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-edit-tracker.git"
+}

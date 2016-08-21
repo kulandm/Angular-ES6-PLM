@@ -1,0 +1,204 @@
+<h1><code ng:non-bindable="">ViewDetailsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewdetailscontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}/{itemId}/itemDetails
+and /workspaceItems/{workspaceId}/{itemId}/itemDetails/edit.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_findsection">findSection(sectionLink)</h3>
+<div class="findsection"><div class="controllers-workspaceitem-viewdetailscontroller-findsection-page"><p>Finds the section by link</p>
+</div><h5 id="methods_findsection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>sectionLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-findsection-page"><p>The resouce link of the section (ex. /api/v3/workspaces/{id}/items/{id}/views/{id}/sections/{id})</p>
+</div></td></tr></tbody></table><h5 id="methods_findsection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-obejct">Obejct</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-findsection-page"><p>The object that holds the data of the target section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_findvalue">findValue(sectionLink, fieldId)</h3>
+<div class="findvalue"><div class="controllers-workspaceitem-viewdetailscontroller-findvalue-page"><p>Finds value of a supplied field in the item details payload</p>
+</div><h5 id="methods_findvalue_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>sectionLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-findvalue-page"><p>The resouce link of the section (ex. /api/v3/workspaces/{id}/items/{id}/views/{id}/sections/{id})</p>
+</div></td></tr><tr><td>fieldId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-findvalue-page"><p>The resource ID of the field (ex. /api/v3/workspaces/{id}/items/{id}/fields/{id})</p>
+</div></td></tr></tbody></table><h5 id="methods_findvalue_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-findvalue-page"><p>The value, or empty it case it didn&#39;t find the field in the item details payload</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfieldidfromurn">getFieldIdFromUrn(A)</h3>
+<div class="getfieldidfromurn"><div class="controllers-workspaceitem-viewdetailscontroller-getfieldidfromurn-page"><p>Extracts the field ID from the a given urn</p>
+</div><h5 id="methods_getfieldidfromurn_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>A</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getfieldidfromurn-page"><p>given URN</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_getparturn">getPartUrn(section)</h3>
+<div class="getparturn"><div class="controllers-workspaceitem-viewdetailscontroller-getparturn-page"><p>Access to section attributes so we can determine if it is a
+classificaiton section or not</p>
+</div><h5 id="methods_getparturn_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-section">Section</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getparturn-page"><p>The step section</p>
+</div></td></tr></tbody></table><h5 id="methods_getparturn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getparturn-page"><p>The urn asociated to a classification section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getvaluefrommatrixmetadatafields">getValueFromMatrixMetadataFields(A, An)</h3>
+<div class="getvaluefrommatrixmetadatafields"><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommatrixmetadatafields-page"><p>Searches a matrix metadata field related to a given field and assigns its value</p>
+</div><h5 id="methods_getvaluefrommatrixmetadatafields_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>A</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommatrixmetadatafields-page"><p>field ID</p>
+</div></td></tr><tr><td>An</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommatrixmetadatafields-page"><p>matrix of metadata fields</p>
+</div></td></tr></tbody></table><h5 id="methods_getvaluefrommatrixmetadatafields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommatrixmetadatafields-page"><p>The field value</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getvaluefrommetadatafields">getValueFromMetadataFields(A, An)</h3>
+<div class="getvaluefrommetadatafields"><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommetadatafields-page"><p>Searches the metadata field related to a given field and assigns its value</p>
+</div><h5 id="methods_getvaluefrommetadatafields_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>A</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommetadatafields-page"><p>field ID</p>
+</div></td></tr><tr><td>An</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommetadatafields-page"><p>array of metadata fields</p>
+</div></td></tr></tbody></table><h5 id="methods_getvaluefrommetadatafields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-getvaluefrommetadatafields-page"><p>The field value</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gotoedit">goToEdit()</h3>
+<div class="gotoedit"><div class="controllers-workspaceitem-viewdetailscontroller-gotoedit-page"><p>Triggering edit mode</p>
+</div></div>
+</li>
+<li><h3 id="methods_isclassificationsection">isClassificationSection(section)</h3>
+<div class="isclassificationsection"><div class="controllers-workspaceitem-viewdetailscontroller-isclassificationsection-page"><p>Determine if a section is or not of type classification</p>
+</div><h5 id="methods_isclassificationsection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-section">Section</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-isclassificationsection-page"><p>The step section</p>
+</div></td></tr></tbody></table><h5 id="methods_isclassificationsection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-isclassificationsection-page"><p>True if it is a classification section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_issectioneditable">isSectionEditable(sectionLink)</h3>
+<div class="issectioneditable"><div class="controllers-workspaceitem-viewdetailscontroller-issectioneditable-page"><p>Tests to see if section is editable</p>
+</div><h5 id="methods_issectioneditable_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>sectionLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-issectioneditable-page"><p>The link of the section</p>
+</div></td></tr></tbody></table><h5 id="methods_issectioneditable_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-issectioneditable-page"><p>True if the section is not locked</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewdetailscontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-isviewstate-page"><p>True if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parseownersdetails">parseOwnersDetails()</h3>
+<div class="parseownersdetails"><div class="controllers-workspaceitem-viewdetailscontroller-parseownersdetails-page"><p>parses the owner information and create scope model to use in view</p>
+</div></div>
+</li>
+<li><h3 id="methods_toggleownershipflyoutdisplay">toggleOwnershipFlyoutDisplay(validationRules)</h3>
+<div class="toggleownershipflyoutdisplay"><div class="controllers-workspaceitem-viewdetailscontroller-toggleownershipflyoutdisplay-page"><p>Toggles ownership panel displaying</p>
+</div><h5 id="methods_toggleownershipflyoutdisplay_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>validationRules</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-toggleownershipflyoutdisplay-page"><p>The object which contains the validation rules</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_toggleownershipflyoutdisplay">toggleOwnershipFlyoutDisplay(event, userId)</h3>
+<div class="toggleownershipflyoutdisplay"><div class="controllers-workspaceitem-viewdetailscontroller-toggleownershipflyoutdisplay-page"><p><code>private</code> Toggles ownership panel displaying</p>
+</div><h5 id="methods_toggleownershipflyoutdisplay_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-toggleownershipflyoutdisplay-page"><p>The triggerer of the flyout</p>
+</div></td></tr><tr><td>userId</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-toggleownershipflyoutdisplay-page"><p>The id of the user to retrieve info from</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_tooltipflyout">tooltipFlyout(event, displayName, description)</h3>
+<div class="tooltipflyout"><div class="controllers-workspaceitem-viewdetailscontroller-tooltipflyout-page"><p>Show tooltip if there is an item description.</p>
+</div><h5 id="methods_tooltipflyout_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-tooltipflyout-page"><p>The event object</p>
+</div></td></tr><tr><td>displayName</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-tooltipflyout-page"><p>The displayName of the item field</p>
+</div></td></tr><tr><td>description</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-tooltipflyout-page"><p>The description of the item field</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewdetailscontroller-triggercancel-page"><p>Triggered by clicking cancel button. NOTE: name has to be triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerchangeownerdialog">triggerChangeOwnerDialog()</h3>
+<div class="triggerchangeownerdialog"><div class="controllers-workspaceitem-viewdetailscontroller-triggerchangeownerdialog-page"><p>triggers the change owner dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerclassificationsave">triggerClassificationSave(rawFields)</h3>
+<div class="triggerclassificationsave"><div class="controllers-workspaceitem-viewdetailscontroller-triggerclassificationsave-page"><p>Triggered by clicking save button.</p>
+</div><h5 id="methods_triggerclassificationsave_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>rawFields</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewdetailscontroller-triggerclassificationsave-page"><p>Array of raw fields</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggereditadditionalownersdialog">triggerEditAdditionalOwnersDialog()</h3>
+<div class="triggereditadditionalownersdialog"><div class="controllers-workspaceitem-viewdetailscontroller-triggereditadditionalownersdialog-page"><p>triggers the edit additional owners dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewdetailscontroller-triggersave-page"><p>Triggered by clicking save button. NOTE: name has to be triggerSave.</p>
+</div></div>
+</li>
+<li><h3 id="methods_updatechanges">updateChanges()</h3>
+<div class="updatechanges"><div class="controllers-workspaceitem-viewdetailscontroller-updatechanges-page"><p>Called whenever a field (of any type) has been updated in the UI.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_itemobj">ItemObj</h3>
+<div class="itemobj"><div class="controllers-workspaceitem-viewdetailscontroller-itemobj-page"><p>Reference to hold the Item Data Model</p>
+</div></div>
+</li>
+<li><h3 id="properties_additionalgroup">additionalGroup</h3>
+<div class="additionalgroup"><div class="controllers-workspaceitem-viewdetailscontroller-additionalgroup-page"><p>The Constant for Additional Group.</p>
+</div></div>
+</li>
+<li><h3 id="properties_additionaluser">additionalUser</h3>
+<div class="additionaluser"><div class="controllers-workspaceitem-viewdetailscontroller-additionaluser-page"><p>The Constant for Additional user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_cached">cached</h3>
+<div class="cached"><div class="controllers-workspaceitem-viewdetailscontroller-cached-page"><p>Whether we must be use the cached data of the item or retrieve it again from the server.</p>
+</div></div>
+</li>
+<li><h3 id="properties_classificationstate">classificationState</h3>
+<div class="classificationstate"><div class="controllers-workspaceitem-viewdetailscontroller-classificationstate-page"><p>Holds the classification state</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateandhourformat">dateAndHourFormat</h3>
+<div class="dateandhourformat"><div class="controllers-workspaceitem-viewdetailscontroller-dateandhourformat-page"><p>Stores the date format, plus hour format</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewdetailscontroller-dateformat-page"><p>Stores the date format.</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewdetailscontroller-editpermission-page"><p>The permission to be set to control visibility of display button.</p>
+</div></div>
+</li>
+<li><h3 id="properties_issavingdata">isSavingData</h3>
+<div class="issavingdata"><div class="controllers-workspaceitem-viewdetailscontroller-issavingdata-page"><p>Set to true when saving data is underway, as to block form elements from editing while saving.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemdetailsdata">itemDetailsData</h3>
+<div class="itemdetailsdata"><div class="controllers-workspaceitem-viewdetailscontroller-itemdetailsdata-page"><p>Object containing data for this item, untouched, from the endpoint.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemdetailsfieldsdata">itemDetailsFieldsData</h3>
+<div class="itemdetailsfieldsdata"><div class="controllers-workspaceitem-viewdetailscontroller-itemdetailsfieldsdata-page"><p>The array that holds all the key/value pairs for each field of the item, including matrices.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewdetailscontroller-itemid-page"><p>The current item ID.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewdetailscontroller-itemlistenerid-page"><p>Listener for item object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ownershipdata">ownershipData</h3>
+<div class="ownershipdata"><div class="controllers-workspaceitem-viewdetailscontroller-ownershipdata-page"><p>Holds the ownership data</p>
+</div></div>
+</li>
+<li><h3 id="properties_ownershiplistenerid">ownershipListenerId</h3>
+<div class="ownershiplistenerid"><div class="controllers-workspaceitem-viewdetailscontroller-ownershiplistenerid-page"><p>Listener for ownership object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ownershipobj">ownershipObj</h3>
+<div class="ownershipobj"><div class="controllers-workspaceitem-viewdetailscontroller-ownershipobj-page"><p>Holds the ownershipObj with payload initialized.</p>
+</div></div>
+</li>
+<li><h3 id="properties_primaryuser">primaryUser</h3>
+<div class="primaryuser"><div class="controllers-workspaceitem-viewdetailscontroller-primaryuser-page"><p>The Constant for Primary user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_that">that</h3>
+<div class="that"><div class="controllers-workspaceitem-viewdetailscontroller-that-page"><p><code>private</code> Reference to this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_userlistenerid">userListenerId</h3>
+<div class="userlistenerid"><div class="controllers-workspaceitem-viewdetailscontroller-userlistenerid-page"><p>Listener for user object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewdetailscontroller-workspaceid-page"><p>The current workspace ID.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

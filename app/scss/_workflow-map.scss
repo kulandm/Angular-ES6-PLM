@@ -1,0 +1,25 @@
+// Workflow Map
+//
+// Styles for the workflow map.
+// *To be filled in.*
+//
+// Styleguide 32
+
+.viewWorkflowActionsContainer {
+	padding: 20px;
+	.buttonGroup {
+		font-size: 0;
+		.mxToolbarItemImg {
+			display: inline-block;
+
+			width: 25%;
+
+			cursor: pointer;
+			text-align: center;
+		}
+	}
+}
+
+#mxGraph > * {
+	min-width: auto !important;
+}

@@ -1,0 +1,144 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewRelationshipsCtrl">
+	<span layout="row" layout-align="start center">
+		<!-- Edit button -->
+		<div is-permitted="{{viewRelationshipsCtrl.editPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true"
+			ng-if="viewRelationshipsCtrl.tableData.rows.length">
+			<md-button
+				aria-label="{{$root.bundle.button.edit}}"
+				ng-click="viewRelationshipsCtrl.triggerEdit();"
+				ng-disabled="viewRelationshipsCtrl.selectedRelationships.length"
+				ng-hide="!(viewRelationshipsCtrl.isViewState())">
+				<span class="label">{{$root.bundle.button.edit}}</span>
+			</md-button>
+		</div>
+
+		<!-- Add buttton -->
+		<div is-permitted="{{viewRelationshipsCtrl.addPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				aria-label="{{$root.bundle.button.add}}"
+				ng-click="viewRelationshipsCtrl.triggerAdd($event);"
+				ng-disabled="viewRelationshipsCtrl.selectedRelationships.length || viewRelationshipsCtrl.hasActiveFlyout()">
+				<span class="label">{{$root.bundle.button.add}}</span>
+			</md-button>
+		</div>
+
+		<!-- Remove button -->
+		<div is-permitted="{{viewRelationshipsCtrl.deletePermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true"
+			ng-if="viewRelationshipsCtrl.tableData.rows.length">
+			<md-button
+				aria-label="{{$root.bundle.button.remove}}"
+				ng-disabled="viewRelationshipsCtrl.selectedRelationships.length <= 0"
+				ng-click="viewRelationshipsCtrl.triggerDelete()">
+				<span class="label">{{$root.bundle.button.remove}}</span>
+			</md-button>
+		</div>
+
+		<!-- Number of items selected status -->
+		<div class="command-bar-text"
+			ng-if="viewRelationshipsCtrl.selectedRelationships.length === 1">
+			{{viewRelationshipsCtrl.selectedRelationships.length}}
+			{{$root.bundle.addLinkedItems.selected.oneItem}}
+		</div>
+
+		<div class="command-bar-text"
+			ng-if="viewRelationshipsCtrl.selectedRelationships.length > 1">
+			{{viewRelationshipsCtrl.selectedRelationships.length}}
+			{{$root.bundle.addLinkedItems.selected.items}}
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Main content, middle - all tab content goes INSIDE -->
+	<md-content layout-fill id="item-viewer-wrapper" class="has-table-data">
+		<table-data
+			columns="viewRelationshipsCtrl.tableData.columns"
+			rows="viewRelationshipsCtrl.tableData.rows"
+			grid-api="viewRelationshipsCtrl.gridApiInterface"
+			client-sorting
+			resizable-columns
+			selectable-rows="viewRelationshipsCtrl.isViewState() === true && viewRelationshipsCtrl.disableSelection === false"
+			is-multi-select="true"
+			use-default-selection-column="false"
+			select-rows-function="viewRelationshipsCtrl.selectRow(row)"
+			resize-rows>
+		</table-data>
+	</md-content>
+</md-content>
+
+<script type="text/ng-template" id="linkRenderer">
+	<div class="ui-grid-cell-contents">
+		<a ng-href="{{row.entity.item.href}}">
+			{{COL_FIELD}}
+			<span ng-if="row.entity.item.version">
+				{{row.entity.item.version}}
+			</span>
+		</a>
+	</div>
+</script>
+
+<script type="text/ng-template" id="editableCellTemplate_direction">
+	<div class="ui-grid-cell-contents field-container cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.value.link !== COL_FIELD.originalValue.link}}" error-message="COL_FIELD.serverError">
+			<span class="md pull-left"
+				  ng-class="COL_FIELD.value.link === grid.appScope.viewRelationshipsCtrl.directions.BI_DIRECTIONAL ? 'md-swap-horiz' : 'md-trending-neutral'">
+			</span>
+			<field-selector
+					field-id="{{COL_FIELD.fieldId}}"
+					field-data="COL_FIELD"
+					type-id="col.colDef.dataType"
+					field-meta="col.colDef.fieldMeta"
+					edit-on-click="{{!grid.appScope.viewRelationshipsCtrl.isViewState() && row.entity.isNewlyAdded}}">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<script type="text/ng-template" id="editableCellTemplate">
+	<div class="ui-grid-cell-contents field-container cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.value !== COL_FIELD.originalValue}}" error-message="COL_FIELD.serverError">
+			<field-selector
+					field-id="{{COL_FIELD.fieldId}}"
+					field-data="COL_FIELD"
+					type-id="col.colDef.dataType"
+					field-meta="col.colDef.fieldMeta"
+					edit-on-click="{{!grid.appScope.viewRelationshipsCtrl.isViewState() && (row.entity.isNewlyAdded || grid.appScope.viewRelationshipsCtrl.hasEditPermission)}}">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<script type="text/ng-template" id="indicatorTemplate">
+	<row-state-indicator is-invalid="grid.appScope.viewRelationshipsCtrl.isTableRowInvalid(row.entity)" is-dirty="grid.appScope.viewRelationshipsCtrl.isTableRowDirty(row.entity)"></row-state-indicator>
+</script>
+
+<script type="text/ng-template" id="checkboxHeaderTemplate">
+	<div class="header-cell checkbox-column">
+		<input type="checkbox"
+			   ng-click="grid.appScope.viewRelationshipsCtrl.toggleAllSelection()"
+			   ng-disabled="!grid.appScope.viewRelationshipsCtrl.isViewState() ||
+			grid.appScope.viewRelationshipsCtrl.disableSelection">
+		</input>
+	</div>
+</script>
+
+<script type="text/ng-template" id="checkboxTemplate">
+	<div ng-if="grid.appScope.viewRelationshipsCtrl.hasActionPermission === true"
+		 class="checkbox-column">
+		<input type="checkbox"
+			   ng-checked="row.isSelected === true"
+			   ng-disabled="grid.appScope.viewRelationshipsCtrl.isViewState() === false
+			|| grid.appScope.viewRelationshipsCtrl.disableSelection === true">
+		</input>
+	</div>
+</script>
+
+

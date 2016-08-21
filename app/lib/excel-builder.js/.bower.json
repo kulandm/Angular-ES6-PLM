@@ -1,0 +1,41 @@
+{
+  "name": "excel-builder-js",
+  "version": "2.0.6",
+  "homepage": "http://excelbuilderjs.com/",
+  "authors": [
+    "Stephen Liberty <stephen@liberty-irm.com>"
+  ],
+  "description": "An easy way of building Excel files with javascript",
+  "main": "dist/excel-builder.dist.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "excel",
+    "javascript",
+    "xlsx",
+    "spreadsheet"
+  ],
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~4.11.1",
+    "jszip": "~3.0.0"
+  },
+  "_release": "2.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.6",
+    "commit": "18f9b02afd04a7abe0c910bffa4e7d1a857dbdf7"
+  },
+  "_source": "https://github.com/autodesk-forks/excel-builder.js.git",
+  "_target": "v2.0.6",
+  "_originalSource": "https://github.com/autodesk-forks/excel-builder.js.git"
+}

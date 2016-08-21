@@ -1,0 +1,61 @@
+var Loginpage = function(){
+
+	var ptor = protractor.getInstance();
+    var driver = ptor.driver;
+
+    var findEle = function(css) {
+		return driver.findElement(protractor.By.css(css));
+    };
+
+	this.get = function(){
+		browser.get('#/login');
+		return this;
+	};
+
+	this.login = function(cb){
+		element(by.css('#login-block a')).click();
+		var ptor = protractor.getInstance();
+		ptor.getAllWindowHandles().then(function(handles){
+			console.log(handles);
+			var parentHandle = handles[0];
+			var handle = driver.switchTo().window(handles[1]);
+			handle = browser.getWindowHandle().then(function(handle){
+				browser.driver.executeScript('window.focus();').then(function(){
+					ptor.ignoreSynchronization = true;
+					driver.get(browser.params.plmBaseUrl+'/home.do?customer='+browser.params.plmCustomer).then(function(){
+						findEle('#loginform').click().then(function(){
+							findEle('#userName_str').sendKeys('plmautotest');
+							findEle('#password_str').sendKeys('Selenium1');
+							findEle('button[type=submit]').click().then(function(){
+								(function waitForEle(){
+									try{
+										if(!findEle('div#outstandingworkflow')){
+											setTimeout(waitForEle,10);
+											return;
+										}
+									}catch(e){
+										setTimeout(waitForEle,10);
+										return;
+									}
+									ptor.ignoreSynchronization = true;
+									console.log("JFOWEJFIOWEJFOIWJEOFIJWEIO")
+									handle = driver.switchTo().window(parentHandle);
+									handle = browser.getWindowHandle().then(function(handle){
+										ptor.ignoreSynchronization = false;
+										browser.driver.executeScript('window.focus();').then(function(){
+											browser.navigate().refresh();
+											cb();
+										});
+									});
+								})();
+							});
+						});
+					});
+				});
+			});
+		});
+		return this;
+	};
+};
+
+module.exports = Loginpage;

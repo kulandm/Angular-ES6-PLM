@@ -1,0 +1,14 @@
+<mxDefaultStatusbar>
+	<add as="actualSize" action="actualSize" icon="plmlib/mxGraph/images/icons/1to1zoom_16.png"/>
+	<add as="fit" action="fit" icon="plmlib/mxGraph/images/icons/centerzoom_16.png"/>
+	<add as="zoomIn" action="zoomIn" icon="plmlib/mxGraph/images/icons/zoomin_16.png"/>
+	<add as="zoomCustom" action="zoomCustom"/>
+	<add as="zoomOut" action="zoomOut" icon="plmlib/mxGraph/images/icons/zoomout_16.png"/>
+	<separator/>
+	<add as="layout" action="toggleOutline" icon="plmlib/mxGraph/images/icons/workflow_16.png" showText="true"/>
+	<separator/>
+	<add as="showIds" action="toggleShowIds" showText="true" icon="plmlib/mxGraph/images/workflow/advanced_16.png"/>
+	<info id="saveStatus"/>
+	<separator id="lastStatusSeparator"/>
+	<add as="validation" action="validation" icon="plmlib/mxGraph/images/check.png" showText="true"/>
+</mxDefaultStatusbar>

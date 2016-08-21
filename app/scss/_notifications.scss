@@ -1,0 +1,271 @@
+// Notifications
+//
+// Styles for notification widget.
+//
+// Styleguide 21
+
+// Notifications
+//
+// Styles the notification widget based on notification type.
+//
+// Markup:
+// <div id="notifications" style="left:inherit; width:inherit;
+// 	position:relative; top:0;">
+// 	<span class="success">
+// 		<a class="notification-close pull-right">
+// 			<span class="icon icon-Delete"></span></a>
+// 		<span class="message">Success message</span>
+// 	<span>
+// </div><br>
+// <div id="notifications" style="left:inherit; width:inherit;
+// 	position:relative; top:0;">
+// 	<span class="info">
+// 		<a class="notification-close pull-right">
+// 			<span class="icon icon-Delete"></span></a>
+// 		<span class="message">Info message</span>
+// 	<span>
+// </div><br>
+// <div id="notifications" style="left:inherit; width:inherit;
+// 	position:relative; top:0;">
+// 	<span class="warning">
+// 		<a class="notification-close pull-right">
+// 			<span class="icon icon-Delete"></span></a>
+// 		<span class="message">Warning message</span>
+// 	<span>
+// </div><br>
+// <div id="notifications" style="left:inherit; width:inherit;
+// 	position:relative; top:0;">
+// 	<span class="error">
+// 		<a class="notification-close pull-right">
+// 			<span class="icon icon-Delete"></span></a>
+// 		<span class="message">Error message</span>
+// 	<span>
+// </div><br>
+// <div id="notifications" style="left:inherit; width:inherit;
+// 	position:relative; top:0;">
+// 	<span class="critical">
+// 		<a class="notification-close pull-right">
+// 			<span class="icon icon-Delete"></span></a>
+// 		<span class="message">Critical message</span>
+// 	<span>
+// </div>
+//
+// #notifications -
+//
+// Styleguide 21.1
+#notifications {
+	position: fixed;
+	z-index: $zIndexDefault;
+	top: 70px;
+
+	> span {
+		display: block;
+
+		padding: 10px;
+
+		border-radius: 4px;
+
+		.message {
+			font-size: 16px;
+
+			display: block;
+
+			width: 90%;
+			padding: 0 10px;
+
+			text-align: center;
+			word-wrap: break-word;
+
+			color: $notificationsMessageColor;
+		}
+
+		.notification-close {
+			@extend %removeLinkStyle;
+
+			.md {
+				font-size: 18px;
+				line-height: 22px;
+
+				color: $notificationsCloseIconColor;
+			}
+		}
+	}
+
+	// Notification type
+	.success {
+		background-color: $notificationsSuccessBackground;
+	}
+
+	.warning {
+		background-color: $notificationsWarningBackground;
+	}
+
+	.error,
+	.critical {
+		background-color: $notificationsErrorBackground;
+	}
+
+	.info {
+		background-color: $notificationsInfoBackground;
+	}
+}
+
+// Notification Buttons
+//
+// Styles the button based on notification type.
+//
+// Markup:
+// <div><button class="btn success">Success</button></div><br>
+// <div><button class="btn info">Info</button></div><br>
+// <div><button class="btn warning">Warning</button></div><br>
+// <div><button class="btn error">Error</button></div><br>
+// <div><button class="btn critical">Critical</button></div>
+//
+// .btn.success - Success button
+// .btn.info - Info button
+// .btn.warning - Warning button
+// .btn.error - Error button
+// .btn.critical - Critical button
+//
+// Styleguide 21.2
+.btn {
+
+	// Notification type
+	&.success {
+		color: $notificationsMessageColor;
+		background-color: $notificationsSuccessText;
+	}
+
+	&.warning {
+		color: $notificationsMessageColor;
+		background-color: $notificationsWarningText;
+	}
+
+	&.error,
+	&.critical {
+		color: $notificationsMessageColor;
+		background-color: $notificationsErrorText;
+	}
+
+	&.info {
+		color: $notificationsMessageColor;
+		background-color: $notificationsInfoText;
+	}
+}
+
+
+// Permission Denied Dialog
+//
+// Styles for permission denied dialog
+//
+// Markup:
+// <md-content layout="column" class="permission-dialog">
+//		<div class="permission-dialog-content">
+//			<div class="alert">
+//				<span class="icon md md-report"></span>
+//			</div>
+//			<h1>{{$root.bundle.notification.permissionDenied.sorry}}</h1>
+//			<h5>{{$root.bundle.notification.permissionDenied.noPermission}}</h5>
+//			<h5>{{$root.bundle.notification.permissionDenied.actionOption}}</h5>
+//		</div>
+//		<div class="permission-dialog-actions">
+//			<md-button class="md-primary" ng-click="closeDialog();">
+//				{{$root.bundle.button.ok}}
+//			</md-button>
+//		</div>
+//	</md-content>
+//
+// .permission-dialog - Wrapper container for the dialog
+// .permission-dialog-content - Content portion of the dialog
+// .alert - Error styling
+// .permission-dialog-actions - Action buttons portion of the dialog
+//
+// Styleguide 21.3
+.permission-dialog {
+
+	.permission-dialog-content {
+		padding: 0 45px 20px;
+
+		text-align: center;
+
+		border-bottom: 1px solid $primaryBorderColor;
+
+		.alert {
+			font-size: 8em;
+
+			color: $errorColor;
+		}
+
+		h1 {
+			font-weight: 300;
+		}
+
+		h5 {
+			margin: 5px;
+
+			color: $notificationsDialogTextColor;
+		}
+	}
+
+	.permission-dialog-actions {
+		padding-top: 25px;
+
+		text-align: right;
+	}
+}
+
+.agreement-acceptance-dialog {
+	width: 650px;
+	max-width: 50%;
+
+	.agreement-acceptance-dialog-wrapper {
+		padding: 40px 30px;
+
+		text-align: center;
+
+		.agreement-acceptance-dialog-content {
+			font-size: 16px;
+			font-weight: 200;
+
+			color: $lightBlackColor;
+
+			.fusion-lifecycle-logo img {
+				width: 400px;
+			}
+
+			.title {
+				font-size: 24px;
+				font-weight: 200;
+
+				padding-bottom: 15px;
+
+				border-bottom: 1px solid $lightBlackColor;
+			}
+
+			.accepted {
+				line-height: 60px;
+
+				height: 60px;
+				margin: 20px 70px;
+
+				background-color: $secondaryBackgroundColor;
+
+				#accepted-checkbox {
+					width: 15px;
+					height: 15px;
+					margin-right: 10px;
+				}
+			}
+		}
+		.agreement-acceptance-dialog-actions {
+
+			.md-button {
+				width: 150px;
+			}
+		}
+	}
+}
+
+.over-everything {
+	z-index: 9999;
+}

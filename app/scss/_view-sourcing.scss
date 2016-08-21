@@ -1,0 +1,72 @@
+// Workspace Item Sourcing
+//
+// Styles for the workspace item sourcing tab
+//
+
+#view-sourcing {
+	display: flex;
+
+	flex: 1 1 auto;
+	flex-wrap: nowrap;
+	align-items: stretch;
+
+	#suppliers-list {
+		width: 20%;
+	}
+
+	#supplier-detail-wrapper {
+		display: flex;
+		overflow: hidden;
+
+		width: 80%;
+		height: 500px;
+		margin: 10px;
+
+		border: $sourcingGeneralBorderStyle;
+
+		align-items: stretch;
+		flex-wrap: nowrap;
+
+		#supplier-detail {
+			overflow-y: scroll;
+
+			padding: 20px;
+
+			border-right: $sourcingGeneralBorderStyle;
+			background-color: $darkWhiteColor;
+
+			flex: 1;
+
+			.supplier-field {
+				margin: 25px 5px;
+
+				.title,
+				.value {
+					font-size: 14px;
+
+					display: inline-block;
+
+					width: 49%;
+
+					color: $secondaryColor;
+				}
+				.title {
+					font-weight: bold;
+
+					text-align: right;
+				}
+				.value {
+					padding-left: 10px;
+
+					word-wrap: break-word;
+				}
+			}
+		}
+
+		#supplier-quotes {
+			background-color: $lightBackgroundColor;
+
+			flex: 2;
+		}
+	}
+}

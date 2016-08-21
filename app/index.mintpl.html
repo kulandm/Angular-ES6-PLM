@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="plm360">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- base definition for angular-route testing -->
+		<!-- <base href="/nextplm/"> -->
+
+		<title>Fusion Lifecycle</title>
+
+		<!-- CSS files, compiled from /scss -->
+
+		<!-- build:process -->
+		<!-- base angular-material -->
+		<link href="/<%=urlSubPath%>/lib/angular-material/angular-material.css" rel="stylesheet">
+
+		<!-- base material-design icons -->
+		<link href="/<%=urlSubPath%>/lib/material-design-iconic-font/dist/css/material-design-iconic-font.css" rel="stylesheet">
+
+		<!-- base bootstrap/bootflat -->
+		<!-- <link href="/<%=urlSubPath%>/css/bootstrap.css" rel="stylesheet"> -->
+
+		<!-- normalize -->
+		<link href="/<%=urlSubPath%>/lib/normalize.css/normalize.css" rel="stylesheet">
+
+		<!-- semantic-ui -->
+		<link href="/<%=urlSubPath%>/lib/semantic-ui/dist/semantic.min.css" rel="stylesheet">
+
+		<!-- PLM Dropdown CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-dropdown/dist/styles.css" rel="stylesheet">
+
+		<!-- WIP File Browser CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-wip-file-browser/dist/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Section Wrapper CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-section-wrapper/build/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Field Selector CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-field-selector/dist/styles.css" rel="stylesheet">
+
+		<!-- PLM Users Selector CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-users-selector/dist/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Search CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-search/dist/styles.css" rel="stylesheet">
+
+		<!-- plm-specific customizations -->
+		<link href="/<%=urlSubPath%>/css/plm.css" rel="stylesheet">
+
+
+		<!-- plm-specific customizations -->
+		<!-- <link href="/<%=urlSubPath%>/lib/angular-ui-grid/ui-grid.css" rel="stylesheet"> -->
+
+		<!-- print-specific css -->
+		<link href="/<%=urlSubPath%>/css/print.css" rel="stylesheet">
+
+        <!-- cpdm-specific css -->
+        <!-- include: "baseUrl":"/<%=urlSubPath%>/","type":"css","files": ["lib/cpdm-ui/dist/*.css", "!lib/cpdm-ui/dist/*.min.css"] -->
+
+		<!-- plm-animations-->
+		<link href="/<%=urlSubPath%>/css/plm-animations.css" rel="stylesheet">
+
+		<!-- angular-gantt -->
+		<link href="/<%=urlSubPath%>/lib/angular-gantt/dist/angular-gantt.css" rel="stylesheet">
+
+		<!-- gantt-tooltips-->
+		<link href="/<%=urlSubPath%>/lib/angular-gantt/dist/angular-gantt-tooltips-plugin.css" rel="stylesheet">
+
+		<!-- text-angular-->
+		<link href="/<%=urlSubPath%>/lib/textAngular/dist/textAngular.css" rel="stylesheet">
+
+		<!-- PLM Navigation Guard Modal -->
+		<link href="/<%=urlSubPath%>/lib/plm-navigation-guard/dist/css/nav-guard.css" rel="stylesheet">
+
+		<!-- PLM User Avatar CSS -->
+		<link href="/<%=urlSubPath%>/lib/plm-user-avatar/dist/css/styles.css" rel="stylesheet">
+
+		<base href="/<%=urlSubPath%>/" />
+		<!-- /build -->
+
+	</head>
+
+	<body layout="row" layout-fill locale-bundle="lib/plm-localization/dist/translations/localizationBundleGeneral">
+
+		<!-- main content -->
+		<span layout="row" layout-fill ui-view id="wrapper"></span>
+
+		<!-- build:process -->
+		<!-- angular modules -->
+		<script type="text/javascript" src="lib/angular/angular.js"></script>
+		<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+		<script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="lib/angular-cache/dist/angular-cache.min.js"></script>
+		<script type="text/javascript" src="lib/angular-cookies/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="lib/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+		<script type="text/javascript" src="lib/angular-locale-bundles/dist/angular-locale-bundles.min.js"></script>
+		<script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+		<script type="text/javascript" src="lib/angular-mocks/angular-mocks.js"></script>
+		<script type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
+		<script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-grid/ui-grid.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-mask/dist/mask.min.js"></script>
+		<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/semantic-ui/dist/semantic.min.js"></script>
+		<script type="text/javascript" src="lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+		<script type="text/javascript" src="lib/restangular/dist/restangular.min.js"></script>
+		<script type="text/javascript" src="lib/traceur/traceur.js"></script>
+		<script type="text/javascript" src="lib/traceur_runtime.js"></script>
+		<script type="text/javascript" src="lib/underscore/underscore-min.js"></script>
+		<script type='text/javascript' src="lib/moment/min/moment-with-locales.min.js"></script>
+		<script type='text/javascript' src="lib/angular-moment/angular-moment.js"></script>
+		<script type='text/javascript' src="lib/angular-gantt/dist/angular-gantt.min.js"></script>
+		<script type='text/javascript' src="lib/angular-gantt/dist/angular-gantt-plugins.min.js"></script>
+		<script type='text/javascript' src="lib/jsPlumb/dist/js/dom.jsPlumb-1.7.4-min.js"></script>
+		<script type='text/javascript' src="lib/df-tab-menu/build/df-tab-menu.min.js"></script>
+		<script type='text/javascript' src="lib/rangy/rangy-core.js"></script>
+		<script type='text/javascript' src="lib/rangy/rangy-selectionsaverestore.js"></script>
+		<script type='text/javascript' src="lib/textAngular/dist/textAngular-sanitize.min.js"></script>
+		<script type='text/javascript' src="lib/textAngular/dist/textAngular.min.js"></script>
+		<script type='text/javascript' src="lib/highcharts/adapters/standalone-framework.js"></script>
+		<script type='text/javascript' src="lib/highcharts/highcharts.js"></script>
+		<script type='text/javascript' src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+		<script type='text/javascript' src="lib/d3/d3.js"></script>
+		<script src='https://search-static-dev.api.autodesk.com/search-js/master/latest/js/search-qs-jsapi.min.js'></script>
+		<script type='text/javascript' src="lib/excel-builder.js/dist/excel-builder.standalone.js"></script>
+		<script type='text/javascript' src="lib/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+
+		<!-- Our main JS file -->
+		<%=sources%>
+		<!-- /build -->
+
+	</body>
+</html>

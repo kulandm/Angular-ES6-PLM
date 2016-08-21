@@ -1,0 +1,116 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="workflowActionsCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Grid content, middle -->
+	<md-content layout-fill id="item-main">
+		<!-- start of workflow map-related code -->
+		<div id="itembody-map" class="itembody" ng-init="workflowActionsCtrl.init()">
+			<div id="modalMask" style="display: none"></div>
+			<div id="workflowActionsContainer">
+				<div id="mxGraph" style="background: none; background-image: none; overflow: none; position: relative;">
+					 <table id="loader">
+						<tr>
+							<td align="center" valign="middle"><img alt="loading..."
+								src="../images/icons/loadingSpinnerBig_8393B5_transparent.gif">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</md-content>
+
+	<!----  COPYING PART OF PANEL SUMMARY.  TODO: CHANGE THIS WHEN WE HAVE A GENERIC RIDE PANEL -->
+	<div class="animate static-slidePanelHorizontal open">
+		<div class="viewWorkflowActionsContainer">
+			<div id="mxToolbar">
+				<div class="buttonGroup">
+					<!--
+					<button
+						title="Undo Last"
+						id="undo" class="mxToolbarItem undoAction" style="display: none">
+						<img src="/scripts/mxGraph/images/icons/wfmap/revert-24.png" />
+						<span class="buttonsText">Undo</span>
+					</button>
+					-->
+					<div id="undoSeparator" class="separator" style="display: none"></div>
+					<a id="centerCurrent" class="mxToolbarItemImg md-button md-primary md-default-theme" aria-label="centerCurrent">
+						<img ng-src="/scripts/mxGraph/images/icons/wfmap/focus.svg" />
+					</a>
+					<a id="fit" class="mxToolbarItemImg md-button md-primary md-default-theme" aria-label="fit">
+						<img ng-src="/scripts/mxGraph/images/icons/wfmap/1to1.svg" />
+					</a>
+					<a id="zoomIn" class="mxToolbarItemImg md-button md-primary md-default-theme" aria-label="zoomIn">
+						<img src="/scripts/mxGraph/images/icons/wfmap/zoom.svg" />
+					</a>
+					<a id="zoomOut" class="mxToolbarItemImg md-button md-primary md-default-theme" aria-label="zoomOut">
+						<img src="/scripts/mxGraph/images/icons/wfmap/zoom_out.svg" />
+					</a>
+					<!--<div class="separator"></div>
+					<button id="showHidePanel" class="mxToolbarItem">
+						<img src="/scripts/mxGraph/images/icons/wfmap/panel_24.png" />
+					</button>
+					-->
+				</div>
+			</div>
+			<md-content id="rightNavContent" class="rightNavContent well">
+				<div id="nextSteps"></div>
+				<div id="historyPanel" class="historyPanel">
+					<div class="panel-heading">{{bundle.workflowMap.workflowHistory}} ({{workflowActionsCtrl.history.length}})</div>
+					<md-list ng-if="workflowActionsCtrl.history.length" class="list-group">
+						<md-item class="list-group-item" ng-repeat="step in workflowActionsCtrl.history">
+							<md-item-content>
+								<div class="md-tile-left">
+									<img class="media-object" ng-src="{{step.imageSource}}">
+								</div>
+								<div class="md-tile-content">
+									<h5 class="media-heading">
+										<a href="javascript:;" ng-click="openUserProfile($event, step.actualUserID);">{{step.userDisplayName}}</a>
+									</h5>
+									<div>{{step.transitionName}}</div>
+									<div>{{step.comments}}</div>
+									<div class="muted">{{step.timestampFormatted}}</div>
+								</div>
+							</md-item-content>
+						</md-item>
+					</md-list>
+					<span ng-if="!workflowActionsCtrl.history.length">{{bundle.workflowMap.noHistory}}</span>
+				</div>
+			</md-content>
+		</div>
+	</div>
+</md-content>
+
+ <script type="text/ng-template" id="performersModal.html">
+ 	<md-dialog>
+ 		<md-content>
+ 			<md-subheader class="md-primary md-sticky-no-effect">{{performersModalHeader}}</md-subheader>
+ 			<div style="min-width:350px;">
+				<section ng-repeat="transitionGroup in transitionGroups">
+					<md-subheader class="md-secondary">
+						<h1 class="md-toolbar-tools">
+							 {{transitionGroup.title}}
+						</h1>
+					</md-subheader>
+					<md-content>
+						<md-list>
+							<md-item ng-repeat="performer in transitionGroup.performers">
+								<md-item-content>
+									{{performer.text}}
+								</md-item-content>
+								<md-diviver ng-if="!$last"></md-divider>
+							</md-item>
+						</md-list>
+					</md-content>
+				</section>
+			</div>
+	 	</md-content>
+	 	<div class="md-actions" layout="row">
+	 		<md-button ng-click="ok()">{{$root.bundle.button.close}}</md-button>
+	 	</div>
+	</md-dialog>
+</script>

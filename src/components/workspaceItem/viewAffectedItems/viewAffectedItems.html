@@ -1,0 +1,290 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="affectedItemsCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+	<span layout="row" layout-align="start center">
+		<!-- Edit button -->
+		<div is-permitted="{{affectedItemsCtrl.editPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				class="md-primary md-default-theme"
+				aria-label="{{$root.bundle.button.edit}}"
+				ng-disabled="affectedItemsCtrl.tableData.length === 0"
+				ng-click="affectedItemsCtrl.triggerEdit();"
+				ng-hide="!(affectedItemsCtrl.isViewState())">
+				<span class="label">{{$root.bundle.button.edit}}</span>
+			</md-button>
+		</div>
+
+		<!-- Add button -->
+		<div is-permitted="{{affectedItemsCtrl.addPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				aria-label="{{$root.bundle.button.add}}"
+				ng-disabled="affectedItemsCtrl.selectedItems.length
+				|| affectedItemsCtrl.hasActiveFlyout() || !affectedItemsCtrl.isViewState()"
+				ng-click="affectedItemsCtrl.triggerAdd($event);">
+				<span class="label">{{$root.bundle.button.add}}</span>
+			</md-button>
+		</div>
+
+		<!-- Remove button -->
+		<div is-permitted="{{affectedItemsCtrl.deletePermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				aria-label="{{$root.bundle.button.remove}}"
+				ng-disabled="affectedItemsCtrl.selectedItems.length <= 0
+				|| !affectedItemsCtrl.isViewState()"
+				ng-click="affectedItemsCtrl.triggerDelete()">
+				<span class="label">{{$root.bundle.button.remove}}</span>
+			</md-button>
+		</div>
+		<!-- BEGIN Bulk Lifecycle Change Button-->
+		<md-button
+			is-permitted="{{affectedItemsCtrl.editPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true"
+			ng-if="affectedItemsCtrl.isBulkEditEnabled && affectedItemsCtrl.isRevisioningWorkspace"
+			aria-label="{{$root.bundle.affectedItems.bulkEdit}}"
+			title="{{$root.bundle.affectedItems.bulkEdit}}"
+			class="md-format-line-spacing bulk-edit-button"
+			ng-click="affectedItemsCtrl.triggerBulkEdit()">
+		</md-button>
+		<!-- END Bulk Lifecycle Change Button-->
+
+		<!-- Add related BOM button -->
+		<div is-permitted="{{affectedItemsCtrl.editPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true"
+			ng-if="affectedItemsCtrl.selectedItems.length === 1 && affectedItemsCtrl.selectedItems[0].inlineMenu">
+			<md-button
+				aria-label="{{$root.bundle.affectedItems.addRelatedItems}}"
+				ng-click="affectedItemsCtrl.triggerAddRelatedBomItems(affectedItemsCtrl.selectedItems[0].urn);"
+				ng-hide="!(affectedItemsCtrl.isViewState())">
+				<span class="icon-AddLink"></span>
+			</md-button>
+		</div>
+
+		<div class="command-bar-text"
+			ng-if="affectedItemsCtrl.selectedItems.length === 1" >
+			{{affectedItemsCtrl.selectedItems.length}}
+			{{$root.bundle.addLinkedItems.selected.oneItem}}
+		</div>
+
+		<div class="command-bar-text"
+			ng-if="affectedItemsCtrl.selectedItems.length > 1">
+			{{affectedItemsCtrl.selectedItems.length}}
+			{{$root.bundle.addLinkedItems.selected.items}}
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout-fill layout="row" role="item-internal-wrapper" id="item-main" class="affected-items-container">
+	<!-- Affected item content, middle -->
+	<md-content layout-fill role="item-main">
+		<table-data
+			columns="affectedItemsCtrl.tableColumns"
+			rows="affectedItemsCtrl.tableData"
+			grid-api="affectedItemsCtrl.gridApiInterface"
+			selectable-rows="affectedItemsCtrl.isViewState() === true
+			&& affectedItemsCtrl.disableSelection === false"
+			is-multi-select="true"
+			use-default-selection-column="false"
+			select-rows-function="affectedItemsCtrl.selectRow(row)"
+			resizable-columns
+			resize-rows
+			client-sorting>
+		</table-data>
+	</md-content>
+</md-content>
+
+<script type="text/ng-template" id="checkboxHeaderTemplate">
+	<div class="ui-grid-cell-contents header-cell checkbox-column">
+		<plm-table-checkbox 
+			on-click="grid.appScope.affectedItemsCtrl.toggleAllSelection()"
+			is-selected="grid.appScope.affectedItemsCtrl.gridApiInterface.selection.selectAll"
+			is-disabled="!grid.appScope.affectedItemsCtrl.isViewState()
+			|| grid.appScope.affectedItemsCtrl.disableSelection"></plm-table-checkbox>
+	</div>
+</script>
+
+<script type="text/ng-template" id="checkboxTemplate">
+	<div class="ui-grid-cell-contents">
+		<div ng-if="grid.appScope.affectedItemsCtrl.hasActionPermission === true">
+			<plm-table-checkbox 
+				add-hover-class=true
+				is-selected="row.isSelected" 
+				is-disabled="!grid.appScope.affectedItemsCtrl.isViewState()
+					|| grid.appScope.affectedItemsCtrl.disableSelection"></plm-table-checkbox>
+
+			<span class="inline-actions"
+				ng-if="COL_FIELD.inlineMenu && grid.appScope.affectedItemsCtrl.isViewState()">
+				<md-menu>
+					<span class="inline-actions-button zmdi zmdi-more"
+						ng-click="$mdOpenMenu($event)">
+					</span>
+
+					<md-menu-content>
+						<md-menu-item>
+							<md-button ng-click="grid.appScope.affectedItemsCtrl.triggerAddRelatedBomItems(COL_FIELD.urn)">
+								<span class="icon-AddLink"></span>
+								{{$root.bundle.affectedItems.addRelatedItems}}
+							</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>
+			</span>
+		</div>
+	</div>
+</script>
+
+<!-- TABLE DATA CELL TEMPLATES -->
+<!-- Item Display Name Link -->
+<script type="text/ng-template" id="linkTemplate">
+	<div class="ui-grid-cell-contents">
+		<a href="{{COL_FIELD.href}}" title="{{COL_FIELD.value}}">
+			{{COL_FIELD.value}}
+		</a>
+	</div>
+</script>
+
+<!-- Editable 'Lifecycle' Cell -->
+<script type="text/ng-template" id="editLifecycleCellTemplate">
+	<div class="ui-grid-cell-contents field-container edit-lifecycle cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}">
+			<span ng-if="grid.appScope.affectedItemsCtrl.isViewState()">
+				{{COL_FIELD.value.link ? COL_FIELD.value.title : ''}}
+			</span>
+			<field-selector
+				ng-if="!grid.appScope.affectedItemsCtrl.isViewState()"
+				type-id="col.colDef.dataType"
+				field-data="COL_FIELD"
+				field-meta="row.entity.lifecycle.fieldMetadata"
+				picklist-on-change="COL_FIELD.lifecycleChanged(); COL_FIELD.isChanged = true;"
+				edit-on-click="{{!grid.appScope.affectedItemsCtrl.isViewState()
+				&& row.entity.isRevisionControlled}}"
+				simple-select="true">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- Editable 'Effectivity' Cell -->
+<script type="text/ng-template" id="editEffectivityCellTemplate">
+	<div class="ui-grid-cell-contents field-container cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}">
+			<field-selector
+				field-data="COL_FIELD"
+				type-id="col.colDef.dataType"
+				field-meta="col.colDef.fieldMeta"
+				placeholder="{{COL_FIELD.placeholder}}"
+				edit-on-click="{{!grid.appScope.affectedItemsCtrl.isViewState()
+				&& !!row.entity.lifecycle.value
+				&& row.entity.lifecycle.value.effectivityWritable === true}}">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- Editable 'To' Cell -->
+<script type="text/ng-template" id="editToCellTemplate">
+	<div class="ui-grid-cell-contents field-container cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}"
+			invalid="{{COL_FIELD.hasClientSideErrors}}">
+			<field-selector
+				field-data="COL_FIELD"
+				type-id="col.colDef.dataType"
+				field-meta="row.entity.to.fieldMetadata"
+				auto-focus="{{!grid.appScope.affectedItemsCtrl.isViewState()
+				&& COL_FIELD.editable && !COL_FIELD.value && row.entity.lifecycle.isChanged === true}}"
+				edit-on-click="{{!grid.appScope.affectedItemsCtrl.isViewState()
+				&& COL_FIELD.editable}}">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- TODO Remove unsupported fields info/icon when fixed -->
+<script type="text/ng-template" id="editCustomColHeaderTemplate">
+	<div class="header-cell ui-grid-cell-contents">
+		<span ng-class="{'information-column': col.colDef.isFieldUnsupported}">
+			{{col.colDef.displayName}}
+		</span>
+		<span ng-if="col.colDef.isFieldUnsupported"
+			title="{{$root.bundle.text.fieldTypeNotSupported}}"
+			class="zmdi zmdi-info">
+		</span>
+	</div>
+</script>
+
+<!-- Editable Custom Column Cell -->
+<script type="text/ng-template" id="editCustomColCellTemplate">
+	<div class="ui-grid-cell-contents custom-column-cell cell-state-indicator"
+		ng-class="{'multiline': COL_FIELD.value && col.colDef.multiline}">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}"
+			error-message="COL_FIELD.serverError"
+			invalid="{{COL_FIELD.hasClientSideErrors}}">
+			<span ng-if="col.colDef.isFieldUnsupported">
+				{{COL_FIELD.value.title}}
+			</span>
+			<field-selector
+				ng-if="!col.colDef.isFieldUnsupported"
+				field-id="{{COL_FIELD.fieldId}}"
+				field-data="COL_FIELD"
+				type-id="col.colDef.dataType"
+				field-meta="COL_FIELD.fieldMetadata"
+				edit-on-click="{{COL_FIELD.fieldMetadata.editability === 'ALWAYS'
+				&& !grid.appScope.affectedItemsCtrl.isViewState()}}">
+			</field-selector>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- Editable RTF Column Cell -->
+<script type="text/ng-template" id="editRTFTemplate">
+	<div class="ui-grid-cell-contents custom-column-cell cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}"
+			error-message="COL_FIELD.serverError"
+			invalid="{{COL_FIELD.hasClientSideErrors}}">
+			<md-menu ng-if="!grid.appScope.affectedItemsCtrl.isViewState() || (COL_FIELD.value !== ''
+				&& COL_FIELD.fieldMetadata.visibility !== 'EDIT_ONLY')">
+				<span ng-click="COL_FIELD.fieldMetadata.editability === 'ALWAYS'
+					|| grid.appScope.affectedItemsCtrl.isViewState() ? $mdOpenMenu($event) : ''"
+					ng-bind-html="COL_FIELD.value || COL_FIELD.fieldMetadata.placeholder">
+				</span>
+				<md-menu-content class="rich-text-content"
+					ng-class="grid.appScope.affectedItemsCtrl.isViewState() ? 'view-overlay' : ''">
+					<field-selector
+						field-data="COL_FIELD"
+						type-id="col.colDef.dataType"
+						field-meta="COL_FIELD.fieldMetadata"
+						edit-view="{{COL_FIELD.fieldMetadata.editability === 'ALWAYS'
+						&& !grid.appScope.affectedItemsCtrl.isViewState()}}">
+					</field-selector>
+				</md-menu-content>
+			</md-menu>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- Inline Actions Cell -->
+<script type="text/ng-template" id="inlineActionsTemplate">
+	<div style="padding:15px 0 0 4px" class="inline-actions">
+		<md-select ng-model="selectedOption">
+			<md-select-label> </md-select-label>
+			<md-option value="">
+				<span class="md-repeat"></span>
+				<span>{{$root.bundle.affectedItems.addRelatedItems}}</span>
+			</md-option>
+		</md-select>
+	</div>
+</script>
+
+<script type="text/ng-template" id="indicatorTemplate">
+	<row-state-indicator is-invalid="grid.appScope.affectedItemsCtrl.isTableRowInvalid(row.entity)"
+		is-dirty="grid.appScope.affectedItemsCtrl.isTableRowDirty(row.entity)">
+	</row-state-indicator>
+</script>

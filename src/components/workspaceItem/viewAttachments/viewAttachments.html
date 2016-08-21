@@ -1,0 +1,83 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewAttachmentsCtrl">
+	<!-- Transcluded buttons that are dependent on this controller -->
+	<span layout="row" layout-align="start center">
+		<!-- Add button -->
+		<div is-permitted="{{viewAttachmentsCtrl.addPermission}}">
+			<classic-attachments-action-button type="upload"
+				permitted="viewAttachmentsCtrl.hasAddPermission"
+				workspace-id="viewAttachmentsCtrl.workspaceId"
+				item-id="viewAttachmentsCtrl.itemId"
+				action-status="viewAttachmentsCtrl.showNotification(responseList)">
+			</classic-attachments-action-button>
+		</div>
+
+		<!-- Check In button -->
+		<div is-permitted="{{viewAttachmentsCtrl.editPermission}}"
+			ng-if="viewAttachmentsCtrl.status === 'Checked OUT' &&
+			viewAttachmentsCtrl.showRowActions &&
+			(viewAttachmentsCtrl.fileInfo.fileCheckoutOutBy === viewAttachmentsCtrl.userId)">
+			<classic-attachments-action-button type="checkin"
+				permitted="viewAttachmentsCtrl.hasEditPermission"
+				workspace-id="viewAttachmentsCtrl.workspaceId"
+				item-id="viewAttachmentsCtrl.itemId"
+				file-info="viewAttachmentsCtrl.fileInfo"
+				action-status="viewAttachmentsCtrl.showNotification(responseList)">
+			</classic-attachments-action-button>
+		</div>
+
+		<!-- Download button -->
+		<div ng-if="(viewAttachmentsCtrl.status === 'Checked IN' ||
+			viewAttachmentsCtrl.status === 'Checked OUT') &&
+			viewAttachmentsCtrl.showRowActions">
+			<classic-attachments-action-button type="download"
+				workspace-id="viewAttachmentsCtrl.workspaceId"
+				item-id="viewAttachmentsCtrl.itemId"
+				file-info="viewAttachmentsCtrl.fileInfo"
+				action-status="viewAttachmentsCtrl.showNotification(responseList)">
+			</classic-attachments-action-button>
+		</div>
+
+		<!-- Check Out button -->
+		<div is-permitted="{{viewAttachmentsCtrl.editPermission}}"
+			ng-if="viewAttachmentsCtrl.status === 'Checked IN' &&
+			viewAttachmentsCtrl.showRowActions">
+			<classic-attachments-action-button type="checkout"
+				permitted="viewAttachmentsCtrl.hasEditPermission"
+				workspace-id="viewAttachmentsCtrl.workspaceId"
+				item-id="viewAttachmentsCtrl.itemId"
+				file-info="viewAttachmentsCtrl.fileInfo"
+				action-status="viewAttachmentsCtrl.showNotification(responseList)">
+			</classic-attachments-action-button>
+		</div>
+
+		<!-- Undo button -->
+		<div is-permitted="{{viewAttachmentsCtrl.editPermission}}"
+			ng-if="viewAttachmentsCtrl.showUndoFlag &&
+			viewAttachmentsCtrl.showRowActions &&
+			(viewAttachmentsCtrl.fileInfo.fileCheckoutOutBy === viewAttachmentsCtrl.userId)">
+			<classic-attachments-action-button type="undo"
+				permitted="viewAttachmentsCtrl.hasEditPermission"
+				workspace-id="viewAttachmentsCtrl.workspaceId"
+				item-id="viewAttachmentsCtrl.itemId"
+				file-info="viewAttachmentsCtrl.fileInfo"
+				action-status="viewAttachmentsCtrl.showNotification(responseList)">
+			</classic-attachments-action-button>
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the three split panels -->
+<md-content role="item-internal-wrapper" id="item-internal-wrapper">
+	<!-- Attachments content, middle -->
+	<md-content role="item-main" id="item-main" class="view-attachments">
+		<!-- Use the grid directive from CPDM -->
+		<classic-attachments-grid
+			workspace-id="viewAttachmentsCtrl.workspaceId"
+			item-id="viewAttachmentsCtrl.itemId"
+			date-format="viewAttachmentsCtrl.dateFormat"
+            show-user-info="viewAttachmentsCtrl.showUserInfo(event, userId)"
+            selected-row-info="viewAttachmentsCtrl.setSelectedRowInfo(fileInfo, isRowSelected)">
+		</classic-attachments-grid>
+	</md-content>
+</md-content>

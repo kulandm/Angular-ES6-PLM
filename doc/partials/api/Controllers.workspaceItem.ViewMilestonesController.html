@@ -1,0 +1,126 @@
+<h1><code ng:non-bindable="">ViewMilestonesController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewmilestonescontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}/{itemId}/milestones.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewmilestonescontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewmilestonescontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_loadmilestones">loadMilestones()</h3>
+<div class="loadmilestones"><div class="controllers-workspaceitem-viewmilestonescontroller-loadmilestones-page"><p>Render Milestones Page depending on the mode (view, edit, create)</p>
+</div><h5 id="methods_loadmilestones_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewmilestonescontroller-loadmilestones-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsemilestonesdata">parseMilestonesData()</h3>
+<div class="parsemilestonesdata"><div class="controllers-workspaceitem-viewmilestonescontroller-parsemilestonesdata-page"><p>Initialize the table data.</p>
+</div></div>
+</li>
+<li><h3 id="methods_parseworkflowstates">parseWorkflowStates()</h3>
+<div class="parseworkflowstates"><div class="controllers-workspaceitem-viewmilestonescontroller-parseworkflowstates-page"><p>Initialize the workflow states for dropdown in edit mode.</p>
+</div></div>
+</li>
+<li><h3 id="methods_setuptablecolumns">setupTableColumns()</h3>
+<div class="setuptablecolumns"><div class="controllers-workspaceitem-viewmilestonescontroller-setuptablecolumns-page"><p>Initialize the table columns, dependent on the edit mode.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewmilestonescontroller-triggercancel-page"><p>Triggered by clicking cancel button.</p>
+<p>NOTE: name has to be triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggeredit">triggerEdit()</h3>
+<div class="triggeredit"><div class="controllers-workspaceitem-viewmilestonescontroller-triggeredit-page"><p>Triggered by clicking edit button - goes to the EDIT state.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewmilestonescontroller-triggersave-page"><p>Triggered by clicking save button.</p>
+<p>NOTE: name has to be triggerSave.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_milestoneobj">MilestoneObj</h3>
+<div class="milestoneobj"><div class="controllers-workspaceitem-viewmilestonescontroller-milestoneobj-page"><p>The reference to milestones items data model object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_statesobj">StatesObj</h3>
+<div class="statesobj"><div class="controllers-workspaceitem-viewmilestonescontroller-statesobj-page"><p>The reference to workflow states object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewmilestonescontroller-addpermission-page"><p>The add milestones items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-workspaceitem-viewmilestonescontroller-currentuserlistenerid-page"><p><code>private</code> Listener for current user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewmilestonescontroller-dateformat-page"><p>The format of the date string the user has chosen.</p>
+</div></div>
+</li>
+<li><h3 id="properties_edit">edit</h3>
+<div class="edit"><div class="controllers-workspaceitem-viewmilestonescontroller-edit-page"><p>The state of the editable fields shown in the TDW
+(this has to be an object so that any changes in it get automatically
+reflected in the fieldData)</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewmilestonescontroller-editpermission-page"><p>The edit milestones items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewmilestonescontroller-itemid-page"><p>The item id of the current selected item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewmilestonescontroller-itemlistenerid-page"><p>Listener for item object. Determines the workspace type
+to initialise the revisioning columns, if needed. And gets the
+affected item custom columns meta data.</p>
+</div></div>
+</li>
+<li><h3 id="properties_milestonelistenerid">milestoneListenerId</h3>
+<div class="milestonelistenerid"><div class="controllers-workspaceitem-viewmilestonescontroller-milestonelistenerid-page"><p>Listener for milestones object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_milestonestateslistenerid">milestoneStatesListenerId</h3>
+<div class="milestonestateslistenerid"><div class="controllers-workspaceitem-viewmilestonescontroller-milestonestateslistenerid-page"><p>Listener for workflow states object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_moment">moment</h3>
+<div class="moment"><div class="controllers-workspaceitem-viewmilestonescontroller-moment-page"><p>Moment is required to convert date format not supported by IE to a supported format</p>
+</div></div>
+</li>
+<li><h3 id="properties_statechangelistenerid">stateChangeListenerId</h3>
+<div class="statechangelistenerid"><div class="controllers-workspaceitem-viewmilestonescontroller-statechangelistenerid-page"><p>Listener for state changes. When the state changes,
+update the edit object to reflect that change. Also set the
+table headers again because some fields are hidden in edit mode.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewmilestonescontroller-tablecolumns-page"><p>Stores the details of the table&#39;s fields.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewmilestonescontroller-tabledata-page"><p>Stores table data of the affected items.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewmilestonescontroller-viewpermission-page"><p>The view milestones items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewmilestonescontroller-workspaceid-page"><p>The workspace id of the current selected item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

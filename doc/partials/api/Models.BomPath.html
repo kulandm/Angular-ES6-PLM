@@ -1,0 +1,87 @@
+<h1><code ng:non-bindable="">BomPath</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bompath-page"><p>Class representing a path taken to reach a node from the root
+Instances of this class should be considered constant</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_emptypath">EmptyPath()</h3>
+<div class="emptypath"><div class="models-bompath-emptypath-page"><p>Returns a new path to the root node</p>
+</div><h5 id="methods_emptypath_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-emptypath-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_withprecedingedge">WithPrecedingEdge(edgeId)</h3>
+<div class="withprecedingedge"><div class="models-bompath-withprecedingedge-page"><p>Returns a new path whose list of edges is edgeId followed by the current path&#39;s edges</p>
+</div><h5 id="methods_withprecedingedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>edgeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bompath-withprecedingedge-page"><p>the edge with which to precede the current path</p>
+</div></td></tr></tbody></table><h5 id="methods_withprecedingedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withprecedingedge-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_withprecedingedges">WithPrecedingEdges(edges)</h3>
+<div class="withprecedingedges"><div class="models-bompath-withprecedingedges-page"><p>Returns a new path whose list of edges is edges followed by the current path&#39;s edges</p>
+</div><h5 id="methods_withprecedingedges_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>edges</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bompath-withprecedingedges-page"><p>the list of edges with which to precede the current path</p>
+</div></td></tr></tbody></table><h5 id="methods_withprecedingedges_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withprecedingedges-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_withsucceedingedge">WithSucceedingEdge(edgeId)</h3>
+<div class="withsucceedingedge"><div class="models-bompath-withsucceedingedge-page"><p>Returns a new path whose list of edges is the current path&#39;s edges followed by edgeId</p>
+</div><h5 id="methods_withsucceedingedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>edgeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bompath-withsucceedingedge-page"><p>the edge with which to extend the current path</p>
+</div></td></tr></tbody></table><h5 id="methods_withsucceedingedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withsucceedingedge-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_withsucceedingedges">WithSucceedingEdges(edges)</h3>
+<div class="withsucceedingedges"><div class="models-bompath-withsucceedingedges-page"><p>Returns a new path whose list of edges is the current path&#39;s edges followed by edges</p>
+</div><h5 id="methods_withsucceedingedges_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>edges</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bompath-withsucceedingedges-page"><p>the list of edges with which to extend the current path</p>
+</div></td></tr></tbody></table><h5 id="methods_withsucceedingedges_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withsucceedingedges-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_withsucceedingpath">WithSucceedingPath(path)</h3>
+<div class="withsucceedingpath"><div class="models-bompath-withsucceedingpath-page"><p>Returns a new path whose list of edges is the current path&#39;s edges followed by path&#39;s edges</p>
+</div><h5 id="methods_withsucceedingpath_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>path</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withsucceedingpath-page"><p>the path with which to extend the current path</p>
+</div></td></tr></tbody></table><h5 id="methods_withsucceedingpath_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-withsucceedingpath-page"><p>the new path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_asstring">asString()</h3>
+<div class="asstring"><div class="models-bompath-asstring-page"><p>Converts the path into a string that can be used as a unique key in a map</p>
+</div><h5 id="methods_asstring_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bompath-asstring-page"><p>String representation of path</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bompath-constructor-page"><p>initializes the path from a list of edges</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bompath-constructor-page"><p>a list of arguments
+-edges: a list of edgeIds</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_equals">equals(bomPath)</h3>
+<div class="equals"><div class="models-bompath-equals-page"><p>Returns true if the path leads to the same node</p>
+</div><h5 id="methods_equals_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomPath</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bompath-equals-page"><p>the path to compare to</p>
+</div></td></tr></tbody></table><h5 id="methods_equals_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bompath-equals-page"><p>true if the paths are equal</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getpathlength">getPathLength()</h3>
+<div class="getpathlength"><div class="models-bompath-getpathlength-page"><p>gets the length of this instance of <code>BomPath</code>.</p>
+</div><h5 id="methods_getpathlength_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bompath-getpathlength-page"><p>the lengh of this <code>BomPath</code>.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_ispathtoroot">isPathToRoot()</h3>
+<div class="ispathtoroot"><div class="models-bompath-ispathtoroot-page"><p>Determines if the path is to the root node (that is, if there is no edges in the path)</p>
+</div><h5 id="methods_ispathtoroot_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bompath-ispathtoroot-page"><p>true if the path is to the root node</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_ispathtoroot">isPathToRoot()</h3>
+<div class="ispathtoroot"><div class="models-bompath-ispathtoroot-page"><p>Returns the final edge of the path</p>
+</div><h5 id="methods_ispathtoroot_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bompath-ispathtoroot-page"><p>the final edge in the path, or null if the path is to the root</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_edges">edges</h3>
+<div class="edges"><div class="models-bompath-edges-page"><p>The array of edge ids which define the path</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

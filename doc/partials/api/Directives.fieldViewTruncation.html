@@ -1,0 +1,76 @@
+<h1><code ng:non-bindable="">fieldViewTruncation</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-fieldviewtruncation-page"><p>This directive is to be used inside fieldView, just to display a truncated value</p>
+<h6 id="description_--shouldtruncate-{boolean}-if-the-truncation-should-happen">- shouldTruncate {Boolean} If the truncation should happen</h6>
+<h6 id="description_--value-{string}-the-plain-string">- value: {String} the plain string</h6>
+<h6 id="description_--length-{integer}-the-length">- length: {Integer} the length</h6>
+<h6 id="description_--preformatted-{boolean}-if-should-wrap-the-string-using-,-to-respect-&quot;\n&quot;">- preformatted: {Boolean} If should wrap the string using <pre> instead of <span>, to respect &quot;\n&quot;</h6>
+<h6 id="description_--html-{boolean}-if-should-display-the-passed-string-as-html">- html: {Boolean} If should display the passed string as HTML</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY field-view-truncation&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_checkfortruncation">checkForTruncation()</h3>
+<div class="checkfortruncation"><div class="directives-fieldviewtruncation-checkfortruncation-page"><p>Checks if a certain value should be truncated according to the scrollHeight/clientHeight</p>
+</div><h5 id="methods_checkfortruncation_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="directives-fieldviewtruncation-checkfortruncation-page"><p>If the string should be truncated or not</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_settruncation">setTruncation(flag)</h3>
+<div class="settruncation"><div class="directives-fieldviewtruncation-settruncation-page"><p>Sets the scope&#39;s truncation flag to true or not</p>
+</div><h5 id="methods_settruncation_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>flag</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="directives-fieldviewtruncation-settruncation-page"><p>sets the scope&#39;s truncation flag to the boolean value passed to this method</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_displaytruncationcontrol">displayTruncationControl</h3>
+<div class="displaytruncationcontrol"><div class="directives-fieldviewtruncation-displaytruncationcontrol-page"><p>Controls the displaying of the truncation control (arrow, or string)</p>
+</div></div>
+</li>
+<li><h3 id="properties_fullvalue">fullValue</h3>
+<div class="fullvalue"><div class="directives-fieldviewtruncation-fullvalue-page"><p><code>private</code> Stores the full value of this field, for truncation purposes</p>
+</div></div>
+</li>
+<li><h3 id="properties_isarray">isArray</h3>
+<div class="isarray"><div class="directives-fieldviewtruncation-isarray-page"><p>Stores the status of truncation for the current value of this field</p>
+</div></div>
+</li>
+<li><h3 id="properties_ishtml">isHTML</h3>
+<div class="ishtml"><div class="directives-fieldviewtruncation-ishtml-page"><p><code>private</code> Default line height size for bootstrap theme</p>
+</div></div>
+</li>
+<li><h3 id="properties_ishtml">isHTML</h3>
+<div class="ishtml"><div class="directives-fieldviewtruncation-ishtml-page"><p>Set to true whenever the supplied string should be rendered as HTML, or false for everything else</p>
+</div></div>
+</li>
+<li><h3 id="properties_ishovering">isHovering</h3>
+<div class="ishovering"><div class="directives-fieldviewtruncation-ishovering-page"><p>Set to true whenever user is hovering elements relative to the field (such as the arrow for expanding/collapsing)</p>
+</div></div>
+</li>
+<li><h3 id="properties_ispreformatted">isPreformatted</h3>
+<div class="ispreformatted"><div class="directives-fieldviewtruncation-ispreformatted-page"><p>Set to true whenever user is hovering elements relative to the field (such as the arrow for expanding/collapsing)</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-fieldviewtruncation-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-11" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-11" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-11">
+<field-view-truncation value="String" length="Integer" preformatted="Boolean" html="Boolean" />
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-11" ng-eval-javascript=""></div>
+</div></div>
+</div>

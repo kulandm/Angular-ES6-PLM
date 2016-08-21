@@ -1,0 +1,39 @@
+<h1><code ng:non-bindable="">tableColumnReorder</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-tablecolumnreorder-page"><p>A feature of tabular data widget to support column re-ordering. This should be used with <a href="api/TabularDataWidgetDirective">TabularDataWidgetDirective</a>.</p>
+<h4 id="description_dependen">Dependen</h4>
+<ul>
+<li>Requires <a href="Controllers/Controller.TabularDataWidgetController">Controllers/Controller.TabularDataWidgetController</a></li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY table-column-reorder&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_triggerinit">triggerInit()</h3>
+<div class="triggerinit"><div class="directives-tablecolumnreorder-triggerinit-page"><p>Initialization function</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-tablecolumnreorder-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-16" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-16" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-16">
+     <tabular-data-widget columns="tableColumns" data="tableData" sorting="server" sort-change="sortChange(column, order)"
+         perform-action="openFlyoutWindow(event, row, field)" table-column-reorder />
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-16" ng-eval-javascript=""></div>
+<p>TODO: styling the drag drop process.</p>
+</div></div>
+</div>

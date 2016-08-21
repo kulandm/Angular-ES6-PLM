@@ -1,0 +1,14 @@
+<div>
+	<div layout="row" layout-align="space-between center">
+		<div flex>{{$root.bundle.addLinkedItems.managedBy}}</div>
+		<div flex="5">
+			<a class="md md-close" ng-click="tooltipCtrl.cancelFlyout()"></a>
+		</div>
+	</div>
+	<div>
+		<a ui-sref="details({workspaceId: tooltipCtrl.linkableItem.getWorkspaceId(), itemId: tooltipCtrl.linkableItem.itemLinkedToId()})"
+			ng-click="tooltipCtrl.closeFlyout()">
+			{{tooltipCtrl.linkableItem.itemLinkedTo().title}}
+		</a>
+	</div>
+</div>

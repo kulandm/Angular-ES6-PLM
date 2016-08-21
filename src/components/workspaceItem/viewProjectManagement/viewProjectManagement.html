@@ -1,0 +1,115 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewProjectManagementCtrl">
+	<!--<md-button
+		ng-click="viewProjectManagementCtrl.triggerAdd($event);"
+		ng-disabled="viewProjectManagementCtrl.hasActiveFlyout()"
+		class="md-button md-primary md-default-theme"
+		is-permitted="{{viewProjectManagementCtrl.addPermission}}"
+		aria-label="{{$root.bundle.button.add}}">
+		<span class="label">{{$root.bundle.button.add}}</span>
+	</md-button>-->
+	<md-select placeholder="Scale" ng-model="viewProjectManagementCtrl.ganttChartScale" class="gantt-scale" ng-change="viewProjectManagementCtrl.resizeGridHeight()" ng-hide="viewProjectManagementCtrl.tableData.rows.length === 0">
+		<md-option ng-repeat="scale in viewProjectManagementCtrl.ganttChartAvailableScales" value="{{scale}}">{{scale.toUpperCase()}}</md-option>
+	</md-select>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+
+	<!-- Project Management content, middle -->
+	<md-content layout-fill id="item-main" class="project-management">
+		<div gantt data="viewProjectManagementCtrl.ganttChartData" view-scale="viewProjectManagementCtrl.ganttChartScale" show-side="true" api="viewProjectManagementCtrl.registerApi" current-date="'line'" column-width="viewProjectManagementCtrl.getColumnWidth(viewProjectManagementCtrl.ganttChartScale)" ng-hide="viewProjectManagementCtrl.tableData.rows.length ==0">
+			<gantt-progress></gantt-progress>
+			<gantt-tooltips content="$root.bundle.notification.projectManagement.duration.zeroDays"></gantt-tooltips>
+		</div>
+		<!-- Table-data will be shown without footer and gantt-chart if no data found -->
+		<table-data
+			columns="viewProjectManagementCtrl.tableData.columns"
+			rows="viewProjectManagementCtrl.tableData.rows" ng-show="viewProjectManagementCtrl.tableData.rows.length == 0" class="tabledata-norows">
+		</table-data>
+		<!-- TODO: below line is temporary and will be removed once 'no-data' message implemented in ui-grid -->
+		<div ng-show="viewProjectManagementCtrl.isDataAvailable === false" class="no-data-message">{{$root.bundle.chart.noDataToShow}}</div>
+	</md-content>
+
+	<script type="text/ng-template" id="dateTemplate">
+		<div class="ui-grid-cell-contents">
+			{{COL_FIELD | date: grid.appScope.viewProjectManagementCtrl.dateFormat}}
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="footerDateTemplate">
+		<div class="ui-grid-cell-contents">
+			{{col.getAggregationValue() | date: grid.appScope.viewProjectManagementCtrl.dateFormat}}
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="predecessorTemplate">
+		<div class="ui-grid-cell-contents">
+			<span>{{COL_FIELD.join()}}</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="percentCompleteTemplate">
+		<div class="ui-grid-cell-contents">
+			{{COL_FIELD}}%
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="footerPercentCompleteTemplate">
+		<div class="ui-grid-cell-contents">
+			{{col.getAggregationValue()}}%
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="footerDurationTemplate">
+		<div class="ui-grid-cell-contents">
+			 <span ng-if="col.getAggregationValue() === 1">{{col.getAggregationValue()}} {{$root.bundle.projectManagement.durationUnit}}</span>
+			 <span ng-if="col.getAggregationValue() !== 1">{{col.getAggregationValue()}} {{$root.bundle.projectManagement.durationUnitPlural}}</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="itemLinkTemplate">
+		<div class="ui-grid-cell-contents" ng-class="{ 'project-summary-title': row.entity.isSummaryRow }">
+			<span class="project-item-expander" ng-style="{ width: 15 * (1 + row.entity.$$treeLevel) + 'px' }">
+				<a href="javascript:;"
+					ng-if="row.entity.isExpandable && row.entity.isCollapsed"
+					ng-click="grid.appScope.viewProjectManagementCtrl.expandRow(row, grid)">
+					<span class="md md-chevron-right"></span>
+				</a>
+				<a href="javascript:;"
+					ng-if="row.entity.isExpandable && !row.entity.isCollapsed"
+					ng-click="grid.appScope.viewProjectManagementCtrl.collapseRow(row, grid)">
+					<span class="md md-expand-more"></span>
+				</a>
+			</span>
+			<a ng-if="row.entity.href" href="{{row.entity.href}}">
+				{{COL_FIELD}}
+			</a>
+			<span ng-if="!row.entity.href">{{COL_FIELD}}</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="durationTemplate">
+		<div class="ui-grid-cell-contents">
+			 <span ng-if="COL_FIELD === 1">{{COL_FIELD}} {{$root.bundle.projectManagement.durationUnit}}</span>
+			 <span ng-if="COL_FIELD !== 1">{{COL_FIELD}} {{$root.bundle.projectManagement.durationUnitPlural}}</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="statusTemplate">
+		<div class="ui-grid-cell-contents">
+			 <span class="project-item-status project-item-status-{{row.entity.statusFlag.toLowerCase()}}"
+				ng-class="!row.entity.type || row.entity.type.title === 'WFM' ? 'project-item-type-wfm' : ''">
+					{{COL_FIELD}}
+			</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="itemTypeTemplate">
+		<div class="ui-grid-cell-contents icon">
+			<span class="md md-lg"
+				ng-class="{'md-event': row.entity.itemType == 'WFP', 'md-alarm-on': row.entity.itemType == 'WFM'}">
+			</span>
+		</div>
+	</script>
+</md-content>

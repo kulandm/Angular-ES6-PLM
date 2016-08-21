@@ -1,0 +1,67 @@
+// Text Truncation
+//
+// Styles for text truncation.
+//
+// Styleguide 30
+
+// Text Truncation
+//
+// Different styles for when the text is truncated or untruncated.
+//
+// Markup:
+// <none>None</none>
+//
+// .text-truncation - 
+//
+// Styleguide 30.1
+.text-truncation {
+	position: relative;
+
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+
+	> div.truncated {
+		overflow: hidden;
+
+		width: 100%;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		-ms-flex: 2 1 auto;
+		-webkit-flex: 2; // Grow: 2, Shrink: 1, Basis: 0
+		flex: 2;
+	}
+
+	> div.untruncated {
+		font-size: 1rem;
+
+		position: absolute;
+		top: 10px;
+		left: 10px;
+
+		padding: 3px;
+
+		border-radius: 3px;
+		background: $divUntruncatedBackgroundColor;
+		box-shadow: $divUntruncatedBoxShadow;
+	}
+}
+
+// Text Truncation (Breadcrumb)
+//
+// Special rule for breadcrumb since breadcrumb is nested flexbox.
+//
+// Markup:
+// <none>None</none>
+//
+// li.text-truncation - Specific styles for `li` in text truncation
+//
+// Styleguide 30.2
+li.text-truncation {
+	display: -ms-inline-flexbox;
+	display: -webkit-inline-flex;
+	display: inline-flex;
+
+	min-width: 5em;
+}

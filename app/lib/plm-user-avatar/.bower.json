@@ -1,0 +1,33 @@
+{
+  "name": "plm-user-avatar",
+  "description": "PLM UI USER AVATAR",
+  "main": "Gruntfile.js",
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3"
+  },
+  "version": "1.0.4",
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.4",
+    "commit": "4124f79145b2b2db855917daa1168db2ddd160cb"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-user-avatar.git",
+  "_target": "~v1.0.4",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-user-avatar.git"
+}

@@ -1,0 +1,63 @@
+.add-relatedBOM-dialog {
+	.ui-grid {
+		width: 600px !important; // Need to overrite as the table is in the modal window
+		height: 343px !important; // Need to overrite as the table is in the modal window
+
+		div.ui-grid-cell input[type="checkbox"] {
+			margin-left: 0;
+		}
+	}
+
+	.bom-listing {
+		padding-top: 15px;
+	}
+
+	.headline {
+		font-size: 24px;
+		font-weight: 400;
+
+		small {
+			padding-left: 15px;
+			font-size: 14px;
+		}
+	}
+
+	.well {
+		padding: 20px;
+		background-color: $secondaryBackgroundColor;
+		margin-bottom: 15px;
+	}
+
+	md-radio-group {
+		border: none;
+	}
+
+	md-radio-button {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		&:not([disabled]).md-primary.md-checked .md-off {
+			border-color: $buttonPrimaryBackgroundColor;
+		}
+	}
+
+	.md-subheader {
+		padding-bottom: 0;
+		margin-top: 15px;
+	}
+
+	.close-button {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+	}
+
+	.checkbox-column {
+		padding: 10px;
+		text-align: center;
+		&.header-cell {
+			padding-top: 15px;
+		}
+	}
+}

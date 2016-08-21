@@ -1,0 +1,57 @@
+<h1><code ng:non-bindable="">BomChangeEdit</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomchangeedit-page"><p>A change that edit a field of an item in the bom</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_isrevertingchange">isRevertingChange()</h3>
+<div class="isrevertingchange"><div class="models-bomchangeedit-isrevertingchange-page"><p>Checks if this change sets the value of the field
+to a value that is not fundamentally different from the field&#39;s original value
+If so, the change is a NOOP or undoes any previous changes to the field.</p>
+</div><h5 id="methods_isrevertingchange_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomchangeedit-isrevertingchange-page"><p>True if this change is not consequential
+when compared to the original value of the field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_payloadform">payloadForm()</h3>
+<div class="payloadform"><div class="models-bomchangeedit-payloadform-page"><p>Returns an object with the edit&#39;s data in a form suitable for use in a payload</p>
+</div></div>
+</li>
+<li><h3 id="methods_targetssamefield">targetsSameField(change)</h3>
+<div class="targetssamefield"><div class="models-bomchangeedit-targetssamefield-page"><p>Checks if the provided change targets the same field on the same edge as this change</p>
+</div><h5 id="methods_targetssamefield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>change</td><td><a href="" class="label type-hint type-hint-bomchangeedit">BomChangeEdit</a></td><td><div class="models-bomchangeedit-targetssamefield-page"><p>The change to test</p>
+</div></td></tr></tbody></table><h5 id="methods_targetssamefield_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomchangeedit-targetssamefield-page"><p>True if the change targets the same field on the same edge as this change</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_changetype">changeType</h3>
+<div class="changetype"><div class="models-bomchangeedit-changetype-page"><p>The type of the change</p>
+</div></div>
+</li>
+<li><h3 id="properties_constructor">constructor</h3>
+<div class="constructor"><div class="models-bomchangeedit-constructor-page"><p>Initializes the edit</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentvalue">currentValue</h3>
+<div class="currentvalue"><div class="models-bomchangeedit-currentvalue-page"><p>The value of the field after the change occured</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgeid">edgeId</h3>
+<div class="edgeid"><div class="models-bomchangeedit-edgeid-page"><p>The edge which this change targets</p>
+</div></div>
+</li>
+<li><h3 id="properties_targetfielddata">targetFieldData</h3>
+<div class="targetfielddata"><div class="models-bomchangeedit-targetfielddata-page"><p>The BomFieldData instance which this change targets
+Because this is a live reference to the BomFieldData instance associated with a field,
+    it should be considered constant and should NOT be modified from here.
+Additionally, only constant properties of the field should be referenced,
+    since the instance may be updated from elsewhere after the change occurs.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

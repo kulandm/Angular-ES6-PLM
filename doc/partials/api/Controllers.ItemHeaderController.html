@@ -1,0 +1,119 @@
+<h1><code ng:non-bindable="">ItemHeaderController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-itemheadercontroller-page"><p>This controller is attached to ItemHeaderDirective</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_canceltransition">cancelTransition()</h3>
+<div class="canceltransition"><div class="controllers-itemheadercontroller-canceltransition-page"><p>Closes workflow action transition flyout and reset the action.</p>
+</div></div>
+</li>
+<li><h3 id="methods_changerevision">changeRevision()</h3>
+<div class="changerevision"><div class="controllers-itemheadercontroller-changerevision-page"><p>Changes the revision of an item (essentially, a link to another item).</p>
+</div></div>
+</li>
+<li><h3 id="methods_changeworkflowtransition">changeWorkflowTransition()</h3>
+<div class="changeworkflowtransition"><div class="controllers-itemheadercontroller-changeworkflowtransition-page"><p>Handles workflow action change.</p>
+</div></div>
+</li>
+<li><h3 id="methods_loaddata">loadData()</h3>
+<div class="loaddata"><div class="controllers-itemheadercontroller-loaddata-page"><p>Loads the models, and bind them to local objects - this method will be called
+by an event listener whenever data has changed somewhere else, and the models need to be reloaded,
+because two-way data binding doesn&#39;t trigger normally</p>
+</div></div>
+</li>
+<li><h3 id="methods_processworkspaceobj">processWorkspaceObj(WorkspaceObj)</h3>
+<div class="processworkspaceobj"><div class="controllers-itemheadercontroller-processworkspaceobj-page"><p>Define the workspace (type)</p>
+</div><h5 id="methods_processworkspaceobj_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>WorkspaceObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-itemheadercontroller-processworkspaceobj-page"><p>The workspace object</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_revisioningtranslationkeys">revisioningTranslationKeys()</h3>
+<div class="revisioningtranslationkeys"><div class="controllers-itemheadercontroller-revisioningtranslationkeys-page"><p><code>private</code> Helper method to retrieve a list of transitions (DRY)</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_itemobj">ItemObj</h3>
+<div class="itemobj"><div class="controllers-itemheadercontroller-itemobj-page"><p><code>private</code> Holds the item data</p>
+</div></div>
+</li>
+<li><h3 id="properties_userobj">UserObj</h3>
+<div class="userobj"><div class="controllers-itemheadercontroller-userobj-page"><p><code>private</code> Holds the user data</p>
+</div></div>
+</li>
+<li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-itemheadercontroller-bundle-page"><p>Assigns the local scope&#39;s bundle to the $rootScope bundle for localization keys</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-itemheadercontroller-currentuserlistenerid-page"><p>The reference of the user event listener</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemdata">itemData</h3>
+<div class="itemdata"><div class="controllers-itemheadercontroller-itemdata-page"><p>Object containing data for this item, untouched, from the endpoint</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-itemheadercontroller-itemid-page"><p>The item id associated with the item header</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-itemheadercontroller-itemlistenerid-page"><p>The reference of the workspace item event listener</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisiondropdownarr">revisionDropdownArr</h3>
+<div class="revisiondropdownarr"><div class="controllers-itemheadercontroller-revisiondropdownarr-page"><p>Builds the object for the revisioning (dropdown and effective date)</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisiontagstr">revisionTagStr</h3>
+<div class="revisiontagstr"><div class="controllers-itemheadercontroller-revisiontagstr-page"><p>Builds the object for the revisioning (dropdown and effective date)</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisiontagstr">revisionTagStr</h3>
+<div class="revisiontagstr"><div class="controllers-itemheadercontroller-revisiontagstr-page"><p>The revision tag string, retrieved from the endpoint&#39;s data</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisioningtranslationkeys">revisioningTranslationKeys</h3>
+<div class="revisioningtranslationkeys"><div class="controllers-itemheadercontroller-revisioningtranslationkeys-page"><p><code>private</code> Stores the reference to the localization keys.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedrevision">selectedRevision</h3>
+<div class="selectedrevision"><div class="controllers-itemheadercontroller-selectedrevision-page"><p>Finds and sets the current revision, comparing each id on the dropdown with the current itemId</p>
+</div></div>
+</li>
+<li><h3 id="properties_workflowflyout">workflowFlyout</h3>
+<div class="workflowflyout"><div class="controllers-itemheadercontroller-workflowflyout-page"><p>Object containing workflow transition flyout related properties.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedtransition">selectedTransition</h3>
+<div class="selectedtransition"><div class="controllers-itemheadercontroller-workflowflyout-selectedtransition-page"><p>The workflow transition selected by the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceicon">workspaceIcon</h3>
+<div class="workspaceicon"><div class="controllers-itemheadercontroller-workspaceicon-page"><p>The CSS class name of the icon for this workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-itemheadercontroller-workspaceid-page"><p>The workspace id associated with the item header</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspacelistenerid">workspaceListenerId</h3>
+<div class="workspacelistenerid"><div class="controllers-itemheadercontroller-workspacelistenerid-page"><p>The reference of the workspace event listener</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspacetypeid">workspaceTypeId</h3>
+<div class="workspacetypeid"><div class="controllers-itemheadercontroller-workspacetypeid-page"><p>A string describing the type of this workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceslistenerid">workspacesListenerId</h3>
+<div class="workspaceslistenerid"><div class="controllers-itemheadercontroller-workspaceslistenerid-page"><p>The reference of the workspaces event listener</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

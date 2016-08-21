@@ -1,0 +1,3 @@
+######################## DEPRECATED
+##########  DO NOT ADD ANYTHING HERE
+##########  USE applicationResources.properties INSTEAD

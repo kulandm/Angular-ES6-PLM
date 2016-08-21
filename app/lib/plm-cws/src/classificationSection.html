@@ -1,0 +1,7 @@
+<span class="classificationSection">{{headerText}} 
+	<span ng-if="!isEditionMode()" class="classification-section" title="{{classificationFullPath}}" ng-init="verifyForChangedClassification()">({{classificationName}})</span>
+	<span ng-if="isEditionMode()" class="classification-section" title="{{classificationFullPath}}" >
+		<a class="cwsTreeIframe" href="#" title="{{classificationFullPath}}" ng-click="openCwsModal()">{{classificationName}}</a>
+	</span>
+	<i class="md-warning" ng-show="isPhantomClass" title="{{$root.bundle.classifications.section.warning.phantom_class}}"></i>
+</span>

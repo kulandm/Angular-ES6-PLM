@@ -1,0 +1,35 @@
+// Workspace Item Milestones
+//
+// Styles for the workspace item milestones page.
+//
+// Styleguide 42
+
+.view-milestones {
+	.ui-grid-cell-contents {
+		position: relative;
+	}
+	.milestone-item-status {
+		position: absolute;
+		top: 10px;
+		right: 5px;
+		bottom: 10px;
+		left: 15px; // column header separator takes up space
+
+		padding: 0 5px;
+
+		color: $whiteColor;
+	}
+
+	.milestone-item-status-good {
+		background-color: $itemStatusGoodColor;
+	}
+
+	.milestone-item-status-warning {
+		background-color: $itemStatusWfmWarningColor;
+	}
+
+	.milestone-item-status-critical {
+		background-color: $itemStatusCriticalColor;
+	}
+	
+}

@@ -1,0 +1,79 @@
+// Loading Bar
+//
+// Style for loading.
+//
+// Styleguide 15
+
+// Loading Spinner
+//
+// Styles for loading spinner.
+//
+// Markup:
+// <div id="loading-spinner" style="padding:30px; border-radius:10px;
+// 	width:inherit; height:inherit; position:relative;">
+// 	Hover over me to see the loading spinner.</div>
+//
+// #loading-spinner - **Not Used**
+//
+// Styleguide 15.1
+#loading-spinner {
+	@include set-width-height(100%, 100%);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	cursor: progress;
+
+	opacity: 0.85;
+	background-color: $loadingSpinnerBackgroundColor;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		min-width: 60px;
+		padding: 60px 0 0 0;
+
+		background: {
+			position: center;
+
+			image: url('../images/loading_bars.gif');
+			repeat: no-repeat;
+		}
+	}
+}
+
+// Loading Bar
+//
+// Used to show loading when loading endpoints.
+//
+// Markup:
+// <div id="loading-bar" style="width:inherit; top:0; position:relative;"></div>
+//
+// #loading-bar - Animated and displayed right below PLM header
+//
+// Styleguide 15.2
+#loading-bar {
+	@include set-width-height(0, 4px);
+
+	position: fixed;
+	z-index: $zIndexDefault;
+	top: 0;
+	left: 0;
+
+	box-shadow: $loadingBarShadow;
+	background-color: $loadingBarBackgroundColor;
+}
+
+// Loading bar
+//
+// Shows a spinner alongside the mouse cursor when performing a loading operation
+//
+// Styleguide 15.3
+#wrapper {
+	&.loading {
+		cursor: wait;
+	}
+}

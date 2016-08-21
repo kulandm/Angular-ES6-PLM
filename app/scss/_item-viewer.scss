@@ -1,0 +1,167 @@
+// Item Viewer
+//
+// Styles specific to item viewer.
+//
+// Styleguide 43
+
+#itemnav {
+	@import 'plm-header';
+	@import 'item-header';
+
+	md-sidenav {
+		// Push sidenav down below unified header
+		// Ideally, this should be contained within its parent,
+		//	but md-sidenav will scroll the page to the top of the nav if it isn't fixed positioned
+		position: fixed;
+		top: $fusionHeaderHeight;
+
+		min-width: 75%;
+		transition: min-width 0.4s;
+
+		&.full-width {
+			min-width: 100%;
+			margin-left: 55px;
+			padding-right: 55px;
+		}
+
+		&.no-width {
+			width: 0;
+			min-width: 0;
+			transition: min-width 0s;
+		}
+
+		.itemviwer-root {
+			height: 100%;
+		}
+
+		#itemviewer-plm-header {
+			z-index: 10;
+
+			padding-bottom: 10px;
+			padding-left: 32px;
+
+			& > a {
+				width: 32px;
+				height: 32px;
+				padding-top: 10px;
+
+				text-align: center;
+				text-decoration: none;
+			}
+
+			header {
+
+				h3 {
+					top: 0;
+					left: 0;
+
+					margin-top: 8px;
+					margin-bottom: -3px;
+				}
+
+				.title-wrapper {
+
+					h1 {
+						margin: 0;
+					}
+
+					#itemviewer-revision-dropdown {
+						margin-left: 5px;
+
+						#itemviewer-revisions-dropdown-button {
+							font-weight: bold;
+							line-height: 1;
+							border: solid 1px $itemHeaderBorderColor;
+							height: unset;
+							min-height: unset;
+							padding-top: 2px;
+
+							color: $mediumGrayColor;
+							background-color: $blueItemHeader !important;  // to override _dropdown-widget's important
+							&:not([disabled]):hover {
+								border: solid 1px $buttonPrimaryHoverBackgroundColor;
+								background-color: $blueItemHeader !important; // to override _dropdown-widget's important
+								color: $buttonPrimaryHoverBackgroundColor;
+							}
+
+							&:not([disabled]):focus {
+								border: solid 1px $buttonPrimaryFocusBackgroundColor;
+								background-color: $blueItemHeader !important;
+								color: $buttonPrimaryFocusBackgroundColor !important; // to override _dropdown-widget's important
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.menu-buttons {
+			margin-top: 8px;
+
+			flex: 0 0 auto;
+
+			#archiving.on {
+				color: $headerArchivedTextColor;
+			}
+
+			#pinning.on {
+				color: $whiteColor;
+				background-color: $buttonPinnedBackgroundColor;
+				box-shadow: none;
+			}
+
+			.dropdown-widget {
+
+				li {
+					button {
+						width: 100%;
+
+						text-align: left;
+
+						color: $linkColor;
+						border-width: 0;
+						background-color: transparent;
+					}
+
+					button[disabled] {
+						color: $grayColor;
+					}
+
+					&:hover {
+						background-color: $dropdownWidgetHoverBackgroundColor;
+					}
+				}
+			}
+		}
+	}
+
+	md-content.loader-wrapper {
+		padding-top: 28%;
+
+		.loader-container {
+			width: 100%;
+
+			text-align: center;
+		}
+	}
+
+	md-backdrop {
+		display: none;
+	}
+
+	#item-viewer-wrapper {
+		& > span {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			display: -webkit-box;
+			display: -webkit-flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			#item-main {
+				display: flex;
+				flex: 1;
+			}
+		}
+	}
+}

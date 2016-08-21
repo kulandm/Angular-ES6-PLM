@@ -1,0 +1,138 @@
+<h1><code ng:non-bindable="">PLMNavigationController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-plmnavigationcontroller-page"><p>This controller is attached to PLMNavigationDirective</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_categorylist">categoryList()</h3>
+<div class="categorylist"><div class="controllers-plmnavigationcontroller-categorylist-page"><p>The list of workspace categories</p>
+</div></div>
+</li>
+<li><h3 id="methods_checkifuserisallowedadmin">checkIfUserIsAllowedAdmin()</h3>
+<div class="checkifuserisallowedadmin"><div class="controllers-plmnavigationcontroller-checkifuserisallowedadmin-page"><p>Retrieves user data and evaluates whether can navigate to Administration or not</p>
+</div></div>
+</li>
+<li><h3 id="methods_closemenu">closeMenu()</h3>
+<div class="closemenu"><div class="controllers-plmnavigationcontroller-closemenu-page"><p>if the menu is open. closes it and returns to the default panel</p>
+</div></div>
+</li>
+<li><h3 id="methods_currentuser">currentUser()</h3>
+<div class="currentuser"><div class="controllers-plmnavigationcontroller-currentuser-page"><p>The current logged user</p>
+</div></div>
+</li>
+<li><h3 id="methods_getadminemail">getAdminEmail()</h3>
+<div class="getadminemail"><div class="controllers-plmnavigationcontroller-getadminemail-page"><p>Returns the email address of the admin</p>
+</div></div>
+</li>
+<li><h3 id="methods_gethelplink">getHelpLink()</h3>
+<div class="gethelplink"><div class="controllers-plmnavigationcontroller-gethelplink-page"><p>Returns the link to the help system</p>
+</div></div>
+</li>
+<li><h3 id="methods_goback">goBack()</h3>
+<div class="goback"><div class="controllers-plmnavigationcontroller-goback-page"><p>Currently just returns to the default panel</p>
+</div></div>
+</li>
+<li><h3 id="methods_gotodefaultpanel">goToDefaultPanel()</h3>
+<div class="gotodefaultpanel"><div class="controllers-plmnavigationcontroller-gotodefaultpanel-page"><p>Updates the current panel to be the default panel, closing any categories</p>
+</div></div>
+</li>
+<li><h3 id="methods_gotoinnerpanel">goToInnerPanel(panel)</h3>
+<div class="gotoinnerpanel"><div class="controllers-plmnavigationcontroller-gotoinnerpanel-page"><p>Opens the navigation menu if it is not yet open, and selects the correct panel</p>
+</div><h5 id="methods_gotoinnerpanel_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>panel</td><td><a href="" class="label type-hint type-hint-navigationpanels">NavigationPanels</a></td><td><div class="controllers-plmnavigationcontroller-gotoinnerpanel-page"><p>The panel to go to</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_gotoworkspace">goToWorkspace(workspaceId)</h3>
+<div class="gotoworkspace"><div class="controllers-plmnavigationcontroller-gotoworkspace-page"><p>Navigate to state, forcing reload</p>
+</div><h5 id="methods_gotoworkspace_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-plmnavigationcontroller-gotoworkspace-page"><p>The id of the workspace</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_helplinks">helpLinks()</h3>
+<div class="helplinks"><div class="controllers-plmnavigationcontroller-helplinks-page"><p>Links for various help options</p>
+</div></div>
+</li>
+<li><h3 id="methods_interfacestylemandated">interfaceStyleMandated()</h3>
+<div class="interfacestylemandated"><div class="controllers-plmnavigationcontroller-interfacestylemandated-page"><p>A flag that tells whether the user has an interface style mandated.</p>
+</div></div>
+</li>
+<li><h3 id="methods_isatpanel">isAtPanel(panel)</h3>
+<div class="isatpanel"><div class="controllers-plmnavigationcontroller-isatpanel-page"><p>Determines if the provided panel is the current panel</p>
+</div><h5 id="methods_isatpanel_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>panel</td><td><a href="" class="label type-hint type-hint-navigationpanels">NavigationPanels</a></td><td><div class="controllers-plmnavigationcontroller-isatpanel-page"><p>The panel to check</p>
+</div></td></tr></tbody></table><h5 id="methods_isatpanel_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-plmnavigationcontroller-isatpanel-page"><p>True if the current panel is the provided panel</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_iscategoryopen">isCategoryOpen(categoryId)</h3>
+<div class="iscategoryopen"><div class="controllers-plmnavigationcontroller-iscategoryopen-page"><p>Checks which level the menu is currently at</p>
+</div><h5 id="methods_iscategoryopen_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>categoryId</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-plmnavigationcontroller-iscategoryopen-page"><p>The id of the category</p>
+</div></td></tr></tbody></table><h5 id="methods_iscategoryopen_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-plmnavigationcontroller-iscategoryopen-page"><p>True/false if corresponds to the current category</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isopen">isOpen()</h3>
+<div class="isopen"><div class="controllers-plmnavigationcontroller-isopen-page"><p>Returns the current state of the panel (will be bound to the sideNav&#39;s native method)</p>
+</div></div>
+</li>
+<li><h3 id="methods_openvignettesmodal">openVignettesModal()</h3>
+<div class="openvignettesmodal"><div class="controllers-plmnavigationcontroller-openvignettesmodal-page"><p>Closes the main menu and opens up the modal containing the
+vignettes.</p>
+</div></div>
+</li>
+<li><h3 id="methods_togglecategory">toggleCategory(categoryId)</h3>
+<div class="togglecategory"><div class="controllers-plmnavigationcontroller-togglecategory-page"><p>Opens the category</p>
+</div><h5 id="methods_togglecategory_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>categoryId</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-plmnavigationcontroller-togglecategory-page"><p>The id of the category (in PLM)</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_togglepanel">togglePanel()</h3>
+<div class="togglepanel"><div class="controllers-plmnavigationcontroller-togglepanel-page"><p>Toggles expansion/collapsing of the panel
+(will be bound to the sidenav native method)</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_currentcategory">currentCategory</h3>
+<div class="currentcategory"><div class="controllers-plmnavigationcontroller-currentcategory-page"><p>The id of the current open category</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentpanel">currentPanel</h3>
+<div class="currentpanel"><div class="controllers-plmnavigationcontroller-currentpanel-page"><p>The currently selected panel</p>
+</div></div>
+</li>
+<li><h3 id="properties_datatabtitle">dataTabTitle</h3>
+<div class="datatabtitle"><div class="controllers-plmnavigationcontroller-datatabtitle-page"><p>tooptip message for datatab</p>
+</div></div>
+</li>
+<li><h3 id="properties_datataburi">dataTabUri</h3>
+<div class="datataburi"><div class="controllers-plmnavigationcontroller-datataburi-page"><p>uri to datatab</p>
+</div></div>
+</li>
+<li><h3 id="properties_islogged">isLogged</h3>
+<div class="islogged"><div class="controllers-plmnavigationcontroller-islogged-page"><p>Flag for whether user is currently logged</p>
+</div></div>
+</li>
+<li><h3 id="properties_isuserallowedtoadmin">isUserAllowedToAdmin</h3>
+<div class="isuserallowedtoadmin"><div class="controllers-plmnavigationcontroller-isuserallowedtoadmin-page"><p>Truthy if the user is allowed to navigate to administration section</p>
+</div></div>
+</li>
+<li><h3 id="properties_isuserallowedtoimport">isUserAllowedToImport</h3>
+<div class="isuserallowedtoimport"><div class="controllers-plmnavigationcontroller-isuserallowedtoimport-page"><p>Truthy if the user is allowed to run imports</p>
+</div></div>
+</li>
+<li><h3 id="properties_retrievedata">retrieveData</h3>
+<div class="retrievedata"><div class="controllers-plmnavigationcontroller-retrievedata-page"><p>Retrieve the category list</p>
+</div></div>
+</li>
+<li><h3 id="properties_retrievehelplinks">retrieveHelpLinks</h3>
+<div class="retrievehelplinks"><div class="controllers-plmnavigationcontroller-retrievehelplinks-page"><p>Retrieve the links for the help menu</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-plmnavigationcontroller-workspaceid-page"><p>The id of the current workspace
+(for the create item dialog)</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

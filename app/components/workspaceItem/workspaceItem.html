@@ -1,0 +1,17 @@
+<!-- Special wrapper for item details -->
+<span layout="column" layout-fill role="item-wrapper" id="item-wrapper">
+
+	<!-- The workspace item tabs -->
+	<md-toolbar id="item-tabs-wrapper">
+		<md-tabs id="item-tabs" md-stretch-tabs="never">
+			<md-tab class="item-tabs-tab" ng-repeat="(key, value) in tabList" title="{{value.name}}" md-active="isStateActive(value.active, value.viewLink, value.editLink)">
+				<md-tab-label><a href="javascript:;" ui-sref="{{getStateName(value.link)}}" >{{value.name}}</a></md-tab-label>
+			</md-tab>
+			<!-- md-on-select="switchTab(value.link)" -->
+		</md-tabs>
+	</md-toolbar>
+
+	<!-- Wrapper for the workspace's tabs (views) command bar + vertical panels -->
+	<md-content layout="column" role="item-content-wrapper" id="item-content-wrapper" ui-view="content-holder" onload="viewLoad()"></md-content>
+
+</span>

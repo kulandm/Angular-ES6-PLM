@@ -1,0 +1,89 @@
+.searchPLM {
+  flex: 2 1 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .searchPLM input {
+    display: none;
+    border: 0;
+    outline: 0;
+    padding: 5px 5px;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    height: 46px;
+    width: 400px; }
+  .searchPLM.expanded {
+    border: 1px solid #42B6DF;
+    box-shadow: 0 0 1px 1px rgba(66, 182, 233, 0.5);
+    border-radius: 5px; }
+    .searchPLM.expanded input {
+      display: block; }
+    .searchPLM.expanded .search-icon {
+      fill: #05A7DC;
+      margin-right: 9px; }
+  .searchPLM .search-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    fill: #577390;
+    outline: 0; }
+  .searchPLM .search-icon:hover {
+    fill: #05A7DC;
+    cursor: pointer; }
+
+.searchPlmPage {
+  width: 100%; }
+  .searchPlmPage .searchCount {
+    min-height: 30px;
+    height: 30px;
+    padding: 5px; }
+  .searchPlmPage .truncate {
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; }
+  .searchPlmPage .searchContainer {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start; }
+    .searchPlmPage .searchContainer .searchContent {
+      flex-grow: 1; }
+      .searchPlmPage .searchContainer .searchContent, .searchPlmPage .searchContainer .searchContent > div {
+        padding: 0px; }
+      .searchPlmPage .searchContainer .searchContent > div {
+        margin-bottom: 0px; }
+        .searchPlmPage .searchContainer .searchContent > div > div {
+          padding-bottom: 0px; }
+    .searchPlmPage .searchContainer .searchFilter {
+      flex-basis: 20%; }
+  .searchPlmPage .ui.header > img {
+    width: auto; }
+  .searchPlmPage select {
+    width: 100%; }
+  .searchPlmPage .workspaceFilter {
+    padding-left: 3px; }
+  .searchPlmPage .sixteen.wide.column {
+    height: calc(100vh - 120px); }
+  .searchPlmPage .searchRecords {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 120px);
+    margin-top: -1px; }
+  .searchPlmPage .emptyResult {
+    margin: 15px auto 0px auto;
+    max-width: 613px; }
+    .searchPlmPage .emptyResult ul {
+      margin-top: 3px; }
+    .searchPlmPage .emptyResult p {
+      word-wrap: break-word; }
+  .searchPlmPage .sixteen.wide.column {
+    padding: 0px;
+    padding-right: 15px; }
+  .searchPlmPage .searchRecord {
+    padding-left: 48px; }
+    .searchPlmPage .searchRecord h4 {
+      margin-bottom: 0px; }
+  .searchPlmPage span.info-spacing {
+    margin-left: 10px; }

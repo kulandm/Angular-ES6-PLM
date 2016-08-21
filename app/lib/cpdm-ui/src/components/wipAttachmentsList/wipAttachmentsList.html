@@ -1,0 +1,45 @@
+<div class="attachment-list">
+	<md-list ng-if="wipAttachmentsListCtrl.attachmentList.length">
+		<md-list-item class="md-3-line"
+			ng-repeat="attachment in wipAttachmentsListCtrl.attachmentList">
+
+			<wip-file-type-icon
+				mime-type="{{attachment.fileInfo.mimeType}}"
+				size="32">
+			</wip-file-type-icon>
+
+			<div class="md-list-item-text">
+				<div layout="row">
+					<div class="attachment-info">
+						<p><a ng-href="{{wipAttachmentsListCtrl.getFileOverviewUri && wipAttachmentsListCtrl.getFileOverviewUri(attachment.fileInfo.urn, attachment.fileInfo.version)}}" target="_blank">{{attachment.fileInfo.name}}</a></p>
+						<p>{{$root.bundle.wip.attachments.version}}: {{attachment.fileInfo.version}}</p>
+						<p>{{$root.bundle.wip.attachments.type}}: {{attachment.fileInfo.fileType}}</p>
+					</div>
+					<div flex></div>
+					<div flex="15" class="attachment-actions" layout="row">
+						<div>
+							<a ng-href="{{wipAttachmentsListCtrl.getFolderUri && wipAttachmentsListCtrl.getFolderUri(attachment.fileInfo.parentFolderUrn)}}" target="_blank" title="{{$root.bundle.wip.attachments.containingFolder}}">
+								<span class="icon-OpenFile wip-file-actions-icon"></span>
+							</a>
+						</div>
+						<div flex></div>
+						<div>
+							<a href="javascript:;" title="{{$root.bundle.wip.attachments.download}}" ng-click="wipAttachmentsListCtrl.triggerSingleDownload(attachment)" >
+								<span class="zmdi zmdi-download wip-file-actions-icon"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<md-divider ng-if="!$last"></md-divider>
+		</md-list-item>
+	</md-list>
+
+	<div ng-hide="wipAttachmentsListCtrl.attachmentList.length" class="opaque-overlay">
+		<div class="generic-loader">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+@ngdoc overview
+@name Services
+@id index
+@description All services for plm360 module lives inside this directory

@@ -1,0 +1,80 @@
+// Styles for Rich Text Field
+.ui-grid-row
+.ui-grid-cell
+.ui-grid-cell-contents {
+	// Overriding 'scss/fonts/material-design.scss' not to show menu icon
+	// TODO: Please remove once we swithced material design iconic-font to one version(Latest). Currently using old and new versions
+	.md-menu {
+		padding: 0;
+		&:before {
+			content: "";
+		}
+
+		span {
+			height: 100%;
+			display: block;
+		}
+	}
+}
+
+// Styles for Textangular
+// Toolbar
+.btn-toolbar {
+	width: 100%;
+	display: inline-block;
+	
+	.btn-group {
+		float: left;
+		margin-bottom: 5px;
+		margin-left: 5px;
+	}
+}
+
+// Text Editor
+md-menu-content.rich-text-content {
+	max-height: inherit;
+	overflow: hidden;
+	padding: 5px;
+	height: 339px;
+	width: 760px;
+
+	&.view-overlay {
+		overflow: auto;
+	}
+}
+
+.ta-scroll-window {
+	&.form-control {
+		border: solid 1px $formElementInputBorderColor;
+		min-height: 302px; // Override textangular css
+		max-height: 302px; // Override textangular css
+	}
+}
+
+rich-text-field {
+	.ta-root.focussed > .ta-scroll-window.form-control {
+		outline: -webkit-focus-ring-color auto 5px;
+		outline-offset: -2px;
+		border: solid 1px $formElementInputBorderFocusColor;
+		box-shadow: none;
+	}
+	
+	.ta-editor.ta-html {
+		resize: none;
+		width: 100%;
+		min-height: 302px; // Override textangular css
+		max-height: 302px; // Override textangular css
+	}
+}
+
+// Forms
+.rtf-form {
+	display: block;
+	max-height: 365px;
+	overflow: auto;
+
+	ul {
+		// Need to override as form page is wrapped with 'md-sidenav' which has list-style as 'none'
+		list-style: inherit;
+	}
+}

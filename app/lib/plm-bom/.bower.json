@@ -1,0 +1,53 @@
+{
+  "name": "plm-bom",
+  "description": "PLM Bom",
+  "main": [
+    "dist/plm-bom.js"
+  ],
+  "authors": [
+    "Mitch Mikusek <mitch.mikusek@autodesk.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular": "1.5.5",
+    "angular-mocks": "1.5.5",
+    "angular-moment": "0.9.0",
+    "angular-file-saver": "~1.1.1",
+    "excel-builder.js": "https://github.com/autodesk-forks/excel-builder.js.git#v2.0.6",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#v1.0.59",
+    "plm-api-models-manager": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git#v1.0.7",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#v1.0.1",
+    "plm-urn-parser": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-urn-parser.git#v1.0.0",
+    "plm-field-selector": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-field-selector.git#v1.0.57"
+  },
+  "version": "1.0.11",
+  "resolutions": {
+    "angular": "1.5.5",
+    "angular-mocks": "1.5.5",
+    "lodash": "~4.11.1",
+    "restangular": "1.5.2",
+    "excel-builder.js": "v2.0.6",
+    "plm-event-service": "v1.0.1",
+    "plm-unit-tests-mocks": "v1.0.59",
+    "plm-field-selector": "v1.0.57",
+    "plm-api-models-manager": "v1.0.7"
+  },
+  "_release": "1.0.11",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.11",
+    "commit": "5b96444366bedb39c2337e1b1673a6ad1253a662"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-bom.git",
+  "_target": "v1.0.11",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-bom.git"
+}

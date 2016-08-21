@@ -1,0 +1,17 @@
+.bom-pinning-container {
+	text-align: center;
+	height: 100%;
+
+	.unpinned-editable-pin-section {
+		.icon-a360-pin {
+			visibility: hidden;
+		}
+	}
+
+	.unpinned-editable-pin-section:hover {
+		.icon-a360-pin {
+			visibility: visible;
+			color: #C0C0C0;
+		}
+	}
+}

@@ -1,0 +1,332 @@
+// Main Dashboard
+//
+// Style for items on the main dashboard.
+//
+// Styleguide 16
+
+.dashboard-container {
+	background-color: $dashboardBackgroundColor;
+
+	#main-dashboard > div {
+		margin: 25px 25px 0 25px;
+
+		.no-results-msg {
+
+			p {
+				font-weight: 200;
+
+				margin: 0;
+				padding: 10px;
+
+				text-align: center;
+
+				span {
+					font-weight: bold;
+
+					color: $dashboardNoReportsResultsMessageColor;
+				}
+			}
+		}
+
+		.section-wrapper {
+			border: 0;
+
+			.header {
+				@extend %resetUnorderedList;
+
+				display: flex;
+
+				border-bottom: $dashboardSectionsHeaderBottomBorder;
+				background-color: $dashboardTablesHeadersColor;
+
+				flex-wrap: nowrap;
+
+				// The title
+				h4 {
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 1.1;
+
+					margin: 0;
+					padding: 15px;
+
+					text-transform: capitalize;
+
+					-ms-flex: 0 0 auto;
+					flex: 1 1 auto;
+					-webkit-flex-shrink: 0;
+					flex-shrink: 0;
+				}
+
+				.buttons {
+					line-height: 50px;
+
+					width: 30px;
+					margin: 0;
+
+					li span {
+						font-size: 15px;
+					}
+				}
+
+				.caret-flex {
+					width: 27px;
+					height: 27px;
+					margin-top: 10px;
+					margin-right: 20px;
+					&:before {
+						font-size: 27px;
+					}
+				}
+			}
+
+			.transcluded-content-wrapper {
+				border: 0;
+
+				.ui-grid-header {
+					border-bottom: 0 !important;
+
+					.ui-grid-header-cell-wrapper {
+						background-color: $whiteColor;
+
+						.ui-grid-header-cell {
+							padding: 0;
+
+							.ui-grid-cell-contents {
+								line-height: 25px;
+
+								margin: 10px 0;
+								padding: 0 10px;
+
+								border-left: 1px solid $mediumGrayColor;
+
+								&.icon {
+									padding: 0;
+								}
+
+								span {
+									text-transform: capitalize;
+								}
+							}
+
+							&:first-child {
+
+								.ui-grid-cell-contents {
+									border-left: 0;
+								}
+							}
+						}
+					}
+
+					.ui-grid-header-cell-wrapper {
+						border-bottom: 1px solid $darkWhiteColor;
+					}
+
+					.ui-grid-top-panel {
+						background: none !important;
+
+						.ui-grid-header-cell-row .ui-grid-header-cell {
+							border: 0;
+						}
+					}
+				}
+
+				.ui-grid-viewport {
+					border-top: none;
+
+					.ui-grid-canvas {
+						border-top: 1px solid $grayColor;
+					}
+
+					.ui-grid-row {
+						height: $dashboardTablesRowsHeight;
+
+						.ui-grid-cell {
+							height: $dashboardTablesRowsHeight;
+
+							border-bottom: 1px solid $mediumGrayColor;
+
+							&:first-child .ui-grid-cell-contents {
+								border: 0;
+
+								&.icon {
+									padding: 0 !important;
+								}
+							}
+
+							.ui-grid-cell-contents {
+								line-height: $dashboardTablesRowsHeight;
+
+								height: $dashboardTablesRowsHeight;
+								padding: 0 10px;
+
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.dashboard-reports-all {
+		flex-wrap: wrap;
+		text-align: center;
+
+		// Add borders around each report
+		.dashboard-report {
+			border: 1px solid #EEEEEE;
+
+			.highcharts-title {
+				white-space: nowrap !important;
+			}
+		}
+
+		// This is a special override for the collapsible section that renders closed at startup
+		// Highcharts do not detect the 100% width if the collapsed section is closed with display: none,
+		// reverting to its default of 600px, so we have to override it, and use only the visible property
+		.collapsed {
+			display: block !important;
+		}
+	}
+
+	.outstanding-work-container {
+		width: 100%;
+		height: 421px;
+
+		.ui-grid-header-cell {
+			border: 0;
+
+			.ui-grid-cell-contents.icon {
+				text-align: center;
+
+				.md {
+
+					&:before {
+						font-size: 22px;
+
+						vertical-align: bottom;
+					}
+				}
+
+				.md + span {
+					display: none;
+				}
+			}
+		}
+		.ui-grid-render-container .ui-grid-row .ui-grid-cell:first-child .ui-grid-cell-contents {
+			padding: 5px 10px;
+			padding-left: 0; // disables a previous setted style
+
+			border-left: 0;
+			border-left: 1px solid $sectionWrapperHeaderCellLeftBorderColor;
+		}
+	}
+
+	.recently-viewed-items-wrapper {
+		margin-right: 0 !important;
+
+		.recently-viewed-items-container {
+			width: 100%;
+			height: 321px;
+		}
+	}
+
+
+	.bookmark-items-wrapper {
+		margin-right: 20px;
+		margin-left: 0 !important;
+
+		.bookmark-items-container {
+			width: 100%;
+			height: 321px;
+
+			.ui-grid-header-cell-row {
+
+				.ui-grid-cell-contents {
+
+					&.header-cell.icon {
+						line-height: 0;
+
+						.icon-a360-pin {
+							font-size: 19px;
+
+							position: relative;
+							top: 3px;
+							left: 0;
+						}
+					}
+				}
+			}
+
+			.ui-grid-cell-contents.button {
+				text-align: center;
+
+				.md-button {
+					display: inline-block;
+
+					width: 25px;
+					height: 25px;
+					min-height: 25px;
+					margin: auto;
+					padding: 0;
+
+					vertical-align: middle;
+
+					background-color: $buttonPinnedBackgroundColor;
+					box-shadow: none;
+
+					span:before {
+						vertical-align: super;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Milestone Flags
+//
+// Milestone flag colors.
+//
+// Markup:
+// <span class="md-flag red" style="font-size:24px;"></span>
+// <span class="md-flag orange" style="font-size:24px;"></span>
+// <span class="md-flag green" style="font-size:24px;"></span>
+//
+// .md-flag.red - For late milestone
+// .md-flag.orange - For warning milestone
+// .md-flag.green - For on time milestone
+//
+// Styleguide 16.1
+.md-flag {
+
+	&.red {
+		color: $milestoneLateColor;
+	}
+
+	&.orange {
+		color: $milestoneWarningColor;
+	}
+
+	&.green {
+		color: $milestoneOnTimeColor;
+	}
+}
+
+// Why is this here?
+
+// Re-think this later
+.user-profile-summary {
+
+	[flex] {
+		flex: 0 0 auto;
+		h4 {
+			margin: 0.5em 0;
+		}
+		h6 {
+			margin: 0;
+		}
+	}
+}

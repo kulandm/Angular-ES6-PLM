@@ -1,0 +1,328 @@
+<h1><code ng:non-bindable="">ViewAffectedItemsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewaffecteditemscontroller-page"><p>This controller responsible for affected items.
+This controller will handle all affected items sub states (view, add, edit etc).</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_associateaddeditems">associateAddedItems(items)</h3>
+<div class="associateaddeditems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-associateaddeditems-page"><p>Associate the items selected from a flyout or modal (e.g.
+Add Linkable Items flyout, Add Related BOM Items modal, etc).</p>
+</div><h5 id="methods_associateaddeditems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>items</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-associateaddeditems-page"><p>The list of items selected.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_buildlifecyclefield">buildLifecycleField(affectedItem)</h3>
+<div class="buildlifecyclefield"><div class="controllers-workspaceitem-viewaffecteditemscontroller-buildlifecyclefield-page"><p>Creates a table row on the basis of affected item object.</p>
+</div><h5 id="methods_buildlifecyclefield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>affectedItem</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-buildlifecyclefield-page"><p>An affected item data.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildlifecyclefield_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-buildlifecyclefield-page"><p>SelectionFieldData model</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createrowfromaffecteditemobj">createRowFromAffectedItemObj(affectedItemObj)</h3>
+<div class="createrowfromaffecteditemobj"><div class="controllers-workspaceitem-viewaffecteditemscontroller-createrowfromaffecteditemobj-page"><p>Creates a table row on the basis of affected item object.</p>
+</div><h5 id="methods_createrowfromaffecteditemobj_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>affectedItemObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-createrowfromaffecteditemobj-page"><p>An instance of <a href="api/Models#affecteditem">Models#AffectedItem</a>.</p>
+</div></td></tr></tbody></table><h5 id="methods_createrowfromaffecteditemobj_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-createrowfromaffecteditemobj-page"><p>tableRow Row of affected item data.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getaffecteditemsdata">getAffectedItemsData()</h3>
+<div class="getaffecteditemsdata"><div class="controllers-workspaceitem-viewaffecteditemscontroller-getaffecteditemsdata-page"><p>Gets affected items data.</p>
+</div><h5 id="methods_getaffecteditemsdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-getaffecteditemsdata-page"><p>A promise that will be resolved when all affected items
+are loaded to <a href="#tableData">tableData</a>.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getallfields">getAllFields()</h3>
+<div class="getallfields"><div class="controllers-workspaceitem-viewaffecteditemscontroller-getallfields-page"><p>Extract field objects from <a href="#tableData">tableData</a>.
+Note: In this context, field means custom columns fields.
+We are not extracting lifecycle, effectivity and other default
+column fields because
+1) server is not sending any validation errors point to any of them.
+2) even if server would, it would be hard as there is no URNs for any of them.</p>
+</div><h5 id="methods_getallfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-getallfields-page"><p>List of custom fields of the table.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getdirtyrows">getDirtyRows()</h3>
+<div class="getdirtyrows"><div class="controllers-workspaceitem-viewaffecteditemscontroller-getdirtyrows-page"><p>Get all dirty rows</p>
+</div><h5 id="methods_getdirtyrows_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-getdirtyrows-page"><p>Array containing the dirty rows</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfields">getFields(row)</h3>
+<div class="getfields"><div class="controllers-workspaceitem-viewaffecteditemscontroller-getfields-page"><p>Extract field objects from a single row of <a href="#tableData">tableData</a>.
+Note: In this context, field means custom columns fields.
+We are not extracting lifecycle, effectivity and other default
+column fields because
+1) server is not sending any validation errors point to any of them.
+2) even if server would, it would be hard as there is no URNs for any of them.</p>
+</div><h5 id="methods_getfields_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-getfields-page"><p>Table row</p>
+</div></td></tr></tbody></table><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-getfields-page"><p>List of custom fields of the a single row of table.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelatedworkspaces">getRelatedWorkspaces()</h3>
+<div class="getrelatedworkspaces"><div class="controllers-workspaceitem-viewaffecteditemscontroller-getrelatedworkspaces-page"><p>Build a promise list for workspaces related to affected
+items view of this item. The promise resolution will take permissions
+into consideration.</p>
+</div></div>
+</li>
+<li><h3 id="methods_hasactiveflyout">hasActiveFlyout()</h3>
+<div class="hasactiveflyout"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasactiveflyout-page"><p>Check if flyout is active.</p>
+</div><h5 id="methods_hasactiveflyout_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasactiveflyout-page"><p>True, if flyout is active.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasactiveflyout">hasActiveFlyout()</h3>
+<div class="hasactiveflyout"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasactiveflyout-page"><p>return true if add flyout is active.</p>
+</div><h5 id="methods_hasactiveflyout_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasactiveflyout-page"><p>true, if add flyout is active.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasinvaliditems">hasInvalidItems()</h3>
+<div class="hasinvaliditems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasinvaliditems-page"><p>Check for any client side errors. This function will not
+only check for any client side errors (by looking at <code>validationErrors</code>
+property of metadata), it will also update <code>hasClientSideErrors</code> property
+of the field. This property is associated with <a href="api/Directives.CellStateIndicator">Directives.CellStateIndicator</a>.
+By this approach, the client side validation only happens when you try to
+save the data (or wherever this method is used).</p>
+</div><h5 id="methods_hasinvaliditems_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasinvaliditems-page"><p>True, if managed items contain at least one client side error.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasvalidationerrors">hasValidationErrors()</h3>
+<div class="hasvalidationerrors"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasvalidationerrors-page"><p>Check for any client side errors on a given row object. This function will not
+only check for any client side errors (by looking at <code>validationErrors</code>
+property of metadata), it will also update <code>hasClientSideErrors</code> property
+of the field. This property is associated with <a href="api/Directives.CellStateIndicator">Directives.CellStateIndicator</a>.
+By this approach, the client side validation only happens when you try to
+save the data (or wherever this method is used).</p>
+</div><h5 id="methods_hasvalidationerrors_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasvalidationerrors-page"><p>True, if managed items contain at least one client side error.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isdirty">isDirty()</h3>
+<div class="isdirty"><div class="controllers-workspaceitem-viewaffecteditemscontroller-isdirty-page"><p>This function is required by plmNavigationGuard</p>
+</div><h5 id="methods_isdirty_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-isdirty-page"><p>true if rows are dirty along with no save action has been triggered</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_istablerowdirty">isTableRowDirty(tableRow)</h3>
+<div class="istablerowdirty"><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowdirty-page"><p>To check if a given table row has dirty state.</p>
+</div><h5 id="methods_istablerowdirty_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowdirty-page"><p>Table row to check for dirty state.</p>
+</div></td></tr></tbody></table><h5 id="methods_istablerowdirty_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowdirty-page"><p>True, if the given table row is dirty.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_istablerowinvalid">isTableRowInvalid(tableRow)</h3>
+<div class="istablerowinvalid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowinvalid-page"><p>To check if a given table row has invalid state.</p>
+</div><h5 id="methods_istablerowinvalid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowinvalid-page"><p>Table row to check for invalid state.</p>
+</div></td></tr></tbody></table><h5 id="methods_istablerowinvalid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-istablerowinvalid-page"><p>True, if the given table row is invalid.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewaffecteditemscontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode.</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parserevisioningcolumns">parseRevisioningColumns(itemWSObj)</h3>
+<div class="parserevisioningcolumns"><div class="controllers-workspaceitem-viewaffecteditemscontroller-parserevisioningcolumns-page"><p>Update visible state of revisioning columns.</p>
+</div><h5 id="methods_parserevisioningcolumns_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemWSObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-parserevisioningcolumns-page"><p>The workspace object of an item.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_pristinetablerow">pristineTableRow(row)</h3>
+<div class="pristinetablerow"><div class="controllers-workspaceitem-viewaffecteditemscontroller-pristinetablerow-page"><p>Updates the original values of all the editable or
+potentially editable properties of the table row object.
+This is done to accept modified values as pristine.</p>
+</div><h5 id="methods_pristinetablerow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-pristinetablerow-page"><p>Table row</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_removeselecteditems">removeSelectedItems()</h3>
+<div class="removeselecteditems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-removeselecteditems-page"><p>Initiates the process to remove selected items.</p>
+</div></div>
+</li>
+<li><h3 id="methods_save">save(createItem)</h3>
+<div class="save"><div class="controllers-workspaceitem-viewaffecteditemscontroller-save-page"><p>Save newly created item.</p>
+</div><h5 id="methods_save_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>createItem</td><td><a href="" class="label type-hint type-hint-models">Models.Item</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-save-page"><p>An instance of newly created object.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_selectrow">selectRow(row)</h3>
+<div class="selectrow"><div class="controllers-workspaceitem-viewaffecteditemscontroller-selectrow-page"><p>Push the selected items into the selectedItems array.</p>
+</div><h5 id="methods_selectrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-selectrow-page"><p>A uiGrid &quot;row&quot; object.</p>
+</div></td></tr></tbody></table><h5 id="methods_selectrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-selectrow-page"><p>The number of selected items.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd(event)</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggeradd-page"><p>Trigger multi select flyout for add item.</p>
+</div><h5 id="methods_triggeradd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggeradd-page"><p>Event object associated with the click event.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggeraddrelatedbomitems">triggerAddRelatedBomItems()</h3>
+<div class="triggeraddrelatedbomitems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggeraddrelatedbomitems-page"><p>Trigger multi select flyout for add related BOM item.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerbulkedit">triggerBulkEdit()</h3>
+<div class="triggerbulkedit"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggerbulkedit-page"><p>Responsible for opening the overlay for bulk edit.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggercancel-page"><p>State change triggered by clicking cancel button.</p>
+<p>NOTE: name has to be triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerdelete">triggerDelete()</h3>
+<div class="triggerdelete"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggerdelete-page"><p>Triggered by clicking delete button.
+Deletes the selected items after confirmation.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggeredit">triggerEdit()</h3>
+<div class="triggeredit"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggeredit-page"><p>State change triggered by clicking edit button.</p>
+<p>NOTE: name has to be triggerEdit.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewaffecteditemscontroller-triggersave-page"><p>State change triggered by clicking save button.</p>
+<p>NOTE: name has to be triggerSave.</p>
+</div></div>
+</li>
+<li><h3 id="methods_updateaffecteditemrow">updateAffectedItemRow(tableRow, affectedItemObj)</h3>
+<div class="updateaffecteditemrow"><div class="controllers-workspaceitem-viewaffecteditemscontroller-updateaffecteditemrow-page"><p>Updates the model data according to the modifications
+made in the table.</p>
+</div><h5 id="methods_updateaffecteditemrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-updateaffecteditemrow-page"><p>Table row used to update affected item object.</p>
+</div></td></tr><tr><td>affectedItemObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-updateaffecteditemrow-page"><p>Affected item object to be updated.</p>
+</div></td></tr></tbody></table><h5 id="methods_updateaffecteditemrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewaffecteditemscontroller-updateaffecteditemrow-page"><p>A modified object.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_affecteditemsmetaobj">AffectedItemsMetaObj</h3>
+<div class="affecteditemsmetaobj"><div class="controllers-workspaceitem-viewaffecteditemscontroller-affecteditemsmetaobj-page"><p>The reference to affected items meta object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_affecteditemsobj">AffectedItemsObj</h3>
+<div class="affecteditemsobj"><div class="controllers-workspaceitem-viewaffecteditemscontroller-affecteditemsobj-page"><p>The reference to affected items object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemobj">ItemObj</h3>
+<div class="itemobj"><div class="controllers-workspaceitem-viewaffecteditemscontroller-itemobj-page"><p>The reference to the item object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addlinkableitemslistenerid">addLinkableItemsListenerId</h3>
+<div class="addlinkableitemslistenerid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-addlinkableitemslistenerid-page"><p>Listener for items that are selected in the add items
+flyout.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-addpermission-page"><p>The add workflow items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addrelatedbomitemslistenerid">addRelatedBomItemsListenerId</h3>
+<div class="addrelatedbomitemslistenerid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-addrelatedbomitemslistenerid-page"><p>Listener for items that are selected in the add related
+BOM items modal.</p>
+</div></div>
+</li>
+<li><h3 id="properties_affecteditemsmetalistenerid">affectedItemsMetaListenerId</h3>
+<div class="affecteditemsmetalistenerid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-affecteditemsmetalistenerid-page"><p>Listener for affected item meta (custom column) object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_customcolumns">customColumns</h3>
+<div class="customcolumns"><div class="controllers-workspaceitem-viewaffecteditemscontroller-customcolumns-page"><p>Stores the custom columns fields.</p>
+</div></div>
+</li>
+<li><h3 id="properties_deletepermission">deletePermission</h3>
+<div class="deletepermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-deletepermission-page"><p>The delete workflow items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_disableselection">disableSelection</h3>
+<div class="disableselection"><div class="controllers-workspaceitem-viewaffecteditemscontroller-disableselection-page"><p>True, when row selection is disabled.</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-editpermission-page"><p>The edit workflow items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_flyoutinstance">flyoutInstance</h3>
+<div class="flyoutinstance"><div class="controllers-workspaceitem-viewaffecteditemscontroller-flyoutinstance-page"><p>The current flyout instance.</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridapiinterface">gridApiInterface</h3>
+<div class="gridapiinterface"><div class="controllers-workspaceitem-viewaffecteditemscontroller-gridapiinterface-page"><p>The api interface of grid ui to control column
+visibility based on permissions.</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasactionpermission">hasActionPermission</h3>
+<div class="hasactionpermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasactionpermission-page"><p>True, when the item has add/edit/delete permissions.</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasaddpermission">hasAddPermission</h3>
+<div class="hasaddpermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-hasaddpermission-page"><p>True, when the item has add permission.</p>
+</div></div>
+</li>
+<li><h3 id="properties_isbulkeditenabled">isBulkEditEnabled</h3>
+<div class="isbulkeditenabled"><div class="controllers-workspaceitem-viewaffecteditemscontroller-isbulkeditenabled-page"><p>Boolean for showing/hiding bulk edit icon</p>
+</div></div>
+</li>
+<li><h3 id="properties_iscurrentlysaving">isCurrentlySaving</h3>
+<div class="iscurrentlysaving"><div class="controllers-workspaceitem-viewaffecteditemscontroller-iscurrentlysaving-page"><p>This would be telling if the user is currently performing the save action</p>
+</div></div>
+</li>
+<li><h3 id="properties_ismetadataloaded">isMetaDataLoaded</h3>
+<div class="ismetadataloaded"><div class="controllers-workspaceitem-viewaffecteditemscontroller-ismetadataloaded-page"><p>True, when table metadata and permissions are loaded. This check is important, we don&#39;t want to
+reload metadata over and over again.</p>
+</div></div>
+</li>
+<li><h3 id="properties_isrevisioningworkspace">isRevisioningWorkspace</h3>
+<div class="isrevisioningworkspace"><div class="controllers-workspaceitem-viewaffecteditemscontroller-isrevisioningworkspace-page"><p>True, if the workspace is a revisioning workspace.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlink">itemLink</h3>
+<div class="itemlink"><div class="controllers-workspaceitem-viewaffecteditemscontroller-itemlink-page"><p>The item id of the current affected item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-itemlistenerid-page"><p>Listener for item object. Determines the workspace type
+to initialise the revisioning columns, if needed. And gets the
+affected item custom columns meta data.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsavelistenerid">linkableItemSaveListenerId</h3>
+<div class="linkableitemsavelistenerid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-linkableitemsavelistenerid-page"><p>Listens for items that have been successfully added to
+the table.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsoptions">linkableItemsOptions</h3>
+<div class="linkableitemsoptions"><div class="controllers-workspaceitem-viewaffecteditemscontroller-linkableitemsoptions-page"><p>A map of values that need to be sent to the
+AddLinkableItemsController (hence attached to the $scope instead of
+<code>this</code>)</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisioncontrolleditems">revisionControlledItems</h3>
+<div class="revisioncontrolleditems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-revisioncontrolleditems-page"><p>List of revision controlled items.
+This will be used for bulk operations.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selecteditems">selectedItems</h3>
+<div class="selecteditems"><div class="controllers-workspaceitem-viewaffecteditemscontroller-selecteditems-page"><p>The array storing the self link of selected items.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewaffecteditemscontroller-tablecolumns-page"><p>Stores the details of the table&#39;s default fields.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewaffecteditemscontroller-tabledata-page"><p>Stores table data of the affected items.</p>
+</div></div>
+</li>
+<li><h3 id="properties_toggleallselection">toggleAllSelection</h3>
+<div class="toggleallselection"><div class="controllers-workspaceitem-viewaffecteditemscontroller-toggleallselection-page"><p>toggle all selection state of the grid.</p>
+</div></div>
+</li>
+<li><h3 id="properties_toggleallselection">toggleAllSelection</h3>
+<div class="toggleallselection"><div class="controllers-workspaceitem-viewaffecteditemscontroller-toggleallselection-page"><p>Toggle all selection state of the grid.</p>
+<p>TODO Move this to a common location for reuse</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewaffecteditemscontroller-viewpermission-page"><p>The view workflow items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewaffecteditemscontroller-workspaceid-page"><p>The workspace id of the current affected item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "name": "plm-notification",
+  "description": "PLM UI Notification",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/plm-notification.js",
+    "!dist/plm-notification.zip"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular-material": "1.0.0-rc4",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-underscore": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-underscore.git#1.0.0",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#1.0.0",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#1.0.5"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.3",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "2c3a1910ffef674b14bc79aa66bd984dd94b3323"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-notification.git",
+  "_target": "v1.0.3",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-notification.git"
+}

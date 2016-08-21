@@ -1,0 +1,215 @@
+// PLM Material
+//
+// Overrides for material design styles
+//
+// Styleguide 41
+//
+md-content,
+md-button,
+md-checkbox,
+md-progress-circular,
+md-progress-linear,
+md-radio-button,
+md-slider,
+md-switch,
+md-tabs,
+md-text-float,
+md-toolbar,
+md-toolbar:not(.md-menu-toolbar) {
+	color: $blackColor;
+	background-color: transparent;
+	font-size: inherit;
+
+	// Relevant for the workspace item tab/view bar, as to override the height with the new PLM-specific height
+	.md-header {
+		height: inherit;
+	}
+}
+
+// Generic buttons for PLM, overriding material design out-of-the-box styling
+// Overrides because the default md-toolbar tries to make the button text color
+// white - the selector is the one seen in the browser; however don't select
+// md-buttons inside md-menu because the default styles work for those
+:not(md-menu-item) > .md-button,
+md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised) {
+	font-size: $buttonFontSize;
+	font-weight: $buttonFontWeight;
+	line-height: $buttonLineHeight;
+
+	display: inline-block; // Override for when applying this class to <a>
+
+	height: $buttonHeight;
+	min-height: $buttonHeight;
+	min-width: auto;
+	margin: 0; // override angular-material default margin for buttons
+	margin-right: $buttonMarginRight;
+	padding: $buttonPadding;
+
+	text-transform: inherit;
+
+	color: $buttonTextColor;
+	border: $buttonBorder;
+	border-radius: $buttonBorderRadius;
+	background-color: $buttonBackgroundColor;
+	box-shadow: $buttonBoxShadow;
+
+	.label {
+		font-family: $defaultFont;
+		font-size: 14px;
+		font-weight: 600;
+
+		padding: 0; // BOOTSTRAP-SPECIFIC OVERRIDE
+	}
+
+	&:not([disabled]):hover {
+		background-color: $buttonHoverBackgroundColor;
+		box-shadow: $buttonHoverShadow;
+	}
+
+	&:not([disabled]):focus {
+		color: $buttonFocusTextColor !important;
+		background-color: $buttonFocusBackgroundColor !important; // angular-material uses !important
+		box-shadow: $buttonFocusShadow;
+	}
+
+	&[disabled] {
+		color: $buttonDisabledTextColor !important; // angular-material uses !important
+		background-color: $buttonDisabledBackgroundColor;
+		box-shadow: $buttonDisabledShadow;
+		border: $buttonDisabledBorder;
+	}
+
+	// Special, primary buttons
+	&.md-primary {
+		color: $buttonPrimaryTextColor;
+		border: $buttonPrimaryBorder;
+		background-color: $buttonPrimaryBackgroundColor;
+
+		&:not([disabled]):hover {
+			background-color: $buttonPrimaryHoverBackgroundColor;
+		}
+
+		&:not([disabled]):focus {
+			background-color: $buttonPrimaryFocusBackgroundColor !important; // angular-material uses !important
+		}
+
+		&[disabled] {
+			color: $buttonPrimaryDisabledTextColor !important; // angular-material uses !important
+			background-color: $buttonPrimaryDisabledBackgroundColor;
+		}
+	}
+}
+
+// md-button-group modifications:
+//   Since we modifiy (in the rule above: :not(md-menu-item) > .md-button,...)
+//   the default border-radius for angular-material,
+//   we need to modify the md-button-group rules (from angular-material.css) since the
+//   original rules explicitly call out a radius 2px on the first and last child
+//   Note: I am doing a "hack" as described in http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/
+//         to increase the specificity of this rule to beat out the above rule.
+.md-button-group.md-button-group > .md-button:not(:first-child):not(:last-child) {
+	border-radius: 0;
+}
+
+.md-button-group.md-button-group > .md-button:first-child {
+	border-radius: $buttonBorderRadius 0 0 $buttonBorderRadius;
+}
+
+.md-button-group.md-button-group > .md-button:last-child {
+	border-radius: 0 $buttonBorderRadius $buttonBorderRadius 0;
+}
+
+// For everything but the last child, we need to adjust the margin
+// since one of the rules above (:not(md-menu-item) > .md-button,...)
+// modifies the margin-right to be $buttonMarginRight.  When we have
+// a grouping of buttons, we want all the buttons to overlap (by one pixel)
+// so they share the border.
+.md-button-group.md-button-group > .md-button:not(:last-child) {
+	margin-right: 0;
+}
+
+// IE11 has a bug related to flex-basis that is causing buttons in an .md-buttong-group
+// to collapse to 0 width (Chrome and Firefox did not need this, but it doesn't hurt):
+//
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis Note [2]:
+//   When a non-auto flex-basis is specified, Internet Explorer 10-11 (but not 12+)
+//   always uses a content-box box model to calculate the size of a flex item, even
+//   if box-sizing: border-box is applied to the element. See Flexbug #7 for more info.
+// https://github.com/philipwalton/flexbugs#7-flex-basis-doesnt-account-for-box-sizingborder-box
+// https://roland.codes/blog/ie-flex-collapse-bug/
+// To work around this we change flex-basis from 0 to auto
+.md-button-group > .md-button {
+	flex-basis: auto;
+}
+
+
+.layout-fill {
+	height: inherit;
+}
+
+md-select {
+	.md-select-value,
+	&:not([disabled]):focus .md-select-value {
+		border: 0;
+	}
+}
+
+md-select-menu {
+	background-color: $whiteColor;
+
+	md-option {
+		.md-text {
+			font-size: inherit;
+			font-family: $defaultFont;
+		}
+	}
+}
+
+.md-dialog-content {
+	font-family: $defaultFont;
+}
+
+// TODO: need to revisit this in PLM-5707.
+.split-button {
+	position: relative;
+
+	padding-right: 5px;
+
+	background-color: $whiteColor;
+	box-shadow: none;
+}
+
+.workspace-tableau-tooltip {
+
+	md-divider {
+		width: 100%;
+		margin: $workspaceTableauMdDividerMargin;
+	}
+
+	.workspace-tableau-box {
+		md-checkbox {
+			margin: $workspaceTableauCheckBoxMargin;
+			font-family: $defaultFont;
+			font-weight: $workspaceTableauFontWeight;
+			font-size: $workspaceTableauFontSize;
+			width: 100%;
+
+			&.md-checked {
+				line-height: $workspaceTableauLineHeight;
+				.md-icon {
+					background-color: $workspaceTableauCheckBoxBackgroundColor;
+				}
+				.md-label {
+					line-height: $workspaceTableauLineHeight;
+				}
+
+			}
+
+			.md-label {
+				line-height: $workspaceTableauLineHeight;
+			}
+
+		}
+	}
+
+}

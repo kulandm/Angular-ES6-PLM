@@ -1,0 +1,12 @@
+\ufeff
+alreadyConnected=Noeuds d%E9j%E0 connect%E9s
+containsValidationErrors=Contient des erreurs de validation
+updatingDocument=Mise %E0 jour du document. Veuillez patienter...
+updatingSelection=Mettre %E0 jour la s%E9lection. Veuillez patienter...
+collapse-expand=R%E9duire/D%E9velopper
+doubleClickOrientation=Cliquez deux fois afin de modifier l'orientation
+close=Fermer
+error=Erreur
+done=Termin%E9
+cancel=Annuler
+ok=OK

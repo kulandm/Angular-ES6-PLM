@@ -1,0 +1,52 @@
+<div class="attachments-button">
+	<!-- Upload button that uses a hidden default browser select file button -->
+	<label class="md-button md-default-theme"
+		ng-if="classicAttachmentsActionButtonCtrl.type === 'upload' &&
+		classicAttachmentsActionButtonCtrl.permitted">
+		<input type="file"
+			class="input-button"
+			on-files-selected="classicAttachmentsActionButtonCtrl.triggerDialog(selectedFileList, false)"
+			multiple />
+		<span class="label">{{$root.bundle.button.add}}</span>
+	</label>
+
+	<!-- CheckIn button that uses a hidden default browser select file button -->
+	<label class="md-button md-default-theme"
+		ng-if="classicAttachmentsActionButtonCtrl.type === 'checkin' &&
+		classicAttachmentsActionButtonCtrl.permitted">
+		<input type="file"
+			class="input-button"
+			on-files-selected="classicAttachmentsActionButtonCtrl.triggerDialog(selectedFileList, true, fileInfo)" />
+		<span class="label">{{$root.bundle.attachments.checkIn}}</span>
+	</label>
+
+	<!-- Undo button -->
+	<md-button class="md-button md-default-theme"
+		aria-label="{{$root.bundle.attachments.undo}}"
+		title="{{$root.bundle.attachments.undo}}"
+		ng-if="classicAttachmentsActionButtonCtrl.type === 'undo' &&
+		classicAttachmentsActionButtonCtrl.permitted"
+		ng-click="classicAttachmentsActionButtonCtrl.triggerUndo()">
+		<span class="md md-lg md-undo"></span>
+	</md-button>
+
+	<!-- CheckOut button -->
+	<md-button class="md-button md-default-theme"
+		aria-label="{{$root.bundle.attachments.checkOut}}"
+		title="{{$root.bundle.attachments.checkOut}}"
+		ng-if="classicAttachmentsActionButtonCtrl.type === 'checkout' &&
+		classicAttachmentsActionButtonCtrl.permitted"
+		ng-click="classicAttachmentsActionButtonCtrl.triggerCheckout()">
+		<span class="md md-lg md-file-download"></span>
+	</md-button>
+
+	<!-- Download button -->
+	<md-button id="download-btn"
+		class="md-button md-default-theme"
+		aria-label="{{$root.bundle.attachments.download}}"
+		title="{{$root.bundle.attachments.download}}"
+		ng-if="classicAttachmentsActionButtonCtrl.type === 'download'"
+		ng-click="classicAttachmentsActionButtonCtrl.triggerDownload()">
+		<span class="md md-lg md-play-download"></span>
+	</md-button>
+</div>

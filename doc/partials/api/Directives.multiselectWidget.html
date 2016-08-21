@@ -1,0 +1,83 @@
+<h1><code ng:non-bindable="">multiselectWidget</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-multiselectwidget-page"><p>This directive is the multiselect widget</p>
+<h6 id="description_--categories-array-containing-objects-listing-the-categories">- categories: Array containing objects listing the categories (optional)</h6>
+<p>[{
+    displayName: &#39;some String&#39;,
+    id: &#39;some id as integer or String&#39;
+}, ...]</p>
+<h6 id="description_--data-the-data-itself-for-the-widget">- data: The data itself for the widget</h6>
+<p>[{
+    category: &#39;some id matching the category&#39;s id above&#39;,
+    displayName: &#39;some String&#39;,
+    id: &#39;some String or, preferably, id&#39;,
+    selected: &#39;true/false&#39;
+}, ...]</p>
+<h6 id="description_--maxdisplayed-maximum-quantity-of-options-that-should-be-displayed-before-cutting-off-and-showing-the-warning">- maxDisplayed: maximum quantity of options that should be displayed before cutting off and showing the warning (optional, default 10)</h6>
+<h6 id="description_--type-string---accepts-&quot;checkbox&quot;-or-&quot;radio&quot;">- type: String - accepts &quot;checkbox&quot; or &quot;radio&quot;</h6>
+<h6 id="description_--wrapperdisplay-a-boolean-value-thats-going-to-be-updated-whenever-the-user-clicks-cancel-or-done">- wrapperDisplay: A boolean value that&#39;s going to be updated whenever the user clicks CANCEL or DONE (optional)</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;multiselect-widget&gt;
+&lt;/multiselect-widget&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_cancelselection">cancelSelection()</h3>
+<div class="cancelselection"><div class="directives-multiselectwidget-cancelselection-page"><p>Reverts the values of the selected items, and closes the widget</p>
+</div></div>
+</li>
+<li><h3 id="methods_clearallselected">clearAllSelected()</h3>
+<div class="clearallselected"><div class="directives-multiselectwidget-clearallselected-page"><p>Removes the selection status of all items</p>
+</div></div>
+</li>
+<li><h3 id="methods_displaytoomanyresultswarning">displayTooManyResultsWarning()</h3>
+<div class="displaytoomanyresultswarning"><div class="directives-multiselectwidget-displaytoomanyresultswarning-page"><p>Displays a warning about having too many results in the list</p>
+</div></div>
+</li>
+<li><h3 id="methods_handlefiltering">handleFiltering()</h3>
+<div class="handlefiltering"><div class="directives-multiselectwidget-handlefiltering-page"><p>Handle filtering of data, showing the necessary messages</p>
+</div></div>
+</li>
+<li><h3 id="methods_submitselection">submitSelection()</h3>
+<div class="submitselection"><div class="directives-multiselectwidget-submitselection-page"><p>Submit the selection, syncing the scoped object with the binded object</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_displaywarning">displayWarning</h3>
+<div class="displaywarning"><div class="directives-multiselectwidget-displaywarning-page"><p>Displays the warning at the footer (messages for no matches found/too many matches)</p>
+</div></div>
+</li>
+<li><h3 id="properties_scopeddata">scopedData</h3>
+<div class="scopeddata"><div class="directives-multiselectwidget-scopeddata-page"><p>Stores the internal list of selected items (to bypass two-way data binding)</p>
+</div></div>
+</li>
+<li><h3 id="properties_scopeddatafiltered">scopedDataFiltered</h3>
+<div class="scopeddatafiltered"><div class="directives-multiselectwidget-scopeddatafiltered-page"><p>The filtered data from the scoped widget, based on the scopedData</p>
+</div></div>
+</li>
+<li><h3 id="properties_typedval">typedVal</h3>
+<div class="typedval"><div class="directives-multiselectwidget-typedval-page"><p>The initial typed value for the typeahead widget</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-multiselectwidget-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-5" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-5" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-5">
+<multiselect-widget categories="Array" data="Array" max-displayed="Integer" type="String" wrapper-display="Boolean" ><multiselect-widget />
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-5" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,202 @@
+// Form Elements
+//
+// Styles for form elements.
+// THIS FILE NEEDS MAJOR REFACTORING!
+//
+// Styleguide 12
+
+// Required Label
+//
+// Asterisk styles for labels that require filling in.
+//
+// Markup:
+// <label class="label-required">I am required!</label>
+//
+// .label-required - Adds `*` after label text
+//
+// Styleguide 12.1
+
+.label-required:after {
+	content: ' *';
+
+	color: $errorColor;
+}
+
+// DatePicker
+//
+// Styles for the DatePicker Angular-UI Widget
+//
+// .datepicker -
+//
+// Styleguide 12.4
+.datepicker-active {
+	.btn-group {
+		display: none;
+	}
+}
+
+.datepicker {
+	position: absolute; // Temp fix to display datepicker above table cells
+	margin: 0 !important;
+	white-space: nowrap;
+
+	.datepicker-external {
+
+		position: relative;
+
+		> input {
+			cursor: pointer;
+			padding: 0 5px;
+			height: $buttonHeight; //Match height of button
+
+			//Setting the width of the input field is difficult to do automatically
+			//Here, we take 100% of the container,
+			//	minus 33px for the width of the button,
+			//	and minus 4px for the magic space between two inline-block elements
+			width: calc(100% - 33px - 4px);
+
+			//Field currently isn't editable, so we style it like a button;
+			border: $buttonBorder;
+			border-radius: $buttonBorderRadius;
+			box-shadow: $buttonShadow;
+
+			&:focus {
+				border-color: $grayColor !important;
+			}
+			&:hover {
+				background-color: $datepickerBackgroundColor;
+				border: 1px solid $datepickerSelectedState !important; /* Important are required to override _view-details.scss */
+			}
+		}
+
+		.x-clear {
+			color: $datepickerXFontColor;
+			display: block;
+			font-size: $datepickerXFontSize;
+			height: $datepickerXHeight;
+			line-height: $datepickerXHeight;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: $datepickerXWidth;
+		}
+
+		> button {
+			padding: 0 5px !important; //Override md-button's default padding
+			margin-right: 0 !important; //Override md-button's default right margin
+			vertical-align: bottom;
+		}
+	}
+
+	.dropdown-menu {
+		padding: 5px;
+		background: $datepickerBackgroundColor;
+
+		position: absolute;
+		z-index: 2;
+
+		> li {
+			list-style-type: none;
+			text-align: center;
+			> div {
+				padding: 0 !important;
+			}
+			> .btn-group {
+				width: auto !important;
+				> button {
+					width: inherit !important;
+				}
+			}
+			// This is targeting the "Close" button specifically
+			> button {
+				display: none !important;
+			}
+		}
+	}
+	.pull-right {
+		width: 18px;
+		height: 12px;
+		background: url('../images/Right_Arrow.png') no-repeat;
+	}
+	.pull-left {
+		width: 18px;
+		height: 12px;
+		margin-left: 8px;
+		background: url('../images/Left_Arrow.png') no-repeat;
+	}
+	table {
+		outline: none;
+		.btn-default,
+		.btn-default.active {
+			padding: 2px 8px !important;
+			border: {
+				color: transparent;
+				radius: 2px;
+			}
+			// Makes the "current day" on the calendar a bit more evident
+			span.text-info {
+				font-weight: bold;
+			}
+		}
+		// Resets paddings and other elements
+		tbody,
+		thead {
+			tr {
+				&:hover {
+					background-color: transparent !important;
+				}
+				td,
+				th {
+					padding: 0 !important;
+					border: none 0 transparent !important;
+					&:hover {
+						background-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+	.datepicker-input-disabled,
+	.datepicker-button-disabled {
+		cursor: not-allowed;
+		background-color: $formElementDisabledBackgroundColor;
+	}
+}
+// .field-label {
+// 	margin-right: 10px;
+// 	width: 250px;
+// 	word-break: break-all;
+// 	line-height: 2;
+// }
+
+// Support icons inside inputs
+//
+//
+// Markup:
+// <span class="inner-addon right-addon">
+//		<i class="md md-search"></i>
+//		<input type="text" />
+//	</span>
+//
+// inner-addon
+//
+// Styleguide 12.5
+// enable absolute positioning
+.inner-addon {
+	position: relative;
+}
+
+// style icon
+.inner-addon .md {
+	position: absolute;
+	padding: 5px;
+	pointer-events: none;
+}
+
+// align icon
+.left-addon .md { left: 0; }
+.right-addon .md { right: 0; }
+
+// add padding
+.left-addon input { padding-left: 30px; }
+.right-addon input { padding-right: 30px; }

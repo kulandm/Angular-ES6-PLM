@@ -1,0 +1,127 @@
+<h1><code ng:non-bindable="">WorkspaceItemsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitemscontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getworkspaceitemsdata">getWorkspaceItemsData()</h3>
+<div class="getworkspaceitemsdata"><div class="controllers-workspaceitemscontroller-getworkspaceitemsdata-page"><p>THIS IS A TEMPORARY METHOD UNTIL THIS CONTROLLER
+GETS TRANSLATED MOVED TO ES6.</p>
+<p>TODO There&#39;s a lot more cleanup that needs to be done in this messy controller :(</p>
+</div></div>
+</li>
+<li><h3 id="methods_isviewselected">isViewSelected()</h3>
+<div class="isviewselected"><div class="controllers-workspaceitemscontroller-isviewselected-page"><p>Checks whether a view is selected, (technically this is not a method of the controller but of
+the $scope), left it this way beacuse of ngdoc failure</p>
+</div></div>
+</li>
+<li><h3 id="methods_nginit">ngInit()</h3>
+<div class="nginit"><div class="controllers-workspaceitemscontroller-nginit-page"><p>Initialization function</p>
+</div></div>
+</li>
+<li><h3 id="methods_parseworkspaceitems">parseWorkspaceItems(data, itemQuantity, tableau)</h3>
+<div class="parseworkspaceitems"><div class="controllers-workspaceitemscontroller-parseworkspaceitems-page"><p>Parses the list of items fetched from the endpoint, constrained to the view, for proper displaying in the view</p>
+</div><h5 id="methods_parseworkspaceitems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitemscontroller-parseworkspaceitems-page"><p>The list of items</p>
+</div></td></tr><tr><td>itemQuantity</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-workspaceitemscontroller-parseworkspaceitems-page"><p>The amount of items to be retrieved from each batch</p>
+</div></td></tr><tr><td>tableau</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitemscontroller-parseworkspaceitems-page"><p>The data from the backend</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggeradditem">triggerAddItem()</h3>
+<div class="triggeradditem"><div class="controllers-workspaceitemscontroller-triggeradditem-page"><p>Navigates to the create item view</p>
+</div></div>
+</li>
+<li><h3 id="methods_viewchange">viewChange(viewLink)</h3>
+<div class="viewchange"><div class="controllers-workspaceitemscontroller-viewchange-page"><p>Handles view change to reset the data</p>
+</div><h5 id="methods_viewchange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>viewLink</td><td><a href="" class="label type-hint type-hint-integer">integer</a></td><td><div class="controllers-workspaceitemscontroller-viewchange-page"><p>The Id of the view to be loaded</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-workspaceitemscontroller-bundle-page"><p>Ties to localization bundle of rootScope</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateandhourformat">dateAndHourFormat</h3>
+<div class="dateandhourformat"><div class="controllers-workspaceitemscontroller-dateandhourformat-page"><p>Stores the date format, plus hour format</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitemscontroller-dateformat-page"><p>Stores the date format</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateoptions">dateOptions</h3>
+<div class="dateoptions"><div class="controllers-workspaceitemscontroller-dateoptions-page"><p>The options for calendar</p>
+</div></div>
+</li>
+<li><h3 id="properties_defaultviewid">defaultViewId</h3>
+<div class="defaultviewid"><div class="controllers-workspaceitemscontroller-defaultviewid-page"><p>The id of the default view</p>
+</div></div>
+</li>
+<li><h3 id="properties_gettableautodisplay">getTableauToDisplay</h3>
+<div class="gettableautodisplay"><div class="controllers-workspaceitemscontroller-gettableautodisplay-page"><p>A tableau to display at the dropdow of tableaus (this logic is separated so be able to test it)</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasadditemspermission">hasAddItemsPermission</h3>
+<div class="hasadditemspermission"><div class="controllers-workspaceitemscontroller-hasadditemspermission-page"><p>Flag representing the user permissions for adding items in the workspace.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemquantity">itemQuantity</h3>
+<div class="itemquantity"><div class="controllers-workspaceitemscontroller-itemquantity-page"><p>Amount of items to fetch</p>
+</div></div>
+</li>
+<li><h3 id="properties_pagenumber">pageNumber</h3>
+<div class="pagenumber"><div class="controllers-workspaceitemscontroller-pagenumber-page"><p>The page to fetch data from</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitemscontroller-tabledata-page"><p>An array holding the parsed data for the table</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewdata">viewData</h3>
+<div class="viewdata"><div class="controllers-workspaceitemscontroller-viewdata-page"><p>The metadata of the current view</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewdirty">viewDirty</h3>
+<div class="viewdirty"><div class="controllers-workspaceitemscontroller-viewdirty-page"><p>A boolean flag set to true or false if the current view has been modified</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewid">viewId</h3>
+<div class="viewid"><div class="controllers-workspaceitemscontroller-viewid-page"><p>The id of the currently selected view</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewname">viewName</h3>
+<div class="viewname"><div class="controllers-workspaceitemscontroller-viewname-page"><p>The name of the currently selected view</p>
+</div></div>
+</li>
+<li><h3 id="properties_views">views</h3>
+<div class="views"><div class="controllers-workspaceitemscontroller-views-page"><p>An object containing the list of all views available in this workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewsfields">viewsFields</h3>
+<div class="viewsfields"><div class="controllers-workspaceitemscontroller-viewsfields-page"><p>The available fields to be selected</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewsshown">viewsShown</h3>
+<div class="viewsshown"><div class="controllers-workspaceitemscontroller-viewsshown-page"><p>The flag representing whether the list of views are displayed</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitemscontroller-workspaceid-page"><p>The workspace Id of the current selected workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspacename">workspaceName</h3>
+<div class="workspacename"><div class="controllers-workspaceitemscontroller-workspacename-page"><p>The name of the workspace that these items belong to</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceobj">workspaceObj</h3>
+<div class="workspaceobj"><div class="controllers-workspaceitemscontroller-workspaceobj-page"><p>The workspace object</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

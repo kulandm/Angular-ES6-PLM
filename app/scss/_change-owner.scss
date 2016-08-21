@@ -1,0 +1,65 @@
+.change-owner-dialog {
+	width: 30%;
+
+	md-checkbox {
+		margin: 0;
+
+		&.md-checked {
+			.md-icon {
+				background-color: $defaultCheckboxColor;
+			}
+		}
+
+		.md-icon {
+			border-width: 1px;
+		}
+
+		.md-label {
+			vertical-align: baseline;
+		}
+	}
+}
+
+.edit-additional-dialog {
+	width: 50%;
+}
+
+.edit-additional-dialog,
+.change-owner-dialog {
+	height: 50%;
+
+	.md-toolbar-tools {
+		font-size: x-large;
+		font-weight: 300;
+		padding: {
+			right: 24px;
+			left: 24px;
+		}
+
+		.zmdi-close {
+			color: $grayColor;
+		}
+	}
+
+	md-dialog-actions .md-button {
+		padding: {
+			right: 40px;
+			left: 40px;
+		}
+	}
+
+	md-dialog-content {
+		height: 100%;
+		overflow: hidden; // overrite the default scroll of md-dialog in order to show scroll only in table-data
+
+		.md-dialog-content {
+			height: 100%;
+			padding: 0;
+
+			.divider {
+				border-right: 1px solid $primaryBorderColor;
+			}
+		}
+	}
+}
+

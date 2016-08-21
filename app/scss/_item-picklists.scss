@@ -1,0 +1,45 @@
+// Item Picklists
+//
+// Style for item Picklists.
+//
+// Styleguide 43
+
+// Item Picklists
+//
+// Styles strictly for picklists
+//
+// Markup:
+// <div class="item-tooltip-flyout" style="width:inherit;">
+// 	<div class="flyout-content">
+// 		<div class="tt-header">Title</div>
+// 		<div class="tt-content">Lorem ipsum dolor sit amet,
+// 			consectetuer adipiscing elit, sed diam nonummy nibh euismod
+// 			tincidunt ut laoreet dolore magna aliquam erat volutpat.
+// 		</div>
+// 	</div>
+// </div>
+//
+// .item-tooltip-flyout - 
+//
+// Styleguide 43.1
+.ui-select-bootstrap {
+	& > .ui-select-choices {
+		position: absolute;
+		z-index: 100;
+		padding-left: 0;
+		margin-top: 0;
+		border-radius: 3px;
+		background-color: $primaryBackgroundColor;
+		list-style: none;
+	}
+	.ui-select-toggle {
+		width: 100%;
+		line-height: 1.5;
+		text-align: left;
+		& > i.caret {
+			top: 0;
+			right: 0;
+			margin-left: 5px;
+		}
+	}
+}

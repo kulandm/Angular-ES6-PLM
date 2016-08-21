@@ -1,0 +1,67 @@
+<div id="content-header">
+	<div id="content-header-top">
+		<div class="item-title-wrapper">
+			<div class="item-title-icon"><span class="{{itemHeader.workspaceIcon}}">&nbsp;</span></div>
+			<div class="item-title-descriptor" title="{{itemHeader.itemData.itemDescriptor}}">{{itemHeader.itemData.itemDescriptor}}</div>
+			<div class="item-title-specialmessages">
+				<span class="item-title-specialmessages-wrapper">
+					<span ng-if="itemHeader.revisionTagStr !== ''">{{itemHeader.revisionTagStr}}</span>
+					<span ng-if="itemHeader.itemData.deleted" class="text-danger">[{{itemHeader.bundle.text.archived.uppercase}}]</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Only use hidden-print when both state and revision are unavailable -->
+	<div id="content-header-bottom" ng-class="(citemHeader.urrentStateName || (itemHeader.revisioningData !== null)) ? '':'hidden-print'">
+
+		<!-- Action buttons - insertion point for transcluded buttons -->
+		<div id="header-buttons" class="pull-right hidden-print" ng-transclude></div>
+		<!-- /.Action buttons -->
+
+		<!-- Only display workflow transition header when current state information is available -->
+		<!-- NOTE: the test for currentStateName !== undefined is necessary because even when workspace is of a valid type,
+			  there might not be anything as the initial state - current behaviour is to NOT show the dropdown, but this might
+			  change according to PLM-3084 (it should be brought up, at least, on a JAD) -->
+		<div ng-if="((itemHeader.workspaceTypeId === 'BASIC_AND_WORKFLOW') || (itemHeader.workspaceTypeId === 'REVISIONING') || (itemHeader.workspaceTypeId === 'SUPPLIER_AND_WORKFLOW')) && (itemHeader.currentStateName !== undefined) && itemHeader.hasViewWorkflowPermission === true" class="header-group form-group header-states">
+			<div class="header-group form-group state">
+				<label>{{itemHeader.bundle.text.state}}:&nbsp;</label>
+				<span class="form-control-static">{{itemHeader.currentStateName}}</span>
+			</div>
+
+			<div class="header-group form-group workflow">
+				<label class="workflow-label">{{itemHeader.bundle.workflow.actions}}:&nbsp;</label>
+				<div class="header-group form-group" ng-class="{'header-group-top': !itemHeader.workflowTransitions}">
+					<span ng-if="itemHeader.workflowTransitions && itemHeader.workflowTransitions.length > 0">
+						<select class="form-control" id="workflow-transition-control" ng-model="itemHeader.workflowFlyout.selectedTransition" ng-options="transition.name for transition in itemHeader.workflowTransitions" ng-change="itemHeader.changeWorkflowTransition(itemHeader.workflowFlyout.selectedTransition)">
+							<option value="">{{itemHeader.bundle.workflow.selectAction}}</option>
+						</select>
+					</span>
+					<span class="form-control-static" ng-if="!itemHeader.workflowTransitions || itemHeader.workflowTransitions.length === 0">
+						{{itemHeader.bundle.workflow.noActionsAvailable}}
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Only display revision interface in case it's that type of workspace -->
+		<span ng-if="itemHeader.workspaceTypeId === 'REVISION_CONTROLLED'">
+
+			<label>{{itemHeader.bundle.text.revision}}: </label>
+			<div class="header-group form-group">
+				<select class="form-control" ng-model="itemHeader.selectedRevision" ng-options="revision as revision.description for revision in itemHeader.revisionDropdownArr" ng-change="itemHeader.changeRevision(itemHeader.selectedRevision)">
+				</select>
+			</div>
+
+			<div class="header-group form-group">
+				<label class="revision-label">{{itemHeader.bundle.text.effective}}:</label>
+				<span class="form-control-static">{{itemHeader.selectedRevision.effectiveDate}}</span>
+			</div>
+
+		</span>
+
+		<!-- Add spacer when there's no workflow/transition associated with it -->
+		<span class="header-group header-spacer"></span>
+
+	</div>
+</div>

@@ -1,0 +1,498 @@
+// PLM Mixins
+//
+// These are the mixins that are used by other files.<br>
+// To apply the mixins, use `@include mixinName`.<br>
+// If arguments are needed, use `@include mixinName(var1, var2)`.
+//
+// Styleguide 5
+
+// Set Dimensions
+//
+// This mixin sets the dimensions of an element.
+//
+// Markup:
+// <pre>@include set-width-height(100px,100px);</pre>
+//
+// set-width-height - Takes in two arguments: `width` and `height`
+//
+// Styleguide 5.1
+@mixin set-width-height($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+// Notification Widget Positioning
+//
+// This mixin is used to position the notification widget when the browser resizes.
+//
+// Markup:
+// <pre>@include position-notifications(100px,5px);</pre>
+//
+// position-notifications - Takes in two arguments: `width` and `left`
+//
+// Styleguide 5.2
+@mixin position-notifications($width, $left) {
+
+	#notifications {
+		left: $left;
+
+		width: $width;
+	}
+}
+
+// Flyout Arrow
+//
+// This mixin is used to style the flyout arrow,<br>
+// determining the direction it is pointing in.
+//
+// Markup:
+// <pre>@include flyout-arrow(bottom, 5px, #000);</pre>
+// Flyout arrow pointing up:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-left:5px solid transparent; border-right:5px solid transparent;
+// 	border-bottom:5px solid #000;"></div><br><br>
+// <pre>@include flyout-arrow(left, 5px, #000);</pre>
+// Flyout arrow pointing right:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-top:5px solid transparent; border-bottom:5px solid transparent;
+// 	border-left:5px solid #000;"></div><br><br>
+// <pre>@include flyout-arrow(top, 5px, #000);</pre>
+// Flyout arrow pointing down:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-left:5px solid transparent; border-right:5px solid transparent;
+// 	border-top:5px solid #000;"></div><br><br>
+// <pre>@include flyout-arrow(right, 5px, #000);</pre>
+// Flyout arrow pointing left:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-top:5px solid transparent; border-bottom:5px solid transparent;
+// 	border-right:5px solid #000;"></div>
+//
+// flyout-arrow - Takes in three arguments: `flyoutPosition`, `borderWidth` and `borderColor`
+//
+// Styleguide 5.3
+@mixin flyout-arrow($flyoutPosition, $borderWidth, $borderColor) {
+	@include set-width-height(0, 0);
+
+	position: absolute;
+
+	border: $borderWidth solid transparent;
+
+	@if $flyoutPosition == 'top' {
+		// Arrow points downwards
+		bottom: 0;
+
+		border: {
+			bottom: 0;
+
+			top-color: $borderColor;
+		}
+	}
+
+	@else if $flyoutPosition == 'right' {
+		// Arrow points leftwards
+		left: 0;
+
+		border: {
+			left: 0;
+
+			right-color: $borderColor;
+		}
+	}
+
+	@else if $flyoutPosition == 'bottom' {
+		// Arrow points upwards
+		top: 0;
+
+		border: {
+			top: 0;
+
+			bottom-color: $borderColor;
+		}
+	}
+
+	@else if $flyoutPosition == 'left' {
+		// Arrow points rightwards
+		right: 0;
+
+		border: {
+			right: 0;
+
+			left-color: $borderColor;
+		}
+	}
+}
+
+// Item Tooltip Icon
+//
+// This mixin styles the icon that trigger the tooltip.<br>
+// Typically, the `icon-Question` icon.
+//
+// Markup:
+// <pre>@include item-tooltip-icon-styles;</pre>
+//
+// item-tooltip-icon-styles -
+//
+// Styleguide 5.4
+@mixin item-tooltip-icon-styles {
+
+	// Styles for the icon that triggers the tooltip
+	.item-tooltip-icon {
+		@extend %removeLinkStyle;
+		@extend %removeOutline;
+
+		position: absolute;
+	}
+
+	.icon-Question {
+		font-size: 22px;
+
+		color: $linkColor;
+	}
+}
+
+// Collapsible Section Arrow
+//
+// This mixin animates the arrow for collapsible sections.
+//
+// Markup:
+// <pre>@include collapsible-arrow-animation(0deg,180deg);</pre>
+//
+// collapsible-arrow-animation - Takes in two arguments: `bottomDeg` and `topDeg`
+//
+// Styleguide 5.5
+@mixin collapsible-arrow-animation($bottomDeg, $topDeg) {
+
+	&.icon-bottom {
+		-webkit-transition: 0.5s;
+		-moz-transition: 0.5s;
+		-o-transition: 0.5s;
+		transition: 0.5s;
+		-webkit-transform: rotate($bottomDeg);
+		-moz-transform: rotate($bottomDeg);
+		-ms-transform: rotate($bottomDeg);
+		-o-transform: rotate($bottomDeg);
+		transform: rotate($bottomDeg);
+	}
+
+	&.icon-top {
+		-webkit-transition: 0.5s;
+		-moz-transition: 0.5s;
+		-o-transition: 0.5s;
+		transition: 0.5s;
+		-webkit-transform: rotate($topDeg);
+		-moz-transform: rotate($topDeg);
+		-ms-transform: rotate($topDeg);
+		-o-transform: rotate($topDeg);
+		transform: rotate($topDeg);
+	}
+}
+
+// Item Details Table
+//
+// This mixin styles the item details table.<br>
+// Typically, the table styles of the tabular data widget.
+//
+// Markup:
+// <pre>@include item-details-table-layout;</pre>
+//
+// item-details-table-layout -
+//
+// Styleguide 5.6
+@mixin item-details-table-layout {
+
+	> table {
+		table-layout: fixed; // Forces line breaks
+
+		> tbody > tr > td {
+			width: 80%;
+			padding-right: 30px;
+
+			border-top: 0; // Overrides bootstrap default
+
+			&:first-child {
+				font-weight: 600;
+
+				width: 20%;
+				padding-top: 15px; // To match the border that gets added to truncated elements
+
+				word-wrap: break-word; // Forces line breaks
+			}
+		}
+	}
+
+	.fieldview-wrapper {
+		display: inline-block;
+
+		max-width: 100%;
+		padding: 6px;
+
+		img {
+			max-width: 100%;
+		}
+
+		.checkbox-view {
+			cursor: default;
+		}
+	}
+
+	.matrix {
+		font-weight: normal !important;
+
+		width: 100%;
+
+		.truncation-control {
+			left: 0;
+		}
+
+		.matrix-padding {
+			padding: 0 20px 0 0;
+		}
+
+		.fieldvalue-wrapper {
+
+			// Added to wrappers inside grids when there's no truncation
+			// Because grids don't have a label on the left side, as regular fields do, so the arrow looks weird
+			&.hide-truncation {
+				margin-left: 0 !important; // Important is needed to override margin for .truncated/.expanded
+			}
+
+			&.truncated,
+			&.expanded {
+				margin: {
+					right: 10px;
+					left: 20px;
+				}
+			}
+		}
+	}
+
+	// Arrow that controls the truncation of a field value
+	.truncation-control {
+		@include set-width-height(0, 0);
+
+		position: relative;
+		top: 2px;
+		left: -20px;
+
+		a {
+			@extend %removeLinkStyle;
+			@extend %removeOutline;
+
+			color: $wsItemDetailsTableTruncationLinkColor;
+		}
+	}
+
+	// Forces respecting truncation and widths for text fields in view/edit mode
+	.fieldvalue-wrapper {
+		display: inline-block;
+
+		word-break: break-all;
+
+		border: 1px solid transparent;
+
+		&.hovering {
+			border: 1px solid $wsItemDetailsTableFieldValueHoverBorderColor {
+				radius: 2px;
+			}
+		}
+
+		&.truncated {
+			overflow: hidden;
+
+			width: 100%;
+			max-height: 21px;
+			margin: 0;
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			// Some extra properties for pre-formatted text
+			pre {
+				position: relative;
+
+				overflow: hidden;
+
+				padding-right: 1.6em;
+
+				text-overflow: ellipsis;
+				word-break: break-all;
+
+				&:after {
+					position: absolute;
+					top: 0;
+					right: 10px;
+					bottom: 0;
+
+					content: '...';
+
+					background: inherit;
+				}
+			}
+		}
+
+		&.expanded {
+			overflow: auto;
+
+			max-width: 100%; // Firefox-specific, for the child <span> to get maxed at 100%
+			margin: 0;
+
+			word-wrap: break-word;
+			word-break: inherit;
+		}
+	}
+}
+
+// Form Glow Animation
+//
+// This mixin overrides the default outline effect on form elements,<br>
+// replacing it with an animated glow effect, similar to Bootstrap's (for consistency)
+//
+// Markup:
+// <pre>@include form-element-focus-animation;</pre>
+//
+// form-element-focus-animation-
+//
+// Styleguide 5.7
+@mixin form-element-focus-animation {
+	-webkit-transition: $formElementTransition;
+	-o-transition: $formElementTransition;
+	transition: $formElementTransition;
+
+	border-radius: 2px;
+	-webkit-box-shadow: $formElementShadowBlur;
+	box-shadow: $formElementShadowBlur;
+
+	&:focus {
+		border-color: $formElementGlowColor;
+		outline: 0;
+		-webkit-box-shadow: $formElementShadowFocus;
+		box-shadow: $formElementShadowFocus;
+	}
+}
+
+
+// Dropdown widget opening button
+//
+// Optional styling that allows customization of button size
+//
+// Markup:
+// <pre>@include dropdown-button(12em);</pre>
+//
+// dropdown-button - Takes in one arguments: `buttonWidth`
+//
+@mixin dropdown-button($buttonWidth) {
+	margin: 0;
+	width: $buttonWidth;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	.caret-flex {
+		height: 15px !important;
+	}
+}
+
+// Item Descriptor Truncation
+//
+// PLM default styling for itemm descriptor truncation, handling resizing and ellipsis properly
+//
+// Markup:
+// <pre>@include titleTruncation;</pre>
+//
+// Applies styling item descriptor truncation
+//
+// Styleguide 5.8
+@mixin titleTruncation {
+
+	.item-title-wrapper {
+		display: -ms-flexbox; // IE10-specific
+		display: flex;
+
+		flex: {
+			// (Shorthand) flex-flow: row nowrap;
+			direction: row;
+			wrap: nowrap;
+		}
+		-ms-flex-pack: start; // IE10-specific
+		justify-content: flex-start;
+
+		.item-title-icon {
+			@include set-width-height(40px, 30px);
+
+			font-size: 30px;
+
+			-ms-flex-order: 1; // IE10-specific
+			order: 1;
+			-ms-flex: 0 0 auto; // IE10-specific
+			flex: {
+				grow: 0;
+				shrink: 0;
+				basis: auto;
+			}
+		}
+
+		.item-title-descriptor {
+			font: {
+				size: 30px;
+				weight: 300;
+			}
+
+			overflow: hidden;
+
+			padding-right: 10px;
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			-ms-flex-order: 2; // IE10-specific
+			order: 2;
+			-ms-flex: 0 1 auto; // IE10-specific
+			flex: {
+				grow: 0;
+				shrink: 1;
+				basis: auto;
+			}
+		}
+
+		.item-title-specialmessages {
+			font-size: 30px;
+
+			padding: 0 10px 0 0;
+
+			-ms-flex-order: 3; // IE10-specific
+			order: 3;
+			-ms-flex: 0 0 auto; // IE10-specific
+			flex: {
+				grow: 0;
+				shrink: 0;
+				basis: auto;
+			}
+		}
+	}
+}
+
+// Clean, reset unordered list
+//
+// A clean, simple unordered list
+//
+// Markup:
+// <pre>@include clean-unordered-list;</pre>
+//
+// Applies styling of a clean, unordered list
+//
+// Styleguide 5.9
+@mixin clean-unordered-list {
+	@extend %resetUnorderedList;
+}
+
+// Flexbox centering
+//
+// Centers the contents vertically and horizontally by using flexbox
+//
+// Markup:
+// <pre>@include flex-center;</pre>
+//
+// Styleguide 5.10
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

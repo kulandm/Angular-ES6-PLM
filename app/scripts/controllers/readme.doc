@@ -1,0 +1,4 @@
+@ngdoc overview
+@name Controllers
+@id index
+@description All controllers for plm360 module lives inside this directory

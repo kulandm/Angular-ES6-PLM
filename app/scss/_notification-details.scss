@@ -1,0 +1,131 @@
+// Notification Details
+//
+// Styles for (bulk) notification details.
+//
+// Styleguide Components.NotificationDetails
+md-dialog.notification-details {
+	width: 40%;
+
+	.md-dialog-content {
+		padding: 0;
+	}
+
+	.md-toolbar-tools {
+		// Notification Header
+		//
+		// Styles for modal header.
+		//
+		// Markup:
+		// <md-toolbar>
+		// 	<div class="md-toolbar-tools">
+		// 		<h2 class="notification-header">Heading</h2>
+		// 	</div>
+		// </md-toolbar>
+		//
+		// .notification-header - Sets font-size and removes bottom margin
+		//
+		// Styleguide Components.NotificationDetails.NotificationHeader
+		.notification-header {
+			font-size: 24px;
+
+			margin-bottom: 0;
+		}
+
+		.zmdi-close {
+			font-size: 24px;
+
+			color: $grayColor;
+		}
+	}
+
+	.md-button {
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+
+	// Section Header
+	//
+	// Styles for collapsible header in modal.
+	//
+	// Markup:
+	// <div class="section-header"></div>
+	//
+	// .section-header - Changes background of header, and some font styles
+	//
+	// Styleguide Components.NotificationDetails.SectionHeader
+	.section-header {
+		font-size: 18px;
+		font-weight: 600;
+
+		padding: 20px 15px;
+
+		cursor: pointer;
+
+		background-color: $sectionWrapperHeaderBackgroundColor;
+
+		&.unclickable {
+			cursor: default;
+		}
+
+		.items-error {
+			color: $notificationFailedText;
+		}
+
+		.items-count {
+			font-size: 14px;
+		}
+
+		.items-success {
+			color: $notificationSuccessText;
+		}
+
+		.section-caret {
+			&.fade {
+				opacity: 0.4;
+			}
+
+			&.rotate-up {
+				-webkit-transition-duration: 0.5s;
+				-moz-transition-duration: 0.5s;
+				-o-transition-duration: 0.5s;
+				transition-duration: 0.5s;
+			}
+
+			&.rotate-down {
+				-webkit-transition: 0.5s;
+				-moz-transition: 0.5s;
+				-o-transition: 0.5s;
+				transition: 0.5s;
+				-webkit-transform: rotate(-180deg);
+				-moz-transform: rotate(-180deg);
+				-o-transform: rotate(-180deg);
+				transform: rotate(-180deg);
+			}
+		}
+	}
+
+	// Notification Item
+	//
+	// Styles for each item in the modal.
+	//
+	// Markup:
+	// <div class="notification-item" ng-repeat="item in array">
+	// 	{{array.content}}
+	// </div>
+	//
+	// .notification-item - Adds padding of `15px` to each item
+	//
+	// Styleguide Components.NotificationDetails.NotificationItem
+	.notification-item {
+		margin: 0 15px;
+		padding: 15px 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $mediumGrayColor;
+		}
+	}
+
+	.md-actions {
+		border-top: 1px solid $grayColor;
+	}
+}

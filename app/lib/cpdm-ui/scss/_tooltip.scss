@@ -1,0 +1,88 @@
+.tooltip {
+	outline: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	& div.tooltip-content {
+		z-index: 10;
+		display: none;
+		padding: 6px;
+		margin-top: 10px;
+		width: auto;
+		line-height: 16px;
+		border-radius: 2px;        
+		box-shadow: 0px 0px 8px 2px $gray;
+		text-align: left;
+		font-style: normal;
+		font-size: 14px;
+
+		&.top {
+			margin-top: -63px;
+
+			.arrow {
+				border-top: 10px solid $white;
+				border-bottom: none;
+				bottom: -12px;
+			}
+		}
+
+		& div {
+			margin: 5px 0;
+		}
+
+		.arrow {
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+
+			border-bottom: 10px solid $white;
+			position: absolute;
+			top: -15px;
+			left: 43%;
+		}
+
+		&.top {
+
+			&.pinning-tooltip {
+				margin-top: -96px;
+			}
+
+			&.has-pinned-version {
+				margin-top: -121px;
+			}
+
+			.arrow {
+				border-top: 10px solid $white;
+				border-bottom: none;
+				top: auto;
+				bottom: -15px;
+			}
+		}
+
+		.info {
+			font-weight: bold;
+		}
+	}
+
+	&:hover div.tooltip-content {
+		position: absolute;
+		border: 2px solid $white;
+		background-color: $white;
+
+		&.top,
+		&.bottom {
+			display: inline;
+			margin-left: -14px;
+		}
+
+		&.has-pinned-version {
+			margin-left: -18px;
+		}
+	}
+}
+div.tooltip-content {
+	display: none;
+}

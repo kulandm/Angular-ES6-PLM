@@ -1,0 +1,29 @@
+{
+  "name": "plm-jitterbit",
+  "description": "PLM UI Jitterbit Integration",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-rest-wrapper-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-rest-wrapper-service.git#1.0.0",
+    "plm-api-models-manager": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git#1.0.0"
+  },
+  "resolutions": {
+    "angular": "1.4.8",
+    "plm-event-service": "1.0.1"
+  },
+  "version": "1.0.0"
+}

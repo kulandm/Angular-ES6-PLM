@@ -1,0 +1,101 @@
+<h1><code ng:non-bindable="">ReportChartController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-reportchartcontroller-page"><p>This controller is responsible for logics of report chart directive</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<ul>
+<li>Requires <a href="api/Services.LocalizationService">Services.LocalizationService</a></li>
+</ul>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_closechartmodal">closeChartModal()</h3>
+<div class="closechartmodal"><div class="controllers-reportchartcontroller-closechartmodal-page"><p>Closes the modal window when clicking the close button</p>
+</div></div>
+</li>
+<li><h3 id="methods_createcategorylist">createCategoryList(axisId, chartData)</h3>
+<div class="createcategorylist"><div class="controllers-reportchartcontroller-createcategorylist-page"><p>create list of categories from the given chart data.</p>
+</div><h5 id="methods_createcategorylist_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>axisId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createcategorylist-page"><p>: the id of the axis on which the category will be created. Note: Generally for reports it will be x-axis.</p>
+</div></td></tr><tr><td>chartData</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createcategorylist-page"><p>: the chart data for the report.</p>
+</div></td></tr></tbody></table><h5 id="methods_createcategorylist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-reportchartcontroller-createcategorylist-page"><p>list of categories for the chart.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createfielddescriptor">createFieldDescriptor(field)</h3>
+<div class="createfielddescriptor"><div class="controllers-reportchartcontroller-createfielddescriptor-page"><p>create field descriptor on field object.</p>
+</div><h5 id="methods_createfielddescriptor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>field</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createfielddescriptor-page"><p>: field associated with the report.</p>
+</div></td></tr></tbody></table><h5 id="methods_createfielddescriptor_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createfielddescriptor-page"><p>the descriptor of the field based on <a href="#fieldID">fieldID</a> and optionally <a href="#aggregate">aggregate</a> properties.
+Note: we need to incorporate <a href="#aggregate">aggregate</a> as reportResult column id will have the aggregate property as part of field ID.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createid">createId(field)</h3>
+<div class="createid"><div class="controllers-reportchartcontroller-createid-page"><p>create field id based on field object.</p>
+</div><h5 id="methods_createid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>field</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createid-page"><p>: field associated with the report.</p>
+</div></td></tr></tbody></table><h5 id="methods_createid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createid-page"><p>the id of the field based on <a href="#fieldID">fieldID</a> and optionally <a href="#aggregate">aggregate</a> properties.
+Note: we need to incorporate <a href="#aggregate">aggregate</a> as reportResult column id will have the aggregate property as part of field ID.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createinitialdatasetforseries">createInitialDataSetForSeries(initialValue, length)</h3>
+<div class="createinitialdatasetforseries"><div class="controllers-reportchartcontroller-createinitialdatasetforseries-page"><p>create default data list for a series. This method will be used with <a href="#createSeries">createSeries</a>.</p>
+</div><h5 id="methods_createinitialdatasetforseries_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>initialValue</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-reportchartcontroller-createinitialdatasetforseries-page"><p>: initial value to be set to the list.</p>
+</div></td></tr><tr><td>length</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-reportchartcontroller-createinitialdatasetforseries-page"><p>: the length of the list. Note: In the context of series, this should be the length of categories.</p>
+</div></td></tr></tbody></table><h5 id="methods_createinitialdatasetforseries_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-reportchartcontroller-createinitialdatasetforseries-page"><p>list with default values.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createseries">createSeries(seriesMap, categoryList, dependentAxisId, independentAxisId, defaultValue)</h3>
+<div class="createseries"><div class="controllers-reportchartcontroller-createseries-page"><p>create list of series of the report.</p>
+</div><h5 id="methods_createseries_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>seriesMap</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>: a map keyed by series name and value is the list of values for categories.
+Note: list does not necessary contain value for each category, so this method will
+fill the missing values with default values.</p>
+</div></td></tr><tr><td>categoryList</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>: list of strings representing the category for the report chart.</p>
+</div></td></tr><tr><td>dependentAxisId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>: the dependent axis id (it can be x-axis or y-axis depending on the chart data)</p>
+</div></td></tr><tr><td>independentAxisId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>: the independent axis id (it can be a-axis or y-axis depennding on the chart data).</p>
+</div></td></tr><tr><td>defaultValue</td><td><a href="" class="label type-hint type-hint-number">Number/String</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>: the default value to set to the series data list.</p>
+</div></td></tr></tbody></table><h5 id="methods_createseries_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-reportchartcontroller-createseries-page"><p>the list of series for the report chart.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createseriesmap">createSeriesMap(seriesId, chartData)</h3>
+<div class="createseriesmap"><div class="controllers-reportchartcontroller-createseriesmap-page"><p>create a map of series from the chart data.</p>
+</div><h5 id="methods_createseriesmap_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>seriesId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-reportchartcontroller-createseriesmap-page"><p>: the id of the series (this will be the key of the resultant map).</p>
+</div></td></tr><tr><td>chartData</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createseriesmap-page"><p>: the chart data for the report.</p>
+</div></td></tr></tbody></table><h5 id="methods_createseriesmap_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-reportchartcontroller-createseriesmap-page"><p>map of series keyyed by series id
+NOTE: its valid to have an empty string as series id. What should we do if we have multiple series with empty string id??</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_init">init()</h3>
+<div class="init"><div class="controllers-reportchartcontroller-init-page"><p>Initialization function</p>
+</div></div>
+</li>
+<li><h3 id="methods_init">init()</h3>
+<div class="init"><div class="controllers-reportchartcontroller-init-page"><p>Initialization function</p>
+</div></div>
+</li>
+<li><h3 id="methods_ismultiseriesorstacked">isMultiSeriesOrStacked()</h3>
+<div class="ismultiseriesorstacked"><div class="controllers-reportchartcontroller-ismultiseriesorstacked-page"><p>true, if chart is either multiseries or stacked</p>
+</div></div>
+</li>
+<li><h3 id="methods_useticks">useTicks()</h3>
+<div class="useticks"><div class="controllers-reportchartcontroller-useticks-page"><p>true, if ticks will be used on x-Axis (independent axis) instead of categories. For line and area
+charts, ticks should be used.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-reportchartcontroller-bundle-page"><p>localization bundle</p>
+</div></div>
+</li>
+<li><h3 id="properties_chartconfig">chartConfig</h3>
+<div class="chartconfig"><div class="controllers-reportchartcontroller-chartconfig-page"><p>The chart configuration option to be used with high charts directive. Note: Need to set some default
+values to avoid showing default title and other options when chart config is being loaded.</p>
+</div></div>
+</li>
+<li><h3 id="properties_isrendered">isRendered</h3>
+<div class="isrendered"><div class="controllers-reportchartcontroller-isrendered-page"><p>true, when report chart directive is rendered.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

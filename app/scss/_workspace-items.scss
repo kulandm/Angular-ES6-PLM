@@ -1,0 +1,35 @@
+// Workspace Items
+//
+// Styles for the workspace items page.
+//
+// Styleguide 36
+
+#workspace-items {
+	-ms-flex: 1 0 auto; // IE11 being silly - https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview
+	flex: 1 0 0;
+
+	overflow-x: hidden; // Full view table component, hence hide the horizontal scroll in all instances
+	overflow-y: hidden !important; // Full view table component, hence hide the vertical scroll in all instances
+
+	.image-field-wrapper {
+		& > img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.image-field-thumbnail {
+			border: $image-thumbnail-border;
+			height: 34px;
+		}
+	}
+}
+
+#views-dropdown-list ul li a .label {
+	color: $blueColor;
+}
+
+.utilities-toolbar .md-toolbar-tools .view-label {
+	margin-right: 5px;
+}
+
+@import 'workspace-tableau-flyout';

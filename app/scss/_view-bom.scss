@@ -1,0 +1,284 @@
+.bom-wrapper {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 94px;
+} // End .bom-wrapper
+
+@mixin button-padding() {
+	padding: 0 40px;
+} // End button-padding()
+
+@mixin command-bar-button-wrapper() {
+	float: right;
+	padding: 0 10px 0 0;
+	flex: 0 0 auto;
+} // End command-bar-button-wrapper()
+
+.bom-command-bar {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: row;
+
+	button {
+		margin-top: 5px;
+		margin-right: 10px;
+	}
+
+	.disabled-primary-button {
+		color: $whiteColor;
+	}
+
+	.command-bar-left {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	} // End .command-bar-left
+
+	.command-bar-right {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	} // End .command-bar-right
+
+	#control-data button.command-bar-button {
+		@include button-padding();
+	} // End #control-data button.command-bar-button
+
+	//Action Button
+	#bom-actions-dropdown {
+		display: inline-block;
+		flex: 0 0 auto;
+
+		> button {
+			padding: 0; // Override command-bar default button styling
+		}
+	} //End #bom-actions-dropdown
+
+	//Views Dropdown Related
+	.view-dropdown-label {
+		flex: 0 0 auto;
+		margin-right: 10px;
+		line-height: 30px;
+	}
+
+	.view-dropdown-widget-wrapper {
+
+		> div {
+			width: 200;
+			left: 55px !important;
+		}
+	}
+
+	#views-dropdown {
+		@include command-bar-button-wrapper();
+
+		> button {
+			@include dropdown-button(200px);
+			text-align: left;
+			padding: 0 5px;
+
+			.caret-flex {
+				float: right;
+				padding-top: 8px;
+			}
+		}
+	}
+
+	//Bom Configuration
+	#bom-configuration-dropdown {
+		@include command-bar-button-wrapper();
+
+		> button {
+			@include dropdown-button(auto);
+			padding: 0 5px;
+		}
+
+		.dropdown-widget-wrapper {
+			padding: 10px;
+			width: 325px;
+		}
+
+		#bias-dropdown-widget {
+
+			.dropdown-widget-wrapper {
+				padding: 5px 0;
+				width: 200px;
+			}
+		}
+
+		.bias-fieldset {
+			padding: 0 0 5px;
+
+			.bias-fieldset-row {
+				margin: 6px 0;
+
+				> div:last-child {
+					text-align: center;
+				}
+
+				.bias-fieldset-dropdown {
+
+					> button {
+						//needs a constant width so that it doesn't grow/shrink when text changes
+						@include dropdown-button(12em);
+						padding: 0 5px;
+					}
+				}
+
+				.bias-fieldset-date {
+
+					.datepicker {
+						position: relative;
+
+						.datepicker-external {
+							> input {
+								//We set width relative to the width of .bias-fieldset-dropdown
+								//See _constants.scss for details on the calculation
+								width: calc(12em - 33px - 4px);
+							}
+						}
+
+						.dropdown-menu {
+							left: -90px !important;
+
+							button {
+								margin-top: 0;
+								margin-right: 0;
+							}
+						}
+					}
+				}
+
+				#bias-dropdown-button {
+					@include dropdown-button(12em);
+					text-align: left;
+					padding: 0 5px;
+
+					.caret-flex {
+						float: right;
+						padding-top: 8px;
+					}
+				}// End #bias-dropdown-button
+			} // End .bias-fieldset-row
+
+			.bias-help-link {
+
+				:hover {
+					text-decoration: none;
+				}
+
+				.md-help {
+					color: $blueColor;
+				} // End .md-help
+			}
+		} // End .bias-fieldset
+
+		.bias-command-bar {
+			border-top: $commandBarBorder;
+			padding-top: 10px;
+		}
+	} // End #bom-configuration-dropdown
+} // End .bom-command-bar
+
+
+.bom-config-header {
+	flex: 0 0 auto;
+	display: flex;
+	font-size: large;
+	line-height: 1.2857em;
+	padding: 5px;
+
+	.bom-config-header-text {
+		flex: 1 1 auto;
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	border-bottom: $commandBarBorder;
+}
+
+.bom-table {
+	width: 100%;
+	height: 100%;
+
+	//Increase the clickable area for ease of editing
+	.field-selector-container {
+		height: 100%;
+	}
+
+	& > span {
+		& > div {
+			width: 100% !important;
+			height: 100% !important;
+			display: flex;
+			flex: 1 1 auto;
+		}
+	}
+}
+
+.stamp-color {
+	color: $greenColor;
+}
+
+.bom-md-icon {
+	font-size: $defaultIconFontSize;
+}
+
+// the anchor-button css class can be used to make md-button look like hypherlink
+.ui-grid-cell-contents {
+
+	.anchor-button {
+
+		&.md-button,
+		&.md-button:active,
+		&.md-button:focus {
+			color: $linkColor !important;
+			border: none;
+			padding: 0;
+			margin: -5px 0 0 0;
+			background: none !important; // Need to overrite as plm-material is using important for some reason
+		}
+
+		&.md-button:hover {
+			text-decoration: none;
+			background: none;
+		}
+	}
+}
+
+.disabled-ui-grid-row {
+
+	a,
+	span.ng-binding {
+		color: $disabledBomRowColor;
+	}
+}
+
+.disabled-ui-grid-cell {
+
+	a,
+	span.ng-binding {
+		color: $disabledBomRowColor;
+	}
+}
+
+.bom-ui-grid-row {
+	// Use overflow from actual row wrapper
+	overflow: inherit;
+}
+
+.added-ui-grid-row {
+	background-color: $rowHoverColor;
+}
+
+.pending-remove-ui-grid-row {
+
+	span.ng-binding {
+		color: $redColor;
+		text-decoration: line-through;
+	}
+}

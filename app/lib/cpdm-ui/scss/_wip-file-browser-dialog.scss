@@ -1,0 +1,36 @@
+.wip-file-browser-dialog {
+	width: 80%;
+
+	md-divider {
+		border-width: 2px;
+	}
+
+	.md-toolbar-tools {
+		font-size: x-large;
+		font-weight: 300;
+
+		padding: {
+			right: 24px;
+			left: 24px;
+		}
+
+		.zmdi-close {
+			color: $gray;
+		}
+	}
+
+	md-dialog-actions .md-button {
+		padding: {
+			right: 40px;
+			left: 40px;
+		}
+	}
+
+	md-dialog-content {
+		overflow: hidden; // overrite the default scroll of md-dialog in order to show scroll only in table-data
+
+		.md-dialog-content {
+			padding: 0;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+// Workflow
+//
+// Styles for the workflow map.
+// *To be filled in.*
+//
+// Styleguide x.x
+
+.workflow {
+	overflow-y: hidden !important; // Full view table component, hence hide the vertical scroll in all instances
+	& > span {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		& > div {
+			width: 100% !important;
+			height: 100% !important;
+			display: flex;
+			flex: 1;
+		}
+	}
+}

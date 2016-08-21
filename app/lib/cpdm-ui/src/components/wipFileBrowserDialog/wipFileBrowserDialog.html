@@ -1,0 +1,41 @@
+<md-dialog aria-label="{{$root.bundle.wip.attachments.addAttachment}}"
+	class="wip-file-browser-dialog">
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{$root.bundle.wip.attachments.addAttachment}}</h2>
+			<span flex></span>
+			<a href="#" ng-click="wipFileBrowserDialogCtrl.closeDialog()">
+				<span class="zmdi zmdi-close"></span>
+			</a>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<wip-file-browser
+				selected-files="wipFileBrowserDialogCtrl.selectedFiles">
+			</wip-file-browser>
+		</div>
+
+		<md-divider></md-divider>
+	</md-dialog-content>
+
+	<!-- Dialog Footer with the Action Buttons -->
+	<md-dialog-actions>
+		<md-button class="md-button"
+			aria-label="{{$root.bundle.button.cancel}}"
+			ng-click="wipFileBrowserDialogCtrl.closeDialog()">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+
+		<md-button class="md-button md-primary"
+			aria-label="{{$root.bundle.button.add}}"
+			ng-disabled="!wipFileBrowserDialogCtrl.selectedFiles.size"
+			ng-click="wipFileBrowserDialogCtrl.triggerAdd()">
+			<span class="label">{{$root.bundle.button.add}}</span>
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

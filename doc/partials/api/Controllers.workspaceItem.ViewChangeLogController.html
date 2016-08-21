@@ -1,0 +1,90 @@
+<h1><code ng:non-bindable="">ViewChangeLogController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewchangelogcontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}/{itemId}/changelog.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getchangelogdata">getChangeLogData(order, columnId)</h3>
+<div class="getchangelogdata"><div class="controllers-workspaceitem-viewchangelogcontroller-getchangelogdata-page"><p>Fetches more data for the change log table (this is binded to the tableData widget)</p>
+</div><h5 id="methods_getchangelogdata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>order</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-getchangelogdata-page"><p>Order to retrieve data from the server - accepts &quot;asc&quot; or &quot;desc&quot;</p>
+</div></td></tr><tr><td>columnId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-getchangelogdata-page"><p>The id of the column to retrieve the data ordered by</p>
+</div></td></tr></tbody></table><h5 id="methods_getchangelogdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object/Boolean</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-getchangelogdata-page"><p>Promise, that resolves to false if there&#39;s nothing else to load, or it&#39;s in the middle of the loading process (otherwise should return true)</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewchangelogcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_openflyoutwindow">openFlyoutWindow(event, userId)</h3>
+<div class="openflyoutwindow"><div class="controllers-workspaceitem-viewchangelogcontroller-openflyoutwindow-page"><p>Open flyout window based on the given event and user ID.</p>
+</div><h5 id="methods_openflyoutwindow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-openflyoutwindow-page"><p>the event object.</p>
+</div></td></tr><tr><td>userId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewchangelogcontroller-openflyoutwindow-page"><p>The user ID</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-workspaceitem-viewchangelogcontroller-bundle-page"><p><code>private</code> Assigns the rootScope&#39;s bundle (with localization) to this controller&#39;s bundle.</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentcolumnid">currentColumnId</h3>
+<div class="currentcolumnid"><div class="controllers-workspaceitem-viewchangelogcontroller-currentcolumnid-page"><p>The initial (or current) column id that the data is sorted by</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentorder">currentOrder</h3>
+<div class="currentorder"><div class="controllers-workspaceitem-viewchangelogcontroller-currentorder-page"><p>The initial (or current) sorting order</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-workspaceitem-viewchangelogcontroller-currentuserlistenerid-page"><p><code>private</code> Listener for current user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateandhourformat">dateAndHourFormat</h3>
+<div class="dateandhourformat"><div class="controllers-workspaceitem-viewchangelogcontroller-dateandhourformat-page"><p>Stores the date plus hour format.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewchangelogcontroller-dateformat-page"><p>Stores the date format.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewchangelogcontroller-itemid-page"><p><code>private</code> The current item ID.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewchangelogcontroller-itemlistenerid-page"><p><code>private</code> Listener for current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemquantity">itemQuantity</h3>
+<div class="itemquantity"><div class="controllers-workspaceitem-viewchangelogcontroller-itemquantity-page"><p>Amount of items to fetch.</p>
+</div></div>
+</li>
+<li><h3 id="properties_pagenumber">pageNumber</h3>
+<div class="pagenumber"><div class="controllers-workspaceitem-viewchangelogcontroller-pagenumber-page"><p>The page to fetch data from.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewchangelogcontroller-tabledata-page"><p>Stores table column header, and rows, for the tableData</p>
+</div></div>
+</li>
+<li><h3 id="properties_that">that</h3>
+<div class="that"><div class="controllers-workspaceitem-viewchangelogcontroller-that-page"><p><code>private</code> Reference to this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewchangelogcontroller-viewpermission-page"><p>The view changelog items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewchangelogcontroller-workspaceid-page"><p><code>private</code> The current workspace ID.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

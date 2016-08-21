@@ -1,0 +1,24 @@
+<mxEditor>
+	<include name="plmlib/mxGraph/config/wfeditor-commons.xml"/>
+	<ui>
+		<add as="graph" element="mxGraph"
+			style="left:0px;width:100%;top:30px;height:95%"/>
+		<add as="properties" element="mxProperties"  
+			style="padding:5px;padding-top:8px;padding-right:0px;"/>
+		<add as="toolbar" element="mxToolbar"
+			style="top:0px;height:30px;left:0px;right:0px;"/>
+		<!-- 
+		<add as="status" element="status"
+			style="height:20px;bottom:0px;left:0px;right:0px;"/>
+		-->
+	</ui>
+	<mxGraph as="graph">
+		<include name="plmlib/mxGraph/config/wfgraph-commons.xml"/>
+	</mxGraph>
+	<mxDefaultToolbar as="toolbar">
+		<include name="plmlib/mxGraph/config/wftoolbar-commons.xml"/>
+	</mxDefaultToolbar>
+	<mxDefaultStatusbar as="statusbar">
+		<include name="plmlib/mxGraph/config/wfstatusbar-commons.xml"/>
+	</mxDefaultStatusbar>
+</mxEditor>

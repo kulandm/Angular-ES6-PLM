@@ -1,0 +1,183 @@
+<md-dialog aria-label="Selected Files Dialog" class="attachments-dialog">
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 class="attachments-dialog-header">
+				<span ng-if="ClassicAttachmentsDialogCtrl.isFromCheckIn">
+					{{$root.bundle.attachments.checkIn}}
+				</span>
+				<span ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn">
+					{{$root.bundle.attachments.upload}}
+				</span>
+			</h2>
+			<div class="item-selected"
+				ng-show="ClassicAttachmentsDialogCtrl.selectedFiles.length"
+				ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn">
+				- {{ClassicAttachmentsDialogCtrl.selectedFiles.length}}
+				<span ng-if="ClassicAttachmentsDialogCtrl.selectedFiles.length === 1">
+					{{$root.bundle.attachments.selected.oneItem}}
+				</span>
+				<span ng-if="ClassicAttachmentsDialogCtrl.selectedFiles.length > 1">
+					{{$root.bundle.attachments.selected.items}}
+				</span>
+			</div>
+			<span flex></span>
+			<a href="#" ng-click="ClassicAttachmentsDialogCtrl.closeDialog()">
+				<span class="zmdi zmdi-hc-2x zmdi-close"></span>
+			</a>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<md-toolbar class="error"
+		ng-show="ClassicAttachmentsDialogCtrl.errorMessages.length > 0">
+		<div class="md-toolbar-tools md-warn md-hue-2"
+			ng-repeat="error in ClassicAttachmentsDialogCtrl.errorMessages">
+			<span>{{error.message}}</span>
+		</div>
+	</md-toolbar>
+
+	<md-toolbar class="error"
+		ng-show="ClassicAttachmentsDialogCtrl.hasDuplicatedTitle">
+		<div class="md-toolbar-tools md-warn md-hue-2">
+			<span>{{$root.bundle.attachments.duplicatedTitles}}</span>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div layout="column"
+				ng-repeat="file in ClassicAttachmentsDialogCtrl.selectedFiles">
+				<div layout="row"
+					class="section-header"
+					ng-click="ClassicAttachmentsDialogCtrl.isContentShown = !ClassicAttachmentsDialogCtrl.isContentShown">
+					<!-- File name/info -->
+					<div>
+						<span class="file-name">
+							{{file.name}}
+						</span>
+						<span class="file-info">
+							({{file.size}})<br>
+						</span>
+					</div>
+
+					<!-- Spacer between file name/info and icons on the right -->
+					<span flex></span>
+
+					<!-- Loader for upload -->
+					<div class="file-uploading"
+						ng-if="file.uploadStatus && file.uploadStatus < 100">
+						<md-progress-circular
+							md-mode="determinate"
+							md-diameter="15"
+							value="{{file.uploadStatus}}">
+						</md-progress-circular>
+					</div>
+
+					<!-- Checkmark for upload complete -->
+					<div ng-if="file.uploadStatus === 100">
+						<span class="zmdi zmdi-check"></span>
+					</div>
+
+					<!-- Remove file from list of selected files -->
+					<div ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn && ClassicAttachmentsDialogCtrl.selectedFiles.length > 1"
+						ng-click="ClassicAttachmentsDialogCtrl.removeFile(file)">
+						<span class="zmdi zmdi-delete"></span>
+					</div>
+
+					<!-- Show or hide fields for file -->
+					<div class="section-caret"
+						ng-class="{'rotate-up': ClassicAttachmentsDialogCtrl.isContentShown,
+						'rotate-down': !ClassicAttachmentsDialogCtrl.isContentShown}">
+						<span class="zmdi zmdi-chevron-up"></span>
+					</div>
+				</div>
+
+				<md-divider></md-divider>
+
+				<div class="collapsible-section"
+					layout="column"
+					ng-show="ClassicAttachmentsDialogCtrl.isContentShown">
+					<!-- Folder -->
+					<div class="field-name"
+						ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn">
+						{{$root.bundle.attachments.folder}}
+					</div>
+					<div class="field">
+						<md-radio-group
+							layout="row"
+							layout-align="space-between center"
+							ng-model="ClassicAttachmentsDialogCtrl.folderType"
+							ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn">
+							<md-radio-button value="Directly Attached">
+								<md-label>
+									{{$root.bundle.attachments.directlyAttached}}
+								</md-label>
+							</md-radio-button>
+							<!-- Creating folder is disabled for 10.0 release -->
+							<md-radio-button value="Create Folder"
+								class="attachments-disabled-radio"
+								disabled>
+								<md-label>
+									{{$root.bundle.attachments.createFolder}}
+								</md-label>
+							</md-radio-button>
+							<input type="text"
+								placeholder="{{$root.bundle.attachments.insertFolderName}}"
+								ng-disabled="ClassicAttachmentsDialogCtrl.folderType !== 'Create Folder'"
+								ng-model="file.folder"
+								class="attachments-dialog-radio-field"
+								flex />
+						</md-radio-group>
+					</div>
+
+					<!-- Title -->
+					<div class="field-name"
+						ng-if="!ClassicAttachmentsDialogCtrl.isFromCheckIn">
+						{{$root.bundle.attachments.title}}
+					</div>
+					<div class="field">
+						<input type="text"
+							maxlength="200"
+							ng-model="file.title"
+							ng-change="ClassicAttachmentsDialogCtrl.checkDuplicatedTitles()"
+							class="field-input" />
+					</div>
+
+					<!-- Description -->
+					<div class="field-name">
+						{{$root.bundle.attachments.description}}
+					</div>
+					<div class="field">
+						<textarea class="field-input"
+							maxlength="400"
+							ng-model="file.description">
+						</textarea>
+					</div>
+				</div>
+
+				<md-divider></md-divider>
+			</div>
+		</div>
+	</md-dialog-content>
+
+	<!-- Dialog Footer with the Action Buttons -->
+	<md-dialog-actions>
+		<md-button class="md-button"
+			aria-label="{{$root.bundle.button.cancel}}"
+			ng-click="ClassicAttachmentsDialogCtrl.closeDialog()"
+			ng-disabled="ClassicAttachmentsDialogCtrl.isUploading">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+
+		<md-button class="md-button md-primary"
+			aria-label="{{$root.bundle.attachments.save}}"
+			ng-disabled="!ClassicAttachmentsDialogCtrl.selectedFiles.length ||
+			ClassicAttachmentsDialogCtrl.hasDuplicatedTitle ||
+			ClassicAttachmentsDialogCtrl.isUploading"
+			ng-click="ClassicAttachmentsDialogCtrl.triggerUpload()">
+			<span class="label">{{$root.bundle.attachments.save}}</span>
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

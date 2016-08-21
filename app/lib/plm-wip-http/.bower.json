@@ -1,0 +1,31 @@
+{
+  "name": "plm-wip-http",
+  "description": "WIP Api Service for PLM",
+  "main": "dist/plm-wip-http.js",
+  "license": "ISC",
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#1.0.5",
+    "plm-token-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-token-service.git#1.0.0"
+  },
+  "version": "1.0.9",
+  "_release": "1.0.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.9",
+    "commit": "8b98350f79de83663276e16d9d0dcda22055c9bf"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-wip-http.git",
+  "_target": "v1.0.9",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-wip-http.git"
+}

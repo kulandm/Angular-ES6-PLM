@@ -1,0 +1,90 @@
+// Notification Toast
+//
+// Styles for notification toast.
+//
+// Styleguide Components.Notification
+md-toast.notification-toast.md-top.md-left {
+	// reduce z-index so that it is on top of the item viewer but behind the side navigation bar
+	z-index: $sideNavBackdropZIndex;
+	top: 0;
+	right: 0;
+	left: 0;
+
+	min-width: 100%;
+
+	&.success {
+		background-color: $notificationToastSuccess;
+	}
+
+	&.error {
+		background-color: $notificationToastError;
+	}
+
+	a .zmdi-close {
+		@extend %removeLinkStyle;
+
+		font-weight: 600;
+
+		color: $whiteColor;
+	}
+
+	// Notification Content
+	//
+	// Centralise the text displayed in the notification toast.
+	//
+	// Markup:
+	// <md-toast class="notification-toast">
+	// 	<div class="notification-content">Content here</div>
+	// </md-toast>
+	//
+	// .notification-content - Sets `text-align: center`
+	//
+	// Styleguide Components.Notification.Content
+	.notification-content {
+		text-align: center;
+	}
+
+	// Notification Link
+	//
+	// Give a left padding to the "View Details" link on the notification toast.
+	//
+	// Markup:
+	// <md-toast class="notification-toast">
+	// 	<div class="notification-content">Content here</div>
+	// 	<a href="#" class="notification-link">View Details</a>
+	// </md-toast>
+	//
+	// .notification-link - Sets `padding-left: 5px`
+	//
+	// Styleguide Components.Notification.Link
+	.notification-link {
+		font-weight: 600;
+
+		text-decoration: underline;
+
+		color: $whiteColor;
+	}
+}
+
+// Notification in Dialog
+//
+// Position the notifications appearing within a dialog.
+// Sets `order: 1` to display notification below the dialog header.
+//
+// Markup:
+// <md-dialog>
+// 	<md-toast class="notification-toast">
+// 		<div class="notification-content">Content here</div>
+// 	</md-toast>
+// </md-dialog>
+//
+// .notification-toast - Sets `position: relative`
+//
+// Styleguide Components.Notification.Content
+md-dialog {
+	md-toast.notification-toast {
+		position: relative;
+
+		order: 1;
+	}
+}

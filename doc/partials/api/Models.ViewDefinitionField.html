@@ -1,0 +1,231 @@
+<h1><code ng:non-bindable="">ViewDefinitionField</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-viewdefinitionfield-page"><p>The Dao for ViewDefinitionField</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_buildtypeid">buildTypeId()</h3>
+<div class="buildtypeid"><div class="models-viewdefinitionfield-buildtypeid-page"><p>Gets the id # of the type from the type information</p>
+</div><h5 id="methods_buildtypeid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-int">Int</a></td><td><div class="models-viewdefinitionfield-buildtypeid-page"><p>the type id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(json)</h3>
+<div class="constructor"><div class="models-viewdefinitionfield-constructor-page"><p>Initializes a ViewDefinitionField object with using a payload
+<code>json</code> and the endpoint <code>link</code> of the field.</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>json</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-constructor-page"><p>the JSON payload for a ViewDefinitionField</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_determinesemantics">determineSemantics()</h3>
+<div class="determinesemantics"><div class="models-viewdefinitionfield-determinesemantics-page"><p>Determines the semantics of a field
+NOTE: Should eventually match the server-side enum,
+  but currently indexing based on arbitrary key that may break due to localization
+    since the server does not yet return that information</p>
+</div></div>
+</li>
+<li><h3 id="methods_fetch">fetch(link, params)</h3>
+<div class="fetch"><div class="models-viewdefinitionfield-fetch-page"><p>Makes a request to the end point <code>link</code> using the <code>params</code> in
+order to load a ViewDefinitionField</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-fetch-page"><p>The URL to use for fetching the data</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-fetch-page"><p>parametrs to send with the GET</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-fetch-page"><p>A Promise that may be resolved to get a an instance of
+ViewDefinitionField .</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbusinessaspect">getBusinessAspect()</h3>
+<div class="getbusinessaspect"><div class="models-viewdefinitionfield-getbusinessaspect-page"><p>Returns the business aspect this field corresponds to</p>
+</div><h5 id="methods_getbusinessaspect_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-getbusinessaspect-page"><p>the business aspect</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getdisplayorder">getDisplayOrder()</h3>
+<div class="getdisplayorder"><div class="models-viewdefinitionfield-getdisplayorder-page"><p>Returns the display order index</p>
+</div><h5 id="methods_getdisplayorder_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="models-viewdefinitionfield-getdisplayorder-page"><p>the display order index</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfieldid">getFieldId()</h3>
+<div class="getfieldid"><div class="models-viewdefinitionfield-getfieldid-page"><p>getter method for accessing the fieldId of the ViewDefinitionField</p>
+</div><h5 id="methods_getfieldid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-getfieldid-page"><p>The field id of the ViewDefinitionField</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfieldsemantics">getFieldSemantics()</h3>
+<div class="getfieldsemantics"><div class="models-viewdefinitionfield-getfieldsemantics-page"><p>returns the semantics of the field is
+for UI purposes</p>
+</div><h5 id="methods_getfieldsemantics_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-getfieldsemantics-page"><p>the semantics of the field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-viewdefinitionfield-getid-page"><p>Returns the unique identifier of the field</p>
+</div><h5 id="methods_getid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-getid-page"><p>the unique id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlink">getLink()</h3>
+<div class="getlink"><div class="models-viewdefinitionfield-getlink-page"><p>Returns the field link</p>
+</div><h5 id="methods_getlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-getlink-page"><p>the link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getname">getName()</h3>
+<div class="getname"><div class="models-viewdefinitionfield-getname-page"><p>getter method for accessing the name of the ViewDefinitionField</p>
+</div><h5 id="methods_getname_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-getname-page"><p>The name of the ViewDefinitionField</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getself">getSelf()</h3>
+<div class="getself"><div class="models-viewdefinitionfield-getself-page"><p>Returns the field&#39;s self information</p>
+</div><h5 id="methods_getself_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-getself-page"><p>the self information</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettype">getType()</h3>
+<div class="gettype"><div class="models-viewdefinitionfield-gettype-page"><p>Returns the type information for the field</p>
+</div><h5 id="methods_gettype_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionfield-gettype-page"><p>the type information for the field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettypeid">getTypeId()</h3>
+<div class="gettypeid"><div class="models-viewdefinitionfield-gettypeid-page"><p>returns the id of the type</p>
+</div><h5 id="methods_gettypeid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-int">Int</a></td><td><div class="models-viewdefinitionfield-gettypeid-page"><p>the id of the type</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_geturn">getUrn()</h3>
+<div class="geturn"><div class="models-viewdefinitionfield-geturn-page"><p>Returns the field urn</p>
+</div><h5 id="methods_geturn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionfield-geturn-page"><p>the urn</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isalwayseditable">isAlwaysEditable()</h3>
+<div class="isalwayseditable"><div class="models-viewdefinitionfield-isalwayseditable-page"><p>Checks whether or not the ViewDefinitionField is always editable.
+Fields with the semantics of QUANTITY, REVISION, and PINNING are always edtiable</p>
+</div><h5 id="methods_isalwayseditable_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-viewdefinitionfield-isalwayseditable-page"><p>true if the ViewDefinitionField is always editable.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isedgefield">isEdgeField()</h3>
+<div class="isedgefield"><div class="models-viewdefinitionfield-isedgefield-page"><p>Returns true if the field is a bom field</p>
+</div></div>
+</li>
+<li><h3 id="methods_isonlyeditableoncreate">isOnlyEditableOnCreate()</h3>
+<div class="isonlyeditableoncreate"><div class="models-viewdefinitionfield-isonlyeditableoncreate-page"><p>Checks whether or not the ViewDefinitionField is only editable on creation.</p>
+</div><h5 id="methods_isonlyeditableoncreate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-viewdefinitionfield-isonlyeditableoncreate-page"><p>true if the ViewDefinitionField is only editable on create.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isonlyeditableoncreate">isOnlyEditableOnCreate()</h3>
+<div class="isonlyeditableoncreate"><div class="models-viewdefinitionfield-isonlyeditableoncreate-page"><p>Checks whether or not the ViewDefinitionField is editable on creation,
+This is the case if it is always editable, or if is editable on create only</p>
+</div><h5 id="methods_isonlyeditableoncreate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-viewdefinitionfield-isonlyeditableoncreate-page"><p>true if the ViewDefinitionField is editable on create.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties___self__">__self__</h3>
+<div class="__self__"><div class="models-viewdefinitionfield-self--page"><p>The self data for the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_defaultvalue">defaultValue</h3>
+<div class="defaultvalue"><div class="models-viewdefinitionfield-defaultvalue-page"><p>The default value of the ViewDefinitionField for all of its
+occurance.</p>
+</div></div>
+</li>
+<li><h3 id="properties_derived">derived</h3>
+<div class="derived"><div class="models-viewdefinitionfield-derived-page"><p>Whether or not the ViewDefinitionField is derived</p>
+</div></div>
+</li>
+<li><h3 id="properties_description">description</h3>
+<div class="description"><div class="models-viewdefinitionfield-description-page"><p>The description of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_displaylength">displayLength</h3>
+<div class="displaylength"><div class="models-viewdefinitionfield-displaylength-page"><p>The display length of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_displayorder">displayOrder</h3>
+<div class="displayorder"><div class="models-viewdefinitionfield-displayorder-page"><p>The display order of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_editability">editability</h3>
+<div class="editability"><div class="models-viewdefinitionfield-editability-page"><p>The of the editability of the ViewDefinitionField.
+It can be always editable, or never editable or editable on creation.</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldid">fieldId</h3>
+<div class="fieldid"><div class="models-viewdefinitionfield-fieldid-page"><p>Id that automatically gets created using the field
+name. This id is uniqute to workspace but not accross all the
+business aspects .</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldlength">fieldLength</h3>
+<div class="fieldlength"><div class="models-viewdefinitionfield-fieldlength-page"><p>The length of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldprecision">fieldPrecision</h3>
+<div class="fieldprecision"><div class="models-viewdefinitionfield-fieldprecision-page"><p>Precision of the ViewDefinitionField if the field is numeric</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldsemantics">fieldSemantics</h3>
+<div class="fieldsemantics"><div class="models-viewdefinitionfield-fieldsemantics-page"><p>the semantics of the field for UI purposes</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldtab">fieldTab</h3>
+<div class="fieldtab"><div class="models-viewdefinitionfield-fieldtab-page"><p>The tab where this field resides</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldtypeid">fieldTypeId</h3>
+<div class="fieldtypeid"><div class="models-viewdefinitionfield-fieldtypeid-page"><p>The id of the data type of this ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_htmldisplayid">htmlDisplayId</h3>
+<div class="htmldisplayid"><div class="models-viewdefinitionfield-htmldisplayid-page"><p>The html display Id of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_isdefault">isDefault</h3>
+<div class="isdefault"><div class="models-viewdefinitionfield-isdefault-page"><p>is it a default field</p>
+</div></div>
+</li>
+<li><h3 id="properties_istransient">isTransient</h3>
+<div class="istransient"><div class="models-viewdefinitionfield-istransient-page"><p>Tells us whether or not the ViewDefinitionField is transient</p>
+</div></div>
+</li>
+<li><h3 id="properties_json">json</h3>
+<div class="json"><div class="models-viewdefinitionfield-json-page"><p>The payload that is returned.</p>
+</div></div>
+</li>
+<li><h3 id="properties_label">label</h3>
+<div class="label"><div class="models-viewdefinitionfield-label-page"><p>The label of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_lookups">lookups</h3>
+<div class="lookups"><div class="models-viewdefinitionfield-lookups-page"><p>if the ViewDefinitionField is a picklist then the api
+link to the picklist that is going to be used to populate this
+ViewDefinitionField.</p>
+</div></div>
+</li>
+<li><h3 id="properties_name">name</h3>
+<div class="name"><div class="models-viewdefinitionfield-name-page"><p>The name of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_type">type</h3>
+<div class="type"><div class="models-viewdefinitionfield-type-page"><p>The type information about the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_unitofmeasure">unitOfMeasure</h3>
+<div class="unitofmeasure"><div class="models-viewdefinitionfield-unitofmeasure-page"><p>The unit of measure  of the ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewdeffieldid">viewDefFieldId</h3>
+<div class="viewdeffieldid"><div class="models-viewdefinitionfield-viewdeffieldid-page"><p>The unique identifier for the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_visibility">visibility</h3>
+<div class="visibility"><div class="models-viewdefinitionfield-visibility-page"><p>Determines whether or not this ViewDefinitionField is
+always visible or only when creating and editing an item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_visibility">visibility</h3>
+<div class="visibility"><div class="models-viewdefinitionfield-visibility-page"><p>api link to all the validators associated with the
+ViewDefinitionField</p>
+</div></div>
+</li>
+<li><h3 id="properties_visibleonpreview">visibleOnPreview</h3>
+<div class="visibleonpreview"><div class="models-viewdefinitionfield-visibleonpreview-page"><p>is the ViewDefinitionField visible on data-card preview</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

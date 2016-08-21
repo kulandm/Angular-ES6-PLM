@@ -1,0 +1,100 @@
+<h1><code ng:non-bindable="">ViewSourcingController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewsourcingcontroller-page"><p>This controller corresponds to the sourcing view</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getsourcingquotesdata">getSourcingQuotesData()</h3>
+<div class="getsourcingquotesdata"><div class="controllers-workspaceitem-viewsourcingcontroller-getsourcingquotesdata-page"><p>Request the quotes of a specific sourcing of the item.</p>
+</div></div>
+</li>
+<li><h3 id="methods_getsupplierstatedata">getSupplierStateData()</h3>
+<div class="getsupplierstatedata"><div class="controllers-workspaceitem-viewsourcingcontroller-getsupplierstatedata-page"><p>Request the specific state data for the selected supplier.</p>
+</div></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewsourcingcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewsourcingcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsesupplierlist">parseSupplierList()</h3>
+<div class="parsesupplierlist"><div class="controllers-workspaceitem-viewsourcingcontroller-parsesupplierlist-page"><p>Parse the data retrieved from the endpoint</p>
+</div></div>
+</li>
+<li><h3 id="methods_retrieveresourcefromselflink">retrieveResourceFromSelfLink(link)</h3>
+<div class="retrieveresourcefromselflink"><div class="controllers-workspaceitem-viewsourcingcontroller-retrieveresourcefromselflink-page"><p>Returns the resourceId from its URI / <em>self</em> link.</p>
+</div><h5 id="methods_retrieveresourcefromselflink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewsourcingcontroller-retrieveresourcefromselflink-page"><p>The <em>self</em> link of the supplier item</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_retrievestate">retrieveState(transitions)</h3>
+<div class="retrievestate"><div class="controllers-workspaceitem-viewsourcingcontroller-retrievestate-page"><p>Set the current state of the supplier</p>
+</div><h5 id="methods_retrievestate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>transitions</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewsourcingcontroller-retrievestate-page"><p>The transitions object</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_selectsupplier">selectSupplier()</h3>
+<div class="selectsupplier"><div class="controllers-workspaceitem-viewsourcingcontroller-selectsupplier-page"><p>Triggered by selecting a supplier from the suppliers&#39; list</p>
+</div></div>
+</li>
+<li><h3 id="methods_showquotesforselectedsourcing">showQuotesForSelectedSourcing()</h3>
+<div class="showquotesforselectedsourcing"><div class="controllers-workspaceitem-viewsourcingcontroller-showquotesforselectedsourcing-page"><p>Show the proper list of quotes for the selected supplier</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewsourcingcontroller-triggercancel-page"><p>Triggered by clicking cancel button - NOTE: name has to be
+triggerCancel</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_sourcingsobj">SourcingsObj</h3>
+<div class="sourcingsobj"><div class="controllers-workspaceitem-viewsourcingcontroller-sourcingsobj-page"><p>The reference of <a href="api/Models#sourcings">Models#Sourcings</a> associated with this view.</p>
+</div></div>
+</li>
+<li><h3 id="properties_sourcingsquotesobj">SourcingsQuotesObj</h3>
+<div class="sourcingsquotesobj"><div class="controllers-workspaceitem-viewsourcingcontroller-sourcingsquotesobj-page"><p>The reference of <a href="api/Models#sourcingquotes">Models#SourcingQuotes</a> associated with this view.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addquotehref">addQuoteHref</h3>
+<div class="addquotehref"><div class="controllers-workspaceitem-viewsourcingcontroller-addquotehref-page"><p>The href for the add quote button</p>
+</div></div>
+</li>
+<li><h3 id="properties_addsupplierhref">addSupplierHref</h3>
+<div class="addsupplierhref"><div class="controllers-workspaceitem-viewsourcingcontroller-addsupplierhref-page"><p>The href for the add supplier button</p>
+</div></div>
+</li>
+<li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-workspaceitem-viewsourcingcontroller-bundle-page"><p><code>private</code> Assigns the rootScope&#39;s bundle (with localization) to this controller&#39;s bundle.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemquantity">itemQuantity</h3>
+<div class="itemquantity"><div class="controllers-workspaceitem-viewsourcingcontroller-itemquantity-page"><p>Amount of items to fetch.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedsourcing">selectedSourcing</h3>
+<div class="selectedsourcing"><div class="controllers-workspaceitem-viewsourcingcontroller-selectedsourcing-page"><p>The reference to the selected sourcing/supplier whose data is being shown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_sourcingslist">sourcingsList</h3>
+<div class="sourcingslist"><div class="controllers-workspaceitem-viewsourcingcontroller-sourcingslist-page"><p>The list of suppliers for this items&#39; sourcing.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewsourcingcontroller-tabledata-page"><p>Stores table column header and rows for the tableData</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewsourcingcontroller-tabledata-page"><p>Stores table column header, and rows, for the tableData</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewstate">viewState</h3>
+<div class="viewstate"><div class="controllers-workspaceitem-viewsourcingcontroller-viewstate-page"><p>The name of the view state for this tab</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

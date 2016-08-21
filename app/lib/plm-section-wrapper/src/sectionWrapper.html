@@ -1,0 +1,19 @@
+<div class="section-wrapper">
+    <div ng-click="togglePanel($event)" class="header">
+        <h4 ng-bind-html="headerTitle" ng-class="{'section-header-normal':isHeaderNormal}" ng-if="!classificationPartUrn" title="{{headerTooltip}}"></h4>
+
+        <h4 ng-class="{'section-header-normal':isHeaderNormal}" ng-if="classificationPartUrn">
+			<classification-section header-text="headerTitle" part-urn="classificationPartUrn" is-edition="classificationIsEdition" ng-if="classificationPartUrn"></classification-section>
+		</h4>
+
+        <ul ng-if="actionIcons" class="buttons">
+            <li ng-repeat="(actionName, icon) in actionIcons"><span class="md {{icon}}" ng-click="triggerAction($event, actionName)"></span></li>
+        </ul>
+
+        <span ng-if="isCollapsible" class="caret-flex up static-rotateCaretVertical" ng-class="{'rotate': (isCollapsed)}"></span>
+    </div>
+
+    <div class="transcluded-content-wrapper">
+        <div class="transcluded-content" ng-transclude></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid" style="margin-top: 50px;"><div class="row" id="workspace-item"><div class="col-lg-12 col-md-12 col-sm-12" id="content">
+<div ng-init="init()">
+	<div infinite-scroll="" update="doScroll" context="context">
+		<tabular-data-widget columns="tableColumns" data="tableData" perform-action="openFlyoutWindow(event, row, field)" table-column-sort="{ disableInitialSort: false, applySort: applySort }" />
+	</div>
+
+	<script type="text/ng-template" id="whereUsedLinkRenderer">
+		<a href="javascript:;" ng-click="obj.link($event);">{{obj.val}}</a>
+	</script>
+
+	<script type="text/ng-template" id="whereUsedDateRenderer">
+		<span> {{obj.val | date : obj.dateFormat}}</span>
+	</script>
+</div>
+</div></div></div>

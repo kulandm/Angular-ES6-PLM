@@ -1,0 +1,214 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewDetailsCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+	<span layout="row" layout-align="start center">
+		<div is-permitted="{{viewDetailsCtrl.editPermission}}">
+			<md-button ng-click="viewDetailsCtrl.goToEdit()"
+				aria-label="{{$root.bundle.button.edit}}"
+				ng-hide="!viewDetailsCtrl.isViewState() || !viewDetailsCtrl.isEditable">
+				<span class="label">{{$root.bundle.button.edit}}</span>
+			</md-button>
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Main content, middle - all tab content goes INSIDE -->
+	<md-content layout-fill id="item-main">
+
+		<!-- view-details main container -->
+		<div id="view-details">
+
+			<!-- sections -->
+			<div class="detail" ng-repeat="(sectionIndex, section) in viewDetailsCtrl.itemDetailsViewModeData">
+				<!-- single section -->
+				<section-wrapper collapsible collapsed="{{section.definition.collapsed}}" header-title="{{section.title}} ({{$index + 1}} {{$root.bundle.text.of}} {{viewDetailsCtrl.itemDetailsViewModeData.length}})" classification-part-urn="{{viewDetailsCtrl.getPartUrn(section)}}" classification-is-edition="(!viewDetailsCtrl.isViewState() && viewDetailsCtrl.isSectionEditable(section.link))">
+					<div class="itemdetails-table-wrapper">
+						<table class="itemdetails-table">
+							<tbody>
+								<!-- Hacky fix: please, refer to the style of this class for understanding. -->
+								<tr class="dummy-row-for-fixed-layout-table"><td class="field-label">&nbsp;</td><td>&nbsp;</td></tr>
+
+								<!-- FIELD (also checks for its visibility) -->
+								<tr ng-repeat="(itemIndex, item) in section.definition.fields track by $index" ng-if="(item.fieldMetadata.visibility === 'ALWAYS') || ((item.fieldMetadata.visibility === undefined) && (item.type === 'MATRIX')) || (!viewDetailsCtrl.isViewState() && item.fieldMetadata.visibility === 'EDIT_ONLY')">
+									<!-- handles matrices - two columns -->
+									<td ng-if="item.type === 'MATRIX'" colspan="2" class="matrix">
+										<table>
+											<thead>
+												<tr>
+													<th></th>
+													<th ng-repeat="column in item.definition.columnNames track by $index" ng-class="{'required': viewDetailsCtrl.isRequiredField(item.fieldMetadata.validationRules)}"><span>{{column}}</span></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr ng-repeat="(rowIndex, row) in item.definition.rowNames track by $index">
+													<td>{{row}}</td>
+													<td ng-repeat="(columnIndex, column) in item.definition.columnNames track by $index">
+														<!-- iterates through the list of items in the cell -->
+
+														<span ng-if="(item.definition.fields[rowIndex][columnIndex] !== null) && ((item.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === 'ALWAYS') || item.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === undefined || (!viewDetailsCtrl.isViewState() && item.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === 'EDIT_ONLY'))">
+															<field-selector
+																class="matrix-padding"
+																field-id="{{item.definition.fields[rowIndex][columnIndex].urn}}"
+																field-data="item.definition.fields[rowIndex][columnIndex]"
+																type-id="item.definition.fields[rowIndex][columnIndex].metadata.dataTypeId"
+																field-meta="item.definition.fields[rowIndex][columnIndex].fieldMetadata"
+																placeholder=""
+																edit-view="{{(!viewDetailsCtrl.isViewState()) && viewDetailsCtrl.isSectionEditable(section.link)}}"
+																waiting="isSavingData">
+															</field-selector>
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+
+									<!-- the common field type -->
+									<!-- label -->
+									<td ng-if="item.type === 'FIELD'" class="field-label" ng-class="{'required': viewDetailsCtrl.isRequiredField(item.fieldMetadata.validationRules)}">{{item.title}}</td>
+
+									<!-- the field in view mode -->
+									<td ng-if="item.type === 'FIELD'" ng-class="{'rtf-form':item.metadata.dataTypeId === viewDetailsCtrl.FieldTypes.PARAGRAPH}">
+										<span ng-if="(!viewDetailsCtrl.isViewState()) && viewDetailsCtrl.isSectionEditable(section.link)" class="item-tooltip-wrapper pull-right">
+											<a href="javascript:;" ng-if="item.description" ng-click="viewDetailsCtrl.tooltipFlyout($event, item.title, item.description)" class="item-tooltip-icon"><span class="icon icon-Question"></span></a>
+										</span>
+										<span>
+											<field-selector
+												field-id="{{item.urn}}"
+												field-data="item"
+												type-id="item.metadata.dataTypeId"
+												field-meta="item.fieldMetadata"
+												placeholder=""
+												edit-view="{{(!viewDetailsCtrl.isViewState()) && viewDetailsCtrl.isSectionEditable(section.link)}}"
+												waiting="viewDetailsCtrl.isSavingData">
+											</field-selector>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section-wrapper>
+			</div>
+
+			<div class="detail" is-permitted="{{viewDetailsCtrl.PLMPermissions.VIEW_OWNER_CHANGE_SUMMARY}}">
+				<section-wrapper collapsible
+					header-title="{{$root.bundle.details.ownerAndChangeSummary}}"
+					ng-if="(viewDetailsCtrl.ownershipData !== null) && ((viewDetailsCtrl.ownershipData.ownership !== null) || (viewDetailsCtrl.ownershipData.audit !== null))">
+					<!-- Ownership information -->
+					<footer class="summary-ownership">
+
+						<div class="change-summary">
+
+							<div layout="row">
+								<div class="change-summary-label">{{$root.bundle.details.changeSummary}}</div>
+								<div flex layout="column">
+									<!-- CREATED BY -->
+									<div class="change-summary-section">
+										<user-avatar user-name="{{viewDetailsCtrl.ownershipData.audit.createdBy.displayName}}"
+											user-image="{{viewDetailsCtrl.ownershipData.audit.createdBy.imageSizeMedium}}"></user-avatar>
+										<span class="change-summary-info audit">
+											<div>{{$root.bundle.details.createdOn}}
+												<span class="date">
+												{{viewDetailsCtrl.ownershipData.audit.createdOn | UTC | date : viewDetailsCtrl.dateAndHourFormat}}</span>
+											</div>{{$root.bundle.details.by}}
+											<a class="created-by" href="javascript:;" ng-click="viewDetailsCtrl.toggleOwnershipFlyoutDisplay($event, '{{viewDetailsCtrl.ownershipData.audit.createdBy.id}}')">
+											{{viewDetailsCtrl.ownershipData.audit.createdBy.displayName}}</a>
+										</span>
+									</div>
+
+									<!-- LAST MODIFIED BY -->
+									<div class="change-summary-section">
+										<user-avatar user-name="{{viewDetailsCtrl.ownershipData.audit.lastModifiedBy.displayName}}"
+											user-image="{{viewDetailsCtrl.ownershipData.audit.lastModifiedBy.imageSizeMedium}}"></user-avatar>
+										<span class="change-summary-info audit">
+											<span class="by">
+												<div>{{$root.bundle.details.lastModifiedOn}}
+													<span class="date">{{viewDetailsCtrl.ownershipData.audit.lastModifiedOn | UTC | date : viewDetailsCtrl.dateAndHourFormat}}</span>
+												</div>
+											</span>
+											<span class="on">
+												{{$root.bundle.details.by}} <a class="last-modified-by" href="javascript:;"
+												   ng-click="viewDetailsCtrl.toggleOwnershipFlyoutDisplay($event, '{{viewDetailsCtrl.ownershipData.audit.lastModifiedBy.id}}')">
+													{{viewDetailsCtrl.ownershipData.audit.lastModifiedBy.displayName}}
+												</a>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div layout="row">
+								<div class="change-summary-label">{{$root.bundle.details.owner}}</div>
+								<!-- CURRENT OWNER -->
+								<div class="change-summary-section current-owner" ng-if="viewDetailsCtrl.ownershipData.ownership.owners[0].ownerType === viewDetailsCtrl.primaryUser">
+									<user-avatar user-name="{{viewDetailsCtrl.ownershipData.ownership.owners[0].shortDesc}}"
+										user-image="{{viewDetailsCtrl.ownershipData.ownership.owners[0].imageUrls.imageSizeMedium}}"></user-avatar>
+									<span class="change-summary-info">
+										<span class="by">
+											<a class="ownership" href="javascript:;"
+											   ng-click="viewDetailsCtrl.toggleOwnershipFlyoutDisplay($event, viewDetailsCtrl.ownershipData.ownership.owners[0].id)">
+												{{viewDetailsCtrl.ownershipData.ownership.owners[0].shortDesc}}
+											</a>
+										</span>
+										<span
+											  ng-if="viewDetailsCtrl.ownershipData.ownership.owners[0].organization && viewDetailsCtrl.ownershipData.ownership.owners[0].organization.length"
+											  class="change-summary-sub-label"> - {{viewDetailsCtrl.ownershipData.ownership.owners[0].organization}}</span>
+									</span>
+								</div>
+								<div layout="row"
+									 layout-align="start center"
+									 class="layout-padding change-ownership-button"
+									 is-permitted="{{viewDetailsCtrl.PLMPermissions.CHANGE_OWNERSHIP}}">
+									<md-button
+										aria-label="{{$root.bundle.details.changeOwner}}"
+										ng-click="viewDetailsCtrl.triggerChangeOwnerDialog()" >{{$root.bundle.details.changeOwner}}
+									</md-button>
+								</div>
+							</div>
+							<div layout="row">
+								<div class="change-summary-label">{{$root.bundle.details.additionalOwners}}</div>
+								<!-- ADDITIONAL OWNERs -->
+								<div class="change-summary-text additional-owners" ng-show="viewDetailsCtrl.ownershipData.ownership.owners.length === 1">{{$root.bundle.details.noAdditionalOwners}}</div>
+
+								<div layout="column"
+									 class="additional-owners"
+									 ng-if="viewDetailsCtrl.ownershipData.ownership.owners.length !== 1">
+									<div class="change-summary-section" ng-repeat="owner in viewDetailsCtrl.ownershipData.ownership.owners" ng-hide="owner.ownerType === viewDetailsCtrl.primaryUser">
+										<user-avatar user-name="{{owner.shortDesc}}"
+											user-image="{{owner.imageUrls.imageSizeMedium}}"></user-avatar>
+										<span class="change-summary-info">
+											<span ng-if="owner.ownerType === viewDetailsCtrl.additionalUser" class="by">
+												<a class="ownership" href="javascript:;"
+												   ng-click="viewDetailsCtrl.toggleOwnershipFlyoutDisplay($event, owner.id)">
+													{{owner.shortDesc}}
+												</a>
+											</span>
+											<span ng-if="owner.ownerType === viewDetailsCtrl.additionalGroup" class="by">{{owner.shortDesc}}</span>
+											<span class="change-summary-sub-label"> - {{owner.organization}} ({{owner.type}})</span>
+										</span>
+									</div>
+								</div>
+								<div layout="row"
+									 layout-align="start start"
+									 class="layout-padding change-ownership-button"
+									 is-permitted="{{viewDetailsCtrl.PLMPermissions.CHANGE_OWNERSHIP}}">
+									<md-button
+										aria-label="{{$root.bundle.details.editAdditionalOwners}}"
+										ng-click="viewDetailsCtrl.triggerEditAdditionalOwnersDialog()">{{$root.bundle.details.editAdditionalOwners}}
+									</md-button>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</section-wrapper>
+			</div>
+
+		</div>
+		<!-- /.view-details main container -->
+
+	</md-content>
+
+</md-content>

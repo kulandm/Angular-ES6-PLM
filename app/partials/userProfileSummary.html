@@ -1,0 +1,23 @@
+<div class="user-profile-summary">
+	<header layout="row">
+		<img ng-src="{{avatarSrc}}" class="avatar-image pull-left">
+		<div>
+			<h4>{{data.firstName}} {{data.lastName}}</h4>
+			<h6>{{data.title}}</h6>
+		</div>
+	</header>
+
+	<ul class="user-profile-summary-details list-unstyled" ng-class="isCollapsed ? 'collapsible-closed' : 'collapsible-open' ">
+		<li>
+			<i class="md md-email"></i> <span><a ng-if="data.email" href="mailto:{{data.email}}">{{data.email}}</a></span>
+		</li>
+
+		<li ng-repeat="item in profileItems" ng-if="data[item.key]">
+			<i class="md {{item.icon}}"></i> <span>{{data[item.key]}}</span>
+		</li>
+	</ul>
+
+	<a href="javascript:;" ng-show="collapsible" class="collapse-toggle" ng-click="isCollapsed = !isCollapsed">
+		<i class="md-keyboard-arrow-down" ng-class="isCollapsed ? 'icon-bottom' : 'icon-top'"></i>
+	</a>
+</div>

@@ -1,0 +1,33 @@
+var Homepage = require('./page/Homepage');
+var Loginpage = require('./page/Loginpage');
+var SS = require('./util/Screenshot');
+
+describe('homepage',function(){
+
+	var logged = false;
+
+	beforeEach(function(){
+		logged = false;
+		(new Loginpage()).get().login(function(){
+			logged = true;
+		});
+	});
+
+	it('should load the page',function(){
+		browser.wait(function(){
+			return logged;
+		},60000).then(function(){
+			browser.wait(function(){return false;},10000);
+			/*var homepage = new Homepage();
+			homepage.get();
+			//SS.takeScreenshot();
+			browser.waitForAngular();
+			if(element(by.css('#login-block a'))){
+				element(by.css('#login-block a')).click();
+				browser.waitForAngular();
+			}
+			
+			expect(true).toBe(true);*/
+		});
+	});
+});

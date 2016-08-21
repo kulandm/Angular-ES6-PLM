@@ -1,0 +1,54 @@
+.attachment-container {
+	// Hide sorting button from header as it is not supported for now.
+	.ui-grid-column-menu-button {
+		display: none;
+	}
+
+	.icon-with-title {
+		text-align: left;
+	}
+
+	.ui-grid-canvas {
+		.ui-grid-row {
+			&:hover {
+				background-color: $hoverBackground !important;
+			}
+		}
+
+		.folder-icon-container {
+			color: $darkerGray;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.folder-size {
+				font-size: 18px;
+
+				vertical-align: text-top;
+			}
+
+			.folder-name {
+				font-weight: 600;
+			}
+		}
+
+		.resource-icon {
+			margin-top: 1px;
+		}
+
+		.resource-name {
+			margin-top: -2px;
+		}
+
+		.level-1 {
+			padding-left: 15px;
+		}
+	}
+
+	.ui-grid-row-selected {
+		.ui-grid-cell {
+			background-color: $hoverBackground !important;
+		}
+	}
+}

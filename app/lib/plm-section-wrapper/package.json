@@ -1,0 +1,49 @@
+{
+  "name": "plm-section-wrapper",
+  "version": "1.0.0",
+  "description": "PLM UI Section Wrapper",
+  "main": "",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "eslint-tap": "^1.1.0",
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.9",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-curl": "2.2.0",
+    "grunt-eslint": "^17.3.1",
+    "grunt-karma": "^0.12.1",
+    "grunt-ngdocs": "^0.2.9",
+    "grunt-sass": "^1.1.0",
+    "grunt-traceur": "0.5.4",
+    "grunt-zip": "0.17.1",
+    "karma": "^0.13.15",
+    "karma-babel-preprocessor": "^5.2.2",
+    "karma-chai": "^0.1.0",
+    "karma-chai-as-promised": "^0.1.2",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.1",
+    "karma-sinon": "^1.0.4",
+    "karma-sinon-chai": "^1.1.0",
+    "karma-traceur-preprocessor": "^0.4.0",
+    "load-grunt-configs": "^0.4.3",
+    "load-grunt-tasks": "^3.4.0",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "traceur": "0.0.93"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.autodesk.com:plm-ui/plm-section-wrapper.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

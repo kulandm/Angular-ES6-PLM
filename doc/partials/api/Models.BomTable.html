@@ -1,0 +1,235 @@
+<h1><code ng:non-bindable="">BomTable</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomtable-page"><p>Class intended to be displayed on the bom view</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addandshow">addAndShow(representing, Bom)</h3>
+<div class="addandshow"><div class="models-bomtable-addandshow-page"><p>Adds a row to both bom row and the changeTracker</p>
+</div><h5 id="methods_addandshow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>representing</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-addandshow-page"><p>a bomChangeAdd</p>
+</div></td></tr><tr><td>Bom</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-addandshow-page"><p>Table row</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addbomrow">addBomRow(BomTableRow)</h3>
+<div class="addbomrow"><div class="models-bomtable-addbomrow-page"><p>Adds a bom row to the table if its not already in the collection of rows (based on Bom Row ID)</p>
+</div><h5 id="methods_addbomrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>BomTableRow</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-addbomrow-page"><p>to add to the table&#39;s list of rows</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addcolumn">addColumn(BomTableColumn)</h3>
+<div class="addcolumn"><div class="models-bomtable-addcolumn-page"><p>Adds a column to the table&#39;s collection of columns</p>
+</div><h5 id="methods_addcolumn_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>BomTableColumn</td><td><a href="" class="label type-hint type-hint-bomtablecolumn">BomTableColumn</a></td><td><div class="models-bomtable-addcolumn-page"><p>to add to the table&#39;s list of columns</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addcolumnsforviewdefinition">addColumnsForViewDefinition(viewDef)</h3>
+<div class="addcolumnsforviewdefinition"><div class="models-bomtable-addcolumnsforviewdefinition-page"><p>Adds all the columns needed for displaying a given view definition</p>
+</div><h5 id="methods_addcolumnsforviewdefinition_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>viewDef</td><td><a href="" class="label type-hint type-hint-viewdefinition">ViewDefinition</a></td><td><div class="models-bomtable-addcolumnsforviewdefinition-page"><p>View defintion to provided the columns</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_bomrowcompare">bomRowCompare(`thisRow`, `thatRow`)</h3>
+<div class="bomrowcompare"><div class="models-bomtable-bomrowcompare-page"><p>Comparitor function used for sorting BomRows
+NOTE: For the comparison to succeed, all edges in each path must have been
+previously added to the table</p>
+</div><h5 id="methods_bomrowcompare_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`thisRow`</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="models-bomtable-bomrowcompare-page"><p>first row to compare</p>
+</div></td></tr><tr><td>`thatRow`</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="models-bomtable-bomrowcompare-page"><p>second row to compare against</p>
+</div></td></tr></tbody></table><h5 id="methods_bomrowcompare_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomtable-bomrowcompare-page"><p>greater than 0 if (thisRow &gt; thatRow), 0 if
+(thisRow === thatRow), less than 0 if (thisRow &lt; thatRow).</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_builddisplayproperties">buildDisplayProperties(`viewDef`, `change`)</h3>
+<div class="builddisplayproperties"><div class="models-bomtable-builddisplayproperties-page"><p>builds a display property from view definition</p>
+</div><h5 id="methods_builddisplayproperties_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-builddisplayproperties-page"><p>Containing all the view definition</p>
+</div></td></tr><tr><td>`change`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-builddisplayproperties-page"><p>Represents a <code>BomChangeAdd</code> object</p>
+</div></td></tr></tbody></table><h5 id="methods_builddisplayproperties_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-builddisplayproperties-page"><p>representing the display properties for a row.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildrow">buildRow(`viewDef`, `change`)</h3>
+<div class="buildrow"><div class="models-bomtable-buildrow-page"><p>builds a  <code>BomTableRow</code> using the view fields and the
+<code>BomChangeAdd</code> object</p>
+</div><h5 id="methods_buildrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-buildrow-page"><p>Containing all the view definition fields.</p>
+</div></td></tr><tr><td>`change`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-buildrow-page"><p>Represents a <code>BomChangeAdd</code> object.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-buildrow-page"><p>a bomTableRow.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_clear">clear()</h3>
+<div class="clear"><div class="models-bomtable-clear-page"><p>Clears the bom table properties in a way that maintains dual bindings</p>
+</div></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bomtable-constructor-page"><p>Constructor for Bom Table
+Ensures Bom Row ID column is set first and handles defaults otherwise</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-constructor-page"><p>Object containing the following properties
+- columns, rows, rowsInTable</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_consumeerrors">consumeErrors(viewDef, edgeId, errors)</h3>
+<div class="consumeerrors"><div class="models-bomtable-consumeerrors-page"><p>Consumes a list of errors and applies them to the specified row and its fields</p>
+</div><h5 id="methods_consumeerrors_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>viewDef</td><td><a href="" class="label type-hint type-hint-viewdefinition">ViewDefinition</a></td><td><div class="models-bomtable-consumeerrors-page"><p>The view in which the errors occured</p>
+</div></td></tr><tr><td>edgeId</td><td><a href="" class="label type-hint type-hint-bomchangeedit">BomChangeEdit</a></td><td><div class="models-bomtable-consumeerrors-page"><p>The edgeId of the row which errored</p>
+</div></td></tr><tr><td>errors</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomtable-consumeerrors-page"><p>a list of BomChangeError instances</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_getroweditstate">getRowEditState(tableRow)</h3>
+<div class="getroweditstate"><div class="models-bomtable-getroweditstate-page"><p>Returns the edit state of the row</p>
+</div><h5 id="methods_getroweditstate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-getroweditstate-page"><p>the row of the table</p>
+</div></td></tr></tbody></table><h5 id="methods_getroweditstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-getroweditstate-page"><p>the string corresponding to the edit state</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrowforpath">getRowForPath(Path)</h3>
+<div class="getrowforpath"><div class="models-bomtable-getrowforpath-page"><p>Returns the row corresponding to the provided path
+If the row is not found in the table, returns null
+    This can happen if the row has been deleted on the server but there are lingering references to it
+        on the client</p>
+</div><h5 id="methods_getrowforpath_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>Path</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bomtable-getrowforpath-page"><p>to check</p>
+</div></td></tr></tbody></table><h5 id="methods_getrowforpath_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-getrowforpath-page"><p>the row corresponding to path, or null if the row is not in table</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_handleedit">handleEdit(editedEdge, editedField)</h3>
+<div class="handleedit"><div class="models-bomtable-handleedit-page"><p>Adds an edit to the change tracker for the specific edge/field
+Given that that edit needs no extra handling</p>
+</div><h5 id="methods_handleedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>editedEdge</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-handleedit-page"><p>the edge which has been edited</p>
+</div></td></tr><tr><td>editedField</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomtable-handleedit-page"><p>the field definition for the field that has been edited</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_handleedit">handleEdit(editedEdge, editedField)</h3>
+<div class="handleedit"><div class="models-bomtable-handleedit-page"><p>Adds an edit to the change tracker for the specific edge/field</p>
+</div><h5 id="methods_handleedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>editedEdge</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-handleedit-page"><p>the edge which has been edited</p>
+</div></td></tr><tr><td>editedField</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomtable-handleedit-page"><p>the field definition for the field that has been edited</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_handlepinningedit">handlePinningEdit(editedEdge, editedField)</h3>
+<div class="handlepinningedit"><div class="models-bomtable-handlepinningedit-page"><p>Adds an edit to the change tracker for the pinning icon being toggled
+Updates the revision dropdown accordingly</p>
+</div><h5 id="methods_handlepinningedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>editedEdge</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-handlepinningedit-page"><p>the edge which has been edited</p>
+</div></td></tr><tr><td>editedField</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomtable-handlepinningedit-page"><p>the field definition for the field that has been edited</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_handleremove">handleRemove(edgeId)</h3>
+<div class="handleremove"><div class="models-bomtable-handleremove-page"><p>Adds an remove request to the change tracker for the specific edge
+if the row referenced by <code>edgeId</code> is a newly added one then removes it from
+from the table. If the row has any edits to it then gets rid of them as well.</p>
+</div><h5 id="methods_handleremove_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>edgeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-handleremove-page"><p>the edgeId of the row to remove</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_handlerevisionedit">handleRevisionEdit(editedEdge, editedField)</h3>
+<div class="handlerevisionedit"><div class="models-bomtable-handlerevisionedit-page"><p>Adds an edit to the change tracker for the revision dropdown being changed
+Automatically sets the pinning icon to true if the field has been changed
+The created change actually targets the pinning field,
+    with the revision field as added information</p>
+</div><h5 id="methods_handlerevisionedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>editedEdge</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomtable-handlerevisionedit-page"><p>the edge which has been edited</p>
+</div></td></tr><tr><td>editedField</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomtable-handlerevisionedit-page"><p>the field definition for the field that has been edited</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_initcolumns">initColumns()</h3>
+<div class="initcolumns"><div class="models-bomtable-initcolumns-page"><p>Initializes the columns array with the default columns</p>
+</div></div>
+</li>
+<li><h3 id="methods_isrowdirty">isRowDirty(tableRow)</h3>
+<div class="isrowdirty"><div class="models-bomtable-isrowdirty-page"><p>Returns true if a change was made to the Row
+and that change has not been marked invalid</p>
+</div><h5 id="methods_isrowdirty_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-isrowdirty-page"><p>the row of the table</p>
+</div></td></tr></tbody></table><h5 id="methods_isrowdirty_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomtable-isrowdirty-page"><p>true if the row has changed and is not invalid</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isrowinvalid">isRowInvalid(tableRow)</h3>
+<div class="isrowinvalid"><div class="models-bomtable-isrowinvalid-page"><p>Returns true if a change was made to the row that makes it invalid
+for saving</p>
+</div><h5 id="methods_isrowinvalid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-isrowinvalid-page"><p>the row of the table</p>
+</div></td></tr></tbody></table><h5 id="methods_isrowinvalid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomtable-isrowinvalid-page"><p>true if the row is invalid</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_queueadds">queueAdds()</h3>
+<div class="queueadds"><div class="models-bomtable-queueadds-page"><p>adds the selected item from the flyout to the changeListholder and shows the rows on the table</p>
+</div></div>
+</li>
+<li><h3 id="methods_queueselectedrowsforremoval">queueSelectedRowsForRemoval()</h3>
+<div class="queueselectedrowsforremoval"><div class="models-bomtable-queueselectedrowsforremoval-page"><p>Queue the removal of all rows that have been checked
+Then remove their checked status</p>
+</div></div>
+</li>
+<li><h3 id="methods_queuesingleadd">queueSingleAdd(change, viewDef)</h3>
+<div class="queuesingleadd"><div class="models-bomtable-queuesingleadd-page"><p>adds a single bom add change to the queue and shows a corresponding row</p>
+</div><h5 id="methods_queuesingleadd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>change</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-queuesingleadd-page"><p>an object of type BomChangeAdd</p>
+</div></td></tr><tr><td>viewDef</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="models-bomtable-queuesingleadd-page"><p>an object containing all the fields of the current view in bom</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_reapplyadd">reapplyAdd(an)</h3>
+<div class="reapplyadd"><div class="models-bomtable-reapplyadd-page"><p>Reapplies a change constitute an add action</p>
+</div><h5 id="methods_reapplyadd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>an</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-reapplyadd-page"><p>object Representing the compiled form of BomChangeAdd</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_reapplychange">reapplyChange(compiledChange)</h3>
+<div class="reapplychange"><div class="models-bomtable-reapplychange-page"><p>Reapplies a change provided by BomChangeList</p>
+</div><h5 id="methods_reapplychange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>compiledChange</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-reapplychange-page"><p>The compiled object for the changes provided by BomChangeList</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_reapplyedit">reapplyEdit(compiledChange)</h3>
+<div class="reapplyedit"><div class="models-bomtable-reapplyedit-page"><p>Reapplies the changes that constitute a edit action</p>
+</div><h5 id="methods_reapplyedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>compiledChange</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-reapplyedit-page"><p>The compiled object for the changes provided by BomChangeList</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_reapplyfieldedit">reapplyFieldEdit(row, fieldEdit)</h3>
+<div class="reapplyfieldedit"><div class="models-bomtable-reapplyfieldedit-page"><p>Reapplies an edit made to a field of a row</p>
+</div><h5 id="methods_reapplyfieldedit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="models-bomtable-reapplyfieldedit-page"><p>the row of the table on which the edit was made</p>
+</div></td></tr><tr><td>fieldEdit</td><td><a href="" class="label type-hint type-hint-bomchangeedit">BomChangeEdit</a></td><td><div class="models-bomtable-reapplyfieldedit-page"><p>The edit to be reapplied</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_reapplyremove">reapplyRemove(compiledChange)</h3>
+<div class="reapplyremove"><div class="models-bomtable-reapplyremove-page"><p>Reapplies the changes that constitute a remove action</p>
+</div><h5 id="methods_reapplyremove_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>compiledChange</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtable-reapplyremove-page"><p>The compiled object for the changes provided by BomChangeList</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_rowexists">rowExists(Path)</h3>
+<div class="rowexists"><div class="models-bomtable-rowexists-page"><p>Returns true if a row with the specified path exists</p>
+</div><h5 id="methods_rowexists_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>Path</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bomtable-rowexists-page"><p>to check</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_changetracker">changeTracker</h3>
+<div class="changetracker"><div class="models-bomtable-changetracker-page"><p>Tracker to track edits, adds, and removes while in edit mode</p>
+</div></div>
+</li>
+<li><h3 id="properties_columns">columns</h3>
+<div class="columns"><div class="models-bomtable-columns-page"><p>Columns Collection to display in the table</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentaddorder">currentAddOrder</h3>
+<div class="currentaddorder"><div class="models-bomtable-currentaddorder-page"><p>The order in which rows gets added to the table. We use this
+order in the <code>bomRowCompare</code> method to keep the newly added row always at
+the end of the table.</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgestofirstlevelitemnumbers">edgesToFirstLevelItemNumbers</h3>
+<div class="edgestofirstlevelitemnumbers"><div class="models-bomtable-edgestofirstlevelitemnumbers-page"><p>This will contain all the first level item numbers .At any given
+state of the bom this will contain the top level item numbers that are currenly
+shown in the table. This will significantly reduce the number of elements we have
+to visit in order to update the current maximum item number. Also This will help us
+not re-order the bom table when an edit happens to the item number of an existing row.</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgestoitemnumbers">edgesToItemNumbers</h3>
+<div class="edgestoitemnumbers"><div class="models-bomtable-edgestoitemnumbers-page"><p>Map of edges to their item numbers (as numbers), so we can sort by them
+We need this because although rows store thier itemNumber, they don&#39;t store their parents item numbers,
+    and we can&#39;t order two paths (which may be significantly different) without that</p>
+</div></div>
+</li>
+<li><h3 id="properties_maxfirstlevelitemnumber">maxFirstLevelItemNumber</h3>
+<div class="maxfirstlevelitemnumber"><div class="models-bomtable-maxfirstlevelitemnumber-page"><p>The maximum item number of the first level rows of Table</p>
+</div></div>
+</li>
+<li><h3 id="properties_rowidcolumn">rowIdColumn</h3>
+<div class="rowidcolumn"><div class="models-bomtable-rowidcolumn-page"><p>Rows Collection to display in the table</p>
+</div></div>
+</li>
+<li><h3 id="properties_rowidcolumn">rowIdColumn</h3>
+<div class="rowidcolumn"><div class="models-bomtable-rowidcolumn-page"><p>Set tracking the rows we have created already
+as a set of paths represented as strings (since we can&#39;t key on arrays)</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

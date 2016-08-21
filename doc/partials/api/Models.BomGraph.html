@@ -1,0 +1,111 @@
+<h1><code ng:non-bindable="">BomGraph</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomgraph-page"><p>Class represnting the Bom Graph</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_bft">BFT(path, func, maxDepth)</h3>
+<div class="bft"><div class="models-bomgraph-bft-page"><p>Breadth First Traversal of the Bom Graph.
+At each path in the traversal, calls a given function with paramters, then continues.</p>
+</div><h5 id="methods_bft_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>path</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bomgraph-bft-page"><p>The path to start at (if undefined, starts at the root)</p>
+</div></td></tr><tr><td>func</td><td><a href="" class="label type-hint type-hint-function">Function</a></td><td><div class="models-bomgraph-bft-page"><p>Optional Function to call on each Path in the graph</p>
+</div></td></tr><tr><td>maxDepth</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomgraph-bft-page"><p>Optional maximum depth of the traversal (inclusive)
+if undefined, will do a full traversal</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addedge">addEdge(A)</h3>
+<div class="addedge"><div class="models-bomgraph-addedge-page"><p>Add an edge to the graph, keyed on bomId</p>
+</div><h5 id="methods_addedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>A</td><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomgraph-addedge-page"><p>BomEdge Object to add to the graph</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addnode">addNode(BomNode)</h3>
+<div class="addnode"><div class="models-bomgraph-addnode-page"><p>Add a node the the graph, keyed on itemId</p>
+</div><h5 id="methods_addnode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>BomNode</td><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraph-addnode-page"><p>Object to add to the graph</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_clear">clear()</h3>
+<div class="clear"><div class="models-bomgraph-clear-page"><p>Clears the bom graph properties in a way that maintains dual bindings</p>
+</div></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bomgraph-constructor-page"><p>initializes the Bom Graph properties</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraph-constructor-page"><p>Object containing the following properties
+- bomNodes, bomEdges, rootNode</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_getedge">getEdge(bomId)</h3>
+<div class="getedge"><div class="models-bomgraph-getedge-page"><p>Get a node from the edge by its bomId</p>
+</div><h5 id="methods_getedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-getedge-page"><p>of the edge to fetch</p>
+</div></td></tr></tbody></table><h5 id="methods_getedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomgraph-getedge-page"><p>BomEdge Object Fetched</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getedgeforpath">getEdgeForPath()</h3>
+<div class="getedgeforpath"><div class="models-bomgraph-getedgeforpath-page"><p>Returns the edge object corresponding to the path</p>
+</div></div>
+</li>
+<li><h3 id="methods_getnode">getNode(itemId)</h3>
+<div class="getnode"><div class="models-bomgraph-getnode-page"><p>Get a node from the graph by its itemId</p>
+</div><h5 id="methods_getnode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-getnode-page"><p>of the BomNode to fetch from the graph</p>
+</div></td></tr></tbody></table><h5 id="methods_getnode_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraph-getnode-page"><p>BomNode Object Fetched</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnodeforedge">getNodeForEdge(bomId)</h3>
+<div class="getnodeforedge"><div class="models-bomgraph-getnodeforedge-page"><p>Get a node from the graph by an edge that leads to it</p>
+</div><h5 id="methods_getnodeforedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-getnodeforedge-page"><p>of the edge to follow</p>
+</div></td></tr></tbody></table><h5 id="methods_getnodeforedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraph-getnodeforedge-page"><p>BomNode Object Fetched</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnodeforpath">getNodeForPath()</h3>
+<div class="getnodeforpath"><div class="models-bomgraph-getnodeforpath-page"><p>Returns the node corresponding to the path</p>
+</div></div>
+</li>
+<li><h3 id="methods_getnodeidforpath">getNodeIdForPath()</h3>
+<div class="getnodeidforpath"><div class="models-bomgraph-getnodeidforpath-page"><p>Returns the node id pointed at by the path</p>
+</div></div>
+</li>
+<li><h3 id="methods_getrootnode">getRootNode()</h3>
+<div class="getrootnode"><div class="models-bomgraph-getrootnode-page"><p>Returns the root node object</p>
+</div></div>
+</li>
+<li><h3 id="methods_getrootnodeid">getRootNodeId()</h3>
+<div class="getrootnodeid"><div class="models-bomgraph-getrootnodeid-page"><p>Returns the root node itemId. Can be used to pull the root node properties out of the nodes collection</p>
+</div></div>
+</li>
+<li><h3 id="methods_hasedge">hasEdge(bomId)</h3>
+<div class="hasedge"><div class="models-bomgraph-hasedge-page"><p>Returns true if the graph has the edge</p>
+</div><h5 id="methods_hasedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-hasedge-page"><p>to check</p>
+</div></td></tr></tbody></table><h5 id="methods_hasedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomgraph-hasedge-page"><p>True if the graph has the edge</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasnode">hasNode(itemId)</h3>
+<div class="hasnode"><div class="models-bomgraph-hasnode-page"><p>Returns true if the graph has the node</p>
+</div><h5 id="methods_hasnode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-hasnode-page"><p>to check</p>
+</div></td></tr></tbody></table><h5 id="methods_hasnode_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomgraph-hasnode-page"><p>True if the graph has the node</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setrootnodeid">setRootNodeId(itemId)</h3>
+<div class="setrootnodeid"><div class="models-bomgraph-setrootnodeid-page"><p>Sets the pointer to the root node in the nodes collection</p>
+</div><h5 id="methods_setrootnodeid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraph-setrootnodeid-page"><p>of the item to be the root node</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bomedges">bomEdges</h3>
+<div class="bomedges"><div class="models-bomgraph-bomedges-page"><p>Map of edges, keyed on Bom ID</p>
+</div></div>
+</li>
+<li><h3 id="properties_bomnodes">bomNodes</h3>
+<div class="bomnodes"><div class="models-bomgraph-bomnodes-page"><p>Map of nodes, keyed on itemId</p>
+</div></div>
+</li>
+<li><h3 id="properties_rootnode">rootNode</h3>
+<div class="rootnode"><div class="models-bomgraph-rootnode-page"><p>Key to the root node</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,13 @@
+// Styles for dates
+.ui-grid-row
+.ui-grid-cell
+.ui-grid-cell-contents {
+	.datepicker .datepicker-external {
+		// work around for custom fields alighment issue
+		margin-top: -7px;
+
+		> button {
+			vertical-align: middle;
+		}
+	}
+}

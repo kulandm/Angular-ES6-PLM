@@ -1,0 +1,15 @@
+{
+  "name": "plm-file-overview-service",
+  "description": "Service for invoking the A360 File Overview",
+  "main": "build/plm-file-overview-service.js",
+  "homepage": "https://git.autodesk.com/plm-ui/plm-file-overview-service",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8"
+  },
+  "version": "1.0.5"
+}

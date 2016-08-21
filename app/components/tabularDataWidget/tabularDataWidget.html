@@ -1,0 +1,35 @@
+<div table-render="{{$isTableDataChanged}}">
+	<table class="tabular-data-widget">
+		<thead>
+			<tr>
+				<th ng-repeat="column in tableColumns" ng-style="{ 'width': getWidth(column) }">
+					<span>
+						<span ng-if="column.renderer" ng-repeat="column in [column]" ng-include="column.renderer"></span>
+						<span ng-if="!column.renderer" ng-bind-html="column.displayName"></span>
+					</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="(ind, row) in tableData" data="row" ng-class="{'dirty': row.isEdit && row.hasChanged()}">
+				<td ng-repeat="(key, value) in tableColumns" ng-class="{'editing':row[value.field].isEdit, 'error':row[value.field].error}">
+					<span ng-if="!value.cellRenderer" ng-bind-html="row[value.field]" title="{{row[value.field]}}"></span>
+					<div ng-if="value.cellRenderer" ng-repeat="obj in [row[value.field]]" ng-include="value.cellRenderer"></div>
+				</td>
+			</tr>
+		</tbody>
+		<!-- empty state -->
+		<tbody ng-if="!tableData.length">
+			<tr>
+				<td colspan="{{tableColumns.length}}" class="empty-state">{{$root.bundle.text.noResults}}</td>
+			</tr>
+		</tbody>
+		<tfoot ng-if='tableFooter' class="table-footer">
+			<tr>
+				<td ng-repeat="(key, value) in tableColumns">
+					<span ng-bind-html="tableFooter[value.field]" title="{{tableFooter[value.field]}}"></span>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

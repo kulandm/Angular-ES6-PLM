@@ -1,0 +1,65 @@
+<h1><code ng:non-bindable="">adjustMaxHeight</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-adjustmaxheight-page"><p>The main purpose of this directive is to have a single place that contains logic to adjust max height of the element on
+the basis of another element. For example, this directive can be used with Main Menu directive to adjust and constraint the max height of
+the context menu according to the document height. This directive does not have isolated scope as it would prevent its usage on the element that
+contain another isolated directive. It will not create a child scope instead relay on the current scope and expects few key properties to be there
+to make things work. Please see the documentation of properties for details.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adjust-max-height&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getheight">getHeight()</h3>
+<div class="getheight"><div class="directives-adjustmaxheight-getheight-page"><p><code>private</code> Returns the height of the context element.</p>
+</div><h5 id="methods_getheight_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="directives-adjustmaxheight-getheight-page"><p>Height of the context element.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_onmaxheightadjustment">onMaxHeightAdjustment()</h3>
+<div class="onmaxheightadjustment"><div class="directives-adjustmaxheight-onmaxheightadjustment-page"><p>An optional method that can be defined on scope.<br>
+This method will be called every time the recalculation is performed.</p>
+</div></div>
+</li>
+<li><h3 id="methods_recalculatemaxheight">reCalculateMaxHeight(elementToAdjust, height, percentage, parentTopEl)</h3>
+<div class="recalculatemaxheight"><div class="directives-adjustmaxheight-recalculatemaxheight-page"><p>Re calculate max height of the given element.</p>
+</div><h5 id="methods_recalculatemaxheight_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>elementToAdjust</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="directives-adjustmaxheight-recalculatemaxheight-page"><p>The element for which the max-height needs to be calculated.</p>
+</div></td></tr><tr><td>height</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="directives-adjustmaxheight-recalculatemaxheight-page"><p>The height to be used for calculation.</p>
+</div></td></tr><tr><td>percentage</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="directives-adjustmaxheight-recalculatemaxheight-page"><p>The desired percentage to which the element&#39;s max-height should be confined. Can have value from 0.0 - 1.0.</p>
+</div></td></tr><tr><td>parentTopEl</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="directives-adjustmaxheight-recalculatemaxheight-page"><p>The parent element of elementToAdjust. Used to calculate the top position.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_heightcontextel">heightContextEl</h3>
+<div class="heightcontextel"><div class="directives-adjustmaxheight-heightcontextel-page"><p>An optional property of type &#39;Angular.Element&#39; that if given will be used as a main context for max height calculation.
+Note: If this property is not available then by default window wrapper object will be used.</p>
+</div></div>
+</li>
+<li><h3 id="properties_percentage">percentage</h3>
+<div class="percentage"><div class="directives-adjustmaxheight-percentage-page"><p>An optional property of type &#39;Number&#39; that if given will be used in max height calculate to confined the elements max-height based on the percentage.
+Note: If this property is not available then by default 0.9 (or 90% of the context element height) will be used.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-adjustmaxheight-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html">
+     <div adjust-max-height="" update="doScroll" context="window"/>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,166 @@
+<div class="managed-item">
+	<section class="managed-item-form" ng-form="managedItemForm">
+		<md-toolbar class="md-warn md-hue-2 error form-required-errors"
+			ng-if="managedItemCtrl.managedItemForm.errorMessages">
+			<span class="generic-info-message">
+				Note: Not all functions are available in new version. Please perform actions in classic version if you are facing any difficulty.
+			</span>
+			<div ng-repeat="errorMessage in managedItemCtrl.managedItemForm.errorMessages">
+				{{errorMessage.type}} for {{errorMessage.fieldName}}
+			</div>
+		</md-toolbar>
+
+		<div class="section-header">
+			<div>{{$root.bundle.create.managedItem}}</div>
+		</div>
+
+		<md-divider class="section-divider"></md-divider>
+
+		<div class="section-content form-group">
+			<!-- Item Descriptor -->
+			<div class="managed-item-field item-descriptor-fields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label>{{$root.bundle.affectedItems.item}}</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					<field-selector
+						field-data="managedItemCtrl.managedItemForm.item"
+						type-id="managedItemCtrl.managedItemForm.item.metadata.dataTypeId"
+						field-meta="managedItemCtrl.managedItemForm.item.metadata"
+						edit-view="{{managedItemCtrl.managedItemForm.item.edit}}">
+					</field-selector>
+				</div>
+			</div>
+
+			<!-- Lifecycle -->
+			<div class="managed-item-field lifecycle-fields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label>{{$root.bundle.affectedItems.lifecycle}}</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					<field-selector
+							field-data="managedItemCtrl.managedItemForm.lifecycle"
+							type-id="managedItemCtrl.managedItemForm.lifecycle.metadata.dataTypeId"
+							field-meta="managedItemCtrl.managedItemForm.lifecycle.metadata"
+							picklist-on-change="managedItemCtrl.managedItemForm.lifecycle.lifecycleChanged()"
+							placeholder="{{col.colDef.placeholder}}"
+							edit-view="true"
+							simple-select="true">
+					</field-selector>
+				</div>
+			</div>
+
+			<!-- Effectivity -->
+			<div class="managed-item-field effectivity-fields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label>{{$root.bundle.affectedItems.effectivity}}</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					<field-selector
+						field-data="managedItemCtrl.managedItemForm.effectivity"
+						type-id="managedItemCtrl.managedItemForm.effectivity.metadata.dataTypeId"
+						field-meta="managedItemCtrl.managedItemForm.effectivity.metadata"
+						placeholder="{{managedItemCtrl.managedItemForm.effectivity.placeholder}}"
+						edit-view="{{managedItemCtrl.managedItemForm.lifecycle.value.effectivityWritable === true}}">
+					</field-selector>
+				</div>
+			</div>
+
+			<!-- From -->
+			<div class="managed-item-field from-fields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label>{{$root.bundle.affectedItems.from}}</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					{{managedItemCtrl.managedItemForm.from}}
+				</div>
+			</div>
+
+			<!-- To -->
+			<div class="managed-item-field to-fields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label ng-class="{'label-required':managedItemCtrl.managedItemForm.to.edit}">
+						{{$root.bundle.affectedItems.to}}
+					</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					<field-selector
+						field-data="managedItemCtrl.managedItemForm.to"
+						type-id="managedItemCtrl.managedItemForm.to.metadata.dataTypeId"
+						field-meta="managedItemCtrl.managedItemForm.to.metadata"
+						edit-view="{{managedItemCtrl.managedItemForm.to.edit}}">
+					</field-selector>
+				</div>
+			</div>
+
+			<!-- Custom fields -->
+			<div class="managed-item-field custom-fields"
+				ng-class="{'invalid': customField.$invalid === true}"
+				ng-repeat="customField in managedItemCtrl.managedItemForm.customFields"
+				layout="column"
+				layout-align="center start">
+
+				<!-- Field Name -->
+				<div class="managed-item-field"
+					layout="row"
+					layout-align="space-between center">
+					<label ng-class="{'label-required': managedItemCtrl.isRequiredField(customField.metadata)}">{{customField.title}}</label>
+				</div>
+
+				<!-- Actual Field -->
+				<div class="managed-item-field">
+					<field-selector
+						field-id="{{customField.metadata.__self__}}"
+						field-data="customField"
+						type-id="customField.metadata.dataTypeId"
+						field-meta="customField.metadata"
+						edit-view="true">
+					</field-selector>
+				</div>
+				<div class="error-message" title="{{managedItemForm[customField.metadata.__self__].$error.serverError}}">
+					{{managedItemForm[customField.metadata.__self__].$error.serverError}}
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

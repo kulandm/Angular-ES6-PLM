@@ -1,0 +1,18 @@
+<div class="users-selector-wrapper">
+	<div class="search-box-wrapper">
+		<input type="search" placeholder="{{$root.bundle.text.search}}" ng-model="usersCheckboxSelectorCtrl.searchInput">
+		<a href="javascript:;" class="close-button-wrapper" ng-click="usersCheckboxSelectorCtrl.cancelSearch()">
+			<span class="zmdi zmdi-close-circle"></span>
+		</a>
+	</div>
+
+	<div class="selection-area">
+		<div class="checkbox-wrapper" ng-repeat="item in usersCheckboxSelectorCtrl.itemsList | filter: usersCheckboxSelectorCtrl.searchFn">
+			<md-checkbox md-no-ink ng-checked="usersCheckboxSelectorCtrl.exists(item)" ng-click="usersCheckboxSelectorCtrl.toggle(item)">
+				<user-avatar class="user-selector-avatar" user-name="{{item.displayName}}" user-image="{{item.imageSizeMedium}}"></user-avatar>
+				{{item.displayName}}
+				<span ng-if="item.organization" class="secondary-text"> - {{item.organization}}</span>
+			</md-checkbox>
+		</div>
+	</div>
+</div>

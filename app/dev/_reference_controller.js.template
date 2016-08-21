@@ -1,0 +1,10 @@
+'use strict';
+
+plm360.controller('ControllerName',	[
+	'$scope',
+	'_',
+	function ($scope, _) {
+	
+	// code goes here...
+	
+}]);

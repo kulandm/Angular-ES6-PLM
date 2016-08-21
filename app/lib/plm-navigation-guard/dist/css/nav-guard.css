@@ -1,0 +1,21 @@
+.nav-guard-dialog {
+  overflow: auto;
+  width: 500px; }
+  .nav-guard-dialog .md-toolbar-tools {
+    font-size: 22px;
+    font-style: normal; }
+    .nav-guard-dialog .md-toolbar-tools .zmdi-close {
+      color: #000000; }
+    .nav-guard-dialog .md-toolbar-tools .nav-guard-header {
+      margin-bottom: 0;
+      color: #000000; }
+  .nav-guard-dialog .nav-guard-content {
+    padding: 20px 23px 23px 15px;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 23px; }
+  .nav-guard-dialog .md-button {
+    padding-right: 25px;
+    padding-left: 25px; }
+
+/*# sourceMappingURL=nav-guard.css.map */

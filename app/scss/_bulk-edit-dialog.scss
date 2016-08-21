@@ -1,0 +1,175 @@
+.bulk-edit-dialog {
+
+	width: 45%;
+
+	md-content {
+
+		min-height: 350px;
+		padding: 0;
+		margin: 0;
+
+		strong {
+			width: 40%;
+			display: inline-block;
+			font-weight: 600;
+			font-size: 16px;
+		}
+
+		md-toolbar {
+			box-shadow: none;
+		}
+
+		h2 {
+			float: left;
+			border-bottom: 1px solid $greyBorderColor;
+			padding: 14px 10px 14px 24px;
+			font-weight: normal;
+		}
+
+		a {
+			float: right;
+		}
+
+		section {
+			width: 97%;
+			margin: 0 auto;
+			padding: 0 15px 10px;
+
+			h4 {
+				border-bottom: 1px solid $greyBorderColor;
+				padding-top: 10px;
+				padding-bottom: 16px;
+				font-weight: normal;
+				font-size: 18px;
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0 0 35px;
+			border-bottom: 1px solid $greyBorderColor;
+
+			li {
+				list-style-type: none;
+				text-align: left;
+				display: block;
+				margin-top: 21px;
+
+				label {
+					display: inline-block;
+					width: 40%;
+					&.disabled {
+						color: $grayColor;
+					}
+				}
+
+				.available-transitions,
+				md-radio-group,
+				field-selector {
+					display: inline-block;
+					width: 59%;
+				}
+
+				md-radio-group {
+					md-radio-button {
+						display: inline;
+					}
+				}
+
+				.datepicker {
+					position: relative;
+
+					.dropdown-menu {
+						position: relative;
+						top: 0;
+					}
+				}
+
+				&.error {
+					margin-top: -6px;
+					color: $errorColor;
+					font-size: 11px;
+
+					span {
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+
+		.effectivity-container {
+
+			ul {
+
+				border-bottom: none;
+
+				li {
+
+					label.set-effectivity {
+
+						float: left;
+						padding-top: 3px;
+					}
+				}
+			}
+
+			md-radio-group.md-default-theme:focus:not(:empty) {
+				border-color: transparent;
+			}
+
+			md-radio-button {
+
+				.md-on {
+					background-color: $selectedRadioButtonColor;
+				}
+
+				.md-off {
+					border-color: $radioBorderColor;
+				}
+			}
+		}
+
+		.close-bulk-edit {
+			font-size: 16px;
+			color: $lightGrayColor;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.bulk-edit-footer {
+			border-top: 1px solid $greyBorderColor;
+		}
+	}
+}
+
+div.md-datepicker-calendar-pane {
+
+	font: inherit;
+	z-index: 103; // Increase the z-index as the datepicker was going beneath the overlay
+
+	.md-calendar-date-selection-indicator {
+		padding: 11px 1px 0 0;
+	}
+
+	.focus {
+
+		.md-calendar-date-selection-indicator {
+			background-color: $datepickerSelectedState;
+			color: $whiteColor;
+		}
+	}
+}
+
+.md-datepicker-button,
+.md-datepicker-triangle-button {
+	background: none;
+	border: 0;
+}
+
+.noBackground {
+	button {
+		background: none !important;
+	}
+}

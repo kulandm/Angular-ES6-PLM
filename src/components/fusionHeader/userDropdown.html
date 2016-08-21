@@ -1,0 +1,35 @@
+<div id="fusion-header-user-dropdown">
+	<form name="logOutForm" id="fusion-header-logOutForm" action="{{userDropdownCtrl.userInfo.logOutAction}}" method="POST">
+		<input type="hidden" name="holder" value="holderValue">
+	</form>
+
+	<a id="fusion-header-user-profile-dropdown-button" href="javascript:"><img id="login-avatar" title="{{userDropdownCtrl.userInfo.userDisplayName}}" ng-src="{{userDropdownCtrl.userInfo.userAvatar.medium}}"/></a>
+	<dropdown-widget anchor="#fusion-header-user-profile-dropdown-button" h-pos="left">
+		<div class="fusion-header-user-info">
+			<span>{{userDropdownCtrl.userInfo.userDisplayName}}</span>
+			<span>{{userDropdownCtrl.userInfo.userEmail}}</span>
+		</div>
+		<ul>
+			<li>
+				<md-button ng-click="userDropdownCtrl.goToClassicProfile()">
+					{{$root.bundle.button.myProfile}}
+				</md-button>
+			</li>
+			<li>
+				<md-button ng-click="userDropdownCtrl.goToClassicDelegations()">
+					{{$root.bundle.button.myDelegations}}
+				</md-button>
+			</li>
+			<li>
+				<md-button ng-click="userDropdownCtrl.switchToClassic()">
+					{{$root.bundle.button.backToClassic}}
+				</md-button>
+			</li>
+			<li>
+				<md-button ng-click="userDropdownCtrl.logOut()">
+					{{$root.bundle.button.signOut}}
+				</md-button>
+			</li>
+		</ul>
+	</dropdown-widget>
+</div>

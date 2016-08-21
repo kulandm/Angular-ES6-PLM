@@ -1,0 +1,4 @@
+properties=\u7279\u6027
+outline=\u6982\u8981
+tasks=\u4efb\u52a1
+help=\u5e2e\u52a9

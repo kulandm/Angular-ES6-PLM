@@ -1,0 +1,36 @@
+@media print {
+  #wrap > div > #view {
+    position: static; }
+    #wrap > div > #view.regular-page {
+      top: 0; }
+    #wrap > div > #view.full-page {
+      top: 0; }
+
+  select.form-control {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none; }
+    select.form-control::-ms-expand {
+      display: none; }
+
+  .collapse-section {
+    page-break-inside: avoid; }
+
+  #footer {
+    position: static;
+    height: 40px;
+    border-top: 0; }
+    #footer a[href]:after {
+      content: none; }
+
+  #workspace-item-details a[href]:after {
+    content: none; }
+
+  .collapse {
+    display: block;
+    height: auto !important; } }
+
+/*# sourceMappingURL=print.css.map */

@@ -1,0 +1,22 @@
+{
+  "name": "plm-urn-parser",
+  "description": "PLM Urn Parser",
+  "main": "dist/plm-urn-parser.js",
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.0"
+}

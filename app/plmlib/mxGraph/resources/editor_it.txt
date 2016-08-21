@@ -1,0 +1,5 @@
+\ufeff
+properties=Propriet%E0
+outline=Contorno
+tasks=Attivit%E0
+help=Guida in linea

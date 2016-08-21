@@ -1,0 +1,99 @@
+// Section Wrapper
+//
+// Styles for collapsible sections (collapse by clicking on the heading).<br>
+// Each collapsible section is comprised of a heading and a body
+//
+// Styleguide 8
+.section-wrapper {
+	width: 100%;
+	height: 100%;
+
+	border: solid 1px #777777;
+	margin: 0 0 15px 0;
+
+	// The header part of the section
+	.header {
+		background-color: #C0C0C0;
+		display: flex;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            border: 0;
+
+            > li {
+                margin: 0;
+                padding: 0;
+
+                border: 0;
+            }
+        }
+
+		// The title
+		h4 {
+			flex: 1 1 auto;
+			margin: 10px 0 10px 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-transform: uppercase;
+
+			&.section-header-normal {
+				font-weight: normal !important;
+			}
+		}
+
+		// Actions buttons aligned to the right side (optional)
+		.buttons {
+			flex: 0 1 auto;
+			margin: 10px 5px 0 0;
+		}
+
+		// The caret, with overridden margins to properly position inside the section
+		.caret-flex {
+			margin: 8px 10px 0 0;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+	}
+
+	// Wrapper for the content that's going to be transcluded into this directive
+	.transcluded-content-wrapper {
+		background-color: #D0D0D0;
+		padding: 0;
+
+		// The content container (helper)
+		.trancluded-content {}
+	}
+
+	// The different states of the collapsible panel section
+	// NOTE: this is a special case where the animation class is here, but the CSS transition itself is in plm-animations
+	.static-dynamic-expandCollapse {
+		overflow: hidden;
+		height: 0;
+
+		&.animation {
+			overflow: hidden;
+		}
+
+		&.collapsed {
+			display: none;
+			visibility: hidden;
+		}
+
+		&.expanded {
+			overflow: visible;
+		}
+	}
+
+}
+.section-items-container {
+	width: 100%;
+}

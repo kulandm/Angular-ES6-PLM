@@ -1,0 +1,184 @@
+		<span layout="column" layout-fill role="item-wrapper" id="item-wrapper">
+
+			<md-toolbar id="itemviewer-plm-header" layout="row" layout-align="start">
+				<a ng-show="false" href="javascript:;" ng-click="itemViewerCtrl.gotoItemsList();"><span class="md md-icon md-close"></span></a>
+				<header>
+					<div class="title-wrapper">
+						<h1 title="{{ itemViewerCtrl.headerText }}"><span ng-show="!(itemViewerCtrl.headerText === '')">{{itemViewerCtrl.headerText}}</span></h1>
+
+						<!-- Revisions dropdown -->
+						<div id="itemviewer-revision-dropdown" ng-hide="!itemViewerCtrl.displayRevisionsDropdown">
+							<md-button id="itemviewer-revisions-dropdown-button" class="md-button dropdown-widget-button" aria-label="{{$root.bundle.button.actions}}">
+								<span>{{itemViewerCtrl.selectedRevision.label}}</span>
+								<span class="caret-flex down static-rotateCaretVertical"></span>
+							</md-button>
+							<dropdown-widget anchor="#itemviewer-revisions-dropdown-button" h-pos="center">
+								<ul>
+									<li ng-repeat="(key, value) in itemViewerCtrl.revisionDropdownArr">
+										<a href="{{value.href}}" title="{{value.description}}" arial-label="{{value.description}}">
+											<span class="label">{{value.description}}</span>
+										</a>
+									</li>
+								</ul>
+							</dropdown-widget>
+						</div>
+					</div>
+					<div class="summary-header">
+
+					</div>
+				</header>
+
+				<!-- Bookmark/Remove bookmark button -->
+				<div class="menu-buttons">
+					<md-button class="square-icon"
+						ng-class="{'on': itemViewerCtrl.isBookmarked}"
+						id="pinning"
+						title="{{itemViewerCtrl.isBookmarked ? $root.bundle.button.removeBookmark : $root.bundle.button.bookmark}}"
+						aria-label="{{itemViewerCtrl.isBookmarked ? $root.bundle.button.removeBookmark : $root.bundle.button.bookmark}}"
+						ng-click="itemViewerCtrl.triggerBookmark('pinning', !itemViewerCtrl.isBookmarked)">
+						<span class="zmdi zmdi-star"></span>
+					</md-button>
+				</div>
+
+				<div class="menu-buttons">
+					<md-button class="md-button dropdown-widget-button" id="itemviewer-menu-dropdown-button" aria-label="{{$root.bundle.button.actions}}">
+						<span>{{$root.bundle.button.actions}}</span>
+						<span class="caret-flex down static-rotateCaretVertical"></span>
+					</md-button>
+					<dropdown-widget anchor="#itemviewer-menu-dropdown-button" h-pos="left">
+						<ul>
+							<li>
+								<md-button
+									ng-hide="!itemViewerCtrl.isWorkspaceWithWorkflow"
+									ng-disabled="!itemViewerCtrl.isWorkflowTransitionAvailable"
+									ng-click="itemViewerCtrl.showTransitions(this);"
+									class="workflow-transition-link">
+									{{$root.bundle.item.action.short.name.workflow_transition}}
+								</md-button>
+							</li>
+							<li>
+								<md-button
+									class="create-item-button"
+									ng-if="itemViewerCtrl.isWorkingVersion"
+									ng-click="itemViewerCtrl.triggerCreate(this);"
+									ng-show="itemViewerCtrl.isCreatePermitted && itemViewerCtrl.isViewState()"
+									ng-disabled="itemViewerCtrl.isItemAdded"
+									title="{{itemViewerCtrl.isItemAdded ? $root.bundle.create.alreadyAdded : ''}}">
+									{{$root.bundle.item.action.short.name.in_contextual_create}}
+								</md-button>
+							</li>
+							<li>
+								<md-button
+									feature-toggle="data.navigator"
+									class="data-navigator-button"
+									ng-click="itemViewerCtrl.navigateToRoamer();"
+									title="{{$root.bundle.item.action.short.name.open_roamer}}">
+									{{$root.bundle.item.action.short.name.open_roamer}}
+								</md-button>
+							</li>
+							<li>
+								<md-button
+									ng-if="itemViewerCtrl.hasDeletePermission"
+									title="{{itemViewerCtrl.isArchived ? $root.bundle.button.unarchive : $root.bundle.button.archive}}"
+									aria-label="{{itemViewerCtrl.isArchived ? $root.bundle.button.unarchive : $root.bundle.button.archive}}"
+									ng-click="itemViewerCtrl.triggerArchive(!itemViewerCtrl.isArchived)"
+									ng-disabled="itemViewerCtrl.isArchiveDisabled()">
+									{{itemViewerCtrl.isArchived ? $root.bundle.button.unarchive : $root.bundle.button.archive}}
+								</md-button>
+							</li>
+						</ul>
+					</dropdown-widget>
+				</div>
+
+
+				<div class="menu-buttons">
+					<div class="md-button-group">
+					  <!-- Display full/split view buttons -->
+					  <md-button ng-if="!itemViewerCtrl.isFullView" class="square-icon"
+							id="changeToFullViewButton"
+							title="{{$root.bundle.button.changeToFullView}}"
+							aria-label="{{$root.bundle.button.changeToFullView}}"
+							nav-guard
+							default-action="itemViewerCtrl.changeViewMode('full')"
+							ng-click="handleEvent($event)">
+							<span class="zmdi zmdi-fullscreen"></span>
+						</md-button>
+
+						<md-button ng-if="itemViewerCtrl.isFullView" class="square-icon"
+							id="changeToSplitViewButton"
+							title="{{$root.bundle.button.changeToSplitView}}"
+							aria-label="{{$root.bundle.button.changeToSplitView}}"
+							nav-guard default-action="itemViewerCtrl.changeViewMode('split')"
+							ng-click="handleEvent($event)">
+							<span class="zmdi zmdi-fullscreen-exit"></span>
+						</md-button>
+						<!-- End Display full/split view buttons -->
+
+						<!-- Close button -->
+						<md-button class="square-icon"
+							id="closeButton"
+							title="{{$root.bundle.button.close}}"
+							aria-label="{{$root.bundle.button.close}}"
+							nav-guard default-action="itemViewerCtrl.close()"
+							ng-click="handleEvent($event)">
+							<span class="zmdi zmdi-close"></span>
+						</md-button>
+					</div>
+				</div>
+
+			</md-toolbar>
+			<md-toolbar id="itemviewer-item-header" layout="row">
+				<div class="item-header-icons">
+					<!-- lock icon -->
+					<div ng-if="itemViewerCtrl.isLocked === true" class="__workflowLock">
+						<span class="md-lock item-locked" id="locking" title="{{$root.bundle.text.locked}}" ></span>
+						<span class="itemHeaderText">{{$root.bundle.text.locked}}</span>
+					</div>
+					<!-- archival icon -->
+					<div ng-if="itemViewerCtrl.isArchived === true"
+						ng-class="{'zmdi zmdi-circle': itemViewerCtrl.isSeparatorNeeded(itemViewerCtrl.isLocked)}"
+						class="__archivedStatus">
+						<!-- show separator if the div of is locked is present  -->
+						<span class="zmdi zmdi-archive" title="{{$root.bundle.text.archived.camelcase}}"></span>
+						<span class="itemHeaderText">{{$root.bundle.text.archived.camelcase}}</span>
+					</div>
+					<!-- Effectivity -->
+					<div ng-if="itemViewerCtrl.selectedRevision" title="{{$root.bundle.text.effective}}: {{itemViewerCtrl.selectedRevision.effectivity}}"
+						ng-class="{'zmdi zmdi-circle': itemViewerCtrl.isSeparatorNeeded(itemViewerCtrl.isLocked,itemViewerCtrl.isArchived)}"
+						class="__effectivityDate">
+						<i class="zmdi zmdi-alarm"></i>
+						<span class="itemHeaderText">{{itemViewerCtrl.selectedRevision.effectivity}}</span>
+					</div>
+					<!-- Workflow State -->
+					<div ng-if="itemViewerCtrl.showWorkflowState === true" is-permitted="{{itemViewerCtrl.viewWorkflowPermission}}"
+						ng-class="{'zmdi zmdi-circle': itemViewerCtrl.isSeparatorNeeded(itemViewerCtrl.isLocked,itemViewerCtrl.isArchived,itemViewerCtrl.selectedRevision)}">
+						<span title="{{itemViewerCtrl.currentStateName}}" class="icon-plm-stamp __workflowStatus">
+							<span class="itemHeaderText">{{itemViewerCtrl.currentStateName}}</span>
+						</span>
+					</div>
+					<!-- Lifecycle -->
+					<div ng-if="itemViewerCtrl.itemCurrLifecycleName"
+						ng-class="{'zmdi zmdi-circle': itemViewerCtrl.isSeparatorNeeded(itemViewerCtrl.isLocked,itemViewerCtrl.isArchived,itemViewerCtrl.selectedRevision,itemViewerCtrl.showWorkflowState)}">
+						<span class="icon-Cube" title="{{$root.bundle.affectedItems.lifecycle}}: {{itemViewerCtrl.itemCurrLifecycleName}}"></span>
+						<span class="itemHeaderText" title="{{$root.bundle.affectedItems.lifecycle}}: {{itemViewerCtrl.itemCurrLifecycleName}}">{{itemViewerCtrl.itemCurrLifecycleName}}</span>
+					</div>
+				</div>
+			</md-toolbar>
+			<!-- The workspace item tabs -->
+			<md-toolbar id="itemviewer-item-tabs-wrapper">
+				<ul id="item-tabs" df-tab-menu menu-control="{{itemViewerCtrl.getActiveTab()}}">
+					<li ng-if="tab.link !== 'workflow-map'" ng-repeat="tab in itemViewerCtrl.tabList" data-menu-item="{{itemViewerCtrl.getActiveTab(tab.active, tab.link, tab.id)}}">
+						<a href="{{itemViewerCtrl.getTabLink(tab.active, tab.link, itemViewerCtrl.itemId, tab.id)}}" title="{{itemViewerCtrl.getTabLink(tab.active)}}">
+							<span>{{tab.name}}</span>
+						</a>
+					</li>
+					<li data-more-menu-item><span>More +</span></li>
+				</ul>
+			</md-toolbar>
+
+			<md-content flex layout="row" role="item-viewer-wrapper" id="item-viewer-wrapper">
+				<!--<item-viewer-content ng-if="itemViewerCtrl.templateUrl" template-url="itemViewerCtrl.templateUrl" ctrl="itemViewerCtrl.ctrl" ctrl-name="itemViewerCtrl.ctrlName"></item-viewer-content>-->
+				<span ui-view></span>
+			</md-content>
+
+		</span>

@@ -1,0 +1,225 @@
+<h1><code ng:non-bindable="">CreateItemDialogController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-createitemdialogcontroller-page"><p>The controller for create item dialog.
+This controller handles the dialog commands such as saving and closing.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_additem">addItem()</h3>
+<div class="additem"><div class="controllers-createitemdialogcontroller-additem-page"><p>Add the current item to the managed items tab of the
+newly created item</p>
+</div></div>
+</li>
+<li><h3 id="methods_cansavemanageditem">canSaveManagedItem()</h3>
+<div class="cansavemanageditem"><div class="controllers-createitemdialogcontroller-cansavemanageditem-page"><p>To check if managed item form data is in dirty state.</p>
+</div><h5 id="methods_cansavemanageditem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemdialogcontroller-cansavemanageditem-page"><p>True, if managed item form data is ready for save.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_clearfields">clearFields()</h3>
+<div class="clearfields"><div class="controllers-createitemdialogcontroller-clearfields-page"><p>Reset fields to their default values</p>
+</div></div>
+</li>
+<li><h3 id="methods_close">close()</h3>
+<div class="close"><div class="controllers-createitemdialogcontroller-close-page"><p>Closes create item dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_createmanageditemformobj">createManagedItemFormObj()</h3>
+<div class="createmanageditemformobj"><div class="controllers-createitemdialogcontroller-createmanageditemformobj-page"><p>Create managed item form object by fetching required
+information related to managed item.</p>
+</div><h5 id="methods_createmanageditemformobj_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-createmanageditemformobj-page"><p>A promise for managed item form object.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getavailabletransitions">getAvailableTransitions(itemId, itemRecord, availTransitLink)</h3>
+<div class="getavailabletransitions"><div class="controllers-createitemdialogcontroller-getavailabletransitions-page"><p>get available transition for a given managed item state.</p>
+</div><h5 id="methods_getavailabletransitions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemdialogcontroller-getavailabletransitions-page"><p>The id of the item.</p>
+</div></td></tr><tr><td>itemRecord</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-getavailabletransitions-page"><p>The details of the item.</p>
+</div></td></tr><tr><td>availTransitLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemdialogcontroller-getavailabletransitions-page"><p>Link to fetch information of transitions.</p>
+</div></td></tr></tbody></table><h5 id="methods_getavailabletransitions_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-getavailabletransitions-page"><p>A promise that will be resolved when transitions are fetched.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="controllers-createitemdialogcontroller-getfields-page"><p>Returns a flat array of all the fields
+in the currently selected workspace</p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-createitemdialogcontroller-getfields-page"><p>List of all the fields</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getmanageditemcustomfields">getManagedItemCustomFields()</h3>
+<div class="getmanageditemcustomfields"><div class="controllers-createitemdialogcontroller-getmanageditemcustomfields-page"><p>Create custom fields from given managedItem
+<a href="api/Models$AffectedItem">Models$AffectedItem</a> and meta <a href="api/Models#affecteditemmeta">Models#AffectedItemMeta</a> objects.</p>
+</div><h5 id="methods_getmanageditemcustomfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-createitemdialogcontroller-getmanageditemcustomfields-page"><p>List of custom field information of managed item instance.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getmanageditemfields">getManagedItemFields()</h3>
+<div class="getmanageditemfields"><div class="controllers-createitemdialogcontroller-getmanageditemfields-page"><p>Create form fields from given
+managedItem <a href="api/Models$AffectedItem">Models$AffectedItem</a> object.</p>
+</div><h5 id="methods_getmanageditemfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-getmanageditemfields-page"><p>Field information of managed item instance.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isformfilled">isFormFilled()</h3>
+<div class="isformfilled"><div class="controllers-createitemdialogcontroller-isformfilled-page"><p>Checks if all fields in the form have been filled</p>
+</div><h5 id="methods_isformfilled_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemdialogcontroller-isformfilled-page"><p>True, if all fields in the form have been filled</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_issavedisabled">isSaveDisabled()</h3>
+<div class="issavedisabled"><div class="controllers-createitemdialogcontroller-issavedisabled-page"><p>Checks if the save button should be disabled, depending on
+whether we&#39;re on the create or managed screen.</p>
+</div><h5 id="methods_issavedisabled_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemdialogcontroller-issavedisabled-page"><p>True, if the save button should be disabled</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_manage">manage()</h3>
+<div class="manage"><div class="controllers-createitemdialogcontroller-manage-page"><p>Saves the affected items fields of the item. The method also
+handles save conflicts in-case of concurrent modifications.</p>
+</div><h5 id="methods_manage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-manage-page"><p>A promise that will be resolved for successful save or
+rejected for unsuccessful attempt.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_manageandclose">manageAndClose()</h3>
+<div class="manageandclose"><div class="controllers-createitemdialogcontroller-manageandclose-page"><p>Manages the item and closes the dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_manageandview">manageAndView()</h3>
+<div class="manageandview"><div class="controllers-createitemdialogcontroller-manageandview-page"><p>Manages the effectivity and lifecycle of the item and
+navigates to the affected items tab of the newly created item</p>
+</div></div>
+</li>
+<li><h3 id="methods_onsavechange">onSaveChange()</h3>
+<div class="onsavechange"><div class="controllers-createitemdialogcontroller-onsavechange-page"><p>Upon selecting save type, do the respective save</p>
+</div></div>
+</li>
+<li><h3 id="methods_quickcreatefilter">quickCreateFilter(fieldDefinition)</h3>
+<div class="quickcreatefilter"><div class="controllers-createitemdialogcontroller-quickcreatefilter-page"><p>Filter function that can be used with
+<a href="api/Item#getviewdetailsfieldsdata">Item#getViewDetailsFieldsData</a> to filter for required and
+visibleOnPreview fields</p>
+</div><h5 id="methods_quickcreatefilter_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fieldDefinition</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-quickcreatefilter-page"><p>The object of the created item</p>
+</div></td></tr></tbody></table><h5 id="methods_quickcreatefilter_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemdialogcontroller-quickcreatefilter-page"><p>True, if field is required in the create form</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_requiredfieldsfilter">requiredFieldsFilter(fieldDefinition)</h3>
+<div class="requiredfieldsfilter"><div class="controllers-createitemdialogcontroller-requiredfieldsfilter-page"><p>Filter function that can be used with
+<a href="api/Item#getviewdetailsfieldsdata">Item#getViewDetailsFieldsData</a> to filter for required fields</p>
+<p>TODO Un-editable required field is not considered a required field.</p>
+</div><h5 id="methods_requiredfieldsfilter_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fieldDefinition</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemdialogcontroller-requiredfieldsfilter-page"><p>The object of the created item</p>
+</div></td></tr></tbody></table><h5 id="methods_requiredfieldsfilter_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemdialogcontroller-requiredfieldsfilter-page"><p>True, if field is required in the create form</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_save">save()</h3>
+<div class="save"><div class="controllers-createitemdialogcontroller-save-page"><p>Saves a newly created item</p>
+</div></div>
+</li>
+<li><h3 id="methods_saveandclose">saveAndClose()</h3>
+<div class="saveandclose"><div class="controllers-createitemdialogcontroller-saveandclose-page"><p>Saves the new item and closes the dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_saveandcopy">saveAndCopy()</h3>
+<div class="saveandcopy"><div class="controllers-createitemdialogcontroller-saveandcopy-page"><p>Saves the new item and moves to the next screen of dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_saveandmanage">saveAndManage()</h3>
+<div class="saveandmanage"><div class="controllers-createitemdialogcontroller-saveandmanage-page"><p>Saves the new item and moves to the next screen of dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_saveandnew">saveAndNew()</h3>
+<div class="saveandnew"><div class="controllers-createitemdialogcontroller-saveandnew-page"><p>Saves the new item and clears the form field
+so that a new item can be created</p>
+</div></div>
+</li>
+<li><h3 id="methods_saveandview">saveAndView()</h3>
+<div class="saveandview"><div class="controllers-createitemdialogcontroller-saveandview-page"><p>Saves the new item and navigates to the newly created item</p>
+</div></div>
+</li>
+<li><h3 id="methods_updatemanageditemobject">updateManagedItemObject()</h3>
+<div class="updatemanageditemobject"><div class="controllers-createitemdialogcontroller-updatemanageditemobject-page"><p>Update managed item object <a href="#managedItemObj">managedItemObj</a> with
+the form data <a href="#managedItemFormObj">managedItemFormObj</a>.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_createtype">createType</h3>
+<div class="createtype"><div class="controllers-createitemdialogcontroller-createtype-page"><p>String to determine the type of create</p>
+</div></div>
+</li>
+<li><h3 id="properties_createditemobj">createdItemObj</h3>
+<div class="createditemobj"><div class="controllers-createitemdialogcontroller-createditemobj-page"><p>The newly create item object (used for in-contextual
+create, in the manage state)</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentitem">currentItem</h3>
+<div class="currentitem"><div class="controllers-createitemdialogcontroller-currentitem-page"><p>The current item object</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentworkspace">currentWorkspace</h3>
+<div class="currentworkspace"><div class="controllers-createitemdialogcontroller-currentworkspace-page"><p>The current workspace object</p>
+</div></div>
+</li>
+<li><h3 id="properties_dialogelement">dialogElement</h3>
+<div class="dialogelement"><div class="controllers-createitemdialogcontroller-dialogelement-page"><p>The current dialog element</p>
+</div></div>
+</li>
+<li><h3 id="properties_filtertoapply">filterToApply</h3>
+<div class="filtertoapply"><div class="controllers-createitemdialogcontroller-filtertoapply-page"><p>The type of filter to apply on the fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_formfields">formFields</h3>
+<div class="formfields"><div class="controllers-createitemdialogcontroller-formfields-page"><p>An array consisting of the form fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_iscontextualcreate">isContextualCreate</h3>
+<div class="iscontextualcreate"><div class="controllers-createitemdialogcontroller-iscontextualcreate-page"><p>True, if the dialog to be triggered is for in-contextual
+create and add to managed items tab</p>
+</div></div>
+</li>
+<li><h3 id="properties_ismanagedview">isManagedView</h3>
+<div class="ismanagedview"><div class="controllers-createitemdialogcontroller-ismanagedview-page"><p>Boolean to determine whether manage screen is displayed</p>
+</div></div>
+</li>
+<li><h3 id="properties_isquickcreate">isQuickCreate</h3>
+<div class="isquickcreate"><div class="controllers-createitemdialogcontroller-isquickcreate-page"><p>True, if the dialog to be triggered is for quick create</p>
+</div></div>
+</li>
+<li><h3 id="properties_issavingdata">isSavingData</h3>
+<div class="issavingdata"><div class="controllers-createitemdialogcontroller-issavingdata-page"><p>Set to true when saving data is underway, as to
+block form elements from being edited while saving</p>
+</div></div>
+</li>
+<li><h3 id="properties_manageditemformobj">managedItemFormObj</h3>
+<div class="manageditemformobj"><div class="controllers-createitemdialogcontroller-manageditemformobj-page"><p>An object that contains details of the managed item fields.</p>
+</div></div>
+</li>
+<li><h3 id="properties_manageditemobj">managedItemObj</h3>
+<div class="manageditemobj"><div class="controllers-createitemdialogcontroller-manageditemobj-page"><p>An instance of managed item model.</p>
+</div></div>
+</li>
+<li><h3 id="properties_managedviewheading">managedViewHeading</h3>
+<div class="managedviewheading"><div class="controllers-createitemdialogcontroller-managedviewheading-page"><p>The heading for the managed view</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedsavetype">selectedSaveType</h3>
+<div class="selectedsavetype"><div class="controllers-createitemdialogcontroller-selectedsavetype-page"><p>The type of saving selected</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedworkspace">selectedWorkspace</h3>
+<div class="selectedworkspace"><div class="controllers-createitemdialogcontroller-selectedworkspace-page"><p>The pre-selected workspace, aka the only permitted
+workspace in which the user can add item to for quick create</p>
+</div></div>
+</li>
+<li><h3 id="properties_unsupportedfields">unsupportedFields</h3>
+<div class="unsupportedfields"><div class="controllers-createitemdialogcontroller-unsupportedfields-page"><p>An object updated by <a href="api/Directives.createItem">Directives.createItem</a>
+to indicate if there are any unsupported fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-createitemdialogcontroller-viewpermission-page"><p>The view items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceslist">workspacesList</h3>
+<div class="workspaceslist"><div class="controllers-createitemdialogcontroller-workspaceslist-page"><p>List of permitted workspaces that a user can add item to</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

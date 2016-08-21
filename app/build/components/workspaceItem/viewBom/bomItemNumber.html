@@ -1,0 +1,36 @@
+<div ng-switch on="editView">
+	<!--View template-->
+	<div ng-switch-when="false" class="item-number-view-wrapper">
+<!--		the expression in ng-style is used to calculate appropriate width for the element to indent the bom rows based on their depth-->
+		<span class='bom-item-number-offsetter' 
+			  ng-style="{width: (15 * (1 + fieldData.value.depth) + 'px')}">
+		</span>
+		<span class="bom-row-expander">
+			<a href="javascript:;"
+			   ng-if="isExpandable && isCollapsed"
+			   ng-click="internalExpandRow($event)">
+			   <span class="md md-chevron-right"></span>
+			</a>
+			<a href="javascript:;"
+			   ng-if="isExpandable && !isCollapsed"
+			   ng-click="internalCollapseRow($event)">
+			   <span class="md md-expand-more"></span>
+			</a>
+		</span>
+		<span>{{fieldData.value.depth}}.{{fieldData.value.itemNumber}}</span>
+	</div>
+
+	<!--Edit template-->
+	<div ng-switch-when="true" class="item-number-edit-wrapper">
+		<div class="item-number-content" ng-style="{left: (15 + (15 * (1 + fieldData.value.depth)) + 'px')}">
+			<label class="item-number-label">
+				<span>{{fieldData.value.depth}}.</span>
+				<input class='item-number-input' type="text"
+						ng-model="fieldData.value.itemNumber"
+						placeholder="{{fieldData.value.itemNumber}}"
+						generic-server-error>
+			</label>
+		</div>
+	</div>
+
+</div>

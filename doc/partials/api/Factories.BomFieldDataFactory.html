@@ -1,0 +1,54 @@
+<h1><code ng:non-bindable="">BomFieldDataFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Factories</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="factories-bomfielddatafactory-page"><p>Factory that wraps a FieldData instance with bom specific properties,
+for use in BomTabl3</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_buildfielddataargs">buildFieldDataArgs(field)</h3>
+<div class="buildfielddataargs"><div class="factories-bomfielddatafactory-buildfielddataargs-page"><p>Builds arguments object that will be provided to FieldData constructor</p>
+</div><h5 id="methods_buildfielddataargs_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>field</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="factories-bomfielddatafactory-buildfielddataargs-page"><p>An object that provides any necessary properties</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="factories-bomfielddatafactory-constructor-page"><p>factory constrctor for dependency injection</p>
+</div></div>
+</li>
+<li><h3 id="methods_decoratefielddata">decorateFieldData(instance, field)</h3>
+<div class="decoratefielddata"><div class="factories-bomfielddatafactory-decoratefielddata-page"><p>Adds bom specific properties to instance
+Adds the following properties:
+    getFieldSemantics() - a method that returns the semantics of the field
+    getFieldId() - a method that returns the id of the field
+    getViewDefFieldInfo() - a method that returns the link to the view definition
+    if the field is a picklist, then the following properties are defined
+        picklistLoaderWithFiltering() - a method used by the new picklist widget to load options asynchronously</p>
+</div><h5 id="methods_decoratefielddata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>instance</td><td><a href="" class="label type-hint type-hint-fielddata">FieldData</a></td><td><div class="factories-bomfielddatafactory-decoratefielddata-page"><p>an instance of a fieldData class</p>
+</div></td></tr><tr><td>field</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="factories-bomfielddatafactory-decoratefielddata-page"><p>An object that provides any necessary properties</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_formatrevisionvalue">formatRevisionValue(fieldValue)</h3>
+<div class="formatrevisionvalue"><div class="factories-bomfielddatafactory-formatrevisionvalue-page"><p>Formats the revision fields value,
+changing it if the value is specially displayed:
+ If an item is revisioned but unreleased, the value returned from the server is &#39;WIP&#39;,
+    but the actual display value should be &#39;Working&#39;</p>
+</div><h5 id="methods_formatrevisionvalue_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fieldValue</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="factories-bomfielddatafactory-formatrevisionvalue-page"><p>the original value of the revision</p>
+</div></td></tr></tbody></table><h5 id="methods_formatrevisionvalue_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="factories-bomfielddatafactory-formatrevisionvalue-page"><p>the new value</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_fromfield">fromField()</h3>
+<div class="fromfield"><div class="factories-bomfielddatafactory-fromfield-page"><p>Builds the BomFieldData instance from the field</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_workspacemodel">workspaceModel</h3>
+<div class="workspacemodel"><div class="factories-bomfielddatafactory-workspacemodel-page"><p>A workspace model with no data, to give access to picklist loading methods</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

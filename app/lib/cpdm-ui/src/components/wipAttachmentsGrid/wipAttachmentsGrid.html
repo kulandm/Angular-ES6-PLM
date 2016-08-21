@@ -1,0 +1,207 @@
+<div class="wip-attachment-container">
+	<div ng-hide="wipAttachmentsGridCtrl.isItemLoaded"
+		class="filebrowser-preloader opaque-overlay">
+		<div class="generic-loader">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	<div ng-show="wipAttachmentsGridCtrl.isItemLoaded && !wipAttachmentsGridCtrl.tableData.length"
+		class="zero-doc-container opaque-overlay">
+		<img src="images/PLM_Tab_Empty_State_zeroState_pages.png">
+		<div class="no-attachment">{{$root.bundle.wip.attachments.noAttachment}}</div>
+		<div class="click-add"
+			is-permitted="{{wipAttachmentsGridCtrl.addPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			{{$root.bundle.wip.attachments.click}}
+			<span class="add-button" ng-click="wipAttachmentsGridCtrl.triggerAdd()">{{$root.bundle.button.add}}</span>
+			{{$root.bundle.wip.attachments.browserItems}}
+		</div>
+	</div>
+	<table-data
+		columns="wipAttachmentsGridCtrl.tableColumns"
+		rows="wipAttachmentsGridCtrl.tableData"
+		grid-api="wipAttachmentsGridCtrl.gridApiInterface"
+		selectable-rows="wipAttachmentsGridCtrl.isViewState()"
+		is-multi-select="true"
+		use-default-selection-column="false"
+		select-rows-function="wipAttachmentsGridCtrl.toggleRowSelection(row)"
+		resizable-columns
+		resize-rows
+		client-sorting>
+	</table-data>
+
+	<script type="text/ng-template" id="indicatorTemplate">
+		<row-state-indicator
+			is-invalid="grid.appScope.wipAttachmentsGridCtrl.isTableRowInvalid(row.entity)"
+			is-dirty="grid.appScope.wipAttachmentsGridCtrl.isTableRowDirty(row.entity)">
+		</row-state-indicator>
+	</script>
+
+	<script type="text/ng-template" id="checkboxHeaderTemplate">
+		<div class="ui-grid-cell-contents header-cell checkbox-column">
+			<input type="checkbox"
+				ng-disabled="!grid.appScope.wipAttachmentsGridCtrl.isViewState()"
+				ng-click="grid.appScope.wipAttachmentsGridCtrl.toggleAllSelection()"
+				ng-checked="grid.appScope.wipAttachmentsGridCtrl.gridApiInterface.selection.selectAll">
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="checkboxTemplate">
+		<div class="ui-grid-cell-contents checkbox-cell">
+			<input type="checkbox"
+				ng-disabled="!grid.appScope.wipAttachmentsGridCtrl.isViewState()"
+				ng-checked="row.isSelected === true">
+			<span id="inline-menu-{{row.uid}}">
+				<a href="javascript:;" class="inline-actions">
+					<span class="zmdi zmdi-more"></span>
+				</a>
+				<dropdown-widget h-pos="right" anchor="#inline-menu-{{row.uid}}">
+					<ul>
+						<li>
+							<a href="javascript:;"
+								ng-click="grid.appScope.wipAttachmentsGridCtrl.triggerDownload(row)">
+								{{$root.bundle.wip.attachments.download}}
+							</a>
+						</li>
+						<li>
+							<a ng-href="{{grid.appScope.wipAttachmentsGridCtrl.FileOverviewService.getContainingFolderLinkWithHost(grid.appScope.wipAttachmentsGridCtrl.fileOverviewHost, row.entity.fileInfo.parentFolderUrn)}}" ng-click="$event.stopPropagation();" target="_blank">
+								{{$root.bundle.wip.attachments.containingFolder}}
+							</a>
+						</li>
+					</ul>
+				</dropdown-widget>
+			</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="attachmentDateTemplate">
+		<div class="ui-grid-cell-contents">
+			{{COL_FIELD | date: grid.appScope.wipAttachmentsGridCtrl.dateFormat.date}}
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="attachmentNameTemplate">
+		<div class="ui-grid-cell-contents">
+			<wip-file-type-icon
+				mime-type="{{row.entity.fileInfo.mimeType}}"
+				size="16">
+			</wip-file-type-icon>
+			<a ng-href="{{grid.appScope.wipAttachmentsGridCtrl.FileOverviewService.getFileOverviewLinkWithHost(
+				grid.appScope.wipAttachmentsGridCtrl.fileOverviewHost,
+				row.entity.lineageUrn,
+				row.entity.fileInfo.versionNumber)}}"
+			   ng-click="$event.stopPropagation();"
+			   target="_blank">
+				{{COL_FIELD}}
+			</a>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="pinningHeaderTemplate">
+		<div ng-if="grid.appScope.wipAttachmentsGridCtrl.isViewState()"
+			class="ui-grid-cell-contents header-cell center-cell-contents">
+			<span class="icon-a360-pin"></span>
+		</div>
+		<div ng-if="!grid.appScope.wipAttachmentsGridCtrl.isViewState()"
+			class="ui-grid-cell-contents header-cell">
+			<span>{{$root.bundle.wip.attachments.pinningPolicy}}</span>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="pinningTemplate">
+		<div class="ui-grid-cell-contents center-cell-contents tooltip"
+			wip-attachment-tooltip
+			ng-if="grid.appScope.wipAttachmentsGridCtrl.isViewState()">
+				<span ng-if="row.entity.showPin" class="icon-a360-pin"></span>
+				<span ng-if="!row.entity.showPin">--</span>
+				<div class="tooltip-content pinning-tooltip" ng-class="{'has-pinned-version' : row.entity.attachment.getPinnedVersion()}">
+					<div class="arrow"></div>
+					<div>
+						<div>
+							<span class="title">
+								{{$root.bundle.wip.attachments.pinningPolicy}}:
+							</span>
+							<span class="info">
+								{{row.entity.attachment.getPinningPolicy()}}
+							</span>
+						</div>
+						<div ng-if="row.entity.attachment.getPinnedVersion()">
+							<span class="title">
+								{{$root.bundle.wip.attachments.pinnedVersion}}:
+							</span>
+							<span class="info">
+								{{row.entity.attachment.getPinnedVersion()}}
+							</span>
+						</div>
+						<div>
+							<span class="title">
+								{{$root.bundle.wip.attachments.latestVersion}}:
+							</span>
+							<span class="info">
+								{{row.entity.attachment.getVersion()}}
+							</span>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="ui-grid-cell-contents cell-state-indicator"
+			ng-if="!grid.appScope.wipAttachmentsGridCtrl.isViewState()">
+			<cell-state-indicator
+				is-dirty="{{COL_FIELD.isDirty()}}"
+				error-message="COL_FIELD.serverError">
+				<field-selector
+					field-id="{{COL_FIELD.fieldId}}"
+					field-data="COL_FIELD"
+					field-meta="col.colDef.fieldMeta"
+					type-id="col.colDef.dataType"
+					edit-on-click="{{!grid.appScope.wipAttachmentsGridCtrl.isViewState()}}"
+					placeholder="{{COL_FIELD.placeholder}}"
+					simple-select="true"
+					picklist-on-change="row.entity.onPinningPolicyChange(row)"
+					waiting="">
+				</field-selector>
+			</cell-state-indicator>
+		</div>
+	</script>
+
+	<!-- Editable 'Version' Cell -->
+	<script type="text/ng-template" id="versionTemplate">
+		<div class="ui-grid-cell-contents"
+			ng-if="grid.appScope.wipAttachmentsGridCtrl.isViewState()">
+			{{row.entity.fileInfo.version.value.title}}
+		</div>
+		<div class="ui-grid-cell-contents cell-state-indicator"
+			wip-attachment-tooltip
+			prevent-default-tooltip="{{row.entity.pinningPolicy.value.title !== 'To Version'}}"
+			ng-class="{'tooltip': row.entity.pinningPolicy.value.title !== 'To Version'}"
+			ng-if="!grid.appScope.wipAttachmentsGridCtrl.isViewState()">
+				<cell-state-indicator
+					is-dirty="{{COL_FIELD.isDirty()}}"
+					error-message="COL_FIELD.serverError">
+					<field-selector
+						field-id="{{COL_FIELD.fieldId}}"
+						field-data="COL_FIELD"
+						field-meta="row.entity.fileInfo.version.fieldMetadata"
+						type-id="col.colDef.dataType"
+						edit-on-click="{{!grid.appScope.wipAttachmentsGridCtrl.isViewState() && row.entity.pinningPolicy.value.title === 'To Version'}}"
+						placeholder="{{COL_FIELD.placeholder}}"
+						simple-select="true"
+						waiting="">
+					</field-selector>
+				</cell-state-indicator>
+				<div class="tooltip-content">
+					<div class="arrow"></div>
+					<span class="info">{{$root.bundle.wip.attachments.versionLocked}}</span>
+				</div>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="attachmentTypeNameTemplate">
+		<div class="ui-grid-cell-contents">
+			<wip-file-type-name mime-type="{{row.entity.fileInfo.mimeType}}" extension="{{row.entity.fileInfo.fileType}}"></wip-file-type-name>
+		</div>
+	</script>
+</div>

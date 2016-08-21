@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../components/plmHeader/module.js"],"names":[],"mappings":";;AAAA,OAAO,CAAC,MAAM,CAAC,kBAAkB,EAAE,CAClC,8BAA8B,CAC9B,CAAC,CAAC","file":"module.js","sourcesContent":["angular.module('plm360.plmHeader', [\n\t'com/autodesk/localization.js'\n]);\n"]}

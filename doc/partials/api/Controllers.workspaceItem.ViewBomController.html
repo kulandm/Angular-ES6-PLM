@@ -1,0 +1,363 @@
+<h1><code ng:non-bindable="">ViewBomController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewbomcontroller-page"><p>View Controller for Bom View</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addchangenotification">addChangeNotification(the, type)</h3>
+<div class="addchangenotification"><div class="controllers-workspaceitem-viewbomcontroller-addchangenotification-page"><p>adds a notification to be displayed by creating appropriate
+message for the status of the operation.</p>
+</div><h5 id="methods_addchangenotification_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>the</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-addchangenotification-page"><p>change for which the notification is being added</p>
+</div></td></tr><tr><td>type</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-addchangenotification-page"><p>of the notification (success, failure);</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_buildbomuipermissions">buildBomUIPermissions(userPermissions, itemObj)</h3>
+<div class="buildbomuipermissions"><div class="controllers-workspaceitem-viewbomcontroller-buildbomuipermissions-page"><p>Bulds a set of permissions for the BOM UI
+calculated from a permissions object and a root item
+If either no permissiosn object is provided or not itemObj is available,
+    returns all permissions enabled</p>
+</div><h5 id="methods_buildbomuipermissions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>userPermissions</td><td><a href="" class="label type-hint type-hint-userpermissions">UserPermissions</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-buildbomuipermissions-page"><p>A user&#39;s permissions</p>
+</div></td></tr><tr><td>itemObj</td><td><a href="" class="label type-hint type-hint-item">Item</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-buildbomuipermissions-page"><p>A root item</p>
+</div></td></tr></tbody></table><h5 id="methods_buildbomuipermissions_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-buildbomuipermissions-page"><p>An object with the following properties:
+addButtonVisibile {Boolean} determines if the add button is visible
+ editButtonVisibile {Boolean} determines if edit button is visible
+removeButtonVisibile {Boolean} determines if the remove button is visible
+editDisabled {Boolean} determines if all edit buttons should be disabled</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_changebias">changeBias(config)</h3>
+<div class="changebias"><div class="controllers-workspaceitem-viewbomcontroller-changebias-page"><p>Trigger changing the view with updated bias settings.</p>
+</div><h5 id="methods_changebias_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>config</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-changebias-page"><p>the new configuration
+config: {
+    effectiveDate: Date()
+    bias: bias
+}</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_changeview">changeView(view)</h3>
+<div class="changeview"><div class="controllers-workspaceitem-viewbomcontroller-changeview-page"><p>Trigger changing the view</p>
+</div><h5 id="methods_changeview_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>view</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-changeview-page"><p>the view being selected</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_collapserow">collapseRow(row)</h3>
+<div class="collapserow"><div class="controllers-workspaceitem-viewbomcontroller-collapserow-page"><p>Trigger row collapsing.</p>
+</div><h5 id="methods_collapserow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-collapserow-page"><p>The row that should be collapsed.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="controllers-workspaceitem-viewbomcontroller-constructor-page"><p>The class constructor.
+Creates handles to all the required services and top level view models</p>
+</div></div>
+</li>
+<li><h3 id="methods_entereditmode">enterEditMode()</h3>
+<div class="entereditmode"><div class="controllers-workspaceitem-viewbomcontroller-entereditmode-page"><p>Takes the bom into edit mode and activates the navigation guard.
+If the revisions column is present,
+    we request the loading of the alternative revisions</p>
+</div></div>
+</li>
+<li><h3 id="methods_enterviewmode">enterViewMode()</h3>
+<div class="enterviewmode"><div class="controllers-workspaceitem-viewbomcontroller-enterviewmode-page"><p>Take the bom to view state</p>
+</div></div>
+</li>
+<li><h3 id="methods_expandrow">expandRow(row)</h3>
+<div class="expandrow"><div class="controllers-workspaceitem-viewbomcontroller-expandrow-page"><p>Trigger row expansion</p>
+</div><h5 id="methods_expandrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-expandrow-page"><p>The row that should be expanded</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_exportbom">exportBom()</h3>
+<div class="exportbom"><div class="controllers-workspaceitem-viewbomcontroller-exportbom-page"><p>Export the bom of the current item
+TODO: Load the Full Bom to export</p>
+</div></div>
+</li>
+<li><h3 id="methods_formatdate">formatDate(Date, representing, string)</h3>
+<div class="formatdate"><div class="controllers-workspaceitem-viewbomcontroller-formatdate-page"><p>Reformats the date object from its current format to the new format.</p>
+</div><h5 id="methods_formatdate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>Date</td><td><a href="" class="label type-hint type-hint-date">Date</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-formatdate-page"><p>object to format</p>
+</div></td></tr><tr><td>representing</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-formatdate-page"><p>the current format of the Date Object</p>
+</div></td></tr><tr><td>string</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-formatdate-page"><p>representing the desired format of the output Object</p>
+</div></td></tr></tbody></table><h5 id="methods_formatdate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-formatdate-page"><p>A representing the desired formatted date</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getconfigurationstatemachine">getConfigurationStateMachine()</h3>
+<div class="getconfigurationstatemachine"><div class="controllers-workspaceitem-viewbomcontroller-getconfigurationstatemachine-page"><p>Returns the current configuration state machine</p>
+</div><h5 id="methods_getconfigurationstatemachine_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomconfigurationstatemachine">BomConfigurationStateMachine</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getconfigurationstatemachine-page"><p>the current configuration state machine</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getcurrentviewdef">getCurrentViewDef()</h3>
+<div class="getcurrentviewdef"><div class="controllers-workspaceitem-viewbomcontroller-getcurrentviewdef-page"><p>Returns the currently selected view definitions</p>
+</div><h5 id="methods_getcurrentviewdef_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-viewdefinition">viewDefinition</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getcurrentviewdef-page"><p>the currently selected view definition</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getgraph">getGraph()</h3>
+<div class="getgraph"><div class="controllers-workspaceitem-viewbomcontroller-getgraph-page"><p>Returns the current graph</p>
+</div><h5 id="methods_getgraph_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getgraph-page"><p>the current graph</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettable">getTable()</h3>
+<div class="gettable"><div class="controllers-workspaceitem-viewbomcontroller-gettable-page"><p>Returns the current table</p>
+</div><h5 id="methods_gettable_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomtable">BomTable</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-gettable-page"><p>the current table</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettooltiptext">getTooltipText()</h3>
+<div class="gettooltiptext"><div class="controllers-workspaceitem-viewbomcontroller-gettooltiptext-page"><p>Craft the title to be displayed in the tooltip of the header of the section.</p>
+</div><h5 id="methods_gettooltiptext_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-gettooltiptext-page"><p>Text of the tooltip</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewbias">getViewBias()</h3>
+<div class="getviewbias"><div class="controllers-workspaceitem-viewbomcontroller-getviewbias-page"><p>Obtain the localized text of the current bias set through user configuration</p>
+</div><h5 id="methods_getviewbias_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getviewbias-page"><p>Name of the revision bias configuration</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdate">getViewDate()</h3>
+<div class="getviewdate"><div class="controllers-workspaceitem-viewbomcontroller-getviewdate-page"><p>Obtain and format the date stored in the configuration</p>
+</div><h5 id="methods_getviewdate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getviewdate-page"><p>Formatted date or localized &#39;Today&#39; text</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdefs">getViewDefs()</h3>
+<div class="getviewdefs"><div class="controllers-workspaceitem-viewbomcontroller-getviewdefs-page"><p>Returns all the view definitions</p>
+</div><h5 id="methods_getviewdefs_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-viewdefinitions">viewDefinitions</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getviewdefs-page"><p>the view definitions instance</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewtitle">getViewTitle()</h3>
+<div class="getviewtitle"><div class="controllers-workspaceitem-viewbomcontroller-getviewtitle-page"><p>Trigger row collapsing.</p>
+</div><h5 id="methods_getviewtitle_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-getviewtitle-page"><p>Title of the current BOM view</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_handlefailedadd">handleFailedAdd(change)</h3>
+<div class="handlefailedadd"><div class="controllers-workspaceitem-viewbomcontroller-handlefailedadd-page"><p>When an add to the bom fails then the bom will remain in edit mode, and the changes will be reapplied to it.</p>
+</div><h5 id="methods_handlefailedadd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>change</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-handlefailedadd-page"><p>A compiled add change to reapply</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_handlefailedchangetorowonload">handleFailedChangeToRowOnLoad(change)</h3>
+<div class="handlefailedchangetorowonload"><div class="controllers-workspaceitem-viewbomcontroller-handlefailedchangetorowonload-page"><p>Listen for a row to be added, then apply the change to that row</p>
+</div><h5 id="methods_handlefailedchangetorowonload_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>change</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-handlefailedchangetorowonload-page"><p>A compiled change to reapply</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_init">init()</h3>
+<div class="init"><div class="controllers-workspaceitem-viewbomcontroller-init-page"><p>Initalizes the view
+Steps:
+    Load the current user&#39;s information
+    Load the current user&#39;s permissions for this workspace
+    Load the related workspaces
+    Load the enabled features
+    Initialize the Bom
+        Once the Bom has initialized,
+        determine the permissions for the current configured root item</p>
+</div></div>
+</li>
+<li><h3 id="methods_isdirty">isDirty()</h3>
+<div class="isdirty"><div class="controllers-workspaceitem-viewbomcontroller-isdirty-page"><p>This method will be used by PLMNavigationGuard to determine
+whether or not to raise warning for navigation events.</p>
+</div><h5 id="methods_isdirty_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isdirty-page"><p>true if the bom is in edit mode and has pending changes.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_iseditstate">isEditState()</h3>
+<div class="iseditstate"><div class="controllers-workspaceitem-viewbomcontroller-iseditstate-page"><p>Determine whether we&#39;re in edit mode</p>
+</div><h5 id="methods_iseditstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-iseditstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isnewlyaddedrow">isNewlyAddedRow(representing)</h3>
+<div class="isnewlyaddedrow"><div class="controllers-workspaceitem-viewbomcontroller-isnewlyaddedrow-page"><p>Tells us whether or not the <code>tableRow</code> is a newly added one.</p>
+</div><h5 id="methods_isnewlyaddedrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>representing</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isnewlyaddedrow-page"><p>a bom table row.</p>
+</div></td></tr></tbody></table><h5 id="methods_isnewlyaddedrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isnewlyaddedrow-page"><p>True if the row is newly added.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isrowmarkedforremoval">isRowMarkedForRemoval(representing)</h3>
+<div class="isrowmarkedforremoval"><div class="controllers-workspaceitem-viewbomcontroller-isrowmarkedforremoval-page"><p>Tells us whehter or not a the <code>tableRow</code> has been marked for
+removal.</p>
+</div><h5 id="methods_isrowmarkedforremoval_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>representing</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isrowmarkedforremoval-page"><p>a table row.</p>
+</div></td></tr></tbody></table><h5 id="methods_isrowmarkedforremoval_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isrowmarkedforremoval-page"><p>true if the row is is marked to be removed.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewbomcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_listenforadds">listenForAdds()</h3>
+<div class="listenforadds"><div class="controllers-workspaceitem-viewbomcontroller-listenforadds-page"><p>Listens for the flyout to send an add request</p>
+</div></div>
+</li>
+<li><h3 id="methods_listenforchangeresponses">listenForChangeResponses()</h3>
+<div class="listenforchangeresponses"><div class="controllers-workspaceitem-viewbomcontroller-listenforchangeresponses-page"><p>Listen for changes to succeed or fail
+when all have completed, sends a message</p>
+</div></div>
+</li>
+<li><h3 id="methods_listenforsavecompletion">listenForSaveCompletion()</h3>
+<div class="listenforsavecompletion"><div class="controllers-workspaceitem-viewbomcontroller-listenforsavecompletion-page"><p>Listen for all changes to succeed or fail</p>
+</div></div>
+</li>
+<li><h3 id="methods_loadbom">loadBom()</h3>
+<div class="loadbom"><div class="controllers-workspaceitem-viewbomcontroller-loadbom-page"><p>Loads the bom</p>
+</div></div>
+</li>
+<li><h3 id="methods_loadeditableitemrevisions">loadEditableItemRevisions(row)</h3>
+<div class="loadeditableitemrevisions"><div class="controllers-workspaceitem-viewbomcontroller-loadeditableitemrevisions-page"><p>Load the revisions for an item child
+Exclude the working and unreleased revision,
+    since we don&#39;t let you see those when editing</p>
+</div><h5 id="methods_loadeditableitemrevisions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-bomtablerow">BomTableRow</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-loadeditableitemrevisions-page"><p>the row to load revisions for</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_loadenabledfeatures">loadEnabledFeatures()</h3>
+<div class="loadenabledfeatures"><div class="controllers-workspaceitem-viewbomcontroller-loadenabledfeatures-page"><p>Determines which features are currently enabled</p>
+</div></div>
+</li>
+<li><h3 id="methods_loaduser">loadUser()</h3>
+<div class="loaduser"><div class="controllers-workspaceitem-viewbomcontroller-loaduser-page"><p>Loads the current user in order to get their date format</p>
+</div></div>
+</li>
+<li><h3 id="methods_loaduserpermissions">loadUserPermissions()</h3>
+<div class="loaduserpermissions"><div class="controllers-workspaceitem-viewbomcontroller-loaduserpermissions-page"><p>Loads the permissions associated with the current user</p>
+</div></div>
+</li>
+<li><h3 id="methods_persistchange">persistChange()</h3>
+<div class="persistchange"><div class="controllers-workspaceitem-viewbomcontroller-persistchange-page"><p>Sends a set of changes out to be persisted</p>
+</div></div>
+</li>
+<li><h3 id="methods_preparechanges">prepareChanges()</h3>
+<div class="preparechanges"><div class="controllers-workspaceitem-viewbomcontroller-preparechanges-page"><p>Processes the changes from the bom table&#39;s changeTracker
+and adds any extra properties that are needed to their payloads</p>
+</div><h5 id="methods_preparechanges_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-preparechanges-page"><p>a list of objects describing a change for each edge</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_reloadcurrentbom">reloadCurrentBom()</h3>
+<div class="reloadcurrentbom"><div class="controllers-workspaceitem-viewbomcontroller-reloadcurrentbom-page"><p>Reloads the current bom to get fresh data</p>
+</div></div>
+</li>
+<li><h3 id="methods_respondtobomload">respondToBomLoad()</h3>
+<div class="respondtobomload"><div class="controllers-workspaceitem-viewbomcontroller-respondtobomload-page"><p>Responds to the loading of the bom
+If the root item is configured to a new item, update the item header
+Also build the uiPermissions</p>
+</div></div>
+</li>
+<li><h3 id="methods_scelleditable">sCellEditable()</h3>
+<div class="scelleditable"><div class="controllers-workspaceitem-viewbomcontroller-scelleditable-page"><p>Determine whether or not a cell is editable</p>
+</div><h5 id="methods_scelleditable_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-scelleditable-page"><p>true if the cell is on top level row and is an edge field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_savechanges">saveChanges()</h3>
+<div class="savechanges"><div class="controllers-workspaceitem-viewbomcontroller-savechanges-page"><p>Gets and prepares the changes that need to be persisted,
+requests that they be saved, and listens for their responses</p>
+</div></div>
+</li>
+<li><h3 id="methods_shouldbomrowbedisabled">shouldBomRowBeDisabled()</h3>
+<div class="shouldbomrowbedisabled"><div class="controllers-workspaceitem-viewbomcontroller-shouldbomrowbedisabled-page"><p>Determine whether or not the row should be disabled</p>
+</div><h5 id="methods_shouldbomrowbedisabled_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewbomcontroller-shouldbomrowbedisabled-page"><p>true if the itemDepth is not 1</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd()</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewbomcontroller-triggeradd-page"><p>Triggered by clicking add button - opens add flyout and populates list</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewbomcontroller-triggercancel-page"><p>Triggered by clicking cancel button - NOTE: name has to be
+triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerremove">triggerRemove()</h3>
+<div class="triggerremove"><div class="controllers-workspaceitem-viewbomcontroller-triggerremove-page"><p>Marks all selected rows for removal and enters edit mode</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewbomcontroller-triggersave-page"><p>Triggered by clicking save button - NOTE: name has to be
+triggerSave.</p>
+</div></div>
+</li>
+<li><h3 id="methods_viewattachments">viewAttachments()</h3>
+<div class="viewattachments"><div class="controllers-workspaceitem-viewbomcontroller-viewattachments-page"><p>Triggered by clicking attachment icon - opens view attached flyout and populates list</p>
+</div></div>
+</li>
+<li><h3 id="methods_getitemnumberfornewrow">getItemNumberForNewRow()</h3>
+<div class="getitemnumberfornewrow"><div class="models-bomtable-getitemnumberfornewrow-page"><p>get the maximum item number of all the first level children on the bom</p>
+</div><h5 id="methods_getitemnumberfornewrow_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomtable-getitemnumberfornewrow-page"><p>representing an item number for a new row to be added to the BOM.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_addflyout">addFlyout</h3>
+<div class="addflyout"><div class="controllers-workspaceitem-viewbomcontroller-addflyout-page"><p>the flyout instance for the add to bom</p>
+</div></div>
+</li>
+<li><h3 id="properties_bomapidateformat">bomApiDateFormat</h3>
+<div class="bomapidateformat"><div class="controllers-workspaceitem-viewbomcontroller-bomapidateformat-page"><p>Stores the date format pulled from user configuration.</p>
+</div></div>
+</li>
+<li><h3 id="properties_bomdatacontroller">bomDataController</h3>
+<div class="bomdatacontroller"><div class="controllers-workspaceitem-viewbomcontroller-bomdatacontroller-page"><p>The controller for the bom data models</p>
+</div></div>
+</li>
+<li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-workspaceitem-viewbomcontroller-bundle-page"><p>Localization Bundle</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentmode">currentMode</h3>
+<div class="currentmode"><div class="controllers-workspaceitem-viewbomcontroller-currentmode-page"><p>Handle to store the current view mode</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridapilistener">gridApiListener</h3>
+<div class="gridapilistener"><div class="controllers-workspaceitem-viewbomcontroller-gridapilistener-page"><p>Handle to a function that will unwatch the current watcher</p>
+</div></div>
+</li>
+<li><h3 id="properties_initcomplete">initComplete</h3>
+<div class="initcomplete"><div class="controllers-workspaceitem-viewbomcontroller-initcomplete-page"><p>Boolean to track if we expanded the topline on init</p>
+</div></div>
+</li>
+<li><h3 id="properties_isaddbombuttondisabled">isAddBomButtonDisabled</h3>
+<div class="isaddbombuttondisabled"><div class="controllers-workspaceitem-viewbomcontroller-isaddbombuttondisabled-page"><p>Check if the &#39;Add to BOM&#39; button should be disabled</p>
+</div></div>
+</li>
+<li><h3 id="properties_isaddbombuttonvisible">isAddBomButtonVisible</h3>
+<div class="isaddbombuttonvisible"><div class="controllers-workspaceitem-viewbomcontroller-isaddbombuttonvisible-page"><p>Check if the &#39;Add to BOM&#39; button should be displayed</p>
+</div></div>
+</li>
+<li><h3 id="properties_iseditbombuttondisabled">isEditBomButtonDisabled</h3>
+<div class="iseditbombuttondisabled"><div class="controllers-workspaceitem-viewbomcontroller-iseditbombuttondisabled-page"><p>Check if the &#39;Edit&#39; button should be disabled</p>
+</div></div>
+</li>
+<li><h3 id="properties_iseditbombuttonvisible">isEditBomButtonVisible</h3>
+<div class="iseditbombuttonvisible"><div class="controllers-workspaceitem-viewbomcontroller-iseditbombuttonvisible-page"><p>Check if the &#39;Edit&#39; button should be displayed</p>
+</div></div>
+</li>
+<li><h3 id="properties_iswipattachmentenabled">isWipAttachmentEnabled</h3>
+<div class="iswipattachmentenabled"><div class="controllers-workspaceitem-viewbomcontroller-iswipattachmentenabled-page"><p>Check if the attachment flyout should be enabled</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewbomcontroller-itemid-page"><p>Item Id for the current workspace item</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledataapi">tableDataApi</h3>
+<div class="tabledataapi"><div class="controllers-workspaceitem-viewbomcontroller-tabledataapi-page"><p>Table Data Component&#39;s exposed API. Bound to from the view
+Note: Cannot be used before the view has had time to bind with the view</p>
+</div></div>
+</li>
+<li><h3 id="properties_uipermissions">uiPermissions</h3>
+<div class="uipermissions"><div class="controllers-workspaceitem-viewbomcontroller-uipermissions-page"><p>Permissions that control ui behavior</p>
+</div></div>
+</li>
+<li><h3 id="properties_userdefineddateformat">userDefinedDateFormat</h3>
+<div class="userdefineddateformat"><div class="controllers-workspaceitem-viewbomcontroller-userdefineddateformat-page"><p>Stores the date format pulled from user configuration.</p>
+</div></div>
+</li>
+<li><h3 id="properties_userpermissionobj">userPermissionObj</h3>
+<div class="userpermissionobj"><div class="controllers-workspaceitem-viewbomcontroller-userpermissionobj-page"><p>Handle to store user permissions for workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewattacheditemsflyout">viewAttachedItemsFlyout</h3>
+<div class="viewattacheditemsflyout"><div class="controllers-workspaceitem-viewbomcontroller-viewattacheditemsflyout-page"><p>the flyout instance for the view attached items flyout</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewbomcontroller-viewpermission-page"><p>The view bom items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewstate">viewState</h3>
+<div class="viewstate"><div class="controllers-workspaceitem-viewbomcontroller-viewstate-page"><p>Handle to store the current view mode</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

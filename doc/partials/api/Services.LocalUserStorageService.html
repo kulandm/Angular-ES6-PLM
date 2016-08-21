@@ -1,0 +1,58 @@
+<h1><code ng:non-bindable="">LocalUserStorageService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Services</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="services-localuserstorageservice-page"><p>A utility service that stores non-secure data specific to the user
+locally</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_canuselocalstorage">canUseLocalStorage()</h3>
+<div class="canuselocalstorage"><div class="services-localuserstorageservice-canuselocalstorage-page"><p>Becase browsers have weird ways fo dealing with localStorage, we need to check if we can use it
+Source: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API</a>
+Does not guarantee that there will be enough room in localStorage for all the data</p>
+</div><h5 id="methods_canuselocalstorage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-localuserstorageservice-canuselocalstorage-page"><p>True if local storage can be used</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="services-localuserstorageservice-constructor-page"><p>The class constructor
+Immediately loads the current user</p>
+</div></div>
+</li>
+<li><h3 id="methods_get">get(key)</h3>
+<div class="get"><div class="services-localuserstorageservice-get-page"><p>Get the value stored for the given key
+Assumes that local storage is available</p>
+</div><h5 id="methods_get_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-localuserstorageservice-get-page"><p>The key corresponding to the requested data</p>
+</div></td></tr></tbody></table><h5 id="methods_get_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-localuserstorageservice-get-page"><p>The requested object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getuserdatastorage">getUserDataStorage()</h3>
+<div class="getuserdatastorage"><div class="services-localuserstorageservice-getuserdatastorage-page"><p>Gets the object that stores the user data
+If no object exists, creates one, stores it, and returns it
+Assumes that local storage is available</p>
+</div><h5 id="methods_getuserdatastorage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-localuserstorageservice-getuserdatastorage-page"><p>An object corresponding to the current user</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_loaduser">loadUser()</h3>
+<div class="loaduser"><div class="services-localuserstorageservice-loaduser-page"><p>Loads the current user</p>
+</div></div>
+</li>
+<li><h3 id="methods_set">set(key, value)</h3>
+<div class="set"><div class="services-localuserstorageservice-set-page"><p>Stores the value with the provided key in the user&#39;s local storage
+Assumes that local storage is available</p>
+</div><h5 id="methods_set_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-localuserstorageservice-set-page"><p>The key to use (must be usable as a key of an object)</p>
+</div></td></tr><tr><td>value</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-localuserstorageservice-set-page"><p>An object that will be stored
+The object must be stringifyable by JSON</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_userkey">userKey</h3>
+<div class="userkey"><div class="services-localuserstorageservice-userkey-page"><p>The key used to store the current user</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

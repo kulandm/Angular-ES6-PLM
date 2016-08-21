@@ -1,0 +1,67 @@
+<h1><code ng:non-bindable="">Workspaces</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-workspaces-page"><p>This class wraps a list of workspaces payload into an object</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_fetch">fetch(menuLink, workspacesLink)</h3>
+<div class="fetch"><div class="models-workspaces-fetch-page"><p>Make a call to fetch raw data</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>menuLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspaces-fetch-page"><p>The URL to use for fetching the data from v2 menu endpoint</p>
+</div></td></tr><tr><td>workspacesLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspaces-fetch-page"><p>The URL to use for fetching data from v3 workspaces endpoint</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspaces-fetch-page"><p>An object representation of the formatted data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getcategorylist">getCategoryList()</h3>
+<div class="getcategorylist"><div class="models-workspaces-getcategorylist-page"><p>Returns the list of categories (sections) in the form of object with properties id, iconResourceUrl, displayName and workspaces</p>
+</div><h5 id="methods_getcategorylist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-workspaces-getcategorylist-page"><p>The list of categories</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfulllist">getFullList()</h3>
+<div class="getfulllist"><div class="models-workspaces-getfulllist-page"><p>Returns the full list of workspaces with sections and workspaces relationship</p>
+</div><h5 id="methods_getfulllist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-workspaces-getfulllist-page"><p>The full list of workspaces</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_geticon">getIcon(section)</h3>
+<div class="geticon"><div class="models-workspaces-geticon-page"><p>Returns the mapped font icon for given section</p>
+</div><h5 id="methods_geticon_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspaces-geticon-page"><p>The section object for which the icon to be retrieved</p>
+</div></td></tr></tbody></table><h5 id="methods_geticon_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="models-workspaces-geticon-page"><p>A the icon name</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsectionicon">getSectionIcon(workspaceId)</h3>
+<div class="getsectionicon"><div class="models-workspaces-getsectionicon-page"><p>Returns the mapped font icon for given workspace</p>
+</div><h5 id="methods_getsectionicon_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspaces-getsectionicon-page"><p>The id of the current workspace</p>
+</div></td></tr></tbody></table><h5 id="methods_getsectionicon_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="models-workspaces-getsectionicon-page"><p>A the icon name</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsimplelist">getSimpleList(attr)</h3>
+<div class="getsimplelist"><div class="models-workspaces-getsimplelist-page"><p>Returns the list of workspaces in the form of object with properties id, icon, and displayName</p>
+</div><h5 id="methods_getsimplelist_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>attr</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspaces-getsimplelist-page"><p>The attribute to sort by</p>
+</div></td></tr></tbody></table><h5 id="methods_getsimplelist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-workspaces-getsimplelist-page"><p>The sorted list of workspaces</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspacelink">getWorkspaceLink(workspaceId)</h3>
+<div class="getworkspacelink"><div class="models-workspaces-getworkspacelink-page"><p>Returns the REST api link for the workspace given the id</p>
+</div><h5 id="methods_getworkspacelink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspaces-getworkspacelink-page"><p>The ID of the workspace whose link to retrieve</p>
+</div></td></tr></tbody></table><h5 id="methods_getworkspacelink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspaces-getworkspacelink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setworkspaceobj">setWorkspaceObj(workspaceId, obj)</h3>
+<div class="setworkspaceobj"><div class="models-workspaces-setworkspaceobj-page"><p>Attaches the workspace object to the tree</p>
+</div><h5 id="methods_setworkspaceobj_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspaces-setworkspaceobj-page"><p>The ID of the workspace whose obj to set</p>
+</div></td></tr><tr><td>obj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspaces-setworkspaceobj-page"><p>The workspace object</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_iconmapping">iconMapping</h3>
+<div class="iconmapping"><div class="models-workspaces-iconmapping-page"><p>This is the icon mapping from the old endpoint to new font icons</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

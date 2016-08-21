@@ -1,0 +1,37 @@
+<form id="search" role="search" class="form-horizontal">
+	<div layout="row"
+		layout-align="space-between center"
+		class="form-group has-feedback">
+
+		<div flex="5">
+			<span class="zmdi zmdi-search"></span>
+		</div>
+
+		<div flex="5">
+			<md-select
+				aria-label="{{$root.bundle.typeahead.selectWorkspace}}"
+				ng-model="selectedOption"
+				ng-change="onSelectionChange()"
+				ng-disabled="filterDropdownData.itemList === undefined"
+				ng-hide="filterDropdownData.itemList.length === 1">
+				<md-option ng-repeat="option in filterDropdownData.itemList"
+					ng-value="option"
+					class="linkable-workspace-option">
+					{{option.title}}
+				</md-option>
+			</md-select>
+		</div>
+
+		<div flex>
+			<input type="text"
+				class="form-control"
+				placeholder="{{placeholder}}"
+				ng-model="typedVal"
+				ng-disabled="filterDropdownData.itemList === undefined"/>
+		</div>
+
+		<div flex="5">
+			<a class="zmdi zmdi-close" ng-click="removeTypedVal()"></a>
+		</div>
+	</div>
+</form>

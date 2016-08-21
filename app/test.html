@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+ 
+ 
+<div><div id="output"/></div>
+ 
+<script type="text/javascript">
+var invocation = new XMLHttpRequest();
+
+
+function xhr2Handler() {
+  if (invocation.readyState == 4) {
+    var payload = invocation.responseText;
+    output.innerHTML = payload;
+  }
+}
+
+//invocation.open('POST', 'https://developer-dev.api.autodesk.com/comments/v2/resources/urn%3Aadsk.nitrogen%3Afs.file%3A12345');
+invocation.open('POST', 'https://developer-dev.api.autodesk.com/comments/v2/resources/urn:adsk.plm:tenant.workspace.item:STANDARDDEMO/26/6892');
+invocation.setRequestHeader('Content-Type', 'application/json');
+invocation.setRequestHeader('Authorization', 'Bearer bJ7eTbrpN7LhoaH2mU6S8o0yFi9y');
+invocation.onreadystatechange = xhr2Handler;
+invocation.withCredetntials = true;
+invocation.send('{"foo" : "bar"}');
+ 
+</script>
+ 
+</body>
+</html>

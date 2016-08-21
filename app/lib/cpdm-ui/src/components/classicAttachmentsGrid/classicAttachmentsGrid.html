@@ -1,0 +1,53 @@
+<div class="attachment-container">
+	<div ui-grid="gridOptions"
+		ui-grid-tree-view
+		ui-grid-resize-columns
+		ui-grid-move-columns
+		ui-grid-auto-resize
+		ui-grid-selection >
+	</div>
+</div>
+
+<script type="text/ng-template" id="iconTemplate">
+	<div class="ui-grid-cell-contents level-{{row.entity.$$treeLevel}}">
+		<!-- Folder -->
+		<a href="javascript:;"
+			layout="row"
+			layout-align="start center"
+			class="folder-icon-container"
+			ng-if="row.entity.isExpandable"
+			ng-click="grid.appScope.toggleExpansion(row, grid)">
+			<div flex="15">
+				<span class="md folder-size"
+					ng-class="{'md-folder': row.entity.isCollapsed, 'md-folder-open': !row.entity.isCollapsed}">
+				</span>
+			</div>
+			<div flex class="folder-name">{{row.entity.folderName}}</div>
+		</a>
+
+		<!-- Attachment without folder -->
+		<div ng-if="!row.entity.isExpandable"
+			layout="row"
+			layout-align="start center">
+			<div flex="15">
+				<span class="resource-icon default-icon icon-{{row.entity.icon}}-16"></span>
+			</div>
+			<div flex class="resource-name">{{row.entity.resourceName}}</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="userLinkTemplate">
+    <div class="ui-grid-cell-contents">
+    	<a href="javascript:;"
+    		ng-click="grid.appScope.triggerUserProfileFlyout($event, COL_FIELD.userId)">
+    		{{COL_FIELD.displayName}}
+    	</a>
+    </div>
+</script>
+
+<script type="text/ng-template" id="statusTemplate">
+	<div class="ui-grid-cell-contents">
+		{{row.entity.status}}
+	</div>
+</script>

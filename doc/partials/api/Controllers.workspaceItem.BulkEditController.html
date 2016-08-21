@@ -1,0 +1,70 @@
+<h1><code ng:non-bindable="">BulkEditController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-bulkeditcontroller-page"><p>This controller responsible for handling the modal window for bulk edit
+This controller takes the selected items from the affected items view and fetched the state id and thereafter the
+corresponding transitions
+stateLifecycle is an array in the controller that contains the stateObj which inturns has the object contains the state name and the 
+corresponding avilable transitions</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_closebulktransition">closeBulkTransition()</h3>
+<div class="closebulktransition"><div class="controllers-workspaceitem-bulkeditcontroller-closebulktransition-page"><p>Responsible for closing the bulk edit modal overlay</p>
+</div></div>
+</li>
+<li><h3 id="methods_effectivitychanged">effectivityChanged()</h3>
+<div class="effectivitychanged"><div class="controllers-workspaceitem-bulkeditcontroller-effectivitychanged-page"><p>Used for disabling and enabling the date field</p>
+</div></div>
+</li>
+<li><h3 id="methods_getaffecteditemsbystate">getAffectedItemsByState(stateURN)</h3>
+<div class="getaffecteditemsbystate"><div class="controllers-workspaceitem-bulkeditcontroller-getaffecteditemsbystate-page"><p>Get affected items by state urn. This method uses <a href="#itemMap">itemMap</a> to map state urn to affected item</p>
+</div><h5 id="methods_getaffecteditemsbystate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>stateURN</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-bulkeditcontroller-getaffecteditemsbystate-page"><p>the urn of the state.</p>
+</div></td></tr></tbody></table><h5 id="methods_getaffecteditemsbystate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-bulkeditcontroller-getaffecteditemsbystate-page"><p>the list of affected items based on the given state urn.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_updatebulktransition">updateBulkTransition()</h3>
+<div class="updatebulktransition"><div class="controllers-workspaceitem-bulkeditcontroller-updatebulktransition-page"><p>update selected affected items based on the selected lifecycle and effectivity options. It also closes
+the dialog and passes the updated affected items to the parent component.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_invaliddatevalidation">InvalidDateValidation</h3>
+<div class="invaliddatevalidation"><div class="controllers-workspaceitem-bulkeditcontroller-invaliddatevalidation-page"><p>It is responsible for showing the invalid date validation</p>
+</div></div>
+</li>
+<li><h3 id="properties_distinctstatelist">distinctStateList</h3>
+<div class="distinctstatelist"><div class="controllers-workspaceitem-bulkeditcontroller-distinctstatelist-page"><p>It holds the distinct state list</p>
+</div></div>
+</li>
+<li><h3 id="properties_effectivity">effectivity</h3>
+<div class="effectivity"><div class="controllers-workspaceitem-bulkeditcontroller-effectivity-page"><p>an object to hold the data related to effectivity date.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemmap">itemMap</h3>
+<div class="itemmap"><div class="controllers-workspaceitem-bulkeditcontroller-itemmap-page"><p>A map of workspace item keyed by item urn.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itempromiselist">itemPromiseList</h3>
+<div class="itempromiselist"><div class="controllers-workspaceitem-bulkeditcontroller-itempromiselist-page"><p>It holds the list of promises of itemObj</p>
+</div></div>
+</li>
+<li><h3 id="properties_meta">meta</h3>
+<div class="meta"><div class="controllers-workspaceitem-bulkeditcontroller-meta-page"><p>an object to hold metaData the field selector</p>
+</div></div>
+</li>
+<li><h3 id="properties_statelifecycle">stateLifecycle</h3>
+<div class="statelifecycle"><div class="controllers-workspaceitem-bulkeditcontroller-statelifecycle-page"><p>It holds the complete lifecycle stateinformation including the state title and transitions</p>
+</div></div>
+</li>
+<li><h3 id="properties_statelist">stateList</h3>
+<div class="statelist"><div class="controllers-workspaceitem-bulkeditcontroller-statelist-page"><p>It holds the state list</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

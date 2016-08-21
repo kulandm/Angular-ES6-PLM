@@ -1,0 +1,123 @@
+<span class="fieldview-wrapper">
+	<!-- FIELDVIEW WILL BE DEPRECATED.
+	If you are modifying it, please do so in the new FieldSelector component. -->
+
+	<!-- temporary: simple dropdown -->
+	<span ng-if="fieldData.metadata.dataTypeId === -999" ng-class="{'field-editable': isEditable}">
+		{{fieldData.value.options[fieldData.value.selected]}}
+	</span>
+
+	<!-- single-select picklist -->
+	<span ng-if="fieldData.metadata.dataTypeId === 6 || fieldData.metadata.dataTypeId === 20 || fieldData.metadata.dataTypeId === 7 || fieldData.metadata.dataTypeId === 22
+			|| fieldData.metadata.dataTypeId === 23 || fieldData.metadata.dataTypeId === 24 || fieldData.metadata.dataTypeId === 26 || fieldData.metadata.dataTypeId === 28
+			|| fieldData.metadata.dataTypeId === 14">
+		<a class="href-truncation" ng-if="fieldData.value.resourceId" href="javascript:;" ng-click="goToItem(fieldData.value.resourceId);">
+			{{fieldData.value.title || fieldData.value}}
+			<span ng-if="fieldData.value.revision"> {{fieldData.value.revision}}</span>
+			<span ng-if="fieldData.value.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+		</a>
+		<span class="text-truncation" ng-if="!fieldData.value.resourceId">
+			{{fieldData.value.title || fieldData.value}}
+			<span ng-if="fieldData.value.revision"> [{{fieldData.value.revision}}]</span>
+			<span ng-if="fieldData.value.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+		</span>
+	</span>
+
+	<!-- multi-select picklist -->
+	<span ng-if="fieldData.metadata.dataTypeId === 13 || fieldData.metadata.dataTypeId === 27" ng-class="{'field-editable': isEditable}">
+		<span ng-repeat="field in fieldData.value">
+			<div>
+				<a class="href-truncation" ng-if="field.resourceId" href="javascript:;" ng-click="goToItem(field.resourceId);">
+					{{field.title}}
+					<span ng-if="field.revision"> {{field.revision}}</span>
+					<span ng-if="field.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+				</a>
+				<span class="text-truncation" ng-if="!field.resourceId">
+					{{field.title}}
+					<span ng-if="field.revision"> {{field.revision}}</span>
+					<span ng-if="field.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+				</span>
+				<br ng-if="!$last">
+			</div>
+		</span>
+	</span>
+
+	<!-- filtered picklist -->
+	<span ng-if="fieldData.metadata.dataTypeId === 29" ng-class="{'field-editable': isEditable}">
+		<a class="href-truncation" ng-if="fieldData.value.resourceId" href="javascript:;" ng-click="goToItem(fieldData.value.resourceId);">
+			{{fieldData.value.title || fieldData.value}}
+			<span ng-if="fieldData.value.revision"> {{fieldData.value.revision}}</span>
+			<span ng-if="fieldData.value.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+		</a>
+		<span class="text-truncation" ng-if="!fieldData.value.resourceId && fieldData.value.title">
+			{{fieldData.value.title || fieldData.value}}
+		</span>
+		<span class="text-truncation" ng-if="!fieldData.value.resourceId && !fieldData.value.title">
+			{{fieldData.value}}
+		</span>
+	</span>
+
+	<!-- radio picklists/radio linked picklists  -->
+	<span ng-if="fieldData.metadata.dataTypeId === 25 || fieldData.metadata.dataTypeId === 10" ng-class="{'field-editable': isEditable}">
+		<a class="href-truncation" ng-if="fieldData.value.resourceId" href="javascript:;" ng-click="goToItem(fieldData.value.resourceId);">
+			{{fieldData.value.title || fieldData.value}}
+			<span ng-if="fieldData.value.revision"> {{fieldData.value.revision}}</span>
+			<span ng-if="fieldData.value.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+		</a>
+		<span class="text-truncation" ng-if="!fieldData.value.resourceId">
+			{{fieldData.value.title || fieldData.value}}
+			<span ng-if="fieldData.value.revision"> {{fieldData.value.revision}}</span>
+			<span ng-if="fieldData.value.deleted"> [{{bundle.text.archived.uppercase}}]</span>
+		</span>
+	</span>
+
+	<!-- image -->
+	<span ng-if="fieldData.metadata.dataTypeId === 15" ng-class="{'field-editable': isEditable}">
+		<div class="image-field-wrapper">
+			<a ng-if="fieldData.value.listMode" href="javascript:;" ng-click="openImage(fieldData.value.link);" title="{{fieldData.value.link}}">
+				<span class="md md-icon md-image"></span>
+			</a>
+			<a ng-if="!fieldData.value.listMode" href="javascript:;" ng-click="openImage(fieldData.value.link);" title="{{fieldData.value.link}}">
+				<image ng-src="{{fieldData.value.link}}" title="{{fieldData.value.link}}">
+			</a>
+		</div>
+	</span>
+
+	<!-- flash -->
+	<span ng-if="fieldData.metadata.dataTypeId === 21" ng-class="{'field-editable': isEditable}">
+		<a href="{{fieldData.value.link}}"><image ng-src="images/icon_flash.png"></a>
+	</span>
+
+	<!-- boolean (checkbox) -->
+	<span ng-if="fieldData.metadata.dataTypeId === 9" ng-class="{'field-editable': isEditable}">
+		<input type="checkbox" ng-model="fieldData.value" ng-true-value="'true'" ng-false-value="'false'" ng-disabled="true" class="checkbox-view">
+	</span>
+
+	<!-- date -->
+	<span ng-if="(fieldData.metadata.dataTypeId === 3) && (fieldData.value !== '')" ng-class="{'field-editable': isEditable}">{{fieldData.value | date: dateFormat}}</span>
+
+	<!-- url -->
+	<span ng-if="(fieldData.metadata.dataTypeId === 16)"><a ng-href="{{hrefValue}}" target="_blank" class="href-truncation" ng-class="{'field-editable': isEditable}">{{fieldData.value}}</a></span>
+
+	<!-- email -->
+	<span ng-if="(fieldData.metadata.dataTypeId === 18)"><a ng-href="mailto:{{fieldData.value}}" class="href-truncation" ng-class="{'field-editable': isEditable}">{{fieldData.value}}</a></span>
+
+	<!-- Paragraph (has to respect line breaks) -->
+	<span ng-if="(fieldData.metadata.dataTypeId === 8)">
+	<pre ng-class="{'field-editable': isEditable}" class="field-paragraph">{{fieldData.value}}</pre>
+	</span>
+
+	<!-- float -->
+	<span class="field-plainvalue"
+		ng-if="fieldData.metadata.dataTypeId === 2"
+		ng-class="{'field-editable': isEditable}">
+		{{formatToPrecision(fieldData.value, fieldData.metadata.fieldPrecision)}}
+	</span>
+
+	<!-- money -->
+	<span ng-if="(fieldData.metadata.dataTypeId === 31)" class="field-plainvalue" ng-class="{'field-editable': isEditable}">{{formatToMoney(formatToPrecision(fieldData.value, fieldData.fieldMetadata.fieldPrecision, fieldData.fieldMetadata.fieldLength))}}</span>
+
+	<!-- field type, all other types that can be rendered as a simple string -->
+	<span ng-if="isPlainText(fieldData.metadata.dataTypeId)" class="field-plainvalue" ng-class="{'field-editable': isEditable}">{{fieldData.value}}</span>
+	
+</span>

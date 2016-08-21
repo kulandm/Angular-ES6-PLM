@@ -1,0 +1,32 @@
+<div id="fusion-header-wrapper">
+	<div id="fusion-header">
+		<div id="fusion-header-left">
+			<span id="fusion-header-hamburger" class="fusion-header-item-container">
+				<span class="zmdi zmdi-menu zmdi-hc-2x"></span>
+			</span>
+			<div class="fusion-header-separator-wrapper">
+				<div id="fusion-header-hamburger-separator">&nbsp;</div>
+			</div>
+			<div id="fusion-brand-logo">
+				<img src="images/Fusion_1line_white_1line_no_year.svg"></img>
+			</div>
+			<div class="fusion-header-separator-wrapper">
+				<div id="fusion-header-hamburger-separator">&nbsp;</div>
+			</div>
+			<h1 id="fusion-header-hub-name" class="fusion-header-item-container">{{fusionHeaderCtrl.hubName}} - Lifecycle</h1>
+		</div>
+		<div id="fusion-header-right">
+			<div id="fusion-header-search" class="fusion-header-item-container">
+				<search-plm query="{{fusionHeaderCtrl.searchQuery}}"></search-plm>
+			</div>
+			<div id="fusion-header-help" tabindex="-1" class="fusion-header-item-container" ng-click="fusionHeaderCtrl.openHelpFlyout($event)">
+				<div class="fusion-header-icon">
+					<ng-include src="'fusion-header-help-icon-template'"></ng-include>
+				</div>
+			</div>
+			<div id="fusion-header-user" class="fusion-header-item-container">
+				<user-dropdown></user-dropdown>
+			</div>
+		</div>
+	</div>
+</div>

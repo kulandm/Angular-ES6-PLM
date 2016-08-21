@@ -1,0 +1,10 @@
+<div ng-class="{'display-on-hover':$ctrl.addHoverClass, 'checkbox-selected':$ctrl.isSelected}">
+	<label class="grid-select-row">
+		<input type="checkbox" 
+			ng-click="$ctrl.onClick()"
+			ng-checked="$ctrl.isSelected"
+			ng-disabled="$ctrl.isDisabled">
+		</input>
+		<span></span>
+	</label>
+</div>

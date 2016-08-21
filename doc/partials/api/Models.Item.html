@@ -1,0 +1,293 @@
+<h1><code ng:non-bindable="">Item</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-item-page"><p>This class wraps an item payload into an object</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_associateaffecteditem">associateAffectedItem(locationUrl:, itemDescription:)</h3>
+<div class="associateaffecteditem"><div class="models-item-associateaffecteditem-page"><p>Associates an affected item with this item</p>
+</div><h5 id="methods_associateaffecteditem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locationUrl:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associateaffecteditem-page"><p>the url of the new item. Note: This is necessary to link the items.</p>
+</div></td></tr><tr><td>itemDescription:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associateaffecteditem-page"><p>the item description that will be displayed on the save event.</p>
+</div></td></tr></tbody></table><h5 id="methods_associateaffecteditem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-associateaffecteditem-page"><p>A promise of the POST request.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_associatenamedrelationshipitem">associateNamedRelationshipItem(locationUrl, itemDescription, namedRelationshipId)</h3>
+<div class="associatenamedrelationshipitem"><div class="models-item-associatenamedrelationshipitem-page"><p>Associates a named relationship item with this item</p>
+</div><h5 id="methods_associatenamedrelationshipitem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locationUrl</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associatenamedrelationshipitem-page"><p>the url of the new item. Note: This is necessary to link the items.</p>
+</div></td></tr><tr><td>itemDescription</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associatenamedrelationshipitem-page"><p>the item description that will be displayed on the save event.</p>
+</div></td></tr><tr><td>namedRelationshipId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associatenamedrelationshipitem-page"><p>The type of named relationship e.g. &#39;AML&#39;</p>
+</div></td></tr></tbody></table><h5 id="methods_associatenamedrelationshipitem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-associatenamedrelationshipitem-page"><p>A promise of the POST request.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_associateprojectitem">associateProjectItem(locationUrl:, itemDescription:)</h3>
+<div class="associateprojectitem"><div class="models-item-associateprojectitem-page"><p>Associates a project item with this item</p>
+</div><h5 id="methods_associateprojectitem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locationUrl:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associateprojectitem-page"><p>the url of the new item. Note: This is necessary to link the items.</p>
+</div></td></tr><tr><td>itemDescription:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associateprojectitem-page"><p>the item description that will be displayed on the save event.</p>
+</div></td></tr></tbody></table><h5 id="methods_associateprojectitem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-associateprojectitem-page"><p>A promise of the POST request.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_associaterelationshipitem">associateRelationshipItem(locationUrl:, itemDescription:)</h3>
+<div class="associaterelationshipitem"><div class="models-item-associaterelationshipitem-page"><p>Associates a relationship item with this item</p>
+</div><h5 id="methods_associaterelationshipitem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locationUrl:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associaterelationshipitem-page"><p>the url of the new item. Note: This is necessary to link the items.</p>
+</div></td></tr><tr><td>itemDescription:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-associaterelationshipitem-page"><p>the item description that will be displayed on the save event.</p>
+</div></td></tr></tbody></table><h5 id="methods_associaterelationshipitem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-associaterelationshipitem-page"><p>A promise of the POST request.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_createassociationlink">createAssociationLink(workspaceId, itemId)</h3>
+<div class="createassociationlink"><div class="models-item-createassociationlink-page"><p>Create link that can be used to associated affected item</p>
+</div><h5 id="methods_createassociationlink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-createassociationlink-page"><p>workspace id</p>
+</div></td></tr><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-createassociationlink-page"><p>id of the item to be associated.</p>
+</div></td></tr></tbody></table><h5 id="methods_createassociationlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-createassociationlink-page"><p>association url</p>
+<p>TODO not really use this is the right place for this link. Association link will be used as a &#39;content-location&#39; header
+to add association between the affected item and the workspace item.
+TODO bit confused about this affected item thing, as logically affected item and linkable item both are just workspace items.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_fetch">fetch(link, workspaceObj, isEdit)</h3>
+<div class="fetch"><div class="models-item-fetch-page"><p>Make a call to fetch raw data</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-fetch-page"><p>The URL to use for fetching the data</p>
+</div></td></tr><tr><td>workspaceObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-fetch-page"><p>The workspace object</p>
+</div></td></tr><tr><td>isEdit</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-fetch-page"><p>The flag for edit mode</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-fetch-page"><p>An object representation of the formatted data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getactionnotificationslink">getActionNotificationsLink()</h3>
+<div class="getactionnotificationslink"><div class="models-item-getactionnotificationslink-page"><p>Returns the REST api link for the actionnotifications for item</p>
+</div><h5 id="methods_getactionnotificationslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getactionnotificationslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getaffecteditemlinkableitemslink">getAffectedItemLinkableItemsLink()</h3>
+<div class="getaffecteditemlinkableitemslink"><div class="models-item-getaffecteditemlinkableitemslink-page"><p>Returns the REST api link for the linkable items for an affected item</p>
+</div><h5 id="methods_getaffecteditemlinkableitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getaffecteditemlinkableitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getaffecteditemtransitionslink">getAffectedItemTransitionsLink()</h3>
+<div class="getaffecteditemtransitionslink"><div class="models-item-getaffecteditemtransitionslink-page"><p>Returns the REST api link for the affected items for item</p>
+</div><h5 id="methods_getaffecteditemtransitionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getaffecteditemtransitionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getaffecteditemsmetalink">getAffectedItemsMetaLink()</h3>
+<div class="getaffecteditemsmetalink"><div class="models-item-getaffecteditemsmetalink-page"><p>Returns the REST api link for the gridmeta for item</p>
+</div><h5 id="methods_getaffecteditemsmetalink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getaffecteditemsmetalink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomitemlinkableitemslink">getBomItemLinkableItemsLink()</h3>
+<div class="getbomitemlinkableitemslink"><div class="models-item-getbomitemlinkableitemslink-page"><p>Returns the REST api link for the linkable items for a bom item</p>
+</div><h5 id="methods_getbomitemlinkableitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getbomitemlinkableitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getchangeloglink">getChangeLogLink()</h3>
+<div class="getchangeloglink"><div class="models-item-getchangeloglink-page"><p>Returns the REST api link for the changelog for item</p>
+</div><h5 id="methods_getchangeloglink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getchangeloglink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfulllist">getFullList()</h3>
+<div class="getfulllist"><div class="models-item-getfulllist-page"><p>Returns the full list of data</p>
+</div><h5 id="methods_getfulllist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-item-getfulllist-page"><p>The full list of data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getgridmetalink">getGridMetaLink()</h3>
+<div class="getgridmetalink"><div class="models-item-getgridmetalink-page"><p>Returns the REST api link for the gridmeta for item</p>
+</div><h5 id="methods_getgridmetalink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getgridmetalink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-item-getid-page"><p>Returns dms id of the item</p>
+</div><h5 id="methods_getid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-item-getid-page"><p>The dms id of the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemdescriptor">getItemDescriptor()</h3>
+<div class="getitemdescriptor"><div class="models-item-getitemdescriptor-page"><p>Returns the descriptor of the item</p>
+</div><h5 id="methods_getitemdescriptor_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getitemdescriptor-page"><p>The descriptor of the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemdetailsoptionsdata">getItemDetailsOptionsData(fieldType)</h3>
+<div class="getitemdetailsoptionsdata"><div class="models-item-getitemdetailsoptionsdata-page"><p>Returns the options values for field</p>
+</div><h5 id="methods_getitemdetailsoptionsdata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fieldType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getitemdetailsoptionsdata-page"><p>The field type that needs info to be retrieved from</p>
+</div></td></tr></tbody></table><h5 id="methods_getitemdetailsoptionsdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-getitemdetailsoptionsdata-page"><p>A promise, and when resolved, the GET response</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemtitle">getItemTitle()</h3>
+<div class="getitemtitle"><div class="models-item-getitemtitle-page"><p>Returns the descriptor of the item</p>
+</div><h5 id="methods_getitemtitle_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getitemtitle-page"><p>The descriptor of the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemversion">getItemVersion()</h3>
+<div class="getitemversion"><div class="models-item-getitemversion-page"><p>Returns the version of the item</p>
+</div><h5 id="methods_getitemversion_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getitemversion-page"><p>The version of the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlifecyclestate">getLifecycleState()</h3>
+<div class="getlifecyclestate"><div class="models-item-getlifecyclestate-page"><p>Returns the lifecycle state</p>
+</div><h5 id="methods_getlifecyclestate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-getlifecyclestate-page"><p>The lifecycle object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getlinkeditemslink">getLinkedItemsLink()</h3>
+<div class="getlinkeditemslink"><div class="models-item-getlinkeditemslink-page"><p>Returns the REST api link for the affected items for item</p>
+</div><h5 id="methods_getlinkeditemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getlinkeditemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getmilestoneslink">getMilestonesLink()</h3>
+<div class="getmilestoneslink"><div class="models-item-getmilestoneslink-page"><p>Returns the REST api link for the milestones for the item</p>
+</div><h5 id="methods_getmilestoneslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getmilestoneslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnamedrelationshipitemslink">getNamedRelationshipItemsLink(namedRelationshipId)</h3>
+<div class="getnamedrelationshipitemslink"><div class="models-item-getnamedrelationshipitemslink-page"><p>Returns the REST api link for the linkable items for a named relationship item</p>
+</div><h5 id="methods_getnamedrelationshipitemslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>namedRelationshipId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getnamedrelationshipitemslink-page"><p>The id for the named relationship</p>
+</div></td></tr></tbody></table><h5 id="methods_getnamedrelationshipitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getnamedrelationshipitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnamedrelationshipslink">getNamedRelationshipsLink(namedRelationshipsKey:)</h3>
+<div class="getnamedrelationshipslink"><div class="models-item-getnamedrelationshipslink-page"><p>Returns the REST api link for the named relationships for item</p>
+</div><h5 id="methods_getnamedrelationshipslink_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>namedRelationshipsKey:</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getnamedrelationshipslink-page"><p>the key to differentiate the different namedRelationships</p>
+</div></td></tr></tbody></table><h5 id="methods_getnamedrelationshipslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getnamedrelationshipslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getownershiplink">getOwnershipLink()</h3>
+<div class="getownershiplink"><div class="models-item-getownershiplink-page"><p>Returns the REST api link for the ownership info for the item</p>
+</div><h5 id="methods_getownershiplink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getownershiplink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getprojectitemlinkableitemslink">getProjectItemLinkableItemsLink()</h3>
+<div class="getprojectitemlinkableitemslink"><div class="models-item-getprojectitemlinkableitemslink-page"><p>Returns the REST api link for the linkable items for a project item</p>
+</div><h5 id="methods_getprojectitemlinkableitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getprojectitemlinkableitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getprojectitemslink">getProjectItemsLink()</h3>
+<div class="getprojectitemslink"><div class="models-item-getprojectitemslink-page"><p>Returns the REST api link for the project management tasks for item</p>
+</div><h5 id="methods_getprojectitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getprojectitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelatedbomitemslink">getRelatedBomItemsLink()</h3>
+<div class="getrelatedbomitemslink"><div class="models-item-getrelatedbomitemslink-page"><p>Returns the REST api link for the related BOM items for item</p>
+</div><h5 id="methods_getrelatedbomitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getrelatedbomitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelateditemslink">getRelatedItemsLink()</h3>
+<div class="getrelateditemslink"><div class="models-item-getrelateditemslink-page"><p>Returns the REST api link for the related items for item</p>
+</div><h5 id="methods_getrelateditemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getrelateditemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrelationshipitemlinkableitemslink">getRelationshipItemLinkableItemsLink()</h3>
+<div class="getrelationshipitemlinkableitemslink"><div class="models-item-getrelationshipitemlinkableitemslink-page"><p>Returns the REST api link for the linkable items for a relationship item</p>
+</div><h5 id="methods_getrelationshipitemlinkableitemslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getrelationshipitemlinkableitemslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrevisionslink">getRevisionsLink()</h3>
+<div class="getrevisionslink"><div class="models-item-getrevisionslink-page"><p>Returns the REST api link for the transitions for item</p>
+</div><h5 id="methods_getrevisionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getrevisionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrootid">getRootId()</h3>
+<div class="getrootid"><div class="models-item-getrootid-page"><p>Returns root id of the item</p>
+</div><h5 id="methods_getrootid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-item-getrootid-page"><p>The root id of the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsections">getSections()</h3>
+<div class="getsections"><div class="models-item-getsections-page"><p>Returns sections of this item</p>
+</div><h5 id="methods_getsections_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-item-getsections-page"><p>The sections of this item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getsourcingslink">getSourcingsLink()</h3>
+<div class="getsourcingslink"><div class="models-item-getsourcingslink-page"><p>Returns the REST api link for retrieving the sourcings of an item</p>
+</div><h5 id="methods_getsourcingslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getsourcingslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettransitionslink">getTransitionsLink()</h3>
+<div class="gettransitionslink"><div class="models-item-gettransitionslink-page"><p>Returns the REST api link for the transitions for item</p>
+</div><h5 id="methods_gettransitionslink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-gettransitionslink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_geturn">getUrn()</h3>
+<div class="geturn"><div class="models-item-geturn-page"><p>Returns the &#39;urn&#39; attribute</p>
+</div><h5 id="methods_geturn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-geturn-page"><p>The urn associated to the item</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getwhereusedlink">getWhereUsedLink()</h3>
+<div class="getwhereusedlink"><div class="models-item-getwhereusedlink-page"><p>Returns the REST api link for the where-used for item</p>
+</div><h5 id="methods_getwhereusedlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getwhereusedlink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkflowlink">getWorkflowLink()</h3>
+<div class="getworkflowlink"><div class="models-item-getworkflowlink-page"><p>Returns the REST api link for the workflow for item</p>
+</div><h5 id="methods_getworkflowlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-getworkflowlink-page"><p>The string representation of the REST link</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspaceobj">getWorkspaceObj()</h3>
+<div class="getworkspaceobj"><div class="models-item-getworkspaceobj-page"><p>Returns the workspaceObj from this item</p>
+</div><h5 id="methods_getworkspaceobj_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-getworkspaceobj-page"><p>workspaceObj The workspace object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_islocked">isLocked()</h3>
+<div class="islocked"><div class="models-item-islocked-page"><p>Returns if the item is locked by workflow state</p>
+</div><h5 id="methods_islocked_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-islocked-page"><p>if the item is locked</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isreleased">isReleased()</h3>
+<div class="isreleased"><div class="models-item-isreleased-page"><p>Returns if the item is the a released version</p>
+</div><h5 id="methods_isreleased_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-isreleased-page"><p>if the item is released</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isworking">isWorking()</h3>
+<div class="isworking"><div class="models-item-isworking-page"><p>Returns if the item is the working version</p>
+</div><h5 id="methods_isworking_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-isworking-page"><p>if the item is working</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_performtransition">performTransition(transitionObj, comments, selectedUserImpersonation)</h3>
+<div class="performtransition"><div class="models-item-performtransition-page"><p>Performs the transition given transition ID</p>
+</div><h5 id="methods_performtransition_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>transitionObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-performtransition-page"><p>The object representing the transition to be performed.</p>
+</div></td></tr><tr><td>comments</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-performtransition-page"><p>Comments of the transition step. This can be optional depending upon the configuration.</p>
+</div></td></tr><tr><td>selectedUserImpersonation</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-performtransition-page"><p>The object represent the user with which the transition is performed. This is an optional parameter.</p>
+</div></td></tr></tbody></table><h5 id="methods_performtransition_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-performtransition-page"><p>A promise of the POST request</p>
+<p>TODO support for password</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_save">save(modifiedData)</h3>
+<div class="save"><div class="models-item-save-page"><p>Saves the data containing the workspace item details information</p>
+</div><h5 id="methods_save_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>modifiedData</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-save-page"><p>The data that needs to be PUT</p>
+</div></td></tr></tbody></table><h5 id="methods_save_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-save-page"><p>A promise of the PUT request</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_savenew">saveNew(workspaceId, newItemData)</h3>
+<div class="savenew"><div class="models-item-savenew-page"><p>Creates a new workspace item</p>
+</div><h5 id="methods_savenew_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-item-savenew-page"><p>The workspace id for which a new item will be created.</p>
+</div></td></tr><tr><td>newItemData</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-item-savenew-page"><p>An array of sections of the workspace.</p>
+</div></td></tr></tbody></table><h5 id="methods_savenew_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-savenew-page"><p>A promise holding the POST request</p>
+<p>TODO: does it make sense to move this to workspace model ?</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setactionnotifications">setActionNotifications(obj)</h3>
+<div class="setactionnotifications"><div class="models-item-setactionnotifications-page"><p>Attaches the actionnotifications object to the tree</p>
+</div><h5 id="methods_setactionnotifications_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>obj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-setactionnotifications-page"><p>The actionnotifications object</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_setarchive">setArchive(flag)</h3>
+<div class="setarchive"><div class="models-item-setarchive-page"><p>Archirve/Unarchive item to the list</p>
+</div><h5 id="methods_setarchive_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>flag</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-setarchive-page"><p>If the item should be added (true) or removed (false)</p>
+</div></td></tr></tbody></table><h5 id="methods_setarchive_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-setarchive-page"><p>A promise, and when resolved, the PUT/DELETE response</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setbookmark">setBookmark(flag)</h3>
+<div class="setbookmark"><div class="models-item-setbookmark-page"><p>Adds/remove a bookmarked item to the list</p>
+</div><h5 id="methods_setbookmark_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>flag</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-item-setbookmark-page"><p>If the item should be added (true) or removed (false)</p>
+</div></td></tr></tbody></table><h5 id="methods_setbookmark_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-setbookmark-page"><p>A promise, and when resolved, the PUT/DELETE response</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setq">setQ(q)</h3>
+<div class="setq"><div class="models-item-setq-page"><p>Sets q object</p>
+</div><h5 id="methods_setq_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>q</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-setq-page"><p>The q object</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_setworkspaceobj">setWorkspaceObj(workspaceObj)</h3>
+<div class="setworkspaceobj"><div class="models-item-setworkspaceobj-page"><p>Sets workspace object</p>
+</div><h5 id="methods_setworkspaceobj_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspaceObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-item-setworkspaceobj-page"><p>The workspace object</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../components/permissions/module.js"],"names":[],"mappings":";;AAAA,OAAO,CAAC,MAAM,CAAC,oBAAoB,EAAE,EAAE,CAAC,CAAC","file":"module.js","sourcesContent":["angular.module('plm360.permissions', []);\n"]}

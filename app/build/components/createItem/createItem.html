@@ -1,0 +1,142 @@
+<div class="create-item">
+	<!-- Select Workspace Dropdown -->
+	<section class="select-workspace"
+		ng-if="!selectedWorkspace"
+		layout="row"
+		layout-align="start center">
+		<div><span class="md md-lg md-add"></span></div>
+		<div class="select">
+			<md-select
+				ng-change="createItemCtrl.onWorkspaceChange(selectedWorkspace)"
+				ng-model="selectedWorkspace"
+				placeholder="{{$root.bundle.create.selectWorkspace}}">
+				<md-option
+					class="select-option"
+					ng-repeat="workspace in createItemCtrl.workspacesList"
+					ng-value="workspace">
+					{{workspace.getDisplayName()}}
+				</md-option>
+			</md-select>
+		</div>
+	</section>
+
+	<md-divider ng-show="!createItemCtrl.fullCreate"></md-divider>
+
+	<!-- Did You Know -->
+	<section class="workspace-meta"
+		ng-if="!selectedWorkspace">
+		<div class="workspace-did-you-know"
+			layout="row"
+			layout-align="start center">
+			<div><span class="md md-info"></span></div>
+			<div class="text">
+				<strong>{{$root.bundle.create.didYouKnow}}&nbsp;</strong>
+				{{$root.bundle.create.workspacePersistence}}
+			</div>
+		</div>
+	</section>
+
+	<!-- Fields -->
+	<section class="create-item-form" ng-if="selectedWorkspace"	ng-form="createItemForm">
+
+		<!-- TODO Handle the case where there are no required fields -->
+		<div class="no-fields md md-error" ng-if="!createItemCtrl.getFields().length && !createItemCtrl.loading">
+			<span ng-if="createItemCtrl.contextualCreate">
+				{{$root.bundle.create.noRequired}}
+			</span>
+			<span ng-if="createItemCtrl.quickCreate">
+				{{$root.bundle.create.noPreviewAndRequired}}
+			</span>
+		</div>
+		
+		<!-- Collapsible sections displaying fields - in contextual mode, only display sections contain at least 1 (one) field -->
+		<section class="section-item"	ng-repeat="section in formFields" ng-if="createItemCtrl.parseSectionVisibility(formFields, section)">
+
+			<!-- TODO: take into account the proper collapsed state -->
+			<section-wrapper collapsible collapsed="false" header-title="{{section.displayName}} ({{createItemCtrl.sectionIndex}} {{$root.bundle.text.of}} {{formFields.length}})" classification-part-urn="{{createItemCtrl.getPartUrn(section)}}" classification-is-edition="true">
+
+				<!-- Section content - fields + matrices -->
+				<div class="section-content form-group" ng-repeat="field in section.fields"	ng-show="isContentShown" ng-class="{'full-create-section': createItemCtrl.fullCreate}">
+
+					<!-- Matrix -->
+					<div class="full-create-item-matrix-wrapper" ng-if="field.type === 'MATRIX'">
+						<table class="full-create-item-matrix">
+							<thead>
+								<tr>
+									<th></th>
+									<!-- Loops through the columns in the matrix -->
+									<th ng-repeat="(columnIndex, column) in field.definition.columnNames track by $index"><span title="{{column}}">{{column}}</span></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="(rowIndex, row) in field.definition.rowNames track by $index">
+									<!-- Row label -->
+									<td><span title="{{row}}">{{row}}<span></td>
+									<!-- Field for the row -->
+									<td ng-repeat="(columnIndex, column) in field.definition.columnNames track by $index">
+										<div class="full-create-item-field-wrapper">
+											<!-- NOTE TO BE REMOVED: I'M JUST REUSING CODE FROM VIEWDETAILS.HTML, HAVEN'T CHECKED HOW RELIABLE THE VISIBILITY CHECKS ARE.
+											THAT NEEDS TO BE CHECKED IN PLM-13576 -->
+											<span ng-if="(field.definition.fields[rowIndex][columnIndex] !== null) && ((field.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === 'ALWAYS') || field.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === undefined || (!viewDetailsCtrl.isViewState() && field.definition.fields[rowIndex][columnIndex].fieldMetadata.visibility === 'EDIT_ONLY'))">
+												<field-selector
+													field-id="{{field.definition.fields[rowIndex][columnIndex].urn}}"
+													field-data="field.definition.fields[rowIndex][columnIndex]"
+													type-id="field.definition.fields[rowIndex][columnIndex].dataTypeId"
+													field-meta="field.definition.fields[rowIndex][columnIndex].fieldMetadata"
+													edit-view="{{createItemCtrl.isSectionEditable(section)}}"
+													waiting="createItemCtrl.isSavingData">
+												</field-selector>
+											</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<!-- Field (wrapper) -->
+					<div class="create-item-field"
+						ng-class="{'invalid': field.$invalid === true, 'full-create-item': createItemCtrl.fullCreate}"
+						ng-if="field.type !== 'MATRIX'"
+						layout="column"
+						layout-align="center start">
+						<!-- Field label -->
+						<div class="create-item-field full-create-item-label" ng-class="{'image-field': (field.dataTypeId === (createItemCtrl.FieldTypes.IMAGE.toString()))}" layout="row" layout-align="space-between center">
+							<label ng-class="{'label-required': field.fieldMetadata.validationRules && (field.fieldMetadata.validationRules.required || field.fieldMetadata.validationRules.dropDownSelection)}">{{field.name}}</label>
+							<span ng-if="field.dataTypeId === (createItemCtrl.FieldTypes.IMAGE.toString())" class="not-supported">Not Supported</span>
+							<!-- Note: The above string is not localized as it may be removed later-->
+							
+							<!-- The tooltip containing the field description will be hidden in create pages other than contextual (for now) -->
+							<span class="item-tooltip-wrapper full-create-item-tooltip" ng-hide="!createItemCtrl.contextualCreate">
+								<a href="javascript:;"
+									class="item-tooltip-icon"
+									ng-if="field.description"
+									ng-click="createItemCtrl.tooltipFlyout($event, field.name, field.description)">
+									<span class="md md-help"></span>
+								</a>
+							</span>
+						</div>
+
+						<!-- Actual, proper field -->
+						<div class="create-item-field full-create-item-field" ng-class="{'read-only': (!createItemCtrl.isSectionEditable(section) || field.fieldMetadata.readOnly)}">
+							<field-selector
+								field-id="{{field.urn}}"
+								field-data="field"
+								type-id="field.dataTypeId"
+								field-meta="field.fieldMetadata"
+								edit-view="{{createItemCtrl.isSectionEditable(section)}}"
+								waiting="createItemCtrl.isSavingData">
+							</field-selector>
+							
+							<!-- Error message for validation failure -->
+							<div class="error-message" title="{{createItemForm[field.urn].$error.serverError}}">
+								{{createItemForm[field.urn].$error.serverError}}
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section-wrapper>
+		</section>
+	</section>
+</div>

@@ -1,0 +1,999 @@
+/* Silhouette
+-------------------------------------------------- */
+
+// Silhouette Font
+//
+// The font **Silhouette**.
+//
+// Markup:
+// <div style="font-family:Silhouette; font-size:16px;">Silhouette</div>
+//
+// %silhouetteFontDefinition - Extension to use for this font
+//
+// Styleguide 2.4.1
+@font-face {
+	font: {
+		family: 'Silhouette';
+		weight: normal;
+		style: normal;
+	}
+	src: url('../fonts/Silhouette.eot');
+	src: url('../fonts/Silhouette.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Silhouette.woff') format('woff'),
+		 url('../fonts/Silhouette.ttf') format('truetype'),
+		 url('../fonts/Silhouette.svg#Silhouette') format('svg');
+}
+
+%silhouetteFontDefinition {
+	font: {
+		family: 'Silhouette';
+		weight: normal;
+		style: normal;
+		variant: normal;
+	}
+	text-transform: none;
+	line-height: 1;
+	speak: none;
+
+	// Better font rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Extend font definition to classes containing "icon-" but omitting "icon-a360", "icon-plm" & "glyphicon-"
+[class*="icon-"]:not([class*="icon-a360"]):not([class*="icon-plm"]):not([class*="glyphicon-"]) {
+	@extend %silhouetteFontDefinition;
+}
+
+// Silhouette Icons
+//
+// Various icons in **Silhouette**.<br>
+// *Bundled with Bootstrap.*
+//
+// Markup:
+// <div style="font-size:24px; text-align:center; color:#456789;">
+//    <span class="icon-SmallThumbnails"></span>
+//    <span class="icon-ResizeThumbnails"></span>
+//    <span class="icon-TilesView"></span>
+//    <span class="icon-ThumbnailView"></span>
+//    <span class="icon-Tabular"></span>
+//    <span class="icon-ZoomOut"></span>
+//    <span class="icon-History"></span>
+//    <span class="icon-ZoomIn"></span>
+//    <span class="icon-BottomArrow"></span>
+//    <span class="icon-LeftArrow"></span>
+//    <span class="icon-ListView"></span>
+//    <span class="icon-MainMenu"></span>
+//    <span class="icon-ZoomPreview"></span>
+//    <span class="icon-Minimize2"></span>
+//    <span class="icon-RightArrow"></span>
+//    <span class="icon-Maximize2"></span>
+//    <span class="icon-SortArrow"></span>
+//    <span class="icon-TopArrow"></span>
+//    <span class="icon-Delete"></span>
+//    <span class="icon-Checkmark"></span>
+//    <span class="icon-SuspensionPoints"></span>
+//    <span class="icon-Alternatives"></span>
+//    <span class="icon-Story"></span>
+//    <span class="icon-Link"></span>
+//    <span class="icon-Equipment"></span>
+//    <span class="icon-ThumbnailMatrix"></span>
+//    <span class="icon-GoToWorksapce"></span>
+//    <span class="icon-Cancel"></span>
+//    <span class="icon-TimeActivity"></span>
+//    <span class="icon-OK"></span>
+//    <span class="icon-Calendar"></span>
+//    <span class="icon-PinLocation"></span>
+//    <span class="icon-FlipCamera"></span>
+//    <span class="icon-Flash"></span>
+//    <span class="icon-Library"></span>
+//    <span class="icon-HardDrive"></span>
+//    <span class="icon-DragDrop"></span>
+//    <span class="icon-VideoCamera"></span>
+//    <span class="icon-MoveToFolder"></span>
+//    <span class="icon-ArrowCursor"></span>
+//    <span class="icon-Undo"></span>
+//    <span class="icon-Redo"></span>
+//    <span class="icon-Connect"></span>
+//    <span class="icon-UCSNorthwest"></span>
+//    <span class="icon-UCSNortheast"></span>
+//    <span class="icon-Transfer"></span>
+//    <span class="icon-UCSSouthwest"></span>
+//    <span class="icon-UCSSoutheast"></span>
+//    <span class="icon-UCSBottom"></span>
+//    <span class="icon-UCSTop"></span>
+//    <span class="icon-CubeSectioned"></span>
+//    <span class="icon-Cubes"></span>
+//    <span class="icon-Shots"></span>
+//    <span class="icon-Preview"></span>
+//    <span class="icon-Collection"></span>
+//    <span class="icon-Slides"></span>
+//    <span class="icon-MyAccount"></span>
+//    <span class="icon-Animation"></span>
+//    <span class="icon-VisualStyles"></span>
+//    <span class="icon-Lighting"></span>
+//    <span class="icon-Behaviors"></span>
+//    <span class="icon-Look"></span>
+//    <span class="icon-Gravity"></span>
+//    <span class="icon-Environment"></span>
+//    <span class="icon-View2"></span>
+//    <span class="icon-Unlocked"></span>
+//    <span class="icon-ExportVersion"></span>
+//    <span class="icon-OpenFile"></span>
+//    <span class="icon-Locked"></span>
+//    <span class="icon-Folder"></span>
+//    <span class="icon-View1"></span>
+//    <span class="icon-Save"></span>
+//    <span class="icon-Print"></span>
+//    <span class="icon-Trash"></span>
+//    <span class="icon-SignOutPower"></span>
+//    <span class="icon-Intersect"></span>
+//    <span class="icon-Web"></span>
+//    <span class="icon-Mail"></span>
+//    <span class="icon-Database"></span>
+//    <span class="icon-Sync"></span>
+//    <span class="icon-Heirarchy2"></span>
+//    <span class="icon-Heirarchy1"></span>
+//    <span class="icon-Share"></span>
+//    <span class="icon-Question"></span>
+//    <span class="icon-Info"></span>
+//    <span class="icon-Pin2"></span>
+//    <span class="icon-Layers"></span>
+//    <span class="icon-Group"></span>
+//    <span class="icon-TextureMap"></span>
+//    <span class="icon-Material"></span>
+//    <span class="icon-Image"></span>
+//    <span class="icon-Snap"></span>
+//    <span class="icon-Properties"></span>
+//    <span class="icon-Publish"></span>
+//    <span class="icon-Copy"></span>
+//    <span class="icon-AddContent"></span>
+//    <span class="icon-Ruler"></span>
+//    <span class="icon-Paste"></span>
+//    <span class="icon-Checklist"></span>
+//    <span class="icon-Tools"></span>
+//    <span class="icon-Edit"></span>
+//    <span class="icon-Portfolio"></span>
+//    <span class="icon-Microphone"></span>
+//    <span class="icon-Tasks"></span>
+//    <span class="icon-Slideshow"></span>
+//    <span class="icon-Sheets"></span>
+//    <span class="icon-Freeze"></span>
+//    <span class="icon-SettingsCircle"></span>
+//    <span class="icon-Settings"></span>
+//    <span class="icon-Warning"></span>
+//    <span class="icon-Seperate"></span>
+//    <span class="icon-Merge"></span>
+//    <span class="icon-Tag"></span>
+//    <span class="icon-Filter"></span>
+//    <span class="icon-Bookmark"></span>
+//    <span class="icon-Off"></span>
+//    <span class="icon-Attach"></span>
+//    <span class="icon-Alert"></span>
+//    <span class="icon-Mobile"></span>
+//    <span class="icon-Flag"></span>
+//    <span class="icon-Favorite"></span>
+//    <span class="icon-Download"></span>
+//    <span class="icon-CloudUnconnected"></span>
+//    <span class="icon-CloudConnected"></span>
+//    <span class="icon-VideoChat"></span>
+//    <span class="icon-Upload"></span>
+//    <span class="icon-Home"></span>
+//    <span class="icon-Right"></span>
+//    <span class="icon-Left"></span>
+//    <span class="icon-Down"></span>
+//    <span class="icon-Up"></span>
+//    <span class="icon-Rotate"></span>
+//    <span class="icon-MoveDiagonal1"></span>
+//    <span class="icon-UCS"></span>
+//    <span class="icon-MoveDiagonal2"></span>
+//    <span class="icon-Move"></span>
+//    <span class="icon-MoveUpDown"></span>
+//    <span class="icon-Minus"></span>
+//    <span class="icon-Plus"></span>
+//    <span class="icon-Discussion1"></span>
+//    <span class="icon-Discusion2"></span>
+//    <span class="icon-NewConversation"></span>
+//    <span class="icon-MovieThumbnail"></span>
+//    <span class="icon-Camera"></span>
+//    <span class="icon-Revert"></span>
+//    <span class="icon-AddLink"></span>
+//    <span class="icon-AddImage"></span>
+//    <span class="icon-Turntable"></span>
+//    <span class="icon-Minimize"></span>
+//    <span class="icon-Follow"></span>
+//    <span class="icon-Settings2"></span>
+//    <span class="icon-Scale"></span>
+//    <span class="icon-Maximize"></span>
+//    <span class="icon-Settings1"></span>
+//    <span class="icon-Pin1"></span>
+//    <span class="icon-Cube"></span>
+//    <span class="icon-Reports"></span>
+// </div>
+//
+// .icon-SmallThumbnails - Thumbnail icon (grid of nine squares)
+// .icon-ResizeThumbnails - Resize thumbnail icon
+// .icon-TilesView - Tiles icon
+// .icon-ThumbnailView - Thumbnail icon (grid of four squares)
+// .icon-Tabular - Table icon
+// .icon-ZoomOut - Zoom out icon
+// .icon-History - Table history icon
+// .icon-ZoomIn - Zoom in icon
+// .icon-BottomArrow - Caret pointing down icon
+// .icon-LeftArrow - Caret pointing left icon
+// .icon-ListView - Bulleted list icon
+// .icon-MainMenu - Menu list icon
+// .icon-ZoomPreview - Zoom icon
+// .icon-Minimize2 - Minimize icon
+// .icon-RightArrow - Caret pointing right icon
+// .icon-Maximize2 - Maximize icon
+// .icon-SortArrow - Sort ascending/descending icon
+// .icon-TopArrow - Caret icon
+// .icon-Delete - Close icon
+// .icon-Checkmark - Tick icon
+// .icon-SuspensionPoints - Ellipsis icon
+// .icon-Alternatives - Alternatives icon
+// .icon-Story - Storybook icon
+// .icon-Link - Link icon
+// .icon-Equipment - Construction equipment icon
+// .icon-ThumbnailMatrix - Matrix icon
+// .icon-GoToWorksapce - Go to icon
+// .icon-Cancel - Cancel icon
+// .icon-TimeActivity - Clock outline icon
+// .icon-OK - OK icon
+// .icon-Calendar - Calendar icon
+// .icon-PinLocation - Location icon
+// .icon-FlipCamera - Rotate camera icon
+// .icon-Flash - Lightning icon
+// .icon-Library - Books icon
+// .icon-HardDrive - Hard drive icon
+// .icon-DragDrop - Drag and drop icon
+// .icon-VideoCamera - Video camera icon
+// .icon-MoveToFolder - Move to arrow icon
+// .icon-ArrowCursor - Arrow cursor icon
+// .icon-Undo - Undo icon
+// .icon-Redo - Redo icon
+// .icon-Connect - Connect arrows icon
+// .icon-UCSNorthwest - Cube north-west icon
+// .icon-UCSNortheast - Cube north-east icon
+// .icon-Transfer - Transfer arrows icon
+// .icon-UCSSouthwest - Cube south-west icon
+// .icon-UCSSoutheast - Cube south-east icon
+// .icon-UCSBottom - Cube bottom icon
+// .icon-UCSTop - Cube top icon
+// .icon-CubeSectioned - Rubix's cube icon
+// .icon-Cubes - Three cubes icon
+// .icon-Shots - Captured icon
+// .icon-Preview - Preview icon
+// .icon-Collection - Collection icon
+// .icon-Slides - Slides icon
+// .icon-MyAccount - Account avatar icon
+// .icon-Animation - Film strip icon
+// .icon-VisualStyles - Visual styles icon
+// .icon-Lighting - Lighting icon
+// .icon-Behaviors - Rotate cube icon
+// .icon-Look - Two semi-circles icon
+// .icon-Gravity - Gravity icon
+// .icon-Environment - Dome icon
+// .icon-View2 - Eye outline icon
+// .icon-Unlocked - Unlocked icon
+// .icon-ExportVersion - Export icon
+// .icon-OpenFile - Open folder icon
+// .icon-Locked - Lock icon
+// .icon-Folder - Folder icon
+// .icon-View1 - Eye icon
+// .icon-Save - Save icon
+// .icon-Print - Print icon
+// .icon-Trash - Trashcan icon
+// .icon-SignOutPower - Logout icon
+// .icon-Intersect - Intersect icon
+// .icon-Web - Internet icon
+// .icon-Mail - Mail icon
+// .icon-Database - Database icon
+// .icon-Sync - Sync icon
+// .icon-Heirarchy2 - Hierarchy cube icon
+// .icon-Heirarchy1 - Hierarchy square icon
+// .icon-Share - Share icon
+// .icon-Question - Help icon (question mark)
+// .icon-Info - Information icon
+// .icon-Pin2 - Pin icon
+// .icon-Layers - Layers icon
+// .icon-Group - Group icon (triangle)
+// .icon-TextureMap - Texture map icon
+// .icon-Material - Material icon
+// .icon-Image - Image icon
+// .icon-Snap - Snap icon
+// .icon-Properties - Properties icon
+// .icon-Publish - Publish icon
+// .icon-Copy - Copy icon
+// .icon-AddContent - Add content icon
+// .icon-Ruler - Ruler icon
+// .icon-Paste - Paste icon
+// .icon-Checklist - Checklist icon
+// .icon-Tools - Tools icon
+// .icon-Edit - Edit icon
+// .icon-Portfolio - Briefcase icon
+// .icon-Microphone - Microphone icon
+// .icon-Tasks - Tasks icon
+// .icon-Slideshow - Play slideshow icon
+// .icon-Sheets - Stacks of paper icon
+// .icon-Freeze - Snowflake icon
+// .icon-SettingsCircle - Settings circled icon
+// .icon-Settings - Settings icon
+// .icon-Warning - Warning icon
+// .icon-Seperate - Separate icon
+// .icon-Merge - Merge icon
+// .icon-Tag - Tag icon
+// .icon-Filter - Filter icon
+// .icon-Bookmark - Bookmark icon
+// .icon-Off - No entry icon
+// .icon-Attach - Attachment icon
+// .icon-Alert - Alert icon
+// .icon-Mobile - Mobile phone icon
+// .icon-Flag - Flag icon
+// .icon-Favorite - Star icon
+// .icon-Download - Download from cloud icon
+// .icon-CloudUnconnected - Cloud outline icon
+// .icon-CloudConnected - Cloud icon
+// .icon-VideoChat - Video chat icon
+// .icon-Upload - Upload to cloud icon
+// .icon-Home - Home icon
+// .icon-Right - Right arrow icon
+// .icon-Left - Left arrow icon
+// .icon-Down - Down arrow icon
+// .icon-Up - Up arrow icon
+// .icon-Rotate - Rotate icon
+// .icon-MoveDiagonal1 - Move north-east/south-west icon
+// .icon-UCS - Cartesian axes icon
+// .icon-MoveDiagonal2 - Move north-west/south-east icon
+// .icon-Move - Move icon
+// .icon-MoveUpDown - Move north-south icon
+// .icon-Minus - Minus icon
+// .icon-Plus - Plus icon
+// .icon-Discussion1 - IM icon
+// .icon-Discusion2 - Comments icon
+// .icon-NewConversation - New conversation icon
+// .icon-MovieThumbnail - Movie icon
+// .icon-Camera - Camera icon
+// .icon-Revert - Revert icon
+// .icon-AddLink - Add link icon
+// .icon-AddImage - Add image icon
+// .icon-Turntable - Turntable icon
+// .icon-Minimize - Minimize scale icon
+// .icon-Follow - Follow icon
+// .icon-Settings2 - Gears icon
+// .icon-Scale - Scale icon
+// .icon-Maximize - Maximize scale icon
+// .icon-Settings1 - Gear icon
+// .icon-Pin1 - Rounded pin icon
+// .icon-Cube - Cube icon
+// .icon-Reports - Bar chart icon
+//
+// Styleguide 2.4.2
+.icon-SmallThumbnails:before {
+	content: "\e600";
+}
+
+.icon-ResizeThumbnails:before {
+	content: "\e601";
+}
+
+.icon-TilesView:before {
+	content: "\e602";
+}
+
+.icon-ThumbnailView:before {
+	content: "\e603";
+}
+
+.icon-Tabular:before {
+	content: "\e69b";
+}
+
+.icon-ZoomOut:before {
+	content: "\e604";
+}
+
+.icon-History:before {
+	content: "\e69c";
+}
+
+.icon-ZoomIn:before {
+	content: "\e605";
+}
+
+.icon-BottomArrow:before {
+	content: "\e693";
+}
+
+.icon-LeftArrow:before {
+	content: "\e694";
+}
+
+.icon-ListView:before {
+	content: "\e606";
+}
+
+.icon-MainMenu:before {
+	content: "\e695";
+}
+
+.icon-ZoomPreview:before {
+	content: "\e607";
+}
+
+.icon-Minimize2:before {
+	content: "\e608";
+}
+
+.icon-RightArrow:before {
+	content: "\e696";
+}
+
+.icon-Maximize2:before {
+	content: "\e609";
+}
+
+.icon-SortArrow:before {
+	content: "\e697";
+}
+
+.icon-TopArrow:before {
+	content: "\e698";
+}
+
+.icon-Delete:before {
+	content: "\e60a";
+}
+
+.icon-Checkmark:before {
+	content: "\e60b";
+}
+
+.icon-SuspensionPoints:before {
+	content: "\e699";
+}
+
+.icon-Alternatives:before {
+	content: "\e60c";
+}
+
+.icon-Story:before {
+	content: "\e60d";
+}
+
+.icon-Link:before {
+	content: "\e60e";
+}
+
+.icon-Equipment:before {
+	content: "\e60f";
+}
+
+.icon-ThumbnailMatrix:before {
+	content: "\e610";
+}
+
+.icon-GoToWorksapce:before {
+	content: "\e611";
+}
+
+.icon-Cancel:before {
+	content: "\e612";
+}
+
+.icon-TimeActivity:before {
+	content: "\e613";
+}
+
+.icon-OK:before {
+	content: "\e614";
+}
+
+.icon-Calendar:before {
+	content: "\e615";
+}
+
+.icon-PinLocation:before {
+	content: "\e616";
+}
+
+.icon-FlipCamera:before {
+	content: "\e617";
+}
+
+.icon-Flash:before {
+	content: "\e618";
+}
+
+.icon-Library:before {
+	content: "\e619";
+}
+
+.icon-HardDrive:before {
+	content: "\e61a";
+}
+
+.icon-DragDrop:before {
+	content: "\e61b";
+}
+
+.icon-VideoCamera:before {
+	content: "\e61c";
+}
+
+.icon-MoveToFolder:before {
+	content: "\e61d";
+}
+
+.icon-ArrowCursor:before {
+	content: "\e61e";
+}
+
+.icon-Undo:before {
+	content: "\e61f";
+}
+
+.icon-Redo:before {
+	content: "\e620";
+}
+
+.icon-Connect:before {
+	content: "\e621";
+}
+
+.icon-UCSNorthwest:before {
+	content: "\e622";
+}
+
+.icon-UCSNortheast:before {
+	content: "\e623";
+}
+
+.icon-Transfer:before {
+	content: "\e624";
+}
+
+.icon-UCSSouthwest:before {
+	content: "\e625";
+}
+
+.icon-UCSSoutheast:before {
+	content: "\e626";
+}
+
+.icon-UCSBottom:before {
+	content: "\e627";
+}
+
+.icon-UCSTop:before {
+	content: "\e628";
+}
+
+.icon-CubeSectioned:before {
+	content: "\e629";
+}
+
+.icon-Cubes:before {
+	content: "\e62a";
+}
+
+.icon-Shots:before {
+	content: "\e62b";
+}
+
+.icon-Preview:before {
+	content: "\e62c";
+}
+
+.icon-Collection:before {
+	content: "\e62d";
+}
+
+.icon-Slides:before {
+	content: "\e62e";
+}
+
+.icon-MyAccount:before {
+	content: "\e62f";
+}
+
+.icon-Animation:before {
+	content: "\e630";
+}
+
+.icon-VisualStyles:before {
+	content: "\e631";
+}
+
+.icon-Lighting:before {
+	content: "\e632";
+}
+
+.icon-Behaviors:before {
+	content: "\e633";
+}
+
+.icon-Look:before {
+	content: "\e634";
+}
+
+.icon-Gravity:before {
+	content: "\e635";
+}
+
+.icon-Environment:before {
+	content: "\e636";
+}
+
+.icon-View2:before {
+	content: "\e637";
+}
+
+.icon-Unlocked:before {
+	content: "\e638";
+}
+
+.icon-ExportVersion:before {
+	content: "\e639";
+}
+
+.icon-OpenFile:before {
+	content: "\e63a";
+}
+
+.icon-Locked:before {
+	content: "\e63b";
+}
+
+.icon-Folder:before {
+	content: "\e63c";
+}
+
+.icon-View1:before {
+	content: "\e63d";
+}
+
+.icon-Save:before {
+	content: "\e63e";
+}
+
+.icon-Print:before {
+	content: "\e63f";
+}
+
+.icon-Trash:before {
+	content: "\e640";
+}
+
+.icon-SignOutPower:before {
+	content: "\e641";
+}
+
+.icon-Intersect:before {
+	content: "\e642";
+}
+
+.icon-Web:before {
+	content: "\e643";
+}
+
+.icon-Mail:before {
+	content: "\e644";
+}
+
+.icon-Database:before {
+	content: "\e645";
+}
+
+.icon-Sync:before {
+	content: "\e646";
+}
+
+.icon-Heirarchy2:before {
+	content: "\e647";
+}
+
+.icon-Heirarchy1:before {
+	content: "\e648";
+}
+
+.icon-Share:before {
+	content: "\e649";
+}
+
+.icon-Question:before {
+	content: "\e64a";
+}
+
+.icon-Info:before {
+	content: "\e64b";
+}
+
+.icon-Pin2:before {
+	content: "\e64c";
+}
+
+.icon-Layers:before {
+	content: "\e64d";
+}
+
+.icon-Group:before {
+	content: "\e64e";
+}
+
+.icon-TextureMap:before {
+	content: "\e64f";
+}
+
+.icon-Material:before {
+	content: "\e650";
+}
+
+.icon-Image:before {
+	content: "\e651";
+}
+
+.icon-Snap:before {
+	content: "\e652";
+}
+
+.icon-Properties:before {
+	content: "\e653";
+}
+
+.icon-Publish:before {
+	content: "\e654";
+}
+
+.icon-Copy:before {
+	content: "\e655";
+}
+
+.icon-AddContent:before {
+	content: "\e656";
+}
+
+.icon-Ruler:before {
+	content: "\e657";
+}
+
+.icon-Paste:before {
+	content: "\e658";
+}
+
+.icon-Checklist:before {
+	content: "\e659";
+}
+
+.icon-Tools:before {
+	content: "\e65a";
+}
+
+.icon-Edit:before {
+	content: "\e65b";
+}
+
+.icon-Portfolio:before {
+	content: "\e65c";
+}
+
+.icon-Microphone:before {
+	content: "\e65d";
+}
+
+.icon-Tasks:before {
+	content: "\e65e";
+}
+
+.icon-Slideshow:before {
+	content: "\e65f";
+}
+
+.icon-Sheets:before {
+	content: "\e660";
+}
+
+.icon-Freeze:before {
+	content: "\e661";
+}
+
+.icon-SettingsCircle:before {
+	content: "\e662";
+}
+
+.icon-Settings:before {
+	content: "\e663";
+}
+
+.icon-Warning:before {
+	content: "\e664";
+}
+
+.icon-Seperate:before {
+	content: "\e665";
+}
+
+.icon-Merge:before {
+	content: "\e666";
+}
+
+.icon-Tag:before {
+	content: "\e667";
+}
+
+.icon-Filter:before {
+	content: "\e668";
+}
+
+.icon-Bookmark:before {
+	content: "\e669";
+}
+
+.icon-Off:before {
+	content: "\e66a";
+}
+
+.icon-Attach:before {
+	content: "\e66b";
+}
+
+.icon-Alert:before {
+	content: "\e66c";
+}
+
+.icon-Mobile:before {
+	content: "\e66d";
+}
+
+.icon-Flag:before {
+	content: "\e66e";
+}
+
+.icon-Favorite:before {
+	content: "\e66f";
+}
+
+.icon-Download:before {
+	content: "\e670";
+}
+
+.icon-CloudUnconnected:before {
+	content: "\e671";
+}
+
+.icon-CloudConnected:before {
+	content: "\e672";
+}
+
+.icon-VideoChat:before {
+	content: "\e673";
+}
+
+.icon-Upload:before {
+	content: "\e674";
+}
+
+.icon-Home:before {
+	content: "\e675";
+}
+
+.icon-Right:before {
+	content: "\e676";
+}
+
+.icon-Left:before {
+	content: "\e677";
+}
+
+.icon-Down:before {
+	content: "\e678";
+}
+
+.icon-Up:before {
+	content: "\e679";
+}
+
+.icon-Rotate:before {
+	content: "\e67a";
+}
+
+.icon-MoveDiagonal1:before {
+	content: "\e67b";
+}
+
+.icon-UCS:before {
+	content: "\e67c";
+}
+
+.icon-MoveDiagonal2:before {
+	content: "\e67d";
+}
+
+.icon-Move:before {
+	content: "\e67e";
+}
+
+.icon-MoveUpDown:before {
+	content: "\e67f";
+}
+
+.icon-Minus:before {
+	content: "\e680";
+}
+
+.icon-Plus:before {
+	content: "\e681";
+}
+
+.icon-Discussion1:before {
+	content: "\e682";
+}
+
+.icon-Discusion2:before {
+	content: "\e683";
+}
+
+.icon-NewConversation:before {
+	content: "\e684";
+}
+
+.icon-MovieThumbnail:before {
+	content: "\e685";
+}
+
+.icon-Camera:before {
+	content: "\e686";
+}
+
+.icon-Revert:before {
+	content: "\e687";
+}
+
+.icon-AddLink:before {
+	content: "\e688";
+}
+
+.icon-AddImage:before {
+	content: "\e689";
+}
+
+.icon-Turntable:before {
+	content: "\e68a";
+}
+
+.icon-Minimize:before {
+	content: "\e68b";
+}
+
+.icon-Follow:before {
+	content: "\e68c";
+}
+
+.icon-Settings2:before {
+	content: "\e68d";
+}
+
+.icon-Scale:before {
+	content: "\e68e";
+}
+
+.icon-Maximize:before {
+	content: "\e68f";
+}
+
+.icon-Settings1:before {
+	content: "\e690";
+}
+
+.icon-Pin1:before {
+	content: "\e691";
+}
+
+.icon-Cube:before {
+	content: "\e692";
+}
+
+.icon-Reports:before {
+	content: "\e69a";
+}

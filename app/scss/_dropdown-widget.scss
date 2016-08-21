@@ -1,0 +1,63 @@
+// Dropdown Widget
+//
+// The very clean, simple PLM dropdown widget
+//
+// Styleguide 42
+//
+// Style applied to md-buttons, overriding plm-material's styling
+.dropdown-widget-button {
+	border: solid 1px $dropdownWidgetButtonBorderColor;
+	background-color: $dropdownWidgetButtonBackgroundColor !important;
+
+	&:not([disabled]):hover {
+		border: solid 1px $dropdownWidgetButtonHoverBorderColor;
+		background-color: $dropdownWidgetButtonHoverBackgroundColor !important;
+	}
+
+	&:not([disabled]):focus {
+		border: solid 1px $dropdownWidgetButtonFocusBorderColor;
+		background-color: $dropdownWidgetButtonFocusBackgroundColor !important;
+		color: $dropdownWidgetButtonFocusTextColor !important;
+	}
+
+	// Will just piggiback on the existing disabled colors from plm-material, but left here as reference if the Galileo visual style changes again
+	// &[disabled] {
+	// 	color: $buttonPrimaryDisabledTextColor;
+	// 	background-color: $buttonPrimaryDisabledBackgroundColor;
+	// 	box-shadow: $buttonPrimaryDisabledShadow;
+	// }
+}
+
+.dropdown-widget {
+	.dropdown-widget-wrapper {
+		@extend %resetUnorderedList;
+
+		border: solid 1px $dropdownWidgetBorderColor;
+		background-color: $dropdownWidgetBackgroundColor;
+		box-shadow: $dropdownWidgetBoxShadow;
+
+		// Targets specifically the list inside the dropdown
+		ul {
+
+			li {
+
+				a {
+					&:hover {
+
+						background-color: $dropdownWidgetHoverBackgroundColor;
+					}
+
+					.label {
+						color: $dropdownWidgetTextColor;
+
+						@extend %textTruncation;
+					}
+
+					.caret-flex {
+						color: $dropdownWidgetTextColor;
+					}
+				}
+			}
+		}
+	}
+}

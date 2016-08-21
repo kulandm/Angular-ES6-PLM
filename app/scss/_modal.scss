@@ -1,0 +1,146 @@
+// Modal
+//
+// Styles for default modals.
+//
+// Styleguide 17
+
+// Modal Dialog
+//
+// The overall modal.
+//
+// Markup:
+// <none>None</none>
+//
+// .modal-dialog - Sets width to `600px`
+//
+// Styleguide 17.1
+.modal-dialog {
+	width: 600px;
+	margin: auto;
+}
+
+// Modal Content
+//
+// The content of the modal.
+//
+// Markup:
+// <div class="modal-dialog" style="width:inherit;">
+// 	<div class="modal-content">Modal content</div>
+// </div>
+//
+// .modal-content - Gives modal a border
+//
+// Styleguide 17.2
+.modal-content {
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	border: 2px solid $modalContentBorderColor {
+		radius: 3px;
+	}
+	background: $modalContentBackgroundColor;
+}
+
+// Modal Header Title
+//
+// The title of the modal.
+//
+// Markup:
+// <div class="modal-dialog" style="width:inherit;">
+// 	<div class="modal-content">
+// 		<div class="modal-header">
+// 			<div class="modal-header-title">Title</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// .modal-header-title - Sets the font size and color of the title
+//
+// Styleguide 17.3
+.modal-header-title {
+	font-size: 22px;
+
+	display: inline-block;
+	overflow: hidden;
+
+	width: 95%;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	color: $modalHeaderTitleColor;
+}
+
+// Modal Header Close Icon
+//
+// The close icon of the modal.
+//
+// Markup:
+// <div class="modal-dialog" style="width:inherit;">
+// 	<div class="modal-content">
+// 		<div class="modal-header">
+// 			<div class="modal-header-title"
+// 				style="width:inherit;">Title</div>
+// 			<a class="modal-close">
+// 				<span class="icon icon-Delete"></span>
+// 			</a>
+// 		</div>
+// 	</div>
+// </div>
+//
+// .modal-header-title - Sets the font size and color of the title
+//
+// Styleguide 17.4
+.modal-close {
+	@extend %removeLinkStyle;
+
+	font-size: 18px;
+
+	display: inline-block;
+
+	margin: 2px;
+
+	color: $modalHeaderCloseIconColor;
+}
+
+// Modal Footer
+//
+// Footer of the modal.
+//
+// Markup:
+// <div class="modal-dialog" style="width:inherit;">
+// 	<div class="modal-content">
+// 		<div class="modal-header">
+// 			<div class="modal-header-title"
+// 				style="width:inherit;">Title</div>
+// 			<a class="modal-close">
+// 				<span class="icon icon-Delete"></span>
+// 			</a>
+// 		</div>
+// 		<div class="modal-body">
+// 			Modal content goes here.
+// 		</div>
+// 		<div class="modal-footer">
+// 			<button class="btn btn-primary"">OK</button>
+// 		</div>
+// 	</div>
+// </div>
+//
+// .modal-footer - Usually used to include buttons
+//
+// Styleguide 17.5
+.modal-footer {
+	border: 0; // Overrides bootstrap modal-footer styles
+
+	// Overrides bootstrap btn styles
+	.btn {
+		width: 80px;
+
+		border: {
+			color: $modalFooterBtnBorderColor;
+
+			radius: 2px;
+		}
+		background: $modalFooterBtnBackgroundColor;
+	}
+}

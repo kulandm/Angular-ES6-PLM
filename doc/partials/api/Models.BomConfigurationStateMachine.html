@@ -1,0 +1,144 @@
+<h1><code ng:non-bindable="">BomConfigurationStateMachine</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomconfigurationstatemachine-page"><p>A state machine that tracks the configuration of the Bom
+Different states should produce dirrent query parameters for the BomRoot endpoint</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_biaschanged">biasChanged()</h3>
+<div class="biaschanged"><div class="models-bomconfigurationstatemachine-biaschanged-page"><p>Corresponds to the user changing current bias</p>
+</div></div>
+</li>
+<li><h3 id="methods_configurationchanged">configurationChanged()</h3>
+<div class="configurationchanged"><div class="models-bomconfigurationstatemachine-configurationchanged-page"><p>Corresponds to the user changing bom configuration
+If the date was changed, ignore the new bias and use only the new date</p>
+</div></div>
+</li>
+<li><h3 id="methods_constructor">constructor(dateFormat)</h3>
+<div class="constructor"><div class="models-bomconfigurationstatemachine-constructor-page"><p>initializes the State Machine properties</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>dateFormat</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomconfigurationstatemachine-constructor-page"><p>the format for any dates passed to the state machine</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_datechanged">dateChanged()</h3>
+<div class="datechanged"><div class="models-bomconfigurationstatemachine-datechanged-page"><p>Corresponds to the user changing configured date
+If the current revision is the working revision and the date has been moved forward in time,
+    We need to stay on the working revision and just change the date
+However, if the current revision is the working revision and the date has been moved backwards in time,
+    We will leave the working revision and configure according to the new date
+If we are not in the working revision
+    We will always configure according to the provided date</p>
+</div></div>
+</li>
+<li><h3 id="methods_geteffectivedate">getEffectiveDate()</h3>
+<div class="geteffectivedate"><div class="models-bomconfigurationstatemachine-geteffectivedate-page"><p>Gets the effectiveDate as a string in the format dateFormat</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfullconfiguration">getFullConfiguration()</h3>
+<div class="getfullconfiguration"><div class="models-bomconfigurationstatemachine-getfullconfiguration-page"><p>Returns the full configuration of the Bom
+This should not be used when retrieving the top line</p>
+</div></div>
+</li>
+<li><h3 id="methods_getrevisionbias">getRevisionBias()</h3>
+<div class="getrevisionbias"><div class="models-bomconfigurationstatemachine-getrevisionbias-page"><p>Returns the revision bias</p>
+</div></div>
+</li>
+<li><h3 id="methods_gettoplinequeryparams">getTopLineQueryParams()</h3>
+<div class="gettoplinequeryparams"><div class="models-bomconfigurationstatemachine-gettoplinequeryparams-page"><p>Returns the query parameters needed to retrive
+the top line of the Bom according to the current state of
+    the State Machine
+Every set of parameters includes the current view definition
+Options:
+RevisionSet:
+    We request the currently selected revision in the release configuration
+WorkingForwardDateChange
+    We request the currently selected revision (The working revision)
+        at the current date in the release configuration
+DateChange
+    We request the revision corresponding to the date in the release configuration
+ViewDefChange, BiasChange, Refresh:
+    We request the currently selected revision in the current configuration</p>
+</div></div>
+</li>
+<li><h3 id="methods_seteffectivedate">setEffectiveDate()</h3>
+<div class="seteffectivedate"><div class="models-bomconfigurationstatemachine-seteffectivedate-page"><p>Setter for effectiveDate
+Converts the passed in string to a moment object</p>
+</div></div>
+</li>
+<li><h3 id="methods_setinitialstate">setInitialState()</h3>
+<div class="setinitialstate"><div class="models-bomconfigurationstatemachine-setinitialstate-page"><p>Sets the initial state of the state machine
+Corresponds to the initial loading of the Bom</p>
+</div></div>
+</li>
+<li><h3 id="methods_setisworkingrevision">setIsWorkingRevision()</h3>
+<div class="setisworkingrevision"><div class="models-bomconfigurationstatemachine-setisworkingrevision-page"><p>setter for isWorkingRevision</p>
+</div></div>
+</li>
+<li><h3 id="methods_setitemid">setItemId()</h3>
+<div class="setitemid"><div class="models-bomconfigurationstatemachine-setitemid-page"><p>setter for itemId</p>
+</div></div>
+</li>
+<li><h3 id="methods_setrevisionbias">setRevisionBias()</h3>
+<div class="setrevisionbias"><div class="models-bomconfigurationstatemachine-setrevisionbias-page"><p>setter for revisionBias</p>
+</div></div>
+</li>
+<li><h3 id="methods_setstate">setState()</h3>
+<div class="setstate"><div class="models-bomconfigurationstatemachine-setstate-page"><p>Setter for the current state</p>
+</div></div>
+</li>
+<li><h3 id="methods_setviewdefid">setViewDefId()</h3>
+<div class="setviewdefid"><div class="models-bomconfigurationstatemachine-setviewdefid-page"><p>Setter for viewDefId</p>
+</div></div>
+</li>
+<li><h3 id="methods_shouldrefresh">shouldRefresh()</h3>
+<div class="shouldrefresh"><div class="models-bomconfigurationstatemachine-shouldrefresh-page"><p>Corresponds to the Bom needing a refresh</p>
+</div></div>
+</li>
+<li><h3 id="methods_viewchanged">viewChanged()</h3>
+<div class="viewchanged"><div class="models-bomconfigurationstatemachine-viewchanged-page"><p>Corresponds to the user changing the current view</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_states">States</h3>
+<div class="states"><div class="models-bomconfigurationstatemachine-states-page"><p>The possible states for the state machine</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="models-bomconfigurationstatemachine-dateformat-page"><p>The format of any dates passed to the state machine</p>
+</div></div>
+</li>
+<li><h3 id="properties_effectivedate">effectiveDate</h3>
+<div class="effectivedate"><div class="models-bomconfigurationstatemachine-effectivedate-page"><p>The date associated with the current Bom
+Should always be a moment object (setter should always be used)</p>
+</div></div>
+</li>
+<li><h3 id="properties_isworkingrevision">isWorkingRevision</h3>
+<div class="isworkingrevision"><div class="models-bomconfigurationstatemachine-isworkingrevision-page"><p>Boolean marking whether the current revision is the working revision
+which has special handling when configuring the Bom</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="models-bomconfigurationstatemachine-itemid-page"><p>The id of the top line of the bom</p>
+</div></div>
+</li>
+<li><h3 id="properties_revisionbias">revisionBias</h3>
+<div class="revisionbias"><div class="models-bomconfigurationstatemachine-revisionbias-page"><p>The currently selected revisionBias
+The bias is always &#39;release&#39;, unless specified otherwise</p>
+</div></div>
+</li>
+<li><h3 id="properties_state">state</h3>
+<div class="state"><div class="models-bomconfigurationstatemachine-state-page"><p>The current state of the state machine
+Should always be either null or one of this.States</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewdefid">viewDefId</h3>
+<div class="viewdefid"><div class="models-bomconfigurationstatemachine-viewdefid-page"><p>The id of the requested view definition</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,77 @@
+<h1><code ng:non-bindable="">fieldView</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-fieldview-page"><p>This directive is used anytime you have to display a item&#39;s field in the application, in VIEW (i.e., non-editable) mode, printing the value and necessary elements</p>
+<h6 id="description_--usetruncation-{boolean}-if-the-truncation-should-happen">- useTruncation {Boolean} If the truncation should happen</h6>
+<h6 id="description_--iseditable-{boolean}-if-the-field-is-editable">- isEditable {Boolean} If the field is editable</h6>
+<h6 id="description_--fielddata-{object}-contains-the-data,-properly-parsed-by-the-workspaceitemdetailsservicegetitemdetailsfields-method">- fieldData: {Object} contains the data, properly parsed by the WorkspaceItemDetailsService.getItemDetailsFields method</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY field-view&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_gotoitem">goToItem(resourceId)</h3>
+<div class="gotoitem"><div class="directives-fieldview-gotoitem-page"><p>Navigate to an item</p>
+</div><h5 id="methods_gotoitem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>resourceId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-fieldview-gotoitem-page"><p>The urn of the item to navigate to</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_isarray">isArray(value)</h3>
+<div class="isarray"><div class="directives-fieldview-isarray-page"><p>Checks if a certain value is an array</p>
+</div><h5 id="methods_isarray_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>value</td><td><a href="" class="label type-hint type-hint-array">Array/String</a></td><td><div class="directives-fieldview-isarray-page"><p>The value to check for</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_isplaintext">isPlainText(value)</h3>
+<div class="isplaintext"><div class="directives-fieldview-isplaintext-page"><p>Checks if a certain value is plain text (in the context of PLM)
+Comment out the fields that should be rendered as a simple string, without special treatment</p>
+</div><h5 id="methods_isplaintext_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>value</td><td><a href="" class="label type-hint type-hint-string">String/Array</a></td><td><div class="directives-fieldview-isplaintext-page"><p>The value to test</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_openimage">openImage(imagePath)</h3>
+<div class="openimage"><div class="directives-fieldview-openimage-page"><p>Opens the image in a modal</p>
+</div><h5 id="methods_openimage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>imagePath</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-fieldview-openimage-page"><p>The path to the image</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="directives-fieldview-dateformat-page"><p>The current user&#39;s selected date format</p>
+</div></div>
+</li>
+<li><h3 id="properties_formattomoney">formatToMoney</h3>
+<div class="formattomoney"><div class="directives-fieldview-formattomoney-page"><p>Format a money value for displaying purposes from the backend according to precision rules from the field&#39;s metadata
+This is strictly for VIEWING purposes - it doesn&#39;t change the value in the payload in any way</p>
+</div><h5 id="properties_formattomoney_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-fieldview-formattomoney-page"><p>The formatted money value according to precision rules</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="properties_formattoprecision">formatToPrecision</h3>
+<div class="formattoprecision"><div class="directives-fieldview-formattoprecision-page"><p>Format a float or money value for displaying purposes from the backend according to precision rules from the field&#39;s metadata
+This is strictly for VIEWING purposes - it doesn&#39;t change the value in the payload in any way</p>
+</div><h5 id="properties_formattoprecision_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="directives-fieldview-formattoprecision-page"><p>The formatted float or money value according to precision rules</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="properties_hrefvalue">hrefValue</h3>
+<div class="hrefvalue"><div class="directives-fieldview-hrefvalue-page"><p>The value for the href attribute in the link when field is an URL</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-fieldview-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-10" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-10" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-10">
+<field-view field-data="Object" use-truncation="Boolean" />
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-10" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,69 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewGridCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+	<!-- Edit button -->
+	<!-- Temporarily hidden from rendering until we re-enable edit mode -->
+	<md-button
+		aria-label="{{viewGridCtrl.bundle.button.edit}}"
+		ng-click="viewGridCtrl.triggerEdit()"
+		ng-hide="!(viewGridCtrl.isViewState())"
+		ng-if="false">
+		<span class="label">{{viewGridCtrl.bundle.button.edit}}</span>
+	</md-button>
+
+	<!-- Add button -->
+	<!-- Temporarily hidden from rendering until we re-enable add mode -->
+	<md-button
+		aria-label="{{viewGridCtrl.bundle.button.add}}"
+		ng-click="viewGridCtrl.triggerAdd()"
+		ng-if="false">
+		<span class="label">{{viewGridCtrl.bundle.button.add}}</span>
+	</md-button>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Grid content, middle -->
+	<md-content layout-fill id="item-main">
+		<div id="workspace-itemgrid" ng-class="{'dirty': viewGridCtrl.edit}">
+			<div infinite-scroll="" update="viewGridCtrl.doScroll" context="viewGridCtrl.scrollContext">
+				<tabular-data-widget columns="viewGridCtrl.tableColumns" data="viewGridCtrl.tableData" perform-action="viewGridCtrl.performAction($event, row, key);" custom-vars="viewGridCtrl.customVars" table-column-sort="viewGridCtrl.sortConfig" />
+			</div>
+
+			<div class="context-menu" ng-show="viewGridCtrl.showContextMenu" click-outside-element="viewGridCtrl.hideContextMenu();">
+				<ul class="list-group">
+					<li class="list-group-item"><a href="javascript:;" ng-click="viewGridCtrl.hideContextMenu(); viewGridCtrl.addRow(selectedRowId);">{{viewGridCtrl.bundle.grid.addRowAbove}}</a></li>
+					<li class="list-group-item"><a href="javascript:;" ng-click="viewGridCtrl.hideContextMenu(); viewGridCtrl.addRow(selectedRowId + 1);">{{viewGridCtrl.bundle.grid.addRowBelow}}</a></li>
+				</ul>
+			</div>
+		</div>
+	</md-content>
+</md-content>
+
+<script type="text/ng-template" id="chkBoxRenderer">
+	<input type="checkbox" ng-checked="customVars.selectAll"/>
+</script>
+
+<script type="text/ng-template" id="chkBoxAll">
+	<input type="checkbox" ng-model="customVars.selectAll"/>
+</script>
+
+<!-- This is here for now, until other places need this exact same markup, we'll move it into a directive -->
+<script type="text/ng-template" id="gridMetaRenderer">
+	<div class="field-container" ng-dblclick="obj.triggerEdit();">
+		<div ng-click="obj.isEditActive = obj.isEdit ? true : false;obj.error = false;"
+			click-outside-element="obj.isEditActive = false"
+			focus-property="obj.isEditActive"
+			class="fieldWrapper">
+			<div>
+				<field-wrapper
+					field-data="obj"
+					is-edit="obj.isEdit"
+					is-edit-active="obj.isEditActive"
+					waiting="obj.waiting"
+					use-truncation="false">
+				</field-wrapper>
+			</div>
+		</div>
+	</div>
+</script>

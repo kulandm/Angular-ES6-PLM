@@ -1,0 +1,87 @@
+.wip-pinning-policy-flyout {
+	position: absolute;
+	z-index: 80;
+
+	&.flyout.bottom {
+		margin-top: 0;
+		padding: 0;
+
+		.flyout-arrow {
+			position: relative;
+			left: -10px;
+
+			width: 0;
+			height: 0;
+
+			border: {
+				right: 10px solid transparent;
+				bottom: 10px solid $white;
+				left: 10px solid transparent;
+			}
+
+			&:after {
+				position: absolute;
+				z-index: -1;
+				top: 2px;
+				left: -7px;
+
+				width: 15px;
+				height: 15px;
+
+				content: '';
+				transform: rotate(45deg);
+
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .25);
+			}
+		}
+	}
+
+	&.flyout.top {
+		margin-top: -5px;
+
+		.flyout-arrow {
+			bottom: -5px;
+			left: -10px;
+
+			width: 0;
+			height: 0;
+
+			border: {
+				top: 10px solid $white;
+				right: 10px solid transparent;
+				left: 10px solid transparent;
+			}
+
+			&:after {
+				position: absolute;
+				z-index: -1;
+				top: -17px;
+				left: -7px;
+
+				width: 15px;
+				height: 15px;
+
+				content: '';
+				transform: rotate(45deg);
+
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .25);
+			}
+		}
+	}
+}
+
+.wip-pinning-policy-flyout-content {
+	width: auto;
+	padding: 20px;
+
+	background-color: $white;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .25);
+
+	.title {
+		color: $darkGray;
+	}
+
+	.info {
+		font-weight: 600;
+	}
+}

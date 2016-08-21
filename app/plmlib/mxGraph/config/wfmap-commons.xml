@@ -1,0 +1,18 @@
+<mxGraph 
+	alternateEdgeStyle="verticalEdge" 
+	dropEnabled="1" 
+	allowDanglingEdges="0"
+	allowLoops="1"
+	disconnectOnMove="0">
+	<mxGraphModel as="model">
+		<root>
+			<Workflow label="MyWorkflow" description="" href="" id="0"/>
+			<Layer label="Default Layer">
+				<mxCell parent="0"/>
+			</Layer>
+		</root>
+	</mxGraphModel>
+	
+	<mxStylesheet as="stylesheet">	
+	</mxStylesheet>
+</mxGraph>

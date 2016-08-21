@@ -1,0 +1,93 @@
+<h1><code ng:non-bindable="">BomNestedItemListeners</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomnesteditemlisteners-page"><p>A class that registers the listeners
+for interacting with the BomNestedItem REST services
+We use class syntax for convinience, but all the work is done in the constructor,
+where we register the needed listeners with EventService</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bomnesteditemlisteners-constructor-page"><p>Registers the listeners</p>
+</div></div>
+</li>
+<li><h3 id="methods_registeraddlistener">registerAddListener()</h3>
+<div class="registeraddlistener"><div class="models-bomnesteditemlisteners-registeraddlistener-page"><p>Registers the add listener
+recieves &#39;bomNestedItem:(id):add&#39; (where (id) is anything),
+    with a link to post to, the json of the item to post, and the configuration of the BOM</p>
+</div><h5 id="methods_registeraddlistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-registeraddlistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_registerdeletelistener">registerDeleteListener()</h3>
+<div class="registerdeletelistener"><div class="models-bomnesteditemlisteners-registerdeletelistener-page"><p>Registers the delete listener
+recieves &#39;bomNestedItem:(id):remove&#39; (where (id) is anything),
+    with the json content of the delete (minimally including the <strong>self</strong> link)</p>
+</div><h5 id="methods_registerdeletelistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-registerdeletelistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_registereditlistener">registerEditListener()</h3>
+<div class="registereditlistener"><div class="models-bomnesteditemlisteners-registereditlistener-page"><p>Registers the edit listener
+recieves &#39;bomNestedItem:(id):edit&#39; (where (id) is anything),
+    with the json content of the patch</p>
+</div><h5 id="methods_registereditlistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-registereditlistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_registergetlistener">registerGetListener()</h3>
+<div class="registergetlistener"><div class="models-bomnesteditemlisteners-registergetlistener-page"><p>Registers the get listener
+recieves &#39;bomNestedItem:(id):get&#39; (where (id) is anything),
+    with a link to get, and any needed parameters</p>
+</div><h5 id="methods_registergetlistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-registergetlistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_respondtoaddlistener">respondToAddListener(event, link, json, configuration)</h3>
+<div class="respondtoaddlistener"><div class="models-bomnesteditemlisteners-respondtoaddlistener-page"><p>Response function for the add listener
+Requests that BomNestedItem post the json to link
+Then
+    if the add succeeds, responds with &#39;bomNestedItem:(id):addDone&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):add&#39;))
+        with an instance of BomNestedItem
+     if the add fails, responds with &#39;bomNestedItem:(id):addFailed&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):add&#39;))
+        with an instance of BomNestedItem with information provided by json (not corresponding to an actual item in the BOM), and an error object</p>
+</div><h5 id="methods_respondtoaddlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtoaddlistener-page"><p>the actual event that occured</p>
+</div></td></tr><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtoaddlistener-page"><p>the link to post to</p>
+</div></td></tr><tr><td>json</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnesteditemlisteners-respondtoaddlistener-page"><p>the json to post</p>
+</div></td></tr><tr><td>configuration</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnesteditemlisteners-respondtoaddlistener-page"><p>the configuration of the BOM</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_respondtodeletelistener">respondToDeleteListener(event, json)</h3>
+<div class="respondtodeletelistener"><div class="models-bomnesteditemlisteners-respondtodeletelistener-page"><p>Response function for the delete listener
+Requests that BomNestedItem delete the item corresponding to json
+Then
+    if the delete succeeds, responds with &#39;bomNestedItem:(id):removeDone&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):remove&#39;))
+    if the delete fails, responds with &#39;bomNestedItem:(id):removeFailed&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):remove&#39;))
+        with the error</p>
+</div><h5 id="methods_respondtodeletelistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtodeletelistener-page"><p>the actual event that occured</p>
+</div></td></tr><tr><td>json</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnesteditemlisteners-respondtodeletelistener-page"><p>the json to delete</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_respondtoeditlistener">respondToEditListener(event, json)</h3>
+<div class="respondtoeditlistener"><div class="models-bomnesteditemlisteners-respondtoeditlistener-page"><p>Response function for the edit listener
+Requests that BomNestedItem patch the json to link
+Then
+    if the edit succeeds, responds with &#39;bomNestedItem:(id):editDone&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):edit&#39;))
+    if the edit fails, responds with &#39;bomNestedItem:(id):editFailed&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):edit&#39;))
+        with the error</p>
+</div><h5 id="methods_respondtoeditlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtoeditlistener-page"><p>the actual event that occured</p>
+</div></td></tr><tr><td>json</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnesteditemlisteners-respondtoeditlistener-page"><p>the json to patch</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_respondtogetlistener">respondToGetListener(event, link, params)</h3>
+<div class="respondtogetlistener"><div class="models-bomnesteditemlisteners-respondtogetlistener-page"><p>response function for the get listener
+Requests that BomNestedItem fetch the provided link with the provided parameters
+Then sends &#39;bomNestedItem:(id):done&#39; (where (id) matches the id portion of event (i.e. &#39;bomNestedItem:(id):get&#39;))
+    with an instance of BomNestedItem</p>
+</div><h5 id="methods_respondtogetlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtogetlistener-page"><p>the actual event that occured</p>
+</div></td></tr><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnesteditemlisteners-respondtogetlistener-page"><p>a link to get</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnesteditemlisteners-respondtogetlistener-page"><p>extra parameters for the get</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,157 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewMilestonesCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Milestones content, middle -->
+	<md-content layout-fill role="item-main" id="item-main" class="view-milestones">
+		<!-- Actual table -->
+		<table-data
+			columns="viewMilestonesCtrl.tableColumns"
+			rows="viewMilestonesCtrl.tableData"
+			resizable-columns
+			client-sorting>
+		</table-data>
+	</md-content>
+</md-content>
+
+<!-- TABLE DATA CELL TEMPLATES -->
+<script type="text/ng-template" id="workflowStateTemplate">
+	<div class="ui-grid-cell-contents field-container">
+		<div class="fieldWrapper">
+			<div ng-if="!row.entity.workflowState.edit.isEdit">
+				<span>{{row.entity.workflowState.value.selected.name}}</span>
+			</div>
+			<div ng-if="row.entity.workflowState.edit.isEdit"
+				ng-click="row.entity.workflowState.isEditActive = row.entity.workflowState.edit.isEdit ? true : false;"
+				click-outside-element="row.entity.workflowState.isEditActive = false"
+				focus-property="row.entity.workflowState.isEditActive">
+				<div ng-show="row.entity.workflowState.isEditActive">
+					<select class="form-control"
+						ng-model="row.entity.workflowState.value.selected"
+						ng-options="option.name for option in row.entity.workflowState.value.options track by option.name"
+						ng-change="row.entity.workflowState.workflowStateChanged()">
+					</select>
+				</div>
+				<div ng-show="!row.entity.workflowState.isEditActive" >
+					<span>{{row.entity.workflowState.value.selected.name}}</span>
+					<a href="javascript:;"
+						ng-click="row.entity.workflowState.isEditActive = true">
+						<span class="md md-edit"></span>
+					</a>
+					<a href="javascript:;"
+						ng-click="row.entity.workflowState.value.selected = row.entity.workflowState.originalValue.selected; row.entity.workflowState.workflowStateChanged(); $event.stopPropagation();"
+						ng-show="!isEqualValue(row.entity.workflowState.value.selected, row.entity.workflowState.originalValue.selected)">
+						<span class="md md-undo"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="milestoneEventTemplate">
+	<div class="ui-grid-cell-contents field-container">
+		<div class="fieldWrapper">
+			<div ng-if="!row.entity.type.edit.isEdit">
+				<span>{{row.entity.type.value.selected}}</span>
+			</div>
+			<div ng-if="row.entity.type.edit.isEdit"
+				ng-click="row.entity.type.isEditActive = row.entity.type.edit.isEdit ? true : false;"
+				click-outside-element="row.entity.type.isEditActive = false"
+				focus-property="row.entity.type.isEditActive">
+				<div ng-show="row.entity.type.isEditActive">
+					<select class="form-control"
+						ng-model="row.entity.type.value.selected"
+						ng-options="option for option in row.entity.type.value.options track by option"
+						ng-change="row.entity.type.typeChanged()">
+					</select>
+				</div>
+				<div ng-show="!row.entity.type.isEditActive" >
+					<span>{{row.entity.type.value.selected}}</span>
+					<a href="javascript:;"
+						ng-click="row.entity.type.isEditActive = true">
+						<span class="md md-edit"></span>
+					</a>
+					<a href="javascript:;"
+						ng-click="row.entity.type.value.selected = row.entity.type.originalValue.selected; row.entity.type.typeChanged(); $event.stopPropagation();"
+						ng-show="!isEqualValue(row.entity.type.value.selected, row.entity.type.originalValue.selected)">
+						<span class="md md-undo"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="dateTemplate">
+	<div class="ui-grid-cell-contents field-container">
+		<div class="fieldWrapper"
+			ng-click="row.entity.date.isEditActive = !!row.entity.date.edit.isEdit; row.entity.date.error = false;"
+			click-outside-element="row.entity.date.isEditActive = false">
+			<div>
+				<field-wrapper
+					field-data="row.entity.date"
+					is-edit="row.entity.date.edit.isEdit"
+					is-edit-active="row.entity.date.isEditActive"
+					waiting="row.entity.date.waiting"
+					use-truncation="false">
+				</field-wrapper>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="statusTemplate">
+	<div class="ui-grid-cell-contents">
+		<span class="md md-lg"
+			ng-class="{'md-done': row.entity.status, 'md-schedule': !row.entity.status}">
+		</span>
+	</div>
+</script>
+
+<script type="text/ng-template" id="daysFromTemplate">
+	<div class="ui-grid-cell-contents">
+		<span ng-if="row.entity.daysFrom === 0" class="milestone-item-status milestone-item-status-{{row.entity.statusFlag.toLowerCase()}}">{{$root.bundle.milestone.today}}</span>
+		<span ng-if="row.entity.daysFrom < 0" class="milestone-item-status milestone-item-status-{{row.entity.statusFlag.toLowerCase()}}">- {{row.entity.daysFrom * -1}}d</span>
+		<span ng-if="row.entity.daysFrom > 0" class="milestone-item-status milestone-item-status-{{row.entity.statusFlag.toLowerCase()}}">+ {{row.entity.daysFrom}}d</span>
+	</div>
+</script>
+
+<script type="text/ng-template" id="warnTemplate">
+	<div class="ui-grid-cell-contents field-container">
+		<div class="fieldWrapper"
+			ng-click="row.entity.warnThreshold.isEditActive = !!row.entity.warnThreshold.edit.isEdit; row.entity.warnThreshold.error = false;"
+			click-outside-element="row.entity.warnThreshold.isEditActive = false">
+			<div>
+				<field-wrapper
+					field-data="row.entity.warnThreshold"
+					is-edit="row.entity.warnThreshold.edit.isEdit"
+					is-edit-active="row.entity.warnThreshold.isEditActive"
+					waiting="row.entity.warnThreshold.waiting"
+					use-truncation="false">
+				</field-wrapper>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="progressTemplate">
+	<div class="ui-grid-cell-contents field-container">
+		<div class="fieldWrapper"
+			ng-click="row.entity.progress.isEditActive = !!row.entity.progress.edit.isEdit; row.entity.progress.error = false;"
+			click-outside-element="row.entity.progress.isEditActive = false">
+			<div>
+				<field-wrapper
+					field-data="row.entity.progress"
+					is-edit="row.entity.progress.edit.isEdit"
+					is-edit-active="row.entity.progress.isEditActive"
+					waiting="row.entity.progress.waiting"
+					use-truncation="false">
+				</field-wrapper>
+			</div>
+		</div>
+	</div>
+</script>

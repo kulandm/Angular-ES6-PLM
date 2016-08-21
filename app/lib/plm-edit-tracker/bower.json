@@ -1,0 +1,22 @@
+{
+  "name": "plm-edit-tracker",
+  "description": "PLM Edit Tracker",
+  "main": [
+    "dist/plm-edit-tracker.js"
+  ],
+  "authors": [
+    "Mitch Mikusek <mitch.mikusek@autodesk.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {},
+  "version": "1.0.2"
+}

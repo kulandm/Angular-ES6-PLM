@@ -1,0 +1,9 @@
+# This is a template file
+# Copy this file into localConfig.yaml for Grunt to pick up for your local settings
+baseUrl: YOUR_PATH_TO_APP        # eg. http://tabasco.ads.autodesk.com. This is the url to your http server
+plmBaseUrl: YOUR_PATH_TO_PLM360  # eg. http://tabasco.ads.autodesk.com:8080. This is the url for the tomcat app, currently we only use it when access backOffice functions.
+customer: YOUR_PLM360_CUSTOMER   # The tenant name, eg. SELENIUM
+pristineFirst: false             # If you need to pristine the tenant before start the test, set this to true
+baseName: YOUR_BASE_NAME         # The NextPLM app folder name, could be app or hig depends on your server setting.
+userId: YOUR_TENANT_USER         # The username to login
+password: YOUR_TENANT_PASSWORD   # The password of the user

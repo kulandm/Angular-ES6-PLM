@@ -1,0 +1,176 @@
+// Bootstrap Overrides
+//
+// Overrides of default Bootstrap styles. <br>
+// All Bootstrap overrides should be included in this file.
+//
+// Styleguide 1
+
+// H5
+//
+// Overrides H5s that are used at the top of tables as headers.<br>
+// **To be removed** once the new workspace menu comes online,<br>
+// and the workspaces page is deleted.
+//
+// Markup:
+// <h5>
+// 	H5 Bootstrap override
+// 	<span class="vertical-divisor">Divisor</span>
+// </h5>
+//
+// h5 - Overrides the font-weight to normal
+// .vertical-divisor - Used on the workspace list page
+//
+// Styleguide 1.1
+h5 {
+	font-weight: normal;
+
+	.vertical-divisor {
+		text-transform: lowercase;
+
+		color: $wsListVerticalDivisorColor;
+
+		&:before {
+			content: '|';
+		}
+	}
+}
+
+// Buttons
+//
+// PLM360-specific styling for all buttons.
+//
+// Markup:
+// <button class="btn">
+// 	Button <span class="icon glyphicon glyphicon-remove"></span>
+// </button>
+//
+// .btn - 
+//
+// Styleguide 1.2
+.btn {
+	line-height: 22px;
+
+	.icon {
+		@extend %iconStyles;
+	}
+}
+
+// Container Fluid
+//
+// Padding added to left and right sides of the container,<br>
+// overriding the default *gutter-width/2* (as it's too small for UX).
+//
+// Markup:
+// <div class="container-fluid" style="background:#FF4500;">
+// 	<div style="background:#90EE90;">Contained</div>
+// </div>
+//
+// .container-fluid - 30px padding applied to left and right
+//
+// Styleguide 1.3
+.container-fluid {
+	padding: 0 30px 0;
+}
+
+// Datepicker Container
+//
+// Hide the *weeks* button in the date-picker and tweak its layout a little bit.
+//
+// Markup:
+// <none>None</none>
+//
+// .datepicker-container - 
+//
+// Styleguide 1.4
+.datepicker-container {
+	display: block;
+
+	width: 278px;
+
+	input.form-control {
+		height: 33px;
+	}
+
+	.dropdown-menu {
+		padding: 5px;
+
+		li:first-child {
+
+			thead {
+
+				th {
+					padding: 3px 0;
+				}
+			}
+
+			tbody {
+
+				td {
+					padding: 1px;
+				}
+			}
+		}
+
+		.btn-group {
+
+			button:nth-child(2) {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+// Modal Background
+//
+// Overrides the z-index of the modal so it doesn't stay/fades out under the header/navbar.
+//
+// Markup:
+// <none>None</none>
+//
+// .modal-backdrop.fade.in - Overrides the backdrop of the modal
+// .modal.fade.in - Overrides the modal itself
+//
+// Styleguide 1.5
+.modal.fade.in {
+	top: 25%;
+
+	overflow: hidden; // Removes scrollbar beside window scrollbar
+}
+
+.dropdown.open {
+
+	.caret:before {
+		content: '\e110';
+	}
+}
+
+// Panel
+//
+// Overrides panel border styling.
+//
+// Markup:
+// <div class="panel-group">
+// 	<div class="panel">
+// 		<div class="panel-heading">Heading</div>
+// 		<div class="panel-collapse">
+// 			<div class="panel-body" style="border-top:1px solid #E1E1E1;">
+// 				Content in the collapsible panel
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// .panel-body - Overrides the border color for panel
+//
+// Styleguide 1.6
+.panel-default {
+
+	> .panel-heading + .panel-collapse {
+
+		> .panel-body {
+
+			// border-color: $wsMenuBodyPanelBorderColor;
+		}
+	}
+}

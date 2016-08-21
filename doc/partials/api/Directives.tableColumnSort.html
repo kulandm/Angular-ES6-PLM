@@ -1,0 +1,56 @@
+<h1><code ng:non-bindable="">tableColumnSort</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-tablecolumnsort-page"><p>To get the default sort column of tabular data widget.<br>
+This should be used with <a href="api/Directives.tabularDataWidget">Directives.tabularDataWidget</a>.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<ul>
+<li>Requires <a href="api/Controllers.TabularDataWidgetController">Controllers.TabularDataWidgetController</a></li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY table-column-sort&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_dosort">doSort()</h3>
+<div class="dosort"><div class="directives-tablecolumnsort-dosort-page"><p>Determines the current column to be sorted and
+calls the sort function in the respective controllers.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerinit">triggerInit()</h3>
+<div class="triggerinit"><div class="directives-tablecolumnsort-triggerinit-page"><p>Initialization function</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_columnheaders">columnHeaders</h3>
+<div class="columnheaders"><div class="directives-tablecolumnsort-columnheaders-page"><p><code>private</code> The list of table header, corresponds to <code>tableColumns</code> in TDWCtrl.</p>
+</div></div>
+</li>
+<li><h3 id="properties_columnheaderselements">columnHeadersElements</h3>
+<div class="columnheaderselements"><div class="directives-tablecolumnsort-columnheaderselements-page"><p><code>private</code> The list of actual table header elements.</p>
+</div></div>
+</li>
+<li><h3 id="properties_columnscopemap">columnScopeMap</h3>
+<div class="columnscopemap"><div class="directives-tablecolumnsort-columnscopemap-page"><p>The map to trace each column to its respective column scope.</p>
+</div></div>
+</li>
+<li><h3 id="properties_currentsortcolid">currentSortColId</h3>
+<div class="currentsortcolid"><div class="directives-tablecolumnsort-currentsortcolid-page"><p>The current column that is being sorted.</p>
+</div></div>
+</li>
+<li><h3 id="properties_sortconfig">sortConfig</h3>
+<div class="sortconfig"><div class="directives-tablecolumnsort-sortconfig-page"><p>The sort configuration from respective controllers.<br>
+<code>disableInitialSort</code>: True, to disable the initial sorting and remove the sort carets.<br>
+<code>applySort</code>: The actual sort function from the respective controllers.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

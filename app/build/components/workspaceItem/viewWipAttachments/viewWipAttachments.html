@@ -1,0 +1,90 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewAttachmentsCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+	<span layout="row" layout-align="start center">
+		<!-- Edit button -->
+		<div
+			feature-toggle="wip.attachment.edit"
+			is-permitted="{{viewAttachmentsCtrl.editPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				class="md-primary md-default-theme"
+				aria-label="{{$root.bundle.button.edit}}"
+				title="{{$root.bundle.button.edit}}"
+				ng-disabled="!viewAttachmentsCtrl.attachmentsData || viewAttachmentsCtrl.attachmentsData.length === 0 || viewAttachmentsCtrl.selectedFiles.size"
+				ng-click="viewAttachmentsCtrl.triggerEdit()"
+				ng-hide="!viewAttachmentsCtrl.isViewState()">
+				<span class="label">{{$root.bundle.button.edit}}</span>
+			</md-button>
+		</div>
+
+		<!-- Add button -->
+		<div is-permitted="{{viewAttachmentsCtrl.addPermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				class="md-button md-default-theme"
+				aria-label="{{$root.bundle.button.add}}"
+				title="{{$root.bundle.button.add}}"
+				ng-disabled="viewAttachmentsCtrl.selectedFiles.size || !viewAttachmentsCtrl.isItemLoaded || !viewAttachmentsCtrl.isViewState()"
+				ng-click="viewAttachmentsCtrl.triggerFileBrowserDialog()">
+				<span class="label">{{$root.bundle.button.add}}</span>
+			</md-button>
+		</div>
+
+		<!-- Remove button -->
+		<div is-permitted="{{viewAttachmentsCtrl.deletePermission}}"
+			apply-lock="true"
+			apply-revision-override-lock="true">
+			<md-button
+				class="md-button md-default-theme"
+				ng-click="viewAttachmentsCtrl.triggerRemove()"
+				ng-disabled="!viewAttachmentsCtrl.selectedFiles || viewAttachmentsCtrl.selectedFiles.size === 0 || !viewAttachmentsCtrl.isViewState()"
+				aria-label="{{$root.bundle.button.remove}}"
+				title="{{$root.bundle.button.remove}}">
+				<span class="label">{{$root.bundle.button.remove}}</span>
+			</md-button>
+		</div>
+
+		<div>
+			<md-button id="actions-button"
+				ng-disabled="viewAttachmentsCtrl.selectedFiles.size !== 1"
+				class="square-icon"
+				aria-label="{{$root.bundle.button.actions}}">
+				<span class="zmdi zmdi-more"></span>
+			</md-button>
+
+			<dropdown-widget anchor="#actions-button" h-pos="right"
+				class="wip-attachments-actions">
+				<ul>
+					<li>
+						<a href="javascript:;"
+							ng-click="viewAttachmentsCtrl.triggerDownload()">
+							{{$root.bundle.attachments.download}}
+						</a>
+					</li>
+				</ul>
+			</dropdown-widget>
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- WIP Attachments content -->
+	<md-content layout-fill id="item-main" class="view-attachments">
+		<wip-attachments-grid
+			ng-if="viewAttachmentsCtrl.workspaceId && viewAttachmentsCtrl.itemId"
+			workspace-id="{{viewAttachmentsCtrl.workspaceId}}"
+			item-id="{{viewAttachmentsCtrl.itemId}}"
+			date-format="viewAttachmentsCtrl.dateFormat"
+			attachments-data="viewAttachmentsCtrl.attachmentsData"
+			selected-items="viewAttachmentsCtrl.selectedFiles"
+			is-item-loaded="viewAttachmentsCtrl.isItemLoaded"
+			is-item-locked="viewAttachmentsCtrl.isItemLocked"
+			add-permission="viewAttachmentsCtrl.addPermission"
+			trigger-add="viewAttachmentsCtrl.triggerFileBrowserDialog()">
+		</wip-attachments-grid>
+	</md-content>
+</md-content>

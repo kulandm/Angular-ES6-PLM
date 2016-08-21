@@ -1,0 +1,157 @@
+// Multiselect
+//
+// Styles for multiselects.
+//
+// Styleguide 18
+
+// Multiselect Content
+//
+// Styles for the content of a multiselect.
+//
+// Markup:
+// <div id="multiselect-content">
+// 	<form role="multiselect-content">
+// 		<div class="category">
+// 			<h4>Multiselect</h4>
+// 			<div class="checkbox"><label>
+// 				<input type="checkbox">Check me!</label>
+// 			</div>
+// 			<div class="checkbox"><label>
+// 				<input type="checkbox">Check me too!</label>
+// 			</div>
+// 		</div>
+// 	</form>
+// </div>
+//
+// #multiselect-content - **Not Used**
+//
+// Styleguide 18.1
+#multiselect-content {
+
+	#clearAllSelected {
+		// (*Not used!)
+		padding: 10px 0 10px;
+	}
+
+	form {
+		background-color: $multiselectBackgroundColor;
+
+		> div {
+
+			&.checkbox,
+			&.radio {
+
+				&:first-child {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+
+	.category {
+		border-top: solid 1px $multiselectCategoryBorderColor;
+	}
+
+	h4 {
+		margin: 10px 10px 15px 10px;
+	}
+
+	.checkbox,
+	.radio {
+		line-height: normal;
+
+		min-height: 0;
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+// Multiselect Warning
+//
+// Styles for the warning in multiselect.
+//
+// Markup:
+// <none>None</none>
+//
+// #multiselect-warning - **Not Used**
+//
+// Styleguide 18.2
+#multiselect-warning {
+	font-style: italic;
+
+	padding: 15px;
+
+	border-top: solid 1px $multiselectWarningBorderColor;
+	background-color: $multiselectWarningBackgroundColor;
+}
+
+// Multiselect Footer
+//
+// Styles for the footer in multiselect.
+//
+// Markup:
+// <div>
+// 	<div id="multiselect-content">
+// 		<form role="multiselect-content">
+// 			<div class="category">
+// 				<h4>Multiselect</h4>
+// 				<div class="checkbox"><label>
+// 					<input type="checkbox">Check me!</label>
+// 				</div>
+// 				<div class="checkbox"><label>
+// 					<input type="checkbox">Check me too!</label>
+// 				</div>
+// 			</div>
+// 		</form>
+// 	</div>
+// 	<div id="multiselect-footer" style="background:#FFF;">
+// 		<button type="button" class="btn btn-default">Done</button>
+// 		<button type="button" class="btn btn-default">Cancel</button>
+// 	</div>
+// </div>
+//
+// #multiselect-footer - **Not Used** Usually used to include buttons
+//
+// Styleguide 18.3
+#multiselect-footer {
+	padding: 10px;
+
+	text-align: right;
+}
+
+// Multiselect Flyout
+//
+// Override some of the flyout styles for multiselect.
+//
+// Markup:
+// <div class="multiselect-flyout">
+// 	Flyout Header
+// 	<div id="multiselect-content">
+// 		<form role="multiselect-content">
+// 			<div class="category">
+// 				<h4>Multiselect</h4>
+// 				<div class="checkbox"><label>
+// 					<input type="checkbox">Check me!</label>
+// 				</div>
+// 				<div class="checkbox"><label>
+// 					<input type="checkbox">Check me too!</label>
+// 				</div>
+// 			</div>
+// 		</form>
+// 	</div>
+// 	<div id="multiselect-footer">
+// 		<button type="button" class="btn btn-default">Done</button>
+// 		<button type="button" class="btn btn-default">Cancel</button>
+// 	</div>
+// </div>
+//
+// .multiselect-flyout - 
+//
+// Styleguide 18.4
+.multiselect-flyout {
+	width: 400px;
+	padding: 5px;
+
+	border: 1px solid $multiselectFlyoutBorderColor;
+	background-color: $multiselectFlyoutBackgroundColor;
+}

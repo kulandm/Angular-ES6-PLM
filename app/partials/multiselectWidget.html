@@ -1,0 +1,56 @@
+<div>
+	<div id="multiselect-search">
+		<!--typeahead widget, linked with scopedData/scopedDataFiltered -->
+		<typeahead-widget data="scopedData" matched="scopedDataFiltered" filter="displayName" case-sensitive="false" typed-val="typedVal"></typeahead-widget>
+	</div>
+	
+	<div id="multiselect-content">
+		<!-- default view, with categories - when no results have been filtered -->
+		<form role="multiselect-content" ng-if="typedVal.length === 0">
+			<!-- "selected" category -->
+			<div class="{{type}}" ng-repeat="item in scopedData | filter: {__selected: true}">
+				<!-- <div id="clearAllSelected" ng-if="$index == 0">
+					<a class="small" href="javascript:;" ng-click="clearAllSelected()">{{clearSelectMessage}}</a>
+				</div> -->
+				<label>
+					<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+				</label>
+			</div>
+			
+			<!-- category -->
+			<div class="category" ng-repeat="category in categories" ng-if="categories != null">
+				<h4>{{category.displayName}}</h4>
+				<!-- individual item -->
+				<div class="{{type}}" ng-repeat="item in scopedData | filter: {__selected: false} | limitTo: maxDisplayed" ng-if="item.category == category.id">
+					<label>
+						<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+					</label>
+				</div>
+			</div>
+			
+			<!-- 'categories' wasn't supplied -->
+			<div class="{{type}}" ng-repeat="item in scopedData | filter: {__selected: false} | limitTo: maxDisplayed" ng-if="(categories == null)">
+				<label>
+					<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+				</label>
+			</div>
+			
+		</form>
+		
+		<!-- filtered view, triggered whenever an user types something in the typeahead widget -->
+		<form role="multiselect-content" ng-if="typedVal.length > 0">
+			<div class="{{type}}" ng-repeat="item in scopedDataFiltered  | limitTo: maxDisplayed">
+				<label>
+					<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+				</label>
+			</div>
+		</form>
+		
+		<div id="multiselect-warning" ng-show="displayWarning"></div>
+	</div>
+	
+	<div id="multiselect-footer">
+		<button type="button" class="btn btn-primary" ng-click="submitSelection()">Done</button>
+		<button type="button" class="btn btn-default" ng-click="cancelSelection()">Cancel</button>
+	</div>
+</div>

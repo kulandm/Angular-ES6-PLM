@@ -1,0 +1,46 @@
+.ui-grid
+.ui-grid-cell
+.ui-grid-cell-contents {
+	line-height: 1.4;
+
+	overflow: hidden;
+
+	text-overflow: ellipsis;
+
+	&.field-cell {
+		padding: 5px;
+	}
+
+	.ui.fluid.dropdown,
+	.ui.vertical.menu {
+		position: absolute;
+		width: auto;
+
+		// Temporary ugly work-around in order to display in grid
+		margin-top: -8px;
+		min-width: 100px;
+
+		// Handle neighboring picklist overlapping
+		z-index: 2;
+	}
+
+	.field-selector:not(.edit-view) {
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.active-row {
+	background: #DDECF4;
+}
+
+.custom-column-cell .field-selector {
+	// Temporary, for blank fields, until 'edit' and 'revert' icons are back
+	height: 100% !important;
+}
+
+// Centers a check box within a ui grid cell.
+.center-check-box {
+	display: flex;
+	justify-content: center;
+}

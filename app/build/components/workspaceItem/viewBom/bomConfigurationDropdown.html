@@ -1,0 +1,50 @@
+<div id="configuration-dropdown-container">
+	<dropdown-widget id="configuration-dropdown-widget" anchor="{{bomConfigCtrl.anchor}}" h-pos="left" close-with=".close-dropdown" stop-event-propagation="true">
+		<div class="bias-fieldset">
+			<div class="bias-fieldset-row" layout="row" layout-align="space-around center">
+				<span flex="33">As of</span>
+				<div flex class="bias-fieldset-date">
+					<field-selector
+						field-data='bomConfigCtrl.biasConfiguration.effectiveDate'
+						type-id='bomConfigCtrl.FieldTypes.DATE'
+						field-meta='{}'
+						placeholder=''
+						edit-view='true'>
+					</field-selector>
+				</div>
+				<div flex="10"></div>
+			</div>
+			<div class="bias-fieldset-row" layout="row" layout-align="space-around center">
+				<span flex="33">Configuration</span>
+				<div flex class="bias-fieldset-dropdown">
+					<md-button id="bias-dropdown-button" class="md-default-theme dropdown-widget-button">
+						<span>{{bomConfigCtrl.BiasService.getBiasName(bomConfigCtrl.biasConfiguration.bias)}}</span>
+						<span class="caret-flex down static-rotateCaretVertical"></span>
+					</md-button>
+					<dropdown-widget id="bias-dropdown-widget" anchor="#bias-dropdown-button" h-pos="left">
+						<ul>
+							<li ng-repeat="bias in bomConfigCtrl.BiasService.getBiases()" ng-init="biasName = bomConfigCtrl.BiasService.getBiasName(bias)">
+								<a href="javascript:;" ng-click="bomConfigCtrl.biasConfiguration.setBias(bias)" title="{{biasName}}" arial-label="{{biasName}}">
+									<span class="label">{{biasName}}</span>
+								</a>
+							</li>
+						</ul>
+					</dropdown-widget>
+				</div>
+				<div class="bias-help-link" flex="10">
+					<a href="http://help.autodesk.com/view/PLM/ENU/?guid=GUID-8935CD75-1F63-4E23-8420-AA28D1A69E13" target="_blank">
+						<span class="md md-lg md-help"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="bias-command-bar" layout="row" layout-align="space-around center">
+			<md-button flex id="configuration-cancel" class="md-default-theme close-dropdown" aria-label="{{$root.bundle.button.cancel}}">
+				<span>{{$root.bundle.button.cancel}}</span>
+			</md-button>
+			<md-button flex id="configuration-save" class="md-default-theme md-primary close-dropdown" aria-label="{{$root.bundle.button.save}}" ng-click="bomConfigCtrl.onSave({config: bomConfigCtrl.getConfig()})">
+				<span>{{$root.bundle.button.ok}}</span>
+			</md-button>
+		</div>
+	</dropdown-widget>
+</div>

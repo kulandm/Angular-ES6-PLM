@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1><%= title %></h1>
+		</header>
+		<% for(var i=0; i < results.length; i++) { %>
+		<h2>Source ： <small><%= results[i].source %></small></h2>
+			<% if(results[i].warnings.length > 0) { %>
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<td></td>
+						<th>line</th>
+						<th>column</th>
+						<th>rule</th>
+						<th>severity</th>
+						<th>text</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(var k=0; k < results[i].warnings.length; k++) { %>
+					<tr>
+					<% if(!results[i].warnings[k].line) { %>
+						<th><span class="label label-warning">Invalid</span></th>
+					<% } else { %>
+						<th><span class="label label-danger">Error</span></th>
+					<% } %>
+						<td><%= results[i].warnings[k].line %></td>
+						<td><%= results[i].warnings[k].column %></td>
+						<td><%= results[i].warnings[k].rule %></td>
+						<td><%= results[i].warnings[k].severity %></td>
+						<td><%= results[i].warnings[k].text %></td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+			<% } else { %>
+			<div class="alert alert-success" role="alert">
+				<span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="font-size: 2em; vertical-align: middle;"></span>
+				Success
+			</div>
+			<% } %>
+		<% } %>
+	</div>
+</body>
+</html>

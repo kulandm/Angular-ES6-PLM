@@ -1,0 +1,119 @@
+<h1><code ng:non-bindable="">BomNode</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomnode-page"><p>Class defining the interface for bom graph nodes</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addfield">addField(the)</h3>
+<div class="addfield"><div class="models-bomnode-addfield-page"><p>Adds a field to the fields collection</p>
+</div><h5 id="methods_addfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>the</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomnode-addfield-page"><p>field to add</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addoutedge">addOutEdge(bomId)</h3>
+<div class="addoutedge"><div class="models-bomnode-addoutedge-page"><p>Adds an out-edge id to the collection of out-edges</p>
+</div><h5 id="methods_addoutedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomnode-addoutedge-page"><p>of the edge to add to this nodes list of outEdges</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bomnode-constructor-page"><p>initializes the Bom Node properties</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnode-constructor-page"><p>Object containing the following properties
+- itemId, outEdges, nodeProperties (which may contain fields)</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_frombulknode">fromBulkNode(bomId)</h3>
+<div class="frombulknode"><div class="models-bomnode-frombulknode-page"><p>Builds a BomNode from the node properties of a BulkBom payload.</p>
+</div><h5 id="methods_frombulknode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bomId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomnode-frombulknode-page"><p>of the edge to add to this nodes list of outEdges</p>
+</div></td></tr></tbody></table><h5 id="methods_frombulknode_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomnode-frombulknode-page"><p>an instance of BomNode.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbulkbomlink">getBulkBomLink()</h3>
+<div class="getbulkbomlink"><div class="models-bomnode-getbulkbomlink-page"><p>gets the bom root link of the BomNode.</p>
+</div><h5 id="methods_getbulkbomlink_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getbulkbomlink-page"><p>the bulk bom link of the node.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getdmsid">getDmsId()</h3>
+<div class="getdmsid"><div class="models-bomnode-getdmsid-page"><p>gets the dms id of the item of BomNode</p>
+</div><h5 id="methods_getdmsid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getdmsid-page"><p>dms id of the node&#39;s item.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfield">getField(id)</h3>
+<div class="getfield"><div class="models-bomnode-getfield-page"><p>returns the field corresponding to id</p>
+</div><h5 id="methods_getfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getfield-page"><p>the field id</p>
+</div></td></tr></tbody></table><h5 id="methods_getfield_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomnode-getfield-page"><p>the field corresponding to id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="models-bomnode-getfields-page"><p>getter for fields associated with this <code>BomNode</code> instance.</p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bomnode-getfields-page"><p>containing all fields of this <code>BomNode</code>.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitem">getItem()</h3>
+<div class="getitem"><div class="models-bomnode-getitem-page"><p>getter for the item represented by this BomNode.</p>
+</div><h5 id="methods_getitem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomnode-getitem-page"><p>the item represented by this BomNode.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemid">getItemId()</h3>
+<div class="getitemid"><div class="models-bomnode-getitemid-page"><p>getter for the id of item represented by this BomNode.</p>
+</div><h5 id="methods_getitemid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getitemid-page"><p>the id of the item of the BomNode.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemurn">getItemUrn()</h3>
+<div class="getitemurn"><div class="models-bomnode-getitemurn-page"><p>getter for the urn of item represented by this node.</p>
+</div><h5 id="methods_getitemurn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getitemurn-page"><p>the urn of the item of the node.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getoutdegree">getOutDegree()</h3>
+<div class="getoutdegree"><div class="models-bomnode-getoutdegree-page"><p>Tells us how many edges are going out of this BomNode to
+other BomNodes.</p>
+</div><h5 id="methods_getoutdegree_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-bomnode-getoutdegree-page"><p>The total number of outgoing edges from this BomNode.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getresourceid">getResourceId()</h3>
+<div class="getresourceid"><div class="models-bomnode-getresourceid-page"><p>gets a formatted resourceId  <code>wsId@dmsId</code> for BomNode.</p>
+</div><h5 id="methods_getresourceid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getresourceid-page"><p>representing the formatted resourceId for this node.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspaceid">getWorkspaceId()</h3>
+<div class="getworkspaceid"><div class="models-bomnode-getworkspaceid-page"><p>getter for the workspace id of the Nodes item</p>
+</div><h5 id="methods_getworkspaceid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomnode-getworkspaceid-page"><p>representing the workspace id of node.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bomrootlink">bomRootLink</h3>
+<div class="bomrootlink"><div class="models-bomnode-bomrootlink-page"><p>this is the <code>/bom</code> link for fetching the BulkBom
+of the item that is represented by this node.</p>
+</div></div>
+</li>
+<li><h3 id="properties_haschildren">hasChildren</h3>
+<div class="haschildren"><div class="models-bomnode-haschildren-page"><p>boolean if this node has children</p>
+</div></div>
+</li>
+<li><h3 id="properties_item">item</h3>
+<div class="item"><div class="models-bomnode-item-page"><p>Item information for this node (urn, link, etc)</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="models-bomnode-itemid-page"><p>Id that uniquely identifes the node in the graph.</p>
+</div></div>
+</li>
+<li><h3 id="properties_nestedbomlink">nestedBomLink</h3>
+<div class="nestedbomlink"><div class="models-bomnode-nestedbomlink-page"><p>the bom nested link of BomNode.</p>
+</div></div>
+</li>
+<li><h3 id="properties_nodeproperties">nodeProperties</h3>
+<div class="nodeproperties"><div class="models-bomnode-nodeproperties-page"><p>Object holding all of this node&#39;s properties
+view def fields are held on the &#39;fields attribute&#39;</p>
+</div></div>
+</li>
+<li><h3 id="properties_outedges">outEdges</h3>
+<div class="outedges"><div class="models-bomnode-outedges-page"><p>Collection of ids for all the edges leaving this node</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,4 @@
+properties=Vlastnosti
+outline=Osnova
+tasks=%DAlohy
+help=N%E1pov\u011bda

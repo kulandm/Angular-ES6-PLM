@@ -1,0 +1,52 @@
+<div class="view-attached-items-flyout-content">
+
+		<!-- The header -->
+	<div layout="row" class="view-attached-items-header">
+		<div layout="row" layout-align="start center">
+			<div>{{viewAttachedItemsCtrl.attachmentsCount}}&nbsp;</div>
+			<div ng-if="!(viewAttachedItemsCtrl.attachmentsCount > 1)">{{$root.bundle.text.directAttachment}}</div>
+			<div ng-if="viewAttachedItemsCtrl.attachmentsCount > 1">{{$root.bundle.text.directAttachments}}</div>
+		</div>
+
+		<div flex></div>
+
+		<div>
+			<md-button class="md-default-theme dropdown-widget-button" id="view-attached-items-menu" aria-label="{{$root.bundle.button.actions}}">
+				<span>{{$root.bundle.button.actions}}</span>
+				<span class="caret-flex down static-rotateCaretVertical"></span>
+			</md-button>
+
+			<dropdown-widget anchor="#view-attached-items-menu" class="view-dropdown-widget-wrapper" h-pos="left">
+				<ul>
+					<li>
+						<a
+							ng-href="{{viewAttachedItemsCtrl.goAttachmentsLink}}"
+							title="{{$root.bundle.wip.attachments.goAttachments}}"
+							aria-label="{{$root.bundle.wip.attachments.goAttachments}}"
+							ng-click="viewAttachedItemsCtrl.goToAttachment()">
+							<span class="label">{{$root.bundle.wip.attachments.goAttachments}}</span>
+						</a>
+					</li>
+				</ul>
+			</dropdown-widget>
+		</div>
+	</div>
+
+	<md-divider></md-divider>
+
+	<wip-attachments-list
+		workspace-id="viewAttachedItemsCtrl.workspaceId"
+		item-id="viewAttachedItemsCtrl.itemId">
+	</wip-attachments-list>
+
+	<md-divider></md-divider>
+
+	<!-- Footer of flyout that contains link and buttons -->
+	<md-content class="view-attached-items-flyout-footer" layout="row" layout-align="end center" layout-padding>
+		<div>
+			<md-button class="md-primary" ng-click="viewAttachedItemsCtrl.cancelSelection()" aria-label="{{$root.bundle.button.close}}">
+				{{$root.bundle.button.close}}
+			</md-button>
+		</div>
+	</md-content>
+</div>

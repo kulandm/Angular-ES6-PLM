@@ -1,0 +1,7 @@
+<mxEditor>
+	<ui>
+		<resource basename="plmlib/mxGraph/resources/mxApplication"/>
+	</ui>
+	<include name="plmlib/mxGraph/config/keyhandler-commons.xml"/>
+	
+</mxEditor>

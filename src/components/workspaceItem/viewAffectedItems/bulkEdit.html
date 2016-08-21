@@ -1,0 +1,87 @@
+<md-dialog aria-label="Bulk Edit Dialog" class="bulk-edit-dialog">
+	<md-content layout="column">
+		<md-toolbar>
+			<h2>{{$root.bundle.affectedItems.bulkEditModalHeading}}
+				<a href="#" ng-click="closeDialog()" class="close-bulk-edit">
+					<span class="md md-lg md-close" ng-click="bulkEditCtrl.closeBulkTransition()"></span>
+				</a>
+			</h2>
+		</md-toolbar>
+		<section class="lifecycle-transitions-container">
+			<h4>{{$root.bundle.affectedItems.setLifecycleTransition}}</h4>
+			<ul>
+				<li>
+					<strong>{{$root.bundle.affectedItems.state}}</strong>
+					<strong>{{$root.bundle.affectedItems.bulkEditlifecycle}}</strong>
+				</li>
+				<li ng-repeat="state in bulkEditCtrl.stateLifecycle"
+					ng-if="state.transitions && state.transitions.length > 0">
+					<label>
+						{{state.title}}
+					</label>
+					<field-selector
+							field-id="{{state.title}}"
+							field-data="state"
+							type-id="6"
+							edit-view="true"
+							class="available-transitions"
+							simple-select="true">
+					</field-selector>
+				</li>
+			</ul>
+		</section>
+		<section class="effectivity-container">
+			<h4>{{$root.bundle.affectedItems.effectivity}}</h4>
+			<ul>
+				<li>
+					<label>{{$root.bundle.bulkEdit.effectivityOption}}</label>
+					<md-radio-group ng-model="bulkEditCtrl.effectivity.enabled" class="effectivity-options" ng-change="bulkEditCtrl.effectivityChanged(bulkEditCtrl.effectivity.enabled)">
+						<md-radio-button ng-value="false">{{$root.bundle.bulkEdit.no}}</md-radio-button>
+						<md-radio-button ng-value="true" class="md-primary">{{$root.bundle.bulkEdit.yes}}
+						</md-radio-button>
+					</md-radio-group>
+				</li>
+				<li>
+					<label
+						ng-class="{'disabled' : bulkEditCtrl.effectivity.enabled === false}" class="set-effectivity">{{$root.bundle.bulkEdit.setEffectivity}}</label>
+					<!-- TODO to replace md-datepicker with field-selector date picker once available -->
+					<field-selector
+							class="effectivity-date"
+							ng-disabled="bulkEditCtrl.effectivity.enabled === false"
+							field-id="bulkEditCtrl.effectivity"
+							field-data="bulkEditCtrl.effectivity.data"
+							type-id="3"
+							placeholder="{{$root.bundle.affectedItems.onRelease}}"
+							edit-view="true"
+							field-meta="bulkEditCtrl.meta"
+							simple-select="true">
+					</field-selector>
+
+					<!-- Enable the below angular material datepicker post resolving the validation messages issues -->
+					<!-- <md-datepicker
+						class="effectivity-date" 
+						ng-model="bulkEditCtrl.effectivity.data.value"
+						md-placeholder={{$root.bundle.affectedItems.onRelease}}
+						ng-disabled="bulkEditCtrl.effectivity.enabled === false"
+						ng-class="{'noBackground' : bulkEditCtrl.effectivity.enabled === false}"
+						md-min-date="bulkEditCtrl.minDate">
+					</md-datepicker> -->
+				</li>
+			</ul>
+		</section>
+		<div class="bulk-edit-footer md-actions" layout="row" layout-align="end center">
+			<md-button
+					aria-label="{{$root.bundle.button.cancel}}"
+					ng-click="bulkEditCtrl.closeBulkTransition()">
+				{{$root.bundle.button.cancel}}
+			</md-button>
+			<md-button
+					class="md-primary"
+					aria-label="{{$root.bundle.bulkEdit.update}}"
+					ng-click="bulkEditCtrl.updateBulkTransition()"
+					ng-disabled="bulkEditCtrl.InvalidDateValidation">
+				{{$root.bundle.bulkEdit.update}}
+			</md-button>
+		</div>
+	</md-content>
+</md-dialog>

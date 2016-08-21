@@ -1,0 +1,103 @@
+<md-content class="workflow-content">
+	<!-- Password enabled workflow transition not supported notification -->
+	<md-toolbar class="error" ng-show="transition.passwordEnabled">
+		<div class="md-toolbar-tools md-warn md-hue-2">
+			{{$root.bundle.transition.passwordNotSupported}}
+		</div>
+	</md-toolbar>
+
+	<form name="workflowActionForm"
+		ng-submit="proceedTransition()"
+		ng-style="{'min-width': minWidth}"
+		novalidate>
+
+		<label>{{$root.bundle.workflow.actions}}</label>
+
+		<span ng-if="workflowTransitions && (workflowTransitions.length > 0)">
+			<div id="workflow-transition-select"
+				class="ui fluid search selection single dropdown">
+				<input type="hidden">
+				<i class="dropdown icon"></i>
+				<div class="default text">
+					{{$root.bundle.workflow.selectAction}}
+				</div>
+				<div class="menu">
+					<div class="item"
+						data-value="{{transition.__self__}}"
+						ng-repeat="transition in workflowTransitions |
+						workflowTransitionPermission : UserObj.permissions">
+						{{transition.name}}
+					</div>
+				</div>
+			</div>
+			<div class="act-as-container"
+				ng-if="hasDelegators">
+				<label for="actAsUser">
+					{{$root.bundle.workflow.actAsLabel}}
+				</label>
+				<select id="actAsUser"
+					ng-model="selectedUserImpersonation"
+					ng-options="row.title for row in transition.delegatorUsers"
+					ng-change="setChosenActAsUser(selectedUserImpersonation)">
+					<option value="">
+						{{$root.bundle.workflow.pleaseSelect}}
+					</option>
+				</select>
+			</div>
+		</span>
+
+		<span class="no-transitions"
+			ng-if="!workflowTransitions || workflowTransitions.length === 0">
+			{{$root.bundle.workflow.noActionsAvailable}}
+		</span>
+
+		<!-- TODO password support -->
+		<!-- TODO form validation support -->
+		<!-- <div class="form-group"
+			ng-if="transition != null && transition.passwordApproval == true">
+			<label>{{$root.bundle.workflow.passwordForApproval}}</label>
+			<input type="password"
+				class="form-control"
+				ng-model="passwordForApproval"
+				placeholder="{{bundle.text.password}}"
+				required />
+		</div> -->
+
+		<!-- Comments textarea -->
+		<!-- TODO to bring back md-input-container after we upgrade angular material -->
+		<div class="comments"
+			ng-show="transition.comments === 'OPTIONAL' ||
+			transition.comments === 'REQUIRED'">
+			<label ng-class="{'label-required': transition.comments === 'REQUIRED'}">
+				{{$root.bundle.transition.comments}}
+			</label>
+			<textarea name="comments"
+				maxlength="{{maxCommentsLength}}"
+				ng-model="comments"
+				ng-disabled="transition.passwordEnabled"
+				ng-required="transition.comments === 'REQUIRED'">
+			</textarea>
+		</div>
+
+		<!-- Footer buttons -->
+		<div class="footer">
+			<md-button id="submit" type="submit"
+				class="md-primary save-button"
+				ng-disabled="transition.passwordEnabled ||
+				(hasDelegators && !selectedUserImpersonation) ||
+				isCommentsRequiredAndInvalid() || !transition.name">
+				{{transition.saveStepLabel || $root.bundle.button.saveStep}}
+			</md-button>
+			<md-button type="button"
+				class="cancel-transition"
+				ng-click="cancelTransition()">
+				<span ng-if="workflowTransitions.length">
+					{{$root.bundle.button.cancel}}
+				</span>
+				<span ng-if="!workflowTransitions || workflowTransitions.length === 0">
+					{{$root.bundle.button.close}}
+				</span>
+			</md-button>
+		</div>
+	</form>
+</md-content>

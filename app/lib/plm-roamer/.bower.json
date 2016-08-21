@@ -1,0 +1,42 @@
+{
+  "name": "plm-roamer",
+  "description": "PLM UI Roamer",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "d3": "https://github.com/mbostock/d3.git#3.5.9",
+    "plm-api-models-manager": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git#1.0.2",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#1.0.1",
+    "plm-urn-parser": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-urn-parser.git#v1.0.0",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#v1.0.69"
+  },
+  "resolutions": {
+    "angular": "1.4.8",
+    "plm-event-service": "1.0.1",
+    "plm-unit-tests-mocks": "v1.0.69"
+  },
+  "version": "1.0.18",
+  "_release": "1.0.18",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.18",
+    "commit": "0daf01e93273ba19498caffd09f1a0c4b57fd090"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-roamer.git",
+  "_target": "v1.0.18",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-roamer.git"
+}

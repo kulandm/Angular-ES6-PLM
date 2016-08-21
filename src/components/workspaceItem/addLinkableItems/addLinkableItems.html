@@ -1,0 +1,148 @@
+<div class="add-item-flyout-content">
+	<!-- The logic is shamelessly copied from Multi-select widget template. -->
+	<!-- We can't reuse multi select widget here, as current workflow is not following multi-select pattern. -->
+	<div class="add-item-search">
+		<typeahead-widget
+			typed-val="addLinkableItemsCtrl.searchVal"
+			is-remote="true"
+			wait-time="1000"
+			remote-filter="addLinkableItemsCtrl.doSearch(searchValue)"
+			filter-dropdown-data="addLinkableItemsCtrl.filterDropdownData"
+			option-changed="addLinkableItemsCtrl.optionChanged(selectedId)"
+			percentage="0.6">
+		</typeahead-widget>
+	</div>
+
+	<!-- Show total number of items, only if there is at least one item -->
+	<div ng-if="addLinkableItemsCtrl.listData.length > 0" class="add-item-flyout-info">
+		{{addLinkableItemsCtrl.totalItemCount}}
+		<span ng-if="addLinkableItemsCtrl.listData.length === 1">
+			{{$root.bundle.addLinkedItems.sorted.oneItem}}
+		</span>
+		<span ng-if="addLinkableItemsCtrl.listData.length > 1">
+			{{$root.bundle.addLinkedItems.sorted.items}}
+		</span>
+	</div>
+
+	<!-- Sticky to show the number of items selected, only if there is at least one item selected -->
+	<div ng-if="addLinkableItemsCtrl.selectedItemIdList.length > 0" class="add-item-flyout-sticky">
+		{{addLinkableItemsCtrl.selectedItemIdList.length}}
+		<span ng-if="addLinkableItemsCtrl.selectedItemIdList.length === 1">
+			{{$root.bundle.addLinkedItems.selected.oneItem}}
+		</span>
+		<span ng-if="addLinkableItemsCtrl.selectedItemIdList.length > 1">
+			{{$root.bundle.addLinkedItems.selected.items}}
+		</span>
+		<span class="divider">&#8211;</span>
+		<a href="javascript:;" ng-click="addLinkableItemsCtrl.clearSelection()">
+			{{$root.bundle.addLinkedItems.clearAll}}
+		</a>
+	</div>
+
+	<!-- The list of items -->
+	<div class="item-list-container"
+		update="addLinkableItemsCtrl.doScroll"
+		infinite-scroll=""
+        infinite-scroll-disabled="addLinkableItemsCtrl.isLoading"
+		adjust-max-height=""
+		trigger-max-height-adjustment="{{addLinkableItemsCtrl.flyoutState}}">
+
+		<!-- Display the list of items only if there is at least one item -->
+		<ol ng-if="addLinkableItemsCtrl.listData.length > 0" class="item-list">
+			<li ng-repeat="item in addLinkableItemsCtrl.listData"
+				ng-class="{'item-selected': item.isSelected()}">
+				<div layout="row" layout-align="space-between center">
+					<div flex="10">
+						<md-checkbox
+							aria-label="checkbox"
+							ng-model="item.selected"
+							ng-change="addLinkableItemsCtrl.toggleSelection(item)"
+							ng-disabled="item.isLinkedTo()">
+							&nbsp;
+						</md-checkbox>
+					</div>
+
+					<div layout="column"
+						layout-align="center start"
+						class="item-info"
+						ng-class="{'item-disabled': item.isLinkedTo()}"
+						flex>
+
+						<div layout="row" layout-align="space-between center">
+							<div class="item-info-name" flex>
+								<a ng-if="!item.isLinkedTo()"
+									ui-sref="details({
+										workspaceId: item.getWorkspaceId(),
+										tab: 'details',
+										view: 'full',
+										mode: 'view',
+										itemId: addLinkableItemsCtrl.UrnParser.encode(item.getItemUrn())
+									})"
+									ng-click="addLinkableItemsCtrl.cancelSelection()">
+									{{item.getItemTitle()}} {{item.getItemVersion()}}
+								</a>
+								<a ng-if="item.isLinkedTo()">
+									{{item.getItemTitle()}} {{item.getItemVersion()}}
+								</a>
+							</div>
+
+							<div flex="10"
+								ng-if="item.isLinkedTo()"
+								class="item-tooltip-wrapper">
+								<a href="javascript:;"
+									ng-click="addLinkableItemsCtrl.tooltipFlyout($event, item)"
+									class="item-tooltip-icon">
+									<span class="md md-help"></span>
+								</a>
+							</div>
+						</div>
+
+						<span class="item-info-details">
+							{{item.getWorkspaceTitle()}}
+							<span ng-if="item.isLifecycle()">
+								| {{item.getLifecycleTitle()}}
+							</span>
+						</span>
+					</div>
+				</div>
+			</li>
+		</ol>
+
+		<!-- If there is no item from the server, show "No workspace relationships defined" -->
+		<div ng-if="addLinkableItemsCtrl.noWorkspaceRsFlag" class="item-list-empty">
+			{{$root.bundle.addLinkedItems.noWorkspaceRs}}
+		</div>
+
+		<!-- If there is no item found during search, show "No Matches" -->
+		<div ng-if="!addLinkableItemsCtrl.noWorkspaceRsFlag && addLinkableItemsCtrl.noDataFlag" class="item-list-empty">
+			{{$root.bundle.addLinkedItems.noItemsFound}}
+		</div>
+	</div>
+
+	<!-- Footer of flyout that contains link and buttons -->
+	<md-content class="add-item-flyout-footer"
+		layout="row"
+		layout-align="space-between center"
+		layout-padding>
+		<!-- This div is NOT be commented out as it affects the alignment -->
+		<div>
+			<!-- Quick create from flyout is disabled for 10.0 release -->
+			<!-- <md-button ng-click="addLinkableItemsCtrl.createNewItem()">
+				<span class="md md-add"></span>
+				{{$root.bundle.text.createNewItem}}
+			</md-button> -->
+		</div>
+
+		<div>
+			<md-button ng-click="addLinkableItemsCtrl.cancelSelection()">
+				{{$root.bundle.button.cancel}}
+			</md-button>
+
+			<md-button class="md-primary"
+				ng-click="addLinkableItemsCtrl.submitSelection()"
+				ng-disabled="addLinkableItemsCtrl.selectedItemIdList.length === 0">
+				{{$root.bundle.button.add}}
+			</md-button>
+		</div>
+	</md-content>
+</div>

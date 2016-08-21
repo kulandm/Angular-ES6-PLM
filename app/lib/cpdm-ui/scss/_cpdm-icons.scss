@@ -1,0 +1,824 @@
+/** Styles for galileo icons added below **/
+
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.icon-_default-16, .default-icon {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -16px;
+  width: 16px;
+  height: 16px;
+}
+.default-icon {
+	display: inline-block;
+	text-indent: 21px;
+}
+.icon-acad-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -560px;
+  width: 16px;
+  height: 16px;
+}
+.icon-afe-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -32px;
+  width: 16px;
+  height: 16px;
+}
+.icon-afem-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -48px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ai-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -64px;
+  width: 16px;
+  height: 16px;
+}
+.icon-apj-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -80px;
+  width: 16px;
+  height: 16px;
+}
+.icon-arx-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -96px;
+  width: 16px;
+  height: 16px;
+}
+.icon-bmp-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -112px;
+  width: 16px;
+  height: 16px;
+}
+.icon-cam-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -128px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dgn-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -144px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dmu-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -160px;
+  width: 16px;
+  height: 16px;
+}
+.icon-doc-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -176px;
+  width: 16px;
+  height: 16px;
+}
+.icon-docx-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -192px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dst-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -208px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dwf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -224px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dwfx-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -240px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dwg-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -256px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dwt-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -272px;
+  width: 16px;
+  height: 16px;
+}
+.icon-dxf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -288px;
+  width: 16px;
+  height: 16px;
+}
+.icon-epdm-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -304px;
+  width: 16px;
+  height: 16px;
+}
+.icon-exe-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -320px;
+  width: 16px;
+  height: 16px;
+}
+.icon-f3d-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -336px;
+  width: 16px;
+  height: 16px;
+}
+.icon-fusion-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -352px;
+  width: 16px;
+  height: 16px;
+}
+.icon-gdb-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -368px;
+  width: 16px;
+  height: 16px;
+}
+.icon-gif-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -384px;
+  width: 16px;
+  height: 16px;
+}
+.icon-htm-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -400px;
+  width: 15px;
+  height: 16px;
+}
+.icon-html-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -416px;
+  width: 15px;
+  height: 16px;
+}
+.icon-iam-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -432px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ide-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -448px;
+  width: 16px;
+  height: 16px;
+}
+.icon-idw-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -464px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ipb-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -480px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ipt-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -496px;
+  width: 16px;
+  height: 16px;
+}
+.icon-jpeg-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -512px;
+  width: 16px;
+  height: 16px;
+}
+.icon-jpg-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -528px;
+  width: 16px;
+  height: 16px;
+}
+.icon-m4v-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -544px;
+  width: 16px;
+  height: 16px;
+}
+.icon-max-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px 0px;
+  width: 16px;
+  height: 16px;
+}
+.icon-maxc-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -576px;
+  width: 16px;
+  height: 16px;
+}
+.icon-mb-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -592px;
+  width: 16px;
+  height: 16px;
+}
+.icon-mht-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -608px;
+  width: 16px;
+  height: 16px;
+}
+.icon-mockup-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -624px;
+  width: 16px;
+  height: 16px;
+}
+.icon-mp4-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -640px;
+  width: 16px;
+  height: 16px;
+}
+.icon-mud-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -656px;
+  width: 16px;
+  height: 16px;
+}
+.icon-nwc-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -672px;
+  width: 16px;
+  height: 16px;
+}
+.icon-nwd-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -688px;
+  width: 16px;
+  height: 16px;
+}
+.icon-nwf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -704px;
+  width: 16px;
+  height: 16px;
+}
+.icon-obj-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -720px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ogv-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -736px;
+  width: 16px;
+  height: 16px;
+}
+.icon-others-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -752px;
+  width: 16px;
+  height: 16px;
+}
+.icon-pdf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -768px;
+  width: 16px;
+  height: 16px;
+}
+.icon-pmp-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -784px;
+  width: 16px;
+  height: 16px;
+}
+.icon-png-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -800px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ppl-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -816px;
+  width: 16px;
+  height: 16px;
+}
+.icon-ppt-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -832px;
+  width: 16px;
+  height: 16px;
+}
+.icon-pptx-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -848px;
+  width: 16px;
+  height: 16px;
+}
+.icon-psd-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -864px;
+  width: 16px;
+  height: 16px;
+}
+.icon-publisher-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -880px;
+  width: 16px;
+  height: 16px;
+}
+.icon-rfa-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -896px;
+  width: 16px;
+  height: 16px;
+}
+.icon-rft-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -912px;
+  width: 16px;
+  height: 16px;
+}
+.icon-rte-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -928px;
+  width: 16px;
+  height: 16px;
+}
+.icon-rtf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -944px;
+  width: 16px;
+  height: 16px;
+}
+.icon-rvt-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -960px;
+  width: 16px;
+  height: 16px;
+}
+.icon-sdf-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -976px;
+  width: 16px;
+  height: 16px;
+}
+.icon-sim-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -992px;
+  width: 16px;
+  height: 16px;
+}
+.icon-txt-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1008px;
+  width: 16px;
+  height: 16px;
+}
+.icon-wdp-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1024px;
+  width: 16px;
+  height: 16px;
+}
+.icon-webm-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1040px;
+  width: 16px;
+  height: 16px;
+}
+.icon-wmv-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1056px;
+  width: 16px;
+  height: 16px;
+}
+.icon-xls-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1072px;
+  width: 16px;
+  height: 16px;
+}
+.icon-xlsx-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1088px;
+  width: 16px;
+  height: 16px;
+}
+.icon-zip-16 {
+  background-image: url(./icons/filetypes_16.png);
+  background-position: 0px -1104px;
+  width: 16px;
+  height: 16px;
+}
+
+.icon-afe-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-afem-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1024px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ai-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -64px;
+  width: 32px;
+  height: 32px;
+}
+.icon-apj-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -96px;
+  width: 32px;
+  height: 32px;
+}
+.icon-arx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -128px;
+  width: 32px;
+  height: 32px;
+}
+.icon-bmp-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -160px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dgn-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -192px;
+  width: 32px;
+  height: 32px;
+}
+.icon-doc-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -224px;
+  width: 32px;
+  height: 32px;
+}
+.icon-docx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -256px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dst-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -288px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dwf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -320px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dwfx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -352px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dwg-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -384px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dwt-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -416px;
+  width: 32px;
+  height: 32px;
+}
+.icon-dxf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -448px;
+  width: 32px;
+  height: 32px;
+}
+.icon-epdm-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -480px;
+  width: 32px;
+  height: 32px;
+}
+.icon-exe-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -512px;
+  width: 32px;
+  height: 32px;
+}
+.icon-f3d-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -544px;
+  width: 32px;
+  height: 32px;
+}
+.icon-fbx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -576px;
+  width: 32px;
+  height: 32px;
+}
+.icon-gdb-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -608px;
+  width: 32px;
+  height: 32px;
+}
+.icon-gif-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -640px;
+  width: 32px;
+  height: 32px;
+}
+.icon-htm-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -672px;
+  width: 32px;
+  height: 32px;
+}
+.icon-html-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -704px;
+  width: 32px;
+  height: 32px;
+}
+.icon-iam-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -736px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ide-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -768px;
+  width: 32px;
+  height: 32px;
+}
+.icon-idw-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -800px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ipb-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -832px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ipt-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -864px;
+  width: 32px;
+  height: 32px;
+}
+.icon-jpeg-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -896px;
+  width: 32px;
+  height: 32px;
+}
+.icon-jpg-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -928px;
+  width: 32px;
+  height: 32px;
+}
+.icon-m4v-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -960px;
+  width: 32px;
+  height: 32px;
+}
+.icon-max-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -992px;
+  width: 32px;
+  height: 32px;
+}
+.icon-maxc-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-mb-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1056px;
+  width: 32px;
+  height: 32px;
+}
+.icon-mockup-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1088px;
+  width: 32px;
+  height: 32px;
+}
+.icon-mp4-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1120px;
+  width: 32px;
+  height: 32px;
+}
+.icon-mud-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1152px;
+  width: 32px;
+  height: 32px;
+}
+.icon-nwc-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1184px;
+  width: 32px;
+  height: 32px;
+}
+.icon-nwd-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1216px;
+  width: 32px;
+  height: 32px;
+}
+.icon-nwf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1248px;
+  width: 32px;
+  height: 32px;
+}
+.icon-obj-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1280px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ogv-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1312px;
+  width: 32px;
+  height: 32px;
+}
+.icon-others-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1344px;
+  width: 32px;
+  height: 32px;
+}
+.icon-pdf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1376px;
+  width: 32px;
+  height: 32px;
+}
+.icon-pmp-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1408px;
+  width: 32px;
+  height: 32px;
+}
+.icon-png-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1440px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ppl-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1472px;
+  width: 32px;
+  height: 32px;
+}
+.icon-ppt-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1504px;
+  width: 32px;
+  height: 32px;
+}
+.icon-pptx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1536px;
+  width: 32px;
+  height: 32px;
+}
+.icon-psd-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1568px;
+  width: 32px;
+  height: 32px;
+}
+.icon-rfa-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1600px;
+  width: 32px;
+  height: 32px;
+}
+.icon-rft-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1632px;
+  width: 32px;
+  height: 32px;
+}
+.icon-rte-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1664px;
+  width: 32px;
+  height: 32px;
+}
+.icon-rtf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1696px;
+  width: 32px;
+  height: 32px;
+}
+.icon-rvt-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1728px;
+  width: 32px;
+  height: 32px;
+}
+.icon-sdf-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1760px;
+  width: 32px;
+  height: 32px;
+}
+.icon-sim-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1792px;
+  width: 32px;
+  height: 32px;
+}
+.icon-txt-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1824px;
+  width: 32px;
+  height: 32px;
+}
+.icon-wdp-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1856px;
+  width: 32px;
+  height: 32px;
+}
+.icon-webm-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1888px;
+  width: 32px;
+  height: 32px;
+}
+.icon-wmv-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1920px;
+  width: 32px;
+  height: 32px;
+}
+.icon-xls-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1952px;
+  width: 32px;
+  height: 32px;
+}
+.icon-xlsx-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -1984px;
+  width: 32px;
+  height: 32px;
+}
+.icon-zip-32 {
+  background-image: url(./icons/filetypes_32.png);
+  background-position: 0px -2016px;
+  width: 32px;
+  height: 32px;
+}
+
+.file-icon {
+	display: inline-block;
+	margin-right: 5px;
+}
+/** Styles for galileo icons ends here**/

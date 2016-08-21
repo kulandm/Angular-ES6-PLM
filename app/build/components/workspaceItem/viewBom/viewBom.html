@@ -1,0 +1,251 @@
+<span class="bom-wrapper">
+
+	<!-- Command bar, top
+	float or change transcluded button style
+-->
+	<command-bar parent-ctrl="viewBomCtrl">
+		<span class="bom-command-bar">
+			<span class="command-bar-left">
+				<md-button id="bom-edit-button" feature-toggle="bom.edit" class="md-button md-primary md-default-theme command-bar-button" aria-label="{{$root.bundle.button.actions}}" ng-disabled="viewBomCtrl.uiPermissions.editDisabled" ng-show="viewBomCtrl.uiPermissions.editButtonVisibile && !viewBomCtrl.isEditState()" ng-click="viewBomCtrl.enterEditMode()">
+					<span class="label" ng-class="{'disabled-primary-button': viewBomCtrl.isEditBomButtonDisabled}">
+						{{$root.bundle.button.edit}}
+					</span>
+				</md-button>
+
+				<md-button id="bom-add-button" feature-toggle="bom.add" class="md-button md-secondary md-default-theme command-bar-button" aria-label="{{$root.bundle.button.actions}}" ng-disabled="viewBomCtrl.uiPermissions.editDisabled || (viewBomCtrl.addFlyout && viewBomCtrl.addFlyout.isActive())" ng-show="viewBomCtrl.uiPermissions.addButtonVisibile" ng-click="viewBomCtrl.triggerAdd($event)">
+						<span class="label">{{$root.bundle.button.add}}</span>
+				</md-button>
+
+				<md-button id="bom-remove-button" class="md-button md-secondary md-default-theme command-bar-button" aria-label="{{$root.bundle.button.actions}}" ng-disabled="viewBomCtrl.uiPermissions.editDisabled || (viewBomCtrl.getTable().getCheckedRows().length === 0)" ng-show="viewBomCtrl.uiPermissions.removeButtonVisibile" ng-click="viewBomCtrl.triggerRemove()">
+					<span class="label">{{$root.bundle.button.remove}}</span>
+				</md-button>
+
+				<span id="bom-actions-dropdown">
+					<md-button id="bom-actions-button" class="square-icon md-default-theme" aria-label="{{$root.bundle.button.actions}}">
+						<span class="zmdi zmdi-more"></span>
+					</md-button>
+					<dropdown-widget anchor="#bom-actions-button" h-pos="right" class="bom-actions-dropdown-widget-wrapper">
+						<ul>
+							<li>
+								<a href="javascript:;" ng-click="viewBomCtrl.exportBom()">
+									<span class="label">{{$root.bundle.bom.actions.export}}</span>
+								</a>
+							</li>
+						</ul>
+					</dropdown-widget>
+				</span>
+			</span>
+
+			<span class="command-bar-right">
+				<span ng-if="viewBomCtrl.getViewDefs()" id="views-dropdown">
+					<span class="view-dropdown-label">
+						{{viewBomCtrl.getViewDefs().getViews().length > 1 ? "Views:" : "View:"}}
+					</span>
+
+					<md-button id="views-dropdown-button" class="switch-view-dropdown dropdown-widget-button" aria-label="{{$root.bundle.button.actions}}" title="{{viewBomCtrl.getCurrentViewDef().getTitle()}}" ng-disabled="viewBomCtrl.isEditState()">
+						<span>{{viewBomCtrl.getCurrentViewDef().getTitle()}}</span>
+						<span class="caret-flex down static-rotateCaretVertical"></span>
+					</md-button>
+
+					<dropdown-widget anchor="#views-dropdown-button" h-pos="left" class="view-dropdown-widget-wrapper">
+						<ul>
+							<li ng-repeat="view in viewBomCtrl.getViewDefs().getViews()">
+								<a href="javascript:;" ng-click="viewBomCtrl.changeView(view)" title="{{view.getTitle()}}" arial-label="{{view.getTitle()}}">
+									<span class="label">{{view.getTitle()}}</span>
+								</a>
+							</li>
+						</ul>
+					</dropdown-widget>
+				</span>
+
+				<span id="bom-configuration-dropdown">
+					<md-button
+					   id="configuration-dropdown-button"
+					   class="md-default-theme dropdown-widget-button"
+					   title="{{$root.bundle.button.settings}}"
+					   aria-label="{{$root.bundle.button.settings}}"
+					   ng-disabled = "viewBomCtrl.isEditState()">
+					   <span class="md md-lg md-settings"></span>
+					</md-button>
+					<bom-configuration-dropdown
+						anchor="#configuration-dropdown-button"
+						initial-bias="viewBomCtrl.getConfigurationStateMachine().revisionBias"
+						initial-date="viewBomCtrl.getConfigurationStateMachine().getEffectiveDate()"
+						on-save="viewBomCtrl.changeBomConfiguration(config)">
+					</bom-configuration-dropdown>
+				</span>
+
+			</span>
+		</span>
+	</command-bar>
+
+<!-- Bom Header -->
+<md-content class="bom-config-header">
+	<span class="bom-config-header-text" title="{{viewBomCtrl.getTooltipText()}}">
+		<strong>{{viewBomCtrl.getViewTitle()}}</strong> as of <strong>{{viewBomCtrl.getViewDate()}}</strong> using the <strong>{{viewBomCtrl.getViewBias()}}</strong> configuration.
+	</span>
+</md-content>
+
+<!-- Bom Table -->
+<md-content class="bom-table">
+	<table-data id="bomTable" grid-api="viewBomCtrl.tableDataApi" columns="viewBomCtrl.getTable().columns" rows="viewBomCtrl.getTable().rows" row-template="viewBomCtrl.$templateCache.get('bomRowTemplate')" resizable-columns tree-view resizable-columns/>
+</md-content>
+
+</span>
+
+<!-- Bom Table Cell Templates -->
+<!-- Default Cell Template - Utilizes Field Selector -->
+<script type="text/ng-template" id="bomDefaultTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator">
+		<div ng-if='COL_FIELD !== undefined' class='field-selector-container' ng-class="{'disabled-ui-grid-cell': grid.appScope.viewBomCtrl.isEditState() && !grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}">
+			<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" error-message="COL_FIELD.serverError">
+				<field-selector field-data='COL_FIELD' type-id='COL_FIELD.typeId' field-meta='COL_FIELD.metadata' placeholder='' edit-on-click="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" on-edit-end="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+				</field-selector>
+			</cell-state-indicator>
+		</div>
+	</div>
+</script>
+
+<!-- Cell template that does not use edit on click - Utilizes Field Selector -->
+<script type="text/ng-template" id="bomNoEditOnClickTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator">
+		<div ng-if='COL_FIELD !== undefined' class='field-selector-container' ng-class="{'disabled-ui-grid-cell': grid.appScope.viewBomCtrl.isEditState() && !grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}">
+			<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" error-message="COL_FIELD.serverError">
+				<span class="center-check-box">
+				<field-selector
+					field-data='COL_FIELD'
+					type-id='COL_FIELD.typeId'
+					field-meta='COL_FIELD.metadata'
+					placeholder=''
+					edit-view="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD) && !grid.appScope.viewBomCtrl.isRowMarkedForRemoval(row.entity)}}"
+					ng-click="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+				</field-selector>
+				</span>
+			</cell-state-indicator>
+		</div>
+	</div>
+</script>
+
+<!-- Cell Template for picklists - Utilizes Field Selector -->
+<script type="text/ng-template" id="bomPicklistTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator">
+		<div ng-if='COL_FIELD !== undefined' class='field-selector-container' ng-class="{'disabled-ui-grid-cell': grid.appScope.viewBomCtrl.isEditState() && !grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}">
+			<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" error-message="COL_FIELD.serverError">
+				<field-selector
+					field-data='COL_FIELD'
+					type-id='COL_FIELD.typeId'
+					field-meta='COL_FIELD.metadata'
+					placeholder=''
+					edit-on-click="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}"
+					on-edit-end="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+				</field-selector>
+			</cell-state-indicator>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomEditIndicatorTemplate">
+	<row-state-indicator is-invalid="grid.appScope.viewBomCtrl.getTable().isRowInvalid(row.entity)" is-dirty="grid.appScope.viewBomCtrl.getTable().isRowDirty(row.entity)">
+	</row-state-indicator>
+</script>
+
+<!-- Editable RTF Column Cell -->
+<script type="text/ng-template" id="bomRTFTemplate">
+	<div ng-if='COL_FIELD !== undefined' class="ui-grid-cell-contents cell-state-indicator" ng-class="{'disabled-ui-grid-cell': grid.appScope.viewBomCtrl.isEditState() && !grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" error-message="COL_FIELD.serverError">
+			<md-menu ng-if="grid.appScope.viewBomCtrl.isEditState() || COL_FIELD.value !== ''">
+				<span ng-click="grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD) ? grid.appScope.viewBomCtrl.openMenu($mdOpenMenu, $event, row.entity.edgeId, COL_FIELD) : ''" ng-bind-html="COL_FIELD.value | lineBreakFilter">
+				</span>
+				<md-menu-content class="rich-text-content" ng-class="grid.appScope.viewBomCtrl.isViewState() ? 'view-overlay' : ''">
+					<field-selector field-data='COL_FIELD' type-id='COL_FIELD.typeId' field-meta='COL_FIELD.metadata' edit-view="{{grid.appScope.viewBomCtrl.isEditState()}}">
+					</field-selector>
+				</md-menu-content>
+			</md-menu>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<!-- Bom Row Id cell template -->
+<script type="text/ng-template" id="bomRowIdTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty()}}" error-message="COL_FIELD.serverError">
+			<bom-item-number field-data="COL_FIELD" expand-row="grid.appScope.viewBomCtrl.expandRow(row)" collapse-row="grid.appScope.viewBomCtrl.collapseRow(row)" is-expandable="row.entity.isExpandable" is-collapsed="row.entity.isCollapsed" edit-on-click="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}"
+							on-edit-end="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+			</bom-item-number>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomItemDescriptorTemplate">
+	<div class="ui-grid-cell-contents">
+		<a href="{{COL_FIELD.value.href}}">
+			<span>{{COL_FIELD.value.descriptor}}</span>
+		</a>
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomPinnedTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator ui-grid-icon-margin">
+		<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState()}}" error-message="COL_FIELD.serverError">
+			<bom-pinning field-data='COL_FIELD' edit-view="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" on-toggle="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+			</bom-pinning>
+		</cell-state-indicator>
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomAttachmentsTemplate">
+	<div class="ui-grid-cell-contents pull-right">
+		<md-button
+			class="anchor-button"
+			ng-click="grid.appScope.viewBomCtrl.viewAttachments($event, COL_FIELD)"
+			aria-label="{{COL_FIELD.value.count}}"
+			ng-disabled="!grid.appScope.viewBomCtrl.isWipAttachmentEnabled || grid.appScope.viewBomCtrl.viewAttachedItemsFlyout && grid.appScope.viewBomCtrl.viewAttachedItemsFlyout.isActive()">
+			<span ng-if="COL_FIELD && COL_FIELD.value.count > 0">{{COL_FIELD.value.count}}</span>
+			<span ng-if="COL_FIELD && COL_FIELD.value.count > 0" class="md md-attach-file bom-md-icon"></span>
+		</md-button>
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomPendingChangeTemplate">
+	<div class="ui-grid-cell-contents ui-grid-icon-margin">
+		<div ng-if="COL_FIELD !== undefined">
+			<span class="stamp-color" ng-if="COL_FIELD.value !== ''">
+				<a href="{{COL_FIELD.value.href}}" class="unstyled-link" title="{{COL_FIELD.value.title}}">
+					<span class="md icon-plm-stamp bom-md-icon" ></span>
+			</a>
+			</span>
+		</div>
+	</div>
+</script>
+
+<!-- Bom Row revision cell template -->
+<script type="text/ng-template" id="bomRevisionTemplate">
+	<div class="ui-grid-cell-contents cell-state-indicator">
+		<div ng-if='COL_FIELD !== undefined' class='field-selector-container' ng-class="{'disabled-ui-grid-cell': grid.appScope.viewBomCtrl.isEditState() && !grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}">
+			<cell-state-indicator is-dirty="{{COL_FIELD.isDirty() && grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" error-message="COL_FIELD.serverError">
+				<field-selector field-data='COL_FIELD' type-id='COL_FIELD.typeId' field-meta='COL_FIELD.metadata' placeholder='' edit-on-click="{{grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.isCellEditable(row.entity, COL_FIELD)}}" on-edit-start="grid.appScope.viewBomCtrl.loadEditableItemRevisions(row.entity)"
+								on-edit-end="grid.appScope.viewBomCtrl.getTable().handleEdit(row.entity.edgeId, COL_FIELD)">
+				</field-selector>
+			</cell-state-indicator>
+		</div>
+	</div>
+</script>
+
+<!-- Bom Row selection checkbox cell template -->
+<script type="text/ng-template" id="bomRowSelectorTemplate">
+	<div class="ui-grid-cell-contents checkbox-column">
+		<row-selector enabled="row.entity.isCheckable" checked="row.entity.isChecked"></row-selector>
+	</div>
+</script>
+
+<!-- Custom row template for ui-grid -->
+<script type="text/ng-template" id="bomRowTemplate">
+	<div class='bom-ui-grid-row' ng-class="{
+		'added-ui-grid-row' : grid.appScope.viewBomCtrl.isNewlyAddedRow(row.entity),
+		'pending-remove-ui-grid-row' : grid.appScope.viewBomCtrl.isRowMarkedForRemoval(row.entity),
+		'disabled-ui-grid-row' : grid.appScope.viewBomCtrl.isEditState() && grid.appScope.viewBomCtrl.shouldBomRowBeDisabled(row.entity.depth)}">
+		<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid" ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'" class="ui-grid-cell" ng-class="{'ui-grid-row-header-cell': col.isRowHeader}" role="{{col.isRowHeader ? 'rowheader' : 'gridcell'}} "
+						ui-grid-cell>
+		</div>
+	</div>
+</script>

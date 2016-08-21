@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo" id="top">
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>PLM UI Dropdown Directive</title>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="../node_modules/traceur/bin/traceur.js"></script>
+		<script type="text/javascript" src="../node_modules/traceur/bin/traceur-runtime.js"></script>
+		<script type="text/javascript" src="../lib/underscore/underscore-min.js"></script>
+		<script type="text/javascript" src="../lib/plm-underscore/build/plm-underscore.js"></script>
+		<script type="text/javascript" src="../lib/plm-event-service/build/plm-event-service.js"></script>
+		<script src="../build/wipFileBrowser.js"></script>
+
+		<link rel="stylesheet" href="../css/styles.css"/>
+
+		<script type="text/javascript">
+		System.get('com/autodesk/UnderscoreService.js');
+		System.get('com/autodesk/EventService.js');
+		System.get('com/autodesk/wipFileBrowser.js');
+		var app = angular.module('demo', [
+			'com/autodesk/UnderscoreService.js',
+			'com/autodesk/EventService.js',
+			'com/autodesk/wipFileBrowser.js'
+		]);
+		</script>
+</head>
+<body class="ng-cloak">
+<h1>Demo</h1>
+<div role="main">
+		<div class="container">
+			File Browser
+			<wip-file-browser>
+			</wip-file-browser>
+		</div>
+</div><!-- /.main -->
+</body>
+</html>

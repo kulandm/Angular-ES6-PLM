@@ -1,0 +1,17 @@
+<span>
+	<div class="truncation-control" ng-show="displayTruncationControl">
+		<a ng-click="setTruncation(isTruncated)" ng-mouseenter="isHovering = true" ng-mouseleave="isHovering = false">
+			<span class="icon" ng-class="isTruncated === true ? 'icon-RightArrow' : 'icon-BottomArrow'"></span>
+		</a>
+	</div>
+	<span class="fieldvalue-wrapper" ng-class="{
+	'truncated': isTruncated,
+	'expanded': ((isTruncated !== undefined) && !isTruncated),
+	'hovering': isHovering,
+	'hide-truncation': !displayTruncationControl
+}">
+		<pre class="disabledPre" ng-if="isPreformatted && !isHTML">{{value}}</pre>
+		<span ng-if="!isPreformatted && !isHTML">{{value}}</span>
+		<span ng-if="isHTML" ng-bind-html="value"></span>
+	</span>
+</span>

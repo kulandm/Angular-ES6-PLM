@@ -1,0 +1,223 @@
+// Workspace Add Item
+//
+// Styles for the add (create) item page
+//
+// Styleguide XX
+#add-item-wrapper {
+	display: flex;
+	flex-direction: column;
+	//The width adjustment is needed to show the full width of command bar
+	//when the page is still loading
+	width: 100%;
+
+	#command-bar {
+		flex: 0 0 auto;
+	}
+
+	#item-internal-wrapper {
+		background-color: $addItemBackgroundColor;
+
+		flex: 1 1 auto;
+
+		#add-item {
+			padding: $addItemContentPadding;
+
+			background-color: $addItemBackgroundColor;
+
+			// These declarations are just for the "full" item create page, which
+			// piggyback on existing declarations inside the _create-item.scss file
+			// for displaying
+			.full-create-section {
+				display: table;
+
+				width: 100%;
+				table-layout: fixed;
+
+				// Matrices
+				.full-create-item-matrix-wrapper {
+
+					.full-create-item-matrix {
+						width: 100%;
+
+						table-layout: fixed;
+
+						margin: $addItemMatrixMargin;
+
+						// Apply some tweaks for fields inside the matrix
+						date-field {
+							display: block;
+
+							height: 35px;
+						}
+
+						// Targets elements specifically to avoid conflicts with datepicket widget
+						> thead > tr {
+							> th {
+								overflow: hidden;
+
+								text-overflow: ellipsis;
+							}
+
+							> th {
+								text-align: left;
+
+								border-bottom: solid 1px $matricesHeaderBorderBottomColor;
+							}
+
+							> th:first-child {
+								width: $addItemMatrixRowLabelWidth;
+								min-width: $addItemMatrixRowLabelWidth;
+							}
+
+							> th:not(:first-child) {
+								min-width: $addItemMatrixRowLabelWidth;
+								padding: $addItemMatrixColumnHeaderPadding;
+
+								border-left: solid 1px $matricesHeaderBorderRightColor;
+							}
+						}
+
+						> tbody > tr {
+							> td:first-child {
+								overflow: hidden;
+
+								text-overflow: ellipsis;
+							}
+
+							> td {
+								padding: $addItemMatrixCellPadding;
+
+								border-bottom: solid 1px $matricesBorderBottomColor;
+							}
+
+							> td:first-child {
+								font-weight: bold;
+							}
+						}
+					}
+				}
+
+				// Individual row, containing label + field + tooltip
+				.full-create-item {
+					display: table-row;
+
+					// Overrides for field wrapper
+					.full-create-item-label {
+						display: table-cell;
+						overflow: hidden;
+
+						width: $addItemFieldLabelWidth;
+						padding: $addItemFieldLabelPadding;
+
+						text-align: right;
+						vertical-align: top;
+						text-overflow: ellipsis;
+
+						> label {
+							width: 100%;
+
+							cursor: text;
+
+							// Overrides contextual create asterisk that comes after the label
+							&.label-required:after {
+								content: '';
+							}
+
+							// Display the required asterisk before the label
+							&.label-required:before {
+								content: '*\00a0';
+
+								color: $errorColor;
+							}
+						}
+					}
+
+					.full-create-item-field {
+						display: table-cell;
+
+						height: $addItemFieldValueHeight;
+						padding: $addItemFieldValuePadding;
+
+						// Re-positions text in case it's read-only
+						&.read-only {
+							padding: $addItemFieldReadOnlyPadding;
+						}
+					}
+				}
+
+				// Error message
+				.error-message {
+					overflow: hidden;
+
+					width: 100%;
+					// height: $errorMessageHeight;
+					height: auto;
+					padding-top: $errorMessagePadding;
+
+					color: $errorColor;
+
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+
+				// Specific overrides of field behaviours in the create item page
+
+				// All form elements that are not checkboxes or radio buttons
+				input:not([type]),
+				input[type='text'],
+				textarea {
+					width: 100%;
+					padding: 5px;
+
+					border: solid 1px $formElementInputBorderColor;
+
+					&:focus {
+						border: solid 1px $formElementInputBorderFocusColor;
+					}
+				}
+
+				// Do not override Semantic UI's widget styling
+				input.search {
+					padding: inherit;
+				}
+
+				// only for multipicklist
+				.multiple {
+					// Do not override Semantic UI's widget styling
+					input.search {
+						padding: 0;
+					}
+				}
+
+				// Radio button groups
+				.field-radio {
+					.field-radio-item {
+						display: flex;
+						flex-direction: row;
+
+						margin: $addItemFieldValueRadioItemMargin;
+
+						input {
+							flex: 0 0 auto;
+							margin: $addItemFieldValueRadioValueMargin;
+						}
+
+						label {
+							flex: 1 1 auto;
+
+							overflow: hidden;
+							text-overflow: ellipsis;
+
+							padding: $addItemFieldValueRadioValuePadding;
+						}
+					}
+				}
+
+				// RTF editor styling
+				.ta-editor {
+					border: solid 1px $formElementInputBorderColor;
+				}
+			}
+		}
+	}
+}

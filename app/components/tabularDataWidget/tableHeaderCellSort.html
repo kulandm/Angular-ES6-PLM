@@ -1,0 +1,2 @@
+<span ng-if="data.renderer" ng-click="callSort()" ng-class="{'sort-asc': sortOrder === 'asc', 'sort-desc': sortOrder === 'desc'}" ng-repeat="column in [data]" ng-include="data.renderer"></span>
+<span ng-if="!data.renderer" ng-click="callSort()" ng-class="{'sort-asc': sortOrder === 'asc', 'sort-desc': sortOrder === 'desc'}" ng-bind-html="data.displayName"></span>

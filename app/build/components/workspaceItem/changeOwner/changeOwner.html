@@ -1,0 +1,44 @@
+<md-dialog
+		aria-label="{{$root.bundle.details.changeOwner}}"
+		class="change-owner-dialog">
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{$root.bundle.details.changeOwner}}</h2>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<md-dialog-content>
+		<div class="md-dialog-content" ng-if="changeOwnerCtrl.users">
+			<users-radio-selector
+				items-list="changeOwnerCtrl.users"
+				selected-item="changeOwnerCtrl.selectedOwner"
+				selected-first="true">
+			</users-radio-selector>
+		</div>
+		<md-divider></md-divider>
+	</md-dialog-content>
+
+	<!-- Dialog Footer with the Action Buttons -->
+	<md-dialog-actions>
+		<md-checkbox ng-model="changeOwnerCtrl.isNotifyingOwnerByEmail" aria-label="{{$root.bundle.details.notifyNewOwner}}" md-no-ink>
+			{{$root.bundle.details.notifyNewOwner}}
+		</md-checkbox>
+		<div flex></div>
+		<md-button
+			aria-label="{{$root.bundle.button.cancel}}"
+			ng-click="changeOwnerCtrl.closeDialog()">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+
+		<md-button
+			class="md-primary"
+			aria-label="{{$root.bundle.button.save}}"
+			ng-disabled="!changeOwnerCtrl.selectedOwner || changeOwnerCtrl.selectedOwner.__self__ === changeOwnerCtrl.owners[0].detailsLink"
+			ng-click="changeOwnerCtrl.triggerSave()">
+			<span class="label">{{$root.bundle.button.save}}</span>
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

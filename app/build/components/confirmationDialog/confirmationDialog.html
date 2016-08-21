@@ -1,0 +1,28 @@
+<md-dialog class="confirmation-dialog"
+	aria-label="{{$root.bundle.text.removeConfirmation}}">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>
+				{{$root.bundle.text.confirmationDialog.title}}
+			</h2>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content" layout="row">
+			{{$root.bundle.text.confirmationDialog.body}}
+		</div>
+	</md-dialog-content>
+
+	<md-dialog-actions layout="row" layout-align="end center">
+		<md-button aria-label="{{$root.bundle.button.cancel}}"
+			ng-click="confirmationDialogCtrl.cancel()">
+			{{$root.bundle.button.cancel}}
+		</md-button>
+		<md-button class="md-primary"
+			aria-label="{{$root.bundle.button.confirm}}"
+			ng-click="confirmationDialogCtrl.confirm()">
+			{{$root.bundle.button.ok}}
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

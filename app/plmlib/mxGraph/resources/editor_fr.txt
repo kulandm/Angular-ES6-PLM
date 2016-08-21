@@ -1,0 +1,4 @@
+properties=Propri%E9t%E9s
+outline=Contour
+tasks=T%E2ches
+help=Aide

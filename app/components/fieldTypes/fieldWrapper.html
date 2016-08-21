@@ -1,0 +1,43 @@
+<span>
+	<!-- FIELDWRAPPER WILL BE DEPRECATED.
+	If you are modifying it, please do so in the new FieldSelector component. -->
+
+	<field-view ng-if="!isEdit"
+		ng-hide="editMode === false && isVisible === 'EDIT_ONLY'"
+		field-data="fieldData"
+		is-editable="false"
+		placeholder="{{placeholder}}">
+	</field-view>
+	<!-- Revisit this approach once uiGrid is implemented for editable cells -->
+	<field-view ng-if="isEdit && !isCreate && !isEditActive"
+		field-data="fieldData"
+		is-editable="true"
+		placeholder="{{placeholder}}">
+	</field-view>
+	<field-edit ng-if="isEdit && (isEditActive || isCreate)"
+		field-data="fieldData"
+		on-change="onChange"
+		mode="{{isCreate === 'true' ? 'CREATE' : 'EDIT'}}"
+		waiting="waiting"
+		placeholder="{{placeholder}}">
+	</field-edit>
+
+	<span ng-if="!isEdit && uom" ng-hide="editMode === false && isVisible === 'EDIT_ONLY'">
+		({{uom}})
+	</span>
+	<span ng-if="isEdit && uom">({{uom}})</span>
+
+	<span ng-if="isEdit && !isCreate && !isDetailsEdit()">
+		<a href="javascript:" class="edit-link-container">
+			<span class="md-edit field-action-btn-edit linked-btn-edit"
+				ng-click="isEditActive = true">
+			</span>
+		</a>
+		<a href="javascript:;">
+			<span ng-if="fieldData.value && fieldData.value !== fieldData.originalValue"
+				class="md-undo btn btn-xs btn-primary field-action-btn-edit linked-btn-revert"
+				ng-click="fieldData.value = fieldData.originalValue; $event.stopPropagation()">
+			</span>
+		</a>
+	</span>
+</span>

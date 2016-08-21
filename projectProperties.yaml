@@ -1,0 +1,35 @@
+# This is a template file
+# Copy this file into localConfig.yaml for Grunt to pick up for your local settings
+{
+	#Used in our documentation generation
+	"Title":"PLMSinglePage HIG",
+	#This is used for knowing where to dev deploy currently (catalina_home/webapps/THIS NAME)
+	"Name":"hig",
+	#used mostly for prefixing tasks in Gruntfile.js
+	"Abbrv":"plm",
+
+    #The list of files in the cpdm-ui distribution. Only the files mentioned here will be fetched when using grunt-curl.
+    #Update here, whenever there is a new file added to the distribution. The files should contain the information of the
+    #folder they are in.
+	"cpdm-ui-files": [
+	  'cpdm-ui.css',
+	  'cpdm-ui.min.css',
+	  'cpdm-ui.js',
+	  'cpdm-ui.min.js',
+	  'cpdm-ui.min.js',
+	  'images/folder_74_transparent.png',
+      'images/mountain_moon.png',
+      'images/openingFusion360.png',
+      'images/pagination_infinite_scroll_throbber.gif',
+	  'images/icons/fileTypeIconSprite.png',
+	  'images/icons/filetypes_16.png',
+	  'images/icons/filetypes_32.png',
+	  'images/icons/folder.svg',
+	  'images/icons/folder_16.svg',
+	  'images/icons/folder_64.svg',
+      'images/icons/iconSprite.png',
+      'images/icons/iconSpriteOld.png',
+      'images/icons/plain_file_type.svg',
+      'images/icons/PLM16x16.png'
+	]
+}

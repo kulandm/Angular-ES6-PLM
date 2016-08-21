@@ -1,0 +1,12 @@
+\ufeff
+alreadyConnected=Uzly%2C+kter%25E9+jsou+ji%259E+p%26%23345%3Bipojeny
+containsValidationErrors=Obsahuje+chyby+ov%26%23283%3B%26%23345%3Ben%25ED.
+updatingDocument=Prob%25EDh%25E1+aktualizace+dokumentu.+%26%23268%3Bekejte...
+updatingSelection=Prob%25EDh%25E1+aktualizace+dokumentu.+%26%23268%3Bekejte...
+collapse-expand=Sbalit/rozbalit
+doubleClickOrientation=Orientaci+lze+zm%26%23283%3Bnit+dvojit%25FDm+kliknut%25EDm.
+close=Zav%26%23345%3B%EDt
+error=Chyba
+done=Hotovo
+cancel=Storno
+ok=OK

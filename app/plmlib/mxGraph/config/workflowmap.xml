@@ -1,0 +1,222 @@
+<mxEditor defaultEdge="edge" helpWindowImage="plmlib/mxGraph/images/help.gif"
+	forcedInserting="0" swimlaneRequired="0">
+	
+	<ui>
+		<resource basename="plmlib/mxGraph/resources/mxApplication" />
+	</ui>
+	
+	<mxDefaultKeyHandler as="keyHandler">
+		<add as="35" action="refresh" />
+		<add as="36" action="home" />
+		<add as="37" action="selectPrevious" />
+		<add as="38" action="selectParent" />
+		<add as="40" action="selectChild" />
+		<add as="39" action="selectNext" />
+		<add as="46" action="delete" />
+		<add as="65" control="1" action="selectAll" />
+		<add as="90" control="1" action="undo" />
+		<add as="89" control="1" action="redo" />
+		<add as="88" control="1" action="cut" />
+		<add as="67" control="1" action="copy" />
+		<add as="86" control="1" action="paste" />
+		<add as="113" action="edit" />
+		<add as="107" action="zoomIn" />
+		<add as="109" action="zoomOut" />
+	</mxDefaultKeyHandler>
+
+	<Array as="cycleAttributeValues">
+		<add value="#83027F" />
+		<add value="#66B922" />
+		<add value="#808913" />
+		<add value="#CF0056" />
+		<add value="#4679B6" />
+	</Array>
+	<Array as="templates">
+		<add as="state">
+			<state customID="" shortName="" longName="" lockStateID="false"
+				cmStateID="false" hidden="false">
+				<mxCell vertex="1">
+					<mxGeometry as="geometry" width="121" height="61" />
+				</mxCell>
+			</state>
+		</add>
+		<add as="initstate">
+			<initstate shortName="">
+				<mxCell vertex="1">
+					<mxGeometry as="geometry" width="121" height="61" />
+				</mxCell>
+			</initstate>
+		</add>
+		<add as="edge">
+			<transition customID="" shortName="" longName=""
+				permissionID="" preCondition="" validator="" action=""
+				scriptActionId="" scriptConditionId="" scriptValidationId="" email="false"
+				outstanding="false" notifyPerformers="false" hidden="false"
+				passwordApproval="false" commentsForApproval="" saveStepLabel="">
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1" />
+				</mxCell>
+			</transition>
+		</add>
+		<add as="note">
+			<note text="" hidden="false"><!-- 32=Align center -->
+				<mxCell vertex="1">
+					<mxGeometry as="geometry" width="128" height="128" />
+				</mxCell>
+			</note>
+		</add>
+		<add as="edgeNote">
+			<edgeNote>
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1" />
+				</mxCell>
+			</edgeNote>
+		</add>
+	</Array>
+
+	<ui>
+		<add as="graph" element="mxGraph" style="left:0px" />
+	</ui>
+	<mxGraph as="graph" alternateEdgeStyle="verticalEdge"
+		dropEnabled="1" allowDanglingEdges="0" allowLoops="1"
+		disconnectOnMove="0">
+		<mxGraphModel as="model">
+			<root>
+				<Workflow label="MyWorkflow" description="" href="" id="0" />
+				<Layer label="Default Layer">
+					<mxCell parent="0" />
+				</Layer>
+			</root>
+		</mxGraphModel>
+
+		<mxStylesheet as="stylesheet">
+			<add as="ellipse">
+				<add as="shape" value="image" />
+				<add as="perimeter" value="rectanglePerimeter" />
+				<add as="image" value="/scripts/mxGraph/images/workflow/start.svg" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			</add>
+			<add as="defaultVertex">
+				<add as="shape" value="label" />
+				<add as="perimeter" value="rectanglePerimeter" />
+				<add as="fillColor" value="#DDDDDD" />
+				<add as="gradientColor" value="none" />
+				<add as="rounded" value="0" />
+				<add as="shadow" value="0" />
+				<add as="glass" value="0" />
+				<add as="align" value="center" />
+				<add as="verticalAlign" value="middle" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="#404040" />
+				<add as="fontStyle" value="1" />
+				<add as="labelPadding" value="5" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			    <add as="strokeColor" value="none" /> 
+			</add>
+			<add as="currentVertex">
+				<add as="fillColor" value="#fab11c" />
+				<add as="gradientColor" value="none" />
+				<add as="strokeColor" value="none" />				
+				<add as="shape" value="label" />
+				<add as="perimeter" value="rectanglePerimeter" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="#000000" />
+			    <add as="fontStyle" value="1" />
+				<add as="align" value="center" />
+				<add as="verticalAlign" value="middle" />
+				<add as="glass" value="0" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			</add>
+			<add as="edge">
+				<add as="shape" value="connector" />
+				<add as="edgeStyle" value="none" />
+				<add as="strokeColor" value="#727272" />
+				<add as="endArrow" value="classic" />
+				<add as="endSize" value="10" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="#727272" />
+				<add as="align" value="center" />
+				<add as="verticalAlign" value="middle" />
+				<add as="orthogonal" value="1" />
+				<add as="fontStyle" value="2" />
+				<add as="labelPadding" value="3" />
+				<add as="labelBackgroundColor" value="white" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			</add>
+			<add as="currentEdge">
+				<add as="shape" value="connector" />
+				<add as="edgeStyle" value="none" />
+				<add as="strokeColor" value="#fab11c" />
+				<add as="strokeWidth" value="2" />
+				<add as="endArrow" value="classic" />
+				<add as="endSize" value="10" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="#fab11c" />
+				<add as="align" value="center" />
+				<add as="verticalAlign" value="middle" />
+				<add as="orthogonal" value="1" />
+				<add as="fontStyle" value="2" />
+				<add as="labelPadding" value="3" />
+				<add as="labelBackgroundColor" value="white" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			</add>
+			<add as="hiddenMapEdge">
+				<add as="shape" value="connector" />
+				<add as="edgeStyle" value="none" />
+				<add as="strokeColor" value="none" />
+				<add as="strokeWidth" value="0" />
+				<add as="endArrow" value="none" />
+				<add as="endSize" value="10" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="transparent" />
+				<add as="align" value="center" />
+				<add as="verticalAlign" value="middle" />
+				<add as="orthogonal" value="1" />
+				<add as="fontStyle" value="2" />
+				<add as="labelPadding" value="3" />
+				<add as="labelBackgroundColor" value="none" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+				<add as="color" value="transparent" />
+			</add>
+			<add as="note">
+				<add as="shape" value="label" />
+				<add as="perimeter" value="rectanglePerimeter" />
+				<add as="align" value="left" />
+				<add as="verticalAlign" value="top" />
+				<add as="fillColor" value="#FDF39B" />
+				<add as="shadow" value="0" />
+				<add as="strokeColor" value="#FDE39B" /> 
+				<add as="gradientColor" value="none" />
+				<add as="glass" value="0" />
+				<add as="fontSize" value="12" />
+				<add as="fontColor" value="#333333" />
+				<add as="fontStyle" value="0" />
+				<add as="labelPadding" value="5" />
+				<add as="deletable" value="0" />
+				<add as="editable" value="0" />
+				<add as="resizable" value="0" />
+			</add>
+			<add as="edgeNote">
+				<add as="dashed" value="1" />
+				<add as="shape" value="connector" />
+				<add as="endArrow" value="none" />
+				<add as="strokeColor" value="grey" />
+				<add as="editable" value="0" />
+			</add>
+
+		</mxStylesheet>
+	</mxGraph>
+
+</mxEditor>

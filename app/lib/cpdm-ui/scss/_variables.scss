@@ -1,0 +1,14 @@
+// Basic colour variables
+$gray: #CCCCCC;
+$white: #FFFFFF;
+
+// Derived colour variables
+$mediumGray: darken($gray, 20); // #999999
+$darkGray: darken($gray, 37); // #6E6E6E
+$darkerGray: darken($gray, 60); // #333333
+
+// Others
+$circularLoader: #4675A8;
+$hoverBackground: #DDECF4;
+$sectionHeaderBackground: #F5F7FA;
+$deleteButtonColor: #05A7DF;

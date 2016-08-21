@@ -1,0 +1,50 @@
+<h1><code ng:non-bindable="">infiniteScroll</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-infinitescroll-page"><p>This directive handles infinite scrolling
+It expects the following attributes/parameters:</p>
+<h6 id="description_--update-a-function-to-be-called-on-scroll-to-the-end-of-current-list">- update: a function to be called on scroll to the end of current list</h6>
+<h6 id="description_--context-an-optional-parameter-bounding-the-scroll-event-if-this-is-not-set,-the-scroll-even-will-be-binded-to-the-element,-if-this-is-set,-assume-the-context-is-window">- context: an optional parameter bounding the scroll event.  if this is not set, the scroll even will be binded to the element, if this is set, assume the context is window</h6>
+<h6 id="description_--infinitescrolldisabled-an-optional-parameter-that-can-be-used-to-conditionally-disable-infinite-scroll">- infiniteScrollDisabled: an optional parameter that can be used to conditionally disable infinite scroll.</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY infinite-scroll&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_conditionmet">conditionMet()</h3>
+<div class="conditionmet"><div class="directives-infinitescroll-conditionmet-page"><p>A private helper method that tests for scroll</p>
+</div></div>
+</li>
+<li><h3 id="methods_conditionmet">conditionMet()</h3>
+<div class="conditionmet"><div class="directives-infinitescroll-conditionmet-page"><p>A private helper method that tests for scroll with context</p>
+</div></div>
+</li>
+<li><h3 id="methods_scrollhandler">scrollHandler()</h3>
+<div class="scrollhandler"><div class="directives-infinitescroll-scrollhandler-page"><p>A private helper method to check for infinite scroll condition.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-infinitescroll-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-3" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-3" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-3">
+<div infinite-scroll="" update="doScroll" context="window"/>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-3" ng-eval-javascript=""></div>
+<p>TODO: should also add logic to detect scrolling up. Ideally, when infinite scrolling is used the client will only have a snapshot of the whole data.
+For example, if we have 10000 records, and used is scrolling down and we are keep adding a batch of 100 records on scroll down. Ideally, the user
+of the infinite scroll also removed some of the records when moving down. Therefore, we need to add logic to tell the user of the infinite scroll
+that user is scrolling up (as they might need to fetch data from server again). There is a ticket for it  <a href="https://jira.autodesk.com/browse/PLM-2219">https://jira.autodesk.com/browse/PLM-2219</a>.</p>
+</div></div>
+</div>

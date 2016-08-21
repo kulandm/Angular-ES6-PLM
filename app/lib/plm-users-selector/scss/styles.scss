@@ -1,0 +1,86 @@
+@import 'constants';
+
+.users-selector-wrapper {
+	height: 100%;
+	.search-box-wrapper {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		input[type="search"] {
+			height: 20px;
+			width: calc(100% - 80px);
+			margin: 10px 0 0 20px;
+			padding: 5px 30px 5px 10px;
+			border-radius: 4px;
+			box-shadow: none;
+			outline: 0;
+			border: 1px solid $grayColor;
+		}
+
+		.close-button-wrapper {
+			position: relative;
+			float: right;
+			top: 15px;
+			right: 25px;
+
+			.zmdi-close-circle {
+				font-size: 1.5em;
+				color: $grayColor;
+			}
+		}
+	}
+
+	.selection-area {
+		margin-top: 12px;
+		border-top: 1px solid $grayColor;
+		height: calc(100% - 52px);	/*10 + 5 + 5 + 20(input box) + 12*/
+		overflow: auto;
+
+		.user-selector-avatar {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 10px;
+			margin-right: 20px;
+		}
+
+		.secondary-text {
+			color: $grayColor;
+		}
+
+		.checkbox-wrapper {
+			margin: 0;
+			padding: 15px 20px;
+			border-bottom: 1px solid $grayColor;
+
+			md-checkbox {
+				margin: 0;
+
+				.md-icon {
+					border-width: 1px;
+				}
+
+				&.md-checked {
+					.md-icon {
+						background-color: $checkboxColor;
+					}
+				}
+			}
+		}
+
+		md-radio-button {
+			margin: 0;
+			padding: 15px 20px;
+			border-bottom: 1px solid $grayColor;
+
+			.md-on {
+				background-color: $radioColor;
+			}
+
+			&.md-checked .md-off,
+			&.md-default-theme.md-checked .md-off {
+				border-color: $radioColor;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "HttpInterceptorService",
+  "version": "0.0.5",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "description": "Http Interceptor Service to allow on-the-fly tweaking of interceptor handling",
+  "main": "service.js",
+  "keywords": [
+    "Interceptor"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

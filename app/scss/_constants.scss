@@ -1,0 +1,1300 @@
+// PLM Constants
+//
+// These are the constants that are used by other files, including mixins and extensions.<br>
+// And are mostly color values. To use a constant, use `$constantName` directly.
+//
+// Styleguide 3
+
+// Default Colors
+//
+// These are the based colors.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#000000;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$blackColor</div><br>
+// <div style="padding:2px; text-align:center; background:#0000FF;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$dirtyColor</div><br>
+// <div style="padding:2px; text-align:center; background:#FF0000;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$errorColor</div><br>
+// <div style="padding:2px; text-align:center; background:#D5534E;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$errorSubtleColor</div><br>
+// <div style="padding:2px; text-align:center; background:#4675AB;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$linkColor</div><br>
+// <div style="padding:2px; text-align:center; background:#F8F8F8;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$primaryBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#FCFCFC;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$lightBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#CCCCCC;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$primaryBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#333333;
+// 	color:#FFFFFF;box-shadow:2px 2px 5px #CCCCCC;">$secondaryColor</div><br>
+// <div style="padding:2px; text-align:center; background:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$whiteColor</div>
+//
+// $blackColor - `#000000` Black color used **only** in the constants file
+// $dirtyColor - `#0000FF` Color used in grid
+// $errorColor - `#F00` Red color used for errors
+// $errorSubtleColor - `#D5534E` A lighter red used for errors (mainly for notification widget background)
+// $linkColor - `#4675A8` Default color used for links
+// $primaryBackgroundColor - `#F8F8F8` Color used on header/footer (closest to background)
+// $secondaryBackgroundColor - `#EEEEEE` Color used on sectionWrapper headers
+// $lightBackgroundColor - `#FCFCFC` Color used on commenting background
+// $primaryBorderColor - `#CCCCCC` Gray color used for many borders
+// $cellEditHighlightColor - `#0082C2` Blue color used for cell borders
+// $secondaryColor - `#333333` Dark gray color used in contrast to background
+// $whiteColor - `#FFFFFF` White color used **only** in the constants file
+// $greenColor - `#125405` Green Color used to color icons (stamp/change pending icon)
+// $defaultFontSize - `14px` Default font size for PLM
+//
+// Styleguide 3.1
+//Red
+$redColor: #FF0000;
+
+// Black
+$blackColor: #000000;
+$lightBlackColor: #343434;
+
+// Green
+$greenColor: #125405;
+
+// Gray
+$darkGrayColor: #999999;
+$grayColor: #CCCCCC;
+$lightGrayColor: #DDDDDD;
+$mediumGrayColor: #DEDEDE;
+$veryLightGrayColor: #EFEFEF;
+$lightGreyColor: #666666;
+$checkboxGreyColor: #C0C0C0;
+
+// Blue
+$blueColor: #4675A8;
+$lightBlueColor: #05A7DF;
+$navyBlueColor: rgba(63, 81, 181, 0.87);
+$fadedBlueColor: #9BD5EF;
+$blueItemHeader: #3A4361;
+
+// White
+$darkWhiteColor: #FEFEFE;
+$whiteColor: #FFFFFF;
+
+$dirtyColor: #0000FF;
+$radioBorderColor: rgba(0, 0, 0, 0.54);
+$selectedRadioButtonColor: #4675A8;
+$fieldEditColor: #04A7DF;
+$fieldRequiredColor: #E26165;
+$linkColor: $blueColor;
+$cellEditHighlightColor: #0082C2;
+$defaultFontSize: 14px;
+$defaultIconFontSize: 20px;
+$editLifecyleBorderColor: #04A7DF;
+$lightBackgroundColor: #FCFCFC;
+$primaryBackgroundColor: #F8F8F8;
+$primaryBorderColor: $grayColor;
+$secondaryBackgroundColor: #EEEEEE;
+$secondaryColor: #333333;
+$rowHoverColor: #F0FAFD;
+
+// Error message-related styles
+$fieldErrorColor: #FC8F8F;
+$errorColor: #FF0000;
+$errorSubtleColor: #D5534E;
+$errorMessageHeight: 20px;
+$errorMessagePadding: 4px;
+
+$defaultFont: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$defaultCheckboxColor: #0097FF;
+$mainBackgroundColor: #E9ECF0;
+
+// Default Container Styles
+//
+// These are styling rules for containers.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#DEDEDE;
+// 	color:#000000; box-shadow:2px 2px 5px #CCCCCC;">$boxBorderColor</div>
+//
+// $boxShadowTopRight - **Not Used**
+// $boxShadowTopLeft - **Not Used**
+// $boxBorderColor - `#DEDEDE` Used **only** in the constants file
+// $raisedContainerBackgroundColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.2
+$boxShadowTopRight: 1px -1px 4px 0 rgba(25, 25, 25, 0.15);
+$boxShadowTopLeft: -1px -1px 4px 0 rgba(25, 25, 25, 0.15);
+$boxBorderColor: $mediumGrayColor;
+$raisedContainerBackgroundColor: $whiteColor;
+
+// Default Button Styles
+//
+// These are styling rules for buttons.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#4077A5;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">$btnColor</div>
+//
+// $btnBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $btnColor - `#4077A5`
+// $secondaryBtnHoverColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.3
+// $btnBorderColor: $primaryBorderColor; // DEPRECATED
+// $btnColor: #4077A5; // DEPRECATED
+// $secondaryBtnHoverColor: $whiteColor; // DEPRECATED
+
+
+$buttonPinnedBackgroundColor: #77BD21;
+
+$buttonBorder: 1px solid #A2A2A2;
+$buttonBorderRadius: 3px;
+$buttonBoxShadow: none;
+$buttonLineHeight: 32px;
+$buttonMarginRight: 10px;
+$buttonPadding: 0 20px;
+$buttonHeight: 34px;
+
+$buttonFontSize: 14px;
+$buttonFontWeight: 400;
+
+$buttonTextColor: #757575;
+$buttonFocusTextColor: $whiteColor;
+$buttonDisabledTextColor: #BABABA;
+$buttonDisabledBorder: 1px solid #E6E5E5;
+
+$buttonBackgroundColor: #FAFAFA;
+$buttonHoverBackgroundColor: $mediumGrayColor;
+$buttonFocusBackgroundColor: rgba(136, 136, 136, 1);
+$buttonDisabledBackgroundColor: rgba(244, 244, 244, 1);
+
+$buttonShadow: none; // 0 1px 0 0 rgba(204,204,204,1);
+$buttonHoverShadow: none; // 0 1px 0 0 rgba(155, 155, 155, 1);
+$buttonFocusShadow: none; // 0 1px 0 0 rgba(55,55,55,1);
+$buttonDisabledShadow: none; // 0 1px 0 0 rgba(229,229,229,1);
+
+
+$buttonPrimaryTextColor: $whiteColor;
+$buttonPrimaryDisabledTextColor: #CDEAF7;
+$buttonPrimaryBorder: 1px solid transparent;
+$buttonPrimaryBackgroundColor: #05A7DF;
+$buttonPrimaryHoverBackgroundColor: #37B9E5;
+$buttonPrimaryFocusBackgroundColor: #048AB8;
+$buttonPrimaryDisabledBackgroundColor: rgba(155, 213, 239, 1);
+$buttonPrimaryPadding: 0 40px;
+
+
+//$buttonPrimaryShadow: 0 1px 0 0 rgba(25, 113, 132, 1);
+//$buttonPrimaryHoverShadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+//$buttonPrimaryFocusShadow: 0 1px 0 0 rgba(0,19,28,1);
+//$buttonPrimaryDisabledShadow: rgba(163,198,206,1);
+
+// Negative Button Styles
+//
+// These are styling rules for negative-color buttons.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#494949;
+// 	color:#FFFFFF; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$btnNegativeBackgroundColor</div>
+//
+// $btnNegativeColor - `#FFFFFF` Uses $whiteColor
+// $btnNegativeBackgroundColor - `#494949`
+// $btnNegativeHoverColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.4
+$btnNegativeColor: $whiteColor;
+$btnNegativeBackgroundColor: #494949;
+$btnNegativeHoverColor: $whiteColor;
+$dashboardBackgroundColor: $whiteColor;
+$dashboardTablesHeadersColor: #F5F7FA;
+$dashboardTablesRowsHeight: 40px;
+$dashboardNoReportsResultsMessageColor: $linkColor;
+$dashboardSectionsHeaderBottomBorder: 1px solid $grayColor;
+
+
+// Default Table Styles
+//
+// These are styling rules for tables.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#DDDDDD;
+// 	color:#000000; box-shadow:2px 2px 5px #CCCCCC;">$tableBorderColor</div>
+//
+// $tableBorderColor - `#DDDDDD`
+//
+// Styleguide 3.5
+$tableBorderColor: #DDDDDD;
+
+// Header bar
+//
+// These are styling rules for the main header bar
+//
+// Markup:
+//
+//
+// Styleguide 3.6
+$headerBackgroundColor: #FFFFFF;
+$headerHeight: 70px;
+$itemHeaderHeight: 50px;
+$headerTextColor: #000000;
+$headerTextSize: 20px;
+$headerTitleMarginSize: 23px 15px 0 20px;
+$headerArchivedTextColor: #FF0000;
+$headerLoginSeparator: solid 1px #CCCCCC;
+$headerButtonsSeparator: solid 1px #CCCCCC;
+$headerBottomBorderShadow: 0 1px 1px 0 #CCCCCC;
+
+
+// Login
+//
+// These are styling rules for the login page.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#EEEEEE; color:#000000;
+// 	border:2px solid #000000; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$loginBoxBackgroundColor</div>
+//
+// $loginBoxBorderColor - `#000000` Uses $blackColor
+// $loginBoxBackgroundColor - `#EEEEEE`
+//
+// Styleguide 3.7
+$loginBoxBorderColor: $blackColor;
+$loginBoxBackgroundColor: #FFFFFF;
+$loginButtonBackgroundColor: #0696D7;
+$loginButtonBorderColor: #08648F;
+$loginPageFooterFontColor: #6B88B2;
+$loginPageHeaderFooterBackground: #003A55;
+
+// Header
+//
+// These are styling rules for PLM header.
+// DEAD CODE
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#C7C7C7;
+// 	color:#000000; box-shadow:2px 2px 5px #CCCCCC;">$headerBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#B5B5B5; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$headerAlertBackgroundColor</div>
+//
+// $headerBorderColor - `darken($primaryBorderColor, 2%)`
+// $headerProfileBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $headerProfileBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $headerAlertBackgroundColor - `#B5B5B5` **Not Used**
+// $headerSearchInputBorderColor - `#CCCCCC` **Not Used** Uses $primaryBorderColor
+// $headerSearchInputShadow - **Not Used**
+// $headerSearchInputBackgroundColor - `#FFFFFF` **Not Used** Uses $whiteColor
+//
+// Styleguide 3.8
+// $headerBorderColor: darken($primaryBorderColor, 2%);
+// $headerProfileBorderColor: $primaryBorderColor;
+// $headerProfileBackgroundColor: $whiteColor;
+// $headerAlertBackgroundColor: #B5B5B5;
+// $headerSearchInputBorderColor: $primaryBorderColor;
+// $headerSearchInputBackgroundColor: $whiteColor;
+// $headerSearchInputShadow: inset 0 0 0 rgba(0,0,0,0);
+
+// Footer
+//
+// These are styling rules for PLM footer.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#C7C7C7;
+// 	color:#000000; box-shadow:2px 2px 5px #CCCCCC;">$footerBorderColor</div>
+//
+// $footerBorderColor - `#EAEAEC`
+// $footerBackgroundColor - `#EAEAEC`
+// $footerTextColor - `#333333` Uses $secondaryColor
+//
+// Styleguide 3.9
+$foooterHeight: 22px;
+$footerBorderColor: #EAEAEC;
+$footerBackgroundColor: #FAFAFC;
+$footerTextSize: 11px;
+$footerTextColor: $secondaryColor;
+
+// Loading
+//
+// These are styling rules for loading.
+//
+//
+// Markup:
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(0, 155, 155, .75); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$loadingBarBackgroundColor</div>
+//
+// $loadingBarBackgroundColor - `rgba(0, 155, 155, .75)`
+// $loadingSpinnerBackgroundColor - `#FFFFFF` **Not Used** Uses $whiteColor
+//
+// Styleguide 3.10
+$loadingBarBackgroundColor: #1DA0E2;
+$loadingBarShadow: 0 2px 6px 0 rgba(29, 160, 226, 0.5);
+$loadingSpinnerBackgroundColor: $whiteColor;
+
+// Truncation
+//
+// These are styling rules for truncation.
+//
+// Markup:
+// <div style="padding:30px; background:#FFFFFF; border-radius:10px;">
+// 	<div style="padding:2px; background:#DDDDDD;
+// 		box-shadow:0 1px 2px #AAAAAA;">$divUntruncatedBoxShadow</div>
+// </div>
+//
+// $divUntruncatedBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $divUntruncatedBoxShadow - `0 1px 2px #AAAAAA`
+//
+// Styleguide 3.11
+$divUntruncatedBackgroundColor: $whiteColor;
+$divUntruncatedBoxShadow: 0 1px 2px #AAAAAA;
+
+// Notifications
+//
+// These are styling rules for notifications.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(95, 183, 96, .85); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsSuccessBackground</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(204, 204, 204, .85); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsInfoBackground</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(239, 170, 80, .85); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsWarningBackground</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(213, 83, 78, .85); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsErrorBackground</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:rgba(213, 83, 78, .85); box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsCriticalBackground</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:#5FB760; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsSuccessText</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:#CCCCCC; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsInfoText</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:#EFAA50; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsWarningText</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:#D5534E; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsErrorText</div><br>
+// <div style="padding:2px; text-align:center; color:#FFFFFF;
+// 	background:#D5534E; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsCriticalText</div><br>
+// <div style="padding:2px; text-align:center; color:#999999;
+// 	background:#D5534E; box-shadow:2px 2px 5px #CCCCCC;">
+// 	$notificationsDialogTextColor</div>
+//
+// $notificationsSuccessBackground - `rgba(95, 183, 96, .85)`
+// $notificationsInfoBackground - `rgba(204, 204, 204, .85)`
+// $notificationsWarningBackground - `rgba(239, 170, 80, .85)`
+// $notificationsErrorBackground - `rgba(213, 83, 78, .85)`
+// $notificationsCriticalBackground - `rgba(213, 83, 78, .85)`
+// $notificationsSuccessText - `#5FB760`
+// $notificationsInfoText - `#CCCCCC` Same color as $primaryBorderColor
+// $notificationsWarningText - `#EFAA50`
+// $notificationsErrorText - `#D5534E` Uses $errorSubtleColor
+// $notificationsCriticalText - `#D5534E` Uses $errorSubtleColor
+// $notificationsMessageColor - `#FFFFFF` Uses $whiteColor
+// $notificationsCloseIconColor - `#FFFFFF` Uses $whiteColor
+// $notificationsDialogTextColor - `#999999`
+//
+// Styleguide 3.12
+$notificationsSuccessBackground: rgba(95, 183, 96, 0.85);
+$notificationsInfoBackground: rgba(204, 204, 204, 0.85);
+$notificationsWarningBackground: rgba(239, 170, 80, 0.85);
+$notificationsErrorBackground: rgba(213, 83, 78, 0.85);
+$notificationsCriticalBackground: rgba(213, 83, 78, 0.85);
+$notificationsSuccessText: #5FB760;
+$notificationsInfoText: #CCCCCC;
+$notificationsWarningText: #EFAA50;
+$notificationsErrorText: $errorSubtleColor;
+$notificationsCriticalText: $errorSubtleColor;
+$notificationsMessageColor: $whiteColor;
+$notificationsCloseIconColor: $whiteColor;
+$notificationsDialogTextColor: #999999;
+
+$notificationToastSuccess: rgba(143, 200, 68, 0.9);
+$notificationToastError: rgba(235, 77, 77, 0.9);
+$notificationSuccessText: #8FC844;
+$notificationFailedText: #EB4D4D;
+
+// Modals
+//
+// These are styling rules for modals.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#F5F5F5; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$modalContentBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#6E6E6E; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$modalHeaderCloseIconColor</div>
+//
+// $modalContentBorderColor - `#000000` [Modal Content] Uses $blackColor
+// $modalContentBackgroundColor - `darken($primaryBackgroundColor, 1%)` [Modal Content]
+// $modalHeaderBorderColor - `#CCCCCC` [Modal Header] Uses $primaryBorderColor
+// $modalHeaderTitleColor - `#333333` [Modal Header] Uses $secondaryColor
+// $modalHeaderCloseIconColor - `#6E6E6E` [Modal Header] Close icon to close the modal
+// $modalFooterBtnBorderColor - `#4077A5` [Modal Footer] Uses $btnColor
+// $modalFooterBtnBackgroundColor - `#4077A5` [Modal Footer] Uses $btnColor
+//
+// Styleguide 3.13
+$modalContentBorderColor: $blackColor;
+$modalContentBackgroundColor: darken($primaryBackgroundColor, 1%);
+$modalHeaderBorderColor: $primaryBorderColor;
+$modalHeaderTitleColor: $secondaryColor;
+$modalHeaderCloseIconColor: #6E6E6E;
+// $modalFooterBtnBorderColor: $btnColor;
+// $modalFooterBtnBackgroundColor: $btnColor;
+
+// Modals for Notifications
+//
+// These are styling rules for notifications-modals.
+//
+// Markup:
+// <none>None</none>
+//
+// $notificationModalMaxHeight - Maximum height of modal is set to `400px`
+//
+// Styleguide 3.14
+$notificationModalMaxHeight: 400px;
+
+// Modals for Report Charts
+//
+// These are styling rules for report-charts-modals.
+//
+// Markup:
+// <none>None</none>
+//
+// $chartModalContentBackgroundColor - `#FFFFFF` [Modal Content] Uses $whiteColor
+// $chartModalHeaderBackgroundColor - `#333333` [Modal Header] Uses $secondaryColor
+// $chartModalHeaderTitleColor - `#FFFFFF` [Modal Header] Uses $whiteColor
+//
+// Styleguide 3.15
+$chartModalContentBackgroundColor: $whiteColor;
+$chartModalHeaderBackgroundColor: $secondaryColor;
+$chartModalHeaderTitleColor: $whiteColor;
+
+// Multiselect
+//
+// These are styling rules for multiselect.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#EBEBEB; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$multiselectCategoryBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#D9D9D9; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$multiselectWarningBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#E3E3E3; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$multiselectWarningBackgroundColor</div>
+//
+// $multiselectBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $multiselectCategoryBorderColor - `#EBEBEB`
+// $multiselectWarningBorderColor - `#D9D9D9`
+// $multiselectWarningBackgroundColor - `#E3E3E3`
+// $multiselectFlyoutBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $multiselectFlyoutBackgroundColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.16
+$multiselectBackgroundColor: $whiteColor;
+$multiselectCategoryBorderColor: darken($secondaryBackgroundColor, 1%);
+$multiselectWarningBorderColor: #D9D9D9;
+$multiselectWarningBackgroundColor: darken($secondaryBackgroundColor, 4%);
+$multiselectFlyoutBorderColor: $primaryBorderColor;
+$multiselectFlyoutBackgroundColor: $whiteColor;
+
+// Page Not Found
+//
+// These are styling rules for the page-not-found page.
+//
+// Markup:
+// <none>None</none>
+//
+// $pageNotFoundContentColor - `#D5534E` Uses $errorSubtleColor
+//
+// Styleguide 3.17
+$pageNotFoundContentColor: $errorSubtleColor;
+
+// sectionWrapper Sections
+//
+// These are styling rules for sectionWrapper sections.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#E5E5E5; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$sectionWrapperSectionBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#EEEEEE; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$sectionWrapperHeaderBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#E2E2E2; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$sectionWrapperHeaderHoverBackgroundColor</div>
+//
+// $sectionWrapperSectionBorderColor - `#E5E5E5`
+// $sectionWrapperHeaderBackgroundColor - `#EEEEEE`
+// $sectionWrapperHeaderHoverBackgroundColor - `#E2E2E2`
+// $sectionWrapperHeaderLinkColor -  `#000000` Uses $blackColor
+// $sectionWrapperHeaderWhiteBackgroundColor - `#FFFFFF` **Not Used** Uses $whiteColor
+// $sectionWrapperHeaderIconSize - `18px`
+// $sectionWrapperHeaderContentSpacing - `10px`
+// $sectionWrapperBodyBackgroundColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.18
+$sectionWrapperBorderColor: darken($secondaryBackgroundColor, 3.5%);
+$sectionWrapperHeaderBackgroundColor: #EEEEEE;
+$sectionWrapperHeaderHoverBackgroundColor: #E2E2E2;
+$sectionWrapperHeaderWhiteBackgroundColor: $whiteColor;
+$sectionWrapperHeaderCellLeftBorderColor: $mediumGrayColor;
+$sectionWrapperHeaderLinkColor: $blackColor;
+$sectionWrapperHeaderIconSize: 18px;
+$sectionWrapperHeaderContentSpacing: 10px;
+$sectionWrapperBodyBackgroundColor: $darkWhiteColor;
+$sectionWrapperTranscludedContentBackgroundColor: $sectionWrapperHeaderWhiteBackgroundColor;
+$sectionWrapperTranscludedContentBorderTopColor: $primaryBorderColor;
+
+// Workspace List
+//
+// These are styling rules for workspace list.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#426E9E; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsListIconColor</div>
+//
+// $wsListCardContentColor - `#000000` Uses $blackColor
+// $wsListCardNameBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $wsListIconColor - `darken($linkColor, 2%)`
+// $wsListIconBorderColor - `#DEDEDE` Uses $boxBorderColor
+// $wsListIconBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $wsListVerticalDivisorColor - `#CCCCCC` Uses $primaryBorderColor
+//
+// Styleguide 3.19
+$wsListCardContentColor: $blackColor;
+$wsListCardNameBorderColor: $primaryBorderColor;
+$wsListIconColor: darken($linkColor, 2%);
+$wsListIconBorderColor: $boxBorderColor;
+$wsListIconBackgroundColor: $whiteColor;
+$wsListVerticalDivisorColor: $primaryBorderColor;
+
+// Workspace Items
+//
+// These are styling rules for workspace items.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#CCCCCC; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemsViewWrapperColor</div><br>
+// <div style="padding:2px; text-align:center; background:#EEEEEE; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemsViewsBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#DDDDDD; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemsViewsBoxShadowColor</div>
+//
+// $wsItemsViewWrapperColor - `#CCCCCC` Same color as $primaryBorderColor
+// $wsItemsViewsBackgroundColor - `#EEEEEE`
+// $wsItemsViewsBoxShadowColor - `#DDDDDD`
+// $wsItemsPillsBtnColor - `#FFFFFF` **Not Used** Uses $whiteColor
+//
+// Styleguide 3.20
+$wsItemsViewWrapperColor: #CCCCCC;
+$wsItemsViewsBackgroundColor: $secondaryBackgroundColor;
+$wsItemsViewsBoxShadowColor: #DDDDDD;
+$wsItemsPillsBtnColor: $whiteColor;
+
+// Workspace Item Header
+//
+// These are styling rules for workspace item header<br>
+// (on the workspace item details page).
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#E9E9E9; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemHeaderBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#E6E6E6; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemHeaderTopBorderColor</div><br>
+// <div style="padding:2px; text-align:center; background:#D3D3D3; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$workflowTransitionFlyoutBorderColor</div>
+//
+// $wsItemHeaderBorderColor - `#E9E9E9`
+// $wsItemHeaderBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $wsItemHeaderTopBorderColor - `#E6E6E6`
+// $workflowTransitionFlyoutBorderColor - `#D3D3D3`
+// $workflowTransitionFlyoutBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $workflowTransitionFlyoutFooterBtnColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.21
+$wsItemHeaderBorderColor: #E9E9E9;
+$wsItemHeaderBackgroundColor: $whiteColor;
+$wsItemHeaderTopBorderColor: darken($secondaryBackgroundColor, 3%);
+$workflowTransitionFlyoutBorderColor: #D3D3D3;
+$workflowTransitionFlyoutBackgroundColor: $whiteColor;
+$workflowTransitionFlyoutFooterBtnColor: $whiteColor;
+
+// Workspace Item Details
+//
+// These are styling rules for workspace item details.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#707070; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">
+// 	$wsItemDetailsTableTruncationLinkColor</div><br>
+// <div style="padding:2px; text-align:center; background:#666666; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$wsItemDetailsOwnerColor</div><br>
+// <div style="padding:2px; text-align:center; background:#EEEEEE; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">
+// 	$wsItemDetailsOwnerBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#F2F2F2; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">
+// 	$wsItemDetailsOwnerFlyoutBackgroundColor</div>
+// <div style="padding:2px; text-align:center; background:#E8E8E8; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">
+// 	$wsItemDetailsUnitOfMeasureBackgroundColor</div>
+//
+// $wsItemDetailsTableTruncationLinkColor - `#707070`
+// $wsItemDetailsTableFieldValueHoverBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $wsItemDetailsOwnerColor - `#666666;`
+// $wsItemDetailsOwnerBackgroundColor - `#EEEEEE;`
+// $wsItemDetailsOwnerFlyoutBorderColor - `#333333` Uses $secondaryColor
+// $wsItemDetailsOwnerFlyoutBackgroundColor - `darken($primaryBackgroundColor, 2%)`
+// $wsItemDetailsUnitOfMeasureBackgroundColor - `#E8E8E8`
+//
+// Styleguide 3.22
+$wsItemDetailsTableTruncationLinkColor: #707070;
+$wsItemDetailsTableFieldValueHoverBorderColor: $primaryBorderColor;
+$wsItemDetailsOwnerColor: #666666;
+$wsItemDetailsOwnerBackgroundColor: $secondaryBackgroundColor;
+$wsItemDetailsOwnerFlyoutBorderColor: $secondaryColor;
+$wsItemDetailsOwnerFlyoutBackgroundColor: darken($primaryBackgroundColor, 2%);
+$wsItemDetailsUnitOfMeasureBackgroundColor: #E8E8E8;
+
+// Change Log Colors
+//
+// These are styling rules for change log.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#FF0000; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$changeLogOldValueColor</div><br>
+// <div style="padding:2px; text-align:center; background:#008000; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$changeLogNewValueColor</div>
+//
+// $changeLogOldValueColor -  `#F00`Uses $errorColor
+// $changeLogNewValueColor - `#008000`
+//
+// Styleguide 3.23
+$changeLogOldValueColor: $errorColor;
+$changeLogNewValueColor: #008000;
+
+// User Profile Summary
+//
+// These are styling rules for the user profile summary flyout.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#C7C7C7; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$userProfileSummaryAccent</div>
+//
+// $userProfileSummaryAccent - `darken($primaryBorderColor, 2%)`
+//
+// Styleguide 3.24
+$userProfileSummaryAccent: darken($primaryBorderColor, 2%);
+$userProfileIconColor: #C7C7C7;
+$userProfileIconBorderColor: #C7C7C7;
+
+// Item Tooltip
+//
+// These are styling rules for the item tooltip.
+//
+// Markup:
+// <none>None</none>
+//
+// $itemTooltipContentColor - `#FFFFFF` Uses $whiteColor
+// $itemTooltipCloseIconColor - `#FFFFFF` Uses $whiteColor
+//
+// Styleguide 3.25
+$itemTooltipContentColor: $whiteColor;
+$itemTooltipCloseIconColor: $whiteColor;
+
+// Default Flyout Styles
+//
+// These are styling rules for the default flyout.
+//
+// Markup:
+// Flyout arrow pointing up:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-left:5px solid transparent; border-right:5px solid transparent;
+// 	border-bottom:5px solid #000000;"></div><br>
+// Flyout arrow pointing right:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-top:5px solid transparent; border-bottom:5px solid transparent;
+// 	border-left:5px solid #000000;"></div><br>
+// Flyout arrow pointing down:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-left:5px solid transparent; border-right:5px solid transparent;
+// 	border-top:5px solid #000000;"></div><br>
+// Flyout arrow pointing left:
+// 	<div style="width:0; height:0; display:inline-block;
+// 	border-top:5px solid transparent; border-bottom:5px solid transparent;
+// 	border-right:5px solid #000000;"></div><br>
+//
+// $flyoutArrowColor - `#000000` Uses $blackColor
+// $flyoutArrowBorder - `5px solid transparent`
+// $flyoutArrowBorderBlack - `5px solid $blackColor`
+// $flyoutBackdropBackgroundColor - `#000000` Uses $blackColor
+//
+// Styleguide 3.26
+$flyoutArrowColor: $blackColor;
+$flyoutArrowBorder: 5px solid transparent;
+$flyoutArrowBorderBlack: 5px solid $blackColor;
+$flyoutBackdropBackgroundColor: $blackColor;
+
+// Create Item Flyout
+//
+// These are styling rules for the create item flyout.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#666666; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$createItemTitleColor</div>
+//
+// $createItemBorderColor - `#000000` Uses $blackColor
+// $createItemBackgroundColor - `#F8F8F8` Uses $primaryBackgroundColor
+// $createItemTitleColor - `#666666`
+// $createItemTitleBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $createItemCloseIconColor - `#000000` Uses $blackColor
+//
+// Styleguide 3.27
+$createItemBorderColor: $blackColor;
+$createItemBackgroundColor: $primaryBackgroundColor;
+$createItemTitleColor: #666666;
+$createItemTitleBorderColor: $primaryBorderColor;
+$createItemCloseIconColor: $blackColor;
+
+// Form Element
+//
+// These are styling rules for form elements.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#DDDDDD; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$formElementDisabledBackgroundColor</div>
+//
+// $formElementBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $formElementDisabledBackgroundColor - `#DDDDDD`
+// $formElementGlowColor - `#66AFE9`
+// $formElementTransition - border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+// $formElementShadowBlur - inset 0 1px 1px rgba(0, 0, 0, .075);
+// $formElementShadowFocus - inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+//
+// Styleguide 3.28
+$formElementBackgroundColor: $whiteColor;
+$formElementDisabledBackgroundColor: #EEEEEE;
+$formElementGlowColor: #66AFE9;
+$formElementTransition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+$formElementShadowBlur: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+$formElementShadowFocus: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+$formElementInputBorderColor: #CCCCCC;
+$formElementInputBorderFocusColor: #55BCEB;
+
+
+// Tabular Data Widget
+//
+// These are styling rules for tabular data widget.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#F2F2F2; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$tdwCellOddBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#E6E6E6; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$tdwRowHoverColor</div><br>
+// <div style="padding:2px; text-align:center; background:#7CBA00; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$tdwBtnBorderColor
+// 	& $tdwBtnBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#6FA400; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$tdwBtnHoverBorderColor
+// 	& $tdwBtnHoverBackgroundColor</div><br>
+// <div style="padding:2px; text-align:center; background:#D4D4D4; color:#000000;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$resizeColOverlayBackgroundColor</div>
+//
+// $tdwHeaderLinkColor - `#000000` Uses $blackColor
+// $tdwHeaderBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $tdwHeaderCellBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $tdwCellTextColor - **Not Used**
+// $tdwCellPadding - `10px` Padding for the cells
+// $tdwCellHeight - `39px` Height of a cell. Used in the project management tab for the gantt chart row heights.
+// $tdwCellBorderColor - `#CCCCCC` Uses $primaryBorderColor
+// $tdwCellOddBackgroundColor - `darken($primaryBackgroundColor, 2%)`
+// $tdwCellEvenBackgroundColor - `#FFFFFF` Uses $whiteColor
+// $tdwRowHoverColor - `#E6E6E6`
+// $tdwBtnBorderColor - `#7CBA00`
+// $tdwBtnBackgroundColor - `#7CBA00`
+// $tdwBtnHoverBorderColor - `#6FA400`
+// $tdwBtnHoverBackgroundColor - `#6FA400`
+// $tdwEmptyStateBackgroundColor - `#F8F8F8` Uses $primaryBackgroundColor
+// $tdwEmptyStateBackgroundColor - `#F8F8F8` Uses $primaryBackgroundColor
+// $tdwBoxShadow - `0 0 1px 1px #0082C2` Uses $cellEditHighlightColor
+// $resizeColOverlayBackgroundColor - `#D4D4D4`
+// $columnResizerWidth - `6px`
+// $tableEditMode - `0 0 15px 0 #CCCCCC` Uses $primaryBorderColor
+//
+// Styleguide 3.29
+// $tdwHeaderLinkColor: $blackColor;
+// $tdwHeaderBackgroundColor: #F6F6F8;
+// $tdwHeaderCellBorderColor: #C2CCD3;
+// $tdwHeaderCellPadding: 9px;
+
+// $tdwCellTextColor: #666666;
+// $tdwCellPadding: 0 9px;
+// $tdwCellHeight: 20px;
+// $tdwCellBorderColor: #C2CCD3;
+// $tdwCellOddBackgroundColor: #F6F6F8;
+// $tdwCellEvenBackgroundColor: #F6F6F8;
+// $tdwRowHoverColor: darken($secondaryBackgroundColor, 3%);
+
+$tdwHeaderLinkColor: $blackColor;
+$tdwHeaderBackgroundColor: $whiteColor;
+$tdwHeaderCellBorderColor: $primaryBorderColor;
+$tdwCellTextColor: #666666;
+$tdwCellPadding: 10px;
+$tdwCellHeight: 2 * $tdwCellPadding + 19px;
+$tdwCellBorderColor: $primaryBorderColor;
+$tdwCellOddBackgroundColor: darken($primaryBackgroundColor, 2%);
+$tdwCellEvenBackgroundColor: $whiteColor;
+$tdwRowHoverColor: darken($secondaryBackgroundColor, 3%);
+$tdwBtnBorderColor: #7CBA00;
+$tdwBtnBackgroundColor: #7CBA00;
+$tdwBtnHoverBorderColor: #6FA400;
+$tdwBtnHoverBackgroundColor: #6FA400;
+$tdwEmptyStateBackgroundColor: $primaryBackgroundColor;
+$tdwEmptyStateBackgroundColor: $primaryBackgroundColor;
+$tdwBoxShadow: 0 0 5px 1px $cellEditHighlightColor;
+$resizeColOverlayBackgroundColor: #D4D4D4;
+$columnResizerWidth: 6px;
+$tableEditMode: 0 0 15px 0 $primaryBorderColor;
+
+// Milestones
+//
+// These are styling rules for milestones.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#FF0000; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$milestoneLateColor</div><br>
+// <div style="padding:2px; text-align:center; background:#FCCC32; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$milestoneWarningColor</div><br>
+// <div style="padding:2px; text-align:center; background:#7CBA00; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$milestoneOnTimeColor</div>
+//
+// $milestoneLateColor - `#F00` Uses $errorColor
+// $milestoneWarningColor - `#FCCC32`
+// $milestoneOnTimeColor - `#7CBA00`
+//
+// Styleguide 3.30
+$milestoneLateColor: $errorColor;
+$milestoneWarningColor: #FCCC32;
+$milestoneOnTimeColor: #7CBA00;
+
+// Comments
+//
+// These are styling rules for comments.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#E9E9EA; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$commentReplyColor</div><br>
+//
+// $commentReplyColor - `#E9E9EA`
+//
+// Styleguide 3.31
+$commentReplyColor: #E9E9EA;
+
+// Add Existing Item Flyout
+//
+// These are styling rules for Add Existing Item flyout.
+//
+// Markup:
+// <div style="padding:2px; text-align:center; background:#E9E9EA; color:#FFFFFF;
+// 	box-shadow:2px 2px 5px #CCCCCC;">$commentReplyColor</div><br>
+//
+// $commentReplyColor - `#E9E9EA`
+//
+// Styleguide 3.32
+$addExistingItemListHoverBackgroundColor: darken($secondaryBackgroundColor, 3%);
+$addExistingItemDetailsFontColor: $secondaryColor;
+$addExistingItemFilterArrowColor: $secondaryColor;
+$addExistingItemDisabledFontColor: #D3D3D3;
+$addExistingItemFilterDropdownBackgroundColor: $secondaryBackgroundColor;
+$addExistingItemSearchBarBorderColor: $cellEditHighlightColor;
+$addExistingItemSearchBarFocusBoxShadow: 0 0 1px 1px $cellEditHighlightColor;
+$addExistingItemInfoBoxShadow: inset 0 -5px 10px -5px rgba(0, 0, 0, 0.25);
+$addExistingItemFooterBorder: 1px solid darken($secondaryBackgroundColor, 3%);
+$addExistingItemContentWidth: 400px;
+
+// Create Workspace Item (Quick Create)
+//
+// These are styling rules for the create workspace item component.
+//
+// $createItemSectionDividerBorder - `1px solid #d4d4d4`
+// $createItemPadding - `20px 30px`
+// $createItemSecondaryColor - `#808080`
+//
+// Styleguide 3.33
+$createItemSectionDividerBorder: 1px solid darken($secondaryBackgroundColor, 10%);
+$createItemPadding: 10px 30px;
+$createItemSecondaryColor: #808080;
+
+// Side navigation (main menu)
+//
+// Styles for PLM's main menu (left side), using Angular-Material $sideNav
+//
+// $sideNavExpandedWidth - `320px`
+// $sideNavCollapsedWidth - `55px`
+// $sideNavBackgroundColor - `#182A3D`
+// $sideNavBackgroundHoverColor - `#1EA8DC`;
+// $sideNavItemBorderBottom - `solid 1px #0E1952`;
+// $sideNavButtonLinkColor - `#05A7DF`
+// $sideNavButtonLinkHoverColor - `#FFFFFF`
+// $sideNavButtonBackLinkColor - `#8FC844`
+// $sideNavButtonBackLinkHoverColor - `#FFFFFF`;
+// $sideNavButtonBackLinkBackgroundHoverColor - `#8FC844`;
+// $sideNavFontSize - `1.2em`
+// $sideNavSubMenuPanelBackgroundColor - `#4C4C4C`;
+// $sideNavSubMenuPanelBackgroundHoverColor - `#3A3A3A`;
+// $sideNavSubMenuPanelBorderBottom - `solid 1px #1D252D`;
+// $sideNavSubMenuPanelItemBorderBottom - `solid 1px #464646`;
+// $sideNavSubMenuPanelInsetShadow - `inset 0 5px 5px 0 rgba(40, 40, 50, .15)`;
+// $sideNavSubMenuPanelSubItemColor - `#FFFFFF`;
+//
+// Styleguide 3.34
+$sideNavExpandedWidth: 320px;
+$sideNavCollapsedWidth: 55px;
+$sideNavBackgroundColor: #182A3D;
+$sideNavBackgroundHoverColor: #1EA8DC;
+$sideNavItemBorderBottom: solid 1px #0E1952;
+$sideNavButtonLinkColor: #05A7DF;
+$sideNavButtonLinkHoverColor: #FFFFFF;
+$sideNavButtonBackLinkColor: #8FC844;
+$sideNavButtonBackLinkHoverColor: #FFFFFF;
+$sideNavButtonBackLinkBackgroundHoverColor: #8FC844;
+$sideNavFontSize: 14px; // 1.2em ONCE BOOTSTRAP-SPECIFIC STYLES ARE REMOVED
+$sideNavSublabelFontSize: 12px;
+$sideNavSubMenuPanelColor: #05A7DF;
+$sideNavSubMenuPanelBackgroundColor: #4C4C4C;
+$sideNavSubMenuPanelBackgroundHoverColor: #3A3A3A;
+$sideNavSubMenuPanelBorderBottom: solid 1px #1D252D;
+$sideNavSubMenuPanelItemBorderBottom: solid 1px #464646;
+$sideNavSubMenuPanelInsetShadow: inset 0 5px 5px 0 rgba(40, 40, 50, 0.15);
+$sideNavSubMenuPanelSubItemColor: #FFFFFF;
+$sideNavBackdropZIndex: 61; // 1 more than md-sidenav z-index (used by item viewer)
+
+// Dropdown Widget
+//
+// Styles for generic dropdown widget, used across the application
+// The transcluded content should basically consist of ULs and LIs
+//
+// $dropdownWidgetBackgroundColor - `#FFFFFF`
+// $dropdownWidgetHoverBackgroundColor - `#E1F5FF`
+// $dropdownWidgetBoxShadow - `0px 1px 10px 0px rgba(0, 0, 0, 0.5)`
+// $dropdownWidgetBorderColor - `#C2CBD3`
+// $dropdownWidgetTextColor - `#000000`
+//
+// Styleguide 3.35
+$dropdownWidgetBackgroundColor: $whiteColor;
+$dropdownWidgetHoverBackgroundColor: #E5F4FF;
+$dropdownWidgetBoxShadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+$dropdownWidgetButtonTextColor: #4D4D4D;
+$dropdownWidgetButtonBorderColor: #A2A2A2;
+$dropdownWidgetButtonBackgroundColor: #FFFFFF;
+$dropdownWidgetButtonHoverBorderColor: #A2A2A2;
+$dropdownWidgetButtonHoverBackgroundColor: #E8E8E8;
+$dropdownWidgetButtonFocusBorderColor: #000000;
+$dropdownWidgetButtonFocusBackgroundColor: #FFFFFF;
+$dropdownWidgetButtonFocusTextColor: #767676;
+$dropdownWidgetBorderColor: #E5E5E5;
+$dropdownWidgetTextColor: $blackColor;
+
+// Item Toolbar
+//
+// Styles for item toolbar (used md-toolbar and md-tabs)
+//
+//
+//
+// Styleguide 3.36
+$itemToolbarBorder: solid 1px #DDDDDD;
+$itemToolbarBorderLeft: solid 7px #CDCDCD;
+$itemToolbarBackgroundColor: $whiteColor;
+$itemToolbarFontSize: $defaultFontSize;
+$itemToolbarHeight: 40px;
+$itemToolbarLineHeight: 32px;
+$itemToolbarSelectedTabColor: #FAB11C;
+$itemToolbarTextColor: $lightBlueColor;
+
+
+// Item Content
+//
+// Styles for the item main content (options, main, summary), and internal features
+//
+//
+//
+// Styleguide 3.37
+$itemContentOptionsBorderColor: #CDCDCD;
+$itemContentMainBackgroundColor: #F5F6F7;
+$itemActionButtonsPinnedColor: #009D51;
+$itemActionButtonsArchivedColor: #CE0000;
+
+$itemSummaryActionButtonsBackgroundColor: $darkGrayColor;
+$itemSummaryActionButtonsOffColor: #E94F51;
+$itemSummaryBackgroundColor: $whiteColor;
+$itemSummaryChangeSummaryInfoAdditionalColor: #191919;
+$itemSummaryContentBorderColor: transparent;
+$itemSummaryItemDescriptorColor: $lightBlackColor;
+$itemSummaryPictureCircleBackgroundColor: #88C52C;
+$itemSummaryTitlesColor: #65717E;
+$itemSummarySeparatorLine: 1px solid $grayColor;
+$itemSummaryGroupsSectionBackgroundColor: #2887DC;
+
+
+// Default PLM animation
+//
+// The default transition for custom PLM animations
+//
+//
+//
+// Styleguide 3.38
+$plmAnimationDefault: cubic-bezier(0.35, 0, 0.25, 1);
+
+
+// Command bar styling
+//
+// Styles for the command bar
+//
+//
+//
+// Styleguide 3.39
+$commandBarHeight: 60px;
+$commandBarBackgroundColor: $whiteColor;
+$commandBarBorder: solid 1px #DBE0E4;
+$commandBarPadding: 13px 20px 0 20px;
+
+// Utilities toolbar styling
+//
+// Styles for the utilities toolbar
+//
+//
+//
+// Styleguide 3.40
+$utilitiesToolbarAlignItems: center;
+$utilitiesToolbarBackgroundColor: #F5F6F7;
+$utilitiesToolbarBorder: solid 1px #DDDDDD;
+$utilitiesToolbarFlexDirection: row;
+$utilitiesToolbarHeight: 65px;
+$utilitiesToolbarJustifyContent: space-between;
+$utilitiesToolbarPadding: 0 25px 0 30px;
+
+// ui-Grid stylings
+//
+// Styles for the ui-grid widget, PLM/Galileo specific
+//
+//
+//
+// Styleguide 3.41
+$uiGridBorderColor: #CCCCCC;
+$uiGridTextColor: #333333;
+$uiGridHeaderTextColor: #666666;
+
+$borderColor: #C1CBD2;
+$borderHeaderColor: #C2CCD3;
+
+$uiGridheaderBackgroundColor: #EEEEEE;
+$uiGridheaderBackgroundColorStart: $uiGridheaderBackgroundColor;
+$uiGridheaderBackgroundColorEnd: $uiGridheaderBackgroundColor;
+$uiGridRowsBackgroundColor: $whiteColor;
+$uiGridRowsBackgroundHoverColor: $darkWhiteColor;
+// $uiGridheaderBackgroundColorEnd: lighten($uiGridheaderBackgroundColorStart, 15%);
+
+$uiGridHeaderVerticalBarColor: #C2CCD3;
+$uiGridVerticalBarColor: transparent;
+$uiGridRowBackgroundColorOdd: $uiGridRowsBackgroundColor;
+$uiGridRowBackgroundColorHoverOdd: $uiGridheaderBackgroundColor;
+// $uiGridRowBackgroundColorEven: darken($uiGridRowBackgroundColorOdd, 2%);
+$uiGridRowBackgroundColorEven: $uiGridRowsBackgroundColor;
+$uiGridRowBackgroundColorHoverEven: $uiGridRowBackgroundColorHoverOdd;
+$uiGridRowBackgroundColorSelected: $uiGridheaderBackgroundColor;
+$uiGridRowBorderColor: #C2CCD2;
+
+// View Details - Matrix
+//
+// Styles for the matrix inside view details (item details)
+//
+//
+//
+// Styleguide 3.42
+$matricesBorderColor: #F4F4F4;
+$matricesHeaderBackgroundColor: transparent;
+$matricesHeaderBorderRightColor: #D5D5D5;
+$matricesHeaderBorderBottomColor: #C2CDD3;
+$matricesBorderTopColor: #DDDDDD;
+$matricesBorderBottomColor: #C2CDD3;
+$matricesRowsBottomColor: #E4E4E4;
+
+// View Details
+//
+// Styles for the view details page
+//
+//
+//
+// Styleguide 3.43
+$viewDetailsBackgroundColor: $whiteColor;
+$viewDetailsCommandBarBackgroundColor: $whiteColor;
+$viewDetailsFontColor: $lightBlackColor;
+$viewDetailsTableHeadersFontColor: $blackColor;
+
+// Add Item
+//
+// Styles for the add item page
+//
+//
+//
+// Styleguide 3.44
+$addItemContentPadding: 0 20px;
+$addItemBackgroundColor: $whiteColor;
+$addItemFieldLabelWidth: 190px;
+$addItemFieldLabelPadding: 15px 0 0 0;
+$addItemFieldValueHeight: 45px;
+$addItemFieldValuePadding: 10px;
+$addItemFieldValueRadioItemMargin: 3px 0 0 0;
+$addItemFieldValueRadioValueMargin: 3px 0 0 0;
+$addItemFieldValueRadioValuePadding: 0 5px 0 5px;
+$addItemFieldReadOnlyPadding: 15px $addItemFieldValuePadding $addItemFieldValuePadding $addItemFieldValuePadding;
+$addItemMatrixRowLabelWidth: $addItemFieldLabelWidth;
+$addItemMatrixColumnHeaderWidth: 150px;
+$addItemMatrixColumnHeaderPadding: 10px 10px 10px 13px;
+$addItemMatrixCellPadding: 10px;
+$addItemMatrixMargin: 5px 0 0 0;
+
+
+// z-index
+//
+// LET'S REMOVE THIS!
+// Variables related to z-index so that we don't use unnecessarily high z-indices
+// This value is copied from Bootstrap ($zindex-navbar-fixed)
+$zIndexDefault: 1030;
+
+// Project Management
+//
+// Variables for things displayed on the project management tab
+//
+//
+//
+// Styleguide 3.45
+// Sourcing Tab
+//
+//
+$sourcingGeneralBorderStyle: 1px solid $mediumGrayColor;
+$itemStatusGoodColor: #8FC844;
+$itemStatusWarningColor: #959595;
+$itemStatusWfmWarningColor: #FF9B0D;
+$itemStatusCriticalColor: #EB4D4D;
+$itemStatusWfmDefaultColor: #666666;
+
+$projectItemBorderColor: $darkGrayColor;
+
+$image-thumbnail-border: 1px solid $grayColor;
+$disabledBomRowColor: #C0C0C0;
+$greyBorderColor: #EEEEEE;
+// Search PLM component
+//
+// Styles for search component, used (by now) in the MainDashboard and Workspace Page
+// Styleguide 3.46
+//
+$searchPLMInputColor: $modalHeaderCloseIconColor;
+$searchPLMBorderColor: $formElementInputBorderColor;
+$searchPLMBorderColorFocus: $formElementInputBorderFocusColor;
+$searchPLMBorder: solid 1px $searchPLMBorderColor;
+$searchPLMBorderFocus: solid 1px $searchPLMBorderColorFocus;
+$searchPLMInputSearchPadding: 5px 35px 5px 5px;
+$searchPLMWrapperMargin: 19px 0 0 15px;
+// -- overlay --
+$searchPLMOverlayColor: $whiteColor;
+$searchPLMOverlayOpacity: 1;
+$searchPLMOverlayWidth: 100%;
+$searchPLMOverlayOpenWidth: 100vh;
+$searchPLMOverlayHeight: 55px;
+$searchPLMOverlayZIndex: 2;
+$searchPLMOverlayTop: 10px;
+$searchPLMOverlayLeft: 0;
+
+
+// Filters styles
+//
+// Styles for filters, used (by now) for the HighlightTextFilter
+// Styleguide 3.47
+//
+$filterHighlightTextBackground: #FFFF00; // TODO review colors for PLM-11251
+$filterHighlightTextColor: #000000;
+
+
+// Datepicker styles
+//
+// Styles for the date picker field.
+// Styleguide 3.48
+//
+
+$datepickerBackgroundColor: $veryLightGrayColor;
+$datepickerSelectedState: #106CC8;
+$datepickerXFontColor: $grayColor;
+$datepickerXFontSize: 24px;
+$datepickerXHeight: 34px;
+$datepickerXWidth: 27px;
+
+// Item Header
+//
+// Styles for the item header inside the item viewer
+// Styleguide 3.49
+//
+$itemHeaderColumnsPadding: 10px 0 0 32px;
+$itemHeaderCircleSize: 7px;
+$itemHeaderCircleMarging: 0 10px;
+$itemHeaderSpanIconsMargin: 5px;
+$itemHeaderColumnsMargin: 0 10px 0 0;
+$itemHeaderResizeButtonMarginRight: -5px;
+$itemHeaderBackgroundColor: $blueItemHeader;
+$itemHeaderBorderColor: rgba(255, 255, 255, 0.2);
+
+// Attached Items Flyout
+//
+// Styles for the attached items flyout on BOM
+//
+// Styleguide 3.48
+$viewAttachedItemsFlyoutWidth: 400px;
+
+// Workspace Tableau
+//
+// Styles for the View Workspace Item Column configuration tool
+//
+// Styleguide 3.49
+$workspaceTableauBoxWidth: 300px;
+$workspaceTableauBoxShadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+$workspaceTableauBoxBackgroundColor: $whiteColor;
+$workspaceTableauIconSuspensionPointsHeight: 47px;
+$workspaceTableauIconSuspensionPointsBG: $boxBorderColor;
+$workspaceTableauBorder: 1px solid $mediumGrayColor;
+$workspaceTableauBorderRadius: 2px;
+$workspaceTableauFontWeight: 300;
+$workspaceTableauFontSize: 12px;
+$workspaceTableauFontSizeHeaderColumn: 14px;
+$workspaceTableauLineHeight: 26px;
+$workspaceTableauCheckBoxBackgroundColor: $defaultCheckboxColor;
+$workspaceTableauHeaderPaddingBottom: 5px;
+$workspaceTableauPadding: 15px 0 0 10px;
+$workspaceTableauMdDividerMargin: 15px 0 10px -10px;
+$workspaceTableauCheckBoxMargin: 0 0 0 10px;
+$workspaceTableauBoxHeight: 600px;
+$workspaceTableauListHoverColor: #E9F7FC;
+
+// Fusion Header
+//
+// Temporary constants for Fusion Header
+//
+// Styleguide 3.50
+$fusionHeaderHeight: 70px;
+$fusionHeaderBackgroundColor: #252A3F;
+$fusionHeaderIconColor: #577390;
+$fusionHeaderIconHoverColor: #05A7DC;
+$fusionHeaderHubNameColor: #BBBBBB;
+$fusionHeaderFirstSeparatorColor: rgba(255, 255, 255, 0.5);
+$fusionHeaderFirstSeparatorHeight: 30px;
+$fusionHeaderHelpMenuZIndex: 80;
+$fusionHeaderHelpMenuWidth: 350px;
+$fusionHeaderHelpMenuShadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+$fusionHeaderHelpMenuMaxHeight: 340px;
+$fusionHeaderHelpOptionSeparatorColor: #DDDDDD;
+$fusionHeaderHelpIconColor: #02A7DF;
+$fusionHeaderHelpPrimaryTextColor: #577390;
+$fusionHeaderHelpSecondaryTextColor: #4675A8;
+
+// Change Owner
+$changeOwnerCheckBoxBackgroundColor: $defaultCheckboxColor;

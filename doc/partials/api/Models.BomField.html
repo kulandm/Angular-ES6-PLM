@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable="">BomField</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomfield-page"><p>Class defining the interface for a bom field (either an edge or node field)</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_fromviewdeffield">FromViewDefField()</h3>
+<div class="fromviewdeffield"><div class="models-bomfield-fromviewdeffield-page"><p>Builds a BomField from a view definition field</p>
+</div><h5 id="methods_fromviewdeffield_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomfield-fromviewdeffield-page"><p>The field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bomfield-constructor-page"><p>initializes the BomField properties
+If provided a BomField, will create a copy of the field</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomfield-constructor-page"><p>Arguments for instantiation</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_generatehref">generateHref()</h3>
+<div class="generatehref"><div class="models-bomfield-generatehref-page"><p>Builds the state href for a given urn</p>
+<p>Note that for Change order fields, the urn passed in is ignored</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfieldsemantics">getFieldSemantics()</h3>
+<div class="getfieldsemantics"><div class="models-bomfield-getfieldsemantics-page"><p>Returns the semantics of the field
+&amp;</p>
+</div><h5 id="methods_getfieldsemantics_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomuifieldsemantics">BomUIFieldSemantics</a></td><td><div class="models-bomfield-getfieldsemantics-page"><p>The semantics</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-bomfield-getid-page"><p>Returns the info leading to the corresponding viewDefField
+(Specifically, the link and the urn)
+     &amp;</p>
+</div><h5 id="methods_getid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomfield-getid-page"><p>The information</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-bomfield-getid-page"><p>Returns the id of the field
+&amp;</p>
+</div><h5 id="methods_getid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomfield-getid-page"><p>The id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getvalue">getValue()</h3>
+<div class="getvalue"><div class="models-bomfield-getvalue-page"><p>Returns the value of the field
+&amp;</p>
+</div><h5 id="methods_getvalue_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomfield-getvalue-page"><p>The value of the field</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_itemnumberfield">itemNumberField()</h3>
+<div class="itemnumberfield"><div class="models-bomfield-itemnumberfield-page"><p>Returns an instace of BomFIeld that can be used to store item number
+Which is not a field provided by the server</p>
+</div></div>
+</li>
+<li><h3 id="methods_updatefieldvalue">updateFieldValue(valueSource)</h3>
+<div class="updatefieldvalue"><div class="models-bomfield-updatefieldvalue-page"><p>Updates the field from <code>valueSource</code></p>
+</div><h5 id="methods_updatefieldvalue_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>valueSource</td><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bomfield-updatefieldvalue-page"><p>a map of ids to values</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_href">href</h3>
+<div class="href"><div class="models-bomfield-href-page"><p>A link associated with this field
+Not set in initializer, since we need external services</p>
+</div></div>
+</li>
+<li><h3 id="properties_id">id</h3>
+<div class="id"><div class="models-bomfield-id-page"><p>the unique id for the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_metadata">metadata</h3>
+<div class="metadata"><div class="models-bomfield-metadata-page"><p>Metadata associated with the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_semantics">semantics</h3>
+<div class="semantics"><div class="models-bomfield-semantics-page"><p>The semantics for the field - see BomUIFieldSemantics</p>
+</div></div>
+</li>
+<li><h3 id="properties_type">type</h3>
+<div class="type"><div class="models-bomfield-type-page"><p>the type information about the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_value">value</h3>
+<div class="value"><div class="models-bomfield-value-page"><p>the value of the field</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewdeffieldinfo">viewDefFieldInfo</h3>
+<div class="viewdeffieldinfo"><div class="models-bomfield-viewdeffieldinfo-page"><p>the information indicating the field definition and metadata</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

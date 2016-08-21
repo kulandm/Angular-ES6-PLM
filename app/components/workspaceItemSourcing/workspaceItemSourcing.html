@@ -1,0 +1,33 @@
+<div class="container-fluid" style="margin-top: 50px;"><div class="row" id="workspace-item"><div class="col-lg-12 col-md-12 col-sm-12" id="content">
+<div ng-init="init()">
+	<div infinite-scroll="" update="doScroll" context="context">
+		<tabular-data-widget columns="tableColumns" data="tableData" perform-action="openFlyoutWindow(event, row, field)"/>
+	</div>
+
+	<script type="text/ng-template" id="sourcingLinkRenderer">
+		<a href="javascript:;" ng-click="obj.link($event);">{{obj.val}}</a>
+	</script>
+
+	<script type="text/ng-template" id="sourcingDateRenderer">
+		<span> {{obj.val | date : obj.dateFormat}}</span>
+	</script>
+
+	<script type="text/ng-template" id="sourcingSupplierRenderer">
+		<table>
+			<tr ng-repeat="prop in obj">
+				<td>{{prop.key}}</td>
+				<td>{{prop.val}}</td>
+			</tr>
+		</table>
+	</script>
+
+	<script type="text/ng-template" id="sourcingQuotesRenderer">
+		<tabular-data-widget columns="obj.columns" data="obj.data"/>
+	</script>
+
+	<script type="text/ng-template" id="sourcingUseAsDefaultRenderer">
+		<span class="icon icon-Checkmark"></span>
+	</script>
+
+</div>
+</div></div></div>

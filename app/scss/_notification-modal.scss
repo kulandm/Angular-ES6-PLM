@@ -1,0 +1,232 @@
+// Notification Modal
+//
+// Add and override some of the modal styles for notification.
+//
+// Styleguide 20
+.notification-modal {
+	max-height: $notificationModalMaxHeight;
+
+	md-content {
+		padding-bottom: 0;
+	}
+
+	.md-actions {
+		padding: {
+			right: 0;
+			left: 0;
+		}
+	}
+
+	// Notification Modal Header
+	//
+	// The header of notification modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	//    <div class="modal-content">
+	//       <div class="notification-modal">
+	//          <div class="modal-header">
+	//             <div class="modal-header-title"
+	//                style="width:inherit;">Log</div>
+	//             <a class="modal-close">
+	//                <span class="icon icon-Delete"></span>
+	//             </a>
+	//          </div>
+	//       </div>
+	//    </div>
+	// </div>
+	//
+	// .modal-header -
+	//
+	// Styleguide 20.1
+	.modal-header {
+		padding-bottom: 10px;
+
+		border-bottom: 1px solid $modalHeaderBorderColor;
+
+		.modal-header-title {
+			font-size: 16px;
+		}
+	}
+
+	// Notification Modal Body
+	//
+	// The body section of notification modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="notification-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Log</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 			<div class="modal-body">
+	// 				Notification content goes here.
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .modal-body -
+	//
+	// Styleguide 20.2
+	.modal-body {
+		padding-top: 15px;
+	}
+
+	// Notification Message
+	//
+	// The notification message displayed in notification modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="notification-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Log</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 			<div class="modal-body">
+	// 				<div class="item-div-message">
+	// 					Item message goes here.
+	// 				</div>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .item-div-message -
+	//
+	// Styleguide 20.3
+	.item-div-message {
+		line-height: 1.4em;
+
+		overflow: hidden;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		span {
+
+			// Fixed width to display message type
+			&:first-child {
+				display: inline-block;
+
+				width: 15%;
+			}
+		}
+	}
+
+	// Notification Message Type
+	//
+	// The notification message displayed in notification modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="notification-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Log</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 			<div class="modal-body">
+	// 				<div class="item-div-message">
+	// 					<span class="message-type success">success </span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type info">info </span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type warning">warning </span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					span class="message-type error">error </span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type critical">critical </span>
+	// 				</div>
+	// 			</div>
+	// 			<div class="modal-footer">
+	// 				<button class="btn btn-primary"">OK</button>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .message-type - Whether the notification type is success, info, warning, error or critical
+	//
+	// Styleguide 20.4
+	.message-type {
+		@extend %messageColors;
+
+		font-weight: bold;
+
+		margin-right: 15px;
+	}
+
+	// Notification Message Text
+	//
+	// The notification message displayed in notification modals.
+	//
+	// Markup:
+	// <div class="modal-dialog" style="width:inherit;">
+	// 	<div class="modal-content">
+	// 		<div class="notification-modal">
+	// 			<div class="modal-header">
+	// 				<div class="modal-header-title"
+	// 					style="width:inherit;">Log</div>
+	// 				<a class="modal-close">
+	// 					<span class="icon icon-Delete"></span>
+	// 				</a>
+	// 			</div>
+	// 			<div class="modal-body">
+	// 				<div class="item-div-message">
+	// 					<span class="message-type success">success </span>
+	// 					<span class="message-text success">
+	// 						this is a success msg</span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type info">info </span>
+	// 					<span class="message-text info">
+	// 						this is an info msg</span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type warning">warning </span>
+	// 					<span class="message-text warning">
+	// 						this is a warning msg</span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type error">error </span>
+	// 					<span class="message-text error">
+	// 						this is an error msg</span>
+	// 				</div>
+	// 				<div class="item-div-message">
+	// 					<span class="message-type critical">critical </span>
+	// 					<span class="message-text critical">
+	// 						this is a critical msg</span>
+	// 				</div>
+	// 			</div>
+	// 			<div class="modal-footer">
+	// 				<button class="btn btn-primary"">OK</button>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </div>
+	//
+	// .message-text -
+	//
+	// Styleguide 20.5
+	.message-text {
+		@extend %messageColors;
+	}
+}

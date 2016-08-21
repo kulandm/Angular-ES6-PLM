@@ -1,0 +1,156 @@
+<h1><code ng:non-bindable="">AddLinkableItemsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-addlinkableitemscontroller-page"><p>This controller is responsible for providing list of existing linked items that can be added to current workspace item.
+It also provides logic to select a subset of items and add it to the current linkedItems workspace item.</p>
+<p>This controller uses a map called <code>linkableItemsOptions</code> containing the
+<code>itemsType</code> property that needs to be present in the $scope that is passed in.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<ul>
+<li>Requires <a href="Services/Services.EventService">Services/Services.EventService</a></li>
+<li>Requires <a href="Misc/Models.ModelsManager">Misc/Models.ModelsManager</a></li>
+<li>Requires <a href="Models/Models.Item">Models/Models.Item</a></li>
+</ul>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_cancelflyout">cancelFlyout()</h3>
+<div class="cancelflyout"><div class="controllers-workspaceitem-addlinkableitemscontroller-cancelflyout-page"><p>Cancel the tooltip flyout</p>
+</div></div>
+</li>
+<li><h3 id="methods_cancelselection">cancelSelection()</h3>
+<div class="cancelselection"><div class="controllers-workspaceitem-addlinkableitemscontroller-cancelselection-page"><p>Close the flyout.</p>
+</div></div>
+</li>
+<li><h3 id="methods_clearselection">clearSelection()</h3>
+<div class="clearselection"><div class="controllers-workspaceitem-addlinkableitemscontroller-clearselection-page"><p>This method will be called whenever &#39;Clear All&#39; is clicked.</p>
+</div></div>
+</li>
+<li><h3 id="methods_closeflyout">closeFlyout()</h3>
+<div class="closeflyout"><div class="controllers-workspaceitem-addlinkableitemscontroller-closeflyout-page"><p>Close the tooltip flyout</p>
+</div></div>
+</li>
+<li><h3 id="methods_createnewitem">createNewItem()</h3>
+<div class="createnewitem"><div class="controllers-workspaceitem-addlinkableitemscontroller-createnewitem-page"><p>Opens quick create modal.</p>
+</div></div>
+</li>
+<li><h3 id="methods_doscroll">doScroll()</h3>
+<div class="doscroll"><div class="controllers-workspaceitem-addlinkableitemscontroller-doscroll-page"><p>Scroll event handler for infinite scrolling.</p>
+</div></div>
+</li>
+<li><h3 id="methods_dosearch">doSearch(searchValue)</h3>
+<div class="dosearch"><div class="controllers-workspaceitem-addlinkableitemscontroller-dosearch-page"><p>Filter the list based on the given search value.</p>
+</div><h5 id="methods_dosearch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>searchValue</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-dosearch-page"><p>The value used to filter the list.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_optionchanged">optionChanged(selectedId)</h3>
+<div class="optionchanged"><div class="controllers-workspaceitem-addlinkableitemscontroller-optionchanged-page"><p>Process the selected workspace for filtering.</p>
+</div><h5 id="methods_optionchanged_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>selectedId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-optionchanged-page"><p>The selected id of a workspace in the filter dropdown.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_parseitems">parseItems(linkableItems, itemQuantity)</h3>
+<div class="parseitems"><div class="controllers-workspaceitem-addlinkableitemscontroller-parseitems-page"><p>Parse fetched data into table rows.</p>
+</div><h5 id="methods_parseitems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>linkableItems</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-parseitems-page"><p>The instance of LinkableItems model.</p>
+</div></td></tr><tr><td>itemQuantity</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-parseitems-page"><p>Number of items to be displayed on a single page.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_submitselection">submitSelection()</h3>
+<div class="submitselection"><div class="controllers-workspaceitem-addlinkableitemscontroller-submitselection-page"><p>Save selected linked items or pass them to the controller
+for editing.</p>
+</div></div>
+</li>
+<li><h3 id="methods_toggleselection">toggleSelection(item)</h3>
+<div class="toggleselection"><div class="controllers-workspaceitem-addlinkableitemscontroller-toggleselection-page"><p>This method will be called whenever the selection state of
+list item is changed. This method updates <a href="#selectedItemIdList">selectedItemIdList</a> array.</p>
+</div><h5 id="methods_toggleselection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>item</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-toggleselection-page"><p>The linkable item</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_tooltipflyout">tooltipFlyout(event, displayName, description)</h3>
+<div class="tooltipflyout"><div class="controllers-workspaceitem-addlinkableitemscontroller-tooltipflyout-page"><p>Show tooltip if there is an item description</p>
+</div><h5 id="methods_tooltipflyout_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-tooltipflyout-page"><p>The event object</p>
+</div></td></tr><tr><td>displayName</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-tooltipflyout-page"><p>The displayName of the item field</p>
+</div></td></tr><tr><td>description</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-addlinkableitemscontroller-tooltipflyout-page"><p>The description of the item field</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_filterdropdowndata">filterDropdownData</h3>
+<div class="filterdropdowndata"><div class="controllers-workspaceitem-addlinkableitemscontroller-filterdropdowndata-page"><p>Object containing the selected id and list of workspaces
+to be displayed in dropdown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_flyoutstate">flyoutState</h3>
+<div class="flyoutstate"><div class="controllers-workspaceitem-addlinkableitemscontroller-flyoutstate-page"><p>This property is used with
+<a href="Directives/AdjustMaxHeightDirective">Directives/AdjustMaxHeightDirective</a> to allow
+on-demand max height calculation.</p>
+</div></div>
+</li>
+<li><h3 id="properties_isloading">isLoading</h3>
+<div class="isloading"><div class="controllers-workspaceitem-addlinkableitemscontroller-isloading-page"><p>A flag which will be true when data is being loaded.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-addlinkableitemscontroller-itemid-page"><p>The item id of the current selected item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemquantity">itemQuantity</h3>
+<div class="itemquantity"><div class="controllers-workspaceitem-addlinkableitemscontroller-itemquantity-page"><p>Amount of items to fetch.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsobj">linkableItemsObj</h3>
+<div class="linkableitemsobj"><div class="controllers-workspaceitem-addlinkableitemscontroller-linkableitemsobj-page"><p>The reference to the <a href="api/Models.LinkableItems">Models.LinkableItems</a> object
+associated with this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkedworkspacelist">linkedWorkspaceList</h3>
+<div class="linkedworkspacelist"><div class="controllers-workspaceitem-addlinkableitemscontroller-linkedworkspacelist-page"><p><code>private</code> The list of linked workspaces.</p>
+</div></div>
+</li>
+<li><h3 id="properties_listdata">listData</h3>
+<div class="listdata"><div class="controllers-workspaceitem-addlinkableitemscontroller-listdata-page"><p>Stores data for existing linked items
+Note: A special property &#39;selected&#39; will be added to each item
+of the list to track select state. We are also assuming that
+each item can be uniquely identified by a property called &#39;id&#39;.
+This can change in future.</p>
+</div></div>
+</li>
+<li><h3 id="properties_nodataflag">noDataFlag</h3>
+<div class="nodataflag"><div class="controllers-workspaceitem-addlinkableitemscontroller-nodataflag-page"><p>True, if there are no data found.</p>
+</div></div>
+</li>
+<li><h3 id="properties_noworkspacersflag">noWorkspaceRsFlag</h3>
+<div class="noworkspacersflag"><div class="controllers-workspaceitem-addlinkableitemscontroller-noworkspacersflag-page"><p>True, if there are no workspace relationships configured.</p>
+</div></div>
+</li>
+<li><h3 id="properties_pageoffset">pageOffset</h3>
+<div class="pageoffset"><div class="controllers-workspaceitem-addlinkableitemscontroller-pageoffset-page"><p>The page to fetch data from.</p>
+</div></div>
+</li>
+<li><h3 id="properties_percentage">percentage</h3>
+<div class="percentage"><div class="controllers-workspaceitem-addlinkableitemscontroller-percentage-page"><p>This property is used with
+<a href="Directives/AdjustMaxHeightDirective">Directives/AdjustMaxHeightDirective</a>.</p>
+</div></div>
+</li>
+<li><h3 id="properties_searchval">searchVal</h3>
+<div class="searchval"><div class="controllers-workspaceitem-addlinkableitemscontroller-searchval-page"><p>Value on which the list is filtered.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selecteditemidlist">selectedItemIdList</h3>
+<div class="selecteditemidlist"><div class="controllers-workspaceitem-addlinkableitemscontroller-selecteditemidlist-page"><p>The list of selected item ids. This list will be used
+to manage the selection state of the list.</p>
+</div></div>
+</li>
+<li><h3 id="properties_totalitemcount">totalItemCount</h3>
+<div class="totalitemcount"><div class="controllers-workspaceitem-addlinkableitemscontroller-totalitemcount-page"><p>Total item count.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-addlinkableitemscontroller-workspaceid-page"><p>The workspace id of the current selected item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

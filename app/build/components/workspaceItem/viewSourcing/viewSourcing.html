@@ -1,0 +1,111 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewSourcingCtrl" class="view-sourcing-command-bar">
+    <!-- Transcluded buttons that are dependant on this controller -->
+
+    <!-- Button for adding a new supplier -->
+    <a href="{{viewSourcingCtrl.addSupplierHref}}"
+       class="md-button md-primary md-default-theme"
+       aria-label="{{viewSourcingCtrl.bundle.sourcing.button.addSupplier}}">
+        <span class="label">{{viewSourcingCtrl.bundle.sourcing.button.addSupplier}}</span>
+    </a>
+
+    <!-- Button for editing an existent supplier -->
+    <a href="{{viewSourcingCtrl.editSupplierHref}}"
+       class="md-button md-default-theme"
+       aria-label="{{viewSourcingCtrl.bundle.sourcing.button.edit}}">
+        <span class="md md-mode-edit"></span>
+    </a>
+
+    <!-- Button for deleting an existent supplier -->
+    <a href="{{viewSourcingCtrl.deleteSupplierHref}}"
+       class="md-button md-default-theme"
+       aria-label="{{viewSourcingCtrl.bundle.sourcing.button.delete}}">
+        <span class="md md-clear"></span>
+    </a>
+
+    <!-- Button for adding a new supplier -->
+    <a href="{{viewSourcingCtrl.addQuoteHref}}"
+       class="md-button md-primary md-default-theme"
+       aria-label="{{viewSourcingCtrl.bundle.sourcing.button.addQuote}}">
+        <span class="label">{{viewSourcingCtrl.bundle.sourcing.button.addQuote}}</span>
+    </a>
+
+</command-bar>
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Main content, middle - all tab content goes INSIDE -->
+	<md-content layout-fill id="item-main" class="has-table-data">
+
+        <!-- view-details main container -->
+        <div id="view-sourcing">
+            <section id="suppliers-list">
+                <table-data
+                        columns="viewSourcingCtrl.suppliersTableData.columns"
+                        rows="viewSourcingCtrl.suppliersTableData.rows"
+                        resizable-columns
+                        resize-rows
+                        limit-size="{{ viewSourcingCtrl.itemQuantity }}"
+                        selectable-rows
+                        select-rows-function="viewSourcingCtrl.selectSupplier({row: row})"
+                        no-unselect>
+                </table-data>
+            </section>
+            <section id="supplier-detail-wrapper">
+                <section id="supplier-detail">
+                    <div class="supplier-field supplier-title">
+                        <span class="title">Supplier:</span>
+                        <span class="value">
+                            <a href="/" ng-click="angular.noop()">
+                                {{ viewSourcingCtrl.selectedSourcing.supplier.title }}
+                            </a>
+                        </span>
+                    </div>
+                    <div class="supplier-field supplier-state">
+                        <span class="title">Current state of supplier:</span>
+                        <span class="value">{{ viewSourcingCtrl.selectedSourcing.state }}</span>
+                    </div>
+                    <div class="supplier-field supplier-part-number">
+                        <span class="title">Part Number:</span>
+                        <span class="value">{{ viewSourcingCtrl.selectedSourcing.supplierPartNumber }}</span>
+                    </div>
+                    <div class="supplier-field supplier-manufacturer">
+                        <span class="title">Manufacturer:</span>
+                        <span class="value">{{ viewSourcingCtrl.selectedSourcing.manufacturer }}</span>
+                    </div>
+                    <div class="supplier-field supplier-manufacturer-part-number">
+                        <span class="title">Manufacturer Part Number:</span>
+                        <span class="value">{{ viewSourcingCtrl.selectedSourcing.manufacturerPartNumber }}</span>
+                    </div>
+                    <div class="supplier-field supplier-sourcing-comment">
+                        <span class="title">Sourcing Comment:</span>
+                        <span class="value">{{ viewSourcingCtrl.selectedSourcing.sourcingComment }}</span>
+                    </div>
+                    <div class="supplier-field supplier-sourcing-tab-added-field"
+                            ng-repeat="(key, value) in viewSourcingCtrl.selectedSourcing.metaFieldsMap">
+                        <span class="title">{{ key }}</span>
+                        <span class="value">{{ value }}</span>
+                    </div>
+                </section>
+
+                <section id="supplier-quotes" class="view-sourcing-panel">
+                    <table-data
+                            columns="viewSourcingCtrl.quotesTableData.columns"
+                            rows="viewSourcingCtrl.quotesTableData.rows"
+                            resizable-columns
+                            resize-rows
+                            limit-size="{{viewSourcingCtrl.itemQuantity}}">
+                    </table-data>
+                </section>
+            </section>
+        </div>
+
+	</md-content>
+</md-content>
+
+<script type="text/ng-template" id="suppliersRenderer">
+    <div class="ui-grid-cell-contents">{{COL_FIELD.val}}</div>
+</script>
+
+<script type="text/ng-template" id="quotesRenderer">
+    <div class="ui-grid-cell-contents">{{COL_FIELD.val}}</div>
+</script>

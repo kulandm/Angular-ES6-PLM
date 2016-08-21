@@ -1,0 +1,12 @@
+{
+  "name": "adsk-commons",
+  "_release": "v0.1",
+  "_resolution": {
+    "type": "tag",
+    "tag": "v0.1",
+    "commit": "f318342ea6fdbb3beb110993c5f43aac4fd40a13"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/PLM360/adsk-commons.git",
+  "_target": "v0.1",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/PLM360/adsk-commons.git"
+}

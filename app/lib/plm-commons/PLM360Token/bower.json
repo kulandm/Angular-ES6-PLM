@@ -1,0 +1,25 @@
+{
+  "name": "PLMToken",
+  "version": "1.0.2",
+  "description": "Autodesk PLM 360 Token",
+  "main": "service.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "PLM",
+    "Commons"
+  ],
+  "license": "MIT"
+}

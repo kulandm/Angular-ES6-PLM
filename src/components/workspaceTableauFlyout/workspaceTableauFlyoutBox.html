@@ -1,0 +1,35 @@
+<div class="workspace-tableau-box"  layout="row" layout-wrap flex>
+	<div class="wtd-columns wtd-selected" flex="100">
+		<span class="wtd-columns-header">{{$root.bundle.text.tableau.shownColumns}}</span>
+		<md-checkbox ng-model="shownColumn.visible" ng-repeat="shownColumn in flyoutCtrl.fields | orderBy:'displayOrder'">
+			{{shownColumn.field.title}}
+		</md-checkbox>
+	</div>
+	<md-divider></md-divider>
+	<div class="wtd-columns wtd-unselected" flex="100">
+		<span class="wtd-columns-header">{{$root.bundle.text.tableau.availableColumns}}</span>
+		<ul class="sidenav-submenu enter-slideRightReturn exit-slideRight speed-300">
+			<li	ng-repeat="group in flyoutCtrl.groups" class="sidenav-submenu-expandable-item"
+				ng-class="{'sidenav-submenu-item-open': group.collapsed}" >
+				<a href="javascript:;" class="button" ng-click="group.collapsed = !group.collapsed">
+					<span class="caret-flex right static-rotateCaretVertical-ninety" ng-class="{'rotate': (group.collapsed)}" ></span>
+					<span class="label" >{{group.name}}</span>
+				</a>
+				<div class="sidenav-submenu-panel enter-expandDown exit-collapseUp" ng-hide="!group.collapsed">
+					<md-checkbox ng-model="field.visible" ng-repeat="field in group.fields" class="sidenav-submenu-panel-item">
+						{{field.field.title}}
+					</md-checkbox>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class='buttons-footer'>
+	<md-button class="md-primary command-bar-button" aria-label="{{$root.bundle.button.save}}" ng-click="flyoutCtrl.saveFlyout()" ng-disabled="flyoutCtrl.isPerformingAction">
+		<span class="label">{{$root.bundle.button.save}}</span>
+	</md-button>
+	<md-button aria-label="{{$root.bundle.button.cancel}}" nav-guard default-action="flyoutCtrl.cancelFlyout()" ng-click="flyoutCtrl.cancelFlyout()" ng-disabled="flyoutCtrl.isPerformingAction">
+		<span class="label">{{$root.bundle.button.cancel}}</span>
+	</md-button>
+</div>

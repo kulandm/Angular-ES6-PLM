@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable="">typeaheadWidget</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-typeaheadwidget-page"><p>A simple typeahead widget that receives data and returns a filtered array of that data</p>
+<h6 id="description_--data-the-array-with-all-the-objects-to-filter-on">- data: The array with all the objects to filter on</h6>
+<h6 id="description_--filter-the-key-to-use-for-the-search">- filter: The key to use for the search</h6>
+<h6 id="description_--matched-the-array-containing-the-objects-that-matched-the-filtering">- matched: The array containing the objects that matched the filtering</h6>
+<h6 id="description_--casesensitive-boolean-val-to-determine-if-the-filter-should-take-into-account-the-case-of-the-typed-val">- caseSensitive: Boolean val to determine if the filter should take into account the case of the typed val</h6>
+<h6 id="description_--typedval-the-string-that-was-typed-in-the-input-box">- typedVal: The string that was typed in the input box</h6>
+<h6 id="description_--remote-the-function-to-be-called-for-remote-filtering-this-property-will-also-be-used-to-identify-whether-we-want-local-or-remote-filtering">- remote: The function to be called for remote filtering. This property will also be used to identify whether we want local or remote filtering.</h6>
+<h6 id="description_--waittime-the-number-of-milliseconds-to-wait-before-filtering-the-data-this-is-an-optional-property">- waitTime: The number of milliseconds to wait before filtering the data. This is an optional property.</h6>
+<h6 id="description_--filterdropdowndata-the-data-to-populate-dropdown-this-is-an-optional-property">- filterDropdownData: The data to populate dropdown. This is an optional property.</h6>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;typeahead-widget&gt;
+&lt;/typeahead-widget&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_cancelprevioustimeout">cancelPreviousTimeout()</h3>
+<div class="cancelprevioustimeout"><div class="directives-typeaheadwidget-cancelprevioustimeout-page"><p>A private method to cancel a scheduled filter.</p>
+</div></div>
+</li>
+<li><h3 id="methods_filtervalue">filterValue(inputValue)</h3>
+<div class="filtervalue"><div class="directives-typeaheadwidget-filtervalue-page"><p>A triage method for filter.</p>
+</div><h5 id="methods_filtervalue_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>inputValue</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-typeaheadwidget-filtervalue-page"><p>Input value to be used for filtering.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_localfilter">localFilter(inputValue)</h3>
+<div class="localfilter"><div class="directives-typeaheadwidget-localfilter-page"><p>A private method to filter data locally.</p>
+</div><h5 id="methods_localfilter_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>inputValue</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-typeaheadwidget-localfilter-page"><p>Input value to be used for filtering.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_removetypedval">removeTypedVal()</h3>
+<div class="removetypedval"><div class="directives-typeaheadwidget-removetypedval-page"><p>A method to clear the search input.</p>
+</div></div>
+</li>
+<li><h3 id="methods_schedulesearchwithtimeout">scheduleSearchWithTimeout(inputValue)</h3>
+<div class="schedulesearchwithtimeout"><div class="directives-typeaheadwidget-schedulesearchwithtimeout-page"><p>A private method to schedule filter with timeout.</p>
+</div><h5 id="methods_schedulesearchwithtimeout_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>inputValue</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="directives-typeaheadwidget-schedulesearchwithtimeout-page"><p>Input value to be used for filtering.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_selectoption">selectOption()</h3>
+<div class="selectoption"><div class="directives-typeaheadwidget-selectoption-page"><p>Changes the selected option according to the index being passed.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_init">init</h3>
+<div class="init"><div class="directives-typeaheadwidget-init-page"><p>Initialization function</p>
+</div></div>
+</li>
+<li><h3 id="properties_parentel">parentEl</h3>
+<div class="parentel"><div class="directives-typeaheadwidget-parentel-page"><p>The parent element of the element used with adjustMaxHeight.</p>
+</div></div>
+</li>
+<li><h3 id="properties_placeholder">placeholder</h3>
+<div class="placeholder"><div class="directives-typeaheadwidget-placeholder-page"><p>Text for the placeholder in search bar.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedoptionid">selectedOptionId</h3>
+<div class="selectedoptionid"><div class="directives-typeaheadwidget-selectedoptionid-page"><p>The selected item id in the dropdown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_timeoutpromise">timeoutPromise</h3>
+<div class="timeoutpromise"><div class="directives-typeaheadwidget-timeoutpromise-page"><p>The timeout promise to allow stacked calls to be cancelled later.</p>
+</div></div>
+</li>
+<li><h3 id="properties_toggled">toggled</h3>
+<div class="toggled"><div class="directives-typeaheadwidget-toggled-page"><p>The status of the filter dropdown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_waittime">waitTime</h3>
+<div class="waittime"><div class="directives-typeaheadwidget-waittime-page"><p>The wait time in milliseconds to be used.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-typeaheadwidget-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-19" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-19" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-19">
+     <typeahead-widget data="Array" matched="Array" filter="String" case-sensitive="String" typed-val="Object"></typeahead-widget>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-19" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,51 @@
+<div class="pull-right">
+	<!-- <div class="dropdown pull-right" ng-show="hasViews">
+		<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">selected option &nbsp;<b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li>Option option option</li>
+		</ul>
+	</div> -->
+	<button type="button" class="btn btn-default" ng-click="controlDisplayWidget()">Default button <span class="caret"></span></button>
+	
+	<!-- <a href="javascript:;" ng-mouseover="controlMenuDisplay(true, 250)" ng-mouseleave="controlMenuDisplay(false, 250)"><span class="icon icon-Group"></span> {{label}}</a> -->
+	<flyout ng-show="displayWidget">
+		<!-- maybe move this to a different directive -->
+		<div id="flyout-search">
+			<typeahead-widget data="scopedData" matched="scopedDataFiltered" filter="displayName" case-sensitive="false" typed-val="typedVal"></typeahead-widget>
+		</div>
+		
+		<div id="flyout-content">
+			<form role="flyout-content" ng-if="typedVal.length === 0">
+				<!-- "selected" category -->
+				<div class="{{type}}" ng-repeat="item in scopedData | filter: {__selected: true}">
+					<label>
+						<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+					</label>
+				</div>
+				
+				<!-- category -->
+				<div class="category" ng-repeat="category in categories">
+					<h4>{{category.displayName}}</h4>
+					<!-- individual item -->
+					<div class="{{type}}" ng-repeat="item in scopedData | filter: {__selected: false}" ng-if="item.category == category.id">
+						<label>
+							<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+						</label>
+					</div>
+				</div>
+			</form>
+			<form role="flyout-content" ng-if="typedVal.length > 0">
+				<div class="{{type}}" ng-repeat="item in scopedDataFiltered">
+					<label>
+						<input type="{{type}}" name="item.id" ng-model="item.selected" ng-checked="item.selected"> {{item.displayName}}
+					</label>
+				</div>
+			</form>
+		</div>
+		
+		<div id="flyout-footer" class="pull-right">
+			<button type="button" class="btn btn-default" ng-click="submitSelection()">Done</button>
+			<button type="button" class="btn btn-default" ng-click="cancelSelection()">Cancel</button>
+		</div>
+	</flyout>
+</div>

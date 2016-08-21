@@ -1,0 +1,149 @@
+<h1><code ng:non-bindable="">ViewProjectManagementController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-page"><p>This controller corresponds to the project management tab.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_calculategranularity">calculateGranularity()</h3>
+<div class="calculategranularity"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-calculategranularity-page"><p>Calculates the granularity of gantt chart based on the maximum duration</p>
+</div></div>
+</li>
+<li><h3 id="methods_collapserow">collapseRow(row, grid)</h3>
+<div class="collapserow"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-collapserow-page"><p>Trigger row collapsing.</p>
+</div><h5 id="methods_collapserow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-collapserow-page"><p>The row that should be collapsed.</p>
+</div></td></tr><tr><td>grid</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-collapserow-page"><p>The grid object (to which the row belongs)</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_convertnodestoganttrows">convertNodesToGanttRows()</h3>
+<div class="convertnodestoganttrows"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-convertnodestoganttrows-page"><p>Modifies the project items such that they can be displayed
+in the table.</p>
+</div></div>
+</li>
+<li><h3 id="methods_expandrow">expandRow(row, grid)</h3>
+<div class="expandrow"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-expandrow-page"><p>Trigger row expansion</p>
+</div><h5 id="methods_expandrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-expandrow-page"><p>The row that should be expanded</p>
+</div></td></tr><tr><td>grid</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-expandrow-page"><p>The grid object (to which the row belongs)</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_getcolumnwidth">getColumnWidth(scale)</h3>
+<div class="getcolumnwidth"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-getcolumnwidth-page"><p>calculates the column width for gantt chart based on scale.</p>
+</div><h5 id="methods_getcolumnwidth_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>scale</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-getcolumnwidth-page"><p>for the gantt chart.</p>
+</div></td></tr></tbody></table><h5 id="methods_getcolumnwidth_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-getcolumnwidth-page"><p>to set the value for column width.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasactiveflyout">hasActiveFlyout()</h3>
+<div class="hasactiveflyout"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-hasactiveflyout-page"><p>return true if add flyout is active.</p>
+</div><h5 id="methods_hasactiveflyout_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-hasactiveflyout-page"><p>true, if add flyout is active.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_onrowexpanded">onRowExpanded(row)</h3>
+<div class="onrowexpanded"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-onrowexpanded-page"><p>Triggered when a row is expanded</p>
+</div><h5 id="methods_onrowexpanded_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-onrowexpanded-page"><p>The row that was expanded.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_parsedata">parseData()</h3>
+<div class="parsedata"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-parsedata-page"><p>Modifies the project items such that they can be displayed
+in the table.</p>
+</div></div>
+</li>
+<li><h3 id="methods_registerapi">registerApi(api)</h3>
+<div class="registerapi"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-registerapi-page"><p>register the events associated with the gantt chart.</p>
+</div><h5 id="methods_registerapi_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>api</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-registerapi-page"><p>object associated with the gantt plugin.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_resizegridheight">resizeGridHeight()</h3>
+<div class="resizegridheight"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-resizegridheight-page"><p>Rezize the height of grid header and viewport</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd(event)</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-triggeradd-page"><p>Trigger multi select flyout display state.</p>
+</div><h5 id="methods_triggeradd_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewprojectmanagementcontroller-triggeradd-page"><p>Event object associated with the click event.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-addpermission-page"><p>The add project management items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateandhourformat">dateAndHourFormat</h3>
+<div class="dateandhourformat"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-dateandhourformat-page"><p>Stores the date plus hour format.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-dateformat-page"><p>Stores the date format.</p>
+</div></div>
+</li>
+<li><h3 id="properties_deletepermission">deletePermission</h3>
+<div class="deletepermission"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-deletepermission-page"><p>The delete project management items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_drawpredecessors">drawPredecessors</h3>
+<div class="drawpredecessors"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-drawpredecessors-page"><p><code>private</code> Draws the connections using jsPlumb to connect tasks to their predecessors.</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-editpermission-page"><p>The edit project management items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_flyoutinstance">flyoutInstance</h3>
+<div class="flyoutinstance"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-flyoutinstance-page"><p>reference of add item flyout instance.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ganttchartavailablescales">ganttChartAvailableScales</h3>
+<div class="ganttchartavailablescales"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-ganttchartavailablescales-page"><p>An array that Stores gantt chart scales.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ganttchartdata">ganttChartData</h3>
+<div class="ganttchartdata"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-ganttchartdata-page"><p>An array that Stores gantt chart taks.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ganttchartscale">ganttChartScale</h3>
+<div class="ganttchartscale"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-ganttchartscale-page"><p>A string that Stores gantt chart scale data, default is &#39;year&#39;.</p>
+</div></div>
+</li>
+<li><h3 id="properties_isdataavailable">isDataAvailable</h3>
+<div class="isdataavailable"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-isdataavailable-page"><p>{Boolean} checks for data retrieved from the endpoint</p>
+</div></div>
+</li>
+<li><h3 id="properties_jsplumbconnectionconfig">jsPlumbConnectionConfig</h3>
+<div class="jsplumbconnectionconfig"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-jsplumbconnectionconfig-page"><p>Configuration options for the connections displayed
+when a task has predecessors.</p>
+</div></div>
+</li>
+<li><h3 id="properties_linkableitemsoptions">linkableItemsOptions</h3>
+<div class="linkableitemsoptions"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-linkableitemsoptions-page"><p>A map of values that need to be sent to the
+AddLinkableItemsController (hence attached to the $scope instead of
+<code>this</code>)</p>
+</div></div>
+</li>
+<li><h3 id="properties_projectdata">projectData</h3>
+<div class="projectdata"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-projectdata-page"><p>{Object} Stores the data retrieved from the endpoint</p>
+</div></div>
+</li>
+<li><h3 id="properties_resizercounter">resizerCounter</h3>
+<div class="resizercounter"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-resizercounter-page"><p>A counter limiting how many retries we use to resize the grid/chart properly
+this is needed since the initialization happens asynchronously between template include and controller initialization</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-tabledata-page"><p>Stores table column header and rows for the tableData.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewprojectmanagementcontroller-viewpermission-page"><p>The view project management items permission for the user</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

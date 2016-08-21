@@ -1,0 +1,53 @@
+// Item Tooltip
+//
+// Style for item tooltip flyout.
+//
+// Styleguide 14
+
+// Item Tooltip Flyout
+//
+// Override some of the flyout styles for item tooltip.
+//
+// Markup:
+// <div class="item-tooltip-flyout" style="width:inherit;">
+// 	<div class="flyout-content">
+// 		<div class="tt-header">Title</div>
+// 		<div class="tt-content">Lorem ipsum dolor sit amet,
+// 			consectetuer adipiscing elit, sed diam nonummy nibh euismod
+// 			tincidunt ut laoreet dolore magna aliquam erat volutpat.
+// 		</div>
+// 	</div>
+// </div>
+//
+// .item-tooltip-flyout -
+//
+// Styleguide 14.1
+.item-tooltip-flyout {
+	max-width: 400px;
+
+	.flyout-content {
+		padding: 10px 10px 15px 10px;
+
+		color: $itemTooltipContentColor;
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.tt-header {
+		font-size: 15px;
+
+		.md-close {
+			color: $itemTooltipCloseIconColor;
+		}
+
+		a {
+			@extend %removeLinkStyle;
+			@extend %removeOutline;
+		}
+	}
+
+	.tt-content {
+		margin-right: 15px;
+		padding-top: 15px;
+	}
+}

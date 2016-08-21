@@ -1,0 +1,69 @@
+{
+  "name": "cpdm-ui",
+  "description": "Cloud PDM UI",
+  "main": "dist/cpdm-uijs",
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.autodesk.com/PLM360/cpdm-ui.git"
+  },
+  "homepage": "https://git.autodesk.com/PLM360/cpdm-ui",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "plm-commons": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/PLM360/plm-commons.git#master",
+    "angular": "1.5.5",
+    "angular-animate": "1.5.5",
+    "angular-aria": "1.5.5",
+    "angular-cache": "3.2.1",
+    "angular-cookies": "1.5.5",
+    "angular-dynamic-locale": "0.1.29",
+    "angular-i18n": "1.5.5",
+    "angular-locale-bundles": "0.1.7",
+    "angular-material": "1.0.0-rc4",
+    "angular-resource": "1.5.5",
+    "angular-route": "1.5.5",
+    "angular-sanitize": "1.5.5",
+    "angular-ui-grid": "3.0.7",
+    "base64": "~0.3.0",
+    "jquery": "2.1.3",
+    "restangular": "1.4.0",
+    "traceur": "0.0.93",
+    "traceur-runtime": "0.0.93",
+    "underscore": "~1.8.3",
+    "plm-localization": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-localization.git#~v1.0.40",
+    "plm-field-selector": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-field-selector.git#~1.0.38",
+    "plm-file-overview-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-file-overview-service.git#v1.0.5",
+    "plm-wip-file-type": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-wip-file-type.git#v1.0.9",
+    "plm-wip-file-browser": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-wip-file-browser.git#~v1.0.36",
+    "plm-wip-http": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-wip-http.git#~v1.0.6",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#~v1.0.54",
+    "plm-rest-wrapper-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-rest-wrapper-service.git#~v1.0.5",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#v1.0.1",
+    "plm-flyout": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-flyout.git#v1.0.1",
+    "plm-notification": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-notification.git#~v1.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.5"
+  },
+  "resolutions": {
+    "angular": "1.5.5",
+    "angular-mocks": "1.5.5",
+    "plm-localization": "~v1.0.50",
+    "plm-api-models-manager": "~1.0.2",
+    "plm-rest-wrapper-service": "~v1.0.5",
+    "plm-wip-http": "~v1.0.6",
+    "plm-event-service": "v1.0.1",
+    "plm-unit-tests-mocks": "~v1.0.54",
+    "restangular": "1.5.2"
+  }
+}

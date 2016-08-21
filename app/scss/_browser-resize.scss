@@ -1,0 +1,209 @@
+// Browser Resize
+//
+// Styles related to browser resize media queries.
+//
+// Styleguide 6
+
+// Width 768px ~ 1199px
+//
+// This media is for resolutions of width from 768 px to 1199 px.
+//
+// Markup:
+// <none>None</none>
+//
+// #notifications - Push the notification widget down
+// .breadcrumb - Sets `clear: both`
+// #navigation-bar - Push the navigation bar down
+// #view - Push the main view down
+// 
+// Styleguide 6.1
+@media (max-width: 1199px) and (min-width: 768px) {
+
+	#notifications {
+		top: 95px;
+	}
+
+	.breadcrumb {
+		clear: both;
+	}
+
+	#navigation-bar {
+		top: 25px;
+	}
+
+	#view {
+		padding-top: 30px;
+	}
+}
+
+// Width * ~ 767px
+//
+// This media is for resolutions of width below and including 767 px.
+//
+// Markup:
+// <none></none>
+//
+// #notifications - Push the notification widget down further
+// .breadcrumb - Sets `clear: both`
+// #navigation-bar - Push the navigation bar down further
+// #view - Push the main view down further
+//
+// Styleguide 6.2
+@media (max-width: 767px) {
+
+	#notifications {
+		top: 140px;
+	}
+
+	.breadcrumb {
+		clear: both;
+	}
+
+	#navigation-bar {
+		top: 70px;
+	}
+
+	#view {
+		padding-top: 80px;
+	}
+}
+
+// Resize Notification Widget
+//
+// Media queries to resize width of notification widget on browser resize.<br>
+// **Width 940px ~ *:** widget has width of 20%.<br>
+// **Width 720px ~ 939px:** widget has width of 30%.<br>
+// **Width 480px ~ 719px:** widget has width of 60%.<br>
+// **Width * ~ 479px:** widget has width of 95%.
+//
+// Markup:
+// <none>None</none>
+//
+// #notifications - Uses mixin `position-notifications(width, left)`
+//
+// Styleguide 6.3
+@media (min-width: 940px) {
+	@include position-notifications(20%, 40%);
+}
+
+@media (max-width: 939px) and (min-width: 720px) {
+	@include position-notifications(30%, 35%);
+}
+
+@media (max-width: 719px) and (min-width: 480px) {
+	@include position-notifications(60%, 20%);
+}
+
+@media (max-width: 479px) {
+	@include position-notifications(95%, 2.5%);
+}
+
+// Resize Report Chart Modal
+//
+// Media queries to resize width of report-chart modal on browser resize.<br>
+// **Width * ~ 780px:** modal has width of 70%.
+//
+// Markup:
+// <none>None</none>
+//
+// .report-chart-modal.modal - Changes width of `modal-dialog`
+//
+// Styleguide 6.4
+@media (max-width: 780px) {
+
+	.report-chart-modal.modal {
+
+		.modal-dialog {
+			width: 70%;
+		}
+	}
+}
+
+// Resize Item Menu
+//
+// To increase the padding bottom of each tab<br>
+// in item menu on browser-resize.<br>
+// **Width 768px ~ 1199px:** item menu has bottom padding of 45px.
+//
+// Markup:
+// <none>None</none>
+//
+// #item-menu li a - Sets `padding-bottom: 45px`
+//
+// Styleguide 6.5
+@media (max-width: 1199px) and (min-width: 768px) {
+
+	div#item-menu li {
+
+		a,
+		&.active a {
+			padding-bottom: 45px;
+		}
+	}
+}
+
+// Resize Chart Title Width
+//
+// Media queries to resize width of report-chart title on the dashboard on browser resize.<br>
+// **Width 1500px ~ *:** title has width of 400px.
+// **Width 1200px ~ 1499px:** title has width of 300px.<br>
+// **Width 900px ~ 1199px:** title has width of 150px.<br>
+// **Width 768px ~ 899px:** title has width of 120px.<br>
+// **Width * ~ 767px:** title has width of 550px.
+//
+// Markup:
+// <none>None</none>
+//
+// .dashboard-report .highcharts-title - Changes width of chart title
+//
+// Styleguide 6.6
+@media (min-width: 1500px) {
+
+	.dashboard-report .highcharts-title {
+		width: 400px !important;
+	}
+}
+
+@media (max-width: 1499px) and (min-width: 1200px) {
+
+	.dashboard-report .highcharts-title {
+		width: 300px !important;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
+
+	.dashboard-report .highcharts-title {
+		width: 150px !important;
+	}
+}
+
+@media (max-width: 899px) and (min-width: 768px) {
+
+	.dashboard-report .highcharts-title {
+		width: 120px !important;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.dashboard-report .highcharts-title {
+		width: 550px !important;
+	}
+}
+
+/*
+	This fix is required to avoid the icons to be shown again when the width of the element reduces its width
+	enough to not be able to show the truncation dots. Taking in account the current responsiveness of the app,
+	it is quite unlikely that someone will work with this type of screen (below 420px).
+	I leave a 500px width limit anyway.
+*/
+@media (max-width: 500px) {
+
+	.outstanding-work-container .ui-grid-header-cell .ui-grid-cell-contents.icon .md {
+
+		&:before {
+			display: none;
+		}
+	}
+}

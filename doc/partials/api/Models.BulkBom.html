@@ -1,0 +1,130 @@
+<h1><code ng:non-bindable="">BulkBom</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bulkbom-page"><p>The Dao for BulkBom</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_buildrootnode">buildRootNode(`bomRoot`, `viewDef`)</h3>
+<div class="buildrootnode"><div class="models-bomgraphbuilder-buildrootnode-page"><p>Builds a BomNode from an instance of <code>BomRoot</code></p>
+</div><h5 id="methods_buildrootnode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`bomRoot`</td><td><a href="" class="label type-hint type-hint-bomroot">BomRoot</a></td><td><div class="models-bomgraphbuilder-buildrootnode-page"><p>An instance of BomRoot</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildrootnode-page"><p>the current view definition that is to be used
+in building the properties of the root node.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildrootnode_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraphbuilder-buildrootnode-page"><p>an instance of BomNode corresponding to the root node</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bomgraphbuilder-constructor-page"><p>Intializes the BomGraphBuilder</p>
+</div></div>
+</li>
+<li><h3 id="methods_addedgedata">addEdgeData(`edge`, `rowArgs`)</h3>
+<div class="addedgedata"><div class="models-bomtablerowbuilder-addedgedata-page"><p>Intializes the BomTableRowBuilder</p>
+</div><h5 id="methods_addedgedata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edge`</td><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomtablerowbuilder-addedgedata-page"><p>an instance of BomEdge.</p>
+</div></td></tr><tr><td>`rowArgs`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtablerowbuilder-addedgedata-page"><p>Holder object for all the arguments needed to construct
+an instance of <code>BomTableRow</code>.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addfieldstotablerow">addFieldsToTableRow(`rowArgs`, `fieldSource`)</h3>
+<div class="addfieldstotablerow"><div class="models-bomtablerowbuilder-addfieldstotablerow-page"><p>Adds a list BomField instances to the displayProperties of <code>rowArgs</code>.</p>
+</div><h5 id="methods_addfieldstotablerow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`rowArgs`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtablerowbuilder-addfieldstotablerow-page"><p>Holder object for all the arguments needed to construct
+an instance of <code>BomTableRow</code>.</p>
+</div></td></tr><tr><td>`fieldSource`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtablerowbuilder-addfieldstotablerow-page"><p>either an instance of <code>BomNode</code> or a <code>BomEdge</code>.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_additemnumberfield">addItemNumberField(`rowArgs`)</h3>
+<div class="additemnumberfield"><div class="models-bomtablerowbuilder-additemnumberfield-page"><p>Adds item number as a field to holder object <code>rowArgs</code>
+as a BomField instance.</p>
+</div><h5 id="methods_additemnumberfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`rowArgs`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtablerowbuilder-additemnumberfield-page"><p>Holder object for all the arguments needed to construct
+an instance of <code>BomTableRow</code>.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addnodedata">addNodeData(`node`, `rowArgs`)</h3>
+<div class="addnodedata"><div class="models-bomtablerowbuilder-addnodedata-page"><p>Adds data from a <code>BomNode</code> instance to the <code>rowArgs</code></p>
+</div><h5 id="methods_addnodedata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`node`</td><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomtablerowbuilder-addnodedata-page"><p>an instance of BomNode class.</p>
+</div></td></tr><tr><td>`rowArgs`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomtablerowbuilder-addnodedata-page"><p>Holder object for all the arguments needed to construct
+an instance of <code>BomTableRow</code>.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_buildrowfrompath">buildRowFromPath(`path`, `bomGraph`)</h3>
+<div class="buildrowfrompath"><div class="models-bomtablerowbuilder-buildrowfrompath-page"><p>Intializes the BomTableRowBuilder</p>
+</div><h5 id="methods_buildrowfrompath_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`path`</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="models-bomtablerowbuilder-buildrowfrompath-page"><p>an instance of <code>BomPath</code> class.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomtablerowbuilder-buildrowfrompath-page"><p>an instance of <code>BomGraph</code> class.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(json)</h3>
+<div class="constructor"><div class="models-bulkbom-constructor-page"><p>Initializes a BulkBom object with properties from the payload</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>json</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbom-constructor-page"><p>the JSON payload for a BulkBom</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_fetch">fetch(link, params)</h3>
+<div class="fetch"><div class="models-bulkbom-fetch-page"><p>Makes a request to the end point <code>link</code> using the <code>params</code> in
+order to load the BulkBom.</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbom-fetch-page"><p>The URL to use for fetching the data</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbom-fetch-page"><p>parametrs to send with the GET</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbom-fetch-page"><p>A Promise that may be resolved to get a an instance of
+BulkBom .</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getconfigbias">getConfigBias()</h3>
+<div class="getconfigbias"><div class="models-bulkbom-getconfigbias-page"><p>Returns the bias for this Bom</p>
+</div><h5 id="methods_getconfigbias_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbom-getconfigbias-page"><p>Bias for this BOM</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getconfigdate">getConfigDate()</h3>
+<div class="getconfigdate"><div class="models-bulkbom-getconfigdate-page"><p>Returns the date corresponding to this BOM</p>
+</div><h5 id="methods_getconfigdate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbom-getconfigdate-page"><p>Date corresponding to this BOM</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getconfiguration">getConfiguration()</h3>
+<div class="getconfiguration"><div class="models-bulkbom-getconfiguration-page"><p>Returns the configuration used to fetch the BOM</p>
+</div><h5 id="methods_getconfiguration_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbom-getconfiguration-page"><p>The configuration object.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getdmsid">getDmsId()</h3>
+<div class="getdmsid"><div class="models-bulkbom-getdmsid-page"><p>Gets the dms id for the root</p>
+</div><h5 id="methods_getdmsid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbom-getdmsid-page"><p>The dms id for the root</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getedges">getEdges()</h3>
+<div class="getedges"><div class="models-bulkbom-getedges-page"><p>getter for all the Nodes in the BulkBom.</p>
+</div><h5 id="methods_getedges_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bulkbom-getedges-page"><p>List of BOM edges.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnodes">getNodes()</h3>
+<div class="getnodes"><div class="models-bulkbom-getnodes-page"><p>getter for all the Nodes in the BulkBom.</p>
+</div><h5 id="methods_getnodes_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bulkbom-getnodes-page"><p>List of BOM nodes</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getrootnodeid">getRootNodeId()</h3>
+<div class="getrootnodeid"><div class="models-bulkbom-getrootnodeid-page"><p>getter for all the root node id in the BulkBom.</p>
+</div><h5 id="methods_getrootnodeid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbom-getrootnodeid-page"><p>id the of the root node of the bulk bom.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_configuration">configuration</h3>
+<div class="configuration"><div class="models-bulkbom-configuration-page"><p>The configuration for the BulkBom</p>
+</div></div>
+</li>
+<li><h3 id="properties_edges">edges</h3>
+<div class="edges"><div class="models-bulkbom-edges-page"><p>list of all the items in the bom</p>
+</div></div>
+</li>
+<li><h3 id="properties_json">json</h3>
+<div class="json"><div class="models-bulkbom-json-page"><p>The raw payload as returned by the endpoint</p>
+</div></div>
+</li>
+<li><h3 id="properties_nodes">nodes</h3>
+<div class="nodes"><div class="models-bulkbom-nodes-page"><p>list of all the items in the bom</p>
+</div></div>
+</li>
+<li><h3 id="properties_rootnodeid">rootNodeId</h3>
+<div class="rootnodeid"><div class="models-bulkbom-rootnodeid-page"><p>id of the root node (this is the urn of item).</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,278 @@
+<testsuites name="View Tests Report (UI)">
+<testsuite name="AddItemPage [Flow test - Cancel, save with validation error]" tests="10" failures="1" skipped="0" timestamp="Tue, 12 Jul 2016 02:50:23 GMT" time="17.58">
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="navigates to the item creation page" time="0.009">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="displays the workspace name as part of the title" time="5.688">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="displays the save and cancel buttons" time="0.077">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="displays sticky action bar on scroll" time="0.132">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="displays the sections containing fields inside the item creation page with required fields" time="0.06">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="displays the confirmation dialog after clicking the cancel button" time="0.794">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="stays in the same page after cancelling the cancel operation" time="0.231">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="goes back to workspace items page after confirming the cancel operation" time="2.364">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="navigates back to the item creation page" time="1.658">
+</testcase>
+<testcase classname="AddItemPage [Flow test - Cancel, save with validation error]" name="tries saving with validation errors and get a red error notification banner" time="5.846">
+<failure message="expected &#39;8 Errors - Please fix the errors below to save the item.&#39; to include &#39;6 Errors - Please fix the errors below to save the item.&#39;">
+From: Task: AddItemPage [Flow test - Cancel, save with validation error] tries saving with validation errors and get a red error notification banner
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="AddItemPage [Matrix fields]" tests="15" failures="8" skipped="0" timestamp="Tue, 12 Jul 2016 02:50:41 GMT" time="45.114">
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the presence of a all matrices" time="5.517">
+<failure message="Index out of bound. Trying to access element at index: 10, but there are only 10 elements that match locator By.cssSelector(&quot;.full-create-item-matrix&quot;)">
+    at /Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:257:15
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].goog.defineClass.notify (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2448:25)
+    at [object Object].promise.Promise.notify_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:564:12)
+    at Array.forEach (native)
+    at [object Object].promise.Promise.notifyAll_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:553:15)
+    at goog.async.run.processWorkQueue (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/async/run.js:130:15)
+    at process._tickCallback (node.js:402:9)
+Error
+    at [object Object].ElementArrayFinder.applyAction_ (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:392:21)
+    at [object Object].self.(anonymous function) [as isDisplayed] (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:76:19)
+    at [object Object].self.(anonymous function) [as isDisplayed] (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:721:11)
+    at AddItemPage.isMatrixDisplayed (/Users/Shared/plmsinglepage/test/automation/pages/AddItemPage.js:199:32)
+    at Context.&lt;anonymous&gt; (/Users/Shared/plmsinglepage/test/automation/view/AddItemSpec.js:167:24)
+    at /Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:144:19
+    at new promise.Promise (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:368:5)
+    at controlFlowExecute (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:129:14)
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].promise.ControlFlow.runEventLoop_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1729:8)
+From: Task: AddItemPage [Matrix fields] checks for the presence of a all matrices
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct column headers when all columns have text" time="0.132">
+<failure message="expected &#39;&#39; to include &#39;Validated Fields Matrix - C1&#39;">
+From: Task: AddItemPage [Matrix fields] checks for the correct column headers when all columns have text
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct column headers when some columns have text" time="0.16">
+<failure message="expected &#39;Matrix five - a very long col header named - C2&#39; to include &#39;Matrix3 - C2&#39;">
+From: Task: AddItemPage [Matrix fields] checks for the correct column headers when some columns have text
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct column headers when none of the columns have text" time="0.149">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct row labels when all rows have text" time="0.072">
+<failure message="expected &#39;&#39; to include &#39;Validated Fields Matrix - R1&#39;">
+From: Task: AddItemPage [Matrix fields] checks for the correct row labels when all rows have text
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct row labels when some rows have text" time="0.124">
+<failure message="expected &#39;Matrix5 - R2&#39; to include &#39;Matrix3 - R2&#39;">
+From: Task: AddItemPage [Matrix fields] checks for the correct row labels when some rows have text
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for the correct row labels none of the rows have text" time="0.137">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="checks for rendering of empty matrix" time="0.246">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="ensures matrix elements in invisible advanced permissions sections not present">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="ensures matrix elements in readonly advanced permissions section not editable" time="0.074">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="ensures matrix elements in editable advanced permissions sections are editable" time="0.021">
+<failure message="Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.namePattern(&quot;input[type=&quot;text&quot;]&quot;, &quot;urn.*.ADVPERM_EDITABLE_GROUP_INTEGER$&quot;)">
+    at /Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:257:15
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].goog.defineClass.notify (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2448:25)
+    at [object Object].promise.Promise.notify_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:564:12)
+    at Array.forEach (native)
+    at [object Object].promise.Promise.notifyAll_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:553:15)
+    at goog.async.run.processWorkQueue (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/async/run.js:130:15)
+    at process._tickCallback (node.js:402:9)
+Error
+    at [object Object].ElementArrayFinder.applyAction_ (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:392:21)
+    at [object Object].self.(anonymous function) [as click] (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:76:19)
+    at [object Object].self.(anonymous function) [as click] (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:721:11)
+    at Context.&lt;anonymous&gt; (/Users/Shared/plmsinglepage/test/automation/view/AddItemSpec.js:243:104)
+    at /Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:144:19
+    at new promise.Promise (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:368:5)
+    at controlFlowExecute (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:129:14)
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].promise.ControlFlow.runEventLoop_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1729:8)
+    at [object Object].eval (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2043:12)
+From: Task: AddItemPage [Matrix fields] ensures matrix elements in editable advanced permissions sections are editable
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="selects a filtered picklists (optional fields) in matrix" time="4.414">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="selects a required picklist fields in matrix" time="21.868">
+</testcase>
+<testcase classname="AddItemPage [Matrix fields]" name="selects a picklist with search filter field in matrix" time="10.327">
+<failure message="no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.19.346063 (38b35413bd4a486d436a9749e090454bc9ff6708),platform=Mac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds
+Build info: version: &#39;2.47.1&#39;, revision: &#39;411b314&#39;, time: &#39;2015-07-30 03:03:16&#39;
+System info: host: &#39;kulandm.ads.autodesk.com&#39;, ip: &#39;127.0.0.1&#39;, os.name: &#39;Mac OS X&#39;, os.arch: &#39;x86_64&#39;, os.version: &#39;10.10.5&#39;, java.version: &#39;1.8.0_71&#39;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=/var/folders/69/9sp00hw909j20_98dpg30vmr0000gp/T/.org.chromium.Chromium.oCZtUz}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a6674269e5f4997d8896702442bb099d
+*** Element info: {Using=id, value=_api_v3_workspaces_62_views_1_fields_LOOKUP_W_SEARCH_FILTER}">
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.19.346063 (38b35413bd4a486d436a9749e090454bc9ff6708),platform=Mac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds
+Build info: version: &#39;2.47.1&#39;, revision: &#39;411b314&#39;, time: &#39;2015-07-30 03:03:16&#39;
+System info: host: &#39;kulandm.ads.autodesk.com&#39;, ip: &#39;127.0.0.1&#39;, os.name: &#39;Mac OS X&#39;, os.arch: &#39;x86_64&#39;, os.version: &#39;10.10.5&#39;, java.version: &#39;1.8.0_71&#39;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=/var/folders/69/9sp00hw909j20_98dpg30vmr0000gp/T/.org.chromium.Chromium.oCZtUz}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a6674269e5f4997d8896702442bb099d
+*** Element info: {Using=id, value=_api_v3_workspaces_62_views_1_fields_LOOKUP_W_SEARCH_FILTER}
+    at new bot.Error (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/atoms/error.js:108:18)
+    at Object.bot.response.checkResponse (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/atoms/response.js:109:9)
+    at /Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/webdriver/webdriver.js:379:20
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].goog.defineClass.notify (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2448:25)
+    at [object Object].promise.Promise.notify_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:564:12)
+    at Array.forEach (native)
+    at [object Object].promise.Promise.notifyAll_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:553:15)
+    at goog.async.run.processWorkQueue (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/async/run.js:130:15)
+    at process._tickCallback (node.js:402:9)
+Error
+    at [object Object].ElementArrayFinder.applyAction_ (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:392:21)
+    at [object Object].self.(anonymous function) [as getText] (/Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:76:19)
+    at PicklistField.getPicklistDropdownSelectedValue (/Users/Shared/plmsinglepage/test/automation/components/PicklistField.js:140:48)
+    at /Users/Shared/plmsinglepage/test/automation/view/AddItemSpec.js:317:26
+    at /Users/Shared/plmsinglepage/node_modules/protractor/lib/element.js:683:16
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].goog.defineClass.notify (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2448:25)
+    at [object Object].promise.Promise.notify_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:564:12)
+    at Array.forEach (native)
+    at [object Object].promise.Promise.notifyAll_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:553:15)
+From: Task: AddItemPage [Matrix fields] selects a picklist with search filter field in matrix
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Test.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at Runner.runTest (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:374:10)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:452:12
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:299:14)
+    at /Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:309:7
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:247:23)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="EditAffectedItemsCustomColumns" tests="1" failures="1" skipped="0" timestamp="Tue, 12 Jul 2016 02:51:26 GMT" time="0.419">
+<testcase classname="EditAffectedItemsCustomColumns" name="&quot;before all&quot; hook" time="0.418">
+<failure message="no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.19.346063 (38b35413bd4a486d436a9749e090454bc9ff6708),platform=Mac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1 milliseconds
+Build info: version: &#39;2.47.1&#39;, revision: &#39;411b314&#39;, time: &#39;2015-07-30 03:03:16&#39;
+System info: host: &#39;kulandm.ads.autodesk.com&#39;, ip: &#39;127.0.0.1&#39;, os.name: &#39;Mac OS X&#39;, os.arch: &#39;x86_64&#39;, os.version: &#39;10.10.5&#39;, java.version: &#39;1.8.0_71&#39;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=/var/folders/69/9sp00hw909j20_98dpg30vmr0000gp/T/.org.chromium.Chromium.oCZtUz}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a6674269e5f4997d8896702442bb099d">
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.19.346063 (38b35413bd4a486d436a9749e090454bc9ff6708),platform=Mac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1 milliseconds
+Build info: version: &#39;2.47.1&#39;, revision: &#39;411b314&#39;, time: &#39;2015-07-30 03:03:16&#39;
+System info: host: &#39;kulandm.ads.autodesk.com&#39;, ip: &#39;127.0.0.1&#39;, os.name: &#39;Mac OS X&#39;, os.arch: &#39;x86_64&#39;, os.version: &#39;10.10.5&#39;, java.version: &#39;1.8.0_71&#39;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=/var/folders/69/9sp00hw909j20_98dpg30vmr0000gp/T/.org.chromium.Chromium.oCZtUz}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a6674269e5f4997d8896702442bb099d
+    at new bot.Error (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/atoms/error.js:108:18)
+    at Object.bot.response.checkResponse (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/atoms/response.js:109:9)
+    at /Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/webdriver/webdriver.js:379:20
+    at [object Object].promise.ControlFlow.runInFrame_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:1857:20)
+    at [object Object].goog.defineClass.notify (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:2448:25)
+    at [object Object].promise.Promise.notify_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:564:12)
+    at Array.forEach (native)
+    at [object Object].promise.Promise.notifyAll_ (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/../webdriver/promise.js:553:15)
+    at goog.async.run.processWorkQueue (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/lib/goog/async/run.js:130:15)
+    at process._tickCallback (node.js:402:9)
+From: Task: EditAffectedItemsCustomColumns &quot;before all&quot; hook
+    at Context.ret (/Users/Shared/plmsinglepage/node_modules/selenium-webdriver/testing/index.js:128:10)
+    at Hook.Runnable.run (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runnable.js:196:15)
+    at next (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:259:10)
+    at Immediate._onImmediate (/Users/Shared/plmsinglepage/node_modules/mocha/lib/runner.js:276:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="Disabled Archive/Unarchive" tests="1" failures="1" skipped="0" timestamp="Tue, 12 Jul 2016 02:51:26 GMT" time="0.498">
+<testcase classname="Disabled Archive/Unarchive" name="&quot;after all&quot; hook" time="0.001">
+<skipped/>
+</testcase>
+</testsuite>
+<testsuite name="Enabled Archive/Unarchive" tests="1" failures="1" skipped="0" timestamp="Tue, 12 Jul 2016 02:51:27 GMT" time="0.472">
+<testcase classname="Enabled Archive/Unarchive" name="&quot;after all&quot; hook">
+<skipped/>
+</testcase>
+</testsuite>

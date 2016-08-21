@@ -1,0 +1,35 @@
+
+#mxGraph {
+	position: fixed;
+	z-index: 1;
+	overflow:auto;
+	height:100%;
+}
+
+#loader {
+	width: 100%;
+	height: 100%;
+	background:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:12;	
+}
+
+#modalMask { /*set the div in the top-left corner of the screen*/
+	position: fixed;
+	background: black;
+	opacity: 0.4;
+	z-intex: 100;
+	top: 0;
+	left: 0;
+	/*set the width and height to 100% of the screen*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 9;
+}
+
+#workflowActionsContent{
+	overflow:hidden !important;
+}

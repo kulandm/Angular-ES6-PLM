@@ -1,0 +1,299 @@
+// Workspace Item Details
+//
+// Styles for the workspace item details page
+//
+// Styleguide 33
+#view-details {
+	//Ref: PLM-14492 for setting padding below
+	padding: 30px 30px 0 30px;
+	> *:last-child {
+		padding-bottom: 30px;
+	}
+
+	color: $viewDetailsFontColor;
+	background-color: $viewDetailsBackgroundColor;
+
+	width: 100%;
+
+	// The table containing item details view/edit modes is going to be transcluded into
+	// the section-wrapper content (.transcluded-content-wrapper)
+
+	.itemdetails-table-wrapper {
+		padding: 10px;
+
+		// The main item details table
+		.itemdetails-table {
+			width: 100%;
+			table-layout: fixed;
+
+			tbody {
+
+				tr {
+
+					// Target specifically the first level of TDs, to avoid mixing up with matrices
+					> td {
+						padding: 10px;
+
+						vertical-align: top;
+
+						pre {
+							@extend %disablePre;
+							@extend %textTruncation;
+							white-space: pre-wrap;
+							width: 100%;
+						}
+
+						// The fist column
+						&.field-label {
+							font-weight: bold;
+							line-height: 1.3;
+
+							overflow: hidden;
+
+							width: 190px;
+							padding: 10px;
+
+							text-align: right;
+							vertical-align: middle;
+							text-overflow: ellipsis;
+						}
+
+						// All simple field types, that are rendered as plain text
+						.field-plainvalue {
+							@extend %textTruncation;
+
+							line-height: 1.3;
+
+							display: inline-block;
+
+							width: 100%;
+						}
+					}
+
+					// Stylings for matrices inside item details
+					td.matrix {
+
+						table {
+							width: 100%;
+
+							table-layout: fixed;
+
+							thead {
+
+								tr {
+									color: $viewDetailsTableHeadersFontColor;
+									border-bottom: 1px solid $matricesHeaderBorderBottomColor;
+									background-color: $matricesHeaderBackgroundColor;
+
+									th {
+										padding: 7px 0;
+
+										text-align: left;
+
+										span {
+											@extend %textTruncation;
+
+											font-weight: 600;
+											line-height: 27px;
+
+											display: inline-block;
+
+											width: 100%;
+											height: 27px;
+											padding-left: 15px;
+
+											text-transform: capitalize;
+
+											border-left: 1px solid $matricesHeaderBorderRightColor;
+										}
+									}
+								}
+							}
+							tbody {
+
+								tr {
+
+									td:first-child {
+										@extend %textTruncation;
+
+										font-weight: 600;
+
+										text-transform: capitalize;
+
+										color: $viewDetailsTableHeadersFontColor;
+									}
+									td {
+										border-bottom: 1px solid $matricesRowsBottomColor;
+									}
+								}
+							}
+						}
+					}
+
+					// Form elements in general (except checkboxes, radios)
+					td {
+
+						input:not([type]),
+						input[type='text'],
+						textarea {
+							width: 100%;
+							padding: 5px;
+
+							border: solid 1px $formElementInputBorderColor;
+
+							&:focus {
+								border: solid 1px $formElementInputBorderFocusColor;
+							}
+						}
+
+						input.search {
+							padding: inherit; // the padding of the Semantic UI's widget
+						}
+
+						// only for multipicklist
+						.multiple {
+							// Do not override Semantic UI's widget styling
+							input.search {
+								padding: 0;
+							}
+						}
+
+						// Handle links, and plain texts (specifically, picklists)
+						.href-truncation,
+						.text-truncation {
+							@extend %textTruncation;
+
+							line-height: 1.3;
+
+							display: inline-block;
+
+							width: 100%;
+						}
+
+						// Image wrapper
+						.image-field-wrapper {
+							max-width: 600px;
+							height: auto;
+
+							img {
+								max-width: 100%;
+							}
+						}
+					}
+
+					// Hacky:
+					// When using "table-layout: fixed" for the itemdetails-table element,
+					// the layout is fixed based on the first row of the table.
+					// When the first row involves a matrix we have only one column there and
+					// that scenario generates an incorrect alignment in the rows below the matrix.
+					// To avoid this, we add an unvisible dummy first row with the regular layout.
+					&.dummy-row-for-fixed-layout-table {
+						visibility: hidden;
+						td {
+							font-size: 0;
+
+							padding: 0;
+
+							border-collapse: collapse;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.required {
+		&:before {
+			color: $fieldRequiredColor;
+			content: "* ";
+		}
+	}
+}
+
+@media (max-width: 1024px) { /* refered to PLM-14341 */
+	.itemdetails-table-wrapper {
+		overflow-x: auto;
+		margin-bottom: 16px;
+	}
+	.itemdetails-table {
+		th {
+			width: 220px;
+		}
+	}
+}
+
+// Styles for the ownership section in item details
+footer.summary-ownership {
+
+	display: inline-block;
+
+	width: 100%;
+
+	border-bottom: none;
+
+	.change-summary > div {
+		margin-bottom: 20px;
+	}
+
+	.change-summary-label {
+		width: 190px;
+		text-align: right;
+		font-weight: bold;
+		padding: 25px 15px 10px;
+	}
+
+	.change-summary-sub-label {
+		color: $darkGrayColor;
+	}
+
+	.change-summary-text {
+		padding: 25px 0 0 17px;
+		font-weight: 300;
+	}
+
+	.change-summary-section.current-owner,
+	.additional-owners {
+		width: 500px;
+	}
+
+	.change-ownership-button {
+		padding-left: 40px;
+		border-left: 1px solid $primaryBorderColor;
+	}
+
+	.change-summary-section {
+		display: inline-block;
+
+		margin: 10px 0;
+
+		&.current-owner .change-summary-info,
+		.change-summary-info.additional-groups .by {
+			line-height: 50px;
+		}
+
+		.change-summary-info {
+
+			&.audit {
+				line-height: 28px;
+			}
+
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 50px;
+
+			display: inline-block;
+
+			width: 83%;
+			padding-left: 15px;
+			vertical-align: top;
+
+			.date {
+				font-weight: bold;
+			}
+
+			.email {
+				display: none;
+			}
+		}
+	}
+}

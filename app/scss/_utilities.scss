@@ -1,0 +1,267 @@
+// Caret
+//
+// Caret styling - by default, points to the right
+//
+// Markup:
+// <div>
+// 	<span class="caret" style="border:0; display:inline;""></span>
+// </div>
+//
+// .caret - PLM360-specific icon for caret
+//
+// Styleguide 311.1
+.caret {
+	display: inline-block;
+
+	width: 0;
+	height: 0;
+	margin: -2px 10px 0 -1px;
+
+	vertical-align: text-top;
+
+	border: 0;
+
+	&:before {
+		@extend %materialDesignFontDefinition;
+
+		font-size: 1.4em;
+
+		content: '\f1b6';
+	}
+
+	// Arrow pointing upwards
+	&.up:before {
+		content: '\f1b7';
+	}
+
+	// Arrow pointing downwards
+	&.down:before {
+		content: '\f1b4';
+	}
+
+	// Arrow pointing left
+	&.left:before {
+		content: '\f1b5';
+	}
+}
+
+// Caret Flex
+//
+// Caret styling - by default, points to the right, with flex content
+//
+// Markup:
+// <div>
+// 	<span class="caret=flex" style="border:0; display:inline;""></span>
+// </div>
+//
+// .caret - PLM360-specific icon for caret-flex
+//
+// Styleguide 311.2
+.caret-flex {
+	line-height: 1;
+
+	display: inline-block; // Necessary for rotation/animations
+
+	width: 19px;
+	height: 19px;
+	margin: 0 0 0 -1px;
+
+	text-align: center;
+	vertical-align: text-top;
+
+	border: 0;
+
+	flex: 0 0 auto;
+
+	&:before {
+		@extend %materialDesignFontDefinition;
+
+		font-size: 1.4em;
+
+		content: '\f1b6';
+	}
+
+	// Arrow pointing upwards
+	&.up:before {
+		content: '\f1b7';
+	}
+
+	// Arrow pointing downwards
+	&.down:before {
+		content: '\f1b4';
+	}
+
+	// Arrow pointing left
+	&.left:before {
+		content: '\f1b5';
+	}
+}
+
+// Utilities Toolbar
+//
+// Generic override for md-toolbar to style according to match PLM/Galileo
+//
+.utilities-toolbar {
+
+	flex-direction: $utilitiesToolbarFlexDirection;
+	align-items: $utilitiesToolbarAlignItems;
+	justify-content: $utilitiesToolbarJustifyContent;
+
+	height: $utilitiesToolbarHeight;
+	padding: $utilitiesToolbarPadding;
+
+	box-shadow: none;
+
+	border-top: $utilitiesToolbarBorder;
+	border-bottom: $utilitiesToolbarBorder;
+
+	> span {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		height: $utilitiesToolbarHeight;
+
+		.view-label {
+			margin-right: 10px;
+		}
+
+		.switch-view-dropdown {
+
+			margin-right: 16px;
+
+			&:active {
+				background: transparent;
+			}
+
+			&:not([disabled]):focus .md-select-label {
+				border: 0;
+			}
+
+			.md-select-label {
+				border: 0;
+
+				.md-select-icon:after {
+					left: 15px;
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+// Generic left pull
+//
+// Pulls a block element to the left
+//
+// Markup:
+// <div>
+// 	<span class="pull-left" style="border:0; display:inline;""></span>
+// </div>
+//
+// .pull-left - Pulls a block element to the left
+//
+// Styleguide 311.3
+.pull-left {
+	float: left;
+}
+
+// Generic right pull
+//
+// Pulls a block element to the right
+//
+// Markup:
+// <div>
+// 	<span class="pull-left" style="border:0; display:inline;""></span>
+// </div>
+//
+// .pull-left - Pulls a block element to the right
+//
+// Styleguide 311.4
+.pull-right {
+	float: right;
+}
+
+// Generic unstyled link
+//
+// Removes the default decoration from the link (underline, etc)
+// 	and makes link inherit its parent color no matter what state of the
+//		link is (visited, hovered, etc)
+// Note that decorations cannot be overridden by children - if the
+//	text-decoration property is specified for parents of the link,
+//		those decorations will not be removed
+//
+// Markup:
+// <a class="unstyled-link"></a>
+//
+
+a.unstyled-link {
+	&:hover,
+	&:link,
+	&:active,
+	&:visited {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+// Highlight text filter
+//
+// Class used by Highlight Text Filter
+//
+// Markup:
+// <span class="highlight-text-filter"></span>
+//
+span.highlight-text-filter {
+	background-color: $filterHighlightTextBackground;
+	color: $filterHighlightTextColor;
+	font-weight: bolder;
+}
+
+// Icon text
+//
+// Class used elements wanting the default font-size for icon fonts
+//
+// Markup:
+// <span class="icon-text"></span>
+//
+.icon-text {
+	font-size: $defaultIconFontSize;
+}
+
+// Square button with icon-text
+//
+// Class used by buttons that are to be square and have a single icon character
+// as their tdwCellTextColor
+//
+// Markup:
+// <md-button class="square-icon"><span class="zmdi zmdi-star"></span></md-button>
+//
+button.square-icon {
+	@extend .icon-text;
+	line-height: 1;
+
+	// To make the button square we want the height to match the width
+	width: $buttonHeight;
+
+	// Need to override padding to 0px to override the 20px padding
+	// coming from _plm-material.scss (:not(md-menu-item) > .md-button, ... )
+	padding: 0;
+}
+
+// md-button style workaround:
+//	 These are necessary to work around the _plm-material.scss rules that would
+//	 otherwise override square-icon and icon-text above (see _plm-material.scss)
+//	 due to specificity.
+// The original rules are:
+//   :not(md-menu-item) > .md-button,
+//   md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised) { ... }
+//
+:not(md-menu-item) > .md-button.icon-text,
+md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised).icon-text {
+	@extend .icon-text;
+}
+
+:not(md-menu-item) > button.md-button.square-icon,
+md-toolbar:not(.md-menu-toolbar) button.md-button:not(.md-raised).square-icon {
+	@extend button.square-icon;
+}

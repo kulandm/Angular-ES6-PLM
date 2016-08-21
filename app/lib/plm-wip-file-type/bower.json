@@ -1,0 +1,27 @@
+{
+  "name": "plm-wip-file-type",
+  "description": "This module is responsible for providing icons and other wip file related information.",
+  "main": "dist/plm-wip-file-type.js",
+  "authors": [
+    "Owais Zahid <owais.zahid@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "https://git.autodesk.com/plm-ui/plm-wip-file-type",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#v1.0.32"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.9"
+}

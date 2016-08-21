@@ -1,0 +1,507 @@
+/* PLM Icons
+-------------------------------------------------- */
+
+// PLM Icons Font
+//
+// The font **PLM Icons**.
+//
+// Markup:
+// <div style="font-family:PLM-icons; font-size:16px;">PLM Icons</div>
+//
+// %plmIconsFontDefinition - Extension to use for this font
+//
+// Styleguide 2.3.1
+@font-face {
+	font: {
+		family: 'PLM-icons';
+		weight: normal;
+		style: normal;
+	}
+	src: url('../fonts/PLM-icons.eot');
+	src: url('../fonts/PLM-icons.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/PLM-icons.woff') format('woff'),
+		 url('../fonts/PLM-icons.ttf') format('truetype'),
+		 url('../fonts/PLM-icons.svg#PLM-icons') format('svg');
+}
+
+%plmIconsFontDefinition {
+	font: {
+		family: 'PLM-icons';
+		weight: normal;
+		style: normal;
+		variant: normal;
+	}
+	text-transform: none;
+	line-height: 1;
+	speak: none;
+
+	// Better font rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Extend font definition to classes containing "icon-plm"
+[class*="icon-plm"] {
+	@extend %plmIconsFontDefinition;;
+}
+
+// PLM Icons
+//
+// Various icons in **PLM-icons**.<br>
+// *Supplied by the UX team.*
+//
+// Markup:
+// <div style="font-size:24px; text-align:center; color:#456789;">
+//    <span class="icon-plm-warehouse"></span>
+//    <span class="icon-plm-users"></span>
+//    <span class="icon-plm-user_document_attach"></span>
+//    <span class="icon-plm-truck"></span>
+//    <span class="icon-plm-tower"></span>
+//    <span class="icon-plm-top_rank"></span>
+//    <span class="icon-plm-toolbox"></span>
+//    <span class="icon-plm-tire"></span>
+//    <span class="icon-plm-time_reached"></span>
+//    <span class="icon-plm-temperature_guage"></span>
+//    <span class="icon-plm-task_finished"></span>
+//    <span class="icon-plm-t_square"></span>
+//    <span class="icon-plm-tape_measure"></span>
+//    <span class="icon-plm-stamp"></span>
+//    <span class="icon-plm-pipes_piping"></span>
+//    <span class="icon-plm-power_plug"></span>
+//    <span class="icon-plm-precision_tool"></span>
+//    <span class="icon-plm-put_into"></span>
+//    <span class="icon-plm-pylon"></span>
+//    <span class="icon-plm-roads"></span>
+//    <span class="icon-plm-roll_insulation"></span>
+//    <span class="icon-plm-safe_gear"></span>
+//    <span class="icon-plm-safe_box"></span>
+//    <span class="icon-plm-safe_hands_squeeze"></span>
+//    <span class="icon-plm-satellite_dish"></span>
+//    <span class="icon-plm-secure_session"></span>
+//    <span class="icon-plm-software_package"></span>
+//    <span class="icon-plm-spanner"></span>
+//    <span class="icon-plm-particles"></span>
+//    <span class="icon-plm-nuts_bots"></span>
+//    <span class="icon-plm-move_into"></span>
+//    <span class="icon-plm-monitor_view"></span>
+//    <span class="icon-plm-miscellaneous"></span>
+//    <span class="icon-plm-medical"></span>
+//    <span class="icon-plm-maintenance"></span>
+//    <span class="icon-plm-lumber"></span>
+//    <span class="icon-plm-light_switch"></span>
+//    <span class="icon-plm-letter"></span>
+//    <span class="icon-plm-lamp"></span>
+//    <span class="icon-plm-internet"></span>
+//    <span class="icon-plm-inconclusive_task"></span>
+//    <span class="icon-plm-hierarchy"></span>
+//    <span class="icon-plm-graduate"></span>
+//    <span class="icon-plm-document_stats"></span>
+//    <span class="icon-plm-boxes"></span>
+//    <span class="icon-plm-gov_submissions"></span>
+//    <span class="icon-plm-document"></span>
+//    <span class="icon-plm-avatars"></span>
+//    <span class="icon-plm-geometric_group"></span>
+//    <span class="icon-plm-cubes"></span>
+//    <span class="icon-plm-assets"></span>
+//    <span class="icon-plm-gears_group"></span>
+//    <span class="icon-plm-crane"></span>
+//    <span class="icon-plm-assembly_robot"></span>
+//    <span class="icon-plm-gears"></span>
+//    <span class="icon-plm-conveyor"></span>
+//    <span class="icon-plm-add_mouse_action"></span>
+//    <span class="icon-plm-gear_stats"></span>
+//    <span class="icon-plm-content_balloon"></span>
+//    <span class="icon-plm-folder"></span>
+//    <span class="icon-plm-gear_stamp_document"></span>
+//    <span class="icon-plm-compass"></span>
+//    <span class="icon-plm-cloud"></span>
+//    <span class="icon-plm-cell_tower"></span>
+//    <span class="icon-plm-fire_alarm"></span>
+//    <span class="icon-plm-factory"></span>
+//    <span class="icon-plm-cell_phone"></span>
+//    <span class="icon-plm-electrical_wiring"></span>
+//    <span class="icon-plm-car"></span>
+//    <span class="icon-plm-ducktape"></span>
+//    <span class="icon-plm-bull_dozer"></span>
+//    <span class="icon-plm-drywall"></span>
+//    <span class="icon-plm-building_supervisor"></span>
+//    <span class="icon-plm-drill"></span>
+//    <span class="icon-plm-bridge"></span>
+// </div>
+//
+// .icon-plm-warehouse - Warehouse icon
+// .icon-plm-users - Three avatars icon
+// .icon-plm-user_document_attach - Attach document icon
+// .icon-plm-truck - Truck icon
+// .icon-plm-tower - Building icon
+// .icon-plm-top_rank - User starred icon
+// .icon-plm-toolbox - Toolbox icon
+// .icon-plm-tire - Car tire icon
+// .icon-plm-time_reached - Timer icon
+// .icon-plm-temperature_guage - Temperature gauge icon
+// .icon-plm-task_finished - Task completed icon
+// .icon-plm-t_square - T-square icon
+// .icon-plm-tape_measure - Tape measure icon
+// .icon-plm-stamp - Stamp icon
+// .icon-plm-pipes_piping - Pipes icon
+// .icon-plm-power_plug - Power plug icon
+// .icon-plm-precision_tool - Vernier caliper icon
+// .icon-plm-put_into - Put into icon
+// .icon-plm-pylon - Construction cone icon
+// .icon-plm-roads - Road icon
+// .icon-plm-roll_insulation - Roll insulation icon
+// .icon-plm-safe_gear - Gear locked icon
+// .icon-plm-safe_box - Safebox icon
+// .icon-plm-safe_hands_squeeze - Handshake lock icon
+// .icon-plm-satellite_dish - Satellite dish icon
+// .icon-plm-secure_session - Secure session icon
+// .icon-plm-software_package - Disc icon
+// .icon-plm-spanner - Spanner icon
+// .icon-plm-particles - Particles icon
+// .icon-plm-nuts_bots - Bolts icon
+// .icon-plm-move_into - Move into icon
+// .icon-plm-monitor_view - Computer monitor icon
+// .icon-plm-miscellaneous - Miscellaneous icon
+// .icon-plm-medical - Medical icon
+// .icon-plm-maintenance - Hammer icon
+// .icon-plm-lumber - Log pile icon
+// .icon-plm-light_switch - Light switch icon
+// .icon-plm-letter - Letter icon
+// .icon-plm-lamp - Lightbulb icon
+// .icon-plm-internet - Internet icon
+// .icon-plm-inconclusive_task - Task incomplete icon
+// .icon-plm-hierarchy - Hierarchy icon
+// .icon-plm-graduate - Graduate avatar icon
+// .icon-plm-document_stats - Document stats icon
+// .icon-plm-boxes - Boxes icon
+// .icon-plm-gov_submissions - Government document icon
+// .icon-plm-document - Document icon
+// .icon-plm-avatars - Two avatars icon
+// .icon-plm-geometric_group - Geometric shapes icon
+// .icon-plm-cubes - Cubes icon
+// .icon-plm-assets - Window icon
+// .icon-plm-gears_group - Three gears icon
+// .icon-plm-crane - Crane hook icon
+// .icon-plm-assembly_robot - Assembly robot icon
+// .icon-plm-gears - Gears icon
+// .icon-plm-conveyor - Conveyor belt icon
+// .icon-plm-add_mouse_action - Mouse icon
+// .icon-plm-gear_stats - Gear stats icon
+// .icon-plm-content_balloon - Content balloon icon
+// .icon-plm-folder - Folder icon
+// .icon-plm-gear_stamp_document - Stamp document icon
+// .icon-plm-compass - Compass icon
+// .icon-plm-cloud - Cloud icon
+// .icon-plm-cell_tower - Cell tower icon
+// .icon-plm-fire_alarm - Fire alarm icon
+// .icon-plm-factory - Factory icon
+// .icon-plm-cell_phone - Mobile phone icon
+// .icon-plm-electrical_wiring - Electrical wire icon
+// .icon-plm-car - Car icon
+// .icon-plm-ducktape - Duct tape icon
+// .icon-plm-bull_dozer - Bull dozer icon
+// .icon-plm-drywall - Drywall icon
+// .icon-plm-building_supervisor - Supervisor avatar icon
+// .icon-plm-drill - Drill icon
+// .icon-plm-bridge - Bridge icon
+//
+// Styleguide 2.3.2
+.icon-plm-warehouse:before {
+	content: "\e600";
+}
+
+.icon-plm-users:before {
+	content: "\e601";
+}
+
+.icon-plm-user_document_attach:before {
+	content: "\e602";
+}
+
+.icon-plm-truck:before {
+	content: "\e603";
+}
+
+.icon-plm-tower:before {
+	content: "\e604";
+}
+
+.icon-plm-top_rank:before {
+	content: "\e605";
+}
+
+.icon-plm-toolbox:before {
+	content: "\e606";
+}
+
+.icon-plm-tire:before {
+	content: "\e607";
+}
+
+.icon-plm-time_reached:before {
+	content: "\e608";
+}
+
+.icon-plm-temperature_guage:before {
+	content: "\e609";
+}
+
+.icon-plm-task_finished:before {
+	content: "\e60a";
+}
+
+.icon-plm-t_square:before {
+	content: "\e60b";
+}
+
+.icon-plm-tape_measure:before {
+	content: "\e60c";
+}
+
+.icon-plm-stamp:before {
+	content: "\e60d";
+}
+
+.icon-plm-pipes_piping:before {
+	content: "\e60e";
+}
+
+.icon-plm-power_plug:before {
+	content: "\e60f";
+}
+
+.icon-plm-precision_tool:before {
+	content: "\e610";
+}
+
+.icon-plm-put_into:before {
+	content: "\e611";
+}
+
+.icon-plm-pylon:before {
+	content: "\e612";
+}
+
+.icon-plm-roads:before {
+	content: "\e613";
+}
+
+.icon-plm-roll_insulation:before {
+	content: "\e614";
+}
+
+.icon-plm-safe_gear:before {
+	content: "\e615";
+}
+
+.icon-plm-safe_box:before {
+	content: "\e616";
+}
+
+.icon-plm-safe_hands_squeeze:before {
+	content: "\e617";
+}
+
+.icon-plm-satellite_dish:before {
+	content: "\e618";
+}
+
+.icon-plm-secure_session:before {
+	content: "\e619";
+}
+
+.icon-plm-software_package:before {
+	content: "\e61a";
+}
+
+.icon-plm-spanner:before {
+	content: "\e61b";
+}
+
+.icon-plm-particles:before {
+	content: "\e61c";
+}
+
+.icon-plm-nuts_bots:before {
+	content: "\e61d";
+}
+
+.icon-plm-move_into:before {
+	content: "\e61e";
+}
+
+.icon-plm-monitor_view:before {
+	content: "\e61f";
+}
+
+.icon-plm-miscellaneous:before {
+	content: "\e620";
+}
+
+.icon-plm-medical:before {
+	content: "\e621";
+}
+
+.icon-plm-maintenance:before {
+	content: "\e622";
+}
+
+.icon-plm-lumber:before {
+	content: "\e623";
+}
+
+.icon-plm-light_switch:before {
+	content: "\e624";
+}
+
+.icon-plm-letter:before {
+	content: "\e625";
+}
+
+.icon-plm-lamp:before {
+	content: "\e626";
+}
+
+.icon-plm-internet:before {
+	content: "\e627";
+}
+
+.icon-plm-inconclusive_task:before {
+	content: "\e628";
+}
+
+.icon-plm-hierarchy:before {
+	content: "\e629";
+}
+
+.icon-plm-graduate:before {
+	content: "\e62a";
+}
+
+.icon-plm-document_stats:before {
+	content: "\e62b";
+}
+
+.icon-plm-boxes:before {
+	content: "\e62c";
+}
+
+.icon-plm-gov_submissions:before {
+	content: "\e62d";
+}
+
+.icon-plm-document:before {
+	content: "\e62e";
+}
+
+.icon-plm-avatars:before {
+	content: "\e62f";
+}
+
+.icon-plm-geometric_group:before {
+	content: "\e630";
+}
+
+.icon-plm-cubes:before {
+	content: "\e631";
+}
+
+.icon-plm-assets:before {
+	content: "\e632";
+}
+
+.icon-plm-gears_group:before {
+	content: "\e633";
+}
+
+.icon-plm-crane:before {
+	content: "\e634";
+}
+
+.icon-plm-assembly_robot:before {
+	content: "\e635";
+}
+
+.icon-plm-gears:before {
+	content: "\e636";
+}
+
+.icon-plm-conveyor:before {
+	content: "\e637";
+}
+
+.icon-plm-add_mouse_action:before {
+	content: "\e638";
+}
+
+.icon-plm-gear_stats:before {
+	content: "\e639";
+}
+
+.icon-plm-content_balloon:before {
+	content: "\e63a";
+}
+
+.icon-plm-folder:before {
+	content: "\e63b";
+}
+
+.icon-plm-gear_stamp_document:before {
+	content: "\e63c";
+}
+
+.icon-plm-compass:before {
+	content: "\e63d";
+}
+
+.icon-plm-cloud:before {
+	content: "\e63e";
+}
+
+.icon-plm-cell_tower:before {
+	content: "\e63f";
+}
+
+.icon-plm-fire_alarm:before {
+	content: "\e640";
+}
+
+.icon-plm-factory:before {
+	content: "\e641";
+}
+
+.icon-plm-cell_phone:before {
+	content: "\e642";
+}
+
+.icon-plm-electrical_wiring:before {
+	content: "\e643";
+}
+
+.icon-plm-car:before {
+	content: "\e644";
+}
+
+.icon-plm-ducktape:before {
+	content: "\e645";
+}
+
+.icon-plm-bull_dozer:before {
+	content: "\e646";
+}
+
+.icon-plm-drywall:before {
+	content: "\e647";
+}
+
+.icon-plm-building_supervisor:before {
+	content: "\e648";
+}
+
+.icon-plm-drill:before {
+	content: "\e649";
+}
+
+.icon-plm-bridge:before {
+	content: "\e64a";
+}

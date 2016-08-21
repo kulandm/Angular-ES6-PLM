@@ -1,0 +1,56 @@
+// Workspace Item Grid
+//
+// Styles for the workspace item grid.<br>
+// *To be filled in.*
+//
+// Styleguide 34
+#workspace-itemgrid {
+	position: relative;
+
+	.context-menu {
+		position: fixed;
+
+		ul {
+			margin: 0;
+
+			background: $whiteColor;
+			box-shadow: 1px 1px 2px $secondaryBackgroundColor;
+		}
+	}
+
+	.tabular-data-widget {
+		@include item-details-table-layout;
+
+		thead th {
+			white-space: initial;
+		}
+
+		tbody tr {
+
+			td > div {
+				word-break: break-all;
+			}
+
+			td.editing {
+
+				& div {
+					height: 100%;
+				}
+
+				& .valueHolder {
+					height: 100%;
+					margin: 0;
+					padding: 10px;
+				}
+
+				.fieldWrapper > div > span > div {
+					padding: 0;
+				}
+			}
+		}
+
+		.fieldview-wrapper {
+			padding: 0;
+		}
+	}
+}

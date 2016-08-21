@@ -1,0 +1,124 @@
+#plm-header {
+	box-shadow: $headerBottomBorderShadow;
+}
+
+#plm-header,
+#itemviewer-plm-header {
+	display: flex;
+	flex-direction: row;
+
+	min-height: $headerHeight;
+	max-height: $headerHeight;
+
+	background-color: $headerBackgroundColor;
+	flex-wrap: nowrap;
+
+	header {
+		display: flex;
+		flex-direction: column;
+
+		flex: 1 1 auto;
+
+		height: 48px;
+
+		.title-wrapper {
+			display: flex;
+
+			align-items: flex-end;
+
+			// The title of the page
+			h1 {
+				font-size: $headerTextSize;
+				font-weight: 600;
+
+				display: inline-block;
+				overflow: hidden;
+
+				margin: $headerTitleMarginSize;
+				padding: 0;
+
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				color: $headerTextColor;
+			}
+		}
+	}
+}
+
+#item-wrapper {
+	#itemviewer-plm-header {
+		min-height: $itemHeaderHeight;
+		max-height: $itemHeaderHeight;
+		background-color: $itemHeaderBackgroundColor;
+		h1 {
+			font-weight: bolder;
+			color: $whiteColor;
+		}
+		header {
+			padding-top: 13px;
+			width: 70%;
+		}
+
+		.md-button {
+			border: solid 1px $itemHeaderBorderColor;
+			background-color: $itemHeaderBackgroundColor;
+			color: $whiteColor;
+
+			&:not([disabled]):hover {
+				border: solid 1px $buttonPrimaryHoverBackgroundColor;
+				background-color: $blueItemHeader;
+				color: $buttonPrimaryHoverBackgroundColor;
+			}
+
+			&:not([disabled]):focus {
+				border: solid 1px $buttonPrimaryFocusBackgroundColor;
+				background-color: $blueItemHeader;
+				color: $buttonPrimaryFocusBackgroundColor;
+			}
+		}
+	}
+
+	#itemviewer-menu-dropdown-button {
+		// not override the list of elements(buttons) of this dropdwon
+		& + div.dropdown-widget .md-button {
+			border: inherit;
+			background-color: inherit;
+			color: inherit;
+
+			&:not([disabled]):hover {
+				border: inherit;
+				background-color: inherit;
+				color: inherit;
+			}
+
+			&:not([disabled]):focus {
+				border: inherit;
+				background-color: inherit;
+				color: inherit;
+			}
+		}
+		// for override the rules with !important in _dropdown-widget.scss
+		&.dropdown-widget-button {
+			border: solid 1px $itemHeaderBorderColor;
+			background-color: $itemHeaderBackgroundColor !important;
+			color: $whiteColor;
+			&:not([disabled]):hover {
+				border: solid 1px $buttonPrimaryHoverBackgroundColor;
+				background-color: $blueItemHeader !important;
+				color: $buttonPrimaryHoverBackgroundColor;
+			}
+
+			&:not([disabled]):focus {
+				border: solid 1px $buttonPrimaryFocusBackgroundColor;
+				background-color: $blueItemHeader !important;
+				color: $buttonPrimaryFocusBackgroundColor !important;
+			}
+		}
+	}
+
+	#itemviewer-item-header {
+		background-color: $itemHeaderBackgroundColor;
+		color: $whiteColor;
+	}
+}

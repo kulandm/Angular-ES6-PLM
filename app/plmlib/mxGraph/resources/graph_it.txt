@@ -1,0 +1,12 @@
+\ufeff
+alreadyConnected=Nodi gi%E0 connessi
+containsValidationErrors=Contiene errori di convalida
+updatingDocument=Aggiornamento del documento in corso. Attendere...
+updatingSelection=Aggiornamento della selezione in corso. Attendere...
+collapse-expand=Comprimi/Espandi
+doubleClickOrientation=Fare doppio clic per modificare l'orientamento
+close=Chiudi
+error=Errore
+done=Fatto
+cancel=Annulla
+ok=OK

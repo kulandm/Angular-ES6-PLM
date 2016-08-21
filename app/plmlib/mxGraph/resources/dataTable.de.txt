@@ -1,0 +1,21 @@
+{
+    "sProcessing":   "Bitte warten...",
+    "sLengthMenu":   "_MENU_ Eintr\u00E4ge anzeigen",
+    "sZeroRecords":  "Keine Eintr\u00E4ge vorhanden.",
+    "sInfo":         "_START_ bis _END_ von _TOTAL_ Eintr\u00E4gen",
+    "sInfoEmpty":    "0 bis 0 von 0 Eintr\u00E4gen",
+    "sInfoFiltered": "(gefiltert von _MAX_  Eintr\u00E4gen)",
+    "sInfoPostFix":  "",
+    "sSearch":       "Suchen",
+    "sUrl":          "",
+    "oPaginate": {
+        "sFirst":    "Erster",
+        "sPrevious": "Zur\u00FCck",
+        "sNext":     "N\u00E4chster",
+        "sLast":     "Letzter"
+    },
+    "oAria": {
+        "sSortAscending":  ": Aktivieren, um Spalten aufsteigend zu sortieren",
+        "sSortDescending": ": Aktivieren, um die absteigend zu sortieren"
+    }
+}

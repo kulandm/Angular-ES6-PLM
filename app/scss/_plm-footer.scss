@@ -1,0 +1,30 @@
+plm-footer {
+	background-color: $footerBackgroundColor;
+	border-top-width: 1px;
+	border-top-color: $footerBorderColor;
+	border-top-style: solid;
+	font-size: $footerTextSize;
+
+	.footer-row-wrapper {
+		height: $foooterHeight;
+
+		.footer-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	.plm-footer-text-wrapper {
+		padding: 0 5px;
+		flex: 0 0 auto;
+	}
+
+	/*
+		The footer is hidden when the device is small enough that the text will not fit
+	*/
+	@media (max-width: 490px) {
+		display: none;
+	}
+}

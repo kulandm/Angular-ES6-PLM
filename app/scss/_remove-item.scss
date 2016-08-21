@@ -1,0 +1,40 @@
+// Remove Item
+//
+// Styles for the remove item dialog.
+//
+// Styleguide Components.RemoveItem
+.remove-item-dialog {
+	overflow: auto;
+
+	width: 30%;
+
+	// Remove Item: Header
+	//
+	// Styles for the header text.
+	//
+	// Markup:
+	// <md-dialog class="remove-item-dialog">
+	// 	<md-content class="remove-item-dialog-content">
+	// 		<md-toolbar>
+	// 			<div class="md-toolbar-tools">
+	// 				<h2 class="remove-item-header">Remove</h2>
+	// 			</div>
+	// 		</md-toolbar>
+	// 	</md-content>
+	// </md-dialog>
+	//
+	// .remove-item-header - Set font size to `x-large`
+	//
+	// Styleguide 31.2.1
+	.remove-item-header {
+		font-size: x-large;
+
+		margin-bottom: 0;
+
+		color: $blackColor;
+	}
+
+	.zmdi-alert-triangle {
+		padding-right: 5px;
+	}
+}

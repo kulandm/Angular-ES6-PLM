@@ -1,0 +1,4 @@
+@ngdoc overview
+@name Miscellaneous
+@id index
+@description All other miscellaneous scripts for plm360 module lives inside this directory

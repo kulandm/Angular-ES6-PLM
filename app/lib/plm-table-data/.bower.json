@@ -1,0 +1,41 @@
+{
+  "name": "plm-table-data",
+  "description": "PLM UI Table Data Widget",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/",
+    "!dist/*"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "angular-ui-grid": "3.0.7",
+    "plm-underscore": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-underscore.git#1.0.0",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#1.0.1",
+    "plm-api-models-manager": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git#1.0.0"
+  },
+  "resolutions": {
+    "angular": "1.4.8",
+    "plm-event-service": "1.0.1"
+  },
+  "version": "1.1.5",
+  "_release": "1.1.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.5",
+    "commit": "c98eaadc04cb9718edfb9ed97d1f9e588841c49c"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-table-data.git",
+  "_target": "v1.1.5",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-table-data.git"
+}

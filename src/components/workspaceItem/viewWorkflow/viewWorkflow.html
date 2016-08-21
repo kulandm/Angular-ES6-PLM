@@ -1,0 +1,58 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewWorkflowCtrl"></command-bar>
+
+<!-- Wrapper for content, containing the split panels -->
+<md-content layout="row" id="item-internal-wrapper">
+	<!-- Workflow content, middle -->
+	<md-content layout-fill id="item-main" class="workflow">
+		<table-data
+			columns="viewWorkflowCtrl.tableColumns"
+			rows="viewWorkflowCtrl.tableData"
+			resizable-columns
+			client-sorting>
+		</table-data>
+	</md-content>
+</md-content>
+
+<!-- Item Display Name Links -->
+<script type="text/ng-template" id="linkTemplate">
+	<div class="ui-grid-cell-contents">
+		<a href="{{COL_FIELD.href}}"
+			title="{{COL_FIELD.value}}">
+			{{COL_FIELD.value}}
+		</a>
+	</div>
+</script>
+
+<!-- PerformedBy User Profile Links -->
+<script type="text/ng-template" id="performUserLinkTemplate">
+	<div class="ui-grid-cell-contents">
+		<a ng-if="COL_FIELD" href="javascript:;"
+			ng-click="grid.appScope.viewWorkflowCtrl.openFlyoutWindow($event, row.entity.performedBy.userId)">
+			{{row.entity.performedBy.val}}
+		</a>
+		<span ng-if="!COL_FIELD">
+			{{$root.bundle.workflow.unknown}}
+		</span>
+	</div>
+</script>
+
+<!-- CreatedBy User Profile Links -->
+<script type="text/ng-template" id="createUserLinkTemplate">
+	<div class="ui-grid-cell-contents">
+		<a ng-if="COL_FIELD" href="javascript:;"
+			ng-click="grid.appScope.viewWorkflowCtrl.openFlyoutWindow($event, row.entity.createdBy.userId)">
+			{{row.entity.createdBy.val}}
+		</a>
+		<span ng-if="!COL_FIELD">
+			{{$root.bundle.workflow.unknown}}
+		</span>
+	</div>
+</script>
+
+<!-- Date Format -->
+<script type="text/ng-template" id="dateTemplate">
+	<div class="ui-grid-cell-contents">
+		{{COL_FIELD | date: grid.appScope.viewWorkflowCtrl.dateFormat.dateAndHour}}
+	</div>
+</script>

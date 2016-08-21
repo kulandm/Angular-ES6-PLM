@@ -1,0 +1,294 @@
+// Workspace Item Details
+//
+// Styles for the workspace item details page.
+//
+// Styleguide 33
+
+// Workspace Item
+//
+// Styles for the item details content.
+//
+// Markup:
+// <div id="workspace-item">
+// 	<div id="content">
+// 		Content goes here.
+// 	</div>
+// </div>
+//
+// #workspace-item -
+// #workspace-item #content -
+//
+// Styleguide 33.1
+#workspace-item {
+
+	#content {
+		padding: 0;
+
+		background-color: #FFFFFF;
+
+		// The content
+		.inset {
+			position: relative;
+
+			min-height: 800px;
+			margin: 10px 0 20px 0;
+			padding: 0 10px;
+
+			background-color: inherit;
+
+			form {
+
+				.collapse-body {
+					@include item-details-table-layout;
+
+					// Removes Bootstrap's formatting from pre elements
+					pre.disabledPre {
+						@extend %disablePre;
+					}
+
+					// Overrides Bootstrap's form settings for elements
+					input,
+					textarea {
+						padding: 3px 6px;
+					}
+
+					// Specific style for the wrapper of the datepicker in item details
+					.datepicker-wrapper {
+						display: block;
+
+						max-width: 236px;
+					}
+
+					// Disable resizing of textareas
+					textarea {
+						min-width: 100%;
+						max-width: 100%;
+
+						resize: vertical;
+					}
+
+					// Add some padding when in EDIT mode, and displaying plain, non-editable values
+					.value-holder {
+						display: table;
+
+						width: 100%;
+
+						input,
+						textarea {
+							display: table-cell;
+						}
+
+						> .unit-of-measure {
+							font: {
+								weight: normal;
+							}
+
+							display: table-cell;
+
+							width: 1%;
+							padding: 2px 5px;
+
+							vertical-align: middle;
+							white-space: nowrap;
+
+							background-color: $wsItemDetailsUnitOfMeasureBackgroundColor;
+
+							// &:before {
+							// 	content: '(';
+							// }
+
+							// &:after {
+							// 	content: ')';
+							// }
+						}
+
+						&.non-editable {
+							display: inline-block;
+
+							padding: 7px;
+						}
+					}
+				}
+			}
+
+			// Styles for item tooltip flyout
+			.item-tooltip-wrapper {
+				@include set-width-height(0, 0);
+				@include item-tooltip-icon-styles;
+
+				position: relative;
+				top: 5px;
+				left: 5px;
+			}
+		}
+
+		#main-content {
+			overflow-x: auto; // have the horizontal scrollbar enabled
+
+			min-width: 50%;
+			padding-right: 20px;
+		}
+
+		.resizer {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+
+			width: 17px;
+			padding-top: 20px;
+
+			background: $whiteColor;
+			&.commentsOff {
+				cursor: pointer;
+			}
+			span {
+				padding: 20px 1px;
+
+				cursor: pointer;
+
+				background: $primaryBorderColor;
+			}
+			&:hover {
+
+				span {
+					color: $whiteColor;
+					background: $secondaryColor;
+				}
+			}
+		}
+
+		#commenting-content {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+
+			min-width: 20%;
+			margin: 10px 0;
+			padding: 0;
+
+			background: $lightBackgroundColor;
+			&.commentsOff {
+				overflow: hidden;
+
+				width: 17px;
+				min-width: 17px;
+			}
+			.innerwrap {
+				overflow-x: hidden;
+				overflow-y: auto;
+
+				height: 100%;
+				padding: 10px 20px 10px 37px;
+				.input-group {
+					margin: 20px 0 20px 0;
+					& > * {
+						resize: none;
+						vertical-align: top;
+					}
+					& > .input-group-btn {
+						padding-left: 10px;
+					}
+				}
+
+				.panel-default {
+					margin: 0;
+
+					border-width: 1px 0 1px 0;
+					border-style: solid;
+					border-color: $primaryBorderColor;
+					border-radius: 0;
+					background-color: transparent;
+					box-shadow: 0;
+					& > .panel-heading {
+						cursor: pointer;
+
+						background-color: transparent;
+					}
+				}
+
+				.comment {
+					border-bottom: 1px solid $primaryBorderColor;
+					.media-body {
+						margin: 10px 0;
+					}
+					.replyText {
+						margin-bottom: 10px;
+
+						text-transform: uppercase;
+					}
+				}
+				.reply {
+					margin: 0;
+					padding: 10px;
+
+					background: $commentReplyColor;
+				}
+			}
+		}
+
+		// Ownership
+		//
+		// Styles for the owner and change summary panel.
+		//
+		// Markup:
+		// <div id="workspace-item">
+		// 	<div id="content">
+		// 		<div class="collapse-section">
+		// 			<div class="collapse-heading">
+		// 				<a>Owner and Change Summary
+		// 					<span class="icon-BottomArrow pull-right"></span></a>
+		// 			</div>
+		// 			<div class="collapse-body">
+		// 				<div id="ownership">
+		// 					<table class="table" style="margin:0;">
+		// 						<tbody>
+		// 							<tr>
+		// 								<td style="width:30%;">Owner</td>
+		// 								<td><a class="owner">
+		// 									<span class="icon icon-a360-followers"></span>
+		// 									PLMAutoTest Selenium1
+		// 								</a></td>
+		// 							</tr>
+		// 						</tbody>
+		// 					</table>
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </div>
+		//
+		// #ownership -
+		// #ownership .owner -
+		//
+		// Styleguide 33.2
+		#ownership {
+			@include item-details-table-layout;
+
+			.owner {
+				@extend %removeLinkStyle;
+
+				display: inline-block;
+
+				width: auto;
+				margin: 0 5px 5px 0;
+				padding: 6px;
+
+				white-space: nowrap;
+
+				color: $wsItemDetailsOwnerColor;
+				border-radius: 4px;
+				background-color: $wsItemDetailsOwnerBackgroundColor;
+			}
+		}
+
+		p {
+			margin: 0 0 0 8px;
+
+			.ownership-label {
+				font-weight: 600;
+			}
+		}
+	}
+}

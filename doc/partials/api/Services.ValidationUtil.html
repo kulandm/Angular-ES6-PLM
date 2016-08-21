@@ -1,0 +1,65 @@
+<h1><code ng:non-bindable="">ValidationUtil</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Services</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="services-validationutil-page"><p>A utility service that contain help methods to map server validation error messages to the fields and clear them.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_bystring">byString(obj, str)</h3>
+<div class="bystring"><div class="services-validationutil-bystring-page"><p>get nested property of an object from dot notation string.</p>
+</div><h5 id="methods_bystring_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>obj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-validationutil-bystring-page"><p>the object to be searched.</p>
+</div></td></tr><tr><td>str</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-bystring-page"><p>the dot notation string that contains the detail of the nested property. Like &#39;error.required&#39;.</p>
+</div></td></tr></tbody></table><h5 id="methods_bystring_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-bystring-page"><p>the value of the property</p>
+<p>Note: This logic is taken from <a href="https://github.com/capaj/object-resolve-path"><a href="https://github.com/capaj/object-resolve-path">https://github.com/capaj/object-resolve-path</a></a>.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_clearvalidationerrors">clearValidationErrors(fields, fieldProperty)</h3>
+<div class="clearvalidationerrors"><div class="services-validationutil-clearvalidationerrors-page"><p>This is a method to clear validation error information from the fields.</p>
+</div><h5 id="methods_clearvalidationerrors_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fields</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-clearvalidationerrors-page"><p>the list of fields.</p>
+</div></td></tr><tr><td>fieldProperty</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-clearvalidationerrors-page"><p>a property of the field to set validation error message to. This is an optional parameter, if
+not provided then default &#39;serverError&#39; property will be used. Note: Nested properties not supported.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="services-validationutil-constructor-page"><p>The class constructor</p>
+</div></div>
+</li>
+<li><h3 id="methods_format">format(str, params)</h3>
+<div class="format"><div class="services-validationutil-format-page"><p>A C# or Java style string format function that can work with {0} {1} arguments. This is mainly created
+to address the client side localization of PLM message codes.</p>
+</div><h5 id="methods_format_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>str</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-format-page"><p>string to format</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-format-page"><p>the list of parameters for formatting.</p>
+</div></td></tr></tbody></table><h5 id="methods_format_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-format-page"><p>formatted string</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_localizestring">localizeString(unLocalizedString, params)</h3>
+<div class="localizestring"><div class="services-validationutil-localizestring-page"><p>This method will try to localize the given string.</p>
+</div><h5 id="methods_localizestring_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>unLocalizedString</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-localizestring-page"><p>the string to be localized.</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-localizestring-page"><p>the list of parameters that can be used while localization (String.format).</p>
+</div></td></tr></tbody></table><h5 id="methods_localizestring_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-validationutil-localizestring-page"><p>localized string or unlocalized string in case the mapping is not available.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_mapvalidationerrors">mapValidationErrors(fields, list, options)</h3>
+<div class="mapvalidationerrors"><div class="services-validationutil-mapvalidationerrors-page"><p>This is a method to map validation errors and set validation error message on the field data.</p>
+</div><h5 id="methods_mapvalidationerrors_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fields</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-mapvalidationerrors-page"><p>the list of fields. Field can have any structure, but if you want to use the default comparator, then
+field should have a &#39;urn&#39; property.</p>
+</div></td></tr><tr><td>list</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-mapvalidationerrors-page"><p>of validation messages. Validation (as of now) should have a property called &#39;code&#39; and if you want to use
+the default comparator, then should have a &#39;field&#39; with a &#39;urn&#39; property in it.</p>
+</div></td></tr><tr><td>options</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-validationutil-mapvalidationerrors-page"><p>the customization options that can be used while mapping validation errors. It may contain the
+following properties
+     predicate   {Function} a function, if provided will be used to compare field and validation meta data.
+     fieldProperty   {String} a property of the field to set validation error message to. If not provided then default
+                     &#39;serverError&#39; property will be used. Note: Nested properties not supported.
+     validationProperty  {String} a property of the validation object to get error message. If not provided then default
+                         &#39;message&#39; property will be used. Note: Nested properties not supported.
+     localizedError  {Boolean} true, to perform client side localization of the error. Note: Only supporting limited
+                     PLM error code localization. This is an optional parameter.</p>
+</div></td></tr></tbody></table><h5 id="methods_mapvalidationerrors_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-validationutil-mapvalidationerrors-page"><p>a list of validations that could not be mapped to fields</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

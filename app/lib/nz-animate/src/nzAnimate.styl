@@ -1,0 +1,38 @@
+vendor-prefixes = {{vendors}}
+vendors = {{vendors}}
+support-for-ie = {{ieSupport}}
+@import 'nib/vendor'
+@import 'node_modules/animate-stylus/index.styl'
+
+animations = {{animations}}
+
+.animate
+	animation-duration: {{defaultSpeed}}ms
+	&.infinite
+		animation-iteration-count: infinite;
+
+.enter
+	for animation_name in animations
+		&-{animation_name}
+			&.ng-enter,
+			&.ng-hide-remove
+				animation-name: animation_name;
+.exit
+	for animation_name in animations
+		&-{animation_name}
+			&.ng-leave,
+			&.ng-hide-add
+				animation-name: animation_name;
+.stagger
+	for stagger in ({{staggerStart}}..{{staggerEnd}})
+		&-{stagger * 50}
+			&.ng-enter-stagger,
+			&.ng-leave-stagger
+				animation-delay:(stagger * {{staggerIncrement}})ms;
+				animation-duration:0;
+		stagger += 1
+.speed
+	for speed in ({{speedStart}}..{{speedEnd}})
+		&-{speed * 50}
+			animation-duration:(speed * {{speedIncrement}})ms;
+		speed += 1

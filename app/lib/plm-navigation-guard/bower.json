@@ -1,0 +1,32 @@
+{
+  "name": "plm-navigation-guard",
+  "description": "PLM Navigation Guard",
+  "main": [
+    "dist/plm-navigation-guard"
+  ],
+  "authors": [
+    "Akm Rubel <rubel.amin@autodesk.com>"
+  ],
+  "license": "ISC",
+  "private": true,
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js",
+    "!dist/css/*.css"
+  ],
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-mocks": "1.4.8",
+    "angular-ui-router": "0.2.17",
+    "angular-material": "1.0.0-rc4",
+    "plm-localization": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-localization.git#1.0.16"
+  },
+  "resolutions" : {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.7"
+}

@@ -1,0 +1,45 @@
+// Section Wrapper
+//
+// Styles for collapsible sections (collapse by clicking on the heading).<br>
+// Each collapsible section is comprised of a heading and a body
+//
+// Styleguide 8
+.section-wrapper {
+	border: 0;
+	
+	margin: 0;
+	
+	// The header part of the section
+	.header {
+		background-color: $sectionWrapperHeaderBackgroundColor;
+
+		@extend %resetUnorderedList;
+		
+		h4 {
+			font-size: large;
+			font-weight: 400;
+
+			margin: 0;
+			padding: 15px;
+
+			text-transform: lowercase;
+
+			color: $secondaryColor;
+
+			&:first-letter {
+				text-transform: capitalize;
+			}
+		}
+
+		.caret-flex {
+			margin: 15px 20px 0 0;
+		}
+	}
+
+	// Wrapper for the content that's going to be transcluded into this directive
+	.transcluded-content-wrapper {
+		border: 0;
+		
+		background-color: $sectionWrapperTranscludedContentBackgroundColor;
+	}
+}

@@ -1,0 +1,31 @@
+{
+  "name": "plm-urn-parser",
+  "description": "PLM Urn Parser",
+  "main": "dist/plm-urn-parser.js",
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "e5f8a2cfe05b5dbdef75c11292b4e007aa28deb8"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-urn-parser.git",
+  "_target": "v1.0.0",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-urn-parser.git"
+}

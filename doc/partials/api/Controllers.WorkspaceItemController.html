@@ -1,0 +1,53 @@
+<h1><code ng:non-bindable="">WorkspaceItemController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitemcontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}. It represents an abstract state and contains nested views.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getstatename">getStateName()</h3>
+<div class="getstatename"><div class="controllers-workspaceitemcontroller-getstatename-page"><p>Gets the state name for the tab, with its params</p>
+</div></div>
+</li>
+<li><h3 id="methods_isstateactive">isStateActive(activeStateId, stateViewId, stateEditId)</h3>
+<div class="isstateactive"><div class="controllers-workspaceitemcontroller-isstateactive-page"><p>Checks which is the current active state</p>
+</div><h5 id="methods_isstateactive_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>activeStateId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitemcontroller-isstateactive-page"><p>The name of the active state passed by the view</p>
+</div></td></tr><tr><td>stateViewId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitemcontroller-isstateactive-page"><p>The name of the view state passed by the view</p>
+</div></td></tr><tr><td>stateEditId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitemcontroller-isstateactive-page"><p>The name of the edit state passed by the view</p>
+</div></td></tr></tbody></table><h5 id="methods_isstateactive_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitemcontroller-isstateactive-page"><p>true/false If it&#39;s the current state</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_viewload">viewLoad()</h3>
+<div class="viewload"><div class="controllers-workspaceitemcontroller-viewload-page"><p>Called whenever a new view has been loaded (an item&#39;s &quot;tab&quot;), and broadcasts an event</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitemcontroller-itemid-page"><p>The item id of the current selected item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablist">tabList</h3>
+<div class="tablist"><div class="controllers-workspaceitemcontroller-tablist-page"><p>Stores parsed list of tabs for the current item</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabmapping">tabMapping</h3>
+<div class="tabmapping"><div class="controllers-workspaceitemcontroller-tabmapping-page"><p><code>private</code> The mapping of icons and ids for the tabs
+The &#39;icon&#39; is not being used in Galileo, but left here for legacy purposes in case we use them later</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabslistenerid">tabsListenerId</h3>
+<div class="tabslistenerid"><div class="controllers-workspaceitemcontroller-tabslistenerid-page"><p><code>private</code> The listener for the loading of the tabs</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitemcontroller-workspaceid-page"><p>The workspace id of the current selected item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

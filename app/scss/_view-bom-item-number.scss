@@ -1,0 +1,62 @@
+bom-item-number {
+	height: 100%;
+	width: 100%;
+	display: block;
+
+	.bom-row-expander {
+		// NOTE: Attempting to increase the font-size of the chevron here
+		//  will cause all the text in the div to become offset
+
+		display: inline-block;
+		width: 15px;
+		a:link {
+			color: $uiGridTextColor;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	.bom-item-number-offsetter {
+		height: 100%;
+		display: inline-block;
+	}
+
+	.item-number-edit-wrapper {
+		position: relative;
+
+		.item-number-content {
+			position: absolute;
+
+			// Make it appear as if the entire div is an input field
+			border: 1px solid $fieldEditColor;
+			border-radius: 2px;
+			box-shadow: 0 0 1px $fieldEditColor, inset 0 0 1px $grayColor;
+
+			// Not quite the same padding as plain input field
+			//  Since we use a label element
+			padding: 3px;
+
+			// Move div slightly up to compensate for cell-state-indicator's padding
+			margin: -5px 0 0 0;
+
+			.item-number-label {
+				display: block;
+				background-color: $whiteColor;
+				margin: 0;
+			}
+
+			.item-number-input {
+				// Clear the styling from the input
+				padding: 0;
+				background: transparent;
+				border: none;
+				box-shadow: none;
+
+				// Move input slightly closer to label,
+				//	so it looks similar to text when not in edit mode
+				margin-left: -4px;
+			}
+		}
+	}
+}

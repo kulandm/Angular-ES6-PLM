@@ -1,0 +1,50 @@
+.section-wrapper {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #777777;
+  margin: 0 0 15px 0; }
+  .section-wrapper .header {
+    background-color: #C0C0C0;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap; }
+    .section-wrapper .header ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 0; }
+      .section-wrapper .header ul > li {
+        margin: 0;
+        padding: 0;
+        border: 0; }
+    .section-wrapper .header h4 {
+      flex: 1 1 auto;
+      margin: 10px 0 10px 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase; }
+      .section-wrapper .header h4.section-header-normal {
+        font-weight: normal !important; }
+    .section-wrapper .header .buttons {
+      flex: 0 1 auto;
+      margin: 10px 5px 0 0; }
+    .section-wrapper .header .caret-flex {
+      margin: 8px 10px 0 0; }
+    .section-wrapper .header:hover {
+      cursor: pointer; }
+  .section-wrapper .transcluded-content-wrapper {
+    background-color: #D0D0D0;
+    padding: 0; }
+  .section-wrapper .static-dynamic-expandCollapse {
+    overflow: hidden;
+    height: 0; }
+    .section-wrapper .static-dynamic-expandCollapse.animation {
+      overflow: hidden; }
+    .section-wrapper .static-dynamic-expandCollapse.collapsed {
+      display: none;
+      visibility: hidden; }
+    .section-wrapper .static-dynamic-expandCollapse.expanded {
+      overflow: visible; }
+
+.section-items-container {
+  width: 100%; }

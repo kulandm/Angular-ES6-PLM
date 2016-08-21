@@ -1,0 +1,25 @@
+<span id="add-item-wrapper">
+
+	<!-- Command bar, top -->
+	<command-bar parent-ctrl="addItemCtrl"></command-bar>
+
+	<!-- Wrapper for content -->
+	<md-content layout="row" id="item-internal-wrapper">
+		<md-content layout-fill id="item-main">
+			<div id="add-item">
+				<create-item
+					form-fields="addItemCtrl.formFields"
+					filter=""
+					unsupported-fields="addItemCtrl.unsupportedFields"
+					selected-workspace="addItemCtrl.workspaceId"
+					workspaces-list=""
+					create-type="addItemCtrl.createType"
+					waiting="addItemCtrl.isSavingData"
+					workspace-urn="addItemCtrl.workspaceUrn"
+					classification-id="addItemCtrl.classificationId" >
+				</create-item>
+			</div>
+		</md-content>
+	</md-content>
+	
+</span>

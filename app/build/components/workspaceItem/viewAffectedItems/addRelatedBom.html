@@ -1,0 +1,165 @@
+<md-dialog class="add-relatedBOM-dialog">
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 class="headline">
+				<span>{{$root.bundle.affectedItems.addRelatedItems}}</span>
+
+				<small ng-if="addRelatedBomCtrl.tableData.rows.length > 0 &&
+					addRelatedBomCtrl.displayResults">
+					{{addRelatedBomCtrl.selectedRows.length}}
+					{{addRelatedBomCtrl.selectedRows.length > 1 ?
+					$root.bundle.text.selectedItems :
+					$root.bundle.text.selectedOneItem}}
+				</small>
+			</h2>
+
+			<span flex></span>
+
+			<a href="#"
+				class="close-button"
+				ng-click="addRelatedBomCtrl.cancel()">
+				<span class="md md-lg md-close"></span>
+			</a>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<!-- first screen - form for choosing options for the listing -->
+	<div ng-show="!addRelatedBomCtrl.displayResults">
+		<md-dialog-content class="container">
+			<div class="md-dialog-content">
+				<div class="well">{{$root.bundle.text.selectItemsToAdd}}</div>
+
+				<md-subheader>
+					<h4>{{$root.bundle.text.includeChildren}}</h4>
+				</md-subheader>
+
+				<form>
+					<md-radio-group ng-model="addRelatedBomCtrl.childrenSelectedOption">
+						<md-radio-button
+							ng-repeat="option in addRelatedBomCtrl.childrenOptions"
+							value="{{option}}"
+							class="md-primary">
+							{{option}}
+						</md-radio-button>
+					</md-radio-group>
+				</form>
+
+				<md-subheader>
+					<h4>{{$root.bundle.text.includeParents}}</h4>
+				</md-subheader>
+
+				<form>
+					<md-radio-group ng-model="addRelatedBomCtrl.parentsSelectedOption">
+						<md-radio-button
+							ng-repeat="option in addRelatedBomCtrl.parentsOptions"
+							value="{{option}}"
+							class="md-primary">
+							{{option}}
+						</md-radio-button>
+					</md-radio-group>
+				</form>
+
+				<md-subheader><h4>{{$root.bundle.text.includeItemsFilter}}</h4></md-subheader>
+
+				<form>
+					<md-radio-group ng-model="addRelatedBomCtrl.itemsFilterSelectedOption">
+						<md-radio-button
+							ng-repeat="option in addRelatedBomCtrl.itemsFilterOptions"
+							value="{{option}}"
+							class="md-primary">
+							{{option}}
+						</md-radio-button>
+					</md-radio-group>
+				</form>
+			</div>
+		</md-dialog-content>
+
+		<md-divider></md-divider>
+
+		<md-dialog-actions layout="row">
+			<md-button
+				class="md-primary"
+				ng-hide="addRelatedBomCtrl.childrenSelectedOption ==='None'
+					&& addRelatedBomCtrl.parentsSelectedOption ==='None'"
+				ng-click="addRelatedBomCtrl.searchRelatedBom()">
+				{{$root.bundle.button.search}}
+			</md-button>
+
+			<md-button ng-click="addRelatedBomCtrl.cancel()">
+				{{$root.bundle.button.cancel}}
+			</md-button>
+		</md-dialog-actions>
+	</div>
+
+	<!-- second screen - list of results -->
+	<div ng-show="addRelatedBomCtrl.displayResults">
+		<md-dialog-content class="container bom-listing">
+			<div class="md-dialog-content">
+				<div class="well"
+					ng-if="addRelatedBomCtrl.tableData.rows.length > 0">
+					{{$root.bundle.text.unSelectItems}}
+				</div>
+
+				<div class="well"
+					ng-if="addRelatedBomCtrl.tableData.rows.length === 0">
+					{{$root.bundle.text.noItemsFetched}}
+				</div>
+
+				<table-data ng-show="addRelatedBomCtrl.tableData.rows.length > 0"
+					columns="addRelatedBomCtrl.tableData.columns"
+					rows="addRelatedBomCtrl.tableData.rows"
+					selectable-rows="true"
+					is-multi-select="true"
+					use-default-selection-column="false"
+					resizable-columns
+					resize-rows
+					client-sorting>
+				</table-data>
+			</div>
+		</md-dialog-content>
+
+		<md-divider></md-divider>
+
+		<md-dialog-actions layout="row">
+			<md-button
+				class="md-primary"
+				ng-disabled="addRelatedBomCtrl.tableData.rows.length <= 0 ||
+				addRelatedBomCtrl.selectedRows.length === 0"
+				ng-click="addRelatedBomCtrl.add()">
+				{{$root.bundle.button.add}}
+			</md-button>
+
+			<md-button
+				ng-if="addRelatedBomCtrl.tableData.rows.length === 0"
+				class="md-primary"
+				ng-click="addRelatedBomCtrl.clearResults()">
+				{{$root.bundle.button.back}}
+			</md-button>
+
+			<md-button ng-click="addRelatedBomCtrl.cancel()">
+				{{$root.bundle.button.cancel}}
+			</md-button>
+		</md-dialog-actions>
+	</div>
+</md-dialog>
+
+<script type="text/ng-template" id="bomCheckboxHeaderTemplate">
+	<div class="header-cell checkbox-column">
+		<input
+			type="checkbox"
+			ng-checked="grid.appScope.addRelatedBomCtrl.tableData.rows.length === grid.appScope.addRelatedBomCtrl.selectedRows.length"
+			ng-click="grid.appScope.addRelatedBomCtrl.toggleAllSelection()">
+	</div>
+</script>
+
+<script type="text/ng-template" id="bomCheckboxTemplate">
+	<div class="checkbox-column">
+		<input
+			type="checkbox"
+			ng-click="grid.appScope.addRelatedBomCtrl.selectRow()"
+			ng-model="COL_FIELD.isSelected">
+	</div>
+</script>

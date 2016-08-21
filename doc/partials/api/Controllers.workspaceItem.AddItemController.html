@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable="">AddItemController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-additemcontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}/addItem</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="controllers-workspaceitem-additemcontroller-getfields-page"><p>Returns a flat array of all the fields in the currently selected workspace</p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-workspaceitem-additemcontroller-getfields-page"><p>List of all the fields</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isaddstate">isAddState()</h3>
+<div class="isaddstate"><div class="controllers-workspaceitem-additemcontroller-isaddstate-page"><p>Determine whether we&#39;re in add (create) item mode</p>
+</div><h5 id="methods_isaddstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-additemcontroller-isaddstate-page"><p>True if we are in add (create) item mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isclassificationsection">isClassificationSection(section)</h3>
+<div class="isclassificationsection"><div class="controllers-workspaceitem-additemcontroller-isclassificationsection-page"><p>Determine if a section is or not of type classification</p>
+</div><h5 id="methods_isclassificationsection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-section">Section</a></td><td><div class="controllers-workspaceitem-additemcontroller-isclassificationsection-page"><p>The step section</p>
+</div></td></tr></tbody></table><h5 id="methods_isclassificationsection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-additemcontroller-isclassificationsection-page"><p>True if it is a classification section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-additemcontroller-isviewstate-page"><p>Always returns false since we&#39;re not in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-additemcontroller-isviewstate-page"><p>True if we are in view (item) mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-additemcontroller-triggercancel-page"><p>Triggered by clicking the cancel button. NOTE: name has to be triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancelconfirm">triggerCancelConfirm()</h3>
+<div class="triggercancelconfirm"><div class="controllers-workspaceitem-additemcontroller-triggercancelconfirm-page"><p>Triggered by clicking the confirm button inside the dialog</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggerclassificationsave">triggerClassificationSave(dmsId)</h3>
+<div class="triggerclassificationsave"><div class="controllers-workspaceitem-additemcontroller-triggerclassificationsave-page"><p>Triggered by clicking save button.</p>
+</div><h5 id="methods_triggerclassificationsave_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>dmsId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-additemcontroller-triggerclassificationsave-page"><p>the item id if exist.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-additemcontroller-triggersave-page"><p>Triggered by clicking the save button. NOTE: name has to be triggerSave.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_classificationid">classificationId</h3>
+<div class="classificationid"><div class="controllers-workspaceitem-additemcontroller-classificationid-page"><p>Holds the selected classification id for the new item</p>
+</div></div>
+</li>
+<li><h3 id="properties_createtype">createType</h3>
+<div class="createtype"><div class="controllers-workspaceitem-additemcontroller-createtype-page"><p>Fixed type of create item for <a href="api/Directives.createItem">Directives.createItem</a> (FULL)</p>
+</div></div>
+</li>
+<li><h3 id="properties_formfields">formFields</h3>
+<div class="formfields"><div class="controllers-workspaceitem-additemcontroller-formfields-page"><p>Array that will updated by <a href="api/Directives.createItem">Directives.createItem</a> once user edits information</p>
+</div></div>
+</li>
+<li><h3 id="properties_issavingdata">isSavingData</h3>
+<div class="issavingdata"><div class="controllers-workspaceitem-additemcontroller-issavingdata-page"><p>Set to true when saving data is underway, as to block form elements from editing while saving.</p>
+</div></div>
+</li>
+<li><h3 id="properties_savecwslistenerid">saveCwsListenerId</h3>
+<div class="savecwslistenerid"><div class="controllers-workspaceitem-additemcontroller-savecwslistenerid-page"><p>Holds the listener for saving the cws section</p>
+</div></div>
+</li>
+<li><h3 id="properties_saveitemlistenerid">saveItemListenerId</h3>
+<div class="saveitemlistenerid"><div class="controllers-workspaceitem-additemcontroller-saveitemlistenerid-page"><p>Holds the listener for saving the item</p>
+</div></div>
+</li>
+<li><h3 id="properties_that">that</h3>
+<div class="that"><div class="controllers-workspaceitem-additemcontroller-that-page"><p><code>private</code> Reference to this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_unsupportedfields">unsupportedFields</h3>
+<div class="unsupportedfields"><div class="controllers-workspaceitem-additemcontroller-unsupportedfields-page"><p>An object updated by <a href="api/Directives.createItem">Directives.createItem</a>
+to indicate if there are any unsupported fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-additemcontroller-workspaceid-page"><p>The current workspace ID.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceurn">workspaceUrn</h3>
+<div class="workspaceurn"><div class="controllers-workspaceitem-additemcontroller-workspaceurn-page"><p>The workspace urn of the workspace to fetch cws fields from</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,1463 @@
+body {
+	font-family: Arial;
+	font-size: 12px;
+
+}
+
+/*This is to remove the default handler for scrolling*/
+#content-body-pane {
+	
+	overflow: hidden;
+}
+
+.imageCustom{
+	margin-left:-16px;
+	margin-bottom:-5px;
+}
+.selectSmall{
+	
+	width: 93% !important;
+}
+
+svg body {
+	background: none;
+	min-width: 100%;
+	height: auto;
+}
+svg, svg body, #mxStatus, #mxToolbar {
+	-moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+}
+#mxGraph table {
+	background: transparent;
+}
+
+#splash {
+	width: 100%;
+	height: 100%;
+	background:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:4;
+}
+div.base {
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+	font-family: Arial;
+	font-size: 8pt;
+}
+div.base#mxToolbar {
+	padding-left: 8px;
+	padding-top: 1px;
+	background-color: #DDDDDD;
+}
+div.base#mxProperties {
+	width: 100%;
+}
+div.base#mxGraph {
+	width: 800px;
+	height: 600px;
+	/*background: url('../images/background/grid.gif.png') transparent;*/
+	
+	background-image: url('../images/background/grid.gif');
+    background-position: -1px -1px;
+	background-color:white;
+	
+	/*background-position: left bottom;*/
+	/*background-color: #DADADA;
+	background-image: url('../images/background/tile.png');
+	background: -webkit-radial-gradient(rgba(187,187,187,0.0), rgba(0,0,0,0.0)), url('../images/background/grid.gif');
+	background: -moz-radial-gradient(rgba(187,187,187,0.0), rgba(0,0,0,0.0)), url('../images/background/grid.gif');*/
+	
+}
+div.base#mxGraph body {
+	background-color: transparent;
+}
+
+div.base#mxStatus {
+	height: 26px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding: 0px 8px;
+	color: gray;
+	border-top: 1px solid #9A9A9A;
+	background-color: #DDDDDD;
+}
+#mxToolbar button.mxToolbarItem {
+	margin-top: 4px;
+}
+.mxToolbarItem {
+	margin: 0px;
+	border: 0px;
+	background: none;
+	background-color: none;
+	filter:none;
+}
+.mxToolbarItem.disabled, 
+.mxToolbarItem.disabled:hover,
+.mxToolbarItem.disabled:active {
+	opacity: 0.4;
+	box-shadow: none;
+	background: none;
+}
+.titleText {
+	font-weight:bold !important;
+	padding-top:4px;
+	padding-bottom:7px;
+}
+.textAreaResizeVertical{
+	resize: vertical;
+}
+
+.mxToolbarItem.textOnly {
+	background: linear-gradient(top , #FCFCFC, #D2D2D2);
+	background: -webkit-linear-gradient(top , #FCFCFC, #D2D2D2);
+	background: -moz-linear-gradient(center top , #FCFCFC, #D2D2D2);
+	border: 1px solid #c2c2c2;
+	margin: 0px 3px;
+}
+img.mxToolbarItem {
+	margin-left: 6px;
+	margin-bottom: 14px;
+}
+.mxToolbarItem img,
+.mxToolbarMode img,
+.mxToolbarModeSelected img {
+	float: left;
+	margin: 0px;
+}
+.mxToolbarItem span {
+	float: left;
+	display: block;
+	margin: 1px 0px 0px 5px;
+}
+.mxToolbarItem.textOnly span {
+	margin: 1px 0px 0px 0px;
+}
+.mxToolbarItem abbr {
+	margin: 1px 0px 0px 0px;
+	border: none;
+	cursor: pointer;
+}
+.mxToolbarMode, .mxToolbarModeSelected {
+	margin: 0px;
+	background: none;
+	filter:none;
+}
+.mxToolbarMode {
+	border: none;	
+}
+.mxToolbarModeSelected {
+	border: 1px solid #909090;
+}
+#mxStatus #btn_validation {
+	position: absolute;
+	right: 0px;
+	top: 3px;
+}
+#saveStatus {
+	position: absolute;
+	right: 140px;
+	top: 5px;
+	width: auto;
+	padding: 0px 10px;
+	margin: 0px 12px 0px 0px;
+	border: none;
+	color: #2A2A2A;
+}
+#saveStatus span {
+	display: inline;
+	float: none;
+}
+#mxStatus #lastStatusSeparator {
+	position: absolute;
+	right: 130px;
+	top: 5px;
+}
+.mxToolbarInput {
+	top: -6px;
+	position: relative;
+	margin: 0px -10px 0px 3px;
+	padding-right: 10px;
+	width: 30px;
+	border: 1px solid #c2c2c2;
+	text-align: right;
+}
+#mxStatus .ui-spinner {
+	display: inline;
+	margin-right:9px;
+}
+.ui-spinner-up, .ui-spinner-down {
+	position: absolute;
+	height: 9px;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background: none;
+	font-size: 7px;
+}
+.ui-spinner-up {
+	top: 4px;
+}
+.ui-spinner-down {
+	top: 11px;
+}
+.handCursor {
+	cursor: url('/scripts/mxGraph/images/icons/pan_16.png'), pointer !important;
+}
+
+div.base#mxErrors {
+	bottom: 30px;
+	right: 4px;
+	background-color: #F9F9F9;
+	border: 1px solid #777777;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+	-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+ul.errors {
+	list-style: none; 
+}
+#mxErrors ul.errors, .cellErrors ul.errors, .permissionErrors ul.errors {
+}
+ul.errors {
+	padding: 5px 10px 5px 10px;
+}
+ul.errors li {
+	background: url('../images/icons/warning_16.png') no-repeat left top;
+	min-height: 16px; 
+    padding-left: 26px;
+    margin: 5px 0;
+}
+ul.errors li {
+	display: block;
+    padding-top: 2px;
+}
+#mxErrors h1 {
+	font-size: 12px;
+	margin: 12px 10px 0px 10px;
+}
+#mxErrors ul.errors {
+	margin: 10px 10px 10px 10px;
+	padding: 10px 16px 10px 16px;
+	background-color: #D9D9D9;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+#mxErrors ul.errors li span, x:-moz-any-link, x:default {
+	float: left;
+}
+#mxErrors ul.errors li a {
+	/*float: right;*/
+	margin-left: 5px;
+	text-decoration: none;
+}
+#mxErrors ul.errors li a:hover {
+	text-decoration: underline;
+}
+.permissionErrors {
+	float: left;
+}
+.permissionErrors ul.errors {
+	padding: 0px 10px;
+}
+.permissionErrors ul.errors li {
+	margin: 2px 0;
+}
+div.mxWindow {
+	border: 1px solid #5F5F5F;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-image: linear-gradient(bottom, rgb(231,231,231) 0%, rgb(253,253,253) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(231,231,231) 0%, rgb(253,253,253) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(231,231,231) 0%, rgb(253,253,253) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(231,231,231) 0%, rgb(253,253,253) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(231,231,231) 0%, rgb(253,253,253) 100%);
+	-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	box-shadow: 0 0 12px rgba(0,0,0,0.3);
+	overflow: visible;
+	max-width : 305px;
+}
+div.mxWindow.extraWidth {
+	max-width: 455px;
+}
+
+.arrow_box {
+	position: absolute;
+	background: #F9F9F9;
+	border: 1px solid #5F5F5F;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box:after {
+	border-right-color: #F9F9F9;
+	border-width: 10px;
+	top: 40px;
+	margin-top: -10px;
+}
+.arrow_box:before {
+	border-right-color: #5F5F5F;
+	border-width: 11px;
+	top: 40px;
+	margin-top: -11px;
+}
+.arrow_box_bottom:after {
+	top: 90%;
+	border-right-color: #E9E9E9;
+}
+.arrow_box_bottom:before {
+	top: 90%;
+}
+.arrow_box_vcenter:after {
+	top: 50%;
+	border-right-color: #F2F2F2;
+}
+.arrow_box_vcenter:before {
+	top: 50%;
+}
+.arrow_box_right:after, .arrow_box_right:before {
+	left: 100%;
+}
+.arrow_box_right:after {
+	border-left-color: #F9F9F9;
+	border-right-color: transparent;
+}
+.arrow_box_right:before {
+	border-left-color: #5F5F5F;
+	border-right-color: transparent;
+}
+.arrow_box_right.arrow_box_bottom:after {
+	border-left-color: #E9E9E9;
+}
+.arrow_box_right.arrow_box_vcenter:after {
+	border-left-color: #F2F2F2;
+}
+
+.mxWindow {
+	width: 305px !important;
+}
+.mxWindow.extraWidth {
+	width: 455px !important;
+}
+
+table.mxWindow {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+td.mxWindowTitle {
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+.mxWindowPane table.properties {
+	width: 100%;
+	padding: 0px 4px 0px 4px;
+}
+.properties td.mxWindowPane td:first-child {
+	padding-top: 4px;
+	vertical-align: top;
+}
+.properties input[type="text"], 
+.properties textarea {
+	width: 99%;
+	/*margin-right:10px;*/
+	/*width:215px;*/
+}
+.properties select{
+	width:99%;
+	/*width:218px;*/
+}
+
+.properties input[disabled="disabled"] {
+	background-color: #E6E6E6;
+}
+.properties input[type="checkbox"] {
+	float: left;
+	margin: 3px 6px 3px 0px;
+	border-width: 0px;
+}
+.properties .sliderCheckboxCont {
+
+}
+.properties .sliderCheckboxCont input[type="checkbox"] {
+	margin:0px;
+	padding:0px;
+	opacity:0.01;
+	width:32px;
+	height:32px;
+}
+.properties .sliderCheckbox {
+	margin: 0px;
+	padding: 0px !important;
+	width: 32px !important;
+	height: 16px;
+	border: none 0px transparent !important;
+	background-color: transparent !important;
+	background-image: url("/images/icons/toggle_16.png") !important;
+	background-position: 0px -16px !important;
+	background-repeat: no-repeat !important;
+	overflow:hidden;
+}
+  
+.properties .sliderCheckbox.checked {
+	background-position: 0px 0px !important;
+}
+
+.properties .sliderCheckbox > input:hover {
+	cursor: pointer;
+}
+.properties label {
+	float: left;
+	margin-top: 3px;
+	width: 86%;
+}
+.properties td button {
+	padding: 2px 6px 2px 6px;
+	width: 99%;
+}
+.properties td button.inline {
+	width: initial;
+}
+.properties #txt_text {
+	height: 50px;
+}
+.mxWindowPane table.properties table{
+	width:100%;
+}
+
+.properties ul.token-input-list {
+    background-color: #FFFFFF;
+    clear: left;
+    cursor: text;
+    height: auto !important;
+    list-style-type: none;
+    margin: 0;
+    /*overflow: hidden;*/
+    padding: 0;
+    width:98%;
+    z-index: 999;
+}
+.properties ul.token-input-list li {
+    list-style-type: none;
+}
+.properties li.token-input-token {
+    background-color: #E0EAEF;
+    border-radius:3px;
+    border:1px solid #D0DADF;
+    color: #000000;
+    cursor: default;
+    display: inline-block;
+    height: auto !important;
+    margin: 3px;
+    overflow: hidden;
+    padding: 1px 4px;
+}
+.properties li.token-input-token p {
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-right:5px;
+}
+.properties li.token-input-token span {
+    color: #777777;
+    cursor: pointer;
+    float: right;
+}
+div.token-input-dropdown {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    cursor: default;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+div.token-input-dropdown p {
+    color: #777777;
+    margin: 0;
+    padding: 5px;
+}
+div.token-input-dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+div.token-input-dropdown ul li {
+    background-color: #FFFFFF;
+    list-style-type: none;
+    padding: 3px;
+}
+div.token-input-dropdown ul li.token-input-dropdown-item {
+    background-color: #FAFAFA;
+}
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+    background-color: #FFFFFF;
+}
+
+.summary { 
+	overflow: auto !important; 
+}
+#summaryTable thead {
+	height: 25px;
+}
+#permissionsButtons {
+    padding: 3px 0px 0px 0px;
+    height: 27px;
+	background: #DDDDDD;
+ 	border-top: 1px solid #9A9A9A; 
+	-moz-border-radius: 0px 0px 6px 6px;
+	-webkit-border-radius: 0px 0px 6px 6px;
+	border-radius:  0px 0px 6px 6px;
+}
+.table-container {
+	height: 240px
+}
+
+.summary-table-container {
+	height: 270px;
+	padding:0px;
+}
+#permissions{
+	padding:0;
+}
+#permissionsButtons .createPermissionButton, 
+#permissionsButtons .deletePermissionButton {
+	float: left;
+	background: url('../images/button.gif') repeat-x;
+}
+input.hint {
+    color: #888;
+}
+.editable-select-options ul li {
+	font-size: 8pt;
+}
+
+
+
+
+/*****************************************************************
+ * /*
+ *  File:         demo_table.css
+ *  CVS:          $Id$
+ *  Description:  CSS descriptions for DataTables demo pages
+ *  Author:       Allan Jardine
+ *  Created:      Tue May 12 06:47:22 BST 2009
+ *  Modified:     $Date$ by $Author$
+ *  Language:     CSS
+ *  Project:      DataTables
+ *
+ *  Copyright 2009 Allan Jardine. All Rights Reserved.
+ *
+ * ***************************************************************************
+ * DESCRIPTION
+ *
+ * The styles given here are suitable for the demos that are used with the standard DataTables
+ * distribution (see www.datatables.net). You will most likely wish to modify these styles to
+ * meet the layout requirements of your site.
+ *
+ * Common issues:
+ *   'full_numbers' pagination - I use an extra selector on the body tag to ensure that there is
+ *     no conflict between the two pagination types. If you want to use full_numbers pagination
+ *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
+ *     modify that selector.
+ *   Note that the path used for Images is relative. All images are by default located in
+ *     ../images/ - relative to this CSS file.
+ */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables features
+ */
+
+.dataTables_wrapper {
+	position: relative;
+	clear: both;
+}
+
+.dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 30px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+	background-color: white;
+}
+
+.dataTables_length {
+	width: 40%;
+	float: left;
+}
+
+.dataTables_filter {
+	width: 50%;
+	float: right;
+	text-align: right;
+	padding: 4px;
+}
+
+.dataTables_info {
+	float: left;
+	width: 600px;
+	padding: 8px 0px 0px 8px;
+    background: #DDDDDD; 
+	-moz-border-radius: 0px 0px 0px 9px;
+	-webkit-border-radius: 0px 0px 0px 9px;
+	border-radius:  0px 0px 0px 9px;
+}
+
+.dataTables_paginate {
+	float: right;
+	text-align: right;
+}
+
+/* Pagination nested */
+.paginate_disabled_previous, .paginate_enabled_previous,
+.paginate_disabled_next, .paginate_enabled_next {
+	height: 19px;
+	float: left;
+	cursor: pointer;
+	*cursor: hand;
+	color: #111 !important;
+}
+.paginate_disabled_previous:hover, .paginate_enabled_previous:hover,
+.paginate_disabled_next:hover, .paginate_enabled_next:hover {
+	text-decoration: none !important;
+}
+.paginate_disabled_previous:active, .paginate_enabled_previous:active,
+.paginate_disabled_next:active, .paginate_enabled_next:active {
+	outline: none;
+}
+
+.paginate_disabled_previous,
+.paginate_disabled_next {
+	color: #666 !important;
+}
+.paginate_disabled_previous, .paginate_enabled_previous {
+	padding-left: 23px;
+}
+.paginate_disabled_next, .paginate_enabled_next {
+	padding-right: 23px;
+	margin-left: 10px;
+}
+
+.paginate_disabled_previous {
+	background: url('../images/back_disabled.png') no-repeat top left;
+}
+
+.paginate_enabled_previous {
+	background: url('../images/back_enabled.png') no-repeat top left;
+}
+.paginate_enabled_previous:hover {
+	background: url('../images/back_enabled_hover.png') no-repeat top left;
+}
+
+.paginate_disabled_next {
+	background: url('../images/forward_disabled.png') no-repeat top right;
+}
+
+.paginate_enabled_next {
+	background: url('../images/forward_enabled.png') no-repeat top right;
+}
+.paginate_enabled_next:hover {
+	background: url('../images/forward_enabled_hover.png') no-repeat top right;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ * DataTables display
+ */
+table.display {
+	margin: 0 auto;
+	clear: both;
+	width: 100%;
+	
+	/* Note Firefox 3.5 and before have a bug with border-collapse
+	 * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
+	 * border-spacing: 0; is one possible option. Conditional-css.com is
+	 * useful for this kind of thing
+	 *
+	 * Further note IE 6/7 has problems when calculating widths with border width.
+	 * It subtracts one px relative to the other browsers from the first column, and
+	 * adds one to the end...
+	 *
+	 * If you want that effect I'd suggest setting a border-top/left on th/td's and 
+	 * then filling in the gaps with other borders.
+	 */
+}
+
+table.display thead th {
+	padding: 3px 18px 3px 10px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+table.display tfoot th {
+	padding: 3px 18px 3px 10px;
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+table.display tr.heading2 td {
+	border-bottom: 1px solid #aaa;
+}
+
+table.display td {
+	padding: 3px 10px;
+}
+
+table.display td.center {
+	text-align: center;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables row classes
+ */
+table.display tr.odd.gradeA {
+	background-color: #ddffdd;
+}
+
+table.display tr.even.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.odd.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.even.gradeC {
+	background-color: #eeeeff;
+}
+
+table.display tr.odd.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.even.gradeX {
+	background-color: #ffeeee;
+}
+
+table.display tr.odd.gradeU {
+	background-color: #ddd;
+}
+
+table.display tr.even.gradeU {
+	background-color: #eee;
+}
+
+
+tr.odd {
+	background-color: #FFFFFF;
+}
+
+tr.even {
+	background-color: #F2F2F2;
+}
+
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+.dataTables_scroll {
+	clear: both;
+}
+
+.dataTables_scrollBody {
+	*margin-top: -1px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.top, .bottom {
+	padding: 15px;
+	background-color: #F5F5F5;
+	border: 1px solid #CCCCCC;
+}
+
+.top .dataTables_info {
+	float: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.dataTables_empty {
+	text-align: center;
+}
+
+tfoot input {
+	margin: 0.5em 0;
+	width: 100%;
+	color: #444;
+}
+
+tfoot input.search_init {
+	color: #999;
+}
+
+td.group {
+	background-color: #d1cfd0;
+	border-bottom: 2px solid #A19B9E;
+	border-top: 2px solid #A19B9E;
+}
+
+td.details {
+	background-color: #d1cfd0;
+	border: 2px solid #A19B9E;
+}
+
+
+.example_alt_pagination div.dataTables_info {
+	width: 40%;
+}
+
+.paging_full_numbers {
+	width: 400px;
+	height: 22px;
+	line-height: 22px;
+}
+
+.paging_full_numbers a:active {
+	outline: none
+}
+
+.paging_full_numbers a:hover {
+	text-decoration: none;
+}
+
+.paging_full_numbers a.paginate_button,
+ 	.paging_full_numbers a.paginate_active {
+	border: 1px solid #aaa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 2px 5px;
+	margin: 0 3px;
+	cursor: pointer;
+	*cursor: hand;
+	color: #333 !important;
+}
+
+.paging_full_numbers a.paginate_button {
+	background-color: #ddd;
+}
+
+.paging_full_numbers a.paginate_button:hover {
+	background-color: #ccc;
+	text-decoration: none !important;
+}
+
+.paging_full_numbers a.paginate_active {
+	background-color: #99B3FF;
+}
+
+table.display tr.even.row_selected td {
+	background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
+
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+
+tr.odd td.sorting_2 {
+	background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+	background-color: #E0E2FF;
+}
+
+
+tr.even td.sorting_2 {
+	background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+	background-color: #F9F9FF;
+}
+
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+tr.odd.gradeA td.sorting_1 {
+	background-color: #c4ffc4;
+}
+
+tr.odd.gradeA td.sorting_2 {
+	background-color: #d1ffd1;
+}
+
+tr.odd.gradeA td.sorting_3 {
+	background-color: #d1ffd1;
+}
+
+tr.even.gradeA td.sorting_1 {
+	background-color: #d5ffd5;
+}
+
+tr.even.gradeA td.sorting_2 {
+	background-color: #e2ffe2;
+}
+
+tr.even.gradeA td.sorting_3 {
+	background-color: #e2ffe2;
+}
+
+tr.odd.gradeC td.sorting_1 {
+	background-color: #c4c4ff;
+}
+
+tr.odd.gradeC td.sorting_2 {
+	background-color: #d1d1ff;
+}
+
+tr.odd.gradeC td.sorting_3 {
+	background-color: #d1d1ff;
+}
+
+tr.even.gradeC td.sorting_1 {
+	background-color: #d5d5ff;
+}
+
+tr.even.gradeC td.sorting_2 {
+	background-color: #e2e2ff;
+}
+
+tr.even.gradeC td.sorting_3 {
+	background-color: #e2e2ff;
+}
+
+tr.odd.gradeX td.sorting_1 {
+	background-color: #ffc4c4;
+}
+
+tr.odd.gradeX td.sorting_2 {
+	background-color: #ffd1d1;
+}
+
+tr.odd.gradeX td.sorting_3 {
+	background-color: #ffd1d1;
+}
+
+tr.even.gradeX td.sorting_1 {
+	background-color: #ffd5d5;
+}
+
+tr.even.gradeX td.sorting_2 {
+	background-color: #ffe2e2;
+}
+
+tr.even.gradeX td.sorting_3 {
+	background-color: #ffe2e2;
+}
+
+tr.odd.gradeU td.sorting_1 {
+	background-color: #c4c4c4;
+}
+
+tr.odd.gradeU td.sorting_2 {
+	background-color: #d1d1d1;
+}
+
+tr.odd.gradeU td.sorting_3 {
+	background-color: #d1d1d1;
+}
+
+tr.even.gradeU td.sorting_1 {
+	background-color: #d5d5d5;
+}
+
+tr.even.gradeU td.sorting_2 {
+	background-color: #e2e2e2;
+}
+
+tr.even.gradeU td.sorting_3 {
+	background-color: #e2e2e2;
+}
+
+
+/*
+ * Row highlighting example
+ */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.even:hover {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_1 {
+	background-color: #DDFF75;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_2 {
+	background-color: #E7FF9E;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_3 {
+	background-color: #E2FF89;
+}
+
+.ex_highlight_row #example tr.odd:hover {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_1 {
+	background-color: #D6FF5C;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_2 {
+	background-color: #E0FF84;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_3 {
+	background-color: #DBFF70;
+}
+
+
+/*
+ * KeyTable
+ */
+table.KeyTable td {
+	border: 3px solid transparent;
+}
+
+table.KeyTable td.focus {
+	border: 3px solid #3366FF;
+}
+
+table.display tr.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.gradeU {
+	background-color: #ddd;
+}
+
+div.box {
+	height: 100px;
+	padding: 10px;
+	overflow: auto;
+	border: 1px solid #8080FF;
+	background-color: #E5E5FF;
+}
+
+.summaryHead{
+	border : 1px solid black;
+}
+
+.warning_message {
+  background: url('../images/icons/ico_warning.png') no-repeat 0 0;
+  padding-left: 48px;
+}
+
+.overlay_window {
+  background-color: #f5f5f5;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.overlay_window > form > .header:first-child,
+.overlay_window > .header {
+  background-color: #b0b0b0;
+  background: -webkit-gradient(linear, top left, bottom left, from(#c5c5c5), to(#b1b1b1));
+  background: -moz-linear-gradient(#c5c5c5, #b1b1b1);
+  background: -webkit-linear-gradient(#c5c5c5, #b1b1b1);
+  padding: 0 10px;
+  height: 29px;
+  border-bottom: solid 1px #7e7e7e;
+  position: relative;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-top-left-border-radius: 6px;
+  -webkit-top-right-border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+}
+
+.overlay_window .header h1 {
+  font: normal 16px/29px Arial, Helvetica, sans-serif;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.overlay_window .header h1:hover {
+	cursor: move;
+}
+
+.overlay_window .body_container {
+  border-top: solid 1px #cfcfcf;
+}
+
+.overlay_window .body {
+  padding: 15px 0;
+  margin: 0 15px;
+  border-bottom: solid 1px #c8c8c8;
+}
+
+.overlay_window .un-body {
+  margin: 0 -15px;
+  padding-bottom: 1px;
+  overflow: hidden;
+}
+
+.overlay_window .body h2 {
+  font-size: 16px;
+}
+
+.overlay_window .body p {
+  margin-bottom: 15px;
+}
+
+.overlay_window .body p:last-child {
+  margin-bottom: 0;
+}
+
+.overlay_window .body label {
+  font-size: 12px;
+}
+
+.overlay_window .body .title.simple {
+  font-weight: normal;
+}
+
+#move_items_popup .title.simple {
+  margin: -5px;
+}
+
+.overlay_window .body .title.error {
+  color: #f00;
+}
+
+.overlay_window .body #select_btn {
+  margin-top: 10px;
+}
+
+.overlay_window .controls {
+  border-top: solid 1px #ebebeb;
+  text-align: right;
+}
+
+.overlay_window .controls button {
+  margin-left: 10px;
+}
+
+.overlay_window .controls.highlighted {
+  padding: 15px 0;
+  margin: 0 15px;
+  background-color: #f5f5f5;
+}
+
+.overlay_window .controls .ui-button 
+{
+     position: static !important; 
+}
+
+.overlay_window .header .minimize {
+  display: none;
+  position: absolute;
+  right: 26px;
+  top: 6px;
+  border-right: 1px solid #999;
+  padding: 1px 6px 1px 0;
+}
+
+.overlay_window .header .minimize_btn {
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  width: 16px;
+  background: url(../images/buttons/btn_minimize.png) no-repeat left top;
+}
+
+.overlay_window .header .minimize_btn:focus,
+.overlay_window .header .minimize_btn:hover {
+  background-position: left bottom;
+}
+
+.file_list {
+    border-collapse: collapse;
+    border-top: 1px solid #A2A2A2;
+    width: 100%;
+}
+.overlay_window .file_list {
+    box-shadow: 0 1px 0 rgba(243, 243, 243, 0.9);
+}
+
+
+.file_list.table tfoot td, .file_list.table tbody td {
+	border-color: #A2A2A2;
+    border-style: none none solid solid;
+    border-width: 0 1px 1px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+#summaryTable.table tfoot td, #summaryTable.table tbody td {
+	line-height: 18px;
+}
+#permissionsTable.table tfoot td, #permissionsTable.table.table tbody td {
+	line-height: 25px;
+}
+
+
+.file_list.table thead th {
+	background-color: #D7D7D7;
+    background: -moz-linear-gradient(#F9F9F9, #D7D7D7) repeat scroll 0 0 transparent;
+	background: -webkit-linear-gradient(top , #F9F9F9, #D7D7D7) repeat scroll 0 0 transparent;
+	background: linear-gradient(top , #F9F9F9, #D7D7D7) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #9C9C9C;
+    border-left: 1px solid #A2A2A2;
+    color: #2C2C2C;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: 24px;
+    padding: 0 10px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+}
+ 
+.editable input{
+	width: 95%;
+	margin-left : 2px;
+	margin-right: 2px;
+}
+tr.editing{
+	background-color: #DAE2EF;
+}
+
+tr.odd td input{
+	background-color: #DAE2EF;
+	border : 0;
+}
+
+tr.even td input{
+	background-color: #DAE2EF;
+	border : 0;
+}
+
+.overlay_window .header {
+	cursor : move;
+}
+
+.scroll{
+	display: block;
+    max-height: 208px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #F5F5F5;
+	
+}
+.scroll-body{
+	display: block;
+    max-height: 182px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div.table-wrapper {	
+    height:  207px;
+    width:  900px;
+    position:  relative;
+    overflow-y: auto;
+}
+
+.first-cell{
+	min-width:50px;	
+	max-width:50px;
+}
+.second-cell{
+	min-width:200px;
+	max-width:200px;
+}
+.last-cell{
+ 	width: 100%;
+}
+
+.sorting_asc span img{
+ 	background: url("../../../images/icons/btn_up_down_arrows.png") no-repeat scroll right -40px transparent;
+    height: 5.8px;
+    white-space: nowrap;
+    width: 7px;
+}
+.sorting_desc span img{
+ 	background: url("../../../images/icons/btn_up_down_arrows.png") no-repeat scroll right 0 transparent;
+    height: 5.8px;
+    white-space: nowrap;
+    width: 7px;
+}
+ 
+.sorting span img{
+ 	display: none;
+}
+ 
+#summaryTable {
+ 	height: 210px;
+ 	background: none;
+ 	border-bottom: 1px solid #9A9A9A; 
+}
+.summaryStart {
+ 	height: 18px;
+ 	margin-bottom: 3px;
+}
+#summaryTable thead {
+	height: 25px;
+}
+
+#mxGraph textarea.mxCellEditor {
+	margin: 0px;
+	resize: none;
+}
+#btn_showIds.on, #btn_showAdvancedMode.on, .showIdsOnSummary.on {
+	box-shadow: inset 2px 2px 4px gray;
+}
+#btn_showAdvancedMode {
+	width: auto;
+}
+#btn_showAdvancedMode span, .showIdsOnSummary span {
+	display: block;
+	height: 15px;
+	padding: 1px 0px 0px 20px;
+	background: url('../images/workflow/advanced_16.png') no-repeat;
+}
+.summaryTableStatusbar {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding: 4px 10px;
+	background: #DDDDDD;
+	width:100%;
+	text-align:right;
+	-moz-border-radius: 0px 0px 9px 0px;
+	-webkit-border-radius: 0px 0px 9px 0px;
+	border-radius:  0px 0px 9px 0px;
+}
+.showIdsOnSummary {
+	background: url('../images/button.gif') repeat-x;
+	font-family: Arial;
+    font-size: 8pt;
+}
+
+/* Chrome hack */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	div.dataTables_info {
+		height: 20px; 
+	}
+	div.summaryTableStatusbar {
+		height: 24px;
+		padding: 2px 10px;
+	}
+}
+
+/* "Escalate To..." custom styles */
+#escalateto-table {
+	border-collapse: collapse;
+	margin-bottom: 3px;
+}
+
+#escalateto-table tr:nth-child(1) td {
+	height: 21px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+#escalateto-table tr td {
+	margin: 0px;
+	padding: 3px 0px 3px 0px;
+	border-bottom: solid 1px #BBBBBB;
+}
+
+#escalateto-table tr td.no-escalations {
+	text-align: center;
+	padding: 3px 0px 3px 0px;
+}
+
+#escalateto-table tr td:nth-child(1) {
+	width: 120px;
+	vertical-align: middle;
+}
+
+#escalateto-table tr td:nth-child(2) {
+	width: 150px;
+}
+
+#escalateto-table tr td:nth-child(3) {
+	width: 20px;
+	text-align: center;
+}
+
+#escalateto-table tr td:nth-child(3) input {
+     margin-left: 5px;
+}
+
+#escalateto-table tr td:nth-child(4) {
+	width: 16px;
+}
+
+#escalateto-table tr td:nth-child(4) img:hover {
+	cursor: pointer;
+}

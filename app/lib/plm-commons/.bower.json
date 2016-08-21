@@ -1,0 +1,12 @@
+{
+  "name": "plm-commons",
+  "_release": "149934a5bd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "149934a5bd273545b99280fb2692c136ac9bcd15"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/PLM360/plm-commons.git",
+  "_target": "master",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/PLM360/plm-commons.git"
+}

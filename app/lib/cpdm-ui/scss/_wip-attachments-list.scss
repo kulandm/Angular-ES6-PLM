@@ -1,0 +1,43 @@
+.attachment-list {
+	max-height: 300px;
+	overflow-y: auto;
+
+	wip-file-type-icon {
+		padding-top: 15px;
+	}
+
+	md-list {
+		padding: 0;
+	}
+
+	md-list-item:hover {
+		background-color: #F0FAFD;
+		.attachment-actions {
+			visibility: visible;
+		}
+	}
+
+	.wip-file-actions-icon {
+		font-size: 1.2em;
+		color: #0099CC;
+	}
+
+	.attachment-info > p {
+		max-width: 250px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.attachment-actions {
+		margin-right: 10px;
+		visibility: hidden;
+	}
+
+	.attachment-actions a:hover {
+		text-decoration: none;
+	}
+
+	.generic-loader {
+		margin: 33px auto;
+	}
+}

@@ -1,0 +1,4 @@
+@ngdoc overview
+@name Directives
+@id index
+@description All directives for plm360 module lives inside this directory

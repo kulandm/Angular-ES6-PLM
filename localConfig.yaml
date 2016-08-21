@@ -1,0 +1,9 @@
+# This is a template file
+# Copy this file into localConfig.yaml for Grunt to pick up for your local settings
+baseUrl: http://kulandm.ads.autodesk.com # eg. http://tabasco.ads.autodesk.com. This is the url to your http server
+plmBaseUrl: http://kulandm.ads.autodesk.com:8080 # eg. http://tabasco.ads.autodesk.com:8080. This is the url for the tomcat app, currently we only use it when access backOffice functions.
+customer: DEVINDMACHINE1003   # The tenant name, eg. SELENIUM
+pristineFirst: 'false' # If you need to pristine the tenant before start the test, set this to true
+baseName: app # The NextPLM app folder name, could be app or hig depends on your server setting.
+userId: PLMAutoTest # The username to login
+password: Selenium1 # The password of the user

@@ -1,0 +1,75 @@
+<h1><code ng:non-bindable="">isPermitted</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-ispermitted-page"><p>Hides the element if user does not have permission to see,
+or if the permission hasn&#39;t been supplied.</p>
+<p>-workspaceId: This is an optional attribute that can be used with this
+directive to apply permission for the workspace, the id of which is provided
+as a value of this attribute. This is very useful to control visibility of
+the element based on other workspaces. Possible usage in global quick create.</p>
+<p>-applyLock: This is an optional attribute that can be used with this
+directive to take workspace locking in to consideration while evaluating the
+visibility of the element. Possible usage for Add/Edit/Delete buttons on
+Item Details / Managed View / Grid and Relationship view.</p>
+<p>-applyRevisionOverrideLock: This is an optional attribute that can be used
+with this directive to take revision override locking in to consideration
+while evaluating the visibility of the element. Note: This attribute is only
+applicable for revision controlled workspace item, for the rest this will be
+ignored. Possible usage for Add/Edit/Delete buttons on Item Details /
+Managed View / Grid and Relationship view.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<ul>
+<li>Requires <a href="Services/PermissionService">Services/PermissionService</a></li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY is-permitted&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_updatevisibility">updateVisibility(isVisible)</h3>
+<div class="updatevisibility"><div class="directives-ispermitted-updatevisibility-page"><p>A helper method to remove the element based on
+whether user has permissions. It is safe to remove since
+permissions will not change mid-view. When the element is
+removed, we can then use CSS selectors to style the primary
+button on the command bar.</p>
+</div><h5 id="methods_updatevisibility_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>isVisible</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="directives-ispermitted-updatevisibility-page"><p>True to display the element.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_applylock">applyLock</h3>
+<div class="applylock"><div class="directives-ispermitted-applylock-page"><p>Reflects a value of an OPTIONAL attribute that
+can be used with this directive to add workspace locking
+check while evaluating workspace id.</p>
+</div></div>
+</li>
+<li><h3 id="properties_applyrevisionoverridelock">applyRevisionOverrideLock</h3>
+<div class="applyrevisionoverridelock"><div class="directives-ispermitted-applyrevisionoverridelock-page"><p>Reflects a value of an OPTIONAL attribute that
+can be used with this directive to add workspace revision
+control locking check while evaluating workspace id.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-ispermitted-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-13" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-13" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-13">
+<div is-permitted="{{PLMPermissions.VIEW_ITEM}}"
+	workspace-id="{{workspaceId}}"
+	apply-lock="{{Boolean}}">
+</div>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-13" ng-eval-javascript=""></div>
+</div></div>
+</div>

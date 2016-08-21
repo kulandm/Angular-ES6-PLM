@@ -1,0 +1,81 @@
+#main {
+	background-color: $loginBoxBackgroundColor;
+
+	.useless-header {
+		position: absolute;
+		top: 0;
+
+		width: 100%;
+		height: 7px;
+
+		background-color: $loginPageHeaderFooterBackground;
+	}
+
+	#login-block {
+		.login-box {
+			margin: 10rem 0 0 0;
+			padding: 30px;
+
+			.navbar-brand {
+				text-align: center;
+
+				.fusion-lifecycle-logo {
+					text-align: center;
+				}
+
+				.welcome-title {
+					line-height: 100px;
+
+					height: 100px;
+
+					h1 {
+						font-size: 34px;
+						font-weight: 200;
+
+						margin: 0;
+					}
+				}
+
+				#loginButton {
+					padding: 8px 12px 6px 12px;
+
+					color: white;
+					font-size: 16px;
+					font-weight: normal;
+
+					width: 71%;
+					height: 50px;
+
+					border-radius: 0;
+					border-style: solid;
+					border-width: 1px;
+					border-color: transparent;
+					background-color: $loginButtonBackgroundColor;
+
+					&:hover {
+						padding-top: 7px;
+						padding-bottom: 5px;
+						border-width: 2px;
+						border-color: $loginButtonBorderColor;
+					}
+				}
+			}
+		}
+	}
+
+	#landing-page-footer {
+		font-size: 16px;
+		line-height: 75px;
+
+		position: absolute;
+		bottom: 0;
+
+		width: 100%;
+		height: 75px;
+
+		text-indent: 120px;
+
+		color: $loginPageFooterFontColor;
+		background-color: $loginPageHeaderFooterBackground;
+	}
+}

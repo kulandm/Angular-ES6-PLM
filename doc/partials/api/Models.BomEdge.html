@@ -1,0 +1,74 @@
+<h1><code ng:non-bindable="">BomEdge</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomedge-page"><p>Class defining the interface for bom graph edges</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addfield">addField(the)</h3>
+<div class="addfield"><div class="models-bomedge-addfield-page"><p>Adds a field to the fields collection</p>
+</div><h5 id="methods_addfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>the</td><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomedge-addfield-page"><p>field to add</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor(args)</h3>
+<div class="constructor"><div class="models-bomedge-constructor-page"><p>initializes the Bom Edge properties</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>args</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomedge-constructor-page"><p>Object containing the following properties
+- bomId, toNode, edgeProperties (which may contain fields)</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_frombulkedge">fromBulkEdge(`edgeArgs`)</h3>
+<div class="frombulkedge"><div class="models-bomedge-frombulkedge-page"><p>Builds a BomEdge from from the edge properties of a BulkBom payload.</p>
+</div><h5 id="methods_frombulkedge_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edgeArgs`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomedge-frombulkedge-page"><p>object containing the properties needed to create a
+BomEdge</p>
+</div></td></tr></tbody></table><h5 id="methods_frombulkedge_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomedge-frombulkedge-page"><p>an instance of BomEdge.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomid">getBomId()</h3>
+<div class="getbomid"><div class="models-bomedge-getbomid-page"><p>getter for the bomId of this <code>BomEdge</code>.</p>
+</div><h5 id="methods_getbomid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomedge-getbomid-page"><p>the bomId of this <code>BomEdge</code> instance.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfield">getField(id)</h3>
+<div class="getfield"><div class="models-bomedge-getfield-page"><p>returns the field corresponding to id</p>
+</div><h5 id="methods_getfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>id</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomedge-getfield-page"><p>the field id</p>
+</div></td></tr></tbody></table><h5 id="methods_getfield_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomfield">BomField</a></td><td><div class="models-bomedge-getfield-page"><p>the field corresponding to id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="models-bomedge-getfields-page"><p>getter for the fields of this <code>BomEdge</code></p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bomedge-getfields-page"><p>returns fields that are associated with an instance of <code>BomEdge</code></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemnumber">getItemNumber()</h3>
+<div class="getitemnumber"><div class="models-bomedge-getitemnumber-page"><p>getter for the item number of this <code>BomEdge</code></p>
+</div><h5 id="methods_getitemnumber_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomedge-getitemnumber-page"><p>returns item number of <code>BomEdge</code></p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_bomid">bomId</h3>
+<div class="bomid"><div class="models-bomedge-bomid-page"><p>id that uniquely identifes this edge</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgeproperties">edgeProperties</h3>
+<div class="edgeproperties"><div class="models-bomedge-edgeproperties-page"><p>Object holding all of this edge&#39;s properties</p>
+</div></div>
+</li>
+<li><h3 id="properties_fields">fields</h3>
+<div class="fields"><div class="models-bomedge-edgeproperties-fields-page"><p>Map holding specificlly all of this edge&#39;s properties that are view def related fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_link">link</h3>
+<div class="link"><div class="models-bomedge-link-page"><p>link to this edge</p>
+</div></div>
+</li>
+<li><h3 id="properties_tonode">toNode</h3>
+<div class="tonode"><div class="models-bomedge-tonode-page"><p>itemId for the node this edge points to</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

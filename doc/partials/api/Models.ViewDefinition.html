@@ -1,0 +1,107 @@
+<h1><code ng:non-bindable="">ViewDefinition</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-viewdefinition-page"><p>This class wraps a ViewDefinition payload into an object</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-viewdefinition-constructor-page"><p>the instance contructor</p>
+</div></div>
+</li>
+<li><h3 id="methods_fetch">fetch(link, params)</h3>
+<div class="fetch"><div class="models-viewdefinition-fetch-page"><p>static method to load the view</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinition-fetch-page"><p>The URL to use for fetching the data</p>
+</div></td></tr><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinition-fetch-page"><p>parametrs to send with the GET</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-viewdefinition">ViewDefinition</a></td><td><div class="models-viewdefinition-fetch-page"><p>An object representation of the formatted data</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getedgefields">getEdgeFields()</h3>
+<div class="getedgefields"><div class="models-viewdefinition-getedgefields-page"><p>Returns the fields of the view that are edge fields
+Will return null until the fields are loaded</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfield">getField()</h3>
+<div class="getfield"><div class="models-viewdefinition-getfield-page"><p>Returns the field corresponding to urn</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="models-viewdefinition-getfields-page"><p>Returns the fields of the view that have been loaded as a sorted list,
+Ordered by their display order</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfieldsmap">getFieldsMap()</h3>
+<div class="getfieldsmap"><div class="models-viewdefinition-getfieldsmap-page"><p>Returns the fields of the view as a map</p>
+</div></div>
+</li>
+<li><h3 id="methods_getid">getId()</h3>
+<div class="getid"><div class="models-viewdefinition-getid-page"><p>The id of the view</p>
+</div></div>
+</li>
+<li><h3 id="methods_getlink">getLink()</h3>
+<div class="getlink"><div class="models-viewdefinition-getlink-page"><p>The link of the view definition</p>
+</div></div>
+</li>
+<li><h3 id="methods_getname">getName()</h3>
+<div class="getname"><div class="models-viewdefinition-getname-page"><p>The name of the view definition</p>
+</div></div>
+</li>
+<li><h3 id="methods_getnodefields">getNodeFields()</h3>
+<div class="getnodefields"><div class="models-viewdefinition-getnodefields-page"><p>Returns the fields of the view that are node fields
+Will return null until the fields are loaded</p>
+</div></div>
+</li>
+<li><h3 id="methods_geturn">getUrn()</h3>
+<div class="geturn"><div class="models-viewdefinition-geturn-page"><p>The Urn of the view definition</p>
+</div></div>
+</li>
+<li><h3 id="methods_isdefaultview">isDefaultView()</h3>
+<div class="isdefaultview"><div class="models-viewdefinition-isdefaultview-page"><p>Boolean marking if this view is the default view</p>
+</div></div>
+</li>
+<li><h3 id="methods_loadfields">loadFields()</h3>
+<div class="loadfields"><div class="models-viewdefinition-loadfields-page"><p>Method to load the actual information for all the fields</p>
+</div><h5 id="methods_loadfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-viewdefinition-loadfields-page"><p>a promise that will resolve when all the fields have loaded</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties___self__">__self__</h3>
+<div class="__self__"><div class="models-viewdefinition-self--page"><p>the <strong>self</strong> object, holding link and urn</p>
+</div></div>
+</li>
+<li><h3 id="properties_fields">fields</h3>
+<div class="fields"><div class="models-viewdefinition-fields-page"><p>An array of links to fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldsmap">fieldsMap</h3>
+<div class="fieldsmap"><div class="models-viewdefinition-fieldsmap-page"><p>Map from urns to fields that have been loaded</p>
+</div></div>
+</li>
+<li><h3 id="properties_fieldsmap">fieldsMap</h3>
+<div class="fieldsmap"><div class="models-viewdefinition-fieldsmap-page"><p>Sorted array of loaded fields</p>
+</div></div>
+</li>
+<li><h3 id="properties_id">id</h3>
+<div class="id"><div class="models-viewdefinition-id-page"><p>The id of the view</p>
+</div></div>
+</li>
+<li><h3 id="properties_isdefault">isDefault</h3>
+<div class="isdefault"><div class="models-viewdefinition-isdefault-page"><p>Bool indicating if the view is the default view</p>
+</div></div>
+</li>
+<li><h3 id="properties_json">json</h3>
+<div class="json"><div class="models-viewdefinition-json-page"><p>the raw json payload</p>
+</div></div>
+</li>
+<li><h3 id="properties_name">name</h3>
+<div class="name"><div class="models-viewdefinition-name-page"><p>the name of the view</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

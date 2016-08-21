@@ -1,0 +1,173 @@
+<div>
+	<md-sidenav layout="column" class="md-sidenav-left" id="sidenav-content" md-component-id="sidenav-content">
+
+		<!-- Fusion Lifecycle logo -->
+		<a id="fusion-lifecycle-logo" href="javascript:;" title="Fusion Lifecycle" ng-hide="!plmNavigationCtrl.isAtPanel(NavigationPanels.DEFAULT)" ng-click="plmNavigationCtrl.togglePanel()">
+			<img src="images/Logo.svg">
+			<img src="images/Text-Stacked.svg" ng-hide="!plmNavigationCtrl.isOpen()">
+		</a>
+
+		<!-- main menu -->
+		<ul id="sidenav-menu" ng-hide="!plmNavigationCtrl.isAtPanel(NavigationPanels.DEFAULT)" class="enter-slideLeftReturn exit-slideLeft speed-300">
+
+			<!-- Dashboard menu item -->
+			<li title="{{$root.bundle.mainMenu.dashboard}}" class="sidenav-menu-item">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.closeMenu()" ui-sref="dashboard" class="button">
+					<!-- <span class="caret pull-right" ng-hide="!plmNavigationCtrl.isOpen()"></span> -->
+					<span class="icon md md-2x md-home"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.dashboard}}</span>
+				</a>
+			</li>
+
+			<!-- Workspaces menu item -->
+			<li title="{{$root.bundle.mainMenu.workspaces}}" class="sidenav-menu-item workspace-menu-btn">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.goToInnerPanel(NavigationPanels.WORKSPACES)" class="button">
+					<span class="caret pull-right" ng-hide="!plmNavigationCtrl.isOpen()"></span>
+					<span class="icon md md-2x md-description"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.workspaces}}</span>
+				</a>
+			</li>
+
+			<!-- Link to JitterBit Integration -->
+			<li title="{{$root.bundle.dashboard.jitterBitLink}}" class="sidenav-menu-item plm-jitterbit-link" ng-if="enabledPLMJitterBitIntegration && plmNavigationCtrl.isUserAllowedToAdmin">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.closeMenu()" class="button" ui-sref="jitterbit">
+					<span class="icon zmdi zmdi-puzzle-piece"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.dashboard.jitterBitLink}}</span>
+				</a>
+			</li>
+
+			<!-- A360 Tenant menu item -->
+			<li title="{{plmNavigationCtrl.dataTabTitle}}" ng-class="{'disable-icon': !plmNavigationCtrl.dataTabUri}" class="sidenav-menu-item" feature-toggle="wip.datatab">
+				<a ng-href="{{plmNavigationCtrl.dataTabUri}}" target="_blank" class="button">
+					<span class="icon md-2x icon-Database"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.dataTab}}</span>
+				</a>
+			</li>
+			<!-- Reports menu item -->
+			<li title="{{$root.bundle.text.reports}}" class="sidenav-menu-item">
+				<a href="/reportListAction.do" target="_blank" class="button">
+					<span class="icon md-2x icon-Reports"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.text.reports}}</span>
+				</a>
+			</li>
+			<!-- Import menu item -->
+			<li title="{{$root.bundle.mainMenu.import}}" class="sidenav-menu-item" ng-show="plmNavigationCtrl.isUserAllowedToImport">
+				<a href="/importListAction.do" target="_blank" class="button">
+					<span class="icon md-2x md-playlist-add"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.import}}</span>
+				</a>
+			</li>
+			<!-- Administration menu item -->
+			<li title="{{$root.bundle.mainMenu.administration}}" class="sidenav-menu-item admin-menu-btn" ng-show="plmNavigationCtrl.isUserAllowedToAdmin">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.goToInnerPanel(NavigationPanels.ADMINISTRATION)" class="button">
+					<span class="caret pull-right" ng-hide="!plmNavigationCtrl.isOpen()"></span>
+					<span class="icon md-2x icon-Settings1"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.administration}}</span>
+				</a>
+			</li>
+
+			<!-- Help menu item -->
+			<li title="{{$root.bundle.mainMenu.help}}" class="sidenav-menu-item help-menu-btn">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.goToInnerPanel(NavigationPanels.HELP)" class="button">
+					<span class="caret pull-right" ng-hide="!plmNavigationCtrl.isOpen()"></span>
+					<span class="icon md md-2x md-help"></span>
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{$root.bundle.mainMenu.help}}</span>
+				</a>
+			</li>
+		</ul>
+
+		<span id="sidenav-menu-back" ng-show="plmNavigationCtrl.isOpen() && !plmNavigationCtrl.isAtPanel(NavigationPanels.DEFAULT)" class="enter-slideRightReturn exit-slideRight speed-300">
+			<a href="javascript:;" ng-click="plmNavigationCtrl.goBack()" class="button">
+				<span class="caret left"></span>
+				<span class="label">{{$root.bundle.mainMenu.back}}</span>
+			</a>
+		</span>
+
+		<!-- second level menu, workspaces -->
+		<ul id="workspaces-sidenav-submenu" ng-show="plmNavigationCtrl.isOpen() && plmNavigationCtrl.isAtPanel(NavigationPanels.WORKSPACES)" class="sidenav-submenu enter-slideRightReturn exit-slideRight speed-300">
+			<li ng-repeat="category in plmNavigationCtrl.categoryList" title="{{category.displayName}}" class="sidenav-submenu-expandable-item" ng-class="{'sidenav-submenu-item-open':plmNavigationCtrl.isCategoryOpen(category.id)}">
+				<a href="javascript:;" ng-click="plmNavigationCtrl.toggleCategory(category.id)" class="button">
+					<span class="label" ng-hide="!plmNavigationCtrl.isOpen()">{{category.displayName}}</span>
+					<!-- <span class="caret" ng-class="{'down': (!isCategoryOpen(category.id)), 'up': (isCategoryOpen(category.id))}"></span> -->
+					<span class="caret down static-rotateCaretVertical" ng-class="{'rotate': (plmNavigationCtrl.isCategoryOpen(category.id))}"></span>
+				</a>
+				<ul class="sidenav-submenu-panel" ng-hide="!plmNavigationCtrl.isCategoryOpen(category.id)">
+					<li class="sidenav-submenu-panel-item" ng-repeat="workspace in category.workspaces">
+						<a ui-sref="workspace-items-list({ workspaceId: workspace.id, itemId: null })"
+						   ng-click="plmNavigationCtrl.closeMenu()" class="button">{{workspace.displayName}}</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<!-- second level menu, help -->
+		<ul id="help-sidenav-submenu" ng-show="plmNavigationCtrl.isOpen() && plmNavigationCtrl.isAtPanel(NavigationPanels.HELP)" class="sidenav-submenu enter-slideRightReturn exit-slideRight speed-300">
+			<ul class="sidenav-submenu-panel">
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="{{plmNavigationCtrl.getHelpLink()}}" target="_blank" class="button">
+						<span class="icon zmdi zmdi-hc-2x zmdi-help-outline"></span>
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.helpMenu.helpButton.title}}</div>
+							<div class="label sub-label">{{$root.bundle.mainMenu.helpMenu.helpButton.subtitle}}</div>
+						</div>
+					</a>
+				</li>
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="{{$root.bundle.mainMenu.helpMenu.fusionLifecycleCommunity.link}}" target="_blank" class="button">
+						<span class="icon zmdi zmdi-hc-2x zmdi-accounts-alt"></span>
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.helpMenu.fusionLifecycleCommunity.title}}</div>
+							<div class="label sub-label">{{$root.bundle.mainMenu.helpMenu.fusionLifecycleCommunity.subtitle}}</div>
+						</div>
+					</a>
+				</li>
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="mailto:{{plmNavigationCtrl.getAdminEmail()}}" class="button">
+						<span class="icon zmdi zmdi-hc-2x zmdi-email"></span>
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.helpMenu.contactAdmin.title}}</div>
+							<div class="label sub-label">{{$root.bundle.mainMenu.helpMenu.contactAdmin.subtitle}}</div>
+						</div>
+					</a>
+				</li>
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-click="plmNavigationCtrl.openVignettesModal()" class="button">
+						<span class="icon zmdi zmdi-hc-2x zmdi zmdi-movie-alt"></span>
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.helpMenu.vignettes.title}}</div>
+							<br>
+							<div class="label sub-label">{{$root.bundle.mainMenu.helpMenu.vignettes.subtitle}}</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</ul>
+
+		<!-- second level menu, administration -->
+		<ul id="admin-sidenav-submenu" ng-show="plmNavigationCtrl.isUserAllowedToAdmin && plmNavigationCtrl.isOpen() && plmNavigationCtrl.isAtPanel(NavigationPanels.ADMINISTRATION)" class="sidenav-submenu enter-slideRightReturn exit-slideRight speed-300">
+			<ul class="sidenav-submenu-panel">
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="/admin#section=adminusers&tab=users" target="_blank" class="button admin-submenu-item">
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.adminMenu.security}}</div>
+						</div>
+					</a>
+				</li>
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="/admin#section=setuphome&tab=workspaces" target="_blank" class="button admin-submenu-item">
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.adminMenu.workspaceManager}}</div>
+						</div>
+					</a>
+				</li>
+				<li class="sidenav-menu-item sidenav-submenu-panel-item">
+					<a ng-href="/admin#section=setuphome&tab=general" target="_blank" class="button admin-submenu-item">
+						<div class="label-container">
+							<div class="label">{{$root.bundle.mainMenu.adminMenu.sysConfiguration}}</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</ul>
+	</md-sidenav>
+</div>

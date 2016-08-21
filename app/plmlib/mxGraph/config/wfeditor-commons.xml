@@ -1,0 +1,55 @@
+<mxEditor defaultEdge="edge"
+	helpWindowImage="plmlib/mxGraph/images/help.gif"
+	forcedInserting="0"
+	swimlaneRequired="0">
+	<include name="plmlib/mxGraph/config/editor-commons.xml"/>
+	<Array as="cycleAttributeValues">
+		<add value="#83027F"/>
+		<add value="#66B922"/>
+		<add value="#808913"/>
+		<add value="#CF0056"/>
+		<add value="#4679B6"/>
+	</Array>
+	<Array as="templates">
+		<add as="state">
+			<state customID="" shortName="" longName="" lockStateID="false" cmStateID="false" hidden="false"
+					reminderNotifications="false" reminderInterval="" reminderIncludeWeekends="false" reminderRepeat=""  
+					escalationEnabled="false" escalationDelay="" includeWeekends="" action="" field="" escalationScript="" transition="" notify="" transitions=""
+					escalationNotify="false" escalationNotifyAll="false">
+				<mxCell vertex="1">	
+					<mxGeometry as="geometry" width="121" height="61"/>
+				</mxCell>
+			</state>
+		</add>
+		<add as="initstate">
+			<initstate shortName="">
+				<mxCell vertex="1">	
+					<mxGeometry as="geometry" width="121" height="61"/>
+				</mxCell>
+			</initstate>
+		</add>
+		<add as="edge">
+			<transition customID="" shortName="" longName="" permissionID="" escalationTransitionEnabled="false" escalationPermissionId="" ignoreEscalatedPreconditions="false" preCondition="" validator="" action="" 
+						scriptActionId="" scriptConditionId="" scriptValidationId="" email="false" outstanding="false" 
+						notifyPerformers="false" hidden="false" passwordApproval="false" commentsForApproval="" saveStepLabel="">
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1"/>
+				</mxCell>
+			</transition>
+		</add>
+		<add as="note">
+			<note text="" hidden="false"><!-- 32=Align center -->
+				<mxCell vertex="1">		
+					<mxGeometry as="geometry" width="128" height="128"/>
+				</mxCell>
+			</note>
+		</add>
+		<add as="edgeNote">
+			<edgeNote>
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1"/>
+				</mxCell>
+			</edgeNote>
+		</add>
+	</Array>
+</mxEditor>

@@ -1,0 +1,285 @@
+// Parent SCSS
+//
+// This file imports all individual component files, i.e. those that begin with `_`.<br>
+// This file also imports fonts, constants, mixins, and extensions.<br>
+// <span style="color:red;">(As such, individual component files should **not** import anything.)</span>
+//
+// Styleguide 0
+
+
+/* General font imports
+-------------------------------------------------- */
+@import 'fonts/autodesk360';
+@import 'fonts/open-sans';
+@import 'fonts/plm-icons';
+@import 'fonts/silhouette';
+@import 'fonts/material-design';
+@import 'fonts/ui-grid';
+
+/* Other imports
+-------------------------------------------------- */
+@import 'constants';
+@import 'extensions';
+@import 'mixins';
+@import 'animate.css-scss/animate';
+
+/* General styles
+-------------------------------------------------- */
+*,
+a,
+button,
+select,
+html,
+textarea,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $defaultFont;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+html,
+body {
+	font-size: $defaultFontSize;
+
+	overflow: hidden;
+
+	max-width: 100%;
+	max-height: 100%;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+// @media only screen and( -webkit-min-device-pixel-ratio: 1.25 ),
+//        only screen and(      -o-min-device-pixel-ratio: 5/4 ),
+//        only screen and( min-resolution: 120dpi ),
+//        only screen and( min-resolution: 1.25dppx ) {
+//     body {
+//         font-size: 1rem;
+//     }
+// }
+
+a,
+a:active,
+a:visited,
+a:focus {
+	text-decoration: none;
+
+	color: $linkColor;
+	outline: transparent none 0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* PLM login page
+-------------------------------------------------- */
+@import 'plm-login';
+
+/* PLM overrides for Material design default theme (NEW)
+-------------------------------------------------- */
+@import 'plm-material';
+
+/* Page not found
+--------------------------------------------------- */
+@import 'page-not-found';
+
+/* Browser resize
+--------------------------------------------------- */
+@import 'browser-resize';
+
+/* Generic loader
+--------------------------------------------------- */
+@import 'generic-loader';
+
+/* Alert (notifications)
+-------------------------------------------------- */
+@import 'notifications';
+@import 'notification-modal';
+@import 'notification-toast';
+@import 'notification-details';
+
+/* Loading bar
+-------------------------------------------------- */
+@import 'loading-bar';
+
+/* Footer
+-------------------------------------------------- */
+@import 'plm-footer';
+
+/* Command bar
+-------------------------------------------------- */
+@import 'command-bar';
+
+/* Item viewer
+-------------------------------------------------- */
+@import 'item-viewer';
+
+/* Main dashboard
+-------------------------------------------------- */
+@import 'main-dashboard';
+
+/* Report chart modal
+-------------------------------------------------- */
+@import 'report-chart-modal';
+
+/* Workspace items
+-------------------------------------------------- */
+@import 'workspace-items';
+
+/* Workspace item
+-------------------------------------------------- */
+@import 'workspace-item';
+
+/* Add item (create page)
+-------------------------------------------------- */
+@import 'add-item';
+
+/* All views (tabs)
+-------------------------------------------------- */
+@import 'view-details'; // Item Details
+@import 'view-sourcing'; // Item Sourcing tab
+@import 'view-attachments'; // Attachments tab
+@import 'view-bom'; // View bom tab
+@import 'view-affected-items'; // Affected / Managed item view
+
+/* Workspace item grid
+-------------------------------------------------- */
+@import 'workspace-itemgrid';
+
+/* Workspace item project management
+-------------------------------------------------- */
+@import 'project-management';
+
+/* Workspace item milestones
+-------------------------------------------------- */
+@import 'workspace-itemmilestones';
+
+/* Report Chart Popup
+-------------------------------------------------- */
+@import 'workspace-itemgrid';
+
+/* Workflow Map
+-------------------------------------------------- */
+@import 'workflow-map';
+
+/* Workflow
+--------------------------------------------------- */
+@import 'workflow';
+
+/* Change log
+--------------------------------------------------- */
+@import 'change-log';
+
+/* Tabular data widget (and related styles)
+--------------------------------------------------- */
+@import 'tabular-data-widget';
+@import 'table-column-resize';
+@import 'infinite-scrolling';
+@import 'plm-ui-grid';
+
+/* Tree view widget
+--------------------------------------------------- */
+@import 'tree-view';
+
+/* Bootstrap overrides
+-------------------------------------------------- */
+//@import 'bootstrap-overrides';
+
+/* General utilities (NEW)
+-------------------------------------------------- */
+@import 'utilities';
+
+/* Field styles
+ * We should move/refactor all the styles in the files below to plm-field-selector's styles.scss
+-------------------------------------------------- */
+@import 'field';
+@import 'field-plain-text';
+@import 'field-picklist';
+@import 'field-rich-text';
+@import 'form-elements';
+@import 'item-picklists';
+@import 'field-wrapper'; // Most likely deprecated
+
+/* Imports for directives and smaller components
+-------------------------------------------------- */
+@import 'add-linkable-item';
+@import 'bulk-edit-dialog';
+@import 'create-item';
+@import 'section-wrapper';
+@import 'edit-linked-item';
+@import 'flyout';
+@import 'item-tooltip';
+@import 'multiselect';
+@import 'remove-item';
+@import 'confirmation-dialog';
+@import 'sticky';
+@import 'text-truncation';
+@import 'user-profile-summary';
+@import 'dropdown-widget';
+@import 'plm-material-dialog';
+@import 'tab-menu';
+@import 'webhooks';
+@import 'roamer-tree';
+@import 'view-bom-item-number';
+@import 'view-bom-pinned';
+@import 'view-attached-items';
+@import 'change-owner';
+@import 'vignettes-modal';
+@import 'fusion-header';
+
+// Page Wrapper
+//
+// Wrapper for page content to push footer downwards.
+//
+// Markup:
+// <none>None</none>
+//
+// #wrap - Applied to the page view
+//
+// Styleguide 0.1
+
+/* Wrapper for entire PLM content
+-------------------------------------------------- */
+#wrapper {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	// Sidenav/PLM navigation styles (needs to be imported inside this div) (NEW)
+
+	@import 'plm-navigation';
+
+	// Main div, containing plm-header, and content
+	#main {
+		min-width: 1px; // This is a fix specific to Firefox 34+ - avoids having the flexbox go over 100% width (it was working fine pre-34)
+		// PLM Header (NEW)
+
+		@import 'plm-header';
+
+		// The content div, with another md-content inside for all pages (expect for item details, that also has a md-toolbar)
+		#content {
+			z-index: 0;
+
+			display: inherit;
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			flex: 1 1 auto;
+		}
+
+		fusion-header {
+			min-height: $fusionHeaderHeight;
+			max-height: $fusionHeaderHeight;
+		}
+	}
+}
+
+// Classification commons import
+@import 'classification-commons';

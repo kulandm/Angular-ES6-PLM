@@ -1,0 +1,455 @@
+// Add Linkable Item
+//
+// Styles for the flyout that appears when adding linkable items.<br>
+//
+// Styleguide Components.AddLinkableItem
+
+// Add Item Flyout
+//
+// Overrides the default flyout styles.
+//
+// Markup:
+// <none>None</none>
+//
+// .add-item-flyout -
+//
+// Styleguide Components.AddLinkableItem.Flyout
+.add-item-flyout {
+	@extend %removeOutline;
+
+	position: absolute;
+	z-index: 80;
+
+	opacity: 1;
+
+	&.flyout.bottom,
+	&.flyout.bottom-left,
+	&.flyout.up {
+		margin-top: 0;
+		padding: 0;
+
+		// Add Item Flyout Arrow
+		//
+		// Overrides the default flyout arrow styles.
+		//
+		// Markup:
+		// <none>None</none>
+		//
+		// .flyout-arrow -
+		// .flyout-arrow:after - Adds box shadow for the flyout arrow
+		//
+		// Styleguide Components.AddLinkableItem.FlyoutArrow
+		.flyout-arrow {
+			@include set-width-height(0, 0);
+
+			position: relative;
+			// Adjust left position as we are adjusting flyout left position
+			left: -10px;
+
+			border: {
+				right: 10px solid transparent;
+				bottom: 10px solid $multiselectBackgroundColor;
+				left: 10px solid transparent;
+			}
+
+			&:after {
+				position: absolute;
+				z-index: -1;
+				top: 2px;
+				left: -7px;
+
+				width: 15px;
+				height: 15px;
+
+				content: '';
+				transform: rotate(45deg);
+
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+}
+
+// Add Item Flyout Content
+//
+// Styles for the content inside the flyout.
+//
+// Markup:
+// <none>None</none>
+//
+// .add-item-flyout-content -
+//
+// Styleguide Components.AddLinkableItem.FlyoutContent
+.add-item-flyout-content {
+	@extend %raisedContainer;
+
+	width: $addExistingItemContentWidth;
+
+	// Item List
+	//
+	// Styles for the list of items inside the flyout.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-list - Sets `display: table`
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.List
+	.item-list {
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+
+		background-color: $primaryBackgroundColor;
+
+		li {
+			padding: {
+				top: 5px;
+				bottom: 5px;
+			}
+
+			border-top: 1px solid $primaryBorderColor;
+		}
+
+		// Override default
+		md-checkbox:focus .md-label:not(:empty) {
+			border: 0;
+		}
+	}
+
+	// Item Information
+	//
+	// Styles for the information of items inside the flyout.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-info - Sets `display: inline-block`
+	// .item-info-details -
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.Info
+	.item-info {
+		display: inline-block;
+
+		.item-info-details {
+			font-size: 11px;
+
+			color: #666666;
+		}
+	}
+
+	// Item Selected
+	//
+	// Styles for the selected item.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-selected - Sets `background-color: lighten($linkColor, 45%)`
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.Selected
+	.item-selected {
+		background-color: lighten($linkColor, 45%);
+	}
+
+	// Item List Empty
+	//
+	// Styles for the text 'No Matches' when search returns no items.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-list-empty -
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.EmptyList
+	.item-list-empty {
+		font: {
+			weight: 300;
+			size: 12px;
+		}
+
+		padding: {
+			bottom: 15px;
+			left: 60px;
+		}
+
+		color: $addExistingItemDetailsFontColor;
+	}
+
+	// Item Disabled
+	//
+	// Styles for the item already added to another item.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-disabled -
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.Disabled
+	.item-disabled {
+
+		.item-info-name a,
+		.item-info-details {
+			cursor: default;
+
+			opacity: 0.6;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	// Item Tooltip Icon
+	//
+	// Styles for the (?) icon for an item already added to another item.
+	//
+	// Markup:
+	// <none>None</none>
+	//
+	// .item-tooltip-icon -
+	//
+	// Styleguide Components.AddLinkableItem.FlyoutItem.TooltipIcon
+	.item-tooltip-icon {
+		@extend %removeLinkStyle;
+		@extend %removeOutline;
+
+		font-size: 18px;
+	}
+
+	md-checkbox {
+		.md-icon {
+			border-color: $primaryBorderColor;
+			background-color: $primaryBackgroundColor;
+		}
+
+		&[disabled] {
+			cursor: default;
+
+			.md-icon {
+				opacity: 0.4;
+				border-color: $primaryBorderColor;
+				background-color: $primaryBackgroundColor;
+			}
+		}
+
+		&.md-checked {
+
+			.md-icon {
+				background-color: darken($secondaryBackgroundColor, 50%);
+			}
+		}
+
+		// TODO temporary fix until
+		// https://github.com/zavoloklom/material-design-iconic-font/issues/39
+		// is fixed.
+		/* stylelint-disable selector-pseudo-element-colon-notation  */
+		.md-label::before {
+			display: none;
+		}
+	}
+}
+
+// Add Item Flyout Search
+//
+// Styles for the search section inside the flyout.
+//
+// Markup:
+// <none>None</none>
+//
+// .add-item-search -
+//
+// Styleguide Components.AddLinkableItem.FlyoutSearch
+.add-item-search {
+	padding: 12px;
+
+	// Override defaults (grr!)
+	md-select {
+		margin: 0;
+
+		.md-select-value {
+			min-width: 0;
+			width: 0;
+		}
+
+		.md-select-icon {
+			margin: 0;
+			width: auto;
+
+			&::after {
+				top: 0;
+				transform: none;
+				-webkit-transform: none;
+			}
+		}
+	}
+
+	input[type='text'] {
+		font-size: 12px;
+
+		width: 100%;
+		padding: {
+			right: 2px;
+			left: 2px;
+		}
+
+		border: 0;
+
+		&[disabled] {
+			background-color: $whiteColor;
+		}
+	}
+
+	.zmdi-search,
+	.zmdi-close {
+		font-size: 18px;
+
+		display: inline-block;
+
+		width: 20px;
+
+		vertical-align: middle;
+
+		color: $primaryBorderColor;
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: none;
+		}
+	}
+}
+
+// Add Item Flyout Workspace Filter
+//
+// Styles for the workspace filter in the flyout.
+//
+// Markup:
+// <none>None</none>
+//
+// .linkable-workspace-option -
+//
+// Styleguide Components.AddLinkableItem.FlyoutWorkspaceFilter
+.linkable-workspace-option {
+
+	.md-text {
+		font-family: $defaultFont;
+		line-height: 1.4em;
+	}
+}
+
+// Add Item Flyout Info
+//
+// Styles for the information (about total number of items) in the flyout.
+//
+// Markup:
+// <none>None</none>
+//
+// .add-item-flyout-info -
+//
+// Styleguide Components.AddLinkableItem.FlyoutInfo
+.add-item-flyout-info {
+	font: {
+		weight: 300;
+		size: 12px;
+	}
+
+	padding-bottom: 10px;
+
+	text-align: center;
+
+	color: $addExistingItemDetailsFontColor;
+}
+
+// Add Item Flyout Sticky
+//
+// Styles for sticky that shows the number of selected items.
+//
+// Markup:
+// <div class="add-item-flyout-sticky" style="position:relative;">
+//    <div>
+//       <div>2 items selected</div>
+//    </div>
+// </div>
+//
+// .add-item-flyout-sticky - Uses the same sticky style found in the app
+//
+// Styleguide Components.AddLinkableItem.FlyoutSticky
+.add-item-flyout-sticky {
+	font-size: 12px;
+	font-weight: 600;
+
+	padding: {
+		top: 10px;
+		bottom: 10px;
+		left: 40px;
+	}
+
+	background-color: $secondaryBackgroundColor;
+
+	.divider {
+		padding: {
+			right: 5px;
+			left: 5px;
+		}
+	}
+}
+
+// Add Item Flyout Footer
+//
+// Styles for footer of the flyout.<br>
+// Contains action buttons.
+//
+// Markup:
+// <none>None</none>
+//
+// .add-item-flyout-footer -
+//
+// Styleguide Components.AddLinkableItem.FlyoutFooter
+md-content.add-item-flyout-footer {
+	border-top: $addExistingItemFooterBorder;
+	background-color: $secondaryBackgroundColor;
+
+	.md-button:not(.md-primary) {
+		background-color: $whiteColor;
+	}
+}
+
+// Managed By Tooltip
+//
+// Styles for tooltip flyout that shows already linked items.
+//
+// Markup:
+// <none>None</none>
+//
+// .managed-by-tooltip -
+//
+// Styleguide Components.AddLinkableItem.Flyout.Tooltip
+.managed-by-tooltip {
+	max-width: 275px;
+
+	.flyout-content {
+		padding: 10px 10px 15px 10px;
+
+		color: $itemTooltipContentColor;
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.8);
+
+		a {
+
+			&.md-close {
+				cursor: pointer;
+
+				color: $itemTooltipContentColor;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.flyout-arrow {
+		left: -5px;
+	}
+}

@@ -1,0 +1,4 @@
+properties=Eigenschaften
+outline=%DCbersicht
+tasks=Aufgaben
+help=Hilfe

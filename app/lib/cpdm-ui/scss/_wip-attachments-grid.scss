@@ -1,0 +1,102 @@
+.wip-attachment-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+
+	width: 100%;
+
+	& > span {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+
+		& > div {
+			display: flex;
+			flex: 1;
+
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+
+	.center-cell-contents {
+		text-align: center;
+	}
+
+	.ui-grid-render-container .ui-grid-row .ui-grid-cell:first-child .ui-grid-cell-contents {
+		padding-left: 5px;
+	}
+
+	.ui-grid-cell-contents {
+		&.checkbox-cell {
+			line-height: 23px;
+		}
+
+		.dropdown-widget .dropdown-widget-wrapper {
+			margin-left: 28px;
+			padding: 0;
+		}
+
+		input[type="checkbox"] {
+			margin: {
+				top: 4px;
+				right: 10px;
+			}
+
+			vertical-align: top;
+		}
+	}
+
+	a .zmdi-more {
+		font-size: 20px;
+
+		text-decoration: none;
+
+		color: $darkerGray;
+	}
+
+	.file-type-icon {
+		padding-right: 10px;
+	}
+
+	.icon-a360-pin {
+		font-size: 1.5em;
+	}
+	.zero-doc-container {
+		text-align: center;
+		//position the container to not cover the table's header
+		top: 53px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		padding-top: 70px;
+
+		img {
+			width: 150px;
+		}
+
+		.no-attachment {
+			padding-top: 25px;
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		.click-add {
+			padding-top: 25px;
+			font-size: 14px;
+			font-weight: 400;
+
+			.add-button {
+				font-weight: 600;
+				cursor:pointer;
+
+				&:focus {
+					outline-style: none;
+				}
+
+			}
+		}
+	}
+}

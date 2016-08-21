@@ -1,0 +1,105 @@
+/*
+ * Wrapper for when displaying a plain text value
+ */
+.field-plain-text {
+  /*
+	 * Overrides for when in EDIT mode of a widget
+	 */
+  /*
+	 * Work-around for filtered picklists
+	 * NOTE: these rules can be removed once the FPL is
+	 * migrated to the new widget
+	 */ }
+  .field-plain-text[disabled] {
+    opacity: 0.5 !important; }
+  .field-plain-text .deleted-value {
+    color: rgba(255, 0, 0, 0.5) !important;
+    cursor: context-menu !important;
+    text-decoration: line-through; }
+  .field-plain-text.edit-mode:hover .clear-button {
+    visibility: visible; }
+  .field-plain-text .fpl-wrapper {
+    display: flex; }
+    .field-plain-text .fpl-wrapper .fpl-wrapper-field {
+      flex: 1 1 auto; }
+    .field-plain-text .fpl-wrapper .fpl-wrapper-button {
+      padding: 2px 0 0 2px; }
+      .field-plain-text .fpl-wrapper .fpl-wrapper-button button {
+        font-size: 18px; }
+
+.field-radio #grid-radio-field {
+  z-index: 1;
+  overflow-y: auto;
+  max-width: 300px;
+  min-height: auto;
+  max-height: 35rem;
+  margin-top: -11px;
+  margin-left: -6px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08); }
+  .field-radio #grid-radio-field md-radio-button {
+    margin: 0;
+    padding: .61em; }
+    .field-radio #grid-radio-field md-radio-button .md-label {
+      line-height: 1.4;
+      overflow: hidden;
+      width: 90%;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .field-radio #grid-radio-field md-radio-button .md-on {
+      background-color: rgba(5, 167, 223, 0.87); }
+    .field-radio #grid-radio-field md-radio-button.md-checked .md-off {
+      border-color: rgba(5, 167, 223, 0.87); }
+    .field-radio #grid-radio-field md-radio-button:hover {
+      background: #F0FAFD; }
+  @media only screen and (max-height: 768px) {
+    .field-radio #grid-radio-field {
+      max-height: 25rem; } }
+  @media only screen and (max-height: 620px) {
+    .field-radio #grid-radio-field {
+      max-height: 20rem; } }
+  @media only screen and (max-height: 570px) {
+    .field-radio #grid-radio-field {
+      max-height: 15rem; } }
+  @media only screen and (max-height: 475px) {
+    .field-radio #grid-radio-field {
+      max-height: 10rem; } }
+
+.required-field-invalid span[ng-switch-when="false"] {
+  color: rgba(255, 0, 0, 0.7); }
+
+/*
+ * Overrides for Semantic UI dropdowns
+ */
+.ui.dropdown .search {
+  padding: inherit; }
+
+.ui.dropdown.search {
+  padding-right: 3.6em; }
+
+.ui.dropdown .menu .header {
+  margin: 0;
+  padding: 11px 16px;
+  font-weight: normal;
+  text-transform: inherit; }
+  .ui.dropdown .menu .header:hover {
+    cursor: default; }
+
+/*
+ * Clear button for picklists
+ */
+.clear-button {
+  font-size: 16px;
+  position: absolute;
+  z-index: 9999;
+  top: 6px;
+  right: 25px;
+  visibility: hidden;
+  float: right;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  border: 0;
+  outline: 0;
+  background-color: transparent; }

@@ -1,0 +1,103 @@
+.workspace-tableau {
+	text-align: center;
+	cursor: pointer;
+
+	span.icon-SuspensionPoints {
+		width: 100%;
+		min-height: $workspaceTableauIconSuspensionPointsHeight;
+		line-height: $workspaceTableauIconSuspensionPointsHeight !important;
+		display: inline-block;
+		border: $workspaceTableauBorder;
+		&:hover {
+			background-color: $workspaceTableauIconSuspensionPointsBG;
+		}
+		&:focus {
+			background-color: $workspaceTableauIconSuspensionPointsBG;
+		}
+
+	}
+}
+
+.workspace-tableau-tooltip {
+	background-color: $workspaceTableauBoxBackgroundColor;
+	border: $workspaceTableauBorder;
+	border-radius: $workspaceTableauBorderRadius;
+	padding: $workspaceTableauPadding !important;
+	max-width: $workspaceTableauBoxWidth;
+	min-width: $workspaceTableauBoxWidth;
+	max-height: 600px;
+	min-height: 600px;
+	font-family: $defaultFont;
+	font-weight: $workspaceTableauFontWeight;
+	font-size: $workspaceTableauFontSize;
+	color: $secondaryColor;
+	box-shadow: $workspaceTableauBoxShadow;
+
+	.workspace-tableau-box {
+		display: flex;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		min-height: 200px;
+		font-size: $workspaceTableauFontSizeHeaderColumn;
+		max-height: 530px;
+
+		div.wtd-columns {
+			display: flex;
+			flex-direction: column;
+			> {
+				display: flex;
+				flex-direction: column;
+			}
+			span.wtd-columns-header {
+				padding-bottom: $workspaceTableauHeaderPaddingBottom;
+				text-transform: uppercase;
+				display: block;
+			}
+			a {
+				text-decoration: none;
+			}
+			ul {
+				padding-left: 0;
+				li {
+					list-style: none;
+					font-weight: bold;
+					margin-bottom: 5px;
+					span {
+						font-size: $workspaceTableauFontSizeHeaderColumn;
+						color: $blackColor;
+						padding-right: 5px;
+						line-height: $workspaceTableauLineHeight !important;
+					}
+
+					/* hidding the background when group is open */
+
+					&.sidenav-submenu-item-open:hover {
+						background-color: $workspaceTableauBoxBackgroundColor;
+						md-checkbox:hover {
+							background-color: $workspaceTableauListHoverColor;
+						}
+					}
+
+					&:hover {
+						background-color: $workspaceTableauListHoverColor;
+					}
+				}
+			}
+
+			&.wtd-unselected {
+				ul li div.enter-expandDown {
+					max-height: none;
+				}
+			}
+		}
+
+	}
+
+	.buttons-footer {
+		position: absolute;
+		bottom: 5px;
+		padding-top: 5px;
+	}
+
+}

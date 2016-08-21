@@ -1,0 +1,27 @@
+{
+  "name": "plm-users-selector",
+  "description": "PLM UI USERS SELECTOR",
+  "main": "",
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "plm-localization": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-localization.git#v1.0.53",
+    "plm-user-avatar": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-user-avatar.git#~v1.0.4"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  }
+}

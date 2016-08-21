@@ -1,0 +1,24 @@
+<md-dialog aria-label="Delete Attachment Confirmation"  class="attachment-delete-dialog">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{$root.bundle.wip.attachments.removeItems}}</h2>
+			<span flex></span>
+		</div>
+	</md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<h4>{{$root.bundle.wip.attachments.confirmRemove}} {{WipAttachmentsDeleteDialogCtrl.totalItemsSelected}}
+				<span ng-if="WipAttachmentsDeleteDialogCtrl.totalItemsSelected === 1">{{$root.bundle.wip.attachments.itemQuestion}}</span>
+				<span ng-if="WipAttachmentsDeleteDialogCtrl.totalItemsSelected > 1">{{$root.bundle.wip.attachments.itemsQuestion}}</span>
+			</h4>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<md-button ng-click="WipAttachmentsDeleteDialogCtrl.closeDialog()">
+			{{$root.bundle.wip.attachments.cancel}}
+		</md-button>
+		<md-button class="md-primary delete-button" ng-click="WipAttachmentsDeleteDialogCtrl.proceedToDelete()">
+			{{$root.bundle.wip.attachments.remove}}
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

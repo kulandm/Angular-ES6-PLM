@@ -1,0 +1,44 @@
+<h1><code ng:non-bindable="">ViewDefinitionsListeners</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-viewdefinitionslisteners-page"><p>A class that registers the listeners
+for interacting with the BomViews endpoint</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-viewdefinitionslisteners-constructor-page"><p>Registers the listeners</p>
+</div></div>
+</li>
+<li><h3 id="methods_registergetlistener">registerGetListener()</h3>
+<div class="registergetlistener"><div class="models-viewdefinitionslisteners-registergetlistener-page"><p>Registers the get listener
+recieves &#39;viewDefinitions:(wsId):get&#39;,
+     witha a link to the view definitions</p>
+</div><h5 id="methods_registergetlistener_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionslisteners-registergetlistener-page"><p>the unique id of the listener</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_respondtogetlistener">respondToGetListener(event, viewDefLink, args)</h3>
+<div class="respondtogetlistener"><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>response function for the get listener
+Requests that ViewDefinition fetch the the views for the given workspace
+Then sends &#39;viewDefinition:(wsId):done&#39;
+    with an instance of ViewDefinition</p>
+</div><h5 id="methods_respondtogetlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>the event that was sent to request the view definition</p>
+</div></td></tr><tr><td>viewDefLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>the link to the view definition</p>
+</div></td></tr><tr><td>args</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>any other parameters for getting the view definition</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_respondtogetlistener">respondToGetListener(event, viewDefsLink, args)</h3>
+<div class="respondtogetlistener"><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>response function for the get listener
+Requests that ViewDefinitions fetch the all the views for the given workspace
+Then sends &#39;viewDefinitions:(wsId):done&#39;
+    with an instance of ViewDefinitions</p>
+</div><h5 id="methods_respondtogetlistener_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>the event that was sent to request the view definitions</p>
+</div></td></tr><tr><td>viewDefsLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>the link to the view definitions</p>
+</div></td></tr><tr><td>args</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-viewdefinitionslisteners-respondtogetlistener-page"><p>any other parameters for getting the view definitions</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

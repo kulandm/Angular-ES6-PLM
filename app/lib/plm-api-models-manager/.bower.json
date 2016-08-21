@@ -1,0 +1,42 @@
+{
+  "name": "plm-api-models-manager",
+  "description": "PLM UI API Models Manager - ModelsManager and App",
+  "main": "dist/plm-api-models-manager.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "*",
+    "!dist/*.js"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8",
+    "underscore": "~1.8.3",
+    "plm-underscore": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-underscore.git#1.0.0",
+    "plm-event-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-event-service.git#1.0.1",
+    "plm-classic-redirector": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-classic-redirector.git#1.0.3",
+    "plm-rest-wrapper-service": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-rest-wrapper-service.git#1.0.0",
+    "plm-unit-tests-mocks": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-unit-tests-mocks.git#1.0.33"
+  },
+  "resolutions": {
+    "angular": "1.4.8",
+    "plm-event-service": "1.0.1",
+    "plm-unit-tests-mocks": "^1.0.33"
+  },
+  "version": "1.0.12",
+  "_release": "1.0.12",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.12",
+    "commit": "3f603bed7b861bd774c39044535ba84ef06b3305"
+  },
+  "_source": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git",
+  "_target": "v1.0.12",
+  "_originalSource": "https://svc_d_tabasco_bot:b2f112965549f804d50f8fc68be3171765f131b1@git.autodesk.com/plm-ui/plm-api-models-manager.git"
+}

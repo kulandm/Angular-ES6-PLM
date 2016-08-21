@@ -1,0 +1,187 @@
+<h1><code ng:non-bindable="">ViewGridController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewgridcontroller-page"><p>This controller corresponds to /workspaceItems/{workspaceId}/{itemId}/grid.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addrow">addRow(rowIndex)</h3>
+<div class="addrow"><div class="controllers-workspaceitem-viewgridcontroller-addrow-page"><p>Inserts new rows at the index specified by rowIndex</p>
+</div><h5 id="methods_addrow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>rowIndex</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-addrow-page"><p>The index at which a row to be added, if not provided, we add to the end.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_applysort">applySort(column, order, scope)</h3>
+<div class="applysort"><div class="controllers-workspaceitem-viewgridcontroller-applysort-page"><p>Initiates request for single column sorting.</p>
+</div><h5 id="methods_applysort_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>column</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-applysort-page"><p>The ID of the column on which to sort - should match <code>columns.field</code>.</p>
+</div></td></tr><tr><td>order</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-applysort-page"><p>The sort order - can either be &#39;asc&#39; or &#39;desc&#39;.</p>
+</div></td></tr><tr><td>scope</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-applysort-page"><p>The sort scope from TableColumnSort directive.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_checkcurrentstate">checkCurrentState()</h3>
+<div class="checkcurrentstate"><div class="controllers-workspaceitem-viewgridcontroller-checkcurrentstate-page"><p>Check the current state of grid view, whether in view, edit or add.</p>
+</div></div>
+</li>
+<li><h3 id="methods_doscroll">doScroll()</h3>
+<div class="doscroll"><div class="controllers-workspaceitem-viewgridcontroller-doscroll-page"><p>Scroll event handler for infinite scrolling.</p>
+</div></div>
+</li>
+<li><h3 id="methods_haschanged">hasChanged()</h3>
+<div class="haschanged"><div class="controllers-workspaceitem-viewgridcontroller-haschanged-page"><p>Checks if data has changed</p>
+</div><h5 id="methods_haschanged_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-haschanged-page"><p>True, if data has changed</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hidecontextmenu">hideContextMenu()</h3>
+<div class="hidecontextmenu"><div class="controllers-workspaceitem-viewgridcontroller-hidecontextmenu-page"><p>Hides Context Menu</p>
+</div></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewgridcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsegriddata">parseGridData()</h3>
+<div class="parsegriddata"><div class="controllers-workspaceitem-viewgridcontroller-parsegriddata-page"><p>Parses the grid data for the tabularDataWidget.</p>
+</div></div>
+</li>
+<li><h3 id="methods_parserow">parseRow(row, rowIndex)</h3>
+<div class="parserow"><div class="controllers-workspaceitem-viewgridcontroller-parserow-page"><p>Parses the row to fit for table data.</p>
+</div><h5 id="methods_parserow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-parserow-page"><p>The row with data to be added</p>
+</div></td></tr><tr><td>rowIndex</td><td><a href="" class="label type-hint type-hint-integer">Integer</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-parserow-page"><p>The index of the row in grid data</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_performaction">performAction(event, row, key)</h3>
+<div class="performaction"><div class="controllers-workspaceitem-viewgridcontroller-performaction-page"><p>Scroll event handler for clicking inside tabular widget.</p>
+</div><h5 id="methods_performaction_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-performaction-page"><p>The event object that was trigger</p>
+</div></td></tr><tr><td>row</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-performaction-page"><p>The row object of the table data</p>
+</div></td></tr><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-performaction-page"><p>The column key of the table data row</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd()</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewgridcontroller-triggeradd-page"><p>Triggered by clicking add button.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewgridcontroller-triggercancel-page"><p>Triggered by clicking cancel button. NOTE: name has to be triggerCancel.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercontextmenu">triggerContextMenu(event, param)</h3>
+<div class="triggercontextmenu"><div class="controllers-workspaceitem-viewgridcontroller-triggercontextmenu-page"><p>Triggers context menu on the element.</p>
+</div><h5 id="methods_triggercontextmenu_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-triggercontextmenu-page"><p>The javascript event</p>
+</div></td></tr><tr><td>param</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-triggercontextmenu-page"><p>The parameter passed back from the triggering</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggeredit">triggerEdit(addRow)</h3>
+<div class="triggeredit"><div class="controllers-workspaceitem-viewgridcontroller-triggeredit-page"><p>Triggers edit mode.</p>
+</div><h5 id="methods_triggeredit_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>addRow</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewgridcontroller-triggeredit-page"><p>A boolean determining whether we should add new row.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewgridcontroller-triggersave-page"><p>Triggered by clicking save button. NOTE: name has to be triggerSave.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_gridobj">GridObj</h3>
+<div class="gridobj"><div class="controllers-workspaceitem-viewgridcontroller-gridobj-page"><p>Reference to grid data model.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewgridcontroller-addpermission-page"><p>The permission to be set to control visibility of display button.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addstate">addState</h3>
+<div class="addstate"><div class="controllers-workspaceitem-viewgridcontroller-addstate-page"><p>The name of the view state for this tab determining the displaying of add button.</p>
+</div></div>
+</li>
+<li><h3 id="properties_bundle">bundle</h3>
+<div class="bundle"><div class="controllers-workspaceitem-viewgridcontroller-bundle-page"><p><code>private</code> Assigns the rootScope&#39;s bundle (with localization) to this controller&#39;s bundle.</p>
+</div></div>
+</li>
+<li><h3 id="properties_canhidecontextmenu">canHideContextMenu</h3>
+<div class="canhidecontextmenu"><div class="controllers-workspaceitem-viewgridcontroller-canhidecontextmenu-page"><p>A boolean val that controls if the context menu can be hidden.
+This is to get around using click-outside-element.</p>
+</div></div>
+</li>
+<li><h3 id="properties_customvars">customVars</h3>
+<div class="customvars"><div class="controllers-workspaceitem-viewgridcontroller-customvars-page"><p>The object that holds variables that custom fields need for binding ng-model.</p>
+</div></div>
+</li>
+<li><h3 id="properties_edit">edit</h3>
+<div class="edit"><div class="controllers-workspaceitem-viewgridcontroller-edit-page"><p>A boolean val that controls if the user is in view or editing mode, to render form elements.</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewgridcontroller-editpermission-page"><p>The permission to be set to control visibility of display button.</p>
+</div></div>
+</li>
+<li><h3 id="properties_endoflist">endOfList</h3>
+<div class="endoflist"><div class="controllers-workspaceitem-viewgridcontroller-endoflist-page"><p><code>private</code> A flag holding whether we&#39;ve reached the end of all items in the workspace.</p>
+</div></div>
+</li>
+<li><h3 id="properties_errors">errors</h3>
+<div class="errors"><div class="controllers-workspaceitem-viewgridcontroller-errors-page"><p>The object holding validation errors per row per cell.</p>
+</div></div>
+</li>
+<li><h3 id="properties_griddata">gridData</h3>
+<div class="griddata"><div class="controllers-workspaceitem-viewgridcontroller-griddata-page"><p>Row data for grid.</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridlistenerid">gridListenerId</h3>
+<div class="gridlistenerid"><div class="controllers-workspaceitem-viewgridcontroller-gridlistenerid-page"><p><code>private</code> Listener for grid object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridmeta">gridMeta</h3>
+<div class="gridmeta"><div class="controllers-workspaceitem-viewgridcontroller-gridmeta-page"><p>Grid meta data.</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridmetalistenerid">gridMetaListenerId</h3>
+<div class="gridmetalistenerid"><div class="controllers-workspaceitem-viewgridcontroller-gridmetalistenerid-page"><p><code>private</code> Listener for grid meta object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_gridvalidationlistenerid">gridValidationListenerId</h3>
+<div class="gridvalidationlistenerid"><div class="controllers-workspaceitem-viewgridcontroller-gridvalidationlistenerid-page"><p><code>private</code> Listener for grid validation object.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewgridcontroller-itemid-page"><p>The item id of the current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_scrollcontext">scrollContext</h3>
+<div class="scrollcontext"><div class="controllers-workspaceitem-viewgridcontroller-scrollcontext-page"><p>The context for attaching handler for infinite scrolling.</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectedrowid">selectedRowId</h3>
+<div class="selectedrowid"><div class="controllers-workspaceitem-viewgridcontroller-selectedrowid-page"><p>Stores the selected row ID for which the context menu has been shown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_showcontextmenu">showContextMenu</h3>
+<div class="showcontextmenu"><div class="controllers-workspaceitem-viewgridcontroller-showcontextmenu-page"><p>A boolean val that controls if the context menu is shown.</p>
+</div></div>
+</li>
+<li><h3 id="properties_sortconfig">sortConfig</h3>
+<div class="sortconfig"><div class="controllers-workspaceitem-viewgridcontroller-sortconfig-page"><p>The sort configurations for grid.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewgridcontroller-tablecolumns-page"><p>Columns for the tabularDataWidget.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewgridcontroller-tabledata-page"><p>Data for the tabularDataWidget.</p>
+</div></div>
+</li>
+<li><h3 id="properties_that">that</h3>
+<div class="that"><div class="controllers-workspaceitem-viewgridcontroller-that-page"><p><code>private</code> Reference to this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-workspaceitem-viewgridcontroller-workspaceid-page"><p>The workspace id of the current item.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

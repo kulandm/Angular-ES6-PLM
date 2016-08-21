@@ -1,0 +1,37 @@
+<h1><code ng:non-bindable="">BulkBomLoader</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bulkbomloader-page"><p>A service that is used to load the BulkBom.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bulkbomloader-constructor-page"><p>Intializes the service object.</p>
+</div></div>
+</li>
+<li><h3 id="methods_loadbulkbom">loadBulkBom(`eventId`, `bulkBomEndPointLink`, `queryParameters`)</h3>
+<div class="loadbulkbom"><div class="models-bulkbomloader-loadbulkbom-page"><p>makes a request for a Bulkbom using the <code>bulkBomEndPointLink</code> and
+<code>queryParameters</code>.</p>
+</div><h5 id="methods_loadbulkbom_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`eventId`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbomloader-loadbulkbom-page"><p>The unique id that will be used to broadcast the
+request for loading the BulkBom. (We are using the urn of item).</p>
+</div></td></tr><tr><td>`bulkBomEndPointLink`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbomloader-loadbulkbom-page"><p>the endpoint link for the bulk bom.</p>
+</div></td></tr><tr><td>`queryParameters`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbomloader-loadbulkbom-page"><p>the parameters that needs to be passed to the
+endpoint in order to make the request properly.</p>
+</div></td></tr></tbody></table><h5 id="methods_loadbulkbom_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="models-bulkbomloader-loadbulkbom-page"><p>A promise that eventually resolves to the fetched BulkBom.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_requestforbulkbom">requestForBulkBom(`eventId`, `itemId`, `queryParameters`)</h3>
+<div class="requestforbulkbom"><div class="models-bulkbomloader-requestforbulkbom-page"><p>Will send message requesting for getting the <code>BulkBom</code> using
+the <code>queryParameters</code> and <code>itemId</code>.</p>
+</div><h5 id="methods_requestforbulkbom_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`eventId`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbomloader-requestforbulkbom-page"><p>The unique id that will be used to broadcast the
+request for loading the BulkBom. (We are using the urn of item).</p>
+</div></td></tr><tr><td>`itemId`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bulkbomloader-requestforbulkbom-page"><p>the bulk bom endpoint link.</p>
+</div></td></tr><tr><td>`queryParameters`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bulkbomloader-requestforbulkbom-page"><p>the query parameters to be sent to the
+end point.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

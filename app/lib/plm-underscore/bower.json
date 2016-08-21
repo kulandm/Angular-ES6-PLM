@@ -1,0 +1,29 @@
+{
+  "name": "plm-underscore",
+  "description": "PLM UI Underscore Service",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "1.4.8",
+    "angular": "1.4.8"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  },
+  "version": "1.0.2"
+}

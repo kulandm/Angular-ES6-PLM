@@ -1,0 +1,10 @@
+<div class="tree-table-container">
+    <!-- TODO: i18n -->
+    <tree-view root-nodes="rootTasks"
+    		   display-field="{{treeViewDisplayField}}"
+    		   toggle-node="onNodeToggle(collapsed, node)"
+    		   tree-title="{{$root.bundle.projectManagement.treeTable.treeTitle}}"
+    		   tree-summary="Project Summary">
+    </tree-view>
+    <tabular-data-widget columns="tableColumns" data="tableData" footer="summaryData" />
+</div>

@@ -1,0 +1,67 @@
+<!-- Command bar, top -->
+<command-bar parent-ctrl="viewNamedRelationshipsCtrl">
+	<!-- Transcluded buttons that are dependant on this controller -->
+	<span layout="row" layout-align="start center">
+		<!-- Add button -->
+		<div>
+			<md-button
+				aria-label="{{$root.bundle.button.add}}"
+				ng-disabled="viewNamedRelationshipsCtrl.selectedItems.length || viewNamedRelationshipsCtrl.hasActiveFlyout()"
+				ng-click="viewNamedRelationshipsCtrl.triggerAdd($event);">
+				<span class="label">{{$root.bundle.button.add}}</span>
+			</md-button>
+		</div>
+		<!-- Remove button -->
+		<div ng-if="viewNamedRelationshipsCtrl.tableData.length">
+			<md-button
+				aria-label="{{$root.bundle.button.remove}}"
+				ng-click="viewNamedRelationshipsCtrl.triggerDelete()"
+				ng-disabled="viewNamedRelationshipsCtrl.selectedItems.length === 0">
+				<span class="label">{{$root.bundle.button.remove}}</span>
+			</md-button>
+		</div>
+	</span>
+</command-bar>
+
+<!-- Wrapper for content, containing the three split panels -->
+<md-content layout-fill layout="row" id="item-internal-wrapper">
+
+	<md-content layout-fill id="item-main">
+		<table-data
+			columns="viewNamedRelationshipsCtrl.tableColumns"
+			rows="viewNamedRelationshipsCtrl.tableData"
+			grid-api="viewNamedRelationshipsCtrl.gridApiInterface"
+			selectable-rows="true"
+					
+			is-multi-select="true"
+			use-default-selection-column="false"
+			select-rows-function="viewNamedRelationshipsCtrl.selectRow(row)"
+			resizable-columns>
+		</table-data>
+	</md-content>
+
+</md-content>
+
+<script type="text/ng-template" id="checkboxHeaderTemplate">
+	<div class="ui-grid-cell ui-grid-input-checkbox-column">
+		<input type="checkbox"
+			ng-click="grid.appScope.viewNamedRelationshipsCtrl.toggleAllSelection()">
+	</div>
+</script>
+
+<script type="text/ng-template" id="checkboxTemplate">
+	<div class="ui-grid-input-checkbox-column">
+		<input type="checkbox"
+			ng-checked="row.isSelected === true">
+	</div>
+</script>
+
+<!-- Item Display Name Link -->
+<script type="text/ng-template" id="namedRelationshipsLinkTemplate">
+	<div class="ui-grid-cell-contents">
+		<a href="{{COL_FIELD.href}}"
+		   title="{{COL_FIELD.value}}">
+			{{COL_FIELD.value}}
+		</a>
+	</div>
+</script>

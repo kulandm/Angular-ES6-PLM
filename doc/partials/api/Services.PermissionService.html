@@ -1,0 +1,52 @@
+<h1><code ng:non-bindable="">PermissionService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Services</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="services-permissionservice-page"><p>A utility service that contains permission related methods.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<ul>
+<li>Requires <a href="api/Services.TokenService">Services.TokenService</a></li>
+</ul>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_checkpermissionbyitem">checkPermissionByItem(itemObj, permission, applyLock:, applyRevisionOverrideLock)</h3>
+<div class="checkpermissionbyitem"><div class="services-permissionservice-checkpermissionbyitem-page"><p>Evaluates whether user has permission on the workspace or not on the basis of given item object.</p>
+</div><h5 id="methods_checkpermissionbyitem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemObj</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-permissionservice-checkpermissionbyitem-page"><p>: workspace item object.</p>
+</div></td></tr><tr><td>permission</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="services-permissionservice-checkpermissionbyitem-page"><p>: the permission to check</p>
+</div></td></tr><tr><td>applyLock:</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-permissionservice-checkpermissionbyitem-page"><p>an optional parameter that will be used only when getting workspace id using <a href="api/$stateParams#itemid">$stateParams#itemId</a>.
+This parameter (if provided) will control whether we need to apply extra workspace locking check or not.</p>
+</div></td></tr><tr><td>applyRevisionOverrideLock</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-permissionservice-checkpermissionbyitem-page"><p>: an optional parameter that will be used only when getting
+workspace id using <a href="api/$stateParams#itemid">$stateParams#itemId</a>. This parameter (if provided) will control whether we need to
+enforce extra permissions or not.</p>
+</div></td></tr></tbody></table><h5 id="methods_checkpermissionbyitem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="services-permissionservice-checkpermissionbyitem-page"><p>a promise that resolves with true if user has permissions.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_checkpermissionbyitemid">checkPermissionByItemId(itemId, permission, applyLock:, applyRevisionOverrideLock)</h3>
+<div class="checkpermissionbyitemid"><div class="services-permissionservice-checkpermissionbyitemid-page"><p>Evaluates whether user has permission on the workspace or not on the basis of given item id.
+Note: This is a variant of <a href="api/Services.PermisssionService#checkpermissionbyitem">Services.PermisssionService#checkPermissionByItem</a>.</p>
+</div><h5 id="methods_checkpermissionbyitemid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-permissionservice-checkpermissionbyitemid-page"><p>: id of the workspace item object.</p>
+</div></td></tr><tr><td>permission</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="services-permissionservice-checkpermissionbyitemid-page"><p>: the permission to check</p>
+</div></td></tr><tr><td>applyLock:</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-permissionservice-checkpermissionbyitemid-page"><p>an optional parameter that will be used only when getting workspace id using <a href="api/$stateParams#itemid">$stateParams#itemId</a>.
+This parameter (if provided) will control whether we need to apply extra workspace locking check or not.</p>
+</div></td></tr><tr><td>applyRevisionOverrideLock</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-permissionservice-checkpermissionbyitemid-page"><p>: an optional parameter that will be used only when getting
+workspace id using <a href="api/$stateParams#itemid">$stateParams#itemId</a>. This parameter (if provided) will control whether we need to
+enforce extra permissions or not.</p>
+</div></td></tr></tbody></table><h5 id="methods_checkpermissionbyitemid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="services-permissionservice-checkpermissionbyitemid-page"><p>a promise that resolves with true if user has permissions.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="services-permissionservice-constructor-page"><p>The class constructor</p>
+</div></div>
+</li>
+<li><h3 id="methods_haspermissions">hasPermissions(permissionList, workspaceId)</h3>
+<div class="haspermissions"><div class="services-permissionservice-haspermissions-page"><p>Evaluates whether user has permissions on the workspace or not.</p>
+</div><h5 id="methods_haspermissions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>permissionList</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="services-permissionservice-haspermissions-page"><p>: the list of permission to check</p>
+</div></td></tr><tr><td>workspaceId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-permissionservice-haspermissions-page"><p>: the id of the workspace on which the permission is evaluated.</p>
+</div></td></tr></tbody></table><h5 id="methods_haspermissions_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">Promise</a></td><td><div class="services-permissionservice-haspermissions-page"><p>a promise that resolves with true if user has permissions.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,83 @@
+<h1><code ng:non-bindable="">ViewWorkflowController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewworkflowcontroller-page"><p>This controller corresponds to the Workflow
+(Affected Item References) view.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_openflyoutwindow">openFlyoutWindow(event, userId)</h3>
+<div class="openflyoutwindow"><div class="controller-workspaceitem-viewworkflowcontroller-openflyoutwindow-page"><p>Open flyout window based on the given event and user ID.</p>
+</div><h5 id="methods_openflyoutwindow_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controller-workspaceitem-viewworkflowcontroller-openflyoutwindow-page"><p>The event object.</p>
+</div></td></tr><tr><td>userId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controller-workspaceitem-viewworkflowcontroller-openflyoutwindow-page"><p>The user ID.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewworkflowcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewworkflowcontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parseviewworkflowitems">parseViewWorkflowItems(data, itemQuantity)</h3>
+<div class="parseviewworkflowitems"><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitems-page"><p>Parse fetched data into table rows.</p>
+</div><h5 id="methods_parseviewworkflowitems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitems-page"><p>Workflow data as fetched from server.</p>
+</div></td></tr><tr><td>itemQuantity</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitems-page"><p>Number of items to be displayed on a single page.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_parseviewworkflowitemsworkspace">parseViewWorkflowItemsWorkspace(name, index)</h3>
+<div class="parseviewworkflowitemsworkspace"><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitemsworkspace-page"><p>Parse fetched workspace data into table rows.</p>
+</div><h5 id="methods_parseviewworkflowitemsworkspace_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>name</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitemsworkspace-page"><p>Workspace name.</p>
+</div></td></tr><tr><td>index</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="controllers-workspaceitem-viewworkflowcontroller-parseviewworkflowitemsworkspace-page"><p>Index of the table row.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_currentuserlistenerid">currentUserListenerId</h3>
+<div class="currentuserlistenerid"><div class="controllers-workspaceitem-viewworkflowcontroller-currentuserlistenerid-page"><p><code>private</code> Listener for current user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_dateformat">dateFormat</h3>
+<div class="dateformat"><div class="controllers-workspaceitem-viewworkflowcontroller-dateformat-page"><p>Stores the date format.</p>
+<p><code>date</code>: Date format, defaults to &#39;yyyy&#39;.<br>
+<code>dateAndHour</code>: Date-plus-hour format, defaults to &#39;yyyy hh:mm a&#39;.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlink">itemLink</h3>
+<div class="itemlink"><div class="controllers-workspaceitem-viewworkflowcontroller-itemlink-page"><p><code>private</code> The encoded link for the current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemlistenerid">itemListenerId</h3>
+<div class="itemlistenerid"><div class="controllers-workspaceitem-viewworkflowcontroller-itemlistenerid-page"><p><code>private</code> Listener for current item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemquantity">itemQuantity</h3>
+<div class="itemquantity"><div class="controllers-workspaceitem-viewworkflowcontroller-itemquantity-page"><p>Amount of items to fetch.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewworkflowcontroller-tablecolumns-page"><p>Stores table column header of workflow.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewworkflowcontroller-tabledata-page"><p>Stores table data of workflow.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewpermission">viewPermission</h3>
+<div class="viewpermission"><div class="controllers-workspaceitem-viewworkflowcontroller-viewpermission-page"><p>The view workflow items permission for the user.</p>
+</div></div>
+</li>
+<li><h3 id="properties_workflowobjlistenerid">workflowObjListenerId</h3>
+<div class="workflowobjlistenerid"><div class="controllers-workspaceitem-viewworkflowcontroller-workflowobjlistenerid-page"><p><code>private</code> Listener for workflow object.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

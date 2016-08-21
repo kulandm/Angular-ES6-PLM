@@ -1,0 +1,55 @@
+<h1><code ng:non-bindable="">WorkspaceTableau</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-workspacetableau-page"><p>This class wraps a WorkspaceTableau object.
+You can create a new workspace tableau object
+Update existing one
+Fetch for existing ones
+ *</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_fetchallworkspacetableau">fetchAllWorkspaceTableau(link)</h3>
+<div class="fetchallworkspacetableau"><div class="models-workspacetableau-fetchallworkspacetableau-page"><p>Returns a rich object containing all the tableau configuration</p>
+</div><h5 id="methods_fetchallworkspacetableau_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-fetchallworkspacetableau-page"><p>The REST link resource</p>
+</div></td></tr></tbody></table><h5 id="methods_fetchallworkspacetableau_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-fetchallworkspacetableau-page"><p>Promise Object containing array of tableaus</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettableau">getTableau(link, viewId)</h3>
+<div class="gettableau"><div class="models-workspacetableau-gettableau-page"><p>Returns a rich object containing all the tableau configuration</p>
+</div><h5 id="methods_gettableau_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-gettableau-page"><p>The REST link resource</p>
+</div></td></tr><tr><td>viewId</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="models-workspacetableau-gettableau-page"><p>The tableau ID</p>
+</div></td></tr></tbody></table><h5 id="methods_gettableau_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-gettableau-page"><p>Promise Object containing array of columns</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspacetableaudefinition">getWorkspaceTableauDefinition(wtLink)</h3>
+<div class="getworkspacetableaudefinition"><div class="models-workspacetableau-getworkspacetableaudefinition-page"><p>Given the link of a workspace tableau, it returns it configuration-</p>
+</div><h5 id="methods_getworkspacetableaudefinition_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>wtLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-getworkspacetableaudefinition-page"><p>The REST link resource</p>
+</div></td></tr></tbody></table><h5 id="methods_getworkspacetableaudefinition_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-getworkspacetableaudefinition-page"><p>Promise Object containing array of columns</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspacetableausalldefinitions">getWorkspaceTableausAllDefinitions(link)</h3>
+<div class="getworkspacetableausalldefinitions"><div class="models-workspacetableau-getworkspacetableausalldefinitions-page"><p>Given the link of the workspace tableau, it returns all the tableaus configurations for the workspace</p>
+</div><h5 id="methods_getworkspacetableausalldefinitions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-getworkspacetableausalldefinitions-page"><p>The REST link resource to the workspace tableau endpoint for current workspace</p>
+</div></td></tr></tbody></table><h5 id="methods_getworkspacetableausalldefinitions_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-getworkspacetableausalldefinitions-page"><p>Promise Object containing array of tableaus</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getworkspacetableausallgroups">getWorkspaceTableausAllGroups(link)</h3>
+<div class="getworkspacetableausallgroups"><div class="models-workspacetableau-getworkspacetableausallgroups-page"><p>Given the link of the workspace tableau, it returns all the tableaus groups, fields and filters for the current workspace</p>
+</div><h5 id="methods_getworkspacetableausallgroups_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-getworkspacetableausallgroups-page"><p>The REST link resource to the workspace tableau endpoint for current workspace</p>
+</div></td></tr></tbody></table><h5 id="methods_getworkspacetableausallgroups_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-getworkspacetableausallgroups-page"><p>Promise Array of all groups, fields &amp; filters</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_update">update(link, tableau)</h3>
+<div class="update"><div class="models-workspacetableau-update-page"><p>Update an existing tableau configuration</p>
+</div><h5 id="methods_update_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>link</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-workspacetableau-update-page"><p>The REST link resource</p>
+</div></td></tr><tr><td>tableau</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-update-page"><p>The tableau configuration</p>
+</div></td></tr></tbody></table><h5 id="methods_update_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-workspacetableau-update-page"><p>Promise Object containing array of tableaus</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

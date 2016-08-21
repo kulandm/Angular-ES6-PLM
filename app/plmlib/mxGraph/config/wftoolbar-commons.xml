@@ -1,0 +1,21 @@
+<mxDefaultToolbar>
+	<add as="save" action="save" icon="plmlib/mxGraph/images/icons/save_16.png" showText="true" />
+	<add as="reloadWorkflow" action="reloadWorkflow" icon="plmlib/mxGraph/images/icons/reload_16.png" showText="true"/>
+	<add as="exportImage" action="exportImage" icon="plmlib/mxGraph/images/icons/preview_16.png" showText="true"/>
+	<separator/>
+	<add as="select" mode="select" icon="plmlib/mxGraph/images/icons/pointer_16.png"/>
+	<add as="pan" mode="pan" icon="plmlib/mxGraph/images/icons/pan_16.png"/>
+	<add as="state" template="state" icon="plmlib/mxGraph/images/icons/state_16.png"/>
+	<add as="note" template="note" style="note" icon="plmlib/mxGraph/images/icons/note_16.png"/>
+	<separator/>
+	<add as="undo" action="undo" icon="plmlib/mxGraph/images/icons/undo_16.png"/>
+	<add as="redo" action="redo" icon="plmlib/mxGraph/images/icons/redo_16.png"/>
+	<separator/>
+	<add as="cut" action="cut" icon="plmlib/mxGraph/images/icons/cut_16.png" if="deletable"/>
+	<add as="copy" action="copy" icon="plmlib/mxGraph/images/icons/copy_16.png"/>
+	<add as="paste" action="paste" icon="plmlib/mxGraph/images/icons/paste_16.png"/>
+	<add as="delete" action="delete" icon="plmlib/mxGraph/images/icons/delete_16.png"/>
+	<separator/>
+	<add as="summary" action="workflowSummary"  icon="plmlib/mxGraph/images/icons/summary_16.png" showText="true"/>
+	<add as="permissions" action="permissionsSummary"  icon="plmlib/mxGraph/images/icons/permissions_16.png" showText="true"/>
+</mxDefaultToolbar>

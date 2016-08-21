@@ -1,0 +1,78 @@
+<!-- The ng-init is temporary until the controller gets translated to ES6 -->
+<span layout="column" layout-fill>
+	<md-toolbar class="utilities-toolbar">
+		<div class="md-toolbar-tools">
+			<span flex></span>
+			<span>
+				<md-button class="md-primary command-bar-button add-item-button"
+						   aria-label="{{ $root.bundle.button.create }}"
+						   ng-hide="!hasAddItemsPermission"
+						   ng-click="triggerAddItem()">
+					<span class="label">{{ $root.bundle.button.create }}</span>
+				</md-button>
+			</span>
+
+			<div class="menu-buttons">
+				<md-button 	id="views-dropdown-button-tableau"
+							class="switch-view-dropdown dropdown-widget-button"
+							aria-label="{{ bundle.text.view }}"
+							title="{{viewName}}">
+					<span>{{viewName}}</span>
+					<span class="caret-flex down static-rotateCaretVertical"></span>
+				</md-button>
+
+				<dropdown-widget id="views-dropdown-list" anchor="#views-dropdown-button-tableau" h-pos="left" class="view-dropdown-widget-wrapper">
+					<ul>
+						<li ng-repeat="view in views | orderBy:'title'">
+							<a href="javascript:;" ng-click="viewChange(view.id)" title="{{view.title}}" aria-label="{{view.title}}">
+								<span class="label">{{view.title}}</span>
+							</a>
+						</li>
+					</ul>
+				</dropdown-widget>
+			</div>
+
+		</div>
+	</md-toolbar>
+
+	<md-content id="workspace-items" ng-init="init()">
+		<table-data
+			columns="tableData.columns"
+			rows="tableData.rows"
+			get-function="getWorkspaceItemsData(order, columnId)"
+			resizable-columns
+            selectable-rows="true"
+            is-multi-select="false"
+			select-rows-function="selectRow(row)"
+			limit-size="{{itemQuantity}}">
+		</table-data>
+	</md-content>
+</span>
+
+<script type="text/ng-template" id="itemsLinkRenderer">
+	<div class="ui-grid-cell-contents multiline">
+		<a href="{{COL_FIELD.href}}" title="{{COL_FIELD.value}}">
+			<field-selector field-data="COL_FIELD" type-id="4" field-meta="COL_FIELD.metadata" edit-view="false"/>
+		</a>
+	</div>
+</script>
+
+<script type="text/ng-template" id="itemsLinkedThumbnailRenderer">
+	<div class="ui-grid-cell-contents multiline thumbnail-padding">
+		<a href="{{COL_FIELD.href}}" title="{{COL_FIELD.value}}">
+			<field-selector field-data="COL_FIELD" type-id="10396" field-meta="COL_FIELD.metadata" edit-view="false"/>
+		</a>
+	</div>
+</script>
+
+<script type="text/ng-template" id="itemsThumbnailRenderer">
+	<div class="ui-grid-cell-contents multiline thumbnail-padding">
+		<field-selector field-data="COL_FIELD" type-id="COL_FIELD.metadata.dataTypeId" field-meta="COL_FIELD.metadata" edit-view="false"/>
+	</div>
+</script>
+
+<script type="text/ng-template" id="itemsOtherRenderer">
+	<div class="ui-grid-cell-contents multiline">
+		<field-selector field-data="COL_FIELD" type-id="COL_FIELD.metadata.dataTypeId" field-meta="COL_FIELD.metadata" edit-view="false"/>
+	</div>
+</script>

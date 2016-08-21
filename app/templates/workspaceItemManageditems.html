@@ -1,0 +1,34 @@
+<div class="container-fluid" id="workspace-item-details" ng-init="init()">
+	<!-- wrapper for all cols -->
+	<div class="row">
+	
+		<item-menu workspace-id="workspaceId" item-id="itemId" active="manageditems"></item-menu>
+			
+		<div class="col-lg-10 col-md-11 col-sm-11" id="content">
+			<div>
+				<!-- <div class="generalGrid" ng-grid="tableGrid"> -->	
+				<table class="table table-condensed table-striped">
+					<thead>
+						<tr>
+							<!--<th ng-repeat="column in tableColumns"><a href="javascript:;" ng-click="sortColumn(column.field)">{{column.displayName}}</a></th>-->
+							<th ng-repeat="column in tableColumns">{{column.displayName}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- this should be parameterized -->
+						<!-- <tr ng-repeat="row in tableData">
+							<td ng-repeat="(key, value) in tableColumns" ng-if="value.field === 'DESCRIPTOR'"><a href="#/workspaceItems/{{workspaceId}}/{{row.dmsId}}">{{row[value.field]}}</a></td>
+							<td ng-repeat="(key, value) in tableColumns" ng-if="value.field !== 'DESCRIPTOR'">{{row[value.field]}}</td>
+						</tr> -->
+						<tr ng-repeat="row in tableData">
+							<td ng-repeat="col in row track by $index">
+								<a ng-if="!isString(col)" href="workspaceItems/{{col.workspaceId}}/{{col.id}}">{{col.displayName}}</a>
+								<span ng-if="isString(col)">{{col}}</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div> <!-- /.wrapper for all cols -->
+</div>

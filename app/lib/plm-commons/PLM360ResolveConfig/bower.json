@@ -1,0 +1,21 @@
+{
+  "name": "PLM360ResolveConfig",
+  "version": "0.4.10",
+  "authors": [
+    "Eric Ng <eric.ng@autodesk.com>"
+  ],
+  "description": "Function resolving the \"resolve\" parameter in stateProvider",
+  "main": "main.js",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,104 @@
+.df-tab-menu {
+	@extend %resetUnorderedList;
+
+	font-size: 0;
+	width: 100%;
+
+	li {
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+		font-size: $itemToolbarFontSize;
+		line-height: $itemToolbarLineHeight;
+
+		height: $itemToolbarHeight;
+		min-height: $itemToolbarHeight;
+		max-height: $itemToolbarHeight;
+		color: $itemToolbarTextColor;
+		padding: 0 32px;
+
+		a {
+			color: $itemToolbarTextColor;
+
+			text-decoration: none;
+			text-transform: uppercase;
+
+			width: auto;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		&.df-tab-menu-active {
+			// This is meant to hide the active tab and only display
+			// the "More+" when the min width is reached. [#PLM-10081]
+			@media (max-width: 420px) {
+				font-size: 1px;
+				padding: 1px;
+				visibility: hidden;
+			}
+			a {
+				color: $lightBlackColor;
+				font-weight: bold;
+			}
+
+			border-bottom: 5px solid $lightBlueColor;
+		}
+
+	}
+}
+
+
+.df-tab-menu-dropdown {
+	@extend %resetUnorderedList;
+
+	@media (max-width: 420px) {
+		right: initial;
+	}
+
+	background-color: $dropdownWidgetBackgroundColor;
+
+	border: solid 1px $dropdownWidgetBorderColor !important;
+	border-radius: 4px;
+	box-shadow: $dropdownWidgetBoxShadow;
+
+	top: 20px;
+	right: 0;
+	left: auto;
+	min-width: 200px;
+
+	display: none;
+	position: absolute;
+
+	z-index: 1000;
+
+	@media (max-width: 420px) {
+		&.df-tab-menu-active {
+			font-size: 0 !important;
+			padding: 0 !important;
+		}
+	}
+
+	li {
+		text-align: left;
+		padding: 10px 10px 0 !important;
+		display: block;
+
+		a {
+			color: $itemToolbarTextColor;
+			clear: both;
+			text-transform: none;
+			white-space: nowrap;
+		}
+	}
+}
+
+.df-tab-menu-dropdown-open ~ .df-tab-menu-dropdown {
+	display: block;
+}
+
+.dropdown-toggle {
+	cursor: pointer;
+	text-transform: uppercase;
+}

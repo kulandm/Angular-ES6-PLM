@@ -1,0 +1,78 @@
+// Flyout
+//
+// Styles for default flyout.
+//
+// Styleguide 11
+
+// Flyout
+//
+// Styles for flyout with its respective arrow.
+//
+// Markup:
+// <none>None</none>
+//
+// .flyout - Only has `bottom` and `left` positions now
+//
+// Styleguide 11.1
+.flyout {
+	position: absolute;
+
+	opacity: 1;
+	outline: 0;
+
+	&.bottom,
+	&.bottom-left {
+		margin-top: 3px;
+		padding: 5px 0;
+
+		.flyout-arrow {
+			@include flyout-arrow(bottom, 5px, $flyoutArrowColor);
+
+			margin-left: -5px;
+		}
+	}
+
+	&.top,
+	&.top-right {
+		margin-bottom: 3px;
+		padding: 5px 0;
+
+		.flyout-arrow {
+			@include flyout-arrow(top, 5px, $flyoutArrowColor);
+
+			margin-left: -5px;
+		}
+	}
+
+	&.left {
+		margin-left: -3px;
+		padding: 0 5px;
+
+		.flyout-arrow {
+			@include flyout-arrow(left, 5px, $flyoutArrowColor);
+
+			margin-top: -5px;
+		}
+	}
+}
+
+// Flyout Backdrop
+//
+// Backdrop properties are added to flyouts<br>
+// to ensure that multiple flyouts work well together.<br>
+// We are relying on `z-index` to determine which flyout is on top.
+//
+// Markup:
+// <none>None</none>
+//
+// .flyout-backdrop - 
+//
+// Styleguide 11.2
+.flyout-backdrop {
+	@extend %resetPositioning;
+
+	position: fixed;
+
+	opacity: 0;
+	background-color: $flyoutBackdropBackgroundColor;
+}

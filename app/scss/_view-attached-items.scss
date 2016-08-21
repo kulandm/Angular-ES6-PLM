@@ -1,0 +1,54 @@
+// View Attached Item
+//
+// Styles for the flyout that appears when view attached items.
+//
+// Styleguide Components.viewAttachedItems
+
+// View Attached Items Flyout
+//
+// Overrides the default flyout styles.
+//
+// Markup:
+// <none>None</none>
+//
+// .view-attached-items-flyout -
+//
+// Styleguide Components.viewAttachedItems.Flyout
+.view-attached-items-flyout {
+	@extend %removeOutline;
+
+	position: absolute;
+	z-index: 80;
+
+	opacity: 1;
+
+	&.flyout.bottom,
+	&.flyout.bottom-left,
+	&.flyout.up {
+		margin-top: 0;
+		padding: 0;
+	}
+}
+
+// View Attached Items Flyout Content
+//
+// Styles for the content inside the flyout.
+//
+// Markup:
+// <none>None</none>
+//
+// .view-attached-items-flyout-content -
+//
+// Styleguide Components.viewAttachedItems.FlyoutContent
+.view-attached-items-flyout-content {
+	@extend %raisedContainer;
+
+	width: $viewAttachedItemsFlyoutWidth;
+
+	.view-attached-items-header {
+		padding: 15px;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

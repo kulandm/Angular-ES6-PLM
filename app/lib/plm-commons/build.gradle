@@ -1,0 +1,265 @@
+apply plugin:"plm"
+
+import org.apache.tools.ant.taskdefs.condition.Os
+import org.gradle.api.tasks.Exec
+
+description = "plm-commons"
+
+//Setup/Priming Tasks --------------------------------------------------
+task npm(type:Exec) {
+  group = "Package Management"
+  description = "Gets necessary node packages"
+  if(Os.isFamily(Os.FAMILY_WINDOWS)){
+  commandLine 'cmd', '/c', 'npm install'
+  } else {
+  setExecutable("npm")
+  args = "install".trim().split(" ") as List
+  }
+}
+
+task bower(type: BowerTask) {
+   group = "Package Management"
+   description = "Get necessary bower packages"
+   bowerArgs = "install -f"
+}
+
+task webdriverUpdate(type: WebdriverTask) {
+   group = "Package Management"
+   description = "Get browser Webdriver driver"
+   webdriverArgs = "update"
+}
+
+task webdriverStart(type: WebdriverTask) {
+   group = "Package Management"
+   description = "Start Webdriver server"
+   webdriverArgs = "start"
+}
+
+//Grunt Miscellaneous Tasks --------------------------------------------------
+task grunt(type: GruntTask) {
+   group = "Grunt Miscellaneous"
+   description = "Performs Default Grunt Action"
+   gruntArgs = "default"
+}
+
+task gruntTasks(type: GruntTask) {
+   group = "Grunt Miscellaneous"
+   description = "Displays Grunt Tasks Available"
+   gruntArgs = "plm-tasks"
+}
+
+task gruntGenDoc(type: GruntTask) {
+   group = "Grunt Miscellaneous"
+   description = "Generates JS Documentation"
+   gruntArgs = "plm-gendoc"
+}
+
+task gruntLint(type: GruntTask) {
+   group = "Grunt Miscellaneous"
+   description = "Provide Code Quality Checking"
+   gruntArgs = "plm-lint"
+}
+
+
+//Grunt Build Tasks --------------------------------------------------
+task gruntBuildDev(type: GruntTask) {
+   group = "Grunt Build"
+   description = "Compiles all of the assets and copies the files to the build directory"
+   gruntArgs = "plm-build-dev"
+}
+
+task gruntAutoBuildDevDeploy(type: GruntTask) {
+   group = "Grunt Build"
+   description = "Runs dev build and publishes to CATALINA_HOME/webapps/hig on changes"
+   gruntArgs = "plm-auto-build-dev-deploy"
+}
+
+task gruntBuildStage( type: GruntTask) {
+   group = "Grunt Build"
+   description = "Compiles all of the assets and copies the files to the build directory"
+   gruntArgs = "plm-build-stage"
+}
+
+task versionBuild(type: Copy, dependsOn: ['grunt']) {
+  from(".") {
+    include "plm-commons.js"
+    rename "plm-commons.js", "plm-ui-commons.js"
+  }
+  into "./build"
+  from(".") {
+    include "plm-commons.min.js"
+    rename "plm-commons.min.js", "plm-ui-commons.min.js"
+  }
+  into "./build"
+}
+
+task archiveBuild(type: Zip) {
+   group = "Publish"
+   description = "Creates Zip of Build Directory"
+   //Hopefully Externalize most of this at some point similar to how we do in plm core
+   baseName = 'plm-ui-commons'
+   version = '0.0.1'
+   classifier = 'SNAPSHOT'
+   from ('./build'){ exclude 'target'}
+   destinationDir = new File("./build/target")
+   extension = 'zip'
+}
+
+task setVersionsTxtFile << {
+  copy{
+    from ( "." ) {
+      include "version.template"
+      expand ([sourceVersion: System.env.SOURCE_VERSION ,buildDate: Calendar.instance.time ])
+      rename "version.template", "version.txt"
+    }
+    into "app"
+  }
+}
+task createConfigForProtractor << {
+  copy {
+    from ( "." ) {
+      include "templateConfig.yaml"
+      expand ([YOUR_PLM360_CUSTOMER: System.env.CUSTOMER_NAME ,YOUR_PATH_TO_APP: System.env.BASE_URL ])
+      rename "templateConfig.yaml", "localConfig.yaml"
+    }
+    into "."
+  }
+}
+
+//Grunt Clean Tasks --------------------------------------------------
+task gruntClean(type: GruntTask) {
+   group = "Grunt Clean"
+   description = "Cleans All"
+   gruntArgs = "clean"
+}
+
+//Grunt Testing Tasks --------------------------------------------------
+task gruntTestDev(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs unit test under a dev configuration"
+   gruntArgs = "plm-test-dev"
+}
+
+task gruntTestDevForce(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs unit test under a dev configuration"
+   gruntArgs = "plm-test-dev --force"
+}
+
+task gruntTestDevAuto(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Continuously runs unit test under a dev configuration"
+   gruntArgs = "plm-test-dev-auto"
+}
+
+task gruntTestCI(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs Unit Test with configuration for CI"
+   gruntArgs = "plm-test-ci"
+}
+
+task gruntTestCIForce(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs Unit Test with configuration for CI"
+   gruntArgs = "plm-test-ci --force"
+}
+
+task gruntTestRealBrowsers(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs Unit Test against browsers typically found on a Windows Dev Machine (Firefox, Chrome, IE, PhantomJS)"
+   gruntArgs = "plm-test-real-browsers"
+}
+
+task gruntE2EDev(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests with a standard dev configuration"
+   gruntArgs = "plm-e2e-dev"
+}
+
+task gruntE2EDevChrome(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-dev-chrome"
+}
+task gruntE2EDevFirefox(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-dev-firefox"
+}
+task gruntE2EDevPhatomJS(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-dev-phantomjs"
+}
+
+task gruntE2ECI(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-ci"
+}
+
+task gruntE2ECIChrome(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-ci-chrome"
+}
+task gruntE2ECIFirefox(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-ci-firefox"
+}
+task gruntE2ECIPhatomJS(type: GruntTask) {
+   group = "Grunt Test"
+   description = "Runs E2E/View tests configured for CI"
+   gruntArgs = "plm-e2e-ci-phantomjs"
+}
+
+//Group Tasks --------------------------------------------------
+task ci(dependsOn: ['npm', 'bower', 'gruntLint', 'gruntBuildDev', 'gruntGenDoc','gruntTestCI', 'gruntBuildStage', 'archiveBuild'])
+bower.mustRunAfter npm
+gruntBuildDev.mustRunAfter bower
+gruntBuildStage.mustRunAfter bower
+gruntLint.mustRunAfter npm
+gruntTestDev.mustRunAfter npm
+gruntTestCI.mustRunAfter npm
+gruntGenDoc.mustRunAfter npm
+archiveBuild.mustRunAfter gruntBuildStage
+
+
+//Class Definitions --------------------------------------------------
+class GruntTask extends Exec {
+   private String gruntExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ? "./node_modules/.bin/grunt.cmd" : "./node_modules/.bin/grunt"
+   def gruntArgs = ""
+   public GruntTask() {
+       super()
+       this.setExecutable(gruntExecutable)
+   }
+   public void setGruntArgs(String gruntArgs) {
+       this.args = "$gruntArgs".trim().split(" ") as List
+   }
+}
+
+
+class BowerTask extends Exec {
+   private String bowerExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ? "./node_modules/.bin/bower.cmd" : "./node_modules/.bin/bower"
+   def bowerArgs = ""
+   public BowerTask() {
+       super()
+       this.setExecutable(bowerExecutable)
+   }
+   public void setBowerArgs(String bowerArgs) {
+       this.args = "$bowerArgs".trim().split(" ") as List
+   }
+}
+
+class WebdriverTask extends Exec {
+   private String webdriverExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ?  "./node_modules/.bin/webdriver-manager.cmd" : "./node_modules/.bin/webdriver-manager"
+   def webdriverArgs = ""
+   public WebdriverTask() {
+       super()
+       this.setExecutable(webdriverExecutable)
+   }
+   public void setWebdriverArgs(String webdriverArgs) {
+       this.args = "$webdriverArgs".trim().split(" ") as List
+   }
+}

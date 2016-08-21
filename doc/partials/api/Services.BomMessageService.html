@@ -1,0 +1,123 @@
+<h1><code ng:non-bindable="">BomMessageService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Services</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="services-bommessageservice-page"><p>This service builds messages to send to and recieve from event service</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="services-bommessageservice-constructor-page"><p>The class constructor</p>
+</div></div>
+</li>
+<li><h3 id="methods_extracteventid">extractEventId(event)</h3>
+<div class="extracteventid"><div class="services-bommessageservice-extracteventid-page"><p>Extracts the unique identifier of the event</p>
+</div><h5 id="methods_extracteventid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-extracteventid-page"><p>An event of the form &quot;eventNamepace:UNIQUEID:eventName&quot;</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_getbomchangefailuremessage">getBomChangeFailureMessage(changeType, changeId)</h3>
+<div class="getbomchangefailuremessage"><div class="services-bommessageservice-getbomchangefailuremessage-page"><p>Returns a message that indicates that a bom change failed to persist persisted</p>
+</div><h5 id="methods_getbomchangefailuremessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>changeType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangefailuremessage-page"><p>the type of change</p>
+</div></td></tr><tr><td>changeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangefailuremessage-page"><p>the unique identifier of the change</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomchangefailuremessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangefailuremessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomchangesendmessage">getBomChangeSendMessage(changeType, changeId)</h3>
+<div class="getbomchangesendmessage"><div class="services-bommessageservice-getbomchangesendmessage-page"><p>Returns a message that indicates that a bom change should be persisted</p>
+</div><h5 id="methods_getbomchangesendmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>changeType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesendmessage-page"><p>the type of change</p>
+</div></td></tr><tr><td>changeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesendmessage-page"><p>the unique identifier of the change</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomchangesendmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesendmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomchangesendmessage">getBomChangeSendMessage()</h3>
+<div class="getbomchangesendmessage"><div class="services-bommessageservice-getbomchangesendmessage-page"><p>Returns a message that indicates that all changes to the bom
+returned either success or failure</p>
+</div><h5 id="methods_getbomchangesendmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesendmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomchangesuccessmessage">getBomChangeSuccessMessage(changeType, changeId)</h3>
+<div class="getbomchangesuccessmessage"><div class="services-bommessageservice-getbomchangesuccessmessage-page"><p>Returns a message that indicates that a bom change was successfully persisted</p>
+</div><h5 id="methods_getbomchangesuccessmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>changeType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesuccessmessage-page"><p>the type of change</p>
+</div></td></tr><tr><td>changeId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesuccessmessage-page"><p>the unique identifier of the change</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomchangesuccessmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomchangesuccessmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomnesteditemfetchsuccessmessage">getBomNestedItemFetchSuccessMessage(fetchId)</h3>
+<div class="getbomnesteditemfetchsuccessmessage"><div class="services-bommessageservice-getbomnesteditemfetchsuccessmessage-page"><p>Returns a message that indicates that a BomNestedItem has been fetched</p>
+</div><h5 id="methods_getbomnesteditemfetchsuccessmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fetchId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomnesteditemfetchsuccessmessage-page"><p>the id for the fetch</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomnesteditemfetchsuccessmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomnesteditemfetchsuccessmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomnesteditemschunkreceivedmessage">getBomNestedItemsChunkReceivedMessage(chunkId)</h3>
+<div class="getbomnesteditemschunkreceivedmessage"><div class="services-bommessageservice-getbomnesteditemschunkreceivedmessage-page"><p>Returns a message that indicates that a chunk of bom items was fetched</p>
+</div><h5 id="methods_getbomnesteditemschunkreceivedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>chunkId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomnesteditemschunkreceivedmessage-page"><p>A unique id that will identify the chunk</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomnesteditemschunkreceivedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomnesteditemschunkreceivedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomrowaddedmessage">getBomRowAddedMessage(path)</h3>
+<div class="getbomrowaddedmessage"><div class="services-bommessageservice-getbomrowaddedmessage-page"><p>Returns a message that indicates that a row was added to the bomTable</p>
+</div><h5 id="methods_getbomrowaddedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>path</td><td><a href="" class="label type-hint type-hint-bompath">BomPath</a></td><td><div class="services-bommessageservice-getbomrowaddedmessage-page"><p>the path to the row that was added</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomrowaddedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomrowaddedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbomtoplinereceivedmessage">getBomTopLineReceivedMessage(itemId)</h3>
+<div class="getbomtoplinereceivedmessage"><div class="services-bommessageservice-getbomtoplinereceivedmessage-page"><p>Returns a message that indicates that the top line of the Bom was fetched</p>
+</div><h5 id="methods_getbomtoplinereceivedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>itemId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomtoplinereceivedmessage-page"><p>the id used to fetch the bom top line
+which may not be the id of the item returned</p>
+</div></td></tr></tbody></table><h5 id="methods_getbomtoplinereceivedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbomtoplinereceivedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbulkattachmentrecivedmessage">getBulkAttachmentRecivedMessage(fetchId)</h3>
+<div class="getbulkattachmentrecivedmessage"><div class="services-bommessageservice-getbulkattachmentrecivedmessage-page"><p>Returns a message that indicates that a attachments has been fetched</p>
+</div><h5 id="methods_getbulkattachmentrecivedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fetchId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbulkattachmentrecivedmessage-page"><p>the id for the fetch</p>
+</div></td></tr></tbody></table><h5 id="methods_getbulkattachmentrecivedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbulkattachmentrecivedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getbulkbomfetchedsuccessmessage">getBulkBomFetchedSuccessMessage(fetchId)</h3>
+<div class="getbulkbomfetchedsuccessmessage"><div class="services-bommessageservice-getbulkbomfetchedsuccessmessage-page"><p>Returns a message that indicates that a BulkBom has been fetched</p>
+</div><h5 id="methods_getbulkbomfetchedsuccessmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>fetchId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbulkbomfetchedsuccessmessage-page"><p>the id for the fetch</p>
+</div></td></tr></tbody></table><h5 id="methods_getbulkbomfetchedsuccessmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getbulkbomfetchedsuccessmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettoplineexpandedmessage">getTopLineExpandedMessage(true)</h3>
+<div class="gettoplineexpandedmessage"><div class="services-bommessageservice-gettoplineexpandedmessage-page"><p>Returns a message that indicates that the top line of the bom table has been expanded</p>
+</div><h5 id="methods_gettoplineexpandedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>true</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="services-bommessageservice-gettoplineexpandedmessage-page"><p>or false depending on what the status of the expansion</p>
+</div></td></tr></tbody></table><h5 id="methods_gettoplineexpandedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-gettoplineexpandedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdeffieldgetmessage">getViewDefFieldGetMessage(urn)</h3>
+<div class="getviewdeffieldgetmessage"><div class="services-bommessageservice-getviewdeffieldgetmessage-page"><p>Returns a message by creating a string using urn
+indicating that field metadata has been requested</p>
+</div><h5 id="methods_getviewdeffieldgetmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>urn</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdeffieldgetmessage-page"><p>the urn of the field</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdeffieldgetmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdeffieldgetmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdeffieldrecievedmessage">getViewDefFieldRecievedMessage(urn)</h3>
+<div class="getviewdeffieldrecievedmessage"><div class="services-bommessageservice-getviewdeffieldrecievedmessage-page"><p>Returns a message by creating a string using urn
+indicating that field has been received from the server.</p>
+</div><h5 id="methods_getviewdeffieldrecievedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>urn</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdeffieldrecievedmessage-page"><p>the urn of the field</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdeffieldrecievedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdeffieldrecievedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdefinitiongetmessage">getViewDefinitionGetMessage(urn)</h3>
+<div class="getviewdefinitiongetmessage"><div class="services-bommessageservice-getviewdefinitiongetmessage-page"><p>Returns a message that indicates that a viewDefinition should be loaded</p>
+</div><h5 id="methods_getviewdefinitiongetmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>urn</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitiongetmessage-page"><p>the urn for the view def</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdefinitiongetmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitiongetmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdefinitionreceivedmessage">getViewDefinitionReceivedMessage(urn)</h3>
+<div class="getviewdefinitionreceivedmessage"><div class="services-bommessageservice-getviewdefinitionreceivedmessage-page"><p>Returns a message that indicates that a viewDefinition payload was recieved</p>
+</div><h5 id="methods_getviewdefinitionreceivedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>urn</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitionreceivedmessage-page"><p>the urn for the view def</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdefinitionreceivedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitionreceivedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getviewdefinitionsreceivedmessage">getViewDefinitionsReceivedMessage(wsId)</h3>
+<div class="getviewdefinitionsreceivedmessage"><div class="services-bommessageservice-getviewdefinitionsreceivedmessage-page"><p>Returns a message that indicates that a viewDefinitions payload was recieved</p>
+</div><h5 id="methods_getviewdefinitionsreceivedmessage_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>wsId</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitionsreceivedmessage-page"><p>the wsId for the view definitions</p>
+</div></td></tr></tbody></table><h5 id="methods_getviewdefinitionsreceivedmessage_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="services-bommessageservice-getviewdefinitionsreceivedmessage-page"><p>the message</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

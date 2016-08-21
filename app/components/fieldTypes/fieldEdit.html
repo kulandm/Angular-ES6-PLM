@@ -1,0 +1,109 @@
+<span>
+	<!-- FIELDEDIT WILL BE DEPRECATED.
+	If you are modifying it, please do so in the new FieldSelector component. -->
+
+	<!-- Temporary: simple dropdown -->
+	<span ng-if="fieldData.metadata.dataTypeId === -999" class="value-holder">
+		<select ng-options="key as value for (key, value) in fieldData.value.options" ng-model="fieldData.value.selected"></select>
+	</span>
+
+	<!-- simple field type, single-select picklist -->
+	<div ng-if="fieldData.metadata.dataTypeId === 6 || fieldData.metadata.dataTypeId === 20 || fieldData.metadata.dataTypeId === 7 || fieldData.metadata.dataTypeId === 22
+			|| fieldData.metadata.dataTypeId === 23 || fieldData.metadata.dataTypeId === 24 || fieldData.metadata.dataTypeId === 26 || fieldData.metadata.dataTypeId === 28
+			|| fieldData.metadata.dataTypeId === 29" class="value-holder">
+		<div id="{{fieldData.uid}}" class="ui fluid search selection single dropdown">
+			<input type="hidden">
+			<i class="dropdown icon"></i>
+			<div class="default text">{{fieldData.value.title || fieldData.value}}</div>
+			<div class="menu">
+				<div class="item" data-value="{{field.link}}" ng-repeat="field in fieldData.options.items">
+					{{field.title}}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- multi-select picklist -->
+	<div ng-if="fieldData.metadata.dataTypeId === 13 || fieldData.metadata.dataTypeId === 27" class="value-holder">
+		<div id="{{fieldData.uid}}" class="ui fluid multiple search selection dropdown">
+			<input type="hidden">
+			<i class="dropdown icon"></i>
+			<div class="default text"></div>
+			<div class="menu">
+				<div class="item" data-value="{{field.link}}" ng-repeat="field in fieldData.options.items">
+					{{field.title}}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- radio -->
+	<div ng-if="fieldData.metadata.dataTypeId === 25 || fieldData.metadata.dataTypeId === 10" class="value-holder">
+		<a ng-if="fieldData.value.id" ui-sref="details({workspaceId: {{workspaceId}}, itemId: {{fieldData.value.id}}})">
+			<field-view-truncation value="{{fieldData.value.title}}" length="{{fieldData.displayLength}}" preformatted="false" html="true"></field-view-truncation>
+		</a>
+		<field-view-truncation ng-if="!fieldData.value.id" value="{{fieldData.value.title}}" length="{{fieldData.displayLength}}" preformatted="false" html="true"></field-view-truncation>
+	</div>
+
+	<!-- simple field type, image, non-editable for now -->
+	<div ng-if="fieldData.metadata.dataTypeId === 15" class="value-holder">
+		<image ng-src="{{fieldData.value}}">
+		<div ng-if="fieldData.unitOfMeasure !== null" class="unit-of-measure small">{{fieldData.unitOfMeasure}}</div>
+	</div>
+
+	<!-- simple field type, boolean (checkbox), non-editable for now -->
+	<div ng-if="fieldData.metadata.dataTypeId === 9" class="value-holder">
+		<input type="checkbox" class="form-control" ng-true-value="'true'"
+			   ng-false-value="'false'" ng-model="fieldData.value" ng-disabled="!isEditable() || waiting">
+		<div ng-if="fieldData.unitOfMeasure !== null" class="unit-of-measure small">{{fieldData.unitOfMeasure}}</div>
+	</div>
+
+	<!-- simple field type, date -->
+	<ng-form
+		ng-if="(fieldData.metadata.dataTypeId === 3) && isEditable()"
+		name="{{fieldData.id}}" class="datepicker-wrapper">
+		<p class="input-group datepicker">
+			<input type="text" class="form-control"
+				   ng-class="(waiting) ? 'datepicker-input-disabled' : ''"
+				   ng-click="handleDatePicker($event)"
+				   ng-model="formattedDate.value"
+				   ng-change="parseToISODate(formattedDate.value)"
+				   is-open="datePickerStatus.open"
+				   datepicker-popup="{{dateFormat}}"
+				   datepicker-options="dateOptions"
+				   current-text="{{bundle.button.today}}"
+				   clear-text="{{bundle.button.clear}}"
+				   close-text="{{bundle.button.close}}"
+				   min-date="{{fieldData.datePickerMinDate}}"
+				   placeholder="{{placeholder}}"/>
+			<button type="button" class="btn btn-default choose-date"
+					ng-class="(waiting) ? 'datepicker-button-disabled' : ''"
+					ng-click="handleDatePicker($event)">
+				<span class="md-event-note"></span>
+			</button>
+		</p>
+	</ng-form>
+
+	<!-- simple field types - the ones where single line editing (input) is enough -->
+	<ng-form ng-if="isSingleLineFieldEdit(fieldData.metadata.dataTypeId) && isEditable()" name="{{fieldData.id}}" class="value-holder">
+		<input type="text" class="form-control" ng-model="fieldData.value" ng-attr-name="{{fieldData.id}}" ng-attr-maxlength="{{maxFieldLength}}" ng-change="onChange(fieldData.id, fieldData.value)" ng-disabled="waiting" placeholder="{{placeholder}}">
+		<div ng-if="(fieldData.unitOfMeasure !== null) && (fieldData.metadata.dataTypeId !== 16) && (fieldData.metadata.dataTypeId !== 18)" class="unit-of-measure small">{{fieldData.unitOfMeasure}}</div>
+	</ng-form>
+
+	<!-- simple field types, paragraphs editing -->
+	<ng-form ng-if="((fieldData.metadata.dataTypeId === 8) || (fieldData.metadata.dataTypeId === 17)) && isEditable()" name="{{fieldData.id}}" class="value-holder">
+		<textarea class="form-control" ng-model="fieldData.value" ng-attr-name="{{fieldData.id}}" ng-attr-maxlength="{{maxFieldLength}}" ng-change="onChange(fieldData.id, fieldData.value)" ng-disabled="waiting" placeholder="{{placeholder}}"></textarea>
+		<div ng-if="fieldData.unitOfMeasure !== null" class="unit-of-measure small">{{fieldData.unitOfMeasure}}</div>
+	</ng-form>
+
+	<!-- render the non-editable, but already implemented field, as a view-only field (using the field-view directive) -->
+	<div ng-if="(isSingleLineFieldEdit(fieldData.metadata.dataTypeId) || (fieldData.metadata.dataTypeId === 8) || (fieldData.metadata.dataTypeId === 17) || (fieldData.metadata.dataTypeId === 3)) && !isEditable()" class="value-holder">
+		<field-view field-data="fieldData" use-truncation="true">
+	</div>
+
+	<!-- simple field types, all other types not covered before -->
+	<div ng-if="(fieldData.metadata.dataTypeId === 11) && !isArray(fieldData.value)" class="value-holder non-editable">
+		{{fieldData.value}} <span ng-if="fieldData.unitOfMeasure !== undefined">({{fieldData.unitOfMeasure}})</span>
+	</div>
+
+</span>

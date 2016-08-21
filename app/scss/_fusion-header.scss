@@ -1,0 +1,318 @@
+// Temporary styling for the local version of the unified fusion header
+//	This should be removed once a shared component exists
+//		Most of these styles are drawn from various
+//			.less files throughout https://git.autodesk.com/A360/Galileo-Web/
+#fusion-header-wrapper {
+	position: absolute;
+	height: $fusionHeaderHeight;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+
+	background-color: $fusionHeaderBackgroundColor;
+
+	#fusion-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		#fusion-header-left,
+		#fusion-header-right {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+	}
+
+	.fusion-header-icon {
+		width: 16px;
+		height: 16px;
+		cursor: pointer;
+
+		svg {
+			fill: $fusionHeaderIconColor;
+		}
+
+		&:hover svg {
+			fill: $fusionHeaderIconHoverColor;
+		}
+	}
+
+	.fusion-header-item-container {
+		@include flex-center();
+	}
+
+	.fusion-header-separator-wrapper {
+		@include flex-center();
+		width: 0;
+	}
+
+	@mixin fusion-header-separator($height, $color) {
+		height: $height;
+		width: 0;
+		border-right: 1px solid $color;
+	}
+
+	#fusion-header-hamburger-separator {
+		@include fusion-header-separator($fusionHeaderFirstSeparatorHeight, $fusionHeaderFirstSeparatorColor);
+	}
+
+	#fusion-header-hamburger {
+		padding: 0 30px;
+		color: $whiteColor;
+
+		span {
+			font-size: 1.25em;
+		}
+	}
+
+	#fusion-brand-logo {
+		padding: 0 15px;
+		width: 225px;
+		margin-top: 4px;
+	}
+
+	#fusion-header-hub-name {
+		flex-wrap: nowrap;
+		flex-grow: 1;
+
+		font-size: 18px;
+		font-weight: normal;
+		margin: 0 0 0 15px;
+
+		color: $fusionHeaderHubNameColor;
+	}
+
+	#fusion-header-search {
+		flex-grow: 1;
+	}
+
+	#fusion-header-help {
+		padding: 0 30px;
+	}
+
+	#fusion-header-user {
+		color: $fusionHeaderIconColor;
+		margin-right: 15px;
+	}
+}
+
+.fusion-header-help-menu-flyout {
+	z-index: $fusionHeaderHelpMenuZIndex;
+
+	&.flyout.bottom,
+	&.flyout.bottom-left,
+	&.flyout.up {
+		margin-top: 12px;
+		padding: 0;
+
+		.flyout-arrow {
+			width: 0;
+			height: 0;
+			position: relative;
+			left: -10px;
+
+			border: {
+				right: 10px solid transparent;
+				bottom: 10px solid $whiteColor;
+				left: 10px solid transparent;
+			}
+
+			&:after {
+				position: absolute;
+				z-index: -1;
+				top: 2px;
+				left: -7px;
+
+				width: 15px;
+				height: 15px;
+
+				content: '';
+				transform: rotate(45deg);
+
+				box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+
+	#fusion-header-help-menu-content {
+		width: $fusionHeaderHelpMenuWidth;
+		box-shadow: $fusionHeaderHelpMenuShadow;
+		border-radius: 2px;
+		line-height: normal;
+		background-color: $whiteColor;
+
+		#fusion-header-help-options {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			#fusion-header-help-options-link-list {
+				background-color: transparent;
+				padding-right: 0;
+				max-height: $fusionHeaderHelpMenuMaxHeight;
+				overflow-y: auto;
+				overflow-x: hidden;
+
+				.fusion-header-help-option {
+					text-decoration: none;
+					cursor: pointer;
+					padding: 0 5px;
+					border-bottom: 1px solid $fusionHeaderHelpOptionSeparatorColor;
+					display: block;
+
+					&:last-child {
+						border-bottom: 0;
+					}
+
+					.help-details-row {
+						display: flex;
+						align-items: center;
+						padding-left: 15px;
+					}
+				}
+
+				.help-option-icon {
+					margin-right: 15px;
+					flex-shrink: 0;
+					width: 31px;
+					height: 31px;
+
+					svg {
+						fill: $fusionHeaderHelpIconColor;
+						width: 100%;
+						height: 100%;
+					}
+
+					// Force vignettes icon to be the same color as other icon
+					//	Since it has explicit colors specified
+					&.fusion-header-vignettes-icon svg path {
+						fill: $fusionHeaderHelpIconColor;
+					}
+				}
+
+				.help-details-row-inner {
+					flex-grow: 1;
+					flex-direction: column;
+					flex-wrap: nowrap;
+					align-items: stretch;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					min-width: 1px;
+					position: relative;
+
+					.help-link-primary,
+					.help-link-secondary {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+
+					.help-link-primary {
+						color: $fusionHeaderHelpPrimaryTextColor;
+					}
+
+					.help-link-secondary {
+						color: $fusionHeaderHelpSecondaryTextColor;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+#fusion-header-user-dropdown {
+	width: 36px;
+	height: 36px;
+
+	// The link itself, inside the login block
+	> a {
+		cursor: pointer;
+		display: inline-block;
+		overflow: hidden;
+
+		width: inherit;
+		height: inherit;
+
+		border-radius: 50%;
+
+		img {
+			position: relative;
+			top: -7px;
+			left: -7px;
+		}
+	}
+
+	.dropdown-widget {
+
+		.dropdown-widget-wrapper {
+			top: 3px;
+			width: 280px;
+
+			> div {
+				padding: 10px 20px 10px 20px;
+				border-bottom: 1px solid #D8D8D8;
+
+				span {
+					display: block;
+					height: 16px;
+					line-height: 100%;
+					font-weight: 700;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				span:nth-child(2) {
+					color: #6E6E6E;
+					font-weight: 300;
+					margin: 5px 0 0 0;
+				}
+			}
+		}
+
+		li {
+			button {
+				color: $linkColor;
+				border-width: 0;
+				background-color: transparent;
+				width: 100%;
+				text-align: left;
+			}
+
+			&:hover {
+				background-color: $dropdownWidgetHoverBackgroundColor;
+			}
+		}
+	}
+
+	.dropdown-widget:after,
+	.dropdown-widget:before {
+		bottom: -4px;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.dropdown-widget:after {
+		border-color: transparent;
+		border-bottom-color: $whiteColor;
+		border-width: 10px;
+		margin-left: 8px;
+	}
+	.dropdown-widget:before {
+		border-color: transparent;
+		border-bottom-color: $dropdownWidgetBorderColor;
+		border-width: 12px;
+		margin-left: 6px;
+	}
+}

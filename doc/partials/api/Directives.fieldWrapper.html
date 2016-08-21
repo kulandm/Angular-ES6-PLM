@@ -1,0 +1,51 @@
+<h1><code ng:non-bindable="">fieldWrapper</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Directives</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="directives-fieldwrapper-page"><p>This directive wraps fieldView and fieldEdit,
+branching to the proper directive based on <code>isEdit</code>.</p>
+<ul>
+<li>useTruncation <span class="label">Boolean</span> If truncation should happen.</li>
+<li>fieldData <span class="label">Object</span> Contains the data.</li>
+<li>isEdit <span class="label">Boolean</span> Flag for whether the view is in
+editing mode. For Affected Items, this flag is also determined by other
+conditions, e.g. editability, lifecycle transition, etc.</li>
+<li>isEditActive <span class="label">Boolean</span> Flag for whether the
+current field is being edited.</li>
+<li>isVisible <span class="label">Boolean</span> For Affected Items - Flag for
+whether a custom column is visible.</li>
+<li>editMode <span class="label">Boolean</span> For Affected Items - Since
+<code>isEdit</code> is determined by other conditions, this is a flag for whether the
+view is in edit mode.</li>
+<li>uom <span class="label">String</span> For Affected Items - A string for
+<code>uom</code> in custom columns.</li>
+<li>onChange <span class="label">Function</span> Callback to the method that&#39;s
+going to be called every time the form element is updated.</li>
+<li>waiting <span class="label">Boolean</span> Two-way binded to a boolean var
+in the controller that controls when saving is underway, so as to disable
+controls and block editing.</li>
+<li>placeholder <span class="label">String</span> String used as placeholder
+text for inputs that support it (if not supplied, it will be ignored).</li>
+</ul>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY field-wrapper&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="directives-fieldwrapper-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-12" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-12" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-12">
+<field-wrapper field-data="Object" is-edit="Boolean"/>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-12" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="plm360">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- base definition for angular-route testing -->
+		<!-- <base href="/nextplm/"> -->
+
+		<title>Fusion Lifecycle</title>
+
+		<!-- CSS files, compiled from /scss -->
+
+		
+		<!-- base angular-material -->
+		<link href="/app/lib/angular-material/angular-material.css" rel="stylesheet">
+
+		<!-- base material-design icons -->
+		<link href="/app/lib/material-design-iconic-font/dist/css/material-design-iconic-font.css" rel="stylesheet">
+
+		<!-- base bootstrap/bootflat -->
+		<!-- <link href="/app/css/bootstrap.css" rel="stylesheet"> -->
+
+		<!-- normalize -->
+		<link href="/app/lib/normalize.css/normalize.css" rel="stylesheet">
+
+		<!-- semantic-ui -->
+		<link href="/app/lib/semantic-ui/dist/semantic.min.css" rel="stylesheet">
+
+		<!-- PLM Dropdown CSS -->
+		<link href="/app/lib/plm-dropdown/dist/styles.css" rel="stylesheet">
+
+		<!-- WIP File Browser CSS -->
+		<link href="/app/lib/plm-wip-file-browser/dist/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Section Wrapper CSS -->
+		<link href="/app/lib/plm-section-wrapper/build/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Field Selector CSS -->
+		<link href="/app/lib/plm-field-selector/dist/styles.css" rel="stylesheet">
+
+		<!-- PLM Users Selector CSS -->
+		<link href="/app/lib/plm-users-selector/dist/css/styles.css" rel="stylesheet">
+
+		<!-- PLM Search CSS -->
+		<link href="/app/lib/plm-search/dist/styles.css" rel="stylesheet">
+
+		<!-- plm-specific customizations -->
+		<link href="/app/css/plm.css" rel="stylesheet">
+
+
+		<!-- plm-specific customizations -->
+		<!-- <link href="/app/lib/angular-ui-grid/ui-grid.css" rel="stylesheet"> -->
+
+		<!-- print-specific css -->
+		<link href="/app/css/print.css" rel="stylesheet">
+
+        <!-- cpdm-specific css -->
+        <link href="/app/lib/cpdm-ui/dist/cpdm-ui.css" rel="stylesheet" type="text/css" />
+
+		<!-- plm-animations-->
+		<link href="/app/css/plm-animations.css" rel="stylesheet">
+
+		<!-- angular-gantt -->
+		<link href="/app/lib/angular-gantt/dist/angular-gantt.css" rel="stylesheet">
+
+		<!-- gantt-tooltips-->
+		<link href="/app/lib/angular-gantt/dist/angular-gantt-tooltips-plugin.css" rel="stylesheet">
+
+		<!-- text-angular-->
+		<link href="/app/lib/textAngular/dist/textAngular.css" rel="stylesheet">
+
+		<!-- PLM Navigation Guard Modal -->
+		<link href="/app/lib/plm-navigation-guard/dist/css/nav-guard.css" rel="stylesheet">
+
+		<!-- PLM User Avatar CSS -->
+		<link href="/app/lib/plm-user-avatar/dist/css/styles.css" rel="stylesheet">
+
+		<base href="/app/" />
+		
+
+	</head>
+
+	<body layout="row" layout-fill locale-bundle="lib/plm-localization/dist/translations/localizationBundleGeneral">
+
+		<!-- main content -->
+		<span layout="row" layout-fill ui-view id="wrapper"></span>
+
+		
+		<!-- angular modules -->
+		<script type="text/javascript" src="lib/angular/angular.js"></script>
+		<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+		<script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="lib/angular-cache/dist/angular-cache.min.js"></script>
+		<script type="text/javascript" src="lib/angular-cookies/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="lib/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+		<script type="text/javascript" src="lib/angular-locale-bundles/dist/angular-locale-bundles.min.js"></script>
+		<script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+		<script type="text/javascript" src="lib/angular-mocks/angular-mocks.js"></script>
+		<script type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
+		<script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-grid/ui-grid.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-mask/dist/mask.min.js"></script>
+		<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/semantic-ui/dist/semantic.min.js"></script>
+		<script type="text/javascript" src="lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+		<script type="text/javascript" src="lib/restangular/dist/restangular.min.js"></script>
+		<script type="text/javascript" src="lib/traceur/traceur.js"></script>
+		<script type="text/javascript" src="lib/traceur_runtime.js"></script>
+		<script type="text/javascript" src="lib/underscore/underscore-min.js"></script>
+		<script type='text/javascript' src="lib/moment/min/moment-with-locales.min.js"></script>
+		<script type='text/javascript' src="lib/angular-moment/angular-moment.js"></script>
+		<script type='text/javascript' src="lib/angular-gantt/dist/angular-gantt.min.js"></script>
+		<script type='text/javascript' src="lib/angular-gantt/dist/angular-gantt-plugins.min.js"></script>
+		<script type='text/javascript' src="lib/jsPlumb/dist/js/dom.jsPlumb-1.7.4-min.js"></script>
+		<script type='text/javascript' src="lib/df-tab-menu/build/df-tab-menu.min.js"></script>
+		<script type='text/javascript' src="lib/rangy/rangy-core.js"></script>
+		<script type='text/javascript' src="lib/rangy/rangy-selectionsaverestore.js"></script>
+		<script type='text/javascript' src="lib/textAngular/dist/textAngular-sanitize.min.js"></script>
+		<script type='text/javascript' src="lib/textAngular/dist/textAngular.min.js"></script>
+		<script type='text/javascript' src="lib/highcharts/adapters/standalone-framework.js"></script>
+		<script type='text/javascript' src="lib/highcharts/highcharts.js"></script>
+		<script type='text/javascript' src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+		<script type='text/javascript' src="lib/d3/d3.js"></script>
+		<script src='https://search-static-dev.api.autodesk.com/search-js/master/latest/js/search-qs-jsapi.min.js'></script>
+		<script type='text/javascript' src="lib/excel-builder.js/dist/excel-builder.standalone.js"></script>
+		<script type='text/javascript' src="lib/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+
+				<script type="text/javascript" src="lib/plm-localization/dist/plm-localization.js"></script>
+
+				<script type="text/javascript" src="lib/plm-underscore/build/plm-underscore.js"></script>
+
+				<script type="text/javascript" src="lib/plm-event-service/build/plm-event-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-dropdown/dist/plm-dropdown.js"></script>
+
+				<script type="text/javascript" src="lib/plm-token-service/dist/plm-token-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-authentication-service/build/plm-authentication-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-classic-redirector/build/plm-classic-redirector.js"></script>
+
+				<script type="text/javascript" src="lib/plm-loading-data-service/build/plm-loading-data-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-config/build/PLM360Conf.js"></script>
+
+				<script type="text/javascript" src="lib/plm-rest-wrapper-service/dist/plm-rest-wrapper-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-notification/dist/plm-notification.js"></script>
+
+				<script type="text/javascript" src="lib/plm-ng-filters/build/plm-ng-filters.js"></script>
+
+				<script type="text/javascript" src="lib/plm-flyout/dist/plm-flyout.js"></script>
+
+				<script type="text/javascript" src="lib/plm-api-models-manager/dist/plm-api-models-manager.js"></script>
+
+				<script type="text/javascript" src="lib/plm-bom/dist/plm-bom.js"></script>
+
+
+				<script type="text/javascript" src="lib/plm-table-data/dist/plm-table-data.js"></script>
+
+				<script type="text/javascript" src="lib/plm-dashboard/dist/plm-dashboard.js"></script>
+
+				<script type="text/javascript" src="lib/plm-jitterbit/dist/plm-jitterbit.js"></script>
+
+				<script type="text/javascript" src="lib/plm-search/dist/plm-search.js"></script>
+
+				<script type="text/javascript" src="lib/plm-roamer/dist/plm-roamer.js"></script>
+
+				<script type="text/javascript" src="lib/plm-urn-parser/dist/plm-urn-parser.js"></script>
+
+				<script type="text/javascript" src="lib/plm-field-selector/dist/plm-field-selector.js"></script>
+
+				<script type="text/javascript" src="lib/plm-users-selector/dist/plm-usersSelector.js"></script>
+
+				<script type="text/javascript" src="lib/plm-cws/dist/plm-cws.js"></script>
+
+				<script type="text/javascript" src="lib/plm-section-wrapper/build/plm-section-wrapper.js"></script>
+
+				<script type="text/javascript" src="lib/plm-edit-tracker/dist/plm-edit-tracker.js"></script>
+
+				<script type="text/javascript" src="lib/plm-file-overview-service/dist/plm-file-overview-service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-wip-http/dist/plm-wip-http.js"></script>
+
+				<script type="text/javascript" src="lib/plm-navigation-guard/dist/plm-navigation-guard.js"></script>
+
+				<script type="text/javascript" src="lib/plm-commons/PLM360BreadcrumbConfig/main.js"></script>
+
+		<script type="text/javascript" src="lib/plm-commons/PLM360ResolveConfig/main.js"></script>
+
+		<script type="text/javascript" src="lib/plm-commons/PLM360Token/service.js"></script>
+
+				<script type="text/javascript" src="lib/adsk-commons/HttpInterceptorService/service.js"></script>
+
+				<script type="text/javascript" src="lib/plm-user-avatar/dist/plm-userAvatar.js"></script>
+
+
+        <!-- Begin CPDM Includes -->
+        		<script type="text/javascript" src="lib/cpdm-ui/dist/cpdm-ui.js"></script>
+
+				<script type="text/javascript" src="lib/plm-wip-file-type/dist/plm-wip-file-type.js"></script>
+
+				<script type="text/javascript" src="lib/plm-wip-file-browser/dist/plm-wipFileBrowser.js"></script>
+
+        <!-- End CPDM Includes -->
+
+		<!-- Our main JS file -->
+				<script type="text/javascript" src="build/components/confirmationDialog/confirmationDialog.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/confirmationDialog/confirmationDialog.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/CreateItemPayloadBuilder.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/createItem.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/createItem.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/createItem.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/createItemDialog.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/managedItem.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/createItem/managedItem.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/featureToggle/featureToggle.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/featureToggle/featureToggle.js"></script>
+
+		<script type="text/javascript" src="build/components/fusionHeader/fusionHeader.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/fusionHeader/fusionHeader.js"></script>
+
+		<script type="text/javascript" src="build/components/fusionHeader/helpMenu.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/fusionHeader/userDropdown.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/itemHeader/itemHeader.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/itemHeader/itemHeader.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/itemHeader/itemHeader.js"></script>
+
+		<script type="text/javascript" src="build/components/itemHeader/workflowTransition.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/itemViewer/itemViewer.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/itemViewer/itemViewer.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/itemViewer/itemViewer.js"></script>
+
+		<script type="text/javascript" src="build/components/plmFooter/plmFooter.js"></script>
+
+		<script type="text/javascript" src="build/components/plmNavigation/plmNavigation.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/plmNavigation/plmNavigation.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/plmNavigation/plmNavigation.js"></script>
+
+		<script type="text/javascript" src="build/components/plmNavigation/plmNavigationPanels.js"></script>
+
+		<script type="text/javascript" src="build/components/plmNavigation/vignettesModal.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/plmTableCheckbox/plmTableCheckbox.component.js"></script>
+
+		<script type="text/javascript" src="build/components/plmTableCheckbox/plmTableCheckbox.js"></script>
+
+		<script type="text/javascript" src="build/components/plmWrapper/plmWrapper.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/plmWrapper/plmWrapper.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/addItem/addItem.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/addItem/addItem.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/addLinkableItems/addLinkableItems.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/changeOwner/changeOwner.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/changeOwner/changeOwner.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/changeOwner/editAdditionalOwners.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/commandBar/commandBar.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/commandBar/commandBar.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/commandBar/commandBar.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/removeItemConfirmation/removeItemConfirmation.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/removeItemConfirmation/removeItemConfirmation.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewActionNotifications/addActionNotifications.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewActionNotifications/viewActionNotifications.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewActionNotifications/viewActionNotifications.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAffectedItems/addRelatedBom.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAffectedItems/bulkEdit.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAffectedItems/viewAffectedItems.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAffectedItems/viewAffectedItems.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAttachedItems/viewAttachedItems.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAttachedItems/viewAttachedItems.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAttachments/viewAttachments.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewAttachments/viewAttachments.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/BomMessageService.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/bomConfigurationDropdown.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/bomConfigurationDropdown.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/bomDataController.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/bomItemNumber.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/bomPinning.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/viewBom.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewBom/viewBom.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewChangeLog/viewChangeLog.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewChangeLog/viewChangeLog.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewDetails/viewDetails.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewDetails/viewDetails.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewGrid/viewGrid.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewGrid/viewGrid.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewMilestones/viewMilestones.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewMilestones/viewMilestones.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewNamedRelationships/viewNamedRelationships.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewNamedRelationships/viewNamedRelationships.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewProjectManagement/treeTableContainer.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewProjectManagement/treeView.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewProjectManagement/viewProjectManagement.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewProjectManagement/viewProjectManagement.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewRelationships/viewRelationships.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewRelationships/viewRelationships.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewSourcing/viewSourcing.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewSourcing/viewSourcing.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWipAttachments/viewWipAttachments.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWipAttachments/viewWipAttachments.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWorkflow/viewWorkflow.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWorkflow/viewWorkflow.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWorkflowActions/viewWorkflowActions.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceItem/viewWorkflowActions/viewWorkflowActions.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceTableauFlyout/TableauPayloadBuilder.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceTableauFlyout/workspaceTableauFlyout.controller.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceTableauFlyout/workspaceTableauFlyout.directive.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceTableauFlyout/workspaceTableauFlyout.js"></script>
+
+		<script type="text/javascript" src="build/components/workspaceTableauFlyout/workspaceTableauFlyoutBox.controller.js"></script>
+
+		<script type="text/javascript" src="build/models/bomApi/bomNestedItem.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomApi/bomNestedItemListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomApi/bomRoot.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomApi/bomRootListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomAttachment.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomAttachment.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomAttachmentList.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomBulkAttachment.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomBulkAttachmentListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomAttachment/bomBulkAttachmentLoader.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeAdd.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeCompiled.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeEdit.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeError.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeList.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeListTypes.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangePayloadBuilder.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangePinningEdit.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeRemove.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomEdit/bomChangeTypes.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomConfigurationStateMachine.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomEdge.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomField.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomGraph.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomGraph.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomGraphBuilder.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomGraph/bomNode.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomFieldData.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomPath.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTable.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTable.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTableColumn.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTableColumnBuilder.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTableRow.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomTable/bomTableRowBuilder.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/ViewDefinitionFieldListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/bomViewDefinition.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/viewDefinition.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/viewDefinitionField.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/viewDefinitionListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/viewDefinitions.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bomViewDefinition/viewDefinitionsListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bulkBom/bulkBom.js"></script>
+
+		<script type="text/javascript" src="build/models/bulkBom/bulkBom.model.js"></script>
+
+		<script type="text/javascript" src="build/models/bulkBom/bulkBomListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/bulkBom/bulkBomLoader.service.js"></script>
+
+		<script type="text/javascript" src="build/models/configurations/configurations.js"></script>
+
+		<script type="text/javascript" src="build/models/configurations/configurations.model.js"></script>
+
+		<script type="text/javascript" src="build/models/configurations/configurationsListeners.service.js"></script>
+
+		<script type="text/javascript" src="build/models/searchPlm/searchPlmResult.model.js"></script>
+
+		<script type="text/javascript" src="build/services/FieldTypeMappings.js"></script>
+
+		<script type="text/javascript" src="build/services/LocalUserStorage.service.js"></script>
+
+		<script type="text/javascript" src="build/services/PLMPermissions.js"></script>
+
+		<script type="text/javascript" src="build/services/PermissionService.js"></script>
+
+		<script type="text/javascript" src="build/services/SupportedFieldsService.js"></script>
+
+		<script type="text/javascript" src="build/services/UrlParser.js"></script>
+
+		<script type="text/javascript" src="build/services/ValidationUtil.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/app.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/controllers/LoginController.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/AdjustMaxHeightDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/AuthCheckDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/ClickOutsideElementDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/FileReadDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/InfiniteScrollDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/LoadingBarWidgetDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/MultiselectWidgetDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/TextTruncationDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/directives/UserProfileSummaryDirective.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/misc/HTTPInterceptor.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/ActionNotification.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/ActionNotifications.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/AffectedItem.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/AffectedItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/AffectedItemsMeta.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/BomNested.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/BookmarkedItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/ChangeLog.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/EnabledFeatures.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/GridData.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/GridMeta.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Groups.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Item.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Items.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/LinkableItem.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/LinkableItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/LinkedItemTransitions.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/LinkedToWorkspaces.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Milestones.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/NamedRelationshipsItem.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/NamedRelationshipsItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/OutstandingWork.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Ownership.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Picklist.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/ProjectItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RecentlyViewed.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RelatedBomItem.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RelatedBomItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RelatedItem.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RelatedItems.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/RelatedWorkspaces.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Report.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Reports.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Revisions.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/SourcingQuotes.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Sourcings.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/State.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Tabs.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Transitions.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/User.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/UserPermissions.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/View.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Views.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Workflow.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Workspace.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/WorkspaceTableau.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/models/Workspaces.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/services/CommentsService.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/services/WorkspaceTabsService.js"></script>
+
+		<script type="text/javascript" src="build-legacy/scripts/services/WorkspaceViewsService.js"></script>
+
+		
+
+	</body>
+</html>

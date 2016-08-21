@@ -1,0 +1,190 @@
+apply plugin:"plm"
+
+import org.apache.tools.ant.taskdefs.condition.Os
+import org.gradle.api.tasks.Exec
+
+description = "plm-hig"
+
+//Setup/Priming Tasks --------------------------------------------------
+task npm(type:Exec) {
+  group = "Package Management"
+  description = "Gets necessary node packages"
+  if(Os.isFamily(Os.FAMILY_WINDOWS)){
+  commandLine 'cmd', '/c', 'npm install'
+  } else {
+  setExecutable("npm")
+  args = "install".trim().split(" ") as List
+  }
+}
+
+task bower(type: BowerTask) {
+   group = "Package Management"
+   description = "Get necessary bower packages"
+   bowerArgs = "install -f"
+}
+
+task webdriverUpdate(type: WebdriverTask) {
+   group = "Package Management"
+   description = "Get browser Webdriver driver"
+   webdriverArgs = "update"
+}
+
+task webdriverStart(type: WebdriverTask) {
+   group = "Package Management"
+   description = "Start Webdriver server"
+   webdriverArgs = "start"
+}
+
+//Miscellaneous Tasks --------------------------------------------------
+task grunt(type: GruntTask) {
+   group = "Miscellaneous"
+   description = "Performs Default Grunt Action"
+   gruntArgs = "default"
+}
+
+task gruntTasks(type: GruntTask) {
+   group = "Miscellaneous"
+   description = "Displays Grunt Tasks Available"
+   gruntArgs = "tasks"
+}
+
+//Code Quality Tasks --------------------------------------------------
+task gendoc(type: GruntTask) {
+   group = "Code Quality"
+   description = "Generates JS Documentation"
+   gruntArgs = "gendoc"
+}
+
+task lint(type: GruntTask) {
+   group = "Code Quality"
+   description = "Provide Code Quality Checking"
+   gruntArgs = "lint"
+}
+
+
+//Build Tasks --------------------------------------------------
+task build(type: GruntTask) {
+   group = "Build"
+   description = "Compiles all of the assets and copies the files to the build directory"
+   gruntArgs = "build"
+}
+
+task buildCommons(type: GruntTask) {
+   group = "Build"
+   description = "Fetches commons repos from artifactory, then call build dev"
+   gruntArgs = "build-commons-artifactory"
+}
+
+task buildStage( type: GruntTask) {
+   group = "Build"
+   description = "Compiles all of the assets and copies the files to the build directory"
+   gruntArgs = "build-stage"
+}
+
+task archiveBuild(type: Zip) {
+   group = "Publish"
+   description = "Creates Zip of Build Directory"
+   //Hopefully Externalize most of this at some point similar to how we do in plm core
+   baseName = 'plm-hig'
+   version = '1.0.6'
+   classifier = 'SNAPSHOT'
+   from ('./build'){ exclude 'target'}
+   destinationDir = new File("./build/target")
+   extension = 'zip'
+}
+
+task warBuild(type: War) {
+   group = "Publish"
+   description = "Creates War of Build Directory"
+   //Hopefully Externalize most of this at some point similar to how we do in plm core
+   baseName = 'plm-hig'
+   version = '1.0.6'
+   classifier = 'SNAPSHOT'
+   from ('./build'){ exclude 'target'}
+   destinationDir = new File("./build/target")
+   extension = 'War'
+}
+
+task setVersionsTxtFile << {
+  copy{
+    from ( "." ) {
+      include "version.template"
+      expand ([sourceVersion: System.env.SOURCE_VERSION ,buildDate: Calendar.instance.time ])
+      rename "version.template", "version.txt"
+    }
+    into "app"
+  }
+}
+task createConfigForProtractor << {
+  copy {
+    from ( "." ) {
+      include "templateConfig.yaml"
+      expand ([YOUR_PLM360_CUSTOMER: System.env.CUSTOMER_NAME ,YOUR_PATH_TO_APP: System.env.BASE_URL ])
+      rename "templateConfig.yaml", "localConfig.yaml"
+    }
+    into "."
+  }
+}
+
+//Clean Tasks --------------------------------------------------
+task clean(type: GruntTask) {
+   group = "Clean"
+   description = "Cleans All"
+   gruntArgs = "clean-dev"
+}
+
+//Testing Tasks --------------------------------------------------
+task unit(type: GruntTask) {
+   group = "Test"
+   description = "Runs unit test under a dev configuration"
+   gruntArgs = "unit"
+}
+
+task view(type: GruntTask) {
+   group = "Test"
+   description = "Runs E2E/View tests with a standard dev configuration"
+   gruntArgs = "view"
+}
+
+task test(dependsOn: ['unit', 'view']){
+   group = "Test"
+   description = "Runs Unit and View Tests"
+}
+
+//Class Definitions --------------------------------------------------
+class GruntTask extends Exec {
+   private String gruntExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ? "./node_modules/.bin/grunt.cmd" : "./node_modules/.bin/grunt"
+   def gruntArgs = ""
+   public GruntTask() {
+       super()
+       this.setExecutable(gruntExecutable)
+   }
+   public void setGruntArgs(String gruntArgs) {
+       this.args = "$gruntArgs".trim().split(" ") as List
+   }
+}
+
+
+class BowerTask extends Exec {
+   private String bowerExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ? "./node_modules/.bin/bower.cmd" : "./node_modules/.bin/bower"
+   def bowerArgs = ""
+   public BowerTask() {
+       super()
+       this.setExecutable(bowerExecutable)
+   }
+   public void setBowerArgs(String bowerArgs) {
+       this.args = "$bowerArgs".trim().split(" ") as List
+   }
+}
+
+class WebdriverTask extends Exec {
+   private String webdriverExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ?  "./node_modules/.bin/webdriver-manager.cmd" : "./node_modules/.bin/webdriver-manager"
+   def webdriverArgs = ""
+   public WebdriverTask() {
+       super()
+       this.setExecutable(webdriverExecutable)
+   }
+   public void setWebdriverArgs(String webdriverArgs) {
+       this.args = "$webdriverArgs".trim().split(" ") as List
+   }
+}

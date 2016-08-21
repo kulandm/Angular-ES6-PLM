@@ -1,0 +1,1632 @@
+
+TAP version 13
+not ok 1
+    ---
+    message:  constructor has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/src/components/featureToggle/featureToggle.directive.js
+    line:     7
+    name:     adsk/ngdoc
+    ...
+
+not ok 2
+    ---
+    message:  link has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/src/components/featureToggle/featureToggle.directive.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 3
+    ---
+    message:  directiveFactory has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/src/components/featureToggle/featureToggle.directive.js
+    line:     53
+    name:     adsk/ngdoc
+    ...
+
+not ok 4
+    ---
+    message:  constructor has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/src/components/workspaceItem/viewSourcing/viewSourcing.controller.js
+    line:     21
+    name:     adsk/ngdoc
+    ...
+
+not ok 5
+    ---
+    message:  makeRequest has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/scripts/models/Picklist.js
+    line:     32
+    name:     adsk/ngdoc
+    ...
+
+not ok 6
+    ---
+    message:  Expected a conditional expression and instead saw an assignment.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/scripts/models/Transitions.js
+    line:     40
+    name:     no-cond-assign
+    ...
+
+not ok 7
+    ---
+    message:  picklistLoaderWithFiltering has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/scripts/models/Workspace.js
+    line:     307
+    name:     adsk/ngdoc
+    ...
+
+not ok 8
+    ---
+    message:  picklistLoader has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/scripts/models/Workspace.js
+    line:     356
+    name:     adsk/ngdoc
+    ...
+
+not ok 9
+    ---
+    message:  fetchNextWorkspacePage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/scripts/models/Workspaces.js
+    line:     90
+    name:     adsk/ngdoc
+    ...
+
+not ok 10
+    ---
+    message:  handleDatePicker has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldEditDirective.js
+    line:     192
+    name:     adsk/ngdoc
+    ...
+
+not ok 11
+    ---
+    message:  Expected a 'break' statement before 'case'.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldViewDirective.js
+    line:     216
+    name:     no-fallthrough
+    ...
+
+not ok 12
+    ---
+    message:  Expected a 'break' statement before 'case'.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldViewDirective.js
+    line:     220
+    name:     no-fallthrough
+    ...
+
+not ok 13
+    ---
+    message:  Expected a 'break' statement before 'case'.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldViewDirective.js
+    line:     222
+    name:     no-fallthrough
+    ...
+
+not ok 14
+    ---
+    message:  closeDialog has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldViewDirective.js
+    line:     259
+    name:     adsk/ngdoc
+    ...
+
+not ok 15
+    ---
+    message:  isDetailsEdit has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/fieldTypes/FieldWrapperDirective.js
+    line:     70
+    name:     adsk/ngdoc
+    ...
+
+not ok 16
+    ---
+    message:  Expected a conditional expression and instead saw an assignment.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/tabularDataWidget/TabularDataWidgetController.js
+    line:     55
+    name:     no-cond-assign
+    ...
+
+not ok 17
+    ---
+    message:  Expected a conditional expression and instead saw an assignment.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/tabularDataWidget/TabularDataWidgetController.js
+    line:     62
+    name:     no-cond-assign
+    ...
+
+not ok 18
+    ---
+    message:  processField has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/app/components/workspaceItems/WorkspaceItemsController.js
+    line:     503
+    name:     adsk/ngdoc
+    ...
+
+not ok 19
+    ---
+    message:  GenericPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/GenericPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 20
+    ---
+    message:  WorkspacesManagerPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 21
+    ---
+    message:  selectBasicWorkspaceType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     307
+    name:     adsk/ngdoc
+    ...
+
+not ok 22
+    ---
+    message:  selectBasicWorkspaceWithWorkflowType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     310
+    name:     adsk/ngdoc
+    ...
+
+not ok 23
+    ---
+    message:  selectRevisionControlledWorkspaceType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     313
+    name:     adsk/ngdoc
+    ...
+
+not ok 24
+    ---
+    message:  selectRevisioningWorkspaceType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     316
+    name:     adsk/ngdoc
+    ...
+
+not ok 25
+    ---
+    message:  selectSupplierManagementType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     319
+    name:     adsk/ngdoc
+    ...
+
+not ok 26
+    ---
+    message:  selectSupplierManagementWithWorkflowType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     322
+    name:     adsk/ngdoc
+    ...
+
+not ok 27
+    ---
+    message:  selectAutoNumberType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     570
+    name:     adsk/ngdoc
+    ...
+
+not ok 28
+    ---
+    message:  selectIntegerType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     573
+    name:     adsk/ngdoc
+    ...
+
+not ok 29
+    ---
+    message:  selectFloatType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     576
+    name:     adsk/ngdoc
+    ...
+
+not ok 30
+    ---
+    message:  selectMoneyType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     579
+    name:     adsk/ngdoc
+    ...
+
+not ok 31
+    ---
+    message:  selectDateType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     582
+    name:     adsk/ngdoc
+    ...
+
+not ok 32
+    ---
+    message:  selectSingleLineTextType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     585
+    name:     adsk/ngdoc
+    ...
+
+not ok 33
+    ---
+    message:  selectParagraphType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     588
+    name:     adsk/ngdoc
+    ...
+
+not ok 34
+    ---
+    message:  selectParagraphWithoutLineBreakType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     591
+    name:     adsk/ngdoc
+    ...
+
+not ok 35
+    ---
+    message:  selectCheckBoxType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     594
+    name:     adsk/ngdoc
+    ...
+
+not ok 36
+    ---
+    message:  selectImageType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     597
+    name:     adsk/ngdoc
+    ...
+
+not ok 37
+    ---
+    message:  selectURLType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     600
+    name:     adsk/ngdoc
+    ...
+
+not ok 38
+    ---
+    message:  selectEmailType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     603
+    name:     adsk/ngdoc
+    ...
+
+not ok 39
+    ---
+    message:  selectCSVType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     606
+    name:     adsk/ngdoc
+    ...
+
+not ok 40
+    ---
+    message:  selectFlashType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     609
+    name:     adsk/ngdoc
+    ...
+
+not ok 41
+    ---
+    message:  selectBOMUOMPickListType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     612
+    name:     adsk/ngdoc
+    ...
+
+not ok 42
+    ---
+    message:  selectedDerivedType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     615
+    name:     adsk/ngdoc
+    ...
+
+not ok 43
+    ---
+    message:  selectPickListType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     618
+    name:     adsk/ngdoc
+    ...
+
+not ok 44
+    ---
+    message:  setAlwaysVisible has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     726
+    name:     adsk/ngdoc
+    ...
+
+not ok 45
+    ---
+    message:  setEditOnlyVisible has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     729
+    name:     adsk/ngdoc
+    ...
+
+not ok 46
+    ---
+    message:  setAlwaysEditable has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     767
+    name:     adsk/ngdoc
+    ...
+
+not ok 47
+    ---
+    message:  setNeverEditable has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     770
+    name:     adsk/ngdoc
+    ...
+
+not ok 48
+    ---
+    message:  setCreateOnlyEditable has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     773
+    name:     adsk/ngdoc
+    ...
+
+not ok 49
+    ---
+    message:  setPickListRadioType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     916
+    name:     adsk/ngdoc
+    ...
+
+not ok 50
+    ---
+    message:  setPickListSingleSelectionType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     919
+    name:     adsk/ngdoc
+    ...
+
+not ok 51
+    ---
+    message:  setPickListShowFirstValueType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     922
+    name:     adsk/ngdoc
+    ...
+
+not ok 52
+    ---
+    message:  setPickListRetainLastSavedType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     925
+    name:     adsk/ngdoc
+    ...
+
+not ok 53
+    ---
+    message:  setPickListWithSearchFilterType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     928
+    name:     adsk/ngdoc
+    ...
+
+not ok 54
+    ---
+    message:  setPickListMultiSelectionType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     931
+    name:     adsk/ngdoc
+    ...
+
+not ok 55
+    ---
+    message:  setPickListLatestVersionType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     934
+    name:     adsk/ngdoc
+    ...
+
+not ok 56
+    ---
+    message:  setPickListFilteredType has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/admin/WorkspacesManagerPage.js
+    line:     937
+    name:     adsk/ngdoc
+    ...
+
+not ok 57
+    ---
+    message:  steps has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/bdd/features/step_definitions/steps.js
+    line:     3
+    name:     adsk/ngdoc
+    ...
+
+not ok 58
+    ---
+    message:  exports has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/bdd/features/step_definitions/test/steps.js
+    line:     10
+    name:     adsk/ngdoc
+    ...
+
+not ok 59
+    ---
+    message:  AddItemFlyout has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/AddItemFlyout.js
+    line:     12
+    name:     adsk/ngdoc
+    ...
+
+not ok 60
+    ---
+    message:  getPageHeading has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/AppHeader.js
+    line:     388
+    name:     adsk/ngdoc
+    ...
+
+not ok 61
+    ---
+    message:  isElementDisplayed has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/BomConfigurationDropdown.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 62
+    ---
+    message:  clickElement has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/BomConfigurationDropdown.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 63
+    ---
+    message:  BulkEdit has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/BulkEdit.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 64
+    ---
+    message:  CreateItem has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/CreateItem.js
+    line:     12
+    name:     adsk/ngdoc
+    ...
+
+not ok 65
+    ---
+    message:  displayLoop has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/ItemHeader.js
+    line:     176
+    name:     adsk/ngdoc
+    ...
+
+not ok 66
+    ---
+    message:  loop has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/components/TermsAndConditionsAcceptanceModal.js
+    line:     103
+    name:     adsk/ngdoc
+    ...
+
+not ok 67
+    ---
+    message:  clearAllFpls has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/e2e/high/FilteredPicklistFieldsSpec.js
+    line:     66
+    name:     adsk/ngdoc
+    ...
+
+not ok 68
+    ---
+    message:  AbstractItemViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/AbstractItemViewPage.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 69
+    ---
+    message:  AddItemPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/AddItemPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 70
+    ---
+    message:  DataNavigatorViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/DataNavigatorViewPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 71
+    ---
+    message:  EditAffectedItemsCustomColumnsPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/EditAffectedItemsCustomColumnsPage.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 72
+    ---
+    message:  EditAffectedItems has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/EditAffectedItemsPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 73
+    ---
+    message:  EditDetailsViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/EditDetailsViewPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 74
+    ---
+    message:  EditGridPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/EditGridPage.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 75
+    ---
+    message:  GenericPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/GenericPage.js
+    line:     12
+    name:     adsk/ngdoc
+    ...
+
+not ok 76
+    ---
+    message:  ItemHeaderActionsPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ItemHeaderActionsPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 77
+    ---
+    message:  ItemNotificationPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ItemNotificationPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 78
+    ---
+    message:  LoginLandingPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/LoginLandingPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 79
+    ---
+    message:  MainDashboardPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/MainDashboardPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 80
+    ---
+    message:  OxygenLoginPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/OxygenLoginPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 81
+    ---
+    message:  ViewActionNotificationsPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewActionNotificationsPage.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 82
+    ---
+    message:  displayLoop has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewActionNotificationsPage.js
+    line:     77
+    name:     adsk/ngdoc
+    ...
+
+not ok 83
+    ---
+    message:  ViewAffectedItemsPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewAffectedItemsPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 84
+    ---
+    message:  lifecycleOption has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewAffectedItemsPage.js
+    line:     756
+    name:     adsk/ngdoc
+    ...
+
+not ok 85
+    ---
+    message:  ViewAttachmentsViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewAttachmentsViewPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 86
+    ---
+    message:  ViewBomPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewBomPage.js
+    line:     19
+    name:     adsk/ngdoc
+    ...
+
+not ok 87
+    ---
+    message:  ViewChangeLogPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewChangeLogPage.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 88
+    ---
+    message:  displayLoop has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewChangeLogPage.js
+    line:     129
+    name:     adsk/ngdoc
+    ...
+
+not ok 89
+    ---
+    message:  ViewDetailsCreateItemDisabledPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewDetailsCreateItemDisabledPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 90
+    ---
+    message:  ViewDetailsCreateItemMultiWorkspacesPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewDetailsCreateItemMultiWorkspacesPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 91
+    ---
+    message:  ViewDetailsCreateItemPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewDetailsCreateItemPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 92
+    ---
+    message:  ViewDetailsViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewDetailsViewPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 93
+    ---
+    message:  ViewDetailsWithImageViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewDetailsWithImageViewPage.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 94
+    ---
+    message:  ViewGridPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewGridPage.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 95
+    ---
+    message:  ViewMilestonesPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewMilestonesPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 96
+    ---
+    message:  ViewProjectManagementPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewProjectManagementPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 97
+    ---
+    message:  ViewRelationshipsPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewRelationshipsPage.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 98
+    ---
+    message:  ViewWipAttachmentsEditPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewWipAttachmentsEditPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 99
+    ---
+    message:  ViewWipAttachmentsViewPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewWipAttachmentsViewPage.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 100
+    ---
+    message:  ViewWorkflowPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewWorkflowPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 101
+    ---
+    message:  ViewWorkspaceTableauFlyoutPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/ViewWorkspaceTableauFlyoutPage.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 102
+    ---
+    message:  WorkspaceItemDetailsEditPage has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/pages/WorkspaceItemDetailsEditPage.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 103
+    ---
+    message:  AddItemPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/AddItemPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 104
+    ---
+    message:  EditAffectedItemsCustomColumnsPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/EditAffectedItemsCustomColumnsPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 105
+    ---
+    message:  MainDashboardViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/MainDashboardViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 106
+    ---
+    message:  ViewAffectedItemsViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewAffectedItemsViewPageSpec.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 107
+    ---
+    message:  ViewChangeLogViewPageSpec has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewChangeLogViewPageSpec.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 108
+    ---
+    message:  ViewDetailsViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewDetailsViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 109
+    ---
+    message:  ViewItemNotificationPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewItemNotificationPageSpec.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 110
+    ---
+    message:  ViewProjectManagementViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewProjectManagementViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 111
+    ---
+    message:  ViewRelationshipsViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewRelationshipsViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 112
+    ---
+    message:  ViewWorkflowViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/ViewWorkflowViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 113
+    ---
+    message:  WorkspaceGridEditViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/WorkspaceGridEditViewPageSpec.js
+    line:     14
+    name:     adsk/ngdoc
+    ...
+
+not ok 114
+    ---
+    message:  WorkspaceGridViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/WorkspaceGridViewPageSpec.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 115
+    ---
+    message:  WorkspaceItemBomViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/WorkspaceItemBomViewPageSpec.js
+    line:     19
+    name:     adsk/ngdoc
+    ...
+
+not ok 116
+    ---
+    message:  WorkspaceItemDetailsEditViewPageSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/perf/WorkspaceItemDetailsEditViewPageSpec.js
+    line:     16
+    name:     adsk/ngdoc
+    ...
+
+not ok 117
+    ---
+    message:  Auth has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/Auth.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 118
+    ---
+    message:  Helper has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/Helper.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 119
+    ---
+    message:  Helper has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/HelperQA.js
+    line:     3
+    name:     adsk/ngdoc
+    ...
+
+not ok 120
+    ---
+    message:  waitForUrlToChangeToAndExpect has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/HelperQA.js
+    line:     29
+    name:     adsk/ngdoc
+    ...
+
+not ok 121
+    ---
+    message:  getAndWaitForUrlToChangeTo has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/HelperQA.js
+    line:     35
+    name:     adsk/ngdoc
+    ...
+
+not ok 122
+    ---
+    message:  getAndWaitForUrlToChangeToAndExpect has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/HelperQA.js
+    line:     40
+    name:     adsk/ngdoc
+    ...
+
+not ok 123
+    ---
+    message:  getElementByTagContainingText has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/HelperQA.js
+    line:     45
+    name:     adsk/ngdoc
+    ...
+
+not ok 124
+    ---
+    message:  exports has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/screen-recorder.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 125
+    ---
+    message:  start has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/screen-recorder.js
+    line:     23
+    name:     adsk/ngdoc
+    ...
+
+not ok 126
+    ---
+    message:  stop has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/screen-recorder.js
+    line:     35
+    name:     adsk/ngdoc
+    ...
+
+not ok 127
+    ---
+    message:  Screenshoter has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/screenshoter.js
+    line:     12
+    name:     adsk/ngdoc
+    ...
+
+not ok 128
+    ---
+    message:  writeSS has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/util/screenshoter.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 129
+    ---
+    message:  AddItemSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/AddItemSpec.js
+    line:     23
+    name:     adsk/ngdoc
+    ...
+
+not ok 130
+    ---
+    message:  checkXpathExpectedValue has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/AddItemSpec.js
+    line:     404
+    name:     adsk/ngdoc
+    ...
+
+not ok 131
+    ---
+    message:  EditAffectedItemsCustomColumnsSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/EditAffectedItemsCustomColumnsSpec.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 132
+    ---
+    message:  FusionHeaderSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/FusionHeaderSpec.js
+    line:     21
+    name:     adsk/ngdoc
+    ...
+
+not ok 133
+    ---
+    message:  ItemHeaderActionsSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ItemHeaderActionsSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 134
+    ---
+    message:  MainDashboardViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/MainDashboardViewSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 135
+    ---
+    message:  PlmHeaderViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/PlmHeaderViewSpec.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 136
+    ---
+    message:  SharedSpec has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     21
+    name:     adsk/ngdoc
+    ...
+
+not ok 137
+    ---
+    message:  setButtonDef has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     105
+    name:     adsk/ngdoc
+    ...
+
+not ok 138
+    ---
+    message:  Script URL is a form of eval.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     157
+    name:     no-script-url
+    ...
+
+not ok 139
+    ---
+    message:  Script URL is a form of eval.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     202
+    name:     no-script-url
+    ...
+
+not ok 140
+    ---
+    message:  Script URL is a form of eval.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     217
+    name:     no-script-url
+    ...
+
+not ok 141
+    ---
+    message:  changeWorkspaceItem has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/SharedSpec.js
+    line:     527
+    name:     adsk/ngdoc
+    ...
+
+not ok 142
+    ---
+    message:  ViewActionNotificationsViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewActionNotificationsSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 143
+    ---
+    message:  ViewAffectedItemsEditSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewAffectedItemsEditSpec.js
+    line:     23
+    name:     adsk/ngdoc
+    ...
+
+not ok 144
+    ---
+    message:  ViewAffectedItemsViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewAffectedItemsViewSpec.js
+    line:     27
+    name:     adsk/ngdoc
+    ...
+
+not ok 145
+    ---
+    message:  ViewBomAttachedItemsFlyoutViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewBomAttachedItemsFlyoutSpec.js
+    line:     23
+    name:     adsk/ngdoc
+    ...
+
+not ok 146
+    ---
+    message:  ViewChangeLogViewSpec has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewChangeLogViewSpec.js
+    line:     19
+    name:     adsk/ngdoc
+    ...
+
+not ok 147
+    ---
+    message:  ViewDetailsCreateItemDisabledSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsCreateItemDisabledSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 148
+    ---
+    message:  ViewDetailsCreateItemMultiWorkspacesSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsCreateItemMultiWorkspacesSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 149
+    ---
+    message:  ViewDetailsCreateItemSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsCreateItemSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 150
+    ---
+    message:  ViewDetailsViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsViewSpec.js
+    line:     23
+    name:     adsk/ngdoc
+    ...
+
+not ok 151
+    ---
+    message:  Script URL is a form of eval.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsViewSpec.js
+    line:     160
+    name:     no-script-url
+    ...
+
+not ok 152
+    ---
+    message:  ViewDetailsWithImageViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewDetailsWithImageViewSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 153
+    ---
+    message:  ViewItemNotificationSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewItemNotificationSpec.js
+    line:     22
+    name:     adsk/ngdoc
+    ...
+
+not ok 154
+    ---
+    message:  ViewMilestonesViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewMilestonesViewSpec.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 155
+    ---
+    message:  ViewProjectManagementViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewProjectManagementViewSpec.js
+    line:     17
+    name:     adsk/ngdoc
+    ...
+
+not ok 156
+    ---
+    message:  ViewRelationshipsViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewRelationshipsViewSpec.js
+    line:     21
+    name:     adsk/ngdoc
+    ...
+
+not ok 157
+    ---
+    message:  ViewWorkflowViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/ViewWorkflowViewSpec.js
+    line:     18
+    name:     adsk/ngdoc
+    ...
+
+not ok 158
+    ---
+    message:  WorkspaceGridEditViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceGridEditViewSpec.js
+    line:     20
+    name:     adsk/ngdoc
+    ...
+
+not ok 159
+    ---
+    message:  WorkspaceGridViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceGridViewSpec.js
+    line:     22
+    name:     adsk/ngdoc
+    ...
+
+not ok 160
+    ---
+    message:  WorkspaceItemBomViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceItemBomViewSpec.js
+    line:     31
+    name:     adsk/ngdoc
+    ...
+
+not ok 161
+    ---
+    message:  checkToplineDescriptor has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceItemBomViewSpec.js
+    line:     1373
+    name:     adsk/ngdoc
+    ...
+
+not ok 162
+    ---
+    message:  checkRevisionInSecondaryView has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceItemBomViewSpec.js
+    line:     1379
+    name:     adsk/ngdoc
+    ...
+
+not ok 163
+    ---
+    message:  WorkspaceItemDetailsEditViewSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/WorkspaceItemDetailsEditViewSpec.js
+    line:     25
+    name:     adsk/ngdoc
+    ...
+
+not ok 164
+    ---
+    message:  AddItemSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/AddItemSpec.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 165
+    ---
+    message:  scriptFn has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/AddItemSpec.js
+    line:     58
+    name:     adsk/ngdoc
+    ...
+
+not ok 166
+    ---
+    message:  BomConfigurationDropdownSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/BomConfigurationDropdownSpec.js
+    line:     11
+    name:     adsk/ngdoc
+    ...
+
+not ok 167
+    ---
+    message:  CommandBarSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/CommandBarSpec.js
+    line:     13
+    name:     adsk/ngdoc
+    ...
+
+not ok 168
+    ---
+    message:  CreateItemSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/CreateItemSpec.js
+    line:     15
+    name:     adsk/ngdoc
+    ...
+
+not ok 169
+    ---
+    message:  MenuButtonSpec has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/automation/view/sharedspecs/MenuButtonSpec.js
+    line:     5
+    name:     adsk/ngdoc
+    ...
+
+not ok 170
+    ---
+    message:  getMockLinkedItems has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/AddLinkableItemsControllerSpec.js
+    line:     119
+    name:     adsk/ngdoc
+    ...
+
+not ok 171
+    ---
+    message:  MockDataController has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/ViewBomControllerSpec.js
+    line:     203
+    name:     adsk/ngdoc
+    ...
+
+not ok 172
+    ---
+    message:  Identifier 'quote_comments' is not in camel case.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/ViewSourcingsControllerSpec.js
+    line:     63
+    name:     camelcase
+    ...
+
+not ok 173
+    ---
+    message:  Identifier 'quote_comments' is not in camel case.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/ViewSourcingsControllerSpec.js
+    line:     74
+    name:     camelcase
+    ...
+
+not ok 174
+    ---
+    message:  Identifier 'quote_comments' is not in camel case.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/ViewSourcingsControllerSpec.js
+    line:     88
+    name:     camelcase
+    ...
+
+not ok 175
+    ---
+    message:  getViewData has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/WorkspaceItemsControllerSpec.js
+    line:     202
+    name:     adsk/ngdoc
+    ...
+
+not ok 176
+    ---
+    message:  doTests has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/controllerSpecs/WorkspaceItemsControllerSpec.js
+    line:     267
+    name:     adsk/ngdoc
+    ...
+
+not ok 177
+    ---
+    message:  doScroll has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/directiveSpecs/InfiniteScrollDirectiveSpec.js
+    line:     25
+    name:     adsk/ngdoc
+    ...
+
+not ok 178
+    ---
+    message:  doScroll has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/directiveSpecs/InfiniteScrollDirectiveSpec.js
+    line:     56
+    name:     adsk/ngdoc
+    ...
+
+not ok 179
+    ---
+    message:  mainRequest has at leaset 1 line of documentation, but who can understand it with just one line?  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/modelSpecs/OutstandingWorkSpec.js
+    line:     12
+    name:     adsk/ngdoc
+    ...
+
+not ok 180
+    ---
+    message:  itemRequest has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/modelSpecs/OutstandingWorkSpec.js
+    line:     19
+    name:     adsk/ngdoc
+    ...
+
+not ok 181
+    ---
+    message:  milestonesRequest has no documentation whatsoever.  Please properly document it.
+    severity: warning
+    file:     /Users/Shared/plmsinglepage/test/unit/modelSpecs/OutstandingWorkSpec.js
+    line:     26
+    name:     adsk/ngdoc
+    ...
+
+1..181

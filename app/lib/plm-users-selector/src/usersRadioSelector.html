@@ -1,0 +1,26 @@
+<div class="users-selector-wrapper">
+	<div class="search-box-wrapper">
+		<input type="search" placeholder="{{$root.bundle.text.search}}" ng-model="usersRadioSelectorCtrl.searchInput">
+		<a
+			href="javascript:;"
+			class="close-button-wrapper"
+			ng-click="usersRadioSelectorCtrl.cancelSearch()">
+			<span class="zmdi zmdi-close-circle"></span>
+		</a>
+	</div>
+
+	<div class="selection-area">
+		<md-radio-group md-no-ink ng-model="usersRadioSelectorCtrl.selectedItem">
+			<md-radio-button
+				ng-repeat="item in usersRadioSelectorCtrl.itemsList | filter: usersRadioSelectorCtrl.searchFn"
+				ng-value="item"
+				aria-label="{{item.displayName}}"
+				class="select-user-radio">
+				<user-avatar class="user-selector-avatar" user-name="{{item.displayName}}" user-image="{{item.imageSizeMedium}}"></user-avatar>
+				<!-- TODO: change item to user model and use helper methods -->
+				{{item.displayName}}
+				<span ng-if="item.organization" class="secondary-text"> - {{item.organization}}</span>
+			</md-radio-button>
+		</md-radio-group>
+	</div>
+</div>

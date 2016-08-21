@@ -1,0 +1,8 @@
+<div class='bom-pinning-container' ng-if='fieldData !== undefined'>
+    <div ng-if="editView === 'true'" class='editable-pin-section' ng-class="{'unpinned-editable-pin-section': !isPinned()}">
+        <span class="md icon-a360-pin bom-md-icon" ng-click="internalOnToggle()"></span>
+    </div>
+    <div ng-if="editView === 'false'" class='uneditable-pin-section'>
+        <span ng-if="isPinned()" class="md icon-a360-pin bom-md-icon"></span>
+    </div>
+</div>

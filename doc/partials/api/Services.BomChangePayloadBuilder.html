@@ -1,0 +1,49 @@
+<h1><code ng:non-bindable="">BomChangePayloadBuilder</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Services</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="services-bomchangepayloadbuilder-page"><p>Class for converting changes to the bom into a format suitable for instantiating a bomNestedItem
+Note that the functions provide necessary but not always sufficient information to create a useful object
+    other fields may need to be added.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_attachfieldedittopayload">attachFieldEditToPayload(payload, the)</h3>
+<div class="attachfieldedittopayload"><div class="services-bomchangepayloadbuilder-attachfieldedittopayload-page"><p>Changes the payload object based on the content of edit
+CUSTOM_BOM fields are pushed onto the .fields property,
+while quantity, item, pinning, and item number are placed directly on the object
+One or more of the following properties of payload may be changed,
+- quantity
+- isPinned
+- item
+- fields</p>
+</div><h5 id="methods_attachfieldedittopayload_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>payload</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-bomchangepayloadbuilder-attachfieldedittopayload-page"><p>an object on which to place the changes</p>
+</div></td></tr><tr><td>the</td><td><a href="" class="label type-hint type-hint-bomchangeedit">BomChangeEdit</a></td><td><div class="services-bomchangepayloadbuilder-attachfieldedittopayload-page"><p>edit to attach to the payload</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_attachfieldeditstopayload">attachFieldEditsToPayload(changes, payload)</h3>
+<div class="attachfieldeditstopayload"><div class="services-bomchangepayloadbuilder-attachfieldeditstopayload-page"><p>Applies any BomFieldEdits in changes to the payload object</p>
+</div><h5 id="methods_attachfieldeditstopayload_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>changes</td><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="services-bomchangepayloadbuilder-attachfieldeditstopayload-page"><p>a map of changestypes to arrays of changes</p>
+</div></td></tr><tr><td>payload</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-bomchangepayloadbuilder-attachfieldeditstopayload-page"><p>an object on which to place the changes</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_convertchangestoaddpayload">convertChangesToAddPayload(a)</h3>
+<div class="convertchangestoaddpayload"><div class="services-bomchangepayloadbuilder-convertchangestoaddpayload-page"><p>Converts a collection of changes into a form suitable for using in a post
+CUSTOM_BOM fields are placed in a fields array,
+    while quantity, pinning, and item number are placed directly on the object</p>
+</div><h5 id="methods_convertchangestoaddpayload_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>a</td><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="services-bomchangepayloadbuilder-convertchangestoaddpayload-page"><p>map of changestypes to arrays of changes - we assume that there will be one change under
+the &#39;BomAddItem&#39; key and potentially multiple changes under the &#39;BomFieldEdit&#39; key</p>
+</div></td></tr></tbody></table><h5 id="methods_convertchangestoaddpayload_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-bomchangepayloadbuilder-convertchangestoaddpayload-page"><p>the object with some of the following parameters</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_convertchangestoeditpayload">convertChangesToEditPayload(a)</h3>
+<div class="convertchangestoeditpayload"><div class="services-bomchangepayloadbuilder-convertchangestoeditpayload-page"><p>Converts a collection of changes into a form suitable for using in a patch</p>
+</div><h5 id="methods_convertchangestoeditpayload_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>a</td><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="services-bomchangepayloadbuilder-convertchangestoeditpayload-page"><p>map of changestypes to arrays of changes - we assume that there will be at least one change under
+the &#39;BomFieldEdit&#39; key</p>
+</div></td></tr></tbody></table><h5 id="methods_convertchangestoeditpayload_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="services-bomchangepayloadbuilder-convertchangestoeditpayload-page"><p>an object suitable for use in a payload</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

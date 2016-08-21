@@ -1,0 +1,117 @@
+<h1><code ng:non-bindable="">ViewActionNotificationsController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers.workspaceItem</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-workspaceitem-viewactionnotificationscontroller-page"><p>This controller corresponds to /workspaces/{workspaceId}/{itemId}/actionNotifications.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getgroups">getGroups()</h3>
+<div class="getgroups"><div class="controllers-workspaceitem-viewactionnotificationscontroller-getgroups-page"><p><code>private</code> Get all the available groups</p>
+</div></div>
+</li>
+<li><h3 id="methods_getusers">getUsers()</h3>
+<div class="getusers"><div class="controllers-workspaceitem-viewactionnotificationscontroller-getusers-page"><p><code>private</code> Get all the available users</p>
+</div></div>
+</li>
+<li><h3 id="methods_getworkflowstates">getWorkflowStates()</h3>
+<div class="getworkflowstates"><div class="controllers-workspaceitem-viewactionnotificationscontroller-getworkflowstates-page"><p><code>private</code> Get all the available states</p>
+</div></div>
+</li>
+<li><h3 id="methods_getworkflowtransitions">getWorkflowTransitions()</h3>
+<div class="getworkflowtransitions"><div class="controllers-workspaceitem-viewactionnotificationscontroller-getworkflowtransitions-page"><p><code>private</code> Get all the available transitions</p>
+</div></div>
+</li>
+<li><h3 id="methods_init">init()</h3>
+<div class="init"><div class="controllers-workspaceitem-viewactionnotificationscontroller-init-page"><p>Initialization function</p>
+</div></div>
+</li>
+<li><h3 id="methods_istablerowdirty">isTableRowDirty(tableRow)</h3>
+<div class="istablerowdirty"><div class="controllers-workspaceitem-viewactionnotificationscontroller-istablerowdirty-page"><p>true, if a given table row has dirty state.</p>
+</div><h5 id="methods_istablerowdirty_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>tableRow</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewactionnotificationscontroller-istablerowdirty-page"><p>the table row to check for dirty state</p>
+</div></td></tr></tbody></table><h5 id="methods_istablerowdirty_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewactionnotificationscontroller-istablerowdirty-page"><p>true, if the given table row is dirty.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isviewstate">isViewState()</h3>
+<div class="isviewstate"><div class="controllers-workspaceitem-viewactionnotificationscontroller-isviewstate-page"><p>Determine whether we&#39;re in view mode</p>
+</div><h5 id="methods_isviewstate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-workspaceitem-viewactionnotificationscontroller-isviewstate-page"><p>true if we are in view mode</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parseviewactionnotificationsitems">parseViewActionNotificationsItems(data)</h3>
+<div class="parseviewactionnotificationsitems"><div class="controllers-workspaceitem-viewactionnotificationscontroller-parseviewactionnotificationsitems-page"><p>Parse fetch data into table rows</p>
+</div><h5 id="methods_parseviewactionnotificationsitems_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-workspaceitem-viewactionnotificationscontroller-parseviewactionnotificationsitems-page"><p>action notification data as fetched from server.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_triggeradd">triggerAdd()</h3>
+<div class="triggeradd"><div class="controllers-workspaceitem-viewactionnotificationscontroller-triggeradd-page"><p>Opens quick create modal.</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggercancel">triggerCancel()</h3>
+<div class="triggercancel"><div class="controllers-workspaceitem-viewactionnotificationscontroller-triggercancel-page"><p>Triggered by clicking cancel button - NOTE: name has to be triggerCancel</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggeredit">triggerEdit()</h3>
+<div class="triggeredit"><div class="controllers-workspaceitem-viewactionnotificationscontroller-triggeredit-page"><p>Triggered by clicking edit button - goes to the EDIT state</p>
+</div></div>
+</li>
+<li><h3 id="methods_triggersave">triggerSave()</h3>
+<div class="triggersave"><div class="controllers-workspaceitem-viewactionnotificationscontroller-triggersave-page"><p>Triggered by clicking save button - saves the edited notification</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_actionnotificationlist">actionNotificationList</h3>
+<div class="actionnotificationlist"><div class="controllers-workspaceitem-viewactionnotificationscontroller-actionnotificationlist-page"><p>The list of the current selected action notification.</p>
+</div></div>
+</li>
+<li><h3 id="properties_addpermission">addPermission</h3>
+<div class="addpermission"><div class="controllers-workspaceitem-viewactionnotificationscontroller-addpermission-page"><p>The add workflow items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_addstatename">addStateName</h3>
+<div class="addstatename"><div class="controllers-workspaceitem-viewactionnotificationscontroller-addstatename-page"><p>The name of the add state for this tab</p>
+</div></div>
+</li>
+<li><h3 id="properties_customvars">customVars</h3>
+<div class="customvars"><div class="controllers-workspaceitem-viewactionnotificationscontroller-customvars-page"><p>The object that will be binded to TDW and hence available on renderers, used with table fields.</p>
+</div></div>
+</li>
+<li><h3 id="properties_edit">edit</h3>
+<div class="edit"><div class="controllers-workspaceitem-viewactionnotificationscontroller-edit-page"><p>A boolean val that controls if the user is in view or editing mode, to render form elements
+This needs to be cleaned up</p>
+</div></div>
+</li>
+<li><h3 id="properties_editpermission">editPermission</h3>
+<div class="editpermission"><div class="controllers-workspaceitem-viewactionnotificationscontroller-editpermission-page"><p>The edit workflow items permission for the user</p>
+</div></div>
+</li>
+<li><h3 id="properties_editstatename">editStateName</h3>
+<div class="editstatename"><div class="controllers-workspaceitem-viewactionnotificationscontroller-editstatename-page"><p>The name of the edit state for this tab</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemid">itemId</h3>
+<div class="itemid"><div class="controllers-workspaceitem-viewactionnotificationscontroller-itemid-page"><p>The item id of the current selected item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_tablecolumns">tableColumns</h3>
+<div class="tablecolumns"><div class="controllers-workspaceitem-viewactionnotificationscontroller-tablecolumns-page"><p>Stores table column header</p>
+</div></div>
+</li>
+<li><h3 id="properties_tabledata">tableData</h3>
+<div class="tabledata"><div class="controllers-workspaceitem-viewactionnotificationscontroller-tabledata-page"><p>Stores table data of the change log</p>
+</div></div>
+</li>
+<li><h3 id="properties_that">that</h3>
+<div class="that"><div class="controllers-workspaceitem-viewactionnotificationscontroller-that-page"><p><code>private</code> Reference to this controller.</p>
+</div></div>
+</li>
+<li><h3 id="properties_viewstatename">viewStateName</h3>
+<div class="viewstatename"><div class="controllers-workspaceitem-viewactionnotificationscontroller-viewstatename-page"><p>The name of the view state for this tab</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

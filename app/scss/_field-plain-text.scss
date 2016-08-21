@@ -1,0 +1,49 @@
+div.ui-grid-cell
+.field-plain-text {
+
+	input {
+		margin: 5px 1px 3px 0;
+		padding: 5px;
+
+		border: 1px solid $fieldEditColor;
+		border-radius: 2px;
+		box-shadow: 0 0 1px $fieldEditColor, inset 0 0 1px $grayColor;
+
+		&.ng-invalid {
+			border: 1px solid $fieldErrorColor;
+			box-shadow: 0 0 1px $fieldErrorColor, inset 0 0 1px $grayColor;
+		}
+	}
+}
+
+
+/* This should be moved, either to a new independent field-radio.scss or a new field-selector.scss */
+.field-radio .field-radio-item {
+	line-height: 20px;
+
+	display: block;
+}
+
+// Styles for textarea/paragraph
+.ui-grid-row
+.ui-grid-cell
+.ui-grid-cell-contents {
+
+	pre {
+		font-family: $defaultFont;
+
+		margin: {
+			top: 0;
+			bottom: 0;
+		}
+	}
+
+	textarea {
+		width: 100%;
+		margin-top: -2px;
+	}
+
+	.field-plain-text input {
+		margin-top: -6px;
+	}
+}

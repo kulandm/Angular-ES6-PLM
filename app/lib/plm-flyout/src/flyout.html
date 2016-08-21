@@ -1,0 +1,8 @@
+<div flyout-render="{{$isRendered}}">
+    <!-- We have to use insanely high z-index value to ensure that flyout appears above footer (but i will also make it to appear header as well) -->
+    <div tabindex="-1" id="flyout-{{flyoutId}}" ng-style="flyoutDefaultStyle">
+        <div ng-show="showArrow === 'true'" ng-style="arrowStyle"></div>
+        <div flyout-transclude></div>
+    </div>
+    <div ng-show="backdropOption !== '0'" ng-click="close($event)" ng-style="backDropDefaultStyle"></div>
+</div>

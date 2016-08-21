@@ -1,0 +1,203 @@
+// User Profile Summary
+//
+// Styles for user profile summary.<br>
+// Typically displayed in a flyout.
+//
+// Styleguide 31
+
+// User Profile Summary
+//
+// Styles for the overall user profile summary.
+//
+// Markup:
+// <div class="user-profile-summary">
+// 	Content goes here.
+// </div>
+//
+// .user-profile-summary -
+//
+// Styleguide 31.1
+.user-profile-summary {
+	header {
+		height: 80px;
+		padding: 10px;
+
+		h4 {
+			margin: 0.5em 0;
+		}
+
+		h6 {
+			margin: 0;
+		}
+	}
+
+	.avatar-image {
+		width: 60px;
+		margin-right: 10px;
+	}
+
+	.md {
+		font-size: 18px;
+
+		display: inline-block;
+
+		margin-right: 10px;
+		padding: 5px 10px;
+
+		color: $userProfileIconColor;
+		border-right: 1px solid $userProfileIconBorderColor;
+	}
+
+	.icon {
+		font-size: 18px;
+
+		display: inline-block;
+
+		margin-right: 10px;
+		padding: 5px 10px;
+
+		color: $userProfileSummaryAccent;
+		border-right: 1px solid $userProfileSummaryAccent;
+	}
+
+	// User Profile Summary Details
+	//
+	// Styles for the content.
+	//
+	// Markup:
+	// <div class="user-profile-flyout">
+	// 	<div class="user-profile-summary">
+	// 		<header>
+	// 			<img class="avatar-image pull-left" src="
+	// https://s3.amazonaws.com/com.autodesk.storage.public.staging/oxygen/YDQFNUB5TRJQ/profilepictures/x50.jpg?r=0">
+	// 			<h4>Profile Name</h4>
+	// 			<h6>Job Title</h6>
+	// 		</header>
+	// 		<ul class="user-profile-summary-details list-unstyled
+	// 			collapsible-closed">
+	// 			<li>
+	// 				<i class="icon icon-Mail"></i>
+	// 				<span>autodesk@autodesk.com</span>
+	// 			</li>
+	// 			<li>
+	// 				<i class="icon icon-a360-linkedIn"></i>
+	// 				<span>autodesk@linkedIn</span>
+	// 			</li>
+	// 			<li>
+	// 				<i class="icon icon-PinLocation"></i>
+	// 				<span>1 Fusionopolis Walk, Solaris</span>
+	// 			</li>
+	// 		</ul>
+	// 	</div>
+	// </div>
+	//
+	// .user-profile-summary-details -
+	//
+	// Styleguide 31.2
+	.user-profile-summary-details {
+		padding: 15px 0;
+
+		border: {
+			top: 1px solid $userProfileSummaryAccent;
+			bottom: 1px solid $userProfileSummaryAccent;
+		}
+
+		// Elements with index 6 or higher are hidden when summary is collapsed
+		&.collapsible-closed li:nth-child(n+6) {
+			display: none;
+		}
+
+		// Set up a table layout so each row can acoomodate more than one line
+		> li {
+			display: table;
+			i,
+			span {
+				display: table-cell;
+			}
+			span {
+				padding: 0 0 0 10px;
+			}
+		}
+	}
+
+	// User Profile Summary Collapse
+	//
+	// Styles for the content.
+	//
+	// Markup:
+	// <div class="user-profile-flyout">
+	// 	<div class="user-profile-summary">
+	// 		<header>
+	// 			<img class="avatar-image pull-left" src="
+	// https://s3.amazonaws.com/com.autodesk.storage.public.staging/oxygen/YDQFNUB5TRJQ/profilepictures/x50.jpg?r=0">
+	// 			<h4>Profile Name</h4>
+	// 			<h6>Job Title</h6>
+	// 		</header>
+	// 		<ul class="user-profile-summary-details list-unstyled
+	// 			collapsible-open">
+	// 			<li>
+	// 				<i class="icon icon-Mail"></i>
+	// 				<span>autodesk@autodesk.com</span>
+	// 			</li>
+	// 			<li>
+	// 				<i class="icon icon-a360-linkedIn"></i>
+	// 				<span>autodesk@linkedIn</span>
+	// 			</li>
+	// 			<li>
+	// 				<i class="icon icon-PinLocation"></i>
+	// 				<span>1 Fusionopolis Walk, Solaris</span>
+	// 			</li>
+	// 			<li>
+	// 				<i class="icon icon-a360-facebook"></i>
+	// 				<span>autodesk@facebook</span>
+	// 			</li>
+	// 		</ul>
+	// 		<a href="javascript:;" class="collapse-toggle">
+	// 			<i class="icon-TopArrow"></i>
+	// 		</a>
+	// 	</div>
+	// </div>
+	//
+	// .collapse-toggle - Styles for the collapsible section
+	//
+	// Styleguide 31.3
+	.collapse-toggle {
+		display: block;
+
+		padding: 2px 0;
+
+		color: $userProfileSummaryAccent;
+		background-color: lighten($userProfileSummaryAccent, 20%);
+
+		text: {
+			align: center;
+			decoration: none;
+		}
+
+		.md-keyboard-arrow-down {
+			@include collapsible-arrow-animation(0, 180deg);
+
+			display: inline-block;
+		}
+	}
+}
+
+// User Profile Flyout
+//
+// Override some of the flyout styles for user profile summary.
+//
+// Markup:
+// <div class="user-profile-flyout">
+// 	<div class="user-profile-summary">
+// 		User profile summary goes here.
+// 	</div>
+// </div>
+//
+// .user-profile-flyout - Uses raised container and sets width to `340px`
+//
+// Styleguide 31.4
+.user-profile-flyout {
+	@extend %raisedContainer;
+
+	width: 340px;
+}

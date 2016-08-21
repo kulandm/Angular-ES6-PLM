@@ -1,0 +1,59 @@
+/* Existing nzAnimate library
+-------------------------------------------------- */
+@import url(../lib/nz-animate/dist/nzAnimate.css);
+.enter-expandDown {
+  max-height: 1000px; }
+  .enter-expandDown.ng-enter, .enter-expandDown.ng-hide-remove {
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    -moz-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    -ms-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    -o-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
+
+.exit-collapseUp.ng-leave, .exit-collapseUp.ng-hide-add {
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -moz-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -ms-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -o-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
+.exit-collapseUp.ng-hide {
+  overflow: hidden;
+  max-height: 0; }
+
+.static-dynamic-expandCollapse {
+  -webkit-transition: height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -moz-transition: height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -ms-transition: height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  -o-transition: height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: height 0.5s cubic-bezier(0.35, 0, 0.25, 1); }
+
+.static-rotateCaretVertical {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1); }
+  .static-rotateCaretVertical.rotate {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.rotateCaretVertical .static-rotateCaretVertical {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.static-slidePanelHorizontal {
+  -webkit-transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  -moz-transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  -ms-transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  -o-transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1); }
+
+.static-rotateCaretVertical-ninety {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1); }
+  .static-rotateCaretVertical-ninety.rotate {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg); }
+
+/*# sourceMappingURL=plm-animations.css.map */

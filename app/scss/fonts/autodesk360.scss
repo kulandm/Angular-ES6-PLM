@@ -1,0 +1,333 @@
+// PLM Fonts and Icons
+//
+// The fonts and icons used throughout the app.
+//
+// Styleguide 2
+
+/* A360
+-------------------------------------------------- */
+
+// A360 Font
+//
+// The font **Autodesk360**.
+//
+// Markup:
+// <div style="font-family:Autodesk360; font-size:16px;">Autodesk360</div>
+//
+// %a360FontDefinition - Extension to use for this font
+//
+// Styleguide 2.1.1
+@font-face {
+	font: {
+		family: 'Autodesk360';
+		weight: normal;
+		style: normal;
+	}
+	src: url('../fonts/Autodesk360.eot');
+	src: url('../fonts/Autodesk360.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Autodesk360.woff') format('woff'),
+		 url('../fonts/Autodesk360.ttf') format('truetype'),
+		 url('../fonts/Autodesk360.svg#Autodesk360') format('svg');
+}
+
+%a360FontDefinition {
+	font: {
+		family: 'Autodesk360';
+		weight: normal;
+		style: normal;
+		variant: normal;
+	}
+	text-transform: none;
+	line-height: 1;
+	speak: none;
+
+	// Better font rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Extend font definition to classes containing "icon-a360"
+[class*="icon-a360"] {
+	@extend %a360FontDefinition;
+}
+
+// A360 Icons
+//
+// Various icons in **Autodesk360**.<br>
+// *Supplied by the UX team.*
+//
+// Markup:
+// <div style="font-size:25px; text-align:center; color:#456789;">
+//    <span class="icon-a360-zipArchive"></span>
+//    <span class="icon-a360-actions"></span>
+//    <span class="icon-a360-upOneLevel"></span>
+//    <span class="icon-a360-unpin+unfollow"></span>
+//    <span class="icon-a360-twitter"></span>
+//    <span class="icon-a360-tools"></span>
+//    <span class="icon-a360-followers"></span>
+//    <span class="icon-a360-folder"></span>
+//    <span class="icon-a360-file"></span>
+//    <span class="icon-a360-facebook"></span>
+//    <span class="icon-a360-edit"></span>
+//    <span class="icon-a360-thumbnailView"></span>
+//    <span class="icon-a360-comments"></span>
+//    <span class="icon-a360-share"></span>
+//    <span class="icon-a360-clock"></span>
+//    <span class="icon-a360-secretGroup"></span>
+//    <span class="icon-a360-chevron_up"></span>
+//    <span class="icon-a360-pin"></span>
+//    <span class="icon-a360-chevron_right"></span>
+//    <span class="icon-a360-phone"></span>
+//    <span class="icon-a360-chevron_left"></span>
+//    <span class="icon-a360-organization"></span>
+//    <span class="icon-a360-chevron_down"></span>
+//    <span class="icon-a360-mobile"></span>
+//    <span class="icon-a360-changeDestination"></span>
+//    <span class="icon-a360-mail"></span>
+//    <span class="icon-a360-blog"></span>
+//    <span class="icon-a360-lock"></span>
+//    <span class="icon-a360-bell"></span>
+//    <span class="icon-a360-location"></span>
+//    <span class="icon-a360-barcode"></span>
+//    <span class="icon-a360-listView"></span>
+//    <span class="icon-a360-linkedIn"></span>
+//    <span class="icon-a360-invite"></span>
+//    <span class="icon-a360-info"></span>
+//    <span class="icon-a360-image"></span>
+//    <span class="icon-a360-IM+discussion"></span>
+//    <span class="icon-a360-hub"></span>
+//    <span class="icon-a360-projectFolder"></span>
+//    <span class="icon-a360-add_join"></span>
+//    <span class="icon-a360-star_moderator"></span>
+//    <span class="icon-a360-filter_mixedState"></span>
+//    <span class="icon-a360-filter_checkmark"></span>
+//    <span class="icon-a360-clock_outline"></span>
+//    <span class="icon-a360-userDefinedField"></span>
+// </div>
+//
+// .icon-a360-zipArchive - Zip icon
+// .icon-a360-actions - Actions icon
+// .icon-a360-upOneLevel - Arrow up icon
+// .icon-a360-unpin+unfollow - Cross icon
+// .icon-a360-twitter - Twitter icon
+// .icon-a360-tools - Toolbox icon
+// .icon-a360-followers - One avatar icon
+// .icon-a360-folder - Folder icon
+// .icon-a360-file - File icon
+// .icon-a360-facebook - Facebook icon
+// .icon-a360-edit - Edit icon
+// .icon-a360-thumbnailView - Thumbnail icon (grid of four squares)
+// .icon-a360-comments - Comments icon
+// .icon-a360-share - Share icon
+// .icon-a360-clock - Clock icon
+// .icon-a360-secretGroup - Lock with exclamation mark icon
+// .icon-a360-chevron_up - Caret icon
+// .icon-a360-pin - Pin icon
+// .icon-a360-chevron_right - Caret pointing right icon
+// .icon-a360-phone - Phone icon
+// .icon-a360-chevron_left - Caret pointing left icon
+// .icon-a360-organization - Organization icon
+// .icon-a360-chevron_down - Caret pointing down icon
+// .icon-a360-mobile - Mobile phone icon
+// .icon-a360-changeDestination - Change folder icon
+// .icon-a360-mail - Mail icon
+// .icon-a360-blog - RSS icon
+// .icon-a360-lock - Lock icon
+// .icon-a360-bell - Bell icon
+// .icon-a360-location - Location icon
+// .icon-a360-barcode - Barcode icon
+// .icon-a360-listView - Menu list icon
+// .icon-a360-linkedIn - LinkedIn icon
+// .icon-a360-invite - Invite avatar icon
+// .icon-a360-info - Information icon
+// .icon-a360-image - Image icon
+// .icon-a360-IM+discussion - IM icon
+// .icon-a360-hub - Hub icon
+// .icon-a360-projectFolder - Project folder icon
+// .icon-a360-add_join - Plus icon
+// .icon-a360-star_moderator - Star icon
+// .icon-a360-filter_mixedState - Dash icon
+// .icon-a360-filter_checkmark - Tick icon
+// .icon-a360-clock_outline - Clock outline icon
+// .icon-a360-userDefinedField - Circle icon
+//
+// Styleguide 2.1.2
+.icon-a360-zipArchive:before {
+	content: "\e100";
+}
+
+.icon-a360-actions:before {
+	content: "\e101";
+}
+
+.icon-a360-upOneLevel:before {
+	content: "\e102";
+}
+
+.icon-a360-unpin\+unfollow:before {
+	content: "\e103";
+}
+
+.icon-a360-twitter:before {
+	content: "\e104";
+}
+
+.icon-a360-tools:before {
+	content: "\e105";
+}
+
+.icon-a360-followers:before {
+	content: "\e106";
+}
+
+.icon-a360-folder:before {
+	content: "\e107";
+}
+
+.icon-a360-file:before {
+	content: "\e108";
+}
+
+.icon-a360-facebook:before {
+	content: "\e109";
+}
+
+.icon-a360-edit:before {
+	content: "\e10a";
+}
+
+.icon-a360-thumbnailView:before {
+	content: "\e10b";
+}
+
+.icon-a360-comments:before {
+	content: "\e10c";
+}
+
+.icon-a360-share:before {
+	content: "\e10d";
+}
+
+.icon-a360-clock:before {
+	content: "\e10e";
+}
+
+.icon-a360-secretGroup:before {
+	content: "\e10f";
+}
+
+.icon-a360-chevron_up:before {
+	content: "\e110";
+}
+
+.icon-a360-pin:before {
+	content: "\e111";
+}
+
+.icon-a360-chevron_right:before {
+	content: "\e112";
+}
+
+.icon-a360-phone:before {
+	content: "\e113";
+}
+
+.icon-a360-chevron_left:before {
+	content: "\e114";
+}
+
+.icon-a360-organization:before {
+	content: "\e115";
+}
+
+.icon-a360-chevron_down:before {
+	content: "\e116";
+}
+
+.icon-a360-mobile:before {
+	content: "\e117";
+}
+
+.icon-a360-changeDestination:before {
+	content: "\e118";
+}
+
+.icon-a360-mail:before {
+	content: "\e119";
+}
+
+.icon-a360-blog:before {
+	content: "\e11a";
+}
+
+.icon-a360-lock:before {
+	content: "\e11b";
+}
+
+.icon-a360-bell:before {
+	content: "\e11c";
+}
+
+.icon-a360-location:before {
+	content: "\e11d";
+}
+
+.icon-a360-barcode:before {
+	content: "\e11e";
+}
+
+.icon-a360-listView:before {
+	content: "\e11f";
+}
+
+.icon-a360-linkedIn:before {
+	content: "\e120";
+}
+
+.icon-a360-invite:before {
+	content: "\e121";
+}
+
+.icon-a360-info:before {
+	content: "\e122";
+}
+
+.icon-a360-image:before {
+	content: "\e123";
+}
+
+.icon-a360-IM\+discussion:before {
+	content: "\e124";
+}
+
+.icon-a360-hub:before {
+	content: "\e125";
+}
+
+.icon-a360-projectFolder:before {
+	content: "\e126";
+}
+
+.icon-a360-add_join:before {
+	content: "\e127";
+}
+
+.icon-a360-star_moderator:before {
+	content: "\e128";
+}
+
+.icon-a360-filter_mixedState:before {
+	content: "\e129";
+}
+
+.icon-a360-filter_checkmark:before {
+	content: "\e12a";
+}
+
+.icon-a360-clock_outline:before {
+	content: "\e12b";
+}
+
+.icon-a360-userDefinedField:before {
+	content: "\e12c";
+}

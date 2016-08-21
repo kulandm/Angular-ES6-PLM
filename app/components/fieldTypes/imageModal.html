@@ -1,0 +1,12 @@
+<md-dialog aria-label="image-modal">
+	<md-content layout="column" class="image-modal">
+		<div>
+			<image ng-src="{{imagePath}}">
+		</div>
+		<div class="permission-dialog-actions">
+			<md-button class="md-secondary" ng-click="closeDialog();">
+				{{$root.bundle.button.close}}
+			</md-button>
+		</div>
+	</md-content>
+</md-dialog>

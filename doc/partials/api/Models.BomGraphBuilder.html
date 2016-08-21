@@ -1,0 +1,129 @@
+<h1><code ng:non-bindable="">BomGraphBuilder</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomgraphbuilder-page"><p>A service that handles the building of a BomGraph.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addedgenodetograph">addEdgeNodeToGraph(`edgeNodeProperties`, `viewDef`, `bomGraph`)</h3>
+<div class="addedgenodetograph"><div class="models-bomgraphbuilder-addedgenodetograph-page"><p>Build an edge and node given the collection of properties</p>
+<p>|
+|                &lt;- Edge (Edge Created, All properties populated)
+|
+V
+(Child Node)        &lt;- Node (Node Created, All properties except OutEdges populated)</p>
+<p>We parse the BomNestedItem edgeNodeProperties back onto our edges/nodes and add them to the graph</p>
+</div><h5 id="methods_addedgenodetograph_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edgeNodeProperties`</td><td><a href="" class="label type-hint type-hint-bomnesteditem">BomNestedItem</a></td><td><div class="models-bomgraphbuilder-addedgenodetograph-page"><p>needing to be parsed to created an edge node</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-addedgenodetograph-page"><p>the current view definition that is to be used
+in building the properties of the edge and the node fields.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomgraphbuilder-addedgenodetograph-page"><p>an instance of BomGraph.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addedgestograph">addEdgesToGraph(`edgeList`, `viewDef`, `bomGraph`)</h3>
+<div class="addedgestograph"><div class="models-bomgraphbuilder-addedgestograph-page"><p>builds BomEdge instances from <code>edgeList</code> and the
+<code>viewDefs</code> is used to build the fields associated each instace.</p>
+</div><h5 id="methods_addedgestograph_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edgeList`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-addedgestograph-page"><p>is a list of objects holding the properties
+needed to instantiate a BomEdge.</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-addedgestograph-page"><p>the current view definition that is to be used
+in building the properties of the BomNodes.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomgraphbuilder-addedgestograph-page"><p>an instance of BomGraph.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addfields">addFields(`destinition`, `bomFields`)</h3>
+<div class="addfields"><div class="models-bomgraphbuilder-addfields-page"><p>Adds the <code>fields</code> to the <code>destinition</code>.</p>
+</div><h5 id="methods_addfields_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`destinition`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-addfields-page"><p>either a BomNode or a BomEdge.</p>
+</div></td></tr><tr><td>`bomFields`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-addfields-page"><p>is a list of BomField instances.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_addnodestograph">addNodesToGraph(`nodeList`, `viewDef`, `bomGraph`)</h3>
+<div class="addnodestograph"><div class="models-bomgraphbuilder-addnodestograph-page"><p>builds a map of BomNode instances from <code>nodeList</code> and the
+<code>viewDefs</code> is used to build the fields associated with each instance.</p>
+</div><h5 id="methods_addnodestograph_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`nodeList`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-addnodestograph-page"><p>is a list of objects holding the properties
+needed to instantiate a BomNode.</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-addnodestograph-page"><p>the current view definition that is to be used
+in building the properties of the BomNodes.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomgraphbuilder-addnodestograph-page"><p>an instance of BomGraph.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_buildedgeforbomnesteditem">buildEdgeForBomNestedItem(`edgeNodeProperties`, `fieldValues`, `viewDef`)</h3>
+<div class="buildedgeforbomnesteditem"><div class="models-bomgraphbuilder-buildedgeforbomnesteditem-page"><p>Builds an edge given the collection of properties
+and the fields that should be essigned to it</p>
+</div><h5 id="methods_buildedgeforbomnesteditem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edgeNodeProperties`</td><td><a href="" class="label type-hint type-hint-bomnesteditem">BomNestedItem</a></td><td><div class="models-bomgraphbuilder-buildedgeforbomnesteditem-page"><p>needing to be parsed to created an edge node</p>
+</div></td></tr><tr><td>`fieldValues`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-buildedgeforbomnesteditem-page"><p>an array of BomFields</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildedgeforbomnesteditem-page"><p>the current view definition that is to be used
+in building the properties of the bom edge.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildedgeforbomnesteditem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomgraphbuilder-buildedgeforbomnesteditem-page"><p>the edge object</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildedgeforbulkbom">buildEdgeForBulkBom(`bulkBomEdge`, `viewDef`)</h3>
+<div class="buildedgeforbulkbom"><div class="models-bomgraphbuilder-buildedgeforbulkbom-page"><p>Builds a bom edge object using <code>bulkBomEdge</code>, and <code>viewDef</code>.</p>
+</div><h5 id="methods_buildedgeforbulkbom_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`bulkBomEdge`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildedgeforbulkbom-page"><p>containing the properties of a bom edge.</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildedgeforbulkbom-page"><p>the current view definition that is to be used
+in building the properties of the bom edge.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildedgeforbulkbom_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomedge">BomEdge</a></td><td><div class="models-bomgraphbuilder-buildedgeforbulkbom-page"><p>an instance of BomEdge.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildfieldvaluesmaps">buildFieldValuesMaps(`viewDefFields`, `source`, `urn`)</h3>
+<div class="buildfieldvaluesmaps"><div class="models-bomgraphbuilder-buildfieldvaluesmaps-page"><p>builds BomField intances using the information from the
+<code>viewDefFields</code>, <code>source</code>, and <code>urn</code>.</p>
+</div><h5 id="methods_buildfieldvaluesmaps_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`viewDefFields`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildfieldvaluesmaps-page"><p>will be used to build the fields.</p>
+</div></td></tr><tr><td>`source`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildfieldvaluesmaps-page"><p>is a list of objects with data .</p>
+</div></td></tr><tr><td>`urn`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildfieldvaluesmaps-page"><p>is the urn of  of <code>destinition</code> item.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildfieldvaluesmaps_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-buildfieldvaluesmaps-page"><p>a list of <code>BomField</code> instances.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildfieldsforviewdeffields">buildFieldsForViewDefFields(`viewDefFields`, `valueSource`, `sourceUrn`)</h3>
+<div class="buildfieldsforviewdeffields"><div class="models-bomgraphbuilder-buildfieldsforviewdeffields-page"><p>Creates a list of BomFields using the provided view def fields
+and maps of values to give them</p>
+</div><h5 id="methods_buildfieldsforviewdeffields_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`viewDefFields`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-buildfieldsforviewdeffields-page"><p>An array of ViewDefinitionField instances</p>
+</div></td></tr><tr><td>`valueSource`</td><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bomgraphbuilder-buildfieldsforviewdeffields-page"><p>A map of field ids to value</p>
+</div></td></tr><tr><td>`sourceUrn`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bomgraphbuilder-buildfieldsforviewdeffields-page"><p>the urn of the object to which these fields will belong</p>
+</div></td></tr></tbody></table><h5 id="methods_buildfieldsforviewdeffields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-buildfieldsforviewdeffields-page"><p>a list of BomField instances</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildnodeforbomnesteditem">buildNodeForBomNestedItem(`edgeNodeProperties`, `fieldValues`, `viewDef`)</h3>
+<div class="buildnodeforbomnesteditem"><div class="models-bomgraphbuilder-buildnodeforbomnesteditem-page"><p>Builds an node given the collection of properties
+and the fields that should be essigned to it</p>
+</div><h5 id="methods_buildnodeforbomnesteditem_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`edgeNodeProperties`</td><td><a href="" class="label type-hint type-hint-bomnesteditem">BomNestedItem</a></td><td><div class="models-bomgraphbuilder-buildnodeforbomnesteditem-page"><p>needing to be parsed to created
+an edge node</p>
+</div></td></tr><tr><td>`fieldValues`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-buildnodeforbomnesteditem-page"><p>an array of BomFields</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildnodeforbomnesteditem-page"><p>the current view definition that is to be used
+in building the properties of the bom node.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildnodeforbomnesteditem_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraphbuilder-buildnodeforbomnesteditem-page"><p>an instance of <code>BomNode</code></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_buildnodeforbulkbom">buildNodeForBulkBom(`bulkBomNode`, `viewDef`)</h3>
+<div class="buildnodeforbulkbom"><div class="models-bomgraphbuilder-buildnodeforbulkbom-page"><p>Builds a bom node object using <code>bulkBomNode</code>, and <code>viewDef</code>.</p>
+</div><h5 id="methods_buildnodeforbulkbom_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`bulkBomNode`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildnodeforbulkbom-page"><p>containing the properties of a bom node.</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-buildnodeforbulkbom-page"><p>the current view definition that is to be used
+in building the properties of the bom node.</p>
+</div></td></tr></tbody></table><h5 id="methods_buildnodeforbulkbom_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomnode">BomNode</a></td><td><div class="models-bomgraphbuilder-buildnodeforbulkbom-page"><p>an instance of BomNode.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_extractfieldvalues">extractFieldValues(`list`)</h3>
+<div class="extractfieldvalues"><div class="models-bomgraphbuilder-extractfieldvalues-page"><p>creates a map of urn -&gt; value from the given list of fields.</p>
+</div><h5 id="methods_extractfieldvalues_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`list`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomgraphbuilder-extractfieldvalues-page"><p>containing the list properties</p>
+</div></td></tr></tbody></table><h5 id="methods_extractfieldvalues_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bomgraphbuilder-extractfieldvalues-page"><p>containing the extracted field values.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_populatebomgraph">populateBomGraph(`bulkBom`, `viewDef`, `bomGraph`)</h3>
+<div class="populatebomgraph"><div class="models-bomgraphbuilder-populatebomgraph-page"><p>populates the &#39;bomGraph&#39; using the information from the &#39;bulkBom&#39;, and
+the &#39;viewDef&#39; is used to build the fields for nodes and edges of the &#39;bomGraph&#39;.</p>
+</div><h5 id="methods_populatebomgraph_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`bulkBom`</td><td><a href="" class="label type-hint type-hint-bulkbom">BulkBom</a></td><td><div class="models-bomgraphbuilder-populatebomgraph-page"><p>an instance of BulkBom containing the data for
+populating a BomGraph.</p>
+</div></td></tr><tr><td>`viewDef`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-populatebomgraph-page"><p>the view definition that is to be used for building the fields
+of the nodes and edges of the &#39;bomGraph&#39;.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomgraphbuilder-populatebomgraph-page"><p>an instance of BomGraph.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_updateparentnode">updateParentNode(`bulkBomEdge`, `bomGraph`)</h3>
+<div class="updateparentnode"><div class="models-bomgraphbuilder-updateparentnode-page"><p>Builds a bom node object using <code>bulkBomNode</code>, and <code>viewDef</code>.</p>
+</div><h5 id="methods_updateparentnode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`bulkBomEdge`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bomgraphbuilder-updateparentnode-page"><p>containing the properties of a bom node.</p>
+</div></td></tr><tr><td>`bomGraph`</td><td><a href="" class="label type-hint type-hint-bomgraph">BomGraph</a></td><td><div class="models-bomgraphbuilder-updateparentnode-page"><p>an instance of BomGraph.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,55 @@
+<h1><code ng:non-bindable="">BomBulkAttachment</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bombulkattachment-page"><p>The Dao for BomBulkAttachment</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_constructor">constructor(`json`, `itemList`)</h3>
+<div class="constructor"><div class="models-bombulkattachment-constructor-page"><p>Initializes a BomBulkAttachment object</p>
+</div><h5 id="methods_constructor_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`json`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bombulkattachment-constructor-page"><p>the JSON payload for a BomBulkAttachment</p>
+</div></td></tr><tr><td>`itemList`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bombulkattachment-constructor-page"><p>List of item urns.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_fetch">fetch(`itemUrnList`, `attachmentsEndpoint`, `params`)</h3>
+<div class="fetch"><div class="models-bombulkattachment-fetch-page"><p>Posts a list of item urns <code>itemUrnList</code> to the <code>attachmentsEndpoint</code>
+and builds a BomBulkAttachment instance using the response returned from the post.</p>
+</div><h5 id="methods_fetch_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>`itemUrnList`</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bombulkattachment-fetch-page"><p>List item urns whose attachments is to be fetched.</p>
+</div></td></tr><tr><td>`attachmentsEndpoint`</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="models-bombulkattachment-fetch-page"><p>the link to send the request to.</p>
+</div></td></tr><tr><td>`params`</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bombulkattachment-fetch-page"><p>any additional parameter that needs to be passed to the endpoint.</p>
+</div></td></tr></tbody></table><h5 id="methods_fetch_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="models-bombulkattachment-fetch-page"><p>A Promise that may be resolved to get a an instance of
+BomBulkAttachment .</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getattachmentlists">getAttachmentLists()</h3>
+<div class="getattachmentlists"><div class="models-bombulkattachment-getattachmentlists-page"><p>getter for the attachment lists</p>
+</div><h5 id="methods_getattachmentlists_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-map">Map</a></td><td><div class="models-bombulkattachment-getattachmentlists-page"><p>of BomAttachmentList</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getitemurnlist">getItemUrnList()</h3>
+<div class="getitemurnlist"><div class="models-bombulkattachment-getitemurnlist-page"><p>getter for the item urn list.</p>
+</div><h5 id="methods_getitemurnlist_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bombulkattachment-getitemurnlist-page"><p>list of item urns</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_attachmentlists">attachmentLists</h3>
+<div class="attachmentlists"><div class="models-bombulkattachment-attachmentlists-page"><p>a map(itemUrn -&gt; BomAttachmentList) whose keys are the urn of the
+item and values are instances of BomAttachmentList associated with that item.</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemurnlist">itemUrnList</h3>
+<div class="itemurnlist"><div class="models-bombulkattachment-itemurnlist-page"><p>List of the item urns that were sent to the server to fetch
+the attachments.</p>
+</div></div>
+</li>
+<li><h3 id="properties_json">json</h3>
+<div class="json"><div class="models-bombulkattachment-json-page"><p>The raw payload as returned by the endpoint</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

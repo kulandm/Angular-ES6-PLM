@@ -1,0 +1,44 @@
+// Table Column Resize
+//
+// Styles for resizing table columns.
+//
+// Styleguide 28
+
+// Resizable Columns
+//
+// Styles for the columns that can be resized.
+//
+// Markup:
+// <none>None</none>
+//
+// .resizable-columns - Styles the position for each column in the table
+//
+// Styleguide 28.1
+.resizable-columns {
+	position: relative;
+
+	th {
+		position: relative;
+
+		.column-resizer {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: -($columnResizerWidth / 2);
+			bottom: 0;
+
+			width: $columnResizerWidth;
+
+			cursor: col-resize;
+		}
+	}
+
+	.resize-overlay {
+		@include set-width-height(1px, 100%);
+
+		position: absolute;
+		top: 0;
+
+		background-color: darken($resizeColOverlayBackgroundColor, 15%);
+	}
+}

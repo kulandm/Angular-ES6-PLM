@@ -1,0 +1,33 @@
+#itemviewer-item-header {
+	height: $itemToolbarHeight;
+	min-height: $itemToolbarHeight;
+	max-height: $itemToolbarHeight;
+	padding: $itemHeaderColumnsPadding;
+	.item-header-icons {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: baseline;
+
+		span {
+			margin-right: $itemHeaderSpanIconsMargin;
+		}
+		div {
+			margin: $itemHeaderColumnsMargin;
+			&:before {
+				margin: $itemHeaderCircleMarging;
+				font-size: $itemHeaderCircleSize;
+				color: $grayColor;
+			}
+		}
+		.__archivedStatus {
+			color: $headerArchivedTextColor;
+		}
+	}
+
+	@media (max-width: 600px) {
+		span.itemHeaderText {
+			display: none;
+		}
+	}
+}

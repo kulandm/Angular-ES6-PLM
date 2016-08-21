@@ -1,0 +1,51 @@
+<md-dialog aria-lable="{{$root.bundle.create.createNew}}">
+	<md-content>
+		<md-subheader class="md-sticky-no-effect">
+			{{$root.bundle.create.createNew}}
+			<a ng-click="addActionNotificationsCtrl.close()" class="modal-close pull-right"><span class="icon icon-Delete"></span></a>
+		</md-subheader>
+		<table class="tabular-data-widget">
+			<thead>
+				<tr>
+					<th>{{$root.bundle.actionNotifications.eventType}}</th>
+					<th>{{$root.bundle.actionNotifications.notificationEvent}}</th>
+					<th>{{$root.bundle.actionNotifications.groupToNotify}}</th>
+					<th>{{$root.bundle.actionNotifications.userToNotify}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<md-radio-group ng-model="addActionNotificationsCtrl.selectedEventType" ng-change="addActionNotificationsCtrl.eventTypeChanged()">
+							<md-radio-button ng-repeat="availableOption in addActionNotificationsCtrl.availableEventType" ng-value="availableOption.name">{{availableOption.name}}</md-radio-button>
+						</md-radio-group>
+					</td>
+					<td>
+						<md-select ng-model="addActionNotificationsCtrl.selectedTransition" placeholder="{{$root.bundle.actionNotifications.pleaseSelect}}" ng-if="addActionNotificationsCtrl.selectedEventType === $root.bundle.actionNotifications.transition">
+							<md-option ng-repeat="availableOption in addActionNotificationsCtrl.availableTransitions" ng-value="availableOption.id">{{availableOption.name}}</md-option>
+						</md-select>
+						<md-select ng-model="addActionNotificationsCtrl.selectedState" placeholder="{{$root.bundle.actionNotifications.pleaseSelect}}" ng-if="addActionNotificationsCtrl.selectedEventType === $root.bundle.actionNotifications.state">
+							<md-option ng-repeat="availableOption in addActionNotificationsCtrl.availableStates" ng-value="availableOption.id">{{availableOption.name}}</md-option>
+						</md-select>
+					</td>
+					<td>
+						<md-select multiple ="true" ng-model="addActionNotificationsCtrl.selectedGroups" placeholder="{{$root.bundle.actionNotifications.pleaseSelect}}">
+							<md-option ng-repeat="availableOption in addActionNotificationsCtrl.availableGroups" ng-value="availableOption.id">{{availableOption.displayName}}</md-option>
+						</md-select>
+					</td>
+					<td>
+						<md-select multiple ="true" ng-model="addActionNotificationsCtrl.selectedUsers" placeholder="{{$root.bundle.actionNotifications.pleaseSelect}}">
+							<md-option ng-repeat="availableOption in addActionNotificationsCtrl.availableUsers" ng-value="availableOption.id">{{availableOption.displayName}}</md-option>
+						</md-select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<md-button class="md-button md-primary md-default-theme" aria-label="{{bundle.create.save}}" ng-click="addActionNotificationsCtrl.saveAndClose()">
+			<span class="label">{{$root.bundle.button.save}}</span>
+		</md-button>
+		<md-button class="md-button md-primary md-default-theme" aria-label="{{bundle.create.cancel}}" ng-click="addActionNotificationsCtrl.close()">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+	</md-content>
+</md-dialog>

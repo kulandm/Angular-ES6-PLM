@@ -1,0 +1,145 @@
+<h1><code ng:non-bindable="">BomTableRow</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Models</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="models-bomtablerow-page"><p>Class defining the interface for bom table rows</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addrowerrors">addRowErrors(errors)</h3>
+<div class="addrowerrors"><div class="models-bomtablerow-addrowerrors-page"><p>Updates the row with errors</p>
+</div><h5 id="methods_addrowerrors_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>errors</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomtablerow-addrowerrors-page"><p>An array of row level errors</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_clearrowerrors">clearRowErrors()</h3>
+<div class="clearrowerrors"><div class="models-bomtablerow-clearrowerrors-page"><p>Removes any row level errors</p>
+</div></div>
+</li>
+<li><h3 id="methods_constructor">constructor()</h3>
+<div class="constructor"><div class="models-bomtablerow-constructor-page"><p>initializes the Bom Table Row properties</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfieldwithsemantics">getFieldWithSemantics(semantics)</h3>
+<div class="getfieldwithsemantics"><div class="models-bomtablerow-getfieldwithsemantics-page"><p>Returns the field that has the given semantics
+Currently we assume that only one field will exist with the given semantics.
+    This will need to be changed if we get multiple fields with the same semantics</p>
+</div><h5 id="methods_getfieldwithsemantics_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>semantics</td><td><a href="" class="label type-hint type-hint-bomuifieldsemantics">BomUIFieldSemantics</a></td><td><div class="models-bomtablerow-getfieldwithsemantics-page"><p>The semantics of the field</p>
+</div></td></tr></tbody></table><h5 id="methods_getfieldwithsemantics_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-bomfielddata">BomFIeldData</a></td><td><div class="models-bomtablerow-getfieldwithsemantics-page"><p>the data corresponding to the revision field, or null if the field is not found</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="models-bomtablerow-getfields-page"><p>Returns an array of the row&#39;s fields
+NOTE: This is relatively slow, because we call Object.keys to enumerate the display properties</p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomtablerow-getfields-page"><p>An array of BomFieldData instances in the row</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_haserrors">hasErrors()</h3>
+<div class="haserrors"><div class="models-bomtablerow-haserrors-page"><p>Determines if the row contains errors or not</p>
+</div><h5 id="methods_haserrors_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomtablerow-haserrors-page"><p>True if there are errors associated with the row or its fields</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_hasloadedrevisions">hasLoadedRevisions()</h3>
+<div class="hasloadedrevisions"><div class="models-bomtablerow-hasloadedrevisions-page"><p>Returns true if the row has a revision field that has loaded options
+Revision.options may be undefined (if it were never set)
+or it may be null if it were initialized and not set during the construction of the field
+    Otherwise, it will be an array, which is coerced to true</p>
+</div><h5 id="methods_hasloadedrevisions_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="models-bomtablerow-hasloadedrevisions-page"><p>true if there is a revision field and it has some revisions associated with it</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_processfields">processFields()</h3>
+<div class="processfields"><div class="models-bomtablerow-processfields-page"><p>Updates the row&#39;s properties by analyzing its fields
+Currently used to keep a cached list of fields with errors, so that we don&#39;t need to reenumerate every time</p>
+</div></div>
+</li>
+<li><h3 id="methods_updaterevisionfield">updateRevisionField(versions)</h3>
+<div class="updaterevisionfield"><div class="models-bomtablerow-updaterevisionfield-page"><p>Adds the needed revision as options
+for the revisions column (if it is available)</p>
+</div><h5 id="methods_updaterevisionfield_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>versions</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="models-bomtablerow-updaterevisionfield-page"><p>A list of revisions</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$$treelevel">$$treeLevel</h3>
+<div class="$$treelevel"><div class="models-bomtablerow-treelevel-page"><p>The depth of the row</p>
+</div></div>
+</li>
+<li><h3 id="properties_clickhandler">clickHandler</h3>
+<div class="clickhandler"><div class="models-bomtablerow-clickhandler-page"><p>handler function triggered on click</p>
+</div></div>
+</li>
+<li><h3 id="properties_depth">depth</h3>
+<div class="depth"><div class="models-bomtablerow-depth-page"><p>The depth of the row</p>
+</div></div>
+</li>
+<li><h3 id="properties_displayproperties">displayProperties</h3>
+<div class="displayproperties"><div class="models-bomtablerow-displayproperties-page"><p>Properties we are going to display in the table
+NOTE: Although UI-Grid purports to support arbitrary angular expressions for cell lookup,
+    It doesn&#39;t appear to like anything but plain object property accessing,
+    So display properties have to be stored as keys of an object, instead of entries in a Map</p>
+</div></div>
+</li>
+<li><h3 id="properties_edgeid">edgeId</h3>
+<div class="edgeid"><div class="models-bomtablerow-edgeid-page"><p>Id of the edge that was used to populate this row</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasfetchedchildren">hasFetchedChildren</h3>
+<div class="hasfetchedchildren"><div class="models-bomtablerow-hasfetchedchildren-page"><p>boolean to determine if the row&#39;s children have been fetched</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasfielderrors">hasFieldErrors</h3>
+<div class="hasfielderrors"><div class="models-bomtablerow-hasfielderrors-page"><p>Cache of fields that currently have errors associated with them
+Cached because hasErrors is called every digest cycle for every visible row,
+    and traversing all the fields is relatively expensive.</p>
+</div></div>
+</li>
+<li><h3 id="properties_ischeckable">isCheckable</h3>
+<div class="ischeckable"><div class="models-bomtablerow-ischeckable-page"><p>boolean to determine if the row should be checkable</p>
+</div></div>
+</li>
+<li><h3 id="properties_ischecked">isChecked</h3>
+<div class="ischecked"><div class="models-bomtablerow-ischecked-page"><p>boolean to determine if the row is checked</p>
+</div></div>
+</li>
+<li><h3 id="properties_iscollapsed">isCollapsed</h3>
+<div class="iscollapsed"><div class="models-bomtablerow-iscollapsed-page"><p>boolean to determine if the row is collapsed or not</p>
+</div></div>
+</li>
+<li><h3 id="properties_isexpandable">isExpandable</h3>
+<div class="isexpandable"><div class="models-bomtablerow-isexpandable-page"><p>boolean to determine if the row is expandable</p>
+</div></div>
+</li>
+<li><h3 id="properties_isnewlyadded">isNewlyAdded</h3>
+<div class="isnewlyadded"><div class="models-bomtablerow-isnewlyadded-page"><p>boolean to determine if the row was newly added
+and does not yet have a bomId on the server</p>
+</div></div>
+</li>
+<li><h3 id="properties_item">item</h3>
+<div class="item"><div class="models-bomtablerow-item-page"><p>item information for this row</p>
+</div></div>
+</li>
+<li><h3 id="properties_itemnumber">itemNumber</h3>
+<div class="itemnumber"><div class="models-bomtablerow-itemnumber-page"><p>Item number in relation to siblings</p>
+</div></div>
+</li>
+<li><h3 id="properties_nodeid">nodeId</h3>
+<div class="nodeid"><div class="models-bomtablerow-nodeid-page"><p>Id of the node that was used to populate this row</p>
+</div></div>
+</li>
+<li><h3 id="properties_path">path</h3>
+<div class="path"><div class="models-bomtablerow-path-page"><p>The array of edges that leads to the row,
+starting with the root as null</p>
+</div></div>
+</li>
+<li><h3 id="properties_rowerrors">rowErrors</h3>
+<div class="rowerrors"><div class="models-bomtablerow-rowerrors-page"><p>list of errors associated with the row</p>
+</div></div>
+</li>
+<li><h3 id="properties_rowid">rowId</h3>
+<div class="rowid"><div class="models-bomtablerow-rowid-page"><p>id that identifes this row in a table</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

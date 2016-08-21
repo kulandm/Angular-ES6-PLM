@@ -1,0 +1,131 @@
+<h1><code ng:non-bindable="">CreateItemController</code>
+<div><span class="hint">service in module <code ng:non-bindable="">Controllers</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="controllers-createitemcontroller-page"><p>The controller for <a href="api/Directives.createItem">Directives.createItem</a>.
+Based on the given list of workspaces, this controller fetches the
+field definitions and allow creating one or more workspace items.
+It also contain logic for both quick create and full create.</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<p>TODO: preview enable fields.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_fetchfielddefinitions">fetchFieldDefinitions(workspace)</h3>
+<div class="fetchfielddefinitions"><div class="controllers-createitemcontroller-fetchfielddefinitions-page"><p>Fetches the field definition given a workspace</p>
+</div><h5 id="methods_fetchfielddefinitions_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspace</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemcontroller-fetchfielddefinitions-page"><p>The workspace to fetch fields from</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_formfields">formFields()</h3>
+<div class="formfields"><div class="controllers-createitemcontroller-formfields-page"><p>Helper function for augmenting the field object with extra info needed by this page</p>
+</div></div>
+</li>
+<li><h3 id="methods_getfields">getFields()</h3>
+<div class="getfields"><div class="controllers-createitemcontroller-getfields-page"><p>Returns a flat array of all the fields
+in the currently selected workspace</p>
+</div><h5 id="methods_getfields_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="controllers-createitemcontroller-getfields-page"><p>List of all the fields</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getparturn">getPartUrn(section)</h3>
+<div class="getparturn"><div class="controllers-createitemcontroller-getparturn-page"><p>Access to section attributes so we can determine if it is a
+classificaiton section or not</p>
+</div><h5 id="methods_getparturn_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-section">Section</a></td><td><div class="controllers-createitemcontroller-getparturn-page"><p>The step section</p>
+</div></td></tr></tbody></table><h5 id="methods_getparturn_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-getparturn-page"><p>The urn asociated to a classification section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isclassificationsection">isClassificationSection(section)</h3>
+<div class="isclassificationsection"><div class="controllers-createitemcontroller-isclassificationsection-page"><p>Determine if a section is or not of type classification</p>
+</div><h5 id="methods_isclassificationsection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-section">Section</a></td><td><div class="controllers-createitemcontroller-isclassificationsection-page"><p>The step section</p>
+</div></td></tr></tbody></table><h5 id="methods_isclassificationsection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemcontroller-isclassificationsection-page"><p>True if it is a classification section</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_issectioneditable">isSectionEditable(section)</h3>
+<div class="issectioneditable"><div class="controllers-createitemcontroller-issectioneditable-page"><p>Finds the section by link. NOTE: This code has been partly duplicated from viewDetails.controller - we should be looking
+into moving this code to a common component that can be used later in VIEW/EDIT modes there as well</p>
+</div><h5 id="methods_issectioneditable_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>section</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-issectioneditable-page"><p>The object containing section data)</p>
+</div></td></tr></tbody></table><h5 id="methods_issectioneditable_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemcontroller-issectioneditable-page"><p>True/false if the section should be locked</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_onworkspacechange">onWorkspaceChange(workspace)</h3>
+<div class="onworkspacechange"><div class="controllers-createitemcontroller-onworkspacechange-page"><p>Calls the fetch function upon changing selected workspace</p>
+</div><h5 id="methods_onworkspacechange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>workspace</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemcontroller-onworkspacechange-page"><p>The newly selected workspace</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_parsesectionvisibility">parseSectionVisibility()</h3>
+<div class="parsesectionvisibility"><div class="controllers-createitemcontroller-parsesectionvisibility-page"><p>Returns a flat array of all the fields
+in the currently selected workspace</p>
+</div><h5 id="methods_parsesectionvisibility_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="controllers-createitemcontroller-parsesectionvisibility-page"><p>True/false if the section should be displayed</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsetypeid">parseTypeId(typeLink)</h3>
+<div class="parsetypeid"><div class="controllers-createitemcontroller-parsetypeid-page"><p>Parses the field link to get data type ID.
+TODO Use urn so that we don&#39;t need to parse for ID.</p>
+</div><h5 id="methods_parsetypeid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>typeLink</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-parsetypeid-page"><p>The field link</p>
+</div></td></tr></tbody></table><h5 id="methods_parsetypeid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-parsetypeid-page"><p>The data type id</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_tooltipflyout">tooltipFlyout(event, displayName, description)</h3>
+<div class="tooltipflyout"><div class="controllers-createitemcontroller-tooltipflyout-page"><p>Show tooltip if there is an item description.</p>
+</div><h5 id="methods_tooltipflyout_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>event</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="controllers-createitemcontroller-tooltipflyout-page"><p>The event object</p>
+</div></td></tr><tr><td>displayName</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-tooltipflyout-page"><p>The displayName of the item field</p>
+</div></td></tr><tr><td>description</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="controllers-createitemcontroller-tooltipflyout-page"><p>The description of the item field</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_contextualcreate">contextualCreate</h3>
+<div class="contextualcreate"><div class="controllers-createitemcontroller-contextualcreate-page"><p>Boolean for whether this is in-contextual create
+(converts the string to a boolean)</p>
+</div></div>
+</li>
+<li><h3 id="properties_formfields">formFields</h3>
+<div class="formfields"><div class="controllers-createitemcontroller-formfields-page"><p>The list of sections of the workspace item.
+Each section will contain list of field definitions.</p>
+</div></div>
+</li>
+<li><h3 id="properties_fullcreate">fullCreate</h3>
+<div class="fullcreate"><div class="controllers-createitemcontroller-fullcreate-page"><p>Boolean for whether this is full create
+(converts the string to a boolean)</p>
+</div></div>
+</li>
+<li><h3 id="properties_iscontentshown">isContentShown</h3>
+<div class="iscontentshown"><div class="controllers-createitemcontroller-iscontentshown-page"><p>The flag to collapse or expand each selected item.
+This property is assigned to the scope since it&#39;s just for the view.</p>
+</div></div>
+</li>
+<li><h3 id="properties_issavingdata">isSavingData</h3>
+<div class="issavingdata"><div class="controllers-createitemcontroller-issavingdata-page"><p>The flag that blocks the editing of textfields when saving is being done</p>
+</div></div>
+</li>
+<li><h3 id="properties_loading">loading</h3>
+<div class="loading"><div class="controllers-createitemcontroller-loading-page"><p>True, when component is still loading the fields
+of a selected workspace</p>
+</div></div>
+</li>
+<li><h3 id="properties_quickcreate">quickCreate</h3>
+<div class="quickcreate"><div class="controllers-createitemcontroller-quickcreate-page"><p>Boolean for whether this is quick create
+(converts the string to a boolean)</p>
+</div></div>
+</li>
+<li><h3 id="properties_sectionindex">sectionIndex</h3>
+<div class="sectionindex"><div class="controllers-createitemcontroller-sectionindex-page"><p>Stores the value of the section</p>
+</div></div>
+</li>
+<li><h3 id="properties_unsupportedfields">unsupportedFields</h3>
+<div class="unsupportedfields"><div class="controllers-createitemcontroller-unsupportedfields-page"><p>Checks if there are any unsupported fields,
+after the fields have been fetched</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceid">workspaceId</h3>
+<div class="workspaceid"><div class="controllers-createitemcontroller-workspaceid-page"><p>The workspace id of the workspace to fetch fields from</p>
+</div></div>
+</li>
+<li><h3 id="properties_workspaceslist">workspacesList</h3>
+<div class="workspaceslist"><div class="controllers-createitemcontroller-workspaceslist-page"><p>The list of workspaces that a user can add item</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

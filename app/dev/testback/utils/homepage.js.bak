@@ -1,0 +1,11 @@
+var Homepage = function(){
+	this.get = function(){
+		browser.get('#/');
+	};
+
+	this.isLoaded = function(){
+		return;
+	};
+};
+
+module.exports = Homepage;

@@ -1,0 +1,26 @@
+<md-toolbar id="command-bar">
+	<!-- Fixed buttons, left side, for controlling data -->
+	<div id="control-data">
+		<!-- Buttons for edit mode - if user got to EDIT or ADD modes,
+		these are the basic buttons (save & cancel) available to him
+		(no need to transclude them from each tab/view) -->
+		<md-button class="md-primary command-bar-button"
+			aria-label="{{$root.bundle.button.save}}"
+			ng-hide="(!commandBarCtrl.parentCtrl.isAddState() && commandBarCtrl.parentCtrl.isViewState()) ||
+						(!commandBarCtrl.parentCtrl.isViewState || (commandBarCtrl.parentCtrl.isViewState && commandBarCtrl.parentCtrl.isViewState()))"
+			ng-click="commandBarCtrl.parentCtrl.triggerSave()">
+			<span class="label">{{$root.bundle.button.save}}</span>
+		</md-button><md-button
+			class="command-bar-button"
+			aria-label="{{$root.bundle.button.cancel}}"
+			ng-hide="!commandBarCtrl.parentCtrl.isViewState ||
+			(commandBarCtrl.parentCtrl.isViewState &&
+			commandBarCtrl.parentCtrl.isViewState())"
+			nav-guard default-action="commandBarCtrl.parentCtrl.triggerCancel()"
+			ng-click="handleEvent($event)">
+			<span class="label">{{$root.bundle.button.cancel}}</span>
+		</md-button>
+	</div>
+	<!-- Transcluded buttons (should be aligned either to the left or right -->
+	<div id="transcluded-buttons" ng-transclude></div>
+</md-toolbar>

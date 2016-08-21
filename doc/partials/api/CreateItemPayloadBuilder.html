@@ -1,0 +1,34 @@
+<h1><code ng:non-bindable="">CreateItemPayloadBuilder</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="createitempayloadbuilder-page"><p>A utility to construct create item payloads
+It expects to be initialized with section to field map
+For example:
+When we have fields &quot;a1&quot; and &quot;a2&quot; in section &quot;A&quot;, and fields &quot;b1&quot; and &quot;b2&quot; in section &quot;B&quot;, then we initialize with:
+   [ {id: &quot;A&quot;, fields:[ {<strong>self</strong>:&quot;a1&quot;}, {<strong>self</strong>:&quot;a2&quot;} ]} ,
+     {id: &quot;B&quot;, fields:[ {<strong>self</strong>:&quot;b1&quot;}, {<strong>self</strong>:&quot;b2&quot;} ]}
+   ]</p>
+<h4 id="description_dependencies">Dependencies</h4>
+<p>Underscore library</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addfieldvalue">addFieldValue()</h3>
+<div class="addfieldvalue"><div class="createitempayloadbuilder-addfieldvalue-page"><p>Adds fieldValue to the specified field, overwriting if there
+is an existing field with the same Id. The field is added to the correct
+section object (within section array) based on the section-field relationship
+provided when constructing this object.</p>
+<p>Each call mutates the underlying &quot;payload&quot;</p>
+</div><h5 id="methods_addfieldvalue_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="createitempayloadbuilder-addfieldvalue-page"><p>The resulting payload</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getpayload">getPayload()</h3>
+<div class="getpayload"><div class="createitempayloadbuilder-getpayload-page"><p>Gets the current value/state of the payload. It is expected
+that at least some value(s) have been set through calling addFieldValue()</p>
+</div><h5 id="methods_getpayload_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="createitempayloadbuilder-getpayload-page"><p>The payload</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

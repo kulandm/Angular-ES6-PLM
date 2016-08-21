@@ -1,0 +1,137 @@
+<mxGraph 
+	alternateEdgeStyle="verticalEdge" 
+	dropEnabled="1" 
+	allowDanglingEdges="0"
+	allowLoops="1"
+	disconnectOnMove="0">
+	<mxGraphModel as="model">
+		<root>
+			<Workflow label="MyWorkflow" description="" href="" id="0"/>
+			<Layer label="Default Layer">
+				<mxCell parent="0"/>
+			</Layer>
+		</root>
+	</mxGraphModel>
+	
+	<mxStylesheet as="stylesheet">
+		<add as="ellipse">
+			<add as="shape" value="image"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="image" value="plmlib/mxGraph/images/workflow/start.svg"/>
+			<add as="deletable" value="0"/>
+			<add as="editable" value="0"/>
+			<add as="resizable" value="0"/>			
+		</add>
+		<add as="defaultVertex">
+			<add as="shape" value="label"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="editable" value="0"/>
+			<add as="fillColor" value="#DDDDDD" />
+			<add as="gradientColor" value="none" />
+			<add as="strokeColor" value="#C4C4C4" />			
+			<add as="rounded" value="0"/>
+			<add as="shadow" value="0"/>
+			<add as="glass" value="0"/>
+			<add as="align" value="center"/>
+			<add as="verticalAlign" value="middle"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value="#404040"/>
+			<add as="fontStyle" value="1"/> 
+			<add as="labelPadding" value="5"/>
+			<add as="autosize" value="1"/>			
+		</add>		
+		<add as="hiddenVertex">
+			<add as="fillColor" value="#E7E7E7"/>
+			<add as="gradientColor" value="none" />
+			<add as="shape" value="label"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value="grey"/>
+			<add as="align" value="center"/>
+			<add as="verticalAlign" value="middle"/>
+			<add as="editable" value="0"/>
+		</add>
+		<add as="currentVertex">
+			<add as="fillColor" value="#bbda4d"/>
+			<add as="gradientColor" value="#7ba900" />
+			<add as="shape" value="label"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value="black"/>
+			<add as="align" value="center"/>
+			<add as="verticalAlign" value="middle"/>
+			<add as="glass" value="0"/>
+			<add as="editable" value="0"/>
+		</add>
+		<add as="edge">
+			<add as="shape" value="connector"/>
+			<add as="edgeStyle" value="none"/>
+			<add as="strokeColor" value="#858585"/>
+			<add as="endArrow" value="classic"/>
+			<add as="endSize" value="10"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value= "#404040" />
+			<add as="align" value="center"/>
+			<add as="verticalAlign" value="middle"/>
+			<add as="orthogonal" value="1"/>
+			<add as="fontStyle" value="2"/> 
+			<add as="editable" value="0"/>
+			<add as="labelPadding" value="2"/>
+		</add>
+		<add as="hiddenEdge">
+			<add as="shape" value="connector"/>
+			<add as="edgeStyle" value="none"/>
+			<add as="strokeColor" value="grey"/>
+			<add as="endArrow" value="classic"/>
+			<add as="endSize" value="10"/>
+			<add as="fontSize" value="12"/>
+			<add as="align" value="center"/>
+			<add as="fontColor" value="grey"/>
+			<add as="verticalAlign" value="middle"/>
+			<add as="orthogonal" value="1"/>
+			<add as="fontStyle" value="2"/> 
+			<add as="editable" value="0"/>
+		</add>
+		<add as="note">
+			<add as="shape" value="label"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="align" value="left" />
+			<add as="verticalAlign" value="top" />
+			<add as="fillColor" value="#FDF39B"/>
+			<add as="shadow" value="0"/>
+			<add as="gradientColor" value="none" />
+			<add as="glass" value="0"/>
+			<add as="strokeColor" value="none"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value="#333333"/>
+			<add as="fontStyle" value="0"/> 
+			<add as="labelPadding" value="5"/>
+			<add as="editable" value="0"/>
+			<add as="strokeColor" value="#FDE39B" />
+		</add>
+		<add as="hiddenNote">
+			<add as="shape" value="label"/>
+			<add as="perimeter" value="rectanglePerimeter"/>
+			<add as="align" value="left" />
+			<add as="verticalAlign" value="top" />
+			<add as="fillColor" value="#FFFFCC"/>
+			<add as="shadow" value="0"/>
+			<add as="gradientColor" value="none" />
+			<add as="glass" value="0"/>
+			<add as="strokeColor" value="none"/>
+			<add as="fontSize" value="12"/>
+			<add as="fontColor" value="grey"/>
+			<add as="fontStyle" value="0"/> 
+			<add as="labelPadding" value="5"/>
+			<add as="editable" value="0"/>
+		</add>
+		<add as="edgeNote">
+			<add as="dashed" value="1" />
+			<add as="shape" value="connector"/>
+			<add as="endArrow" value="none"/>
+			<add as="strokeColor" value="grey"/>
+			<add as="editable" value="0"/>
+		</add>
+		
+	</mxStylesheet>
+</mxGraph>

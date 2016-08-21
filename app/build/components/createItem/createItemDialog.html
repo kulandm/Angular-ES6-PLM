@@ -1,0 +1,172 @@
+<md-dialog class="create-item-dialog"
+	aria-label="{{$root.bundle.create.createNew}}">
+
+	<!-- Dialog header -->
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 class="create-item-header">
+				<span ng-if="!createItemDialogCtrl.isManagedView">
+					<span ng-if="!(createItemDialogCtrl.selectedWorkspace.getDisplayName())">
+						{{$root.bundle.create.createNew}}
+					</span>
+					{{createItemDialogCtrl.selectedWorkspace.getDisplayName()}}
+				</span>
+				<span ng-if="createItemDialogCtrl.isManagedView">
+					{{createItemDialogCtrl.managedViewHeading}}
+				</span>
+			</h2>
+
+			<md-select class="select-header"
+				ng-if="createItemDialogCtrl.selectedWorkspace &&
+				createItemDialogCtrl.workspacesList.length > 1 &&
+				!createItemDialogCtrl.isManagedView"
+				ng-model="createItemDialogCtrl.selectedWorkspace"
+				aria-label="{{createItemDialogCtrl.selectedWorkspace.getDisplayName()}}">
+				<md-option
+					class="select-option"
+					ng-repeat="workspace in createItemDialogCtrl.workspacesList"
+					ng-value="workspace">
+					{{workspace.getDisplayName()}}
+				</md-option>
+			</md-select>
+
+			<span flex></span>
+
+			<a href="#"
+				class="create-item-close"
+				ng-click="createItemDialogCtrl.close()">
+				<span class="md md-lg md-close"></span>
+			</a>
+		</div>
+	</md-toolbar>
+
+	<md-divider></md-divider>
+
+	<!-- Error message to tell users that there are unsupported picklists -->
+	<md-toolbar class="md-warn md-hue-2 error"
+		ng-show="createItemDialogCtrl.unsupportedFields.hasUnsupported && (createItemDialogCtrl.unsupportedFields.hasUnsupported.dataTypeId === (createItemDialogCtrl.FieldTypes.IMAGE.toString()))">
+		<span>
+			{{$root.bundle.create.imageFieldValidation}}<br />
+			{{$root.bundle.create.contactAdmin}}
+		</span>
+	</md-toolbar>
+	<md-toolbar class="md-warn md-hue-2 error"
+		ng-show="createItemDialogCtrl.unsupportedFields.hasUnsupported && (createItemDialogCtrl.unsupportedFields.hasUnsupported.dataTypeId !== (createItemDialogCtrl.FieldTypes.IMAGE.toString()))">
+		<span>
+			{{$root.bundle.create.genericFieldValidation}}<br />
+			{{$root.bundle.create.performInClassic}}
+		</span>
+	</md-toolbar>
+
+	<!-- Dialog Content -->
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<create-item
+				ng-if="!createItemDialogCtrl.isManagedView"
+				form-fields="createItemDialogCtrl.formFields"
+				filter="createItemDialogCtrl.filterToApply"
+				unsupported-fields="createItemDialogCtrl.unsupportedFields"
+				selected-workspace="createItemDialogCtrl.selectedWorkspace"
+				workspaces-list="createItemDialogCtrl.workspacesList"
+				create-type="createItemDialogCtrl.createType">
+			</create-item>
+
+			<managed-item
+				ng-if="createItemDialogCtrl.isManagedView"
+				managed-item-form="createItemDialogCtrl.managedItemFormObj">
+			</managed-item>
+		</div>
+	</md-dialog-content>
+
+	<!-- Dialog Footer -->
+	<md-dialog-actions
+		layout="row"
+		layout-align="end center"
+		class="create-item-footer">
+		<md-button
+			aria-label="{{$root.bundle.create.cancel}}"
+			ng-click="createItemDialogCtrl.close()">
+			{{$root.bundle.create.cancel}}
+		</md-button>
+
+		<!-- Default Save for In-contextual Create -->
+		<md-button
+			class="create-item-save md-primary"
+			aria-label="{{$root.bundle.create.saveManage}}"
+			ng-if="createItemDialogCtrl.isContextualCreate
+			&& createItemDialogCtrl.selectedWorkspace
+			&& !createItemDialogCtrl.isManagedView"
+			ng-disabled="createItemDialogCtrl.isSaveDisabled()"
+			ng-click="createItemDialogCtrl.saveAndManage()">
+			{{$root.bundle.create.saveManage}}
+		</md-button>
+
+		<!-- Default Save for Managing In-contextual Create -->
+		<md-button
+			class="create-item-save md-primary"
+			aria-label="{{$root.bundle.create.saveView}}"
+			ng-if="createItemDialogCtrl.isContextualCreate
+			&& createItemDialogCtrl.isManagedView"
+			ng-disabled="createItemDialogCtrl.isSaveDisabled()"
+			ng-click="createItemDialogCtrl.manageAndView()">
+			{{$root.bundle.create.saveView}}
+		</md-button>
+
+		<!-- Default Save for Quick Create -->
+		<md-button
+			class="create-item-save md-primary"
+			aria-label="{{$root.bundle.create.save}}"
+			is-permitted="{{createItemDialogCtrl.viewPermission}}"
+			workspace-id="{{createItemDialogCtrl.selectedWorkspace.getId()}}"
+			ng-if="createItemDialogCtrl.isQuickCreate &&
+			createItemDialogCtrl.selectedWorkspace"
+			ng-disabled="createItemDialogCtrl.isSaveDisabled()"
+			ng-click="createItemDialogCtrl.saveAndClose()">
+			{{$root.bundle.create.save}}
+		</md-button>
+
+		<div class="save-options create-item-save-caret md-primary"
+			aria-label="{{$root.bundle.create.save}}"
+			ng-if="createItemDialogCtrl.selectedWorkspace"
+			ng-disabled="createItemDialogCtrl.isSaveDisabled()"
+			ng-class="{'save-options-enabled' : createItemDialogCtrl.isSaveDisabled() === false}">
+			<!-- TODO ngDisabled is not working with mdSelect -->
+			<md-select
+				ng-change="createItemDialogCtrl.onSaveChange()"
+				ng-model="createItemDialogCtrl.selectedSaveType"
+				ng-disabled="createItemDialogCtrl.isSaveDisabled()"
+				aria-label="{{$root.bundle.create.saveOptions}}">
+
+				<md-option
+					class="select-option"
+					ng-if="createItemDialogCtrl.isContextualCreate"
+					ng-value="$root.bundle.create.save">
+					{{$root.bundle.create.save}}
+				</md-option>
+
+				<md-option
+					class="select-option"
+					ng-if="createItemDialogCtrl.isQuickCreate"
+					ng-value="$root.bundle.create.saveCopy">
+					{{$root.bundle.create.saveCopy}}
+				</md-option>
+
+				<md-option
+					class="select-option"
+					ng-if="createItemDialogCtrl.isQuickCreate"
+					ng-value="$root.bundle.create.saveNew">
+					{{$root.bundle.create.saveNew}}
+				</md-option>
+
+				<md-option
+					class="select-option"
+					ng-if="!createItemDialogCtrl.isManagedView"
+					is-permitted="{{createItemDialogCtrl.viewPermission}}"
+					workspace-id="{{createItemDialogCtrl.selectedWorkspace.getId()}}"
+					ng-value="$root.bundle.create.saveView">
+					{{$root.bundle.create.saveView}}
+				</md-option>
+			</md-select>
+		</div>
+	</md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,425 @@
+// PLM Extensions
+//
+// These are the extensions that are used by other files, including mixins.<br>
+// To apply the extensions, use `@extend %extensionName`.
+//
+// Styleguide 4
+
+// Position
+//
+// Resets top, left, bottom, right positioning.
+//
+// Markup:
+// <none>None</none>
+//
+// %resetPositioning - Resets all values to 0
+//
+// Styleguide 4.1
+%resetPositioning {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+// Icon Position (Medium Buttons)
+//
+// Positioning for icons (plm-icons and silhouette) in medium buttons.
+//
+// Markup:
+// <none>None</none>
+//
+// %iconStyles - Changes font-size, line-height and display
+//
+// Styleguide 4.2
+%iconStyles {
+	font-size: 22px;
+	line-height: 23px;
+
+	display: inline-block;
+
+	vertical-align: middle;
+}
+
+// Icon Position (Small Buttons)
+//
+// Positioning for icons (plm-icons and silhouette) in small buttons.
+//
+// Markup:
+// <none>None</none>
+//
+// %iconStylesSmall - Changes font-size, line-height and display
+//
+// Styleguide 4.3
+%iconStylesSmall {
+	font-size: 15px;
+	line-height: 21px;
+
+	display: inline-block;
+
+	vertical-align: middle;
+}
+
+// Full Height Hack
+//
+// Hack for 100% height for a container.<br>
+// (To be used **carefully**; tested across all browsers.)
+//
+// Markup:
+// <none>None</none>
+//
+// %fullHeightHack - **Not Used** Adjusts margin and padding bottom
+//
+// Styleguide 4.4
+%fullHeightHack {
+	overflow: hidden;
+
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+
+// Remove Underline
+//
+// Remove text-decoration when hovering/focusing on links.
+//
+// Markup:
+// <none>None</none>
+//
+// %removeLinkStyle - Sets `text-decoration: none`
+//
+// Styleguide 4.5
+%removeLinkStyle {
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+		text-decoration: none;
+	}
+}
+
+// Remove Outline
+//
+// Remove outline when in focus.
+//
+// Markup:
+// <none>None</none>
+//
+// %removeOutline - Sets `outline: 0`
+//
+// Styleguide 4.6
+%removeOutline {
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+// Remove Left Border
+//
+// Remove left border from first column in tabular data widget.
+//
+// Markup:
+// <none>None</none>
+//
+// %tdwRemoveLeftBorder - Sets `border-left: 0`
+//
+// Styleguide 4.7
+%tdwRemoveLeftBorder {
+
+	&:first-of-type {
+		border-left: 0;
+	}
+}
+
+// Disable Pre
+//
+// Overrides `pre`, making it look like normal text.
+//
+// Markup:
+// <pre style="font-family:inherit; font-size:inherit; line-height:normal;
+// 	display:inline-block; margin:0; padding:inherit; white-space:pre-line;
+// 	border:none; background-color:transparent;">
+// 	This is a pre that does not look like a pre. :D</pre>
+//
+// %disablePre -
+//
+// Styleguide 4.8
+%disablePre {
+	font: {
+		family: $defaultFont;
+		size: inherit;
+	}
+
+	// pre {
+	// 					font-family: $defaultFont;
+	// 					overflow: initial;
+	// 					word-wrap: break-word;
+	// 					white-space: normal;
+	// 					margin: 0;
+	// 				}
+	line-height: normal;
+	overflow: initial;
+
+	display: inline-block;
+
+	margin: 0;
+	padding: inherit;
+
+	white-space: pre-line;
+
+	color: inherit;
+	border: none;
+	background-color: transparent;
+}
+
+// Notification Text Colors
+//
+// Set all the notification text colors used in notifications-modal.<br>
+// Makes use of the color values defined in the constants file.
+//
+// Markup:
+// <none>None</none>
+//
+// %messageColors -
+// &.success - `#5FB760`
+// &.info - `#CCCCCC`
+// &.warning - `#EFAA50`
+// &.error - `#D5534E`
+// &.critical - `#D5534E`
+//
+// Styleguide 4.9
+%messageColors {
+
+	&.success {
+		color: $notificationsSuccessText;
+	}
+
+	&.info {
+		color: $notificationsInfoText;
+	}
+
+	&.warning {
+		color: $notificationsWarningText;
+	}
+
+	&.error,
+	&.critical {
+		color: $notificationsCriticalText;
+	}
+}
+
+// Raised Container
+//
+// Styles for raised containers.
+//
+// Markup:
+// <div style="padding:30px; background:#F8F8F8; border-radius:10px;">
+// 	<div style="padding:2px; text-align:center; background:#FFF;
+// 		box-shadow:0 1px 5px 0 rgba(0, 0, 0, .25);">%raisedContainer</div>
+// </div>
+//
+// %raisedContainer - Adjusts background and box-shadow
+//
+// Styleguide 4.10
+%raisedContainer {
+	// border: 1px solid $boxBorderColor; // To un-A360-fy the design hiding the box-shadow and enabling this flat border
+	background-color: $raisedContainerBackgroundColor;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+// Table
+//
+// Extends and customize default Bootstrap table.<br>
+//
+// Markup:
+// <none>None</none>
+//
+// %plmTableCustomized - **Not Used**
+//
+// Styleguide 4.11
+%plmTableCustomized {
+	line-height: 20px;
+
+	vertical-align: middle;
+
+	border-right: 1px solid $tableBorderColor;
+}
+
+// PLM Button
+//
+// PLM button style (based on Bootstrap's, but with custom colouring).
+//
+// Markup:
+// <button class="btn" style="color:#4077A5; border:1px solid #CCC;">
+// 	Button
+// </button>
+//
+// %plmDefaultBtn - Adjusts color and border of button
+//
+// Styleguide 4.12
+// %plmDefaultBtn {
+// box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+// color: $btnColor;
+// border: 1px solid $btnBorderColor;
+// }
+
+// PLM Negative Button
+//
+// PLM default negative-color button.
+//
+// Markup:
+// <button class="btn" style="color:#FFF; background-color:#494949;">
+// 	Button
+// </button>
+//
+// %btnNegative - Adjusts color of button
+//
+// Styleguide 4.13
+%btnNegative {
+	color: $btnNegativeColor;
+	background-color: $btnNegativeBackgroundColor;
+
+	&:active,
+	&:hover,
+	&:focus,
+	&:visited {
+		color: $btnNegativeHoverColor;
+	}
+}
+
+// Form elements default font-related styles
+//
+// PLM default styling for font-related styles to match contenteditable's styles
+//
+// Markup:
+// <input class="form-control" value="2014-10-29" style="font-family: Menlo, Monaco, Consolas; font-size 13px;">
+// </input>
+//
+// %formElementFontStyle - Applies styling to a form element
+//
+// Styleguide 4.14
+%formElementFontStyle {
+	font: {
+		family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+		size: 13px;
+	}
+}
+
+// Normalize button colors
+//
+// Normalizes button colors from buttons that are customized according to PLM, but preserving spacings
+//
+// Markup:
+// <button class="btn btn-default" style="font-family: Menlo, Monaco, Consolas; font-size 13px;">Button
+// </button>
+//
+// %removeBootstrapBtnColors - Applies styling to a span, button, input, a, or any other tag
+//
+// Styleguide 4.15
+%normalizeBtnColors {
+	color: inherit;
+	border: none 0 transparent;
+	outline: 0;
+	background-color: transparent;
+
+	&:hover {
+		color: inherit;
+		border: none 0 transparent;
+		background-color: transparent;
+	}
+}
+
+// Reset unordered list
+//
+// Removes all the unordered list paddings, margins, and other styles, as to flatten them
+//
+// Markup:
+// <ul class="" style="font-family: Menlo, Monaco, Consolas; font-size 13px;">
+// 	<li></li>
+// </ul>
+//
+// %resetUnorderedList - Reset all paddings, margins from unorderedlists
+//
+// Styleguide 4.16
+%resetUnorderedList {
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+
+		border: 0;
+
+		> li {
+			margin: 0;
+			padding: 0;
+
+			border: 0;
+		}
+	}
+}
+
+// Text truncation
+//
+// Shortcut for rules for text truncation in a box
+//
+// Markup:
+// <div class="" style="text-overflow: ellipsis; overflow: hidden; width: 100%;"></div>
+//
+// %textTruncation - Shortcut for rules for text truncation in a box
+//
+// Styleguide 4.17
+%textTruncation {
+	overflow: hidden;
+
+	text-overflow: ellipsis;
+}
+
+// Scrollable main content container
+//
+// A container (usually for tables, and used in the main content holder for tabs, and workspace views) that
+// sets width and heights, and turns on scrolling as needed
+//
+// Markup:
+// <div class="" style="t"></div>
+//
+// %scrollableContentContainer
+//
+// Styleguide 4.18
+%scrollableContentContainer {
+	// width: calc(100vw - #{$sideNavCollapsedWidth});
+	width: 100vw;
+	height: 100vh;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+// Primary Button Styles
+//
+// The md-primary style (taken from _plm-material.scss).
+//
+// Markup:
+// <none></none>
+//
+// %primaryButton
+//
+// Styleguide 4.19
+%primaryButton {
+	color: $buttonPrimaryTextColor;
+	border: $buttonPrimaryBorder;
+	background-color: $buttonPrimaryBackgroundColor;
+
+	&:not([disabled]):hover {
+		background-color: $buttonPrimaryHoverBackgroundColor;
+	}
+
+	&:not([disabled]):focus {
+		background-color: $buttonPrimaryFocusBackgroundColor;
+	}
+
+	&[disabled] {
+		color: $buttonPrimaryDisabledTextColor;
+		background-color: $buttonPrimaryDisabledBackgroundColor;
+	}
+}

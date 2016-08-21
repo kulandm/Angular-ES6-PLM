@@ -1,0 +1,8 @@
+# Settings config file
+baseUrl: http://localhost         # This is the url to your http server
+plmBaseUrl: http://localhost:8080 # This is the url for the tomcat app, currently we only use it when access backOffice functions.
+customer: SELENIUM                # The tenant name
+pristineFirst: false              # If you need to pristine the tenant before start test, set this to true
+baseName: app                     # The NextPLM app folder name, either app or hig.
+userId: plmautotest               # The username to login
+password: Selenium1               # The password of the user

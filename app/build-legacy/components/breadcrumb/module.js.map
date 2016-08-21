@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../components/breadcrumb/module.js"],"names":[],"mappings":";;AAAA,OAAO,CAAC,MAAM,CAAC,mBAAmB,EAAE,CACnC,mCAAmC,EACnC,8BAA8B,CAC9B,CAAC,CAAC","file":"module.js","sourcesContent":["angular.module('plm360.breadcrumb', [\n\t'com/autodesk/UnderscoreService.js',\n\t'com/autodesk/localization.js'\n]);\n"]}

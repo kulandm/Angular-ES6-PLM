@@ -1,0 +1,378 @@
+// plmNavigation
+//
+// Styles for the sidenav/PLM navigation (main menu)
+//
+// Styleguide 40
+//
+// Markup:
+// <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z1" id="sidenav-content" md-component-id="sidenav-content">
+// 	<div>
+// 		<div>Content</div>
+// 	</div>
+// </md-sidenav>
+//
+// Styleguide 40.1
+#sidenav {
+	// Push sidenav down below unified header
+	margin-top: $fusionHeaderHeight;
+
+	position: static;
+
+	width: inherit;
+	min-width: $sideNavCollapsedWidth;
+	max-width: $sideNavCollapsedWidth;
+
+	background-color: $sideNavBackgroundColor;
+
+	md-backdrop {
+		z-index: $sideNavBackdropZIndex;
+	}
+
+	// The container for the collapsible sidenav panel, that will appear over the righthand side content
+	#sidenav-content {
+		@include clean-unordered-list;
+
+		// Push sidenav down below unified header
+		// Ideally, this should be contained within its parent,
+		//	but md-sidenav will scroll the page to the top of the nav if it isn't fixed positioned
+		position: fixed;
+		top: $fusionHeaderHeight - 2; // Makes sidenav flush with header
+
+		z-index: $sideNavBackdropZIndex + 1; // show above the backdrop
+
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		width: $sideNavExpandedWidth;
+		height: 100%;
+		padding: 0;
+
+		background-color: $sideNavBackgroundColor;
+
+		// The hamburger menu
+		.nav-control {
+			left: 0;
+
+			padding: 0;
+
+			&:hover {
+				background-color: $sideNavBackgroundHoverColor;
+			}
+		}
+
+		// Overrides closed state, since it should be shown all the time
+		&.md-closed {
+			display: flex;
+			overflow: hidden;
+
+			width: $sideNavCollapsedWidth;
+			min-width: $sideNavCollapsedWidth;
+			max-width: $sideNavCollapsedWidth;
+
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+
+			// All labels inside the closed state should be slightly offset to the side as to hide them from load
+			// (IE11-specific fix, since it's slow to load the menu sometimes)
+			.label {
+				margin-left: 20px !important;
+			}
+		}
+
+		// Main menu for the sidenav (ul)
+		#sidenav-menu {
+			position: absolute;
+			left: 0;
+
+			width: $sideNavExpandedWidth;
+			padding: 0 10px 0 0;
+
+			.sidenav-menu-item {
+				a {
+					padding: 17px;
+				}
+
+				.label {
+					margin-top: 6px;
+				}
+				.caret {
+					margin-top: 6px;
+					margin-right: 20px; // Specific override to account for the right scrollbar in case of long categories
+				}
+
+				.icon {
+					&.md-2x {
+						font-size: 1.5em !important;
+					}
+					&.zmdi {
+						font-size: 1.5em;
+						padding: 2px;
+					}
+				}
+			}
+		}
+
+		// An item in the menu (li)
+		.sidenav-menu-item {
+			margin: 0;
+
+			a {
+				padding-left: 17px;
+			}
+
+			&:hover {
+				background-color: $sideNavBackgroundHoverColor;
+				a span {
+					color: $sideNavButtonLinkHoverColor;
+				}
+			}
+
+			a:hover .label {
+				color: $sideNavButtonLinkHoverColor;
+			}
+
+			.icon {
+				// vertical-align: middle;
+				display: inline-block;
+			}
+
+			.label {
+				font-size: $sideNavFontSize;
+				margin-left: 10px;
+
+				display: inline-block;
+			}
+
+			&.disable-icon {
+				a {
+					opacity: 0.4;
+					pointer-events: none;
+				}
+			}
+		}
+
+		// Back button for sidenav (top, when inside submenu)
+		#sidenav-menu-back {
+			position: static;
+
+			display: inline-block;
+
+			width: $sideNavExpandedWidth;
+			padding: 0;
+
+			// Animation overrides
+			&.ng-hide-remove {
+				top: -187px;
+			}
+
+			&.ng-hide-add {
+				top: -187px;
+			}
+
+			border-bottom: $sideNavItemBorderBottom;
+
+			.button {
+				padding: 15px;
+				color: $sideNavButtonBackLinkColor;
+
+				.label {
+					font-size: $sideNavFontSize;
+					font-weight: normal;
+
+					display: inline;
+
+					margin-left: 28px;
+					padding: 0;
+
+					color: $sideNavButtonBackLinkColor;
+				}
+
+				.caret {
+					font-size: $sideNavFontSize;
+
+					margin-top: 1px;
+				}
+
+				&:hover {
+					background-color: $sideNavButtonBackLinkBackgroundHoverColor;
+					span {
+						color: $sideNavButtonBackLinkHoverColor;
+					}
+				}
+			}
+		}
+
+		// Submenu in the sidenav (ul)
+		.sidenav-submenu {
+			position: static;
+
+			width: $sideNavExpandedWidth;
+			padding: 0 15px 0 0;
+
+			// Animation overrides
+			&.ng-hide-remove {
+				top: -187px;
+			}
+
+			&.ng-hide-add {
+				top: -187px;
+			}
+		}
+
+		.sidenav-submenu-expandable-item {
+			margin: 0;
+
+			a {
+				padding: 20px 10px 17px 56px;
+			}
+
+			a:hover .label {
+				color: $sideNavButtonLinkHoverColor;
+			}
+
+			&:hover,
+			&.sidenav-submenu-item-open {
+				a span {
+					color: $sideNavButtonLinkHoverColor;
+				}
+				background-color: $sideNavBackgroundHoverColor;
+			}
+
+			// Link - 'a' inside the submenu
+			.button {
+				display: flex;
+				overflow: hidden;
+				flex-direction: row;
+
+				text-decoration: none;
+
+				flex-wrap: nowrap;
+
+				color: $sideNavSubMenuPanelColor;
+
+				.label {
+					font-size: $sideNavFontSize;
+					overflow: hidden;
+
+					padding: 0 15px 0 0;
+
+					white-space: nowrap;
+					text-overflow: ellipsis;
+
+					flex: 1 1 auto;
+				}
+
+				.caret {
+					width: 22px;
+					height: 22px;
+					margin: -2px 20px 0 -1px;
+
+					flex: 0 0 auto;
+				}
+			}
+
+			.sidenav-submenu-panel {
+				.sidenav-submenu-panel-item {
+					a {
+						display: inline-block;
+
+						height: 20px;
+						padding: 20px 15px 36px 87px;
+					}
+				}
+			}
+		}
+
+		.sidenav-submenu-panel {
+			overflow: hidden;
+
+			border-bottom: $sideNavSubMenuPanelBorderBottom;
+			background-color: $sideNavSubMenuPanelBackgroundColor;
+			-webkit-box-shadow: $sideNavSubMenuPanelInsetShadow;
+			-moz-box-shadow: $sideNavSubMenuPanelInsetShadow;
+			box-shadow: $sideNavSubMenuPanelInsetShadow;
+
+			// Each item of the submenu panel
+			.sidenav-submenu-panel-item {
+				font-size: $sideNavFontSize;
+				margin: 0;
+				border-bottom: $sideNavSubMenuPanelItemBorderBottom;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				height: 59px;
+
+				&:hover {
+					background-color: $sideNavSubMenuPanelBackgroundHoverColor;
+				}
+
+				.label-container {
+					line-height: 18px;
+				}
+
+				.icon:before {
+					vertical-align: middle;
+				}
+
+				.sub-label {
+					font-size: $sideNavSublabelFontSize;
+				}
+
+				.button {
+					overflow: hidden;
+					color: $sideNavSubMenuPanelSubItemColor;
+					width: 100%;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+
+					&:hover {
+						color: $sideNavButtonLinkHoverColor;
+					}
+
+					&.admin-submenu-item {
+						height: 100%;
+						padding-top: 20px;
+						margin-left: 28px;
+					}
+				}
+			}
+		}
+
+		// Generic styles for "button" class, applied to all links on the menu
+		.button {
+			@extend %normalizeBtnColors;
+
+			display: inline-block;
+
+			width: 100%;
+
+			color: $sideNavButtonLinkColor;
+
+			&:hover {
+				color: $sideNavButtonLinkHoverColor;
+			}
+		}
+
+		// Removes text decoration from all links
+		a:hover {
+			text-decoration: none;
+		}
+
+		// The Fusion Lifecycle branding
+		#fusion-lifecycle-logo {
+			// Keep the images from wrapping
+			white-space: nowrap;
+
+			// Padding for positioning
+			padding-left: 17px;
+			padding-top: 15px;
+
+			img {
+				margin-right: 3px;
+				height: 35px;
+			}
+		}
+	}
+}
